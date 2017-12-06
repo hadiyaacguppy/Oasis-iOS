@@ -15,3 +15,14 @@ Dependencies are handled via Carthage and Cocoapods
 It's also going to include a Utilities file with functions that are commonly used.
 
 
+### TODOS:
+- [ ] Sample API Client
+- [ ] Gather Extensions from team 
+- [ ] Sample CoreData Access
+- [ ] **Document Everything **
+- [ ] Nib File of common views
+- [ ] Integrate MBProgressHUD
+- [ ] Sample Views ( Loading Button, Animatable Label..)
+- [ ] R.Swift Integration
+- [ ] Add Script for renaming the base project
+- [ ] Multiple Targets
