@@ -13,7 +13,11 @@ class Base_ProjectTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        testUtilitiesCollectionView()c
+    }
+    
+    func testUtilitiesCollectionView(){
+        Utilities.CollectionView.setHorizontalLayout(forCollectionView: UICollectionView())
     }
     
     override func tearDown() {
