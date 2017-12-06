@@ -13,11 +13,20 @@ class Base_ProjectTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        testUtilitiesCollectionView()c
+        testUtilitiesCollectionView()
     }
     
     func testUtilitiesCollectionView(){
-        Utilities.CollectionView.setHorizontalLayout(forCollectionView: UICollectionView())
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 0, height: 0)
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        
+        
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellIdentifier")
+        
+        Utilities.CollectionView.setHorizontalLayout(forCollectionView: collectionView)
+
     }
     
     override func tearDown() {

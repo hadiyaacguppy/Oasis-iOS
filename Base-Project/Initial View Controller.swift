@@ -12,7 +12,7 @@ class initialViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        Utilities.AlertViews.showNoInternetAlertView(withPresenter: self)
     }
 
 

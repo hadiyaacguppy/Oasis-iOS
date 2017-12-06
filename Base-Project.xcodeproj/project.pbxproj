@@ -16,6 +16,11 @@
 		1122392D1FD5C7B000486528 /* Base_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1122392C1FD5C7B000486528 /* Base_ProjectTests.swift */; };
 		112239381FD5C7B000486528 /* Base_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112239371FD5C7B000486528 /* Base_ProjectUITests.swift */; };
 		117C4AAB1FD86050008BB445 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AAA1FD86050008BB445 /* Utilities.swift */; };
+		117C4AAE1FD864AD008BB445 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AAD1FD864AD008BB445 /* UIView+Extensions.swift */; };
+		117C4AB01FD864DE008BB445 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AAF1FD864DE008BB445 /* UILabel+Extensions.swift */; };
+		117C4AB21FD864FD008BB445 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB11FD864FD008BB445 /* String+Extensions.swift */; };
+		117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB31FD8652B008BB445 /* NSIndexPath+Extensions.swift */; };
+		117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		112239371FD5C7B000486528 /* Base_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base_ProjectUITests.swift; sourceTree = "<group>"; };
 		112239391FD5C7B000486528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		117C4AAA1FD86050008BB445 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		117C4AAD1FD864AD008BB445 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		117C4AAF1FD864DE008BB445 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		117C4AB11FD864FD008BB445 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		117C4AB31FD8652B008BB445 /* NSIndexPath+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSIndexPath+Extensions.swift"; sourceTree = "<group>"; };
+		117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPageViewController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +160,7 @@
 		117C4AA81FD86028008BB445 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				117C4AAC1FD8645F008BB445 /* Extensions */,
 				117C4AA91FD86046008BB445 /* Utilities */,
 			);
 			path = Helpers;
@@ -161,6 +172,18 @@
 				117C4AAA1FD86050008BB445 /* Utilities.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		117C4AAC1FD8645F008BB445 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				117C4AAD1FD864AD008BB445 /* UIView+Extensions.swift */,
+				117C4AAF1FD864DE008BB445 /* UILabel+Extensions.swift */,
+				117C4AB11FD864FD008BB445 /* String+Extensions.swift */,
+				117C4AB31FD8652B008BB445 /* NSIndexPath+Extensions.swift */,
+				117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,9 +320,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */,
+				117C4AB01FD864DE008BB445 /* UILabel+Extensions.swift in Sources */,
+				117C4AB21FD864FD008BB445 /* String+Extensions.swift in Sources */,
 				112239171FD5C7AF00486528 /* Initial View Controller.swift in Sources */,
 				112239151FD5C7AF00486528 /* AppDelegate.swift in Sources */,
+				117C4AAE1FD864AD008BB445 /* UIView+Extensions.swift in Sources */,
 				117C4AAB1FD86050008BB445 /* Utilities.swift in Sources */,
+				117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */,
 				1122391D1FD5C7B000486528 /* Base_Project.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
