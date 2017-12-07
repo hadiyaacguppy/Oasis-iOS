@@ -29,6 +29,10 @@
 		CF7BC66D1FD8F739008E80AC /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7BC6671FD8F739008E80AC /* RxSwift.framework */; };
 		CF7BC66E1FD8F739008E80AC /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7BC6681FD8F739008E80AC /* Moya.framework */; };
 		CF7BC66F1FD8F739008E80AC /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7BC6691FD8F739008E80AC /* ObjectMapper.framework */; };
+		CF7BC6721FD91327008E80AC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7BC6711FD91327008E80AC /* CoreDataManager.swift */; };
+		CF7BC6771FD91D83008E80AC /* Single+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7BC6741FD91D82008E80AC /* Single+ObjectMapper.swift */; };
+		CF7BC6781FD91D83008E80AC /* Response+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7BC6751FD91D82008E80AC /* Response+ObjectMapper.swift */; };
+		CF7BC6791FD91D83008E80AC /* ObservableType+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7BC6761FD91D82008E80AC /* ObservableType+ObjectMapper.swift */; };
 		E0CC15EF471A5E356E969056 /* Pods_Base_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEAEF5E352DAFF712E4D298 /* Pods_Base_ProjectTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +87,10 @@
 		CF7BC6671FD8F739008E80AC /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		CF7BC6681FD8F739008E80AC /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
 		CF7BC6691FD8F739008E80AC /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		CF7BC6711FD91327008E80AC /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		CF7BC6741FD91D82008E80AC /* Single+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Single+ObjectMapper.swift"; sourceTree = "<group>"; };
+		CF7BC6751FD91D82008E80AC /* Response+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Response+ObjectMapper.swift"; sourceTree = "<group>"; };
+		CF7BC6761FD91D82008E80AC /* ObservableType+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObservableType+ObjectMapper.swift"; sourceTree = "<group>"; };
 		D6AEAF1E49FBD6B2D5590E59 /* Pods-Base-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project.debug.xcconfig"; sourceTree = "<group>"; };
 		E4E247135C4897C85DCF2DAC /* Pods_Base_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Base_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -179,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				1122391B1FD5C7B000486528 /* Base_Project.xcdatamodeld */,
+				CF7BC6711FD91327008E80AC /* CoreDataManager.swift */,
 			);
 			path = "Data Layer";
 			sourceTree = "<group>";
@@ -212,6 +221,7 @@
 		117C4AAC1FD8645F008BB445 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CF7BC6731FD91D75008E80AC /* Moya + Object Mapper */,
 				117C4AAD1FD864AD008BB445 /* UIView+Extensions.swift */,
 				117C4AAF1FD864DE008BB445 /* UILabel+Extensions.swift */,
 				117C4AB11FD864FD008BB445 /* String+Extensions.swift */,
@@ -248,6 +258,16 @@
 				BA9D4500D3227DE112A8F750 /* Pods_Base_ProjectUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF7BC6731FD91D75008E80AC /* Moya + Object Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				CF7BC6761FD91D82008E80AC /* ObservableType+ObjectMapper.swift */,
+				CF7BC6751FD91D82008E80AC /* Response+ObjectMapper.swift */,
+				CF7BC6741FD91D82008E80AC /* Single+ObjectMapper.swift */,
+			);
+			path = "Moya + Object Mapper";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -565,10 +585,14 @@
 				117C4AB01FD864DE008BB445 /* UILabel+Extensions.swift in Sources */,
 				117C4AB21FD864FD008BB445 /* String+Extensions.swift in Sources */,
 				112239171FD5C7AF00486528 /* Initial View Controller.swift in Sources */,
+				CF7BC6791FD91D83008E80AC /* ObservableType+ObjectMapper.swift in Sources */,
 				112239151FD5C7AF00486528 /* AppDelegate.swift in Sources */,
 				117C4AAE1FD864AD008BB445 /* UIView+Extensions.swift in Sources */,
 				117C4AAB1FD86050008BB445 /* Utilities.swift in Sources */,
 				117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */,
+				CF7BC6781FD91D83008E80AC /* Response+ObjectMapper.swift in Sources */,
+				CF7BC6771FD91D83008E80AC /* Single+ObjectMapper.swift in Sources */,
+				CF7BC6721FD91327008E80AC /* CoreDataManager.swift in Sources */,
 				1122391D1FD5C7B000486528 /* Base_Project.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
