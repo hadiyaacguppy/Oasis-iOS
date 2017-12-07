@@ -18,7 +18,6 @@ It's also going to include a Utilities file with functions that are commonly use
 ### TODOS:
 - [ ] Sample API Client
 - [ ] Gather Extensions from team 
-- [ ] Sample CoreData Access
 - [ ] **Document Everything **
 - [ ] Nib File of common views
 - [ ] Integrate MBProgressHUD
