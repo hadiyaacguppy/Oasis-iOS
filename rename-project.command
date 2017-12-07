@@ -3,6 +3,8 @@
 export PATH=$PATH:~/usr/local/bin
 
 BASE_NAME="Base-Project"
+#For UnitTests, UITests , CoreData
+BASE_NAME_SECONDARY="Base_Project"
 
 #Renaming
 transform() {
@@ -36,6 +38,7 @@ git commit -m "Inital commit for $NEW_NAME"
 
 #Body
 transform "$BASE_NAME" "$NEW_NAME"
+transform "$BASE_NAME_SECONDARY" "$NEW_NAME"
 
 #Git renaming commit
 git add -A
