@@ -5,5 +5,5 @@ github "ReactiveX/RxSwift" ~> 4.0
 
 github "Hearst-DD/ObjectMapper" ~> 3.0
 
-github "Moya/RxMoya"
+github "Moya/Moya"
 
