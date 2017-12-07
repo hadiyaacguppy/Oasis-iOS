@@ -30,7 +30,7 @@ It's also going to include a Utilities file with functions that are commonly use
 ### Steps to use 
 Suppose your new project name is `MyApp`. Be sure not to include spaces or any special characters in the project name. App display name can be changed later to match any combination
 
-1. git clone https://gitlab.com/tedmob/ios/base-project-swift.git   MyApp
+1. `git clone https://gitlab.com/tedmob/ios/base-project-swift.git   MyApp`
 
 2. Run `bash rename-project.command ` once the clone is done.
 	3. This will ask for the new name and a confirmation
