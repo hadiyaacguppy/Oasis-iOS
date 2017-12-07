@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import RxSwift
 class initialViewController: UIViewController {
 
     override func viewDidLoad() {
