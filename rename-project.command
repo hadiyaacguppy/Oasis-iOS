@@ -29,20 +29,17 @@ then
     exit 1
 fi
 
-#Self destruction
-rm ./rename-project.command
-
 #Git setup
 git init
 git add -A
-git commit -m "Inital commit"
+git commit -m "Inital commit for $NEW_NAME"
 
 #Body
 transform "$BASE_NAME" "$NEW_NAME"
 
 #Git renaming commit
 git add -A
-git commit -m "Rename project"
+git commit -m "Renamed Base project to $NEW_NAME "
 
 #Success message
 echo "Success"
