@@ -10,7 +10,8 @@ Dependencies are handled via Carthage and Cocoapods
 	 - ObjectMapper
 	 - Moya/RxSwift
  - Cocoapods
-	 - WIP
+	 - Firebase/Core
+	 - Firebase/Messaging
 
 It's also going to include a Utilities file with functions that are commonly used.
 
