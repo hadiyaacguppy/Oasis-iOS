@@ -2,7 +2,7 @@
 
 export PATH=$PATH:~/usr/local/bin
 
-BASE_NAME="Swift-Base"
+BASE_NAME="Base-Project"
 
 #Renaming
 transform() {
