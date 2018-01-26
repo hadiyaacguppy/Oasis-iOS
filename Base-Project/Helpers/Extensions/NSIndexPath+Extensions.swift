@@ -10,6 +10,7 @@ import Foundation
 
 extension IndexPath {
     
+
     func increment() -> IndexPath {
         return IndexPath(item: (self as NSIndexPath).row + 1, section: (self as NSIndexPath).section)
     }

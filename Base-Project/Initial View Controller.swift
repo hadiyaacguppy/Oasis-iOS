@@ -8,12 +8,11 @@
 
 import UIKit
 import RxSwift
-class initialViewController: UIViewController {
+class initialViewController: BaseViewController {
 
-    override func viewDidLoad() {
+    override func viewDidLoad() {   
         super.viewDidLoad()
+        
     }
 
-
 }
-

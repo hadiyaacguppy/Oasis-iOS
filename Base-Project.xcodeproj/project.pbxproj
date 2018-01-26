@@ -31,6 +31,9 @@
 		CF7BC6791FD91D83008E80AC /* ObservableType+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7BC6761FD91D82008E80AC /* ObservableType+ObjectMapper.swift */; };
 		CF7BC67C1FD91E46008E80AC /* AppDelegate+FCM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7BC67B1FD91E46008E80AC /* AppDelegate+FCM.swift */; };
 		CF7BC67F1FD92169008E80AC /* PushService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7BC67E1FD92169008E80AC /* PushService.swift */; };
+		CF87ED9E201B5FF300562226 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF87ED9D201B5FF300562226 /* SVProgressHUD.framework */; };
+		CF87EDA0201B6EF700562226 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87ED9F201B6EF700562226 /* BaseViewController.swift */; };
+		CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87EDA3201B8C2500562226 /* BaseTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +68,9 @@
 		CF7BC6761FD91D82008E80AC /* ObservableType+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObservableType+ObjectMapper.swift"; sourceTree = "<group>"; };
 		CF7BC67B1FD91E46008E80AC /* AppDelegate+FCM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+FCM.swift"; sourceTree = "<group>"; };
 		CF7BC67E1FD92169008E80AC /* PushService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushService.swift; sourceTree = "<group>"; };
+		CF87ED9D201B5FF300562226 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
+		CF87ED9F201B6EF700562226 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		CF87EDA3201B8C2500562226 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
 		F67502C09ED37847CBD63117 /* Pods-Base-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +81,7 @@
 			files = (
 				CF7BC66A1FD8F739008E80AC /* RxCocoa.framework in Frameworks */,
 				CF7BC66B1FD8F739008E80AC /* Alamofire.framework in Frameworks */,
+				CF87ED9E201B5FF300562226 /* SVProgressHUD.framework in Frameworks */,
 				CF7BC66C1FD8F739008E80AC /* RxMoya.framework in Frameworks */,
 				CF7BC66D1FD8F739008E80AC /* RxSwift.framework in Frameworks */,
 				CF7BC66E1FD8F739008E80AC /* Moya.framework in Frameworks */,
@@ -107,6 +114,7 @@
 		112239131FD5C7AF00486528 /* Base-Project */ = {
 			isa = PBXGroup;
 			children = (
+				CF87EDA2201B8BEB00562226 /* Views */,
 				CF7BC67D1FD9215F008E80AC /* Services */,
 				117C4AA81FD86028008BB445 /* Helpers */,
 				112239161FD5C7AF00486528 /* Initial View Controller.swift */,
@@ -132,6 +140,7 @@
 			children = (
 				117C4AAC1FD8645F008BB445 /* Extensions */,
 				117C4AA91FD86046008BB445 /* Utilities */,
+				CF87ED9F201B6EF700562226 /* BaseViewController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -174,6 +183,7 @@
 		8A6CF31932BE5291FACE8092 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF87ED9D201B5FF300562226 /* SVProgressHUD.framework */,
 				CF7BC6651FD8F739008E80AC /* Alamofire.framework */,
 				CF7BC6681FD8F739008E80AC /* Moya.framework */,
 				CF7BC6691FD8F739008E80AC /* ObjectMapper.framework */,
@@ -210,6 +220,14 @@
 				CF7BC67E1FD92169008E80AC /* PushService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		CF87EDA2201B8BEB00562226 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CF87EDA3201B8C2500562226 /* BaseTextField.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,6 +370,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
 			);
 			outputPaths = (
 			);
@@ -368,9 +387,11 @@
 			files = (
 				117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */,
 				CF7BC67C1FD91E46008E80AC /* AppDelegate+FCM.swift in Sources */,
+				CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */,
 				117C4AB01FD864DE008BB445 /* UILabel+Extensions.swift in Sources */,
 				117C4AB21FD864FD008BB445 /* String+Extensions.swift in Sources */,
 				112239171FD5C7AF00486528 /* Initial View Controller.swift in Sources */,
+				CF87EDA0201B6EF700562226 /* BaseViewController.swift in Sources */,
 				CF7BC6791FD91D83008E80AC /* ObservableType+ObjectMapper.swift in Sources */,
 				112239151FD5C7AF00486528 /* AppDelegate.swift in Sources */,
 				117C4AAE1FD864AD008BB445 /* UIView+Extensions.swift in Sources */,

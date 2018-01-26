@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import MapKit
+import SVProgressHUD
 struct Utilities  {
     struct  CollectionView {
         static public func setHorizontalLayout(forCollectionView collectionView: UICollectionView) {
@@ -84,6 +85,7 @@ struct Utilities  {
                 UIApplication.shared.windows.first!.rootViewController = view
             }
         }
+        
         static func  viewControllerWith(_ identifier: String, fromStoryboard storyboardName: String) -> UIViewController {
             return UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: identifier)
         }
@@ -147,7 +149,25 @@ struct Utilities  {
         }
 
     }
+    struct ProgressHUD {
+        static func showLoading(){
+            SVProgressHUD.show()
+        }
+        static func  showLoading(withMessage msg : String ){
+            SVProgressHUD.show(withStatus: msg )
+        }
+        static func showSuccess(withMessage msg : String ){
+            SVProgressHUD.showSuccess(withStatus: msg)
+        }
+        static func showError(withMessage msg : String ){
+            SVProgressHUD.showError(withStatus: msg)
+        }
+        static func dismissLoading(){
+            SVProgressHUD.dismiss()
+        }
+    }
 }
+
 
 
 
