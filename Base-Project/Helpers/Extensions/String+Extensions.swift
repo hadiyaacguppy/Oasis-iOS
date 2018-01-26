@@ -13,5 +13,8 @@ extension String {
     func asURL() -> URL? {
         return URL(string: self)
     }
+    var localized: String {
+        return NSLocalizedString(self, comment: "")
+    }
     
 }
