@@ -8,3 +8,6 @@ github "Hearst-DD/ObjectMapper" ~> 3.0
 github "Moya/Moya"
 
 github "SVProgressHUD/SVProgressHUD"
+
+github "malcommac/SwiftLocation"
+
