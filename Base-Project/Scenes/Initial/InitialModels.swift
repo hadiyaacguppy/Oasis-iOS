@@ -6,8 +6,7 @@
 //  Copyright (c) 2018 Tedmob. All rights reserved.
 //
 
-//  
-//
+
 //  Type "usecase" for some magic!
 
 struct InitialModels {
@@ -15,6 +14,6 @@ struct InitialModels {
 
     }
     struct Responses {
-      
+
     }
 }

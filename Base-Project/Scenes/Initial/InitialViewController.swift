@@ -6,8 +6,6 @@
 //  Copyright (c) 2018 Tedmob. All rights reserved.
 //
 
-//
-
 import UIKit
 
 protocol InitialViewControllerInput {
