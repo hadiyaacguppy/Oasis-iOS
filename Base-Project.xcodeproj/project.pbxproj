@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		112239151FD5C7AF00486528 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112239141FD5C7AF00486528 /* AppDelegate.swift */; };
-		112239171FD5C7AF00486528 /* Initial View Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112239161FD5C7AF00486528 /* Initial View Controller.swift */; };
 		1122391A1FD5C7AF00486528 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 112239181FD5C7AF00486528 /* Main.storyboard */; };
 		1122391F1FD5C7B000486528 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1122391E1FD5C7B000486528 /* Assets.xcassets */; };
 		112239221FD5C7B000486528 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 112239201FD5C7B000486528 /* LaunchScreen.storyboard */; };
@@ -34,13 +33,18 @@
 		CF87ED9E201B5FF300562226 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF87ED9D201B5FF300562226 /* SVProgressHUD.framework */; };
 		CF87EDA0201B6EF700562226 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87ED9F201B6EF700562226 /* BaseViewController.swift */; };
 		CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87EDA3201B8C2500562226 /* BaseTextField.swift */; };
+		CFA7CABF201EF57F00C5FAC0 /* InitialPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7CAB9201EF57F00C5FAC0 /* InitialPresenter.swift */; };
+		CFA7CAC0201EF57F00C5FAC0 /* InitialRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7CABA201EF57F00C5FAC0 /* InitialRouter.swift */; };
+		CFA7CAC1201EF57F00C5FAC0 /* InitialModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7CABB201EF57F00C5FAC0 /* InitialModels.swift */; };
+		CFA7CAC2201EF57F00C5FAC0 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7CABC201EF57F00C5FAC0 /* InitialViewController.swift */; };
+		CFA7CAC3201EF57F00C5FAC0 /* InitialInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7CABD201EF57F00C5FAC0 /* InitialInteractor.swift */; };
+		CFA7CAC4201EF57F00C5FAC0 /* InitialConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA7CABE201EF57F00C5FAC0 /* InitialConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0A6FC7C665C3EC115CF8C0BC /* Pods-Base-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project.release.xcconfig"; sourceTree = "<group>"; };
 		112239111FD5C7AF00486528 /* Base-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Base-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		112239141FD5C7AF00486528 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		112239161FD5C7AF00486528 /* Initial View Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Initial View Controller.swift"; sourceTree = "<group>"; };
 		112239191FD5C7AF00486528 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1122391E1FD5C7B000486528 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		112239211FD5C7B000486528 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -71,6 +75,12 @@
 		CF87ED9D201B5FF300562226 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		CF87ED9F201B6EF700562226 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CF87EDA3201B8C2500562226 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
+		CFA7CAB9201EF57F00C5FAC0 /* InitialPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialPresenter.swift; sourceTree = "<group>"; };
+		CFA7CABA201EF57F00C5FAC0 /* InitialRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialRouter.swift; sourceTree = "<group>"; };
+		CFA7CABB201EF57F00C5FAC0 /* InitialModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialModels.swift; sourceTree = "<group>"; };
+		CFA7CABC201EF57F00C5FAC0 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		CFA7CABD201EF57F00C5FAC0 /* InitialInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialInteractor.swift; sourceTree = "<group>"; };
+		CFA7CABE201EF57F00C5FAC0 /* InitialConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialConfigurator.swift; sourceTree = "<group>"; };
 		F67502C09ED37847CBD63117 /* Pods-Base-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,7 +127,7 @@
 				CF87EDA2201B8BEB00562226 /* Views */,
 				CF7BC67D1FD9215F008E80AC /* Services */,
 				117C4AA81FD86028008BB445 /* Helpers */,
-				112239161FD5C7AF00486528 /* Initial View Controller.swift */,
+				CF87EDA9201EECFA00562226 /* Scenes */,
 				112239181FD5C7AF00486528 /* Main.storyboard */,
 				1122391E1FD5C7B000486528 /* Assets.xcassets */,
 				112239201FD5C7B000486528 /* LaunchScreen.storyboard */,
@@ -228,6 +238,27 @@
 				CF87EDA3201B8C2500562226 /* BaseTextField.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CF87EDA9201EECFA00562226 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CF87EDB6201EED1500562226 /* Initial */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		CF87EDB6201EED1500562226 /* Initial */ = {
+			isa = PBXGroup;
+			children = (
+				CFA7CAB9201EF57F00C5FAC0 /* InitialPresenter.swift */,
+				CFA7CABA201EF57F00C5FAC0 /* InitialRouter.swift */,
+				CFA7CABB201EF57F00C5FAC0 /* InitialModels.swift */,
+				CFA7CABC201EF57F00C5FAC0 /* InitialViewController.swift */,
+				CFA7CABD201EF57F00C5FAC0 /* InitialInteractor.swift */,
+				CFA7CABE201EF57F00C5FAC0 /* InitialConfigurator.swift */,
+			);
+			path = Initial;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,22 +416,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFA7CAC4201EF57F00C5FAC0 /* InitialConfigurator.swift in Sources */,
 				117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */,
 				CF7BC67C1FD91E46008E80AC /* AppDelegate+FCM.swift in Sources */,
 				CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */,
+				CFA7CABF201EF57F00C5FAC0 /* InitialPresenter.swift in Sources */,
 				117C4AB01FD864DE008BB445 /* UILabel+Extensions.swift in Sources */,
 				117C4AB21FD864FD008BB445 /* String+Extensions.swift in Sources */,
-				112239171FD5C7AF00486528 /* Initial View Controller.swift in Sources */,
 				CF87EDA0201B6EF700562226 /* BaseViewController.swift in Sources */,
 				CF7BC6791FD91D83008E80AC /* ObservableType+ObjectMapper.swift in Sources */,
+				CFA7CAC1201EF57F00C5FAC0 /* InitialModels.swift in Sources */,
 				112239151FD5C7AF00486528 /* AppDelegate.swift in Sources */,
 				117C4AAE1FD864AD008BB445 /* UIView+Extensions.swift in Sources */,
+				CFA7CAC0201EF57F00C5FAC0 /* InitialRouter.swift in Sources */,
 				CF7BC67F1FD92169008E80AC /* PushService.swift in Sources */,
 				117C4AAB1FD86050008BB445 /* Utilities.swift in Sources */,
 				CF45F0C9201B42DF004A39E2 /* Async.swift in Sources */,
+				CFA7CAC2201EF57F00C5FAC0 /* InitialViewController.swift in Sources */,
 				117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */,
 				CF7BC6781FD91D83008E80AC /* Response+ObjectMapper.swift in Sources */,
 				CF7BC6771FD91D83008E80AC /* Single+ObjectMapper.swift in Sources */,
+				CFA7CAC3201EF57F00C5FAC0 /* InitialInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

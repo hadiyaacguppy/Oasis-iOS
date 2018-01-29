@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 class BaseViewController : UIViewController {
     
-    override func viewDidDisappear(_ animated: Bool) {
+    override
+    func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         dismissProgress()
     }
