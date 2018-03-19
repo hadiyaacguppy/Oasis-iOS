@@ -44,6 +44,9 @@ transform "$BASE_NAME_SECONDARY" "$NEW_NAME"
 git add -A
 git commit -m "Renamed Base project to $NEW_NAME "
 
+git remote remove origin
+
+
 #Success message
 echo "Success"
 
