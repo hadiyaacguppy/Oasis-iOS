@@ -33,7 +33,7 @@ class InitialViewController: BaseViewController, InitialViewControllerInput {
     override func viewDidLoad() {
         super.viewDidLoad()
         output?.viewDidFinishedLoading()
-        print("1")
+        
     }
 
     // MARK: Requests
@@ -43,5 +43,13 @@ class InitialViewController: BaseViewController, InitialViewControllerInput {
 
 }
 extension InitialViewController: InitialPresenterOutput {
+    func navigatetoLogin() {
+        
+    }
+    
+    func navigatetoMain() {
+        
+    }
+    
 
 }

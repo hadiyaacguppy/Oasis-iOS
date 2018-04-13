@@ -7,32 +7,45 @@
 //
 
 protocol InitialInteractorInput {
-
+    
 }
 
 protocol InitialInteractorOutput {
-  func didFail(withErrorMessage msg : String)
+    func didFail(withErrorMessage msg : String)
+    func userIsLoggedIn()
+    func userIsNotLoggedIn()
 }
 
 protocol InitialDataSource {
-
+    
 }
 
 protocol InitialDataDestination {
-
+    
 }
 
 class InitialInteractor: InitialInteractorInput, InitialDataSource, InitialDataDestination {
-
+    
     var output: InitialInteractorOutput?
-
+    
+    
+    func checkIfUserIsLoggedIn() -> Bool {
+        //TODO: Should Implmenet
+        return false
+    }
+    
+    
     // MARK: Business logic
-
-
+    
+    
 }
 
 extension InitialInteractor: InitialViewControllerOutput, InitialRouterDataSource, InitialRouterDataDestination {
-  func viewDidFinishedLoading(){
-
-  }
+    func viewDidFinishedLoading(){
+        if checkIfUserIsLoggedIn() {
+            
+        }else {
+            
+        }
+    }
 }

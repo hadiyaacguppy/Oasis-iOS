@@ -284,6 +284,7 @@
 				CF7BC6701FD8F75D008E80AC /* ShellScript */,
 				98B7E6723CD6E9868C61C5B1 /* [CP] Embed Pods Frameworks */,
 				7CEC601E5E2710C6DB914162 /* [CP] Copy Pods Resources */,
+				CF90C7FC2080AF8E00C3F025 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -417,6 +418,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		CF90C7FC2080AF8E00C3F025 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

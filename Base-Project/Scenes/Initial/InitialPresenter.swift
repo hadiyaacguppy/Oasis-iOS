@@ -7,22 +7,32 @@
 //
 
 protocol InitialPresenterInput {
-
+    
 }
 
 protocol InitialPresenterOutput: class {
-  func display(errorMessage msg : String )
+    func display(errorMessage msg : String )
+    func navigatetoLogin()
+    func navigatetoMain()
 }
 
 class InitialPresenter: InitialPresenterInput {
-
+    
     weak var output: InitialPresenterOutput?
-
+    
     // MARK: Presentation logic
-
+    
 }
 extension InitialPresenter: InitialInteractorOutput {
-  func didFail(withErrorMessage msg : String){
-    output?.display(errorMessage :  msg)
-  }
+    func userIsLoggedIn() {
+        output?.navigatetoLogin()
+    }
+    
+    func userIsNotLoggedIn() {
+        output?.navigatetoMain()
+    }
+    
+    func didFail(withErrorMessage msg : String){
+        output?.display(errorMessage :  msg)
+    }
 }
