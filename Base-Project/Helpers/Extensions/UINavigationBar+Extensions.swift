@@ -26,5 +26,20 @@ extension UINavigationBar {
             }
         }
     }
+    var seperatorIsVisible : Bool {
+        get {
+            return self.shadowImage != nil
+        }
+        set {
+            switch newValue {
+            case false :
+                self.shadowImage = UIImage()
+                self.setBackgroundImage(UIImage(), for: .default)
+            case true :
+                self.shadowImage = nil
+                self.setBackgroundImage(nil, for: .default)
+            }
+        }
+    }
 }
 
