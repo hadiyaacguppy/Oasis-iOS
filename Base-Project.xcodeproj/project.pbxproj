@@ -18,6 +18,8 @@
 		117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB31FD8652B008BB445 /* NSIndexPath+Extensions.swift */; };
 		117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */; };
 		4B00E64AA8A0A7582597A76A /* Pods_Base_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BA0D1007DC66F24CD1D64E /* Pods_Base_Project.framework */; };
+		CF181BA020809874002603A1 /* UINavigationBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF181B9F20809874002603A1 /* UINavigationBar+Extensions.swift */; };
+		CF181BA2208099A0002603A1 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF181BA1208099A0002603A1 /* UITextField+Extensions.swift */; };
 		CF45F0C9201B42DF004A39E2 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF45F0C8201B42DF004A39E2 /* Async.swift */; };
 		CF654357201EF654004DE9C0 /* InitialPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF654351201EF654004DE9C0 /* InitialPresenter.swift */; };
 		CF654358201EF654004DE9C0 /* InitialRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF654352201EF654004DE9C0 /* InitialRouter.swift */; };
@@ -60,6 +62,8 @@
 		96BA0D1007DC66F24CD1D64E /* Pods_Base_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Base_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E33F06E417414D3283B2A5 /* Pods-Base-ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-ProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Base-ProjectTests/Pods-Base-ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C65CEF44A2A6134604793718 /* Pods-Base-ProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-ProjectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Base-ProjectUITests/Pods-Base-ProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CF181B9F20809874002603A1 /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extensions.swift"; sourceTree = "<group>"; };
+		CF181BA1208099A0002603A1 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		CF45F0C8201B42DF004A39E2 /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
 		CF654351201EF654004DE9C0 /* InitialPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialPresenter.swift; sourceTree = "<group>"; };
 		CF654352201EF654004DE9C0 /* InitialRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialRouter.swift; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 				117C4AB11FD864FD008BB445 /* String+Extensions.swift */,
 				117C4AB31FD8652B008BB445 /* NSIndexPath+Extensions.swift */,
 				117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */,
+				CF181B9F20809874002603A1 /* UINavigationBar+Extensions.swift */,
+				CF181BA1208099A0002603A1 /* UITextField+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -268,7 +274,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1122393C1FD5C7B000486528 /* Build configuration list for PBXNativeTarget "Base-Project" */;
 			buildPhases = (
-				CF195A392020C529009CF019 /* ShellScript */,
 				3D4ACD00AB6EB91C080BC99F /* [CP] Check Pods Manifest.lock */,
 				1122390D1FD5C7AF00486528 /* Sources */,
 				1122390E1FD5C7AF00486528 /* Frameworks */,
@@ -389,19 +394,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CF195A392020C529009CF019 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "TAGS=\"TODO:|FIXME:\"\n\nERRORTAG=\"ERROR:\"\n\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" -type f \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$|($ERRORTAG).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\" | perl -p -e \"s/($ERRORTAG)/ error: \\$1/\"";
-		};
 		CF7BC6701FD8F75D008E80AC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -430,6 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF181BA2208099A0002603A1 /* UITextField+Extensions.swift in Sources */,
 				CF65435C201EF654004DE9C0 /* InitialConfigurator.swift in Sources */,
 				117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */,
 				CF7BC67C1FD91E46008E80AC /* AppDelegate+FCM.swift in Sources */,
@@ -448,6 +441,7 @@
 				CF45F0C9201B42DF004A39E2 /* Async.swift in Sources */,
 				CF65435A201EF654004DE9C0 /* InitialViewController.swift in Sources */,
 				117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */,
+				CF181BA020809874002603A1 /* UINavigationBar+Extensions.swift in Sources */,
 				CF7BC6781FD91D83008E80AC /* Response+ObjectMapper.swift in Sources */,
 				CF7BC6771FD91D83008E80AC /* Single+ObjectMapper.swift in Sources */,
 				CF65435B201EF654004DE9C0 /* InitialInteractor.swift in Sources */,
