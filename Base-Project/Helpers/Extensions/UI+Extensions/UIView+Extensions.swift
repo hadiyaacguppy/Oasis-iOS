@@ -69,5 +69,34 @@ extension UIView {
         
     }
 
-
+    /**
+     Used for animation a view from right to left
+     */
+    func slideInFromLeft(duration: TimeInterval = 1.1, completionDelegate: AnyObject? = nil) {
+        
+        let slideInFromLeftTransition = CATransition()
+        if let delegate: AnyObject = completionDelegate {
+            slideInFromLeftTransition.delegate = delegate as! CAAnimationDelegate
+        }
+        // Customize the animation's properties
+        slideInFromLeftTransition.type = kCATransitionPush
+        slideInFromLeftTransition.subtype = kCATransitionFromRight
+        slideInFromLeftTransition.duration = duration
+        slideInFromLeftTransition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        slideInFromLeftTransition.fillMode = kCAFillModeRemoved
+        
+        // Add the animation to the View's layer
+        self.layer.add(slideInFromLeftTransition, forKey: "slideInFromLeftTransition")
+    }
+    
+    func fadeIn(duration: TimeInterval = 1.0, delay: TimeInterval = 0.0, completion: @escaping ((Bool) -> Void) = {(finished: Bool) -> Void in}) {
+        UIView.animate(withDuration: duration, delay: delay, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            self.alpha = 1.0
+        }, completion: completion)  }
+    
+    func fadeOut(duration: TimeInterval = 1.0, delay: TimeInterval = 0.0, completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in}) {
+        UIView.animate(withDuration: duration, delay: delay, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            self.alpha = 0.0
+        }, completion: completion)
+    }
 }

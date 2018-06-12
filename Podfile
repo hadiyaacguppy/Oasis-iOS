@@ -6,7 +6,7 @@ target 'Base-Project' do
   use_frameworks!
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
-
+  pod 'R.swift'
 
 
 

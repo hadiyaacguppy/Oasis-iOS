@@ -9,8 +9,5 @@ github "Moya/Moya"
 
 github "SVProgressHUD/SVProgressHUD"
 
-github "malcommac/SwiftLocation"
-
-
 github "flipboard/FLEX" ~> 2.0
 

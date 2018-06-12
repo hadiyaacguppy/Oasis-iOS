@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FD65F1520D014F40075E251 /* Reactive+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD65F1420D014F40075E251 /* Reactive+Extensions.swift */; };
+		0FD65F1720D0177B0075E251 /* UIToolBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD65F1620D0177B0075E251 /* UIToolBar+Extensions.swift */; };
+		0FD65F1920D018480075E251 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD65F1820D018480075E251 /* Double+Extensions.swift */; };
+		0FD65F1B20D018730075E251 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD65F1A20D018730075E251 /* UIButton+Extensions.swift */; };
+		0FD65F1D20D01BBD0075E251 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD65F1C20D01BBD0075E251 /* CGFloat+Extensions.swift */; };
 		112239151FD5C7AF00486528 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112239141FD5C7AF00486528 /* AppDelegate.swift */; };
 		1122391A1FD5C7AF00486528 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 112239181FD5C7AF00486528 /* Main.storyboard */; };
 		1122391F1FD5C7B000486528 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1122391E1FD5C7B000486528 /* Assets.xcassets */; };
@@ -46,6 +51,11 @@
 
 /* Begin PBXFileReference section */
 		0A6FC7C665C3EC115CF8C0BC /* Pods-Base-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project.release.xcconfig"; sourceTree = "<group>"; };
+		0FD65F1420D014F40075E251 /* Reactive+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extensions.swift"; sourceTree = "<group>"; };
+		0FD65F1620D0177B0075E251 /* UIToolBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIToolBar+Extensions.swift"; sourceTree = "<group>"; };
+		0FD65F1820D018480075E251 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
+		0FD65F1A20D018730075E251 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		0FD65F1C20D01BBD0075E251 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		112239111FD5C7AF00486528 /* Base-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Base-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		112239141FD5C7AF00486528 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		112239191FD5C7AF00486528 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,6 +119,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FD65F1E20D01BE60075E251 /* UI+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				117C4AAD1FD864AD008BB445 /* UIView+Extensions.swift */,
+				117C4AAF1FD864DE008BB445 /* UILabel+Extensions.swift */,
+				0FD65F1620D0177B0075E251 /* UIToolBar+Extensions.swift */,
+				117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */,
+				CF181B9F20809874002603A1 /* UINavigationBar+Extensions.swift */,
+				CF181BA1208099A0002603A1 /* UITextField+Extensions.swift */,
+				CF181BA320809E28002603A1 /* UIColor+Extensions.swift */,
+				0FD65F1A20D018730075E251 /* UIButton+Extensions.swift */,
+			);
+			path = "UI+Extensions";
+			sourceTree = "<group>";
+		};
+		0FD65F1F20D01C2F0075E251 /* Rx+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0FD65F1420D014F40075E251 /* Reactive+Extensions.swift */,
+			);
+			path = "Rx+Extensions";
+			sourceTree = "<group>";
+		};
 		112239081FD5C7AF00486528 = {
 			isa = PBXGroup;
 			children = (
@@ -173,15 +206,13 @@
 		117C4AAC1FD8645F008BB445 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0FD65F1F20D01C2F0075E251 /* Rx+Extensions */,
+				0FD65F1E20D01BE60075E251 /* UI+Extensions */,
 				CF7BC6731FD91D75008E80AC /* Moya + Object Mapper */,
-				117C4AAD1FD864AD008BB445 /* UIView+Extensions.swift */,
-				117C4AAF1FD864DE008BB445 /* UILabel+Extensions.swift */,
-				117C4AB11FD864FD008BB445 /* String+Extensions.swift */,
 				117C4AB31FD8652B008BB445 /* NSIndexPath+Extensions.swift */,
-				117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */,
-				CF181B9F20809874002603A1 /* UINavigationBar+Extensions.swift */,
-				CF181BA1208099A0002603A1 /* UITextField+Extensions.swift */,
-				CF181BA320809E28002603A1 /* UIColor+Extensions.swift */,
+				117C4AB11FD864FD008BB445 /* String+Extensions.swift */,
+				0FD65F1820D018480075E251 /* Double+Extensions.swift */,
+				0FD65F1C20D01BBD0075E251 /* CGFloat+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -283,7 +314,6 @@
 				1122390F1FD5C7AF00486528 /* Resources */,
 				CF7BC6701FD8F75D008E80AC /* ShellScript */,
 				98B7E6723CD6E9868C61C5B1 /* [CP] Embed Pods Frameworks */,
-				7CEC601E5E2710C6DB914162 /* [CP] Copy Pods Resources */,
 				CF90C7FC2080AF8E00C3F025 /* ShellScript */,
 			);
 			buildRules = (
@@ -361,21 +391,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7CEC601E5E2710C6DB914162 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		98B7E6723CD6E9868C61C5B1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -385,12 +400,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,8 +457,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF181BA2208099A0002603A1 /* UITextField+Extensions.swift in Sources */,
+				0FD65F1B20D018730075E251 /* UIButton+Extensions.swift in Sources */,
 				CF65435C201EF654004DE9C0 /* InitialConfigurator.swift in Sources */,
 				117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */,
+				0FD65F1920D018480075E251 /* Double+Extensions.swift in Sources */,
 				CF7BC67C1FD91E46008E80AC /* AppDelegate+FCM.swift in Sources */,
 				CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */,
 				CF654357201EF654004DE9C0 /* InitialPresenter.swift in Sources */,
@@ -449,6 +468,7 @@
 				117C4AB21FD864FD008BB445 /* String+Extensions.swift in Sources */,
 				CF87EDA0201B6EF700562226 /* BaseViewController.swift in Sources */,
 				CF7BC6791FD91D83008E80AC /* ObservableType+ObjectMapper.swift in Sources */,
+				0FD65F1D20D01BBD0075E251 /* CGFloat+Extensions.swift in Sources */,
 				CF654359201EF654004DE9C0 /* InitialModels.swift in Sources */,
 				112239151FD5C7AF00486528 /* AppDelegate.swift in Sources */,
 				117C4AAE1FD864AD008BB445 /* UIView+Extensions.swift in Sources */,
@@ -459,10 +479,12 @@
 				CF65435A201EF654004DE9C0 /* InitialViewController.swift in Sources */,
 				117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */,
 				CF181BA420809E28002603A1 /* UIColor+Extensions.swift in Sources */,
+				0FD65F1520D014F40075E251 /* Reactive+Extensions.swift in Sources */,
 				CF181BA020809874002603A1 /* UINavigationBar+Extensions.swift in Sources */,
 				CF7BC6781FD91D83008E80AC /* Response+ObjectMapper.swift in Sources */,
 				CF7BC6771FD91D83008E80AC /* Single+ObjectMapper.swift in Sources */,
 				CF65435B201EF654004DE9C0 /* InitialInteractor.swift in Sources */,
+				0FD65F1720D0177B0075E251 /* UIToolBar+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

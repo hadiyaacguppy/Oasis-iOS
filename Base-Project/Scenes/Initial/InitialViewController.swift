@@ -33,7 +33,6 @@ class InitialViewController: BaseViewController, InitialViewControllerInput {
     override func viewDidLoad() {
         super.viewDidLoad()
         output?.viewDidFinishedLoading()
-        
     }
 
     // MARK: Requests
