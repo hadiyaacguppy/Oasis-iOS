@@ -32,6 +32,7 @@
 		117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB31FD8652B008BB445 /* NSIndexPath+Extensions.swift */; };
 		117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */; };
 		4B00E64AA8A0A7582597A76A /* Pods_Base_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BA0D1007DC66F24CD1D64E /* Pods_Base_Project.framework */; };
+		6754244D20EE7FF600783123 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6754244C20EE7FF600783123 /* BaseNavigationController.swift */; };
 		CF181BA020809874002603A1 /* UINavigationBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF181B9F20809874002603A1 /* UINavigationBar+Extensions.swift */; };
 		CF181BA2208099A0002603A1 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF181BA1208099A0002603A1 /* UITextField+Extensions.swift */; };
 		CF181BA420809E28002603A1 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF181BA320809E28002603A1 /* UIColor+Extensions.swift */; };
@@ -88,6 +89,7 @@
 		117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPageViewController+Extensions.swift"; sourceTree = "<group>"; };
 		509696D7EE45B0E48C61927E /* Pods-Base-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-ProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Base-ProjectTests/Pods-Base-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		5F0CB28320C7D9C3EA885DBF /* Pods-Base-ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-ProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Base-ProjectUITests/Pods-Base-ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6754244C20EE7FF600783123 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		96BA0D1007DC66F24CD1D64E /* Pods_Base_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Base_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E33F06E417414D3283B2A5 /* Pods-Base-ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-ProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Base-ProjectTests/Pods-Base-ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C65CEF44A2A6134604793718 /* Pods-Base-ProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-ProjectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Base-ProjectUITests/Pods-Base-ProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 				CF87ED9F201B6EF700562226 /* BaseViewController.swift */,
 				CF87EDA3201B8C2500562226 /* BaseTextField.swift */,
 				0F5753A020EE1F450069C139 /* TraingleView.swift */,
+				6754244C20EE7FF600783123 /* BaseNavigationController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				CF7BC67F1FD92169008E80AC /* PushService.swift in Sources */,
 				117C4AAB1FD86050008BB445 /* Utilities.swift in Sources */,
 				CF45F0C9201B42DF004A39E2 /* Async.swift in Sources */,
+				6754244D20EE7FF600783123 /* BaseNavigationController.swift in Sources */,
 				CF65435A201EF654004DE9C0 /* InitialViewController.swift in Sources */,
 				117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */,
 				CF181BA420809E28002603A1 /* UIColor+Extensions.swift in Sources */,
