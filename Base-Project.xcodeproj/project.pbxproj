@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F57538E20EE12EB0069C139 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57538D20EE12EB0069C139 /* Constants.swift */; };
+		0F57539120EE13660069C139 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539020EE13660069C139 /* DataManager.swift */; };
+		0F57539320EE16560069C139 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539220EE16560069C139 /* R.generated.swift */; };
+		0F57539520EE185F0069C139 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539420EE185F0069C139 /* Array+Extensions.swift */; };
+		0F57539720EE19090069C139 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539620EE19090069C139 /* LocationManager.swift */; };
+		0F57539B20EE19CD0069C139 /* BaseProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539A20EE19CD0069C139 /* BaseProjectService.swift */; };
+		0F57539D20EE1C430069C139 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539C20EE1C430069C139 /* APIClient.swift */; };
+		0F57539F20EE1EC90069C139 /* Relays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539E20EE1EC90069C139 /* Relays.swift */; };
+		0F5753A120EE1F450069C139 /* TraingleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5753A020EE1F450069C139 /* TraingleView.swift */; };
 		0FD65F1520D014F40075E251 /* Reactive+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD65F1420D014F40075E251 /* Reactive+Extensions.swift */; };
 		0FD65F1720D0177B0075E251 /* UIToolBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD65F1620D0177B0075E251 /* UIToolBar+Extensions.swift */; };
 		0FD65F1920D018480075E251 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD65F1820D018480075E251 /* Double+Extensions.swift */; };
@@ -51,6 +60,15 @@
 
 /* Begin PBXFileReference section */
 		0A6FC7C665C3EC115CF8C0BC /* Pods-Base-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project.release.xcconfig"; sourceTree = "<group>"; };
+		0F57538D20EE12EB0069C139 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0F57539020EE13660069C139 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		0F57539220EE16560069C139 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		0F57539420EE185F0069C139 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		0F57539620EE19090069C139 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		0F57539A20EE19CD0069C139 /* BaseProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProjectService.swift; sourceTree = "<group>"; };
+		0F57539C20EE1C430069C139 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		0F57539E20EE1EC90069C139 /* Relays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Relays.swift; sourceTree = "<group>"; };
+		0F5753A020EE1F450069C139 /* TraingleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraingleView.swift; sourceTree = "<group>"; };
 		0FD65F1420D014F40075E251 /* Reactive+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extensions.swift"; sourceTree = "<group>"; };
 		0FD65F1620D0177B0075E251 /* UIToolBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIToolBar+Extensions.swift"; sourceTree = "<group>"; };
 		0FD65F1820D018480075E251 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
@@ -119,6 +137,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F57538F20EE13570069C139 /* Managers & Services */ = {
+			isa = PBXGroup;
+			children = (
+				0F57539020EE13660069C139 /* DataManager.swift */,
+				0F57539620EE19090069C139 /* LocationManager.swift */,
+				CF7BC67E1FD92169008E80AC /* PushService.swift */,
+				0F57539E20EE1EC90069C139 /* Relays.swift */,
+			);
+			path = "Managers & Services";
+			sourceTree = "<group>";
+		};
+		0F57539820EE19AE0069C139 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0F57539920EE19BD0069C139 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0F57539A20EE19CD0069C139 /* BaseProjectService.swift */,
+				0F57539C20EE1C430069C139 /* APIClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		0FD65F1E20D01BE60075E251 /* UI+Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,8 +208,10 @@
 		112239131FD5C7AF00486528 /* Base-Project */ = {
 			isa = PBXGroup;
 			children = (
+				0F57539920EE19BD0069C139 /* Network */,
+				0F57539820EE19AE0069C139 /* Models */,
+				0F57538F20EE13570069C139 /* Managers & Services */,
 				CF87EDA2201B8BEB00562226 /* Views */,
-				CF7BC67D1FD9215F008E80AC /* Services */,
 				117C4AA81FD86028008BB445 /* Helpers */,
 				CF87EDA9201EECFA00562226 /* Scenes */,
 				112239181FD5C7AF00486528 /* Main.storyboard */,
@@ -178,6 +225,7 @@
 		117C4AA71FD85FCE008BB445 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0F57539220EE16560069C139 /* R.generated.swift */,
 				CF7BC67A1FD91E36008E80AC /* App Delegate */,
 				112239231FD5C7B000486528 /* Info.plist */,
 			);
@@ -189,7 +237,6 @@
 			children = (
 				117C4AAC1FD8645F008BB445 /* Extensions */,
 				117C4AA91FD86046008BB445 /* Utilities */,
-				CF87ED9F201B6EF700562226 /* BaseViewController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -199,6 +246,7 @@
 			children = (
 				CF45F0C8201B42DF004A39E2 /* Async.swift */,
 				117C4AAA1FD86050008BB445 /* Utilities.swift */,
+				0F57538D20EE12EB0069C139 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -213,6 +261,7 @@
 				117C4AB11FD864FD008BB445 /* String+Extensions.swift */,
 				0FD65F1820D018480075E251 /* Double+Extensions.swift */,
 				0FD65F1C20D01BBD0075E251 /* CGFloat+Extensions.swift */,
+				0F57539420EE185F0069C139 /* Array+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -264,18 +313,12 @@
 			path = "App Delegate";
 			sourceTree = "<group>";
 		};
-		CF7BC67D1FD9215F008E80AC /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				CF7BC67E1FD92169008E80AC /* PushService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		CF87EDA2201B8BEB00562226 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CF87ED9F201B6EF700562226 /* BaseViewController.swift */,
 				CF87EDA3201B8C2500562226 /* BaseTextField.swift */,
+				0F5753A020EE1F450069C139 /* TraingleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -447,7 +490,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"\n";
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -458,9 +501,11 @@
 			files = (
 				CF181BA2208099A0002603A1 /* UITextField+Extensions.swift in Sources */,
 				0FD65F1B20D018730075E251 /* UIButton+Extensions.swift in Sources */,
+				0F5753A120EE1F450069C139 /* TraingleView.swift in Sources */,
 				CF65435C201EF654004DE9C0 /* InitialConfigurator.swift in Sources */,
 				117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */,
 				0FD65F1920D018480075E251 /* Double+Extensions.swift in Sources */,
+				0F57538E20EE12EB0069C139 /* Constants.swift in Sources */,
 				CF7BC67C1FD91E46008E80AC /* AppDelegate+FCM.swift in Sources */,
 				CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */,
 				CF654357201EF654004DE9C0 /* InitialPresenter.swift in Sources */,
@@ -470,8 +515,12 @@
 				CF7BC6791FD91D83008E80AC /* ObservableType+ObjectMapper.swift in Sources */,
 				0FD65F1D20D01BBD0075E251 /* CGFloat+Extensions.swift in Sources */,
 				CF654359201EF654004DE9C0 /* InitialModels.swift in Sources */,
+				0F57539F20EE1EC90069C139 /* Relays.swift in Sources */,
+				0F57539B20EE19CD0069C139 /* BaseProjectService.swift in Sources */,
 				112239151FD5C7AF00486528 /* AppDelegate.swift in Sources */,
 				117C4AAE1FD864AD008BB445 /* UIView+Extensions.swift in Sources */,
+				0F57539120EE13660069C139 /* DataManager.swift in Sources */,
+				0F57539720EE19090069C139 /* LocationManager.swift in Sources */,
 				CF654358201EF654004DE9C0 /* InitialRouter.swift in Sources */,
 				CF7BC67F1FD92169008E80AC /* PushService.swift in Sources */,
 				117C4AAB1FD86050008BB445 /* Utilities.swift in Sources */,
@@ -479,12 +528,15 @@
 				CF65435A201EF654004DE9C0 /* InitialViewController.swift in Sources */,
 				117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */,
 				CF181BA420809E28002603A1 /* UIColor+Extensions.swift in Sources */,
+				0F57539520EE185F0069C139 /* Array+Extensions.swift in Sources */,
 				0FD65F1520D014F40075E251 /* Reactive+Extensions.swift in Sources */,
 				CF181BA020809874002603A1 /* UINavigationBar+Extensions.swift in Sources */,
+				0F57539320EE16560069C139 /* R.generated.swift in Sources */,
 				CF7BC6781FD91D83008E80AC /* Response+ObjectMapper.swift in Sources */,
 				CF7BC6771FD91D83008E80AC /* Single+ObjectMapper.swift in Sources */,
 				CF65435B201EF654004DE9C0 /* InitialInteractor.swift in Sources */,
 				0FD65F1720D0177B0075E251 /* UIToolBar+Extensions.swift in Sources */,
+				0F57539D20EE1C430069C139 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,7 +685,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tedmob.Base-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -653,7 +705,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tedmob.Base-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
