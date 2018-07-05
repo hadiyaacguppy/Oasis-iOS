@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        
+        print("Base Project Version 0.1.1")
         //Uncomment to initiate Firebase
         //self.configureFirebaseApp()
         //self.setFCMMessagingDelegate()
