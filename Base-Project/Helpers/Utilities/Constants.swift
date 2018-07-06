@@ -14,14 +14,10 @@ struct Constants {
     
     
     struct Network {
+        
         static let baseURl : String = "https://google.com"
         static let SessionTokenExpiredCode = -777
-        static let  APIStatusCode : [String : String] = [
-            ///Examples
-            "101" : "Invalid Pin Code",
-            "102" : "Account Already Verified",
-            "103" : "Invalid Token"
-        ]
+        
     }
     
     

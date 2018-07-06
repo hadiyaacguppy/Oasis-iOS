@@ -47,4 +47,25 @@ class APIErrorManager<T: Mappable> {
         
         return errorObject.message ?? ""
     }
+    
+    
+    
+    
+     let  APIStatusCode : [String : String] = [
+        ///Examples
+        "101" : "Invalid Pin Code",
+        "102" : "Account Already Verified",
+        "103" : "Invalid Token"
+    ]
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

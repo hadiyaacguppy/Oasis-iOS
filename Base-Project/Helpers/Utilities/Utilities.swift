@@ -278,15 +278,7 @@ struct Utilities  {
                  return false
             }
         }
- 
 
-     
-        
-        // MARK: Retina Check
-        
-     
-        // MARK: - International Checks
-        
       
     }
     
