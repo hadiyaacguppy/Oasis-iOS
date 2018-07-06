@@ -14,17 +14,17 @@ import SystemConfiguration
 import MobileCoreServices
 
 struct Utilities  {
+    static func call(phoneNumber pn : String){
+        guard let number = URL(string: "tel://" + pn) else { return }
+        UIApplication.shared.open(number)
+    }
     
-    struct  CollectionView {
-        static public func setHorizontalLayout(forCollectionView collectionView: UICollectionView) {
-            
-            let layout = UICollectionViewFlowLayout()
-            
-            layout.scrollDirection = .horizontal
-            
-            collectionView.collectionViewLayout = layout
+    static func openURL(withString str : String){
+        if let url = URL(string: str){
+            UIApplication.shared.open(url , options: [:], completionHandler: nil)
         }
     }
+
     
     struct AlertViews {
         static func showAlertView(_ title: String, message: String, actions: [UIAlertAction], withPresenter presenter: UIViewController, withCompletionHandler handler: (() -> Void)?) {
@@ -77,8 +77,6 @@ struct Utilities  {
             }
         }
         
-      
-        
     }
     
     struct ViewControllers {
@@ -125,6 +123,22 @@ struct Utilities  {
             
             toolbar.items = [flexibleItem , barButton]
             textView.inputAccessoryView = toolbar
+        }
+    }
+    struct GoogleMaps {
+        static func goToGoogleMapsNavigation(withLongitude long : Double , andLatitude lat : Double){
+            goToGoogleMapsNavigation(withLongitude: Float(long), andLatitude: Float(lat))
+        }
+        static func goToGoogleMapsNavigation(withLongitude long : Float , andLatitude lat : Float){
+            if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
+                UIApplication.shared.openURL(NSURL(string:
+                    "comgooglemaps://?daddr=\(lat),\(long)&directionsmode=driving")! as URL)
+                
+            } else {
+                // if GoogleMap App is not installed
+                UIApplication.shared.openURL(NSURL(string:
+                    "https://www.google.co.in/maps/dir/?&daddr=\(lat),\(long)&directionsmode=driving")! as URL)
+            }
         }
     }
     

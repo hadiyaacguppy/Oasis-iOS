@@ -33,5 +33,20 @@ extension Double {
         let divisor = pow(10.0, Double(places))
         return (self * divisor).rounded() / divisor
     }
+    var formattedAsDate : String? {
+        let date = Date(timeIntervalSince1970: self)
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = DateFormatter.Style.none //Set time style
+        dateFormatter.dateStyle = DateFormatter.Style.short //Set date style
+        return dateFormatter.string(from: date)
+    }
+    func dateFormatted(withFormat format : String) -> String{
+        let date = Date(timeIntervalSince1970: self)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        
+        
+        return dateFormatter.string(from: date)
+    }
     
 }

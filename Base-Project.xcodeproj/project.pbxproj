@@ -59,7 +59,60 @@
 		CF87EDA0201B6EF700562226 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87ED9F201B6EF700562226 /* BaseViewController.swift */; };
 		CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87EDA3201B8C2500562226 /* BaseTextField.swift */; };
 		CF8C5C9C20EF97AE00236C7B /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5C9B20EF97AE00236C7B /* BaseTableViewController.swift */; };
+		CF8C5C9E20EF9CA400236C7B /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5C9D20EF9CA400236C7B /* DatePickerDialog.swift */; };
+		CF8C5CA020EF9CCA00236C7B /* BaseTransparentNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5C9F20EF9CCA00236C7B /* BaseTransparentNavigationBar.swift */; };
+		CF8C5CA620EF9D2300236C7B /* FacebookLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5CA520EF9D2300236C7B /* FacebookLoginService.swift */; };
+		CF8C5CA820EF9D5400236C7B /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5CA720EF9D5400236C7B /* Bool+Extensions.swift */; };
+		CF8C5CAA20EF9D6700236C7B /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5CA920EF9D6700236C7B /* Int+Extensions.swift */; };
+		CF8C5CAC20EF9D7E00236C7B /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5CAB20EF9D7E00236C7B /* UICollectionView+Extensions.swift */; };
+		CF8C5CAE20EF9D8F00236C7B /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5CAD20EF9D8F00236C7B /* UIApplication+Extensions.swift */; };
+		CF8C5CB020EF9DC900236C7B /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5CAF20EF9DC900236C7B /* UIImage+Extensions.swift */; };
+		CF8C5CBF20EF9E7200236C7B /* SessionManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C5CB620EF9E7200236C7B /* SessionManager.framework */; };
+		CF8C5CC620EF9E7200236C7B /* SessionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5CC520EF9E7200236C7B /* SessionManagerTests.swift */; };
+		CF8C5CC820EF9E7200236C7B /* SessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CF8C5CB820EF9E7200236C7B /* SessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF8C5CCB20EF9E7200236C7B /* SessionManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C5CB620EF9E7200236C7B /* SessionManager.framework */; };
+		CF8C5CCD20EF9E7200236C7B /* SessionManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C5CB620EF9E7200236C7B /* SessionManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CF8C5CD520EF9E8700236C7B /* SessionManagerContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5CD420EF9E8700236C7B /* SessionManagerContants.swift */; };
+		CF8C5CD720EF9E9500236C7B /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5CD620EF9E9500236C7B /* SessionManager.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CF8C5CC020EF9E7200236C7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 112239091FD5C7AF00486528 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF8C5CB520EF9E7200236C7B;
+			remoteInfo = SessionManager;
+		};
+		CF8C5CC220EF9E7200236C7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 112239091FD5C7AF00486528 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 112239101FD5C7AF00486528;
+			remoteInfo = "Base-Project";
+		};
+		CF8C5CC920EF9E7200236C7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 112239091FD5C7AF00486528 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF8C5CB520EF9E7200236C7B;
+			remoteInfo = SessionManager;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CF8C5CCC20EF9E7200236C7B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CF8C5CCD20EF9E7200236C7B /* SessionManager.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0A6FC7C665C3EC115CF8C0BC /* Pods-Base-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project.release.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +174,22 @@
 		CF87ED9F201B6EF700562226 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CF87EDA3201B8C2500562226 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
 		CF8C5C9B20EF97AE00236C7B /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		CF8C5C9D20EF9CA400236C7B /* DatePickerDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerDialog.swift; sourceTree = "<group>"; };
+		CF8C5C9F20EF9CCA00236C7B /* BaseTransparentNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTransparentNavigationBar.swift; sourceTree = "<group>"; };
+		CF8C5CA520EF9D2300236C7B /* FacebookLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginService.swift; sourceTree = "<group>"; };
+		CF8C5CA720EF9D5400236C7B /* Bool+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extensions.swift"; sourceTree = "<group>"; };
+		CF8C5CA920EF9D6700236C7B /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		CF8C5CAB20EF9D7E00236C7B /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		CF8C5CAD20EF9D8F00236C7B /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		CF8C5CAF20EF9DC900236C7B /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		CF8C5CB620EF9E7200236C7B /* SessionManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SessionManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF8C5CB820EF9E7200236C7B /* SessionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SessionManager.h; sourceTree = "<group>"; };
+		CF8C5CB920EF9E7200236C7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF8C5CBE20EF9E7200236C7B /* SessionManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SessionManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF8C5CC520EF9E7200236C7B /* SessionManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagerTests.swift; sourceTree = "<group>"; };
+		CF8C5CC720EF9E7200236C7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF8C5CD420EF9E8700236C7B /* SessionManagerContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagerContants.swift; sourceTree = "<group>"; };
+		CF8C5CD620EF9E9500236C7B /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		F67502C09ED37847CBD63117 /* Pods-Base-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +206,22 @@
 				CF7BC66E1FD8F739008E80AC /* Moya.framework in Frameworks */,
 				CF7BC66F1FD8F739008E80AC /* ObjectMapper.framework in Frameworks */,
 				4B00E64AA8A0A7582597A76A /* Pods_Base_Project.framework in Frameworks */,
+				CF8C5CCB20EF9E7200236C7B /* SessionManager.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF8C5CB220EF9E7200236C7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF8C5CBB20EF9E7200236C7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF8C5CBF20EF9E7200236C7B /* SessionManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +235,7 @@
 				0F57539620EE19090069C139 /* LocationManager.swift */,
 				CF7BC67E1FD92169008E80AC /* PushService.swift */,
 				0F57539E20EE1EC90069C139 /* Relays.swift */,
+				CF8C5CA520EF9D2300236C7B /* FacebookLoginService.swift */,
 			);
 			path = "Managers & Services";
 			sourceTree = "<group>";
@@ -167,6 +253,7 @@
 		0FD65F1E20D01BE60075E251 /* UI+Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CF8C5CAF20EF9DC900236C7B /* UIImage+Extensions.swift */,
 				117C4AAD1FD864AD008BB445 /* UIView+Extensions.swift */,
 				117C4AAF1FD864DE008BB445 /* UILabel+Extensions.swift */,
 				117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */,
@@ -174,6 +261,8 @@
 				CF181BA1208099A0002603A1 /* UITextField+Extensions.swift */,
 				CF181BA320809E28002603A1 /* UIColor+Extensions.swift */,
 				0FD65F1A20D018730075E251 /* UIButton+Extensions.swift */,
+				CF8C5CAB20EF9D7E00236C7B /* UICollectionView+Extensions.swift */,
+				CF8C5CAD20EF9D8F00236C7B /* UIApplication+Extensions.swift */,
 			);
 			path = "UI+Extensions";
 			sourceTree = "<group>";
@@ -190,6 +279,8 @@
 			isa = PBXGroup;
 			children = (
 				112239131FD5C7AF00486528 /* Base-Project */,
+				CF8C5CB720EF9E7200236C7B /* SessionManager */,
+				CF8C5CC420EF9E7200236C7B /* SessionManagerTests */,
 				112239121FD5C7AF00486528 /* Products */,
 				8A6CF31932BE5291FACE8092 /* Frameworks */,
 				4EB46AC4F5A03B9A5DD78099 /* Pods */,
@@ -200,6 +291,8 @@
 			isa = PBXGroup;
 			children = (
 				112239111FD5C7AF00486528 /* Base-Project.app */,
+				CF8C5CB620EF9E7200236C7B /* SessionManager.framework */,
+				CF8C5CBE20EF9E7200236C7B /* SessionManagerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -260,6 +353,8 @@
 				117C4AB11FD864FD008BB445 /* String+Extensions.swift */,
 				0FD65F1820D018480075E251 /* Double+Extensions.swift */,
 				0FD65F1C20D01BBD0075E251 /* CGFloat+Extensions.swift */,
+				CF8C5CA720EF9D5400236C7B /* Bool+Extensions.swift */,
+				CF8C5CA920EF9D6700236C7B /* Int+Extensions.swift */,
 				0F57539420EE185F0069C139 /* Array+Extensions.swift */,
 			);
 			path = Extensions;
@@ -328,6 +423,8 @@
 				CF87EDA3201B8C2500562226 /* BaseTextField.swift */,
 				0F5753A020EE1F450069C139 /* TraingleView.swift */,
 				6754244C20EE7FF600783123 /* BaseNavigationController.swift */,
+				CF8C5C9D20EF9CA400236C7B /* DatePickerDialog.swift */,
+				CF8C5C9F20EF9CCA00236C7B /* BaseTransparentNavigationBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -353,7 +450,38 @@
 			path = Initial;
 			sourceTree = "<group>";
 		};
+		CF8C5CB720EF9E7200236C7B /* SessionManager */ = {
+			isa = PBXGroup;
+			children = (
+				CF8C5CB820EF9E7200236C7B /* SessionManager.h */,
+				CF8C5CB920EF9E7200236C7B /* Info.plist */,
+				CF8C5CD420EF9E8700236C7B /* SessionManagerContants.swift */,
+				CF8C5CD620EF9E9500236C7B /* SessionManager.swift */,
+			);
+			path = SessionManager;
+			sourceTree = "<group>";
+		};
+		CF8C5CC420EF9E7200236C7B /* SessionManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF8C5CC520EF9E7200236C7B /* SessionManagerTests.swift */,
+				CF8C5CC720EF9E7200236C7B /* Info.plist */,
+			);
+			path = SessionManagerTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CF8C5CB320EF9E7200236C7B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF8C5CC820EF9E7200236C7B /* SessionManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		112239101FD5C7AF00486528 /* Base-Project */ = {
@@ -368,15 +496,54 @@
 				98B7E6723CD6E9868C61C5B1 /* [CP] Embed Pods Frameworks */,
 				CF90C7FC2080AF8E00C3F025 /* ShellScript */,
 				DBE80BE5FA774825946A6557 /* [CP] Copy Pods Resources */,
+				CF8C5CCC20EF9E7200236C7B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CF8C5CCA20EF9E7200236C7B /* PBXTargetDependency */,
 			);
 			name = "Base-Project";
 			productName = "Base-Project";
 			productReference = 112239111FD5C7AF00486528 /* Base-Project.app */;
 			productType = "com.apple.product-type.application";
+		};
+		CF8C5CB520EF9E7200236C7B /* SessionManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF8C5CCE20EF9E7200236C7B /* Build configuration list for PBXNativeTarget "SessionManager" */;
+			buildPhases = (
+				CF8C5CB120EF9E7200236C7B /* Sources */,
+				CF8C5CB220EF9E7200236C7B /* Frameworks */,
+				CF8C5CB320EF9E7200236C7B /* Headers */,
+				CF8C5CB420EF9E7200236C7B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SessionManager;
+			productName = SessionManager;
+			productReference = CF8C5CB620EF9E7200236C7B /* SessionManager.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CF8C5CBD20EF9E7200236C7B /* SessionManagerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF8C5CD120EF9E7200236C7B /* Build configuration list for PBXNativeTarget "SessionManagerTests" */;
+			buildPhases = (
+				CF8C5CBA20EF9E7200236C7B /* Sources */,
+				CF8C5CBB20EF9E7200236C7B /* Frameworks */,
+				CF8C5CBC20EF9E7200236C7B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF8C5CC120EF9E7200236C7B /* PBXTargetDependency */,
+				CF8C5CC320EF9E7200236C7B /* PBXTargetDependency */,
+			);
+			name = SessionManagerTests;
+			productName = SessionManagerTests;
+			productReference = CF8C5CBE20EF9E7200236C7B /* SessionManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -384,13 +551,23 @@
 		112239091FD5C7AF00486528 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Tedmob;
 				TargetAttributes = {
 					112239101FD5C7AF00486528 = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
+					};
+					CF8C5CB520EF9E7200236C7B = {
+						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
+						ProvisioningStyle = Automatic;
+					};
+					CF8C5CBD20EF9E7200236C7B = {
+						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 112239101FD5C7AF00486528;
 					};
 				};
 			};
@@ -408,6 +585,8 @@
 			projectRoot = "";
 			targets = (
 				112239101FD5C7AF00486528 /* Base-Project */,
+				CF8C5CB520EF9E7200236C7B /* SessionManager */,
+				CF8C5CBD20EF9E7200236C7B /* SessionManagerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -420,6 +599,20 @@
 				112239221FD5C7B000486528 /* LaunchScreen.storyboard in Resources */,
 				1122391F1FD5C7B000486528 /* Assets.xcassets in Resources */,
 				1122391A1FD5C7AF00486528 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF8C5CB420EF9E7200236C7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF8C5CBC20EF9E7200236C7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,14 +722,19 @@
 				0F5753A120EE1F450069C139 /* TraingleView.swift in Sources */,
 				CF65435C201EF654004DE9C0 /* InitialConfigurator.swift in Sources */,
 				117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */,
+				CF8C5C9E20EF9CA400236C7B /* DatePickerDialog.swift in Sources */,
 				0FD65F1920D018480075E251 /* Double+Extensions.swift in Sources */,
 				0F57538E20EE12EB0069C139 /* Constants.swift in Sources */,
+				CF8C5CAC20EF9D7E00236C7B /* UICollectionView+Extensions.swift in Sources */,
+				CF8C5CA820EF9D5400236C7B /* Bool+Extensions.swift in Sources */,
+				CF8C5CB020EF9DC900236C7B /* UIImage+Extensions.swift in Sources */,
 				CF7BC67C1FD91E46008E80AC /* AppDelegate+FCM.swift in Sources */,
 				CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */,
 				CF654357201EF654004DE9C0 /* InitialPresenter.swift in Sources */,
 				117C4AB01FD864DE008BB445 /* UILabel+Extensions.swift in Sources */,
 				117C4AB21FD864FD008BB445 /* String+Extensions.swift in Sources */,
 				CF87EDA0201B6EF700562226 /* BaseViewController.swift in Sources */,
+				CF8C5CAA20EF9D6700236C7B /* Int+Extensions.swift in Sources */,
 				CF7BC6791FD91D83008E80AC /* ObservableType+ObjectMapper.swift in Sources */,
 				0FD65F1D20D01BBD0075E251 /* CGFloat+Extensions.swift in Sources */,
 				CF654359201EF654004DE9C0 /* InitialModels.swift in Sources */,
@@ -552,11 +750,14 @@
 				117C4AAB1FD86050008BB445 /* Utilities.swift in Sources */,
 				CF45F0C9201B42DF004A39E2 /* Async.swift in Sources */,
 				CF7823B720EF95C6003069BD /* APIError.swift in Sources */,
+				CF8C5CA620EF9D2300236C7B /* FacebookLoginService.swift in Sources */,
 				6754244D20EE7FF600783123 /* BaseNavigationController.swift in Sources */,
 				CF65435A201EF654004DE9C0 /* InitialViewController.swift in Sources */,
 				117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */,
 				CF181BA420809E28002603A1 /* UIColor+Extensions.swift in Sources */,
 				0F57539520EE185F0069C139 /* Array+Extensions.swift in Sources */,
+				CF8C5CAE20EF9D8F00236C7B /* UIApplication+Extensions.swift in Sources */,
+				CF8C5CA020EF9CCA00236C7B /* BaseTransparentNavigationBar.swift in Sources */,
 				0FD65F1520D014F40075E251 /* Reactive+Extensions.swift in Sources */,
 				CF181BA020809874002603A1 /* UINavigationBar+Extensions.swift in Sources */,
 				0F57539320EE16560069C139 /* R.generated.swift in Sources */,
@@ -568,7 +769,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CF8C5CB120EF9E7200236C7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF8C5CD720EF9E9500236C7B /* SessionManager.swift in Sources */,
+				CF8C5CD520EF9E8700236C7B /* SessionManagerContants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF8C5CBA20EF9E7200236C7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF8C5CC620EF9E7200236C7B /* SessionManagerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CF8C5CC120EF9E7200236C7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF8C5CB520EF9E7200236C7B /* SessionManager */;
+			targetProxy = CF8C5CC020EF9E7200236C7B /* PBXContainerItemProxy */;
+		};
+		CF8C5CC320EF9E7200236C7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 112239101FD5C7AF00486528 /* Base-Project */;
+			targetProxy = CF8C5CC220EF9E7200236C7B /* PBXContainerItemProxy */;
+		};
+		CF8C5CCA20EF9E7200236C7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF8C5CB520EF9E7200236C7B /* SessionManager */;
+			targetProxy = CF8C5CC920EF9E7200236C7B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		112239181FD5C7AF00486528 /* Main.storyboard */ = {
@@ -701,6 +937,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F67502C09ED37847CBD63117 /* Pods-Base-Project.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 924RDGY8WL;
@@ -721,6 +958,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0A6FC7C665C3EC115CF8C0BC /* Pods-Base-Project.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 924RDGY8WL;
@@ -734,6 +972,105 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		CF8C5CCF20EF9E7200236C7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 924RDGY8WL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SessionManager/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.SessionManager;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CF8C5CD020EF9E7200236C7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 924RDGY8WL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SessionManager/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.SessionManager;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CF8C5CD220EF9E7200236C7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 924RDGY8WL;
+				INFOPLIST_FILE = SessionManagerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.SessionManagerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Base-Project.app/Base-Project";
+			};
+			name = Debug;
+		};
+		CF8C5CD320EF9E7200236C7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 924RDGY8WL;
+				INFOPLIST_FILE = SessionManagerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.SessionManagerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Base-Project.app/Base-Project";
 			};
 			name = Release;
 		};
@@ -754,6 +1091,24 @@
 			buildConfigurations = (
 				1122393D1FD5C7B000486528 /* Debug */,
 				1122393E1FD5C7B000486528 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF8C5CCE20EF9E7200236C7B /* Build configuration list for PBXNativeTarget "SessionManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF8C5CCF20EF9E7200236C7B /* Debug */,
+				CF8C5CD020EF9E7200236C7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF8C5CD120EF9E7200236C7B /* Build configuration list for PBXNativeTarget "SessionManagerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF8C5CD220EF9E7200236C7B /* Debug */,
+				CF8C5CD320EF9E7200236C7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
