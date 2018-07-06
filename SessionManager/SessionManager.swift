@@ -57,6 +57,14 @@ public class SummerAppSessionManager {
             
         }
     }
+    
+    public var isFirstTime : Bool {
+        if !UserDefaults.standard.bool(forKey: SessionManagerConstants.UserDefaultKeys.firsTime) {
+            UserDefaults.standard.set(false , forKey: SessionManagerConstants.UserDefaultKeys.firsTime)
+            return true
+        }
+        return false
+    }
     public var userIsLoggedIn : Bool! {
         return  self.token != nil
     }

@@ -7,7 +7,7 @@ target 'Base-Project' do
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
   pod 'R.swift'
-
+  pod 'SwiftLocation', '~> 3.2.3'
 
 
 end

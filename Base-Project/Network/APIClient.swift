@@ -22,6 +22,7 @@ class  APIClient {
     init(){
         provider = MoyaProvider<BaseProjectService>()
         self.errorManager = APIErrorManager<APIError>()
+    
     }
     
     

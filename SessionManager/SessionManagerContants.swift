@@ -13,5 +13,6 @@ struct SessionManagerConstants  {
         static let usernameKey  = "usernameKey"
         //Just for some faking
         static let passwordKey = "timsetamp_user"
+        static let firsTime = "first_time"
     }
 }

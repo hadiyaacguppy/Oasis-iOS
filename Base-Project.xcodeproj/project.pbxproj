@@ -11,7 +11,7 @@
 		0F57539120EE13660069C139 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539020EE13660069C139 /* DataManager.swift */; };
 		0F57539320EE16560069C139 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539220EE16560069C139 /* R.generated.swift */; };
 		0F57539520EE185F0069C139 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539420EE185F0069C139 /* Array+Extensions.swift */; };
-		0F57539720EE19090069C139 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539620EE19090069C139 /* LocationManager.swift */; };
+		0F57539720EE19090069C139 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539620EE19090069C139 /* LocationService.swift */; };
 		0F57539B20EE19CD0069C139 /* BaseProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539A20EE19CD0069C139 /* BaseProjectService.swift */; };
 		0F57539D20EE1C430069C139 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539C20EE1C430069C139 /* APIClient.swift */; };
 		0F57539F20EE1EC90069C139 /* Relays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539E20EE1EC90069C139 /* Relays.swift */; };
@@ -120,7 +120,7 @@
 		0F57539020EE13660069C139 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		0F57539220EE16560069C139 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		0F57539420EE185F0069C139 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
-		0F57539620EE19090069C139 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		0F57539620EE19090069C139 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		0F57539A20EE19CD0069C139 /* BaseProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProjectService.swift; sourceTree = "<group>"; };
 		0F57539C20EE1C430069C139 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		0F57539E20EE1EC90069C139 /* Relays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Relays.swift; sourceTree = "<group>"; };
@@ -232,7 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				0F57539020EE13660069C139 /* DataManager.swift */,
-				0F57539620EE19090069C139 /* LocationManager.swift */,
+				0F57539620EE19090069C139 /* LocationService.swift */,
 				CF7BC67E1FD92169008E80AC /* PushService.swift */,
 				0F57539E20EE1EC90069C139 /* Relays.swift */,
 				CF8C5CA520EF9D2300236C7B /* FacebookLoginService.swift */,
@@ -647,6 +647,8 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -654,6 +656,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -743,7 +747,7 @@
 				112239151FD5C7AF00486528 /* AppDelegate.swift in Sources */,
 				117C4AAE1FD864AD008BB445 /* UIView+Extensions.swift in Sources */,
 				0F57539120EE13660069C139 /* DataManager.swift in Sources */,
-				0F57539720EE19090069C139 /* LocationManager.swift in Sources */,
+				0F57539720EE19090069C139 /* LocationService.swift in Sources */,
 				CF654358201EF654004DE9C0 /* InitialRouter.swift in Sources */,
 				CF7BC67F1FD92169008E80AC /* PushService.swift in Sources */,
 				CF8C5C9C20EF97AE00236C7B /* BaseTableViewController.swift in Sources */,

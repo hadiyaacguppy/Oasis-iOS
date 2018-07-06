@@ -14,6 +14,7 @@ import SystemConfiguration
 import MobileCoreServices
 
 struct Utilities  {
+    
     static func call(phoneNumber pn : String){
         guard let number = URL(string: "tel://" + pn) else { return }
         UIApplication.shared.open(number)
@@ -79,6 +80,7 @@ struct Utilities  {
         
     }
     
+    
     struct ViewControllers {
         
         static func redirectTo(viewWithIdentifier iden: String, fromStoryBoardWithName sname: String) {
@@ -126,9 +128,11 @@ struct Utilities  {
         }
     }
     struct GoogleMaps {
+        
         static func goToGoogleMapsNavigation(withLongitude long : Double , andLatitude lat : Double){
             goToGoogleMapsNavigation(withLongitude: Float(long), andLatitude: Float(lat))
         }
+       
         static func goToGoogleMapsNavigation(withLongitude long : Float , andLatitude lat : Float){
             if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
                 UIApplication.shared.openURL(NSURL(string:
@@ -141,7 +145,21 @@ struct Utilities  {
             }
         }
     }
-    
+    struct Enviroment {
+        var isProduction : Bool {
+            #if DEBUG
+            return false
+            #elseif ADHOC
+            return false
+            #else
+            return true
+            #endif
+        }
+        var isDebug : Bool {
+            return !isProduction
+        }
+        
+    }
     struct Location {
         enum LocationServiesAccessPermissionError : String, Error {
             case locationServicesNotEnabled  = "Please Enable Location Services"
@@ -242,6 +260,9 @@ struct Utilities  {
            return  UIScreen.main.bounds.size.height
         }
         
+        var width : CGFloat{
+            return  UIScreen.main.bounds.size.width
+        }
         var isIpad : Bool {
            return UIDevice.current.userInterfaceIdiom == .pad
         }
