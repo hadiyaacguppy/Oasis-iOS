@@ -17,7 +17,7 @@ extension Double {
         self =  self - 1
     }
     
-    func StringByRemoveTrailingZero() -> String{
+    func stringByRemoveTrailingZero() -> String{
         
         return String(format: "%g", self)
         
@@ -33,7 +33,8 @@ extension Double {
         let divisor = pow(10.0, Double(places))
         return (self * divisor).rounded() / divisor
     }
-    var formattedAsDate : String? {
+    
+    var dateFormatted : String? {
         let date = Date(timeIntervalSince1970: self)
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = DateFormatter.Style.none //Set time style

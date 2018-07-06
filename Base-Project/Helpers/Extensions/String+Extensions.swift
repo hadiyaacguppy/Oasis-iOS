@@ -8,15 +8,18 @@
 
 import Foundation
 extension String  :  Error{}
+
 extension String {
     
     
     func asURL() -> URL? {
         return URL(string: self)
+        
     }
     
     var localized: String {
         return NSLocalizedString(self, comment: "")
+        
     }
     
     /// Easy access to the count of characters
