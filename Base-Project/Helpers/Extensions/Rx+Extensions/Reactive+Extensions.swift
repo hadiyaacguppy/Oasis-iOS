@@ -17,11 +17,11 @@ extension Reactive where Base : UIButton {
     var isEnabledAndHighlighted : Binder<Bool>{
         return Binder(self.base) { (control, value) in
             if value {
-                (self.base as! UIButton).isEnabled = true
-                (self.base as! UIButton).alpha = 1.0
+                (self.base as UIButton).isEnabled = true
+                (self.base as UIButton).alpha = 1.0
             }else{
-                (self.base as! UIButton).isEnabled = false
-                (self.base as! UIButton).alpha = 0.5
+                (self.base as UIButton).isEnabled = false
+                (self.base as UIButton).alpha = 0.5
             }
         }
     }

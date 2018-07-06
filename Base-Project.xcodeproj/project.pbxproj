@@ -17,7 +17,6 @@
 		0F57539F20EE1EC90069C139 /* Relays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539E20EE1EC90069C139 /* Relays.swift */; };
 		0F5753A120EE1F450069C139 /* TraingleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5753A020EE1F450069C139 /* TraingleView.swift */; };
 		0FD65F1520D014F40075E251 /* Reactive+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD65F1420D014F40075E251 /* Reactive+Extensions.swift */; };
-		0FD65F1720D0177B0075E251 /* UIToolBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD65F1620D0177B0075E251 /* UIToolBar+Extensions.swift */; };
 		0FD65F1920D018480075E251 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD65F1820D018480075E251 /* Double+Extensions.swift */; };
 		0FD65F1B20D018730075E251 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD65F1A20D018730075E251 /* UIButton+Extensions.swift */; };
 		0FD65F1D20D01BBD0075E251 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD65F1C20D01BBD0075E251 /* CGFloat+Extensions.swift */; };
@@ -43,6 +42,8 @@
 		CF65435A201EF654004DE9C0 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF654354201EF654004DE9C0 /* InitialViewController.swift */; };
 		CF65435B201EF654004DE9C0 /* InitialInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF654355201EF654004DE9C0 /* InitialInteractor.swift */; };
 		CF65435C201EF654004DE9C0 /* InitialConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF654356201EF654004DE9C0 /* InitialConfigurator.swift */; };
+		CF7823B420EF95A7003069BD /* APIErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7823B320EF95A7003069BD /* APIErrorManager.swift */; };
+		CF7823B720EF95C6003069BD /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7823B620EF95C6003069BD /* APIError.swift */; };
 		CF7BC66A1FD8F739008E80AC /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7BC6641FD8F739008E80AC /* RxCocoa.framework */; };
 		CF7BC66B1FD8F739008E80AC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7BC6651FD8F739008E80AC /* Alamofire.framework */; };
 		CF7BC66C1FD8F739008E80AC /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7BC6661FD8F739008E80AC /* RxMoya.framework */; };
@@ -57,6 +58,7 @@
 		CF87ED9E201B5FF300562226 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF87ED9D201B5FF300562226 /* SVProgressHUD.framework */; };
 		CF87EDA0201B6EF700562226 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87ED9F201B6EF700562226 /* BaseViewController.swift */; };
 		CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87EDA3201B8C2500562226 /* BaseTextField.swift */; };
+		CF8C5C9C20EF97AE00236C7B /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5C9B20EF97AE00236C7B /* BaseTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,7 +73,6 @@
 		0F57539E20EE1EC90069C139 /* Relays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Relays.swift; sourceTree = "<group>"; };
 		0F5753A020EE1F450069C139 /* TraingleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraingleView.swift; sourceTree = "<group>"; };
 		0FD65F1420D014F40075E251 /* Reactive+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extensions.swift"; sourceTree = "<group>"; };
-		0FD65F1620D0177B0075E251 /* UIToolBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIToolBar+Extensions.swift"; sourceTree = "<group>"; };
 		0FD65F1820D018480075E251 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		0FD65F1A20D018730075E251 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		0FD65F1C20D01BBD0075E251 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
@@ -103,6 +104,8 @@
 		CF654354201EF654004DE9C0 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		CF654355201EF654004DE9C0 /* InitialInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialInteractor.swift; sourceTree = "<group>"; };
 		CF654356201EF654004DE9C0 /* InitialConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialConfigurator.swift; sourceTree = "<group>"; };
+		CF7823B320EF95A7003069BD /* APIErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorManager.swift; sourceTree = "<group>"; };
+		CF7823B620EF95C6003069BD /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		CF7BC6641FD8F739008E80AC /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		CF7BC6651FD8F739008E80AC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		CF7BC6661FD8F739008E80AC /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/iOS/RxMoya.framework; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 		CF87ED9D201B5FF300562226 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		CF87ED9F201B6EF700562226 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CF87EDA3201B8C2500562226 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
+		CF8C5C9B20EF97AE00236C7B /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		F67502C09ED37847CBD63117 /* Pods-Base-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,18 +154,12 @@
 			path = "Managers & Services";
 			sourceTree = "<group>";
 		};
-		0F57539820EE19AE0069C139 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		0F57539920EE19BD0069C139 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				0F57539A20EE19CD0069C139 /* BaseProjectService.swift */,
 				0F57539C20EE1C430069C139 /* APIClient.swift */,
+				CF7823B320EF95A7003069BD /* APIErrorManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -171,7 +169,6 @@
 			children = (
 				117C4AAD1FD864AD008BB445 /* UIView+Extensions.swift */,
 				117C4AAF1FD864DE008BB445 /* UILabel+Extensions.swift */,
-				0FD65F1620D0177B0075E251 /* UIToolBar+Extensions.swift */,
 				117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */,
 				CF181B9F20809874002603A1 /* UINavigationBar+Extensions.swift */,
 				CF181BA1208099A0002603A1 /* UITextField+Extensions.swift */,
@@ -210,8 +207,8 @@
 		112239131FD5C7AF00486528 /* Base-Project */ = {
 			isa = PBXGroup;
 			children = (
+				CF7823B520EF95BC003069BD /* Models */,
 				0F57539920EE19BD0069C139 /* Network */,
-				0F57539820EE19AE0069C139 /* Models */,
 				0F57538F20EE13570069C139 /* Managers & Services */,
 				CF87EDA2201B8BEB00562226 /* Views */,
 				117C4AA81FD86028008BB445 /* Helpers */,
@@ -296,6 +293,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CF7823B520EF95BC003069BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CF7823B620EF95C6003069BD /* APIError.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		CF7BC6731FD91D75008E80AC /* Moya + Object Mapper */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				CF87ED9F201B6EF700562226 /* BaseViewController.swift */,
+				CF8C5C9B20EF97AE00236C7B /* BaseTableViewController.swift */,
 				CF87EDA3201B8C2500562226 /* BaseTextField.swift */,
 				0F5753A020EE1F450069C139 /* TraingleView.swift */,
 				6754244C20EE7FF600783123 /* BaseNavigationController.swift */,
@@ -361,6 +367,7 @@
 				CF7BC6701FD8F75D008E80AC /* ShellScript */,
 				98B7E6723CD6E9868C61C5B1 /* [CP] Embed Pods Frameworks */,
 				CF90C7FC2080AF8E00C3F025 /* ShellScript */,
+				DBE80BE5FA774825946A6557 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -495,6 +502,21 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"";
 		};
+		DBE80BE5FA774825946A6557 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -526,8 +548,10 @@
 				0F57539720EE19090069C139 /* LocationManager.swift in Sources */,
 				CF654358201EF654004DE9C0 /* InitialRouter.swift in Sources */,
 				CF7BC67F1FD92169008E80AC /* PushService.swift in Sources */,
+				CF8C5C9C20EF97AE00236C7B /* BaseTableViewController.swift in Sources */,
 				117C4AAB1FD86050008BB445 /* Utilities.swift in Sources */,
 				CF45F0C9201B42DF004A39E2 /* Async.swift in Sources */,
+				CF7823B720EF95C6003069BD /* APIError.swift in Sources */,
 				6754244D20EE7FF600783123 /* BaseNavigationController.swift in Sources */,
 				CF65435A201EF654004DE9C0 /* InitialViewController.swift in Sources */,
 				117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */,
@@ -539,8 +563,8 @@
 				CF7BC6781FD91D83008E80AC /* Response+ObjectMapper.swift in Sources */,
 				CF7BC6771FD91D83008E80AC /* Single+ObjectMapper.swift in Sources */,
 				CF65435B201EF654004DE9C0 /* InitialInteractor.swift in Sources */,
-				0FD65F1720D0177B0075E251 /* UIToolBar+Extensions.swift in Sources */,
 				0F57539D20EE1C430069C139 /* APIClient.swift in Sources */,
+				CF7823B420EF95A7003069BD /* APIErrorManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,26 +10,28 @@ import Foundation
 
 struct Constants {
     
-    static let countryCodes : [String] = ["961"]
-    static let baseURl : String = "https://google.com"
     
-    static let  APIStatusCode : [String : String] = [
-        ///Examples
-        "101" : "Invalid Pin Code",
-        "102" : "Account Already Verified",
-        "103" : "Invalid Token"
-    ]
     
-    struct  ServerURLs {
-        
+    
+    struct Network {
+        static let baseURl : String = "https://google.com"
+        static let SessionTokenExpiredCode = -777
+        static let  APIStatusCode : [String : String] = [
+            ///Examples
+            "101" : "Invalid Pin Code",
+            "102" : "Account Already Verified",
+            "103" : "Invalid Token"
+        ]
     }
+    
+    
     
     struct Colors {
         
     }
     
     struct UserDefaultsKeys {
-
+        
     }
     
     struct DictionaryKeys {
@@ -41,7 +43,7 @@ struct Constants {
     }
     
     struct ControllersIdentifiers {
-
+        
     }
     
     struct SegueIdentifiers {
@@ -49,7 +51,7 @@ struct Constants {
     }
     
     struct  NSTimerIntervals {
-
+        
     }
     
 }

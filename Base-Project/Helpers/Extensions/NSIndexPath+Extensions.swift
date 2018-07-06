@@ -11,11 +11,12 @@ import Foundation
 extension IndexPath {
     
 
-    func increment() -> IndexPath {
+    var incremented : IndexPath{
         return IndexPath(item: (self as NSIndexPath).row + 1, section: (self as NSIndexPath).section)
     }
+   
     
-    func decrement() -> IndexPath {
+    var decremented : IndexPath{
         return IndexPath(item: (self as NSIndexPath).row - 1, section: (self as NSIndexPath).section)
     }
 }

@@ -68,7 +68,7 @@ class BaseNavigationController: UINavigationController {
 extension BaseNavigationController: UINavigationControllerDelegate {
     
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-        guard let swipeNavigationController = navigationController as? SwipableNavigationController else { return }
+        guard let swipeNavigationController = navigationController as? BaseNavigationController else { return }
         
         swipeNavigationController.duringPushAnimation = false
     }

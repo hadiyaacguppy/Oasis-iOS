@@ -14,6 +14,7 @@ import UserNotifications
 class PushService {
     
     var fcmToken : Variable<String?> = Variable(nil)
+    
     static let shared = PushService()
     
     func handlerDidReceivePush(withUserInfo : [AnyHashable : Any]){
