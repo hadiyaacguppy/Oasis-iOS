@@ -40,9 +40,13 @@ struct Utilities  {
             }
         }
         
-        static func showSimpleAlertView(_ title: String, message: String, withPresneter presenter: UIViewController, withCompletionHandler handler: (() -> Void)?) {
+        static func showSimpleAlertView(_ title: String, message: String, withPresneter presenter: UIViewController, withCompletionHandler handler: (() -> Void)? ,andDismissHandler dimiss :  (() -> Void)? = nil ) {
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: NSLocalizedString("Dismiss", comment: ""), style: .default, handler: nil))
+            
+            
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default) { action in 
+                 dimiss?()
+            })
             OperationQueue.main.addOperation {
                 presenter.present(alertController, animated: true) {
                     handler?()
