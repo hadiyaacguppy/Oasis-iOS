@@ -7,8 +7,6 @@
 //
 
 import Foundation
-
-import UIKit
 import RxSwift
 
 class BaseTableViewController : UITableViewController {
@@ -59,7 +57,6 @@ class BaseTableViewController : UITableViewController {
         self.navigationController?.navigationItem.backBarButtonItem = nil
         let backButton = UIBarButtonItem(title: " ", style: .plain, target: self, action: #selector(self.backButtonTapped))
         backButton.tintColor = UIColor.red
-        
         if deviceLang!.contains("ar"){
             backButton.image = UIImage(named: "NavBackiconAR")!.withRenderingMode(.alwaysOriginal)
         }else {
@@ -127,4 +124,3 @@ class BaseTableViewController : UITableViewController {
         
     }
 }
-
