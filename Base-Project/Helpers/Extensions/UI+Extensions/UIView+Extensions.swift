@@ -35,6 +35,15 @@ extension UIView {
             self.layer.borderWidth = newValue
         }
     }
+    @IBInspectable
+    var rounded : Bool {
+        get {
+            return self.layer.cornerRadius == self.frame.width / 2
+        }
+        set {
+            self.layer.cornerRadius = newValue ? self.frame.width / 2 : 0
+        }
+    }
     
     @IBInspectable
     var  dropShadow : Bool  {
