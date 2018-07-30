@@ -36,6 +36,7 @@
 		67290A00210E440700632C4F /* PlaceHolderView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672909FF210E440700632C4F /* PlaceHolderView+Extensions.swift */; };
 		67290A02210E441400632C4F /* PlaceHolderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67290A01210E441400632C4F /* PlaceHolderHelper.swift */; };
 		6754244D20EE7FF600783123 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6754244C20EE7FF600783123 /* BaseNavigationController.swift */; };
+		CF0598EC210F154F00C2645F /* TDPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0598EB210F154F00C2645F /* TDPicker.swift */; };
 		CF181BA020809874002603A1 /* UINavigationBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF181B9F20809874002603A1 /* UINavigationBar+Extensions.swift */; };
 		CF181BA2208099A0002603A1 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF181BA1208099A0002603A1 /* UITextField+Extensions.swift */; };
 		CF181BA420809E28002603A1 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF181BA320809E28002603A1 /* UIColor+Extensions.swift */; };
@@ -155,6 +156,7 @@
 		96BA0D1007DC66F24CD1D64E /* Pods_Base_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Base_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E33F06E417414D3283B2A5 /* Pods-Base-ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-ProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Base-ProjectTests/Pods-Base-ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C65CEF44A2A6134604793718 /* Pods-Base-ProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-ProjectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Base-ProjectUITests/Pods-Base-ProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CF0598EB210F154F00C2645F /* TDPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDPicker.swift; sourceTree = "<group>"; };
 		CF181B9F20809874002603A1 /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extensions.swift"; sourceTree = "<group>"; };
 		CF181BA1208099A0002603A1 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		CF181BA320809E28002603A1 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
@@ -445,6 +447,7 @@
 				6754244C20EE7FF600783123 /* BaseNavigationController.swift */,
 				CF8C5C9D20EF9CA400236C7B /* DatePickerDialog.swift */,
 				CF8C5C9F20EF9CCA00236C7B /* BaseTransparentNavigationBar.swift */,
+				CF0598EB210F154F00C2645F /* TDPicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -515,7 +518,6 @@
 				CF7BC6701FD8F75D008E80AC /* ShellScript */,
 				98B7E6723CD6E9868C61C5B1 /* [CP] Embed Pods Frameworks */,
 				CF90C7FC2080AF8E00C3F025 /* ShellScript */,
-				DBE80BE5FA774825946A6557 /* [CP] Copy Pods Resources */,
 				CF8C5CCC20EF9E7200236C7B /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -669,6 +671,7 @@
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/TDPicker/TDPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -678,6 +681,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TDPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -719,21 +723,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"";
 		};
-		DBE80BE5FA774825946A6557 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -742,6 +731,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF181BA2208099A0002603A1 /* UITextField+Extensions.swift in Sources */,
+				CF0598EC210F154F00C2645F /* TDPicker.swift in Sources */,
 				0FD65F1B20D018730075E251 /* UIButton+Extensions.swift in Sources */,
 				0F5753A120EE1F450069C139 /* TraingleView.swift in Sources */,
 				CF65435C201EF654004DE9C0 /* InitialConfigurator.swift in Sources */,

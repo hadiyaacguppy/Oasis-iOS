@@ -331,18 +331,8 @@ public class PlaceHolderView: UIView {
     
 }
 
-extension UIView{
-    
-    var rounded : Bool {
-        get {
-            return self.layer.cornerRadius == self.frame.width / 2
-        }
-        set {
-            self.layer.cornerRadius = newValue ? self.frame.width / 2 : 0
-        }
-    }
-    
-}
+
+
 extension PlaceHolderView {
     
     

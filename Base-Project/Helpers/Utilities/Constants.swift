@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 struct Constants {
     
     
@@ -23,7 +23,7 @@ struct Constants {
     
     
     struct Colors {
-        
+        static let appColor : UIColor  = .white
     }
     
     struct UserDefaultsKeys {
