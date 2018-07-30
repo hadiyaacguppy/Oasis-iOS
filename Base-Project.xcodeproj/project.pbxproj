@@ -31,6 +31,10 @@
 		117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB31FD8652B008BB445 /* NSIndexPath+Extensions.swift */; };
 		117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */; };
 		4B00E64AA8A0A7582597A76A /* Pods_Base_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BA0D1007DC66F24CD1D64E /* Pods_Base_Project.framework */; };
+		672909FC210E43EA00632C4F /* PlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672909FB210E43EA00632C4F /* PlaceHolderView.swift */; };
+		672909FE210E43F900632C4F /* PlaceHolderCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672909FD210E43F900632C4F /* PlaceHolderCreator.swift */; };
+		67290A00210E440700632C4F /* PlaceHolderView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672909FF210E440700632C4F /* PlaceHolderView+Extensions.swift */; };
+		67290A02210E441400632C4F /* PlaceHolderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67290A01210E441400632C4F /* PlaceHolderHelper.swift */; };
 		6754244D20EE7FF600783123 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6754244C20EE7FF600783123 /* BaseNavigationController.swift */; };
 		CF181BA020809874002603A1 /* UINavigationBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF181B9F20809874002603A1 /* UINavigationBar+Extensions.swift */; };
 		CF181BA2208099A0002603A1 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF181BA1208099A0002603A1 /* UITextField+Extensions.swift */; };
@@ -143,6 +147,10 @@
 		117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPageViewController+Extensions.swift"; sourceTree = "<group>"; };
 		509696D7EE45B0E48C61927E /* Pods-Base-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-ProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Base-ProjectTests/Pods-Base-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		5F0CB28320C7D9C3EA885DBF /* Pods-Base-ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-ProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Base-ProjectUITests/Pods-Base-ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		672909FB210E43EA00632C4F /* PlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderView.swift; sourceTree = "<group>"; };
+		672909FD210E43F900632C4F /* PlaceHolderCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderCreator.swift; sourceTree = "<group>"; };
+		672909FF210E440700632C4F /* PlaceHolderView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaceHolderView+Extensions.swift"; sourceTree = "<group>"; };
+		67290A01210E441400632C4F /* PlaceHolderHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderHelper.swift; sourceTree = "<group>"; };
 		6754244C20EE7FF600783123 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		96BA0D1007DC66F24CD1D64E /* Pods_Base_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Base_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E33F06E417414D3283B2A5 /* Pods-Base-ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-ProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Base-ProjectTests/Pods-Base-ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -300,6 +308,7 @@
 		112239131FD5C7AF00486528 /* Base-Project */ = {
 			isa = PBXGroup;
 			children = (
+				672909FA210E43C900632C4F /* PlaceHolder  */,
 				CF7823B520EF95BC003069BD /* Models */,
 				0F57539920EE19BD0069C139 /* Network */,
 				0F57538F20EE13570069C139 /* Managers & Services */,
@@ -371,6 +380,17 @@
 				C65CEF44A2A6134604793718 /* Pods-Base-ProjectUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		672909FA210E43C900632C4F /* PlaceHolder  */ = {
+			isa = PBXGroup;
+			children = (
+				672909FB210E43EA00632C4F /* PlaceHolderView.swift */,
+				672909FD210E43F900632C4F /* PlaceHolderCreator.swift */,
+				672909FF210E440700632C4F /* PlaceHolderView+Extensions.swift */,
+				67290A01210E441400632C4F /* PlaceHolderHelper.swift */,
+			);
+			path = "PlaceHolder ";
 			sourceTree = "<group>";
 		};
 		8A6CF31932BE5291FACE8092 /* Frameworks */ = {
@@ -729,15 +749,18 @@
 				CF8C5C9E20EF9CA400236C7B /* DatePickerDialog.swift in Sources */,
 				0FD65F1920D018480075E251 /* Double+Extensions.swift in Sources */,
 				0F57538E20EE12EB0069C139 /* Constants.swift in Sources */,
+				67290A00210E440700632C4F /* PlaceHolderView+Extensions.swift in Sources */,
 				CF8C5CAC20EF9D7E00236C7B /* UICollectionView+Extensions.swift in Sources */,
 				CF8C5CA820EF9D5400236C7B /* Bool+Extensions.swift in Sources */,
 				CF8C5CB020EF9DC900236C7B /* UIImage+Extensions.swift in Sources */,
 				CF7BC67C1FD91E46008E80AC /* AppDelegate+FCM.swift in Sources */,
 				CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */,
 				CF654357201EF654004DE9C0 /* InitialPresenter.swift in Sources */,
+				672909FE210E43F900632C4F /* PlaceHolderCreator.swift in Sources */,
 				117C4AB01FD864DE008BB445 /* UILabel+Extensions.swift in Sources */,
 				117C4AB21FD864FD008BB445 /* String+Extensions.swift in Sources */,
 				CF87EDA0201B6EF700562226 /* BaseViewController.swift in Sources */,
+				67290A02210E441400632C4F /* PlaceHolderHelper.swift in Sources */,
 				CF8C5CAA20EF9D6700236C7B /* Int+Extensions.swift in Sources */,
 				CF7BC6791FD91D83008E80AC /* ObservableType+ObjectMapper.swift in Sources */,
 				0FD65F1D20D01BBD0075E251 /* CGFloat+Extensions.swift in Sources */,
@@ -757,6 +780,7 @@
 				CF8C5CA620EF9D2300236C7B /* FacebookLoginService.swift in Sources */,
 				6754244D20EE7FF600783123 /* BaseNavigationController.swift in Sources */,
 				CF65435A201EF654004DE9C0 /* InitialViewController.swift in Sources */,
+				672909FC210E43EA00632C4F /* PlaceHolderView.swift in Sources */,
 				117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */,
 				CF181BA420809E28002603A1 /* UIColor+Extensions.swift in Sources */,
 				0F57539520EE185F0069C139 /* Array+Extensions.swift in Sources */,

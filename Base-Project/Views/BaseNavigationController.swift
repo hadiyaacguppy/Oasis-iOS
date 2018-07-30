@@ -84,7 +84,7 @@ extension BaseNavigationController: UINavigationControllerDelegate {
 
 // MARK: - UIGestureRecognizerDelegate
 
-extension BaseNavigationController: UIGestureRecognizerDelegate {
+extension BaseNavigationController {
     
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         guard gestureRecognizer == interactivePopGestureRecognizer else {
