@@ -41,8 +41,6 @@ It's also going to include a Utilities file with functions that are commonly use
 
 - [X] Gather Extensions from team
 
-- [ ] **Document Everything **
-
 - [ ] Nib File of common views
 
 - [ ] Integrate MBProgressHUD
@@ -55,6 +53,17 @@ It's also going to include a Utilities file with functions that are commonly use
 
 - [X] Multiple Targets
 
+- [ ] BaseViewController Empty PlaceHolders
+
+- [ ] OneSignal
+
+- [ ] Realtime input validation
+
+- [ ] Base Registration View Controller
+
+- [ ] Change Password View Controller
+
+- [ ] Documentation
 
 
 ### Steps to use
