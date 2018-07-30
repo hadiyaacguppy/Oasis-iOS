@@ -59,6 +59,9 @@ extension String {
     var utf8Encoded: Data {
         return self.data(using: .utf8)!
     }
+    var toAttributed : NSAttributedString {
+        return NSAttributedString(string: self)
+    }
     var isValidEmail : Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         
