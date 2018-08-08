@@ -51,6 +51,7 @@
 		CF56472B211B18050092EFBD /* PushParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF56472A211B18050092EFBD /* PushParser.swift */; };
 		CF56472D211B1B740092EFBD /* Reactive+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF56472C211B1B740092EFBD /* Reactive+UIImageView.swift */; };
 		CF56472F211B1BA50092EFBD /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF56472E211B1BA50092EFBD /* UIImageView+Extensions.swift */; };
+		CF564731211B1C910092EFBD /* InputValidationExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF564730211B1C910092EFBD /* InputValidationExpression.swift */; };
 		CF654357201EF654004DE9C0 /* InitialPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF654351201EF654004DE9C0 /* InitialPresenter.swift */; };
 		CF654358201EF654004DE9C0 /* InitialRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF654352201EF654004DE9C0 /* InitialRouter.swift */; };
 		CF654359201EF654004DE9C0 /* InitialModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF654353201EF654004DE9C0 /* InitialModels.swift */; };
@@ -198,6 +199,7 @@
 		CF56472A211B18050092EFBD /* PushParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushParser.swift; sourceTree = "<group>"; };
 		CF56472C211B1B740092EFBD /* Reactive+UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reactive+UIImageView.swift"; sourceTree = "<group>"; };
 		CF56472E211B1BA50092EFBD /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		CF564730211B1C910092EFBD /* InputValidationExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidationExpression.swift; sourceTree = "<group>"; };
 		CF654351201EF654004DE9C0 /* InitialPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialPresenter.swift; sourceTree = "<group>"; };
 		CF654352201EF654004DE9C0 /* InitialRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialRouter.swift; sourceTree = "<group>"; };
 		CF654353201EF654004DE9C0 /* InitialModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialModels.swift; sourceTree = "<group>"; };
@@ -400,6 +402,7 @@
 				CF45F0C8201B42DF004A39E2 /* Async.swift */,
 				117C4AAA1FD86050008BB445 /* Utilities.swift */,
 				0F57538D20EE12EB0069C139 /* Constants.swift */,
+				CF564730211B1C910092EFBD /* InputValidationExpression.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -919,6 +922,7 @@
 				CF181BA420809E28002603A1 /* UIColor+Extensions.swift in Sources */,
 				0F57539520EE185F0069C139 /* Array+Extensions.swift in Sources */,
 				CF8C5CAE20EF9D8F00236C7B /* UIApplication+Extensions.swift in Sources */,
+				CF564731211B1C910092EFBD /* InputValidationExpression.swift in Sources */,
 				CF8C5CA020EF9CCA00236C7B /* BaseTransparentNavigationBar.swift in Sources */,
 				0FD65F1520D014F40075E251 /* Reactive+UIButton.swift in Sources */,
 				CF181BA020809874002603A1 /* UINavigationBar+Extensions.swift in Sources */,

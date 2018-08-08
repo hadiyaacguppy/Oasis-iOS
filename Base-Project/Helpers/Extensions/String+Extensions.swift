@@ -60,6 +60,10 @@ extension String {
     var toAttributed : NSAttributedString {
         return NSAttributedString(string: self)
     }
+    func validate(withExpression expr : InputValidationExpression) -> Bool{
+        let test = NSPredicate(format:"SELF MATCHES %@", expr.rawValue)
+        return test.evaluate(with: self)
+    }
 
 }
 
