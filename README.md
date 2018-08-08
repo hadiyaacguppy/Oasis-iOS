@@ -45,7 +45,7 @@ It's also going to include a Utilities file with functions that are commonly use
 - [ ] Integrate MBProgressHUD
 
 - [ ] Paginatable TableView
--
+
 - [ ] Sample Views ( Loading Button, Animatable Label..)
 
 - [X] R.Swift Integration
