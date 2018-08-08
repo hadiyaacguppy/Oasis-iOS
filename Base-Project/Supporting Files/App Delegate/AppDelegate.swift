@@ -17,14 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
+    var oneSignalAppId : String = ""
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         print("Base Project Version 0.1.1")
-        //Uncomment to initiate Firebase
-        //self.configureFirebaseApp()
-        //self.setFCMMessagingDelegate()
-        //self.registerForPush(withApplication: application)
-        
+        OneSignalPushService.shared.initializeOneSignal(withLaunchOptions: launchOptions, andAppID: oneSignalAppId)
         return true
     }
 

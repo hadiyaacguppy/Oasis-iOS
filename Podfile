@@ -5,10 +5,16 @@ target 'Base-Project' do
   # Pods for Base-Project
   use_frameworks!
   pod 'Firebase/Core'
-  pod 'Firebase/Messaging'
   pod 'R.swift'
   pod 'SwiftLocation', '~> 3.2.3'
   pod 'TDPicker'
-
-
+  pod 'OneSignal', '>= 2.6.2', '< 3.0'
 end
+
+
+
+target 'OneSignalNotificationServiceExtension' do
+  use_frameworks!
+    pod 'OneSignal', '>= 2.6.2', '< 3.0'
+end
+
