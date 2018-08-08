@@ -54,7 +54,7 @@ It's also going to include a Utilities file with functions that are commonly use
 
 - [ ] BaseViewController Empty PlaceHolders
 
-- [ ] OneSignal
+- [X] OneSignal
 
 - [ ] Realtime input validation
 
