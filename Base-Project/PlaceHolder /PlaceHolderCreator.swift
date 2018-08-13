@@ -15,20 +15,8 @@ extension UIViewController: UIGestureRecognizerDelegate{
     struct AssociatedKeys {
         static var kPlaceHolderView = "placeHolderView"
         static var kConfigurePlaceHolderView = "configurePlaceHolderView"
-        static var koriginalView = "originalView"
     }
     
-    private
-    var originalView : UIView?{
-        get{
-            return objc_getAssociatedObject(self, &AssociatedKeys.koriginalView) as? UIView
-        }
-        
-        set{
-            objc_setAssociatedObject(self, &AssociatedKeys.koriginalView, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            
-        }
-    }
     
     private
     var configurePlaceHolderView: ((PlaceHolderView) -> Void)? {
@@ -99,8 +87,8 @@ extension UIViewController: UIGestureRecognizerDelegate{
         if let view = placeHolderView {
             
             if view.superview == nil {
-                self.originalView = self.view
-                self.view = placeHolderView
+                self.view.addSubview(view)
+                self.view.bringSubview(toFront: view)
             }
             
             // Removing view resetting the view and its constraints it very important to guarantee a good state
@@ -127,11 +115,10 @@ extension UIViewController: UIGestureRecognizerDelegate{
         
         if let view = placeHolderView{
             view.prepareForReuse()
-            // view.removeFromSuperview()
             placeHolderView = nil
-            
+            view.removeFromSuperview()
+            self.view.layoutIfNeeded()
         }
-        self.view = getOriginalView()
         
     }
     
@@ -140,10 +127,6 @@ extension UIViewController: UIGestureRecognizerDelegate{
         self.placeHolderView?.isHidden = true
     }
     
-    private
-    func getOriginalView() -> UIView?{
-        return originalView
-    }
     
     func updatePlaceHolder(titleLabel title : NSAttributedString? = nil,
                            detailDescription  description : NSAttributedString? = nil,
@@ -167,17 +150,3 @@ extension UIViewController: UIGestureRecognizerDelegate{
     
     
 }
-
-
-struct PlaceHolderConfigurator{
-
-    var title : String?
-
-
-
-
-
-
-}
-
-

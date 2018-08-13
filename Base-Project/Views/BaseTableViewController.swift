@@ -14,6 +14,8 @@ class BaseTableViewController : UITableViewController {
     
     
     var disposeBag : DisposeBag = DisposeBag()
+    typealias MethodHandler = ()  -> Void
+    
     override
     func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -125,3 +127,104 @@ class BaseTableViewController : UITableViewController {
         
     }
 }
+//MARK: PlaceHolderView helper
+extension BaseTableViewController{
+    
+    func showNoInternetConnectionView(withButtonAction buttonTapped : @escaping MethodHandler){
+        self.placeHolderView {  view in
+            
+            //Title
+            view.titleLabelString(PlaceHolderHelper.setTitle(withtext: "No internet connection",
+                                                             andFont: .boldSystemFont(ofSize: 16),
+                                                             andTextColor: .blue)
+            )
+            
+            //Detail
+            //  view.detailLabelString(PlaceHolderHelper.setTitle(withtext: "No internet connection"))
+            
+            view.setButtonBackgroundColor(.blue)
+            view.buttonCornerRadius(5)
+            view.buttonTitle(PlaceHolderHelper.setButtonTitle(forState: .normal,
+                                                              andText: "TRY AGAIN",
+                                                              withTextColor: .white,
+                                                              andFont: .boldSystemFont(ofSize : 14)),
+                             for: .normal)
+            //image
+            view.image(R.image.offline())
+            
+            //General View Properties
+            view.isScrollAllowed(false)
+            view.isTouchAllowed(true)
+            view.dataSetBackgroundColor(.white)
+            
+            //Actions
+            view.didTapContentView {
+                print("PlaceHolder content view was tapped!")
+            }
+            view.didTapDataButton {
+                buttonTapped()
+            }
+            
+        }
+        
+        
+    }
+    
+    func showLoadingView(withTitle title : String){
+        self.placeHolderView {  view in
+            
+            //Title
+            view.titleLabelString(PlaceHolderHelper.setTitle(withtext: title,
+                                                             andFont: .boldSystemFont(ofSize: 16),
+                                                             andTextColor: .blue)
+            )
+            
+            //Detail
+            view.detailLabelString(PlaceHolderHelper.setTitle(withtext: "Please wait.."))
+            
+            //Progress
+            view.mustShowProgress(true)
+            view.shouldStartAnimatingProgress(true)
+            
+            //General View Properties
+            view.isScrollAllowed(false)
+            view.isTouchAllowed(true)
+            view.dataSetBackgroundColor(.white)
+            
+        }
+        
+    }
+    
+    func showPlaceHolderView(withTitle title : String,
+                             andDescription description : String? = nil,
+                             andImage image : UIImage? = nil,
+                             withRetryAction retryTapped : MethodHandler? = nil){
+        self.placeHolderView {  view in
+            
+            //Title
+            view.titleLabelString(PlaceHolderHelper.setTitle(withtext: title,
+                                                             andFont: .boldSystemFont(ofSize: 16),
+                                                             andTextColor: .blue)
+            )
+            
+            //Detail
+            view.detailLabelString(PlaceHolderHelper.setDetailDescription(withtext: description))
+            
+            //image
+            view.image(image)
+            
+            //General View Properties
+            view.isScrollAllowed(false)
+            view.isTouchAllowed(true)
+            view.dataSetBackgroundColor(.white)
+            
+            view.didTapDataButton{
+                retryTapped?()
+            }
+            
+        }
+        
+    }
+    
+}
+
