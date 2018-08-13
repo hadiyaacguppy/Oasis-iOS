@@ -135,7 +135,6 @@ public class PlaceHolderView: UIView {
             }
         }
     }
-    var config : PlaceHolderConfigurator?
     private var fadeInOnDisplay = false
     private var verticalOffset: CGFloat = 0
     private var verticalSpace: CGFloat = 11
@@ -195,7 +194,8 @@ public class PlaceHolderView: UIView {
         button.setBackgroundImage(nil, for: .normal)
         button.setBackgroundImage(nil, for: .highlighted)
         customView = nil
-        
+        isScrollAllowed(true)
+        isTouchAllowed(true)
         removeAllConstraints()
     }
     
@@ -410,14 +410,14 @@ extension PlaceHolderView {
     }
     
     /*
-    @discardableResult
-    public func setButtonSize(_ size : CGSize?) -> Self{
-        if size != nil {
-            button.frame.size = size!
-        }
-        return self
-    }
-    */
+     @discardableResult
+     public func setButtonSize(_ size : CGSize?) -> Self{
+     if size != nil {
+     button.frame.size = size!
+     }
+     return self
+     }
+     */
     
     @discardableResult
     public func isButtonRounded(_ rounded : Bool?) -> Self{

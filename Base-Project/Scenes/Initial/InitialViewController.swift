@@ -32,7 +32,8 @@ class InitialViewController: BaseViewController, InitialViewControllerInput {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      output?.viewDidFinishedLoading()
+        output?.viewDidFinishedLoading()
+//        showLoadingView(withTitle: "Getting Items")
     }
     
     // MARK: Requests
@@ -55,6 +56,6 @@ extension InitialViewController: InitialPresenterOutput {
 
 //MARK: PlaceHolder Views
 extension InitialViewController{
-
-
+    
+    
 }
