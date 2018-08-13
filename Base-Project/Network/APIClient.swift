@@ -17,33 +17,35 @@ class  APIClient {
     
     
     private let provider : MoyaProvider<BaseProjectService>!
-    var errorManager : APIErrorManager<APIError>
     
     init(){
         provider = MoyaProvider<BaseProjectService>()
-        self.errorManager = APIErrorManager<APIError>()
-    
+        
+        
     }
     
     
     // MARK : - Others
     ///Example
+    
     /*
-     func setPush(pushId: String) -> Observable<Void>{
-     return Observable.create({ observer in
-     _ = self.provider.rx.request(.setPush(pushId: pushId))
-     .subscribe(onSuccess: { (response) in
-     observer.onNext(())
-     observer.onCompleted()
+    func setPush(pushId: String) -> Observable<Void>{
+        return Observable.create({ observer in
+            _ = self.provider.rx.request(.setPush(pushId: pushId))
+                .subscribe(onSuccess: { (response) in
+                    observer.onNext(())
+                    observer.onCompleted()
      
-     },onError: { (error) in
-     observer.onError(self.getErrorMessageFromData(passedError: error)!)
-     })
-     return Disposables.create {
-     print(#function + "Disposed")
-     }
-     })
-     }
-     */
+                },onError: { (error) in
+                    let clientError = error.errorResponse
+                    observer.onError(clientError)
+                })
+            return Disposables.create {
+                print(#function + "Disposed")
+            }
+        })
+    }
+    */
+    
 }
 
