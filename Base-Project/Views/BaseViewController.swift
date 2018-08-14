@@ -29,7 +29,7 @@ class BaseViewController : UIViewController {
         addBackButton()
     }
     
-    func showLoading(){
+    func showLoadingProgess(){
         Utilities.ProgressHUD.showLoading(withMessage: "Loading".localized)
     }
     func display(successMessage msg : String){
@@ -131,22 +131,25 @@ class BaseViewController : UIViewController {
 //MARK: PlaceHolderView helper
 extension BaseViewController{
     
-    func showNoInternetConnectionView(withButtonAction buttonTapped : @escaping MethodHandler){
+    func showNoInternetConnectionView(withTitle title : String? = "No internet connection".localized,
+                                      andDescription description : String? = nil,
+                                      retryButtonTitle buttonTitle : String? = "TRY AGAIN".localized,
+                                      withButtonAction buttonTapped : @escaping MethodHandler){
         self.placeHolderView {  view in
             
             //Title
-            view.titleLabelString(PlaceHolderHelper.setTitle(withtext: "No internet connection",
+            view.titleLabelString(PlaceHolderHelper.setTitle(withtext: title,
                                                              andFont: .boldSystemFont(ofSize: 16),
                                                              andTextColor: .blue)
             )
             
-            //Detail
-            //  view.detailLabelString(PlaceHolderHelper.setTitle(withtext: "No internet connection"))
+            //            Detail
+            view.detailLabelString(PlaceHolderHelper.setTitle(withtext: description))
             
             view.setButtonBackgroundColor(.blue)
             view.buttonCornerRadius(5)
             view.buttonTitle(PlaceHolderHelper.setButtonTitle(forState: .normal,
-                                                              andText: "TRY AGAIN",
+                                                              andText: buttonTitle,
                                                               withTextColor: .white,
                                                               andFont: .boldSystemFont(ofSize : 14)),
                              for: .normal)
@@ -171,7 +174,8 @@ extension BaseViewController{
         
     }
     
-    func showLoadingView(withTitle title : String){
+    func showLoadingView(withTitle title : String? = nil,
+                         andDescription description : String? = nil){
         self.placeHolderView {  view in
             
             //Title
@@ -181,7 +185,7 @@ extension BaseViewController{
             )
             
             //Detail
-            view.detailLabelString(PlaceHolderHelper.setTitle(withtext: "Please wait.."))
+            view.detailLabelString(PlaceHolderHelper.setTitle(withtext: description))
             
             //Progress
             view.mustShowProgress(true)

@@ -27,9 +27,11 @@ class BaseTableViewController : UITableViewController {
         addBackButton()
         
     }
-    func showLoading(){
+    
+    func showLoadingProgess(){
         Utilities.ProgressHUD.showLoading(withMessage: "Loading".localized)
     }
+    
     func display(successMessage msg : String){
         Utilities.ProgressHUD.showSuccess(withMessage: msg)
     }
@@ -37,9 +39,11 @@ class BaseTableViewController : UITableViewController {
     func display(errorMessage msg : String ){
         Utilities.ProgressHUD.showError(withMessage: msg)
     }
+    
     func dismissProgress(){
         Utilities.ProgressHUD.dismissLoading()
     }
+    
     func setTitle( _ title : String?){
         self.title = title
     }
@@ -95,12 +99,15 @@ class BaseTableViewController : UITableViewController {
         self.present(viewController, animated: true  , completion: nil)
         
     }
+    
     func showLoading(withMessage msg : String){
         Utilities.ProgressHUD.showLoading(withMessage: msg.localized)
     }
+    
     func removeProgress() {
         Utilities.ProgressHUD.dismissLoading()
     }
+    
     @objc func dismissButtonTapped(){
         self.dismiss(animated: true , completion: nil)
     }
@@ -130,22 +137,26 @@ class BaseTableViewController : UITableViewController {
 //MARK: PlaceHolderView helper
 extension BaseTableViewController{
     
-    func showNoInternetConnectionView(withButtonAction buttonTapped : @escaping MethodHandler){
+    func showNoInternetConnectionView(withTitle title : String? = "No internet connection".localized,
+                                      andDescription description : String? = nil,
+                                      retryButtonTitle buttonTitle : String? = "TRY AGAIN".localized,
+                                      withRetryAction buttonTapped : @escaping MethodHandler){
+        
         self.placeHolderView {  view in
             
             //Title
-            view.titleLabelString(PlaceHolderHelper.setTitle(withtext: "No internet connection",
+            view.titleLabelString(PlaceHolderHelper.setTitle(withtext: title,
                                                              andFont: .boldSystemFont(ofSize: 16),
                                                              andTextColor: .blue)
             )
             
             //Detail
-            //  view.detailLabelString(PlaceHolderHelper.setTitle(withtext: "No internet connection"))
+            view.detailLabelString(PlaceHolderHelper.setTitle(withtext: description))
             
             view.setButtonBackgroundColor(.blue)
             view.buttonCornerRadius(5)
             view.buttonTitle(PlaceHolderHelper.setButtonTitle(forState: .normal,
-                                                              andText: "TRY AGAIN",
+                                                              andText: buttonTitle,
                                                               withTextColor: .white,
                                                               andFont: .boldSystemFont(ofSize : 14)),
                              for: .normal)
@@ -170,7 +181,8 @@ extension BaseTableViewController{
         
     }
     
-    func showLoadingView(withTitle title : String){
+    func showLoadingView(withTitle title : String? = nil,
+                         andDescription description : String? = nil){
         self.placeHolderView {  view in
             
             //Title
@@ -180,7 +192,7 @@ extension BaseTableViewController{
             )
             
             //Detail
-            view.detailLabelString(PlaceHolderHelper.setTitle(withtext: "Please wait.."))
+            view.detailLabelString(PlaceHolderHelper.setTitle(withtext: description))
             
             //Progress
             view.mustShowProgress(true)
@@ -227,4 +239,7 @@ extension BaseTableViewController{
     }
     
 }
+
+
+
 
