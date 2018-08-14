@@ -11,8 +11,8 @@ import UIKit
 import MapKit
 import SVProgressHUD
 import SystemConfiguration
-import MobileCoreServices
 
+import MessageUI
 struct Utilities  {
     
     static func call(phoneNumber pn : String){
@@ -25,7 +25,41 @@ struct Utilities  {
             UIApplication.shared.open(url , options: [:], completionHandler: nil)
         }
     }
+    
+    static func sendThirdPartyEmails(To to : String , subject s : String , content con : String){
+        
+        if UIApplication.shared.canOpenURL(URL(string: "googlegmail:///")!) {
+            UIApplication.shared.open(URL(string: "googlegmail:///co?su bject=\(s)&body=\(con)&to=\(to)")!)
+            
+        }else  if UIApplication.shared.canOpenURL(URL(string: "ms-outlook://")!){
+            UIApplication.shared.open(URL(string: "ms-outlook://compose?to=\(to)&subject=\(s)&body=\(con)")!)
+            
+        }else if UIApplication.shared.canOpenURL(URL(string: "readdle-spark://")!){
+            UIApplication.shared.open(URL(string: "readdle-spark://compose?subject=\(s)&body=\(con)&recipient=\(to)")!)
+            
+        } else if UIApplication.shared.canOpenURL(URL(string: "inbox-gmail://")!) {
+            UIApplication.shared.open(URL(string: "inbox-gmail://co?to=\(to)&subject=\(s)&body=\(con)")!)
+        }
+        
 
+    }
+    
+    static func sendEmail(To to : String , subject s : String , content con : String,withPresentingViewController vc : UIViewController){
+        guard MFMailComposeViewController.canSendMail() else {
+            self.sendThirdPartyEmails(To: to, subject: s, content: con)
+            return
+        }
+        let composeVC = MFMailComposeViewController()
+        composeVC.mailComposeDelegate = vc as! MFMailComposeViewControllerDelegate
+        // Configure the fields of the interface.
+        composeVC.setToRecipients([to])
+        composeVC.setSubject(s)
+        composeVC.setMessageBody(con, isHTML: true)
+        // Present the view controller modally.
+        vc.present(composeVC, animated: true, completion: nil)
+        
+        
+    }
     
     struct AlertViews {
         static func showAlertView(_ title: String, message: String, actions: [UIAlertAction], withPresenter presenter: UIViewController, withCompletionHandler handler: (() -> Void)?) {
