@@ -30,6 +30,7 @@
 		117C4AB21FD864FD008BB445 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB11FD864FD008BB445 /* String+Extensions.swift */; };
 		117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB31FD8652B008BB445 /* NSIndexPath+Extensions.swift */; };
 		117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */; };
+		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
 		3E5EECD3211B0EF8008AE39D /* (null) in Sources */ = {isa = PBXBuildFile; };
 		3E5EECD5211B0F5A008AE39D /* (null) in Sources */ = {isa = PBXBuildFile; };
 		3E5EECD9211B159E008AE39D /* (null) in Frameworks */ = {isa = PBXBuildFile; };
@@ -174,6 +175,7 @@
 		117C4AB31FD8652B008BB445 /* NSIndexPath+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSIndexPath+Extensions.swift"; sourceTree = "<group>"; };
 		117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPageViewController+Extensions.swift"; sourceTree = "<group>"; };
 		22C3C119E084FE2B0FF3C34F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+		3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
 		509696D7EE45B0E48C61927E /* Pods-Base-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-ProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Base-ProjectTests/Pods-Base-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		5F0CB28320C7D9C3EA885DBF /* Pods-Base-ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-ProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Base-ProjectUITests/Pods-Base-ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		672909FB210E43EA00632C4F /* PlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderView.swift; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 				CF8C5CA720EF9D5400236C7B /* Bool+Extensions.swift */,
 				CF8C5CA920EF9D6700236C7B /* Int+Extensions.swift */,
 				0F57539420EE185F0069C139 /* Array+Extensions.swift */,
+				3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -931,6 +934,7 @@
 				CF7BC6771FD91D83008E80AC /* Single+ObjectMapper.swift in Sources */,
 				CF65435B201EF654004DE9C0 /* InitialInteractor.swift in Sources */,
 				0F57539D20EE1C430069C139 /* APIClient.swift in Sources */,
+				3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */,
 				CF7823B420EF95A7003069BD /* APIErrorManager.swift in Sources */,
 				CF56472B211B18050092EFBD /* PushParser.swift in Sources */,
 			);
