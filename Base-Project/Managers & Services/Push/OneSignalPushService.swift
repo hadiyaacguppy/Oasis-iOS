@@ -13,55 +13,6 @@ import RxSwift
 
 
 
-struct NotificationPayloadReceivedObject {
-    
-    /* Unique Message Identifier */
-    public private(set) var notificationId : String?
-    
-    /* True when the key content-available is set to 1 in the aps payload.
-     content-available is used to wake your app when the payload is received.
-     See Apple's documenation for more details.
-     https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623013-application
-     */
-    public private(set) var contentAvailable : String?
-    
-    /* True when the key mutable-content is set to 1 in the aps payload.
-     mutable-content is used to wake your Notification Service Extension to modify a notification.
-     See Apple's documenation for more details.
-     https://developer.apple.com/documentation/usernotifications/unnotificationserviceextension
-     */
-    public private(set) var mutableContent : String?
-    
-    /* The badge assigned to the application icon */
-    public private(set) var badge : UInt?
-    public private(set) var badgeIncrement : Int?
-    
-    /* The sound parameter passed to the notification
-     By default set to UILocalNotificationDefaultSoundName */
-    public private(set) var sound : String?
-    
-    /* Main push content */
-    public private(set) var title : String?
-    public private(set) var subtitle : String?
-    public private(set) var body : String?
-    
-    /* Web address to launch within the app via a UIWebView */
-    public private(set) var launchURL : String?
-    
-    /* Additional key value properties set within the payload */
-    public private(set) var additionalData : [AnyHashable : Any]?
-    
-    /* iOS 10+ : Attachments sent as part of the rich notification */
-    public private(set) var attachments : String?
-    
-    /* Action buttons passed */
-    public private(set) var actionButtons : String?
-    
-    /* Holds the original payload received
-     Keep the raw value for users that would like to root the push */
-    public private(set) var rawPayload : String?
-    
-}
 
 
 struct NotificationPayload  {
@@ -108,6 +59,7 @@ final class OneSignalPushService: NSObject{
     }
     
     var notificationsIsAllowed : Bool = false
+    var receivedNotifications : Array<OSNotification> = Array<OSNotification>()
     
     
     
@@ -122,11 +74,12 @@ final class OneSignalPushService: NSObject{
         
         
         let  notificationReceivedBlock : OSHandleNotificationReceivedBlock = { notification in
-            //TODO:
+            self.receivedNotifications.append(notification!)
             
         }
         
         let notificationOpenedBlock: OSHandleNotificationActionBlock = { result in
+
             self.setupNotificationAction(withResult: result)
         }
         
@@ -182,6 +135,7 @@ extension OneSignalPushService{
     
     func setupNotificationAction(withResult result : OSNotificationOpenedResult?){
         
+        
         let payload = NotificationPayload(payload: result?.notification.payload, wasShown: result?.notification.wasShown  , wasAppInFocus: result?.notification.wasAppInFocus, isSilentNotification: result?.notification.isSilentNotification )
         
         
@@ -211,8 +165,9 @@ extension OneSignalPushService{
         }
         
         
-        if let additionalData = self.payLoadMessage?.payload?.additionalData{
-            PushParser.shared.handlerDidReceivePush(withUserInfo: additionalData)
+        if let payload = self.payLoadMessage {
+            PushParser.shared.handlerDidReceivePush(withPayload: payload)
+            self.payLoadMessage = nil
         }
         
         
@@ -229,6 +184,7 @@ extension OneSignalPushService{
     }
     
     func removeNotification(forId id : String){
+        self.receivedNotifications.removeNotification(Withid: id)
         center.removeDeliveredNotifications(withIdentifiers: [id])
     }
     
@@ -244,3 +200,13 @@ extension OneSignalPushService{
 }
 
 //TODO : Deep Link
+extension Array where Element == OSNotification {
+    mutating func removeNotification(Withid id : String){
+        for  (index , element) in self.enumerated() {
+            if element.payload.notificationID == id {
+                self.remove(at: index)
+                break
+            }
+        }
+    }
+}
