@@ -1,7 +1,7 @@
 
 
 
-## > urlEscaped
+## urlEscaped
 convert the string into url escaped string
 ```swift
 	 var urlEscaped: String {
@@ -9,7 +9,7 @@ convert the string into url escaped string
     }
 ```
 
-## > toAttributed
+## toAttributed
 converts a `String` to `NSAttributedString`
 
 ```swift 
@@ -20,7 +20,7 @@ converts a `String` to `NSAttributedString`
 ```
 
 
-## > inSensitiveCompare
+## inSensitiveCompare
 Compares 2 strings ignoring case sensitivity
 
 ```swift 
