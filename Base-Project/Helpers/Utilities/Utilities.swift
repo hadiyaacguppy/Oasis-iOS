@@ -11,8 +11,9 @@ import UIKit
 import MapKit
 import SVProgressHUD
 import SystemConfiguration
-
+import RxSwift
 import MessageUI
+
 struct Utilities  {
     
     static func call(phoneNumber pn : String){
@@ -339,9 +340,28 @@ struct Utilities  {
       
     }
     
-
-
+    
+    struct Timer{
+        
+        /// A simple count down timer using RxSwift
+        ///
+        /// - Parameters:
+        ///   - from: Start value
+        ///   - to: end value
+        /// - Returns: Observable of the countDown
+        func countDown(from: Int,
+                       to: Int,
+                       interval : Double)
+            -> Observable<Int> {
+                return Observable<Int>
+                    .timer( 1, period: interval, scheduler: MainScheduler.instance)
+                    .take(from - to + 1)
+                    .map { from - $0 }
+        }
+    }
+    
 }
+
 
 
 
