@@ -74,6 +74,9 @@ final class OneSignalPushService: NSObject{
         
         
         let  notificationReceivedBlock : OSHandleNotificationReceivedBlock = { notification in
+            guard notification != nil else {
+                return
+            }
             self.receivedNotifications.append(notification!)
             
         }
