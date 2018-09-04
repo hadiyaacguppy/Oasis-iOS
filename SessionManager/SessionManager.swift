@@ -8,12 +8,12 @@
 
 import Foundation
 
-public class SummerAppSessionManager {
+public class SessionManager {
     
     public init(){
         
     }
-    public static let shared = SummerAppSessionManager()
+    public static let shared = SessionManager()
     
     public var token : String? {
         get {

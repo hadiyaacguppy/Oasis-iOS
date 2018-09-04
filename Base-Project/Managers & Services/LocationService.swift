@@ -41,7 +41,6 @@ class LocationService {
         
         Locator.subscribeSignificantLocations(onUpdate: { newLocation in
             self.currentPosition = newLocation
-            self.locationDidChangeSignificantly.onNext(newLocation)
         }) { (err, lastLocation) -> (Void) in
             
         }

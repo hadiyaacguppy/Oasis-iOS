@@ -16,3 +16,4 @@ Pods/
 Carthage/Build
 Carthage/
 Podfile.lock
+build
