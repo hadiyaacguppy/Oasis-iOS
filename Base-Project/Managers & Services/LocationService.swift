@@ -20,11 +20,13 @@ class LocationService {
     
     var locationDidChange : ReplaySubject<CLLocation> =  ReplaySubject<CLLocation>.create(bufferSize: 10)
     
-    var locationDidChangeSignificantly : ReplaySubject<CLLocation> =  ReplaySubject<CLLocation>.create(bufferSize: 10)
+    
     
     var currentPosition : CLLocation?
     
-    private var locationSubscription : LocationRequest!
+    private
+    var locationSubscription : LocationRequest!
+    
     init() {
         _ = Locator.events.listen{ self.authorizationStatus.onNext($0) }
         
@@ -53,8 +55,8 @@ class LocationService {
     func requestWhenInUse(){
         Locator.requestAuthorizationIfNeeded(.whenInUse)
     }
+    
     func stop(){
-        
         locationSubscription.stop()
     }
     
