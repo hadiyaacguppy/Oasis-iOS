@@ -64,6 +64,46 @@ extension String {
         let test = NSPredicate(format:"SELF MATCHES %@", expr.rawValue)
         return test.evaluate(with: self)
     }
+    
+    
+    /// This function will return the id of any valid youtube link
+    ///
+    /// - Returns: Video Id
+    mutating
+    func getYoutubeVideoId()
+        -> String? {
+            //Step 1: First remove the spaces if exist, since the url will not be valid
+            self = self.trimmingCharacters(in: .whitespaces)
+            /* Step 2:
+             Here we get the component of the given URL, it's GREAT in Lebanese in how it works!read about it.
+             First we try to get the queryItems
+             For examples :
+             http://www.youtube.com/watch?v=XXXXXXXXXXX the queryItems is v=XXXXXXXXXXX (after the `?` question mark)
+             http://www.youtube.com/watch?v=XXXXXXXXXXX&feature=youtu.be the queryItems are v=XXXXXXXXXXX and feature=youtu.be
+             */
+            
+            /*
+             Step 3:
+             get the first item where the item name is v, youtube videos start with 'v' letter before the id
+             */
+            
+            /*
+             Step 4:
+             If this returned nil this mean that the url given is short url
+             so to get the id, it will be in the path after back slah "\"
+             */
+            
+            //That's it.:)
+            guard let value = URLComponents(string: self)?
+                .queryItems?
+                .first(where: { $0.name == "v" })?
+                .value else{
+                    return URLComponents(string: self)?
+                        .path
+                        .replacingOccurrences(of: "/", with: "")
+            }
+            return value
+    }
 
 }
 
