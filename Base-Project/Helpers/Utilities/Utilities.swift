@@ -302,7 +302,114 @@ struct Utilities  {
             }
         }
     }
-    
+    struct Web {
+        
+        /// Present an action sheet that displays the browser's app that can open the given link
+        ///
+        /// - Parameter url: the string that represent the url top be openned.
+        static func openLink(forURL url : String){
+            guard let urlToOpen = URL(string: url)  else { return }
+            
+            let actionSheet = UIAlertController(title: "Where do you want to open it".localized,
+                                                message: "",
+                                                preferredStyle: .actionSheet)
+            
+            if UIApplication.shared.canOpenURL(urlToOpen) {
+                actionSheet.addAction(UIAlertAction(title: "Safari".localized,
+                                                    style: .default,
+                                                    handler: {
+                                                        (alert: UIAlertAction!) -> Void in
+                                                        UIApplication.shared.open(URL(string: url)!,
+                                                                                  options: [:],
+                                                                                  completionHandler: nil)
+                }))
+            }
+            
+            var chromeSchema : String?
+            var chromeURL : URL?
+            
+            var fireFoxSchema : String?
+            var fireFoxURL : URL?
+            
+            var operaSchema : String?
+            var operaURL : URL?
+            
+            if urlToOpen.isHTTPSSchema{
+                chromeSchema = URLSchemas.Browsers.securedChrome.rawValue
+                fireFoxSchema = URLSchemas.Browsers.securedFireFox.rawValue
+                operaSchema = URLSchemas.Browsers.securedOpera.rawValue
+                
+            }else{
+                chromeSchema = URLSchemas.Browsers.notSecuredChrome.rawValue
+                fireFoxSchema = URLSchemas.Browsers.notSecuredFireFox.rawValue
+                operaSchema = URLSchemas.Browsers.notSecuredOpera.rawValue
+            }
+            
+            
+            if chromeSchema != nil {
+                if let host  = urlToOpen.host{
+                    chromeURL = URL(string:chromeSchema! + host)
+                    if chromeURL != nil {
+                        if UIApplication.shared.canOpenURL(chromeURL!) {
+                            actionSheet.addAction(UIAlertAction(title: "Chrome".localized,
+                                                                style: .default,
+                                                                handler: {
+                                                                    (alert: UIAlertAction!) -> Void in
+                                                                    UIApplication.shared.open(chromeURL!,
+                                                                                              options: [:],
+                                                                                              completionHandler: nil)
+                            }))
+                        }
+                    }
+                }
+                
+            }
+            
+            if fireFoxSchema != nil {
+                if let host = urlToOpen.host{
+                    fireFoxURL = URL(string: fireFoxSchema! + host)
+                    if fireFoxURL != nil{
+                        if UIApplication.shared.canOpenURL(fireFoxURL!) {
+                            actionSheet.addAction(UIAlertAction(title: "Fire Fox".localized,
+                                                                style: .default,
+                                                                handler: {
+                                                                    (alert: UIAlertAction!) -> Void in
+                                                                    UIApplication.shared.open(fireFoxURL!,
+                                                                                              options: [:],
+                                                                                              completionHandler: nil)
+                            }))
+                        }
+                    }
+                }
+            }
+            
+            
+            if operaSchema != nil {
+                if let host = urlToOpen.host{
+                    operaURL = URL(string: operaSchema! + host)
+                    if operaURL != nil{
+                        if UIApplication.shared.canOpenURL(operaURL!) {
+                            actionSheet.addAction(UIAlertAction(title: "Opera".localized,
+                                                                style: .default,
+                                                                handler: {
+                                                                    (alert: UIAlertAction!) -> Void in
+                                                                    UIApplication.shared.open(operaURL!,
+                                                                                              options: [:],
+                                                                                              completionHandler: nil)
+                            }))
+                        }
+                    }
+                }
+            }
+            
+            actionSheet.addAction(UIAlertAction(title: "Cancel".localized,
+                                                style: .cancel,
+                                                handler: nil))
+            
+            guard let topViewController = UIApplication.topViewController() else { return }
+            topViewController.present(actionSheet, animated: true, completion: nil)
+        }
+    }
     // MARK: - Device Structure
     /// Helper functions to detect current device, screen sizes, debug or release, iOS Version and more..
     struct Device {
