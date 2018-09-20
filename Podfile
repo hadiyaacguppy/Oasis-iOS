@@ -7,7 +7,7 @@ target 'Base-Project' do
   pod 'Firebase/Core'
   pod 'R.swift'
   pod 'SwiftLocation', '~> 3.2.3'
-  pod 'TDPicker'
+  pod 'CZPicker'
   pod 'OneSignal', '>= 2.6.2', '< 3.0'
 end
 

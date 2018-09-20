@@ -7,12 +7,11 @@
 //
 
 import Foundation
-import TDPicker
+import CZPicker
 
-
-class TDPicker  :NSObject ,  TDPickerViewDelegate , TDPickerViewDataSource {
+class TDPicker  :NSObject ,  CZPickerViewDelegate , CZPickerViewDataSource {
     
-    var picker : TDPickerView?
+    var picker : CZPickerView?
     
     var allOptionsTitle : String = "All".localized
     
@@ -25,12 +24,9 @@ class TDPicker  :NSObject ,  TDPickerViewDelegate , TDPickerViewDataSource {
     var titleForRow : ((_ row : Int) -> String)!
     
     var didSelectRow : (( _ row : Int) -> ())?
-    
     var imageForRow : ((_ row : Int) -> UIImage?)?
     
-    var headerBackgroundColor : UIColor = Constants.Colors.appColor
-    
-    func numberOfRows(in pickerView: TDPickerView!) -> Int {
+    func numberOfRows(in pickerView: CZPickerView!) -> Int {
         
         if shouldAddAllOptionsCell  {
             return numberOfRows() + 1
@@ -39,7 +35,7 @@ class TDPicker  :NSObject ,  TDPickerViewDelegate , TDPickerViewDataSource {
         }
     }
     
-    func tdPickerView(_ pickerView: TDPickerView!,
+    func czpickerView(_ pickerView: CZPickerView!,
                       titleForRow row: Int) -> String! {
         
         if shouldAddAllOptionsCell, row == 0  {
@@ -49,13 +45,13 @@ class TDPicker  :NSObject ,  TDPickerViewDelegate , TDPickerViewDataSource {
         }
         
     }
-   
-    func tdPickerView(_ pickerView: TDPickerView!,
+    
+    func czpickerView(_ pickerView: CZPickerView!,
                       didConfirmWithItemAtRow row: Int) {
         didSelectRow?(row)
         
     }
-    func tdPickerView(_ pickerView: TDPickerView!, imageForRow row: Int) -> UIImage! {
+    func czpickerView(_ pickerView: CZPickerView!, imageForRow row: Int) -> UIImage! {
         if self.imageForRow != nil {
             return imageForRow!(row) ?? UIImage()
         }
@@ -67,7 +63,7 @@ class TDPicker  :NSObject ,  TDPickerViewDelegate , TDPickerViewDataSource {
          confirmButtonTitle confirm: String = "" ,
          andCancelButtonTitle  cancel : String = "" ) {
         super.init()
-        picker = TDPickerView(headerTitle: title, cancelButtonTitle: confirm, confirmButtonTitle: cancel)
+        picker = CZPickerView(headerTitle: title, cancelButtonTitle: confirm, confirmButtonTitle: cancel)
         picker?.delegate = self
         picker?.dataSource = self
         configUI()
@@ -75,18 +71,19 @@ class TDPicker  :NSObject ,  TDPickerViewDelegate , TDPickerViewDataSource {
     
     override init() {
         super.init()
-        picker = TDPickerView(headerTitle: "", cancelButtonTitle: "", confirmButtonTitle: "")
+        picker = CZPickerView(headerTitle: "", cancelButtonTitle: "", confirmButtonTitle: "")
         picker?.delegate = self
         picker?.dataSource = self
         configUI()
     }
     
     func configUI(){
-        picker?.headerBackgroundColor = headerBackgroundColor
+        picker?.headerBackgroundColor = .red
         picker?.needFooterView = false
         picker?.confirmButtonNormalColor = .white
         picker?.cancelButtonNormalColor =  .white
-
+        picker?.confirmButtonBackgroundColor = .red
+        picker?.confirmButtonBackgroundColor = .red
     }
     
     func show(){
