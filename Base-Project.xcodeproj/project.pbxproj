@@ -30,6 +30,7 @@
 		117C4AB21FD864FD008BB445 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB11FD864FD008BB445 /* String+Extensions.swift */; };
 		117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB31FD8652B008BB445 /* NSIndexPath+Extensions.swift */; };
 		117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */; };
+		16CE4041215D7249002634C7 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CE4040215D7249002634C7 /* Bundle+Extensions.swift */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
 		3E5EECD3211B0EF8008AE39D /* (null) in Sources */ = {isa = PBXBuildFile; };
 		3E5EECD5211B0F5A008AE39D /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -175,6 +176,7 @@
 		117C4AB11FD864FD008BB445 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		117C4AB31FD8652B008BB445 /* NSIndexPath+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSIndexPath+Extensions.swift"; sourceTree = "<group>"; };
 		117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPageViewController+Extensions.swift"; sourceTree = "<group>"; };
+		16CE4040215D7249002634C7 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		22C3C119E084FE2B0FF3C34F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
 		3E772DF421410050001306AB /* Optional+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
@@ -250,7 +252,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E5EECD9211B159E008AE39D /* BuildFile in Frameworks */,
+				3E5EECD9211B159E008AE39D /* (null) in Frameworks */,
 				CF7BC66A1FD8F739008E80AC /* RxCocoa.framework in Frameworks */,
 				CF7BC66B1FD8F739008E80AC /* Alamofire.framework in Frameworks */,
 				CF87ED9E201B5FF300562226 /* SVProgressHUD.framework in Frameworks */,
@@ -426,6 +428,7 @@
 				0F57539420EE185F0069C139 /* Array+Extensions.swift */,
 				3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */,
 				3E772DF421410050001306AB /* Optional+Extensions.swift */,
+				16CE4040215D7249002634C7 /* Bundle+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -885,7 +888,7 @@
 				CF0598EC210F154F00C2645F /* TDPicker.swift in Sources */,
 				3E772DF521410050001306AB /* Optional+Extensions.swift in Sources */,
 				0FD65F1B20D018730075E251 /* UIButton+Extensions.swift in Sources */,
-				3E5EECD3211B0EF8008AE39D /* BuildFile in Sources */,
+				3E5EECD3211B0EF8008AE39D /* (null) in Sources */,
 				0F5753A120EE1F450069C139 /* TraingleView.swift in Sources */,
 				CF65435C201EF654004DE9C0 /* InitialConfigurator.swift in Sources */,
 				117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */,
@@ -918,7 +921,7 @@
 				CF654358201EF654004DE9C0 /* InitialRouter.swift in Sources */,
 				CF8C5C9C20EF97AE00236C7B /* BaseTableViewController.swift in Sources */,
 				117C4AAB1FD86050008BB445 /* Utilities.swift in Sources */,
-				3E5EECD5211B0F5A008AE39D /* BuildFile in Sources */,
+				3E5EECD5211B0F5A008AE39D /* (null) in Sources */,
 				CF45F0C9201B42DF004A39E2 /* Async.swift in Sources */,
 				CF7823B720EF95C6003069BD /* APIError.swift in Sources */,
 				CF8C5CA620EF9D2300236C7B /* FacebookLoginService.swift in Sources */,
@@ -927,6 +930,7 @@
 				672909FC210E43EA00632C4F /* PlaceHolderView.swift in Sources */,
 				117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */,
 				CF181BA420809E28002603A1 /* UIColor+Extensions.swift in Sources */,
+				16CE4041215D7249002634C7 /* Bundle+Extensions.swift in Sources */,
 				0F57539520EE185F0069C139 /* Array+Extensions.swift in Sources */,
 				CF8C5CAE20EF9D8F00236C7B /* UIApplication+Extensions.swift in Sources */,
 				CF564731211B1C910092EFBD /* InputValidationExpression.swift in Sources */,
