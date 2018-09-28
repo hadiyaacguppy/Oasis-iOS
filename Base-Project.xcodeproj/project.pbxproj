@@ -91,6 +91,7 @@
 		CF8C5CCD20EF9E7200236C7B /* SessionManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C5CB620EF9E7200236C7B /* SessionManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF8C5CD520EF9E8700236C7B /* SessionManagerContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5CD420EF9E8700236C7B /* SessionManagerContants.swift */; };
 		CF8C5CD720EF9E9500236C7B /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5CD620EF9E9500236C7B /* SessionManager.swift */; };
+		CFE27A17214A9BE200DBB917 /* Reactive+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE27A16214A9BE200DBB917 /* Reactive+Dictionary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -243,6 +244,7 @@
 		CF8C5CC720EF9E7200236C7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF8C5CD420EF9E8700236C7B /* SessionManagerContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagerContants.swift; sourceTree = "<group>"; };
 		CF8C5CD620EF9E9500236C7B /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		CFE27A16214A9BE200DBB917 /* Reactive+Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Dictionary.swift"; sourceTree = "<group>"; };
 		DA13A42E9542A840EF7B74A5 /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F67502C09ED37847CBD63117 /* Pods-Base-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -336,6 +338,7 @@
 			children = (
 				CF56472C211B1B740092EFBD /* Reactive+UIImageView.swift */,
 				0FD65F1420D014F40075E251 /* Reactive+UIButton.swift */,
+				CFE27A16214A9BE200DBB917 /* Reactive+Dictionary.swift */,
 			);
 			path = "Rx+Extensions";
 			sourceTree = "<group>";
@@ -890,6 +893,7 @@
 				0FD65F1B20D018730075E251 /* UIButton+Extensions.swift in Sources */,
 				3E5EECD3211B0EF8008AE39D /* (null) in Sources */,
 				0F5753A120EE1F450069C139 /* TraingleView.swift in Sources */,
+				CFE27A17214A9BE200DBB917 /* Reactive+Dictionary.swift in Sources */,
 				CF65435C201EF654004DE9C0 /* InitialConfigurator.swift in Sources */,
 				117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */,
 				CF8C5C9E20EF9CA400236C7B /* DatePickerDialog.swift in Sources */,
