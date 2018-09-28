@@ -335,14 +335,14 @@ struct Utilities  {
             var operaURL : URL?
             
             if urlToOpen.isHTTPSSchema{
-                chromeSchema = URLSchemas.Browsers.securedChrome.rawValue
-                fireFoxSchema = URLSchemas.Browsers.securedFireFox.rawValue
-                operaSchema = URLSchemas.Browsers.securedOpera.rawValue
+                chromeSchema = Constants.URLSchemas.Browsers.securedChrome.rawValue
+                fireFoxSchema = Constants.URLSchemas.Browsers.securedFireFox.rawValue
+                operaSchema = Constants.URLSchemas.Browsers.securedOpera.rawValue
                 
             }else{
-                chromeSchema = URLSchemas.Browsers.notSecuredChrome.rawValue
-                fireFoxSchema = URLSchemas.Browsers.notSecuredFireFox.rawValue
-                operaSchema = URLSchemas.Browsers.notSecuredOpera.rawValue
+                chromeSchema = Constants.URLSchemas.Browsers.notSecuredChrome.rawValue
+                fireFoxSchema = Constants.URLSchemas.Browsers.notSecuredFireFox.rawValue
+                operaSchema = Constants.URLSchemas.Browsers.notSecuredOpera.rawValue
             }
             
             

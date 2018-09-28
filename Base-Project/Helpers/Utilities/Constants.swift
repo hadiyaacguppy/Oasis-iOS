@@ -49,5 +49,20 @@ struct Constants {
     struct  NSTimerIntervals {
         
     }
-    
+    struct URLSchemas{
+        
+        enum Browsers : String{
+            case securedChrome = "googlechromes://"
+            case notSecuredChrome = "googlechrome://"
+            case securedFireFox = "firefox://open-url?url=https://"
+            case notSecuredFireFox = "firefox://open-url?url=http://"
+            case securedOpera = "opera://open-url?url=https://"
+            case notSecuredOpera = "opera://open-url?url=http://"
+        }
+        
+        enum SocialMediaApps : String{
+            case whatsapp = "whatsapp://"
+        }
+    }
+
 }
