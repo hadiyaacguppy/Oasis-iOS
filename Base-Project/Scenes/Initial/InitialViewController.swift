@@ -35,12 +35,6 @@ class InitialViewController: BaseViewController, InitialViewControllerInput {
     override func viewDidLoad() {
         super.viewDidLoad()
         output?.viewDidFinishedLoading()
-//        showPlaceHolderView(withAppearanceType: .loading,
-//                            title: Constants.PlaceHolderView.Texts.wait)
-        self.didTapOnRetryPlaceHolderButton = {
-            self.showPlaceHolderView(withAppearanceType: .loading,
-                                     title: Constants.PlaceHolderView.Texts.wait)
-        }
     }
     
     // MARK: Requests

@@ -107,6 +107,14 @@ struct Constants {
         
     }
     
+    struct Error {
+        static let unknown = "Unknown Error".localized
+        static let badRequest = "Bad Request".localized
+        static let someThingWentWrong = "SomeThing went wrong!".localized
+        static let notFound = "Not Found".localized
+        static let noInternet = "No internet connection".localized
+    }
+    
     struct Fonts {
         
         static let boldBody = UIFont.boldSystemFont(ofSize: Constants.FontSizes.body)

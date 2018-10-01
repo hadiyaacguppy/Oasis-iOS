@@ -41,10 +41,7 @@ class InitialInteractor: InitialInteractorInput, InitialDataSource, InitialDataD
 }
 
 extension InitialInteractor: InitialViewControllerOutput, InitialRouterDataSource, InitialRouterDataDestination {
-    func retryLoadingRequested() {
-        
-    }
-    
+
     func viewDidFinishedLoading(){
         if checkIfUserIsLoggedIn() {
             
