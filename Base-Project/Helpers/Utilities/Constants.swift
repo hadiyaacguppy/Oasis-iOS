@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import SVProgressHUD
+
 struct Constants {
     
     
@@ -49,6 +51,7 @@ struct Constants {
     struct  NSTimerIntervals {
         
     }
+    
     struct URLSchemas{
         
         enum Browsers : String{
@@ -63,6 +66,78 @@ struct Constants {
         enum SocialMediaApps : String{
             case whatsapp = "whatsapp://"
         }
+    }
+    
+ 
+    
+    struct ProgressHud {
+        struct ProgressStyle {
+            static let dark = SVProgressHUDStyle.dark
+            static let light = SVProgressHUDStyle.light
+        }
+        
+        struct ProgressAnimationType {
+            static let flat = SVProgressHUDAnimationType.flat
+            static let native = SVProgressHUDAnimationType.native
+            
+        }
+        static let style = ProgressStyle.dark
+        static let animationType = ProgressAnimationType.native
+    }
+    
+    
+    struct PlaceHolderView {
+
+        struct Texts {
+            static let loading = "LOADING".localized
+            static let wait = "PLEASE WAIT".localized
+            static let noConnection = "No network connection".localized
+            static let retry = "TAP TO RETRY".localized
+            static let offline = "You're offline".localized
+        }
+        
+        struct Appearance {
+            static let buttonColor : UIColor = .blue
+            static let buttonCornerRaduis : CGFloat = 5
+            static let buttonTextColor : UIColor = .white
+            static let textColor : UIColor = .gray
+            static let viewColor : UIColor = .white
+            
+        }
+        
+    }
+    
+    struct Fonts {
+        
+        static let boldBody = UIFont.boldSystemFont(ofSize: Constants.FontSizes.body)
+        static let boldSubheadline = UIFont.boldSystemFont(ofSize: Constants.FontSizes.subheadline)
+        static let largeBold = UIFont.boldSystemFont(ofSize: Constants.FontSizes.largeTitle)
+        
+        static let largeNormal = UIFont.systemFont(ofSize: Constants.FontSizes.largeTitle)
+        static let normal = UIFont.systemFont(ofSize: Constants.FontSizes.body)
+        static let small = UIFont.systemFont(ofSize: Constants.FontSizes.caption1)
+        
+        
+        static let largeItalic = UIFont.italicSystemFont(ofSize: Constants.FontSizes.largeTitle)
+        static let normalItalic = UIFont.italicSystemFont(ofSize: Constants.FontSizes.body)
+        static let smallItalic = UIFont.italicSystemFont(ofSize: Constants.FontSizes.caption1)
+
+    }
+    
+    struct FontSizes {
+        
+        static let largeTitle : CGFloat = 34.0
+        
+        static let  title1  : CGFloat = 28.0
+        static let  title2 : CGFloat = 22.0
+        static let  title3 : CGFloat = 20.0
+        
+        static let  body : CGFloat = 17.0
+        static let  subheadline : CGFloat = 15.0
+        
+        
+        static let  caption1 : CGFloat = 12.0
+        static let  caption2 : CGFloat = 11.0
     }
 
 }

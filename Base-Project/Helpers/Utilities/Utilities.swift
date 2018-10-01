@@ -27,6 +27,18 @@ struct Utilities  {
         }
     }
     
+    static func canOpen(url : URL?)
+        ->Bool{
+            if url == nil { return false }
+            return UIApplication.shared.canOpenURL(url!)
+    }
+    
+    static func openAppSettings(){
+        if self.canOpen(url: URL(string:UIApplicationOpenSettingsURLString)){
+            self.openURL(withString: UIApplicationOpenSettingsURLString)
+        }
+    }
+    
     static func sendThirdPartyEmails(To to : String , subject s : String , content con : String){
         
         if UIApplication.shared.canOpenURL(URL(string: "googlegmail:///")!) {
@@ -245,15 +257,23 @@ struct Utilities  {
     
     struct ProgressHUD {
         static func showLoading(){
+            SVProgressHUD.setDefaultStyle(Constants.ProgressHud.style)
+            SVProgressHUD.setDefaultAnimationType(Constants.ProgressHud.animationType)
             SVProgressHUD.show()
         }
         static func showLoading(withMessage msg : String ){
+            SVProgressHUD.setDefaultStyle(Constants.ProgressHud.style)
+            SVProgressHUD.setDefaultAnimationType(Constants.ProgressHud.animationType)
             SVProgressHUD.show(withStatus: msg )
         }
         static func showSuccess(withMessage msg : String ){
+            SVProgressHUD.setDefaultStyle(Constants.ProgressHud.style)
+            SVProgressHUD.setDefaultAnimationType(Constants.ProgressHud.animationType)
             SVProgressHUD.showSuccess(withStatus: msg)
         }
         static func showError(withMessage msg : String ){
+            SVProgressHUD.setDefaultStyle(Constants.ProgressHud.style)
+            SVProgressHUD.setDefaultAnimationType(Constants.ProgressHud.animationType)
             SVProgressHUD.showError(withStatus: msg)
         }
         static func dismissLoading(){

@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var oneSignalAppId : String = ""
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        print("Base Project Version 0.1.4")
+        print("Base Project Version 0.2")
         OneSignalPushService.shared.initializeOneSignal(withLaunchOptions: launchOptions, andAppID: oneSignalAppId)
         return true
     }

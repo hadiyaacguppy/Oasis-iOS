@@ -13,7 +13,9 @@ protocol InitialViewControllerInput {
 }
 
 protocol InitialViewControllerOutput {
+    
     func viewDidFinishedLoading()
+    
 }
 
 class InitialViewController: BaseViewController, InitialViewControllerInput {
@@ -33,7 +35,12 @@ class InitialViewController: BaseViewController, InitialViewControllerInput {
     override func viewDidLoad() {
         super.viewDidLoad()
         output?.viewDidFinishedLoading()
-//        showLoadingView(withTitle: "Getting Items")
+//        showPlaceHolderView(withAppearanceType: .loading,
+//                            title: Constants.PlaceHolderView.Texts.wait)
+        self.didTapOnRetryPlaceHolderButton = {
+            self.showPlaceHolderView(withAppearanceType: .loading,
+                                     title: Constants.PlaceHolderView.Texts.wait)
+        }
     }
     
     // MARK: Requests

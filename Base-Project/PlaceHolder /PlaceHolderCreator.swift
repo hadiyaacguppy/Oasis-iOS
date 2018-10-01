@@ -9,6 +9,14 @@
 import Foundation
 import UIKit
 
+
+enum PlaceHolderAppearanceType{
+    case loading
+    case offline
+    case networkError
+    case backendError
+}
+
 extension UIViewController: UIGestureRecognizerDelegate{
     
     private
