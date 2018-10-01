@@ -456,7 +456,7 @@ struct Utilities  {
         ///   - from: Start value
         ///   - to: end value
         /// - Returns: Observable of the countDown
-        func countDown(from: Int,
+        static func countDown(from: Int,
                        to: Int,
                        interval : Double)
             -> Observable<Int> {
