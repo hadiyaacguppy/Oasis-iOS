@@ -41,27 +41,13 @@ protocol BaseController {
     var didTapOnPlaceHolderView : (() -> ())?{ get }
 }
 
-extension BaseController{
-    func showPlaceHolderView(withAppearanceType type : PlaceHolderAppearanceType,
-                             title : String,
-                             description : String? = nil,
-                             image : UIImage? = nil){
-        showPlaceHolderView(withAppearanceType: type,
-                            title: title,
-                            description: description,
-                            image: image)
-    }
-}
-
-
-//Extend protocol only if its part of UIViewController.
 extension BaseController  where Self: UIViewController{
     
     
     func showPlaceHolderView(withAppearanceType type : PlaceHolderAppearanceType,
                              title : String,
-                             description : String?,
-                             image : UIImage?){
+                             description : String? = nil,
+                             image : UIImage? = nil){
         self.placeHolderView {  view in
             
             
