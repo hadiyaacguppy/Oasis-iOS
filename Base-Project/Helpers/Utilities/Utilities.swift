@@ -128,9 +128,7 @@ struct Utilities  {
                 }
             }
         }
-        
-    }
-    
+        }
     
     struct Font{
         
@@ -290,38 +288,6 @@ struct Utilities  {
         }
     }
     
-    struct Conversions {
-        /**
-         transforms a unix time to a Date or String
-         
-         - parameter unixtimeInterval: The epochTime value as 128312087
-         - parameter returnTypeYouAreAimingFor: the type you want this function to return, "Date" or "String", default is Date
-         - parameter stringFormat: The date format, default is yyyy-MM-dd
-         
-         - returns: Any, need to cast as String || Date
-         */
-        static func stringFromUnix(_ unixtimeInterval: Int,_ returnTypeYouAreAimingFor: String?,_ stringFormat: String?) -> Any {
-            
-            let date = Date(timeIntervalSince1970: TimeInterval(unixtimeInterval))
-            if returnTypeYouAreAimingFor == "Date" {//Return the date as Date Type if user wanted it as date
-                return date
-            }else{//Return the date as String
-                let dateFormatter = DateFormatter()
-                //dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
-                //dateFormatter.locale = NSLocale.current
-                
-                if stringFormat == nil {//Return the default one
-                    dateFormatter.dateFormat = "yyyy-MM-dd"
-                }else{//Or if passed return the format the user wants
-                    dateFormatter.dateFormat = stringFormat
-                }
-                
-                let strDate = dateFormatter.string(from: date)
-                
-                return strDate
-            }
-        }
-    }
     struct Web {
         
         /// Present an action sheet that displays the browser's app that can open the given link
@@ -486,7 +452,32 @@ struct Utilities  {
                     .map { from - $0 }
         }
     }
-    
+
+    struct Storage {
+        static func deviceRemainingFreeSpaceInBytes() -> Int64? {
+            let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last!
+            guard
+                let systemAttributes = try? FileManager.default.attributesOfFileSystem(forPath: documentDirectory),
+                let freeSize = systemAttributes[.systemFreeSize] as? NSNumber
+                else {
+                    // something failed
+                    return nil
+            }
+            return freeSize.int64Value
+        }
+        
+        static func deviceTotalSpaceInBytes() -> Int64? {
+            let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last!
+            guard
+                let systemAttributes = try? FileManager.default.attributesOfFileSystem(forPath: documentDirectory),
+                let freeSize = systemAttributes[.systemSize] as? NSNumber
+                else {
+                    // something failed
+                    return nil
+            }
+            return freeSize.int64Value
+        }
+    }
 }
 
 

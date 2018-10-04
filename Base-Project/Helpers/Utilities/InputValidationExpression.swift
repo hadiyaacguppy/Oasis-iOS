@@ -14,4 +14,10 @@ enum InputValidationExpression : String {
     case passwordMedium = "d"
     case passwordWeak = "q"
     case other = "now"
+    case mobileValid = "^((\\+)|(00))[0-9]{6,14}$"
+    case urlValid = "(http|https)://((\\w)*|([0-9]*)|([-|_])*)+([\\.|/]((\\w)*|([0-9]*)|([-|_])*))+"
+    case onlyNumber = "^[0-9]+$"
+    case onlyDecimal = "\\d+(\\.\\d{1,2})?"
+    case heightValid = "\\d{1,2}+(\\.\\d{1,2})?"
+    case weightValid = "\\d{1,3}+(\\.\\d{1,2})?"
 }
