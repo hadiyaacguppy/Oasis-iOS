@@ -71,4 +71,10 @@ public class SessionManager {
     
     public var isInExploreMode : Bool = false
     
+    public func sessionIsValid(withErrorCode code : Int) -> Bool {
+         return code != SessionManagerConstants.sessionExpiredCode
+            
+    }
+    
+    
 }

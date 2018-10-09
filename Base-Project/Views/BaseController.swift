@@ -32,6 +32,7 @@ protocol BaseController {
     
     func addDismissButton()
     
+    func preparePlaceHolderView(withErrorViewModel errorViewModel : ErrorViewModel)
     func showPlaceHolderView(withAppearanceType type : PlaceHolderAppearanceType,
                              title : String,
                              description : String?,
@@ -132,7 +133,9 @@ extension BaseController  where Self: UIViewController{
         
     }
     
-    
+    func preparePlaceHolderView(withErrorViewModel errorViewModel : ErrorViewModel){
+        return 
+    }
     
 }
 

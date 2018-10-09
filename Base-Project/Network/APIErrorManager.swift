@@ -14,6 +14,7 @@ import ObjectMapper
 import RxSwift
 import RxMoya
 import Moya
+import SessionManager
 
 extension ErrorResponse : Error{}
 
@@ -24,6 +25,14 @@ class APIErrorManager{
     private
     var networkIsReachable : Bool{
         return reachabilityManager?.isReachable ?? false
+    }
+    var appSessionManager = SessionManager.shared
+    
+    fileprivate
+    func checkSessionValidity(_ errorObject: APIError) {
+        if appSessionManager.sessionIsValid(withErrorCode: errorObject.code!) {
+            Relays.shared.sessionIsExpired.accept(())
+        }
     }
     
     fileprivate
@@ -66,13 +75,17 @@ class APIErrorManager{
         guard let errorObject  = Mapper<APIError>().map(JSON: errorJSON) else {
             return ErrorResponse(genericErrorCode: statusCode!)
         }
-        
-        guard errorObject.message == nil else {
-            return ErrorResponse(errorObject.code!, message: errorObject.message!)
+        guard errorObject.message != nil  else {
+            return unknownError
         }
         
-        return unknownError
-
+        let errorResponse =  ErrorResponse(errorObject.code!, message: errorObject.message!)
+        checkSessionValidity(errorObject)
+        return errorResponse
+        
+        
+        
+        
     }
 }
 

@@ -14,5 +14,7 @@ struct SessionManagerConstants  {
         //Just for some faking
         static let passwordKey = "timsetamp_user"
         static let firsTime = "first_time"
+        
     }
+    static let sessionExpiredCode = 101
 }

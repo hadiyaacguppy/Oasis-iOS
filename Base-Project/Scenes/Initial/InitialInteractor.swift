@@ -16,7 +16,7 @@ protocol InitialInteractorInput {
 
 protocol InitialInteractorOutput {
     
-    func apiCallFailed(withError error : ErrorResponse)
+    func apiCallFailed(withError error : ErrorResponse) -> ErrorViewModel
     
 }
 

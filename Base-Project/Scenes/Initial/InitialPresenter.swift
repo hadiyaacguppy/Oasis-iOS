@@ -13,24 +13,9 @@ import UIKit
 
 protocol InitialPresenterOutput: class {
     
-    func showPlaceHolderView(withAppearanceType type : PlaceHolderAppearanceType,
-                 title : String,
-                 description : String?,
-                 image : UIImage?)
-    
+
 }
 
-extension InitialPresenterOutput{
-    func showPlaceHolderView(withAppearanceType type : PlaceHolderAppearanceType,
-                 title : String,
-                 description : String? = nil,
-                 image : UIImage? = nil ){
-        showPlaceHolderView(withAppearanceType: type,
-                title: title,
-                description: description,
-                image: image)
-    }
-}
 
 class InitialPresenter {
     
@@ -41,18 +26,20 @@ class InitialPresenter {
 }
 extension InitialPresenter: InitialInteractorOutput {
     
-    func apiCallFailed(withError error : ErrorResponse){
-        switch error.code{
-        case let .apiError(code):
-            output?.showPlaceHolderView(withAppearanceType: .backendError,
-                            title: error.message)
+    func apiCallFailed(withError error: ErrorResponse) -> ErrorViewModel {
+        return self.parseErrorViewModel(fromErrorResponse:error)
+    }
+    
+    func parseErrorViewModel(fromErrorResponse errorResponse : ErrorResponse) -> ErrorViewModel {
+        
+        switch errorResponse.code{
+        case .apiError:
+            return ErrorViewModel(withMessage: errorResponse.message, isNoInternetAvaibleError: false, withCode: errorResponse.code )
         case .noInternetConnection:
-            output?.showPlaceHolderView(withAppearanceType: .offline,
-                            title: Constants.PlaceHolderView.Texts.offline)
-            
+            return ErrorViewModel(withMessage: errorResponse.message, isNoInternetAvaibleError: true, withCode: errorResponse.code )
         default:
-            output?.showPlaceHolderView(withAppearanceType: .networkError,
-                            title: error.message)
+            return ErrorViewModel(withMessage: errorResponse.message, isNoInternetAvaibleError: false, withCode: errorResponse.code )
+            
         }
     }
     
