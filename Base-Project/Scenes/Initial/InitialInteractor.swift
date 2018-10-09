@@ -2,18 +2,22 @@
 //  InitialInteractor.swift
 //  Base-Project
 //
-//  Created by Wassim on 1/29/18.
+//  Created by Wassim on 10/9/18.
 //  Copyright (c) 2018 Tedmob. All rights reserved.
 //
+
+//  
+import Foundation
+import RxSwift
 
 protocol InitialInteractorInput {
     
 }
 
 protocol InitialInteractorOutput {
-    func didFail(withErrorMessage msg : String)
-    func userIsLoggedIn()
-    func userIsNotLoggedIn()
+    
+    func apiCallFailed(withError error : ErrorResponse)
+    
 }
 
 protocol InitialDataSource {
@@ -28,25 +32,18 @@ class InitialInteractor: InitialInteractorInput, InitialDataSource, InitialDataD
     
     var output: InitialInteractorOutput?
     
-    
-    func checkIfUserIsLoggedIn() -> Bool {
-        //TODO: Should Implmenet
-        return false
-    }
-    
-    
     // MARK: Business logic
     
     
 }
 
 extension InitialInteractor: InitialViewControllerOutput, InitialRouterDataSource, InitialRouterDataDestination {
-
+    
     func viewDidFinishedLoading(){
-        if checkIfUserIsLoggedIn() {
-            
-        }else {
-            
-        }
+        
+    }
+    
+    func retryLoadingRequested(){
+        
     }
 }
