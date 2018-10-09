@@ -68,19 +68,19 @@ struct R: Rswift.Validatable {
   
   /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
   struct storyboard {
+    /// Storyboard `Initial`.
+    static let initial = _R.storyboard.initial()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
-    /// Storyboard `Main`.
-    static let main = _R.storyboard.main()
+    
+    /// `UIStoryboard(name: "Initial", bundle: ...)`
+    static func initial(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.initial)
+    }
     
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
-    }
-    
-    /// `UIStoryboard(name: "Main", bundle: ...)`
-    static func main(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.main)
     }
     
     fileprivate init() {}
@@ -93,7 +93,7 @@ struct R: Rswift.Validatable {
   
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
-      // There are no resources to validate
+      try _R.validate()
     }
     
     fileprivate init() {}
@@ -104,26 +104,43 @@ struct R: Rswift.Validatable {
   fileprivate init() {}
 }
 
-struct _R {
+struct _R: Rswift.Validatable {
+  static func validate() throws {
+    try storyboard.validate()
+  }
+  
   struct nib {
     fileprivate init() {}
   }
   
-  struct storyboard {
+  struct storyboard: Rswift.Validatable {
+    static func validate() throws {
+      try initial.validate()
+    }
+    
+    struct initial: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = InitialViewController
+      
+      let bundle = R.hostingBundle
+      let initialViewControllerVC = StoryboardViewControllerResource<InitialViewController>(identifier: "InitialViewControllerVC")
+      let name = "Initial"
+      
+      func initialViewControllerVC(_: Void = ()) -> InitialViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: initialViewControllerVC)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.initial().initialViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'initialViewControllerVC' could not be loaded from storyboard 'Initial' as 'InitialViewController'.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
       typealias InitialController = UIKit.UIViewController
       
       let bundle = R.hostingBundle
       let name = "LaunchScreen"
-      
-      fileprivate init() {}
-    }
-    
-    struct main: Rswift.StoryboardResourceWithInitialControllerType {
-      typealias InitialController = InitialViewController
-      
-      let bundle = R.hostingBundle
-      let name = "Main"
       
       fileprivate init() {}
     }
