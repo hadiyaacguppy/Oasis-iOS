@@ -41,6 +41,13 @@ class InitialViewController: BaseViewController, InitialViewControllerInput {
         //        showPlaceHolderView(withAppearanceType: .loading,
         //                            title: Constants.PlaceHolderView.Texts.wait)
         output?.viewDidFinishedLoading()
+        setupRetryFetchingCallBack()
+    }
+    
+    // MARK: Requests
+    
+    fileprivate
+    func setupRetryFetchingCallBack(){
         self.didTapOnRetryPlaceHolderButton = {
             
             self.showPlaceHolderView(withAppearanceType: .loading,
@@ -49,11 +56,6 @@ class InitialViewController: BaseViewController, InitialViewControllerInput {
             self.output?.retryLoadingRequested()
         }
     }
-    
-    
-    
-    // MARK: Requests
-    
     
     // MARK: Display logic
 

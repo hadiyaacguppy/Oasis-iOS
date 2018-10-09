@@ -134,7 +134,18 @@ extension BaseController  where Self: UIViewController{
     }
     
     func preparePlaceHolderView(withErrorViewModel errorViewModel : ErrorViewModel){
-        return 
+        switch errorViewModel.code{
+        case .apiError(_):
+            self.showPlaceHolderView(withAppearanceType: .backendError,
+                                        title: errorViewModel.message)
+        case .noInternetConnection:
+            self.showPlaceHolderView(withAppearanceType: .offline,
+                                        title: Constants.PlaceHolderView.Texts.offline)
+            
+        default:
+            self.showPlaceHolderView(withAppearanceType: .networkError,
+                                        title: errorViewModel.message)
+        }
     }
     
 }
