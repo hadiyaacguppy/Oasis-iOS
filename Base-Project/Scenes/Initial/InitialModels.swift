@@ -9,8 +9,8 @@
 //  
 //
 //  Type "usecase" for some magic!
-import Foundation
 import RxSwift
+import Foundation
 
 struct InitialModels {
     

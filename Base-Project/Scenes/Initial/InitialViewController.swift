@@ -33,9 +33,9 @@ class InitialViewController: BaseViewController, InitialViewControllerInput {
         super.awakeFromNib()
         InitialConfigurator.shared.configure(viewController: self)
     }
-    
+
     // MARK: View lifecycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //        showPlaceHolderView(withAppearanceType: .loading,
@@ -56,11 +56,14 @@ class InitialViewController: BaseViewController, InitialViewControllerInput {
             self.output?.retryLoadingRequested()
         }
     }
-    
+
+
     // MARK: Display logic
 
 }
 extension InitialViewController: InitialPresenterOutput {
+ 
     
-
+    
 }
+

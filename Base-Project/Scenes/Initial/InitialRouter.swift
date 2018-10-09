@@ -36,6 +36,15 @@ class InitialRouter: InitialRouterInput {
     
     // MARK: Navigation
     
+    ///Pop The view from the view hierarchy
+    func popView(){
+        DispatchQueue.main
+            .async {
+                self.viewController.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    
     // MARK: Communication
     
     func passDataToNextScene(for segue: UIStoryboardSegue) {

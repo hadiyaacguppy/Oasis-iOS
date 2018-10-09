@@ -8,14 +8,11 @@
 
 //  
 import Foundation
-import RxSwift
-import UIKit
 
 protocol InitialPresenterOutput: class {
     
-
+    
 }
-
 
 class InitialPresenter {
     
