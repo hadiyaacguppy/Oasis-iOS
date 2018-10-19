@@ -39,7 +39,7 @@ public class PlaceHolderView: UIView {
         activityIndicator.center = self.center
         activityIndicator.activityIndicatorViewStyle = .gray
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        
+        activityIndicator.hidesWhenStopped = true
         self.contentView.addSubview(activityIndicator)
         return activityIndicator
     }()
@@ -257,14 +257,13 @@ public class PlaceHolderView: UIView {
             // Assign the image view's horizontal constraints
             if canShowImage {
                 imageView.isHidden = false
-                circularProgressIndicator.isHidden = true
+                 circularProgressIndicator.stopAnimating()
                 subviewStrings.append("imageView")
                 views[subviewStrings.last!] = imageView
                 
                 contentView.addConstraint(NSLayoutConstraint.init(item: imageView, attribute: .centerX, relatedBy: .equal, toItem: contentView, attribute: .centerX, multiplier: 1.0, constant: 0.0))
             } else {
                 imageView.isHidden = true
-                circularProgressIndicator.isHidden = !mustShowProgress
                 subviewStrings.append("circularProgress")
                 if progressActive{
                     circularProgressIndicator.startAnimating()
