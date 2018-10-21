@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum ReturnTypeFromTimestamp {
+    case string
+    case date
+}
+
 extension Date{
     
     func convertDateToLocalTime(_ iDate: Date) -> Date {
@@ -57,10 +62,10 @@ extension Date{
      
      - returns: Any, need to cast as String || Date
      */
-    func getStringFromTimeStamp(_ unixtimeInterval: Int,_ returnTypeYouAreAimingFor: String?,_ stringFormat: String?) -> Any {
+    func getStringFromTimeStamp(_ unixtimeInterval: Int,_ returnTypeYouAreAimingFor: ReturnTypeFromTimestamp?,_ stringFormat: String?) -> Any {
         
         let date = Date(timeIntervalSince1970: TimeInterval(unixtimeInterval))
-        if returnTypeYouAreAimingFor == "Date" {//Return the date as Date Type if user wanted it as date
+        if returnTypeYouAreAimingFor == .date {//Return the date as Date Type if user wanted it as date
             return date
         }else{//Return the date as String
             let dateFormatter = DateFormatter()
