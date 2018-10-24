@@ -66,12 +66,19 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
   struct storyboard {
+    /// Storyboard `BaseWebView`.
+    static let baseWebView = _R.storyboard.baseWebView()
     /// Storyboard `Initial`.
     static let initial = _R.storyboard.initial()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    
+    /// `UIStoryboard(name: "BaseWebView", bundle: ...)`
+    static func baseWebView(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.baseWebView)
+    }
     
     /// `UIStoryboard(name: "Initial", bundle: ...)`
     static func initial(_: Void = ()) -> UIKit.UIStoryboard {
@@ -115,7 +122,26 @@ struct _R: Rswift.Validatable {
   
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
+      try baseWebView.validate()
       try initial.validate()
+    }
+    
+    struct baseWebView: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseWebViewViewController
+      
+      let baseWebViewViewControllerVC = StoryboardViewControllerResource<BaseWebViewViewController>(identifier: "BaseWebViewViewControllerVC")
+      let bundle = R.hostingBundle
+      let name = "BaseWebView"
+      
+      func baseWebViewViewControllerVC(_: Void = ()) -> BaseWebViewViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: baseWebViewViewControllerVC)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.baseWebView().baseWebViewViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'baseWebViewViewControllerVC' could not be loaded from storyboard 'BaseWebView' as 'BaseWebViewViewController'.") }
+      }
+      
+      fileprivate init() {}
     }
     
     struct initial: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
