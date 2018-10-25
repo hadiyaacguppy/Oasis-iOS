@@ -64,11 +64,15 @@ class APIErrorManager{
             return unknownError
         }
         
-        guard let JSON = try? JSONSerialization.jsonObject(with: bodyData!, options: []) as! [String : Any] else {
+        guard let JSON = try? JSONSerialization.jsonObject(with: bodyData!, options: []) as? [String : Any] else {
             return ErrorResponse(genericErrorCode: statusCode!)
         }
         
-        guard let errorJSON = JSON["error"] as? [String : Any] else {
+        if JSON == nil {
+            return ErrorResponse(genericErrorCode: statusCode!)
+        }
+        
+        guard let errorJSON = JSON!["error"] as? [String : Any] else {
             return ErrorResponse(genericErrorCode: statusCode!)
         }
         
