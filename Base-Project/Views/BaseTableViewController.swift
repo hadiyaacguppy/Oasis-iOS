@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import RxGesture
 import UIKit
 
 class BaseTableViewController : UITableViewController,BaseController {
@@ -16,6 +17,7 @@ class BaseTableViewController : UITableViewController,BaseController {
     
     var didTapOnPlaceHolderView: (() -> ())?
     
+    let disposeBag = DisposeBag()
     
     override
     func viewDidLoad() {

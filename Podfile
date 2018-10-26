@@ -8,6 +8,7 @@ target 'Base-Project' do
   pod 'R.swift'
   pod 'SwiftLocation', '~> 3.2.3'
   pod 'CZPicker'
+  pod 'RxGesture'
   pod 'OneSignal', '>= 2.6.2', '< 3.0'
 end
 
