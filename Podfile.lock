@@ -26,6 +26,12 @@ PODS:
   - R.swift (4.0.0):
     - R.swift.Library (~> 4.0.0)
   - R.swift.Library (4.0.0)
+  - RxCocoa (4.3.1):
+    - RxSwift (~> 4.0)
+  - RxGesture (2.0.1):
+    - RxCocoa (~> 4.3.1)
+    - RxSwift (~> 4.3.1)
+  - RxSwift (4.3.1)
   - SwiftLocation (3.2.3):
     - SwiftyJSON (~> 4.0.0-alpha.1)
   - SwiftyJSON (4.0.0)
@@ -35,6 +41,7 @@ DEPENDENCIES:
   - Firebase/Core
   - OneSignal (< 3.0, >= 2.6.2)
   - R.swift
+  - RxGesture
   - SwiftLocation (~> 3.2.3)
 
 SPEC REPOS:
@@ -49,6 +56,9 @@ SPEC REPOS:
     - OneSignal
     - R.swift
     - R.swift.Library
+    - RxCocoa
+    - RxGesture
+    - RxSwift
     - SwiftLocation
     - SwiftyJSON
 
@@ -63,9 +73,12 @@ SPEC CHECKSUMS:
   OneSignal: 42dae269c7eca517aee34963820e1eb922390031
   R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
   R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
+  RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
+  RxGesture: 26ede4ed13ffc6336d29dbd9a8dff229bdb72de7
+  RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
   SwiftLocation: a3c3bc2023118171ef3572188a31def94aa0892c
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 1578c55a0dc8b0def5a7cfaec870004de5f2844c
+PODFILE CHECKSUM: f5ff18ddf02620301d6a318dfacfa07289e5c3f0
 
 COCOAPODS: 1.5.3

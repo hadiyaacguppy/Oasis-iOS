@@ -31,12 +31,26 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 2 images.
+  /// This `R.image` struct is generated, and contains static references to 4 images.
   struct image {
+    /// Image `RegistrationNotView`.
+    static let registrationNotView = Rswift.ImageResource(bundle: R.hostingBundle, name: "RegistrationNotView")
+    /// Image `RegistrationView`.
+    static let registrationView = Rswift.ImageResource(bundle: R.hostingBundle, name: "RegistrationView")
     /// Image `error`.
     static let error = Rswift.ImageResource(bundle: R.hostingBundle, name: "error")
     /// Image `offline`.
     static let offline = Rswift.ImageResource(bundle: R.hostingBundle, name: "offline")
+    
+    /// `UIImage(named: "RegistrationNotView", bundle: ..., traitCollection: ...)`
+    static func registrationNotView(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.registrationNotView, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "RegistrationView", bundle: ..., traitCollection: ...)`
+    static func registrationView(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.registrationView, compatibleWith: traitCollection)
+    }
     
     /// `UIImage(named: "error", bundle: ..., traitCollection: ...)`
     static func error(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
@@ -66,12 +80,19 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
   struct storyboard {
+    /// Storyboard `ChangePassword`.
+    static let changePassword = _R.storyboard.changePassword()
     /// Storyboard `Initial`.
     static let initial = _R.storyboard.initial()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    
+    /// `UIStoryboard(name: "ChangePassword", bundle: ...)`
+    static func changePassword(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.changePassword)
+    }
     
     /// `UIStoryboard(name: "Initial", bundle: ...)`
     static func initial(_: Void = ()) -> UIKit.UIStoryboard {
@@ -116,6 +137,26 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       try initial.validate()
+      try changePassword.validate()
+    }
+    
+    struct changePassword: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UINavigationController
+      
+      let bundle = R.hostingBundle
+      let changePasswordViewControllerTableVC = StoryboardViewControllerResource<ChangePasswordViewController>(identifier: "ChangePasswordViewControllerTableVC")
+      let name = "ChangePassword"
+      
+      func changePasswordViewControllerTableVC(_: Void = ()) -> ChangePasswordViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: changePasswordViewControllerTableVC)
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "RegistrationNotView") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'RegistrationNotView' is used in storyboard 'ChangePassword', but couldn't be loaded.") }
+        if _R.storyboard.changePassword().changePasswordViewControllerTableVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'changePasswordViewControllerTableVC' could not be loaded from storyboard 'ChangePassword' as 'ChangePasswordViewController'.") }
+      }
+      
+      fileprivate init() {}
     }
     
     struct initial: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {

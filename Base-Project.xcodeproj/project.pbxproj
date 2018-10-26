@@ -37,6 +37,13 @@
 		3E6DEFB12162111100978FDC /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DEFB02162111100978FDC /* BaseController.swift */; };
 		3E6DEFB321623D7A00978FDC /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DEFB221623D7A00978FDC /* UITableView+Extensions.swift */; };
 		3E772DF521410050001306AB /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E772DF421410050001306AB /* Optional+Extensions.swift */; };
+		4A20A22D2179E9C5002C2AAA /* ChangePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A20A2262179E9C5002C2AAA /* ChangePassword.storyboard */; };
+		4A20A22E2179E9C5002C2AAA /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A20A2272179E9C5002C2AAA /* ChangePasswordPresenter.swift */; };
+		4A20A22F2179E9C5002C2AAA /* ChangePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A20A2282179E9C5002C2AAA /* ChangePasswordRouter.swift */; };
+		4A20A2302179E9C5002C2AAA /* ChangePasswordModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A20A2292179E9C5002C2AAA /* ChangePasswordModels.swift */; };
+		4A20A2312179E9C5002C2AAA /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A20A22A2179E9C5002C2AAA /* ChangePasswordViewController.swift */; };
+		4A20A2322179E9C5002C2AAA /* ChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A20A22B2179E9C5002C2AAA /* ChangePasswordInteractor.swift */; };
+		4A20A2332179E9C5002C2AAA /* ChangePasswordConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A20A22C2179E9C5002C2AAA /* ChangePasswordConfigurator.swift */; };
 		4B00E64AA8A0A7582597A76A /* Pods_Base_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BA0D1007DC66F24CD1D64E /* Pods_Base_Project.framework */; };
 		672909FC210E43EA00632C4F /* PlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672909FB210E43EA00632C4F /* PlaceHolderView.swift */; };
 		672909FE210E43F900632C4F /* PlaceHolderCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672909FD210E43F900632C4F /* PlaceHolderCreator.swift */; };
@@ -185,6 +192,13 @@
 		3E6DEFB02162111100978FDC /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		3E6DEFB221623D7A00978FDC /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		3E772DF421410050001306AB /* Optional+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
+		4A20A2262179E9C5002C2AAA /* ChangePassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangePassword.storyboard; sourceTree = "<group>"; };
+		4A20A2272179E9C5002C2AAA /* ChangePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordPresenter.swift; sourceTree = "<group>"; };
+		4A20A2282179E9C5002C2AAA /* ChangePasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRouter.swift; sourceTree = "<group>"; };
+		4A20A2292179E9C5002C2AAA /* ChangePasswordModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModels.swift; sourceTree = "<group>"; };
+		4A20A22A2179E9C5002C2AAA /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		4A20A22B2179E9C5002C2AAA /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
+		4A20A22C2179E9C5002C2AAA /* ChangePasswordConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordConfigurator.swift; sourceTree = "<group>"; };
 		509696D7EE45B0E48C61927E /* Pods-Base-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-ProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Base-ProjectTests/Pods-Base-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		5F0CB28320C7D9C3EA885DBF /* Pods-Base-ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-ProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Base-ProjectUITests/Pods-Base-ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		672909FB210E43EA00632C4F /* PlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderView.swift; sourceTree = "<group>"; };
@@ -445,6 +459,20 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		4A20A2252179E9A2002C2AAA /* Change Password */ = {
+			isa = PBXGroup;
+			children = (
+				4A20A2262179E9C5002C2AAA /* ChangePassword.storyboard */,
+				4A20A2272179E9C5002C2AAA /* ChangePasswordPresenter.swift */,
+				4A20A2282179E9C5002C2AAA /* ChangePasswordRouter.swift */,
+				4A20A2292179E9C5002C2AAA /* ChangePasswordModels.swift */,
+				4A20A22A2179E9C5002C2AAA /* ChangePasswordViewController.swift */,
+				4A20A22B2179E9C5002C2AAA /* ChangePasswordInteractor.swift */,
+				4A20A22C2179E9C5002C2AAA /* ChangePasswordConfigurator.swift */,
+			);
+			path = "Change Password";
+			sourceTree = "<group>";
+		};
 		4EB46AC4F5A03B9A5DD78099 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -560,6 +588,7 @@
 		CF87EDA9201EECFA00562226 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4A20A2252179E9A2002C2AAA /* Change Password */,
 				CF87EDB6201EED1500562226 /* Initial */,
 			);
 			path = Scenes;
@@ -763,6 +792,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF403858216CF78F001F649B /* Initial.storyboard in Resources */,
+				4A20A22D2179E9C5002C2AAA /* ChangePassword.storyboard in Resources */,
 				112239221FD5C7B000486528 /* LaunchScreen.storyboard in Resources */,
 				1122391F1FD5C7B000486528 /* Assets.xcassets in Resources */,
 			);
@@ -820,6 +850,9 @@
 				"${BUILT_PRODUCTS_DIR}/CZPicker/CZPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -829,6 +862,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CZPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -904,6 +940,7 @@
 				CF0598EC210F154F00C2645F /* TDPicker.swift in Sources */,
 				3E772DF521410050001306AB /* Optional+Extensions.swift in Sources */,
 				0FD65F1B20D018730075E251 /* UIButton+Extensions.swift in Sources */,
+				4A20A22E2179E9C5002C2AAA /* ChangePasswordPresenter.swift in Sources */,
 				3E5EECD3211B0EF8008AE39D /* (null) in Sources */,
 				0F5753A120EE1F450069C139 /* TraingleView.swift in Sources */,
 				CFE27A17214A9BE200DBB917 /* Reactive+Dictionary.swift in Sources */,
@@ -916,6 +953,7 @@
 				CF8C5CAC20EF9D7E00236C7B /* UICollectionView+Extensions.swift in Sources */,
 				CF564727211B16480092EFBD /* Queue.swift in Sources */,
 				CF8C5CA820EF9D5400236C7B /* Bool+Extensions.swift in Sources */,
+				4A20A2302179E9C5002C2AAA /* ChangePasswordModels.swift in Sources */,
 				CF8C5CB020EF9DC900236C7B /* UIImage+Extensions.swift in Sources */,
 				CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */,
 				672909FE210E43F900632C4F /* PlaceHolderCreator.swift in Sources */,
@@ -926,16 +964,20 @@
 				67290A02210E441400632C4F /* PlaceHolderHelper.swift in Sources */,
 				CF8C5CAA20EF9D6700236C7B /* Int+Extensions.swift in Sources */,
 				CF7BC6791FD91D83008E80AC /* ObservableType+ObjectMapper.swift in Sources */,
+				4A20A2322179E9C5002C2AAA /* ChangePasswordInteractor.swift in Sources */,
 				0FD65F1D20D01BBD0075E251 /* CGFloat+Extensions.swift in Sources */,
 				CF40385B216CF78F001F649B /* InitialModels.swift in Sources */,
+				4A20A22F2179E9C5002C2AAA /* ChangePasswordRouter.swift in Sources */,
 				0F57539F20EE1EC90069C139 /* Relays.swift in Sources */,
 				0F57539B20EE19CD0069C139 /* BaseProjectService.swift in Sources */,
 				112239151FD5C7AF00486528 /* AppDelegate.swift in Sources */,
 				117C4AAE1FD864AD008BB445 /* UIView+Extensions.swift in Sources */,
 				0F57539120EE13660069C139 /* DataManager.swift in Sources */,
+				4A20A2312179E9C5002C2AAA /* ChangePasswordViewController.swift in Sources */,
 				0F57539720EE19090069C139 /* LocationService.swift in Sources */,
 				CF8C5C9C20EF97AE00236C7B /* BaseTableViewController.swift in Sources */,
 				117C4AAB1FD86050008BB445 /* Utilities.swift in Sources */,
+				4A20A2332179E9C5002C2AAA /* ChangePasswordConfigurator.swift in Sources */,
 				CF40385D216CF78F001F649B /* InitialInteractor.swift in Sources */,
 				3E5EECD5211B0F5A008AE39D /* (null) in Sources */,
 				CF45F0C9201B42DF004A39E2 /* Async.swift in Sources */,
