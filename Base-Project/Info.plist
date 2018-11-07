@@ -24,6 +24,10 @@
 		<string>googlechromes</string>
 		<string>firefox</string>
 		<string>opera</string>
+        <string>googlegmail</string>
+        <string>ms-outlook</string>
+        <string>readdle-spark</string>
+        <string>inbox-gmail</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
