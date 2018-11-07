@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F484B4F2165FF5C0060C463 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F484B4E2165FF5C0060C463 /* Date+Extensions.swift */; };
 		0F57538E20EE12EB0069C139 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57538D20EE12EB0069C139 /* Constants.swift */; };
 		0F57539120EE13660069C139 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539020EE13660069C139 /* DataManager.swift */; };
 		0F57539320EE16560069C139 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539220EE16560069C139 /* R.generated.swift */; };
@@ -163,6 +164,7 @@
 
 /* Begin PBXFileReference section */
 		0A6FC7C665C3EC115CF8C0BC /* Pods-Base-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project.release.xcconfig"; sourceTree = "<group>"; };
+		0F484B4E2165FF5C0060C463 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		0F57538D20EE12EB0069C139 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0F57539020EE13660069C139 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		0F57539220EE16560069C139 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -455,6 +457,7 @@
 				3E772DF421410050001306AB /* Optional+Extensions.swift */,
 				16CE4040215D7249002634C7 /* Bundle+Extensions.swift */,
 				CF2F319D215E8BA0007A912A /* URL+Extensions.swift */,
+				0F484B4E2165FF5C0060C463 /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1005,6 +1008,7 @@
 				CF7BC6771FD91D83008E80AC /* Single+ObjectMapper.swift in Sources */,
 				0F57539D20EE1C430069C139 /* APIClient.swift in Sources */,
 				3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */,
+				0F484B4F2165FF5C0060C463 /* Date+Extensions.swift in Sources */,
 				CF2F319E215E8BA0007A912A /* URL+Extensions.swift in Sources */,
 				CF7823B420EF95A7003069BD /* APIErrorManager.swift in Sources */,
 				CF56472B211B18050092EFBD /* PushParser.swift in Sources */,

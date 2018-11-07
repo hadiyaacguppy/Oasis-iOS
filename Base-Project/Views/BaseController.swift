@@ -13,7 +13,6 @@ import RxSwift
 
 protocol BaseController {
     
-    
     func showLoadingProgress()
     
     func display(successMessage msg : String)
@@ -87,9 +86,7 @@ extension BaseController  where Self: UIViewController{
             }else{
                 view.image(image)
             }
-            
-            
-            
+                        
             view.isTouchAllowed(true)
             view.dataSetBackgroundColor(Constants.PlaceHolderView.Appearance.viewColor)
             

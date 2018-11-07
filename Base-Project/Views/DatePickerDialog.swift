@@ -85,7 +85,8 @@ open class DatePickerDialog: UIView {
                    doneButtonTitle: String = "Done",
                    cancelButtonTitle: String = "Cancel",
                    defaultDate: Date = Date(),
-                   minimumDate: Date? = nil, maximumDate: Date? = nil,
+                   minimumDate: Date? = nil,
+                   maximumDate: Date? = nil,
                    datePickerMode: UIDatePickerMode = .dateAndTime,
                    callback: @escaping DatePickerCallback) {
         self.titleLabel.text = title

@@ -12,17 +12,13 @@ import SVProgressHUD
 
 struct Constants {
     
-    
-    
-    
+
     struct Network {
         
         static let baseURl : String = "https://google.com"
         static let SessionTokenExpiredCode = -777
         
     }
-    
-    
     
     struct Colors {
         static let appColor : UIColor  = .white
