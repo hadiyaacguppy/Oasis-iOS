@@ -619,11 +619,8 @@
 		CF87EDA9201EECFA00562226 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				4A20A2252179E9A2002C2AAA /* Change Password */,
-=======
 				CF09C0C82180A4FF003DF186 /* Base Web View */,
->>>>>>> base-web-view
 				CF87EDB6201EED1500562226 /* Initial */,
 			);
 			path = Scenes;
@@ -827,11 +824,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF403858216CF78F001F649B /* Initial.storyboard in Resources */,
-<<<<<<< HEAD
 				4A20A22D2179E9C5002C2AAA /* ChangePassword.storyboard in Resources */,
-=======
 				CF09C0D02180A511003DF186 /* BaseWebView.storyboard in Resources */,
->>>>>>> base-web-view
 				112239221FD5C7B000486528 /* LaunchScreen.storyboard in Resources */,
 				1122391F1FD5C7B000486528 /* Assets.xcassets in Resources */,
 			);
@@ -1008,11 +1002,8 @@
 				0FD65F1D20D01BBD0075E251 /* CGFloat+Extensions.swift in Sources */,
 				CF09C0D52180A511003DF186 /* BaseWebViewInteractor.swift in Sources */,
 				CF40385B216CF78F001F649B /* InitialModels.swift in Sources */,
-<<<<<<< HEAD
 				4A20A22F2179E9C5002C2AAA /* ChangePasswordRouter.swift in Sources */,
-=======
 				CF09C0D32180A511003DF186 /* BaseWebViewModels.swift in Sources */,
->>>>>>> base-web-view
 				0F57539F20EE1EC90069C139 /* Relays.swift in Sources */,
 				0F57539B20EE19CD0069C139 /* BaseProjectService.swift in Sources */,
 				112239151FD5C7AF00486528 /* AppDelegate.swift in Sources */,
