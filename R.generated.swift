@@ -80,10 +80,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
   struct storyboard {
     /// Storyboard `BaseWebView`.
     static let baseWebView = _R.storyboard.baseWebView()
+    /// Storyboard `ChangePassword`.
+    static let changePassword = _R.storyboard.changePassword()
     /// Storyboard `Initial`.
     static let initial = _R.storyboard.initial()
     /// Storyboard `LaunchScreen`.
@@ -92,6 +94,11 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "BaseWebView", bundle: ...)`
     static func baseWebView(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.baseWebView)
+    }
+    
+    /// `UIStoryboard(name: "ChangePassword", bundle: ...)`
+    static func changePassword(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.changePassword)
     }
     
     /// `UIStoryboard(name: "Initial", bundle: ...)`
@@ -154,6 +161,25 @@ struct _R: Rswift.Validatable {
       
       static func validate() throws {
         if _R.storyboard.baseWebView().baseWebViewViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'baseWebViewViewControllerVC' could not be loaded from storyboard 'BaseWebView' as 'BaseWebViewViewController'.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct changePassword: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UINavigationController
+      
+      let bundle = R.hostingBundle
+      let changePasswordViewControllerTableVC = StoryboardViewControllerResource<ChangePasswordViewController>(identifier: "ChangePasswordViewControllerTableVC")
+      let name = "ChangePassword"
+      
+      func changePasswordViewControllerTableVC(_: Void = ()) -> ChangePasswordViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: changePasswordViewControllerTableVC)
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "RegistrationNotView") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'RegistrationNotView' is used in storyboard 'ChangePassword', but couldn't be loaded.") }
+        if _R.storyboard.changePassword().changePasswordViewControllerTableVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'changePasswordViewControllerTableVC' could not be loaded from storyboard 'ChangePassword' as 'ChangePasswordViewController'.") }
       }
       
       fileprivate init() {}
