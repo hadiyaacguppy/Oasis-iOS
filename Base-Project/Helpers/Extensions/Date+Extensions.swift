@@ -62,21 +62,14 @@ extension Date{
      
      - returns: Any, need to cast as String || Date
      */
-    func getStringFromTimeStamp(_ unixtimeInterval: Int,_ returnTypeYouAreAimingFor: ReturnTypeFromTimestamp?,_ stringFormat: String?) -> Any {
+    func getStringFromTimeStamp(_ unixtimeInterval: Int,_ returnTypeYouAreAimingFor: ReturnTypeFromTimestamp?,_ stringFormat: String = "yyyy-MM-dd") -> Any {
         
         let date = Date(timeIntervalSince1970: TimeInterval(unixtimeInterval))
         if returnTypeYouAreAimingFor == .date {//Return the date as Date Type if user wanted it as date
             return date
-        }else{//Return the date as String
+        }else{
             let dateFormatter = DateFormatter()
-            //dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
-            //dateFormatter.locale = NSLocale.current
-            
-            if stringFormat == nil {//Return the default one
-                dateFormatter.dateFormat = "yyyy-MM-dd"
-            }else{//Or if passed return the format the user wants
-                dateFormatter.dateFormat = stringFormat
-            }
+            dateFormatter.dateFormat = stringFormat
             
             let strDate = dateFormatter.string(from: date)
             
