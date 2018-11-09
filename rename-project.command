@@ -48,6 +48,6 @@ git remote remove origin
 
 
 #Success message
-echo "Success"
+echo "Success. Base project renamed to $NEW_NAME. Have fun!"
 
 git status
