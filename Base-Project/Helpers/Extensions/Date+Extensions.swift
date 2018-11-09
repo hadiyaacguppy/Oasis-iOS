@@ -15,6 +15,28 @@ enum ReturnTypeFromTimestamp {
 
 extension Date{
     
+    /// returns the hour of the receiver 'NSDate'
+    var hourOfDay: Int {
+        return Calendar.current.component(.hour, from: self)
+    }
+    
+    /// returns the day of the week of the receiver 'NSDate'
+    var dayOfWeek: Int {
+        return Calendar.current.component(.weekday, from: self)
+    }
+    
+    /// returns the year of the receiver 'NSDate' as Int anno domini
+    var year: Int {
+        return Calendar.current.component(.year, from: self)
+    }
+    public var isInFuture: Bool {
+        return self > Date()
+    }
+    
+    public var isInPast: Bool {
+        return self < Date()
+    }
+    
     func convertDateToLocalTime(_ iDate: Date) -> Date {
         let timeZone: TimeZone = TimeZone.autoupdatingCurrent
         let seconds: Int = timeZone.secondsFromGMT(for: iDate)
@@ -48,9 +70,11 @@ extension Date{
         return timestampNumber.stringValue
     }
     
-    func getTimeStampFromDate(_ iDate: Date) -> String {
-        let timestamp: String = String(iDate.timeIntervalSince1970)
-        return timestamp
+    func dateString(ofStyle style: DateFormatter.Style = .medium) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .none
+        dateFormatter.dateStyle = style
+        return dateFormatter.string(from: self)
     }
     
     /**
@@ -83,4 +107,6 @@ extension Date{
             return strDate
         }
     }
+    
+  
 }

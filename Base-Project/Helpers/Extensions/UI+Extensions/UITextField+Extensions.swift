@@ -33,6 +33,13 @@ extension UITextField {
             rightViewMode = .always
         }
     }
-
+    public func setPlaceHolderTextColor(_ color: UIColor) {
+        guard let placeholder = placeholder, !placeholder.isEmpty else {
+            return
+        }
+        let attributes = [NSAttributedString.Key.foregroundColor: color]
+        attributedPlaceholder = NSAttributedString(string: placeholder,
+                                                   attributes: attributes)
+    }
   
 }

@@ -57,5 +57,29 @@ extension UITableView{
         
         return false
     }
+    public func indexPathForLastRow(inSection section: Int) -> IndexPath? {
+        guard section >= 0 else { return nil }
+        guard numberOfRows(inSection: section) > 0  else {
+            return IndexPath(row: 0, section: section)
+        }
+        return IndexPath(row: numberOfRows(inSection: section) - 1, section: section)
+    }
+    public func scrollToBottom(animated: Bool = true) {
+        let bottomOffset = CGPoint(x: 0, y: contentSize.height - bounds.size.height)
+        setContentOffset(bottomOffset, animated: animated)
+    }
     
+    /// SwifterSwift: Scroll to top of TableView.
+    ///
+    /// - Parameter animated: set true to animate scroll (default is true).
+    public func scrollToTop(animated: Bool = true) {
+        setContentOffset(CGPoint.zero, animated: animated)
+    }
+    public func safeScrollToRow(at indexPath: IndexPath, at scrollPosition: UITableView.ScrollPosition, animated: Bool) {
+        guard indexPath.section < numberOfSections else { return }
+        guard indexPath.row < numberOfRows(inSection: indexPath.section) else { return }
+        scrollToRow(at: indexPath, at: scrollPosition, animated: animated)
+    }
+
+
 }

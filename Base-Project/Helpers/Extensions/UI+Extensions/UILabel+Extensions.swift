@@ -16,4 +16,27 @@ extension UILabel {
             self.adjustsFontSizeToFitWidth = newValue
         }
     }
+    
+    var isTruncated : Bool {
+        guard let string = text else {
+            return false
+        }
+        
+        let rectSize = CGSize(width: self.frame.width, height: .greatestFiniteMagnitude)
+        let size: CGSize = (string as NSString).boundingRect(with: rectSize,
+                                                             options: .usesLineFragmentOrigin,
+                                                             attributes: [NSAttributedString.Key.font: font],
+                                                             context: nil).size
+        return (size.height > self.bounds.size.height)
+    }
+    public var requiredHeight: CGFloat {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: frame.width, height: CGFloat.greatestFiniteMagnitude))
+        label.numberOfLines = 0
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
+        label.font = font
+        label.text = text
+        label.attributedText = attributedText
+        label.sizeToFit()
+        return label.frame.height
+    }
 }
