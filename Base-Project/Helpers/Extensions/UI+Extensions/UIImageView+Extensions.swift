@@ -53,4 +53,12 @@ extension UIImageView{
         )
         
     }
+    public func blur(withStyle style: UIBlurEffect.Style = .light) {
+        let blurEffect = UIBlurEffect(style: style)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
+        addSubview(blurEffectView)
+        clipsToBounds = true
+    }
 }

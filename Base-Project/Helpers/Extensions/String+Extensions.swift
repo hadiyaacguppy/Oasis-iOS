@@ -123,6 +123,46 @@ extension String {
         
         return String(format: hash as String)
     }
+    public func truncated(limit: Int) -> String {
+        if self.count > limit {
+            var truncatedString = self[0..<limit]
+            truncatedString = truncatedString.appending("...")
+            return truncatedString
+        }
+        return self
+    }
+    
+    
+    subscript (bounds: CountableClosedRange<Int>) -> String {
+        let start = index(startIndex, offsetBy: bounds.lowerBound)
+        let end = index(startIndex, offsetBy: bounds.upperBound)
+        return String(self[start...end])
+    }
+    
+    subscript (bounds: CountableRange<Int>) -> String {
+        let start = index(startIndex, offsetBy: bounds.lowerBound)
+        let end = index(startIndex, offsetBy: bounds.upperBound)
+        return String(self[start..<end])
+    }
+    var wordCount : Int {
+        let range = startIndex..<endIndex
+        var count = 0
+        
+        self.enumerateSubstrings(in: range, options: .byWords) { (word, _, _, _) in
+            if word != nil { count += 1 }
+        }
+        
+        return count
+    }
+    public var base64Encoded: String? {
+        let plainData = data(using: .utf8)
+        return plainData?.base64EncodedString()
+    }
+    public var hasNumbers: Bool {
+        return rangeOfCharacter(from: .decimalDigits, options: .literal, range: nil) != nil
+    }
+    
+
 }
 
 extension Optional where Wrapped == String{
@@ -163,4 +203,6 @@ extension Optional where Wrapped == String{
         }
         return attr
     }
+   
+   
 }
