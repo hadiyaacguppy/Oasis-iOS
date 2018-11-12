@@ -77,7 +77,7 @@ extension Date{
         }
     }
     
-    func relativeString : String {
+    var relativeString : String {
         let secondsAgo = Int(Date().timeIntervalSince(self))
         
         let minute = 60
@@ -111,6 +111,8 @@ extension Date{
         } else {
             quotient = secondsAgo / year
             unit = "year"
+            
+        }
         return "\(quotient) \(unit)\(quotient == 1 ? "" : "s") ago"
     }
 }
