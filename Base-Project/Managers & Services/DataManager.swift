@@ -11,7 +11,6 @@ import Alamofire
 import ObjectMapper
 
 
-var deviceLang = Locale.current.languageCode
 
 class DataManager: NSObject {
     

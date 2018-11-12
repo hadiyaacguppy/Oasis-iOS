@@ -109,6 +109,7 @@
 		CF8C5CCD20EF9E7200236C7B /* SessionManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C5CB620EF9E7200236C7B /* SessionManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF8C5CD520EF9E8700236C7B /* SessionManagerContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5CD420EF9E8700236C7B /* SessionManagerContants.swift */; };
 		CF8C5CD720EF9E9500236C7B /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5CD620EF9E9500236C7B /* SessionManager.swift */; };
+		CFAD4D0E21955EF300AF4375 /* LanguageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD4D0D21955EF300AF4375 /* LanguageService.swift */; };
 		CFC2BFE6216CA3C800DC31A7 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2BFE5216CA3C800DC31A7 /* ErrorViewModel.swift */; };
 		CFE27A17214A9BE200DBB917 /* Reactive+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE27A16214A9BE200DBB917 /* Reactive+Dictionary.swift */; };
 /* End PBXBuildFile section */
@@ -281,6 +282,7 @@
 		CF8C5CC720EF9E7200236C7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF8C5CD420EF9E8700236C7B /* SessionManagerContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagerContants.swift; sourceTree = "<group>"; };
 		CF8C5CD620EF9E9500236C7B /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		CFAD4D0D21955EF300AF4375 /* LanguageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageService.swift; sourceTree = "<group>"; };
 		CFC2BFE5216CA3C800DC31A7 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
 		CFE27A16214A9BE200DBB917 /* Reactive+Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Dictionary.swift"; sourceTree = "<group>"; };
 		DA13A42E9542A840EF7B74A5 /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -339,6 +341,7 @@
 				0F57539620EE19090069C139 /* LocationService.swift */,
 				0F57539E20EE1EC90069C139 /* Relays.swift */,
 				CF8C5CA520EF9D2300236C7B /* FacebookLoginService.swift */,
+				CFAD4D0D21955EF300AF4375 /* LanguageService.swift */,
 			);
 			path = "Managers & Services";
 			sourceTree = "<group>";
@@ -1047,6 +1050,7 @@
 				0F484B4F2165FF5C0060C463 /* Date+Extensions.swift in Sources */,
 				CF2F319E215E8BA0007A912A /* URL+Extensions.swift in Sources */,
 				CF7823B420EF95A7003069BD /* APIErrorManager.swift in Sources */,
+				CFAD4D0E21955EF300AF4375 /* LanguageService.swift in Sources */,
 				CF56472B211B18050092EFBD /* PushParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

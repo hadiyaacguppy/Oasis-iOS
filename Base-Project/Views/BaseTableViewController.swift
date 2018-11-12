@@ -61,7 +61,7 @@ class BaseTableViewController : UITableViewController,BaseController {
                                          action: #selector(self.backButtonTapped))
         
         
-        if deviceLang!.contains("ar"){
+        if LanguageService().isRTL{
             backButton.image = UIImage(named: "NavBackiconAR")!.withRenderingMode(.alwaysOriginal)
         }else {
             backButton.image = UIImage(named: "NavBackicon")!.withRenderingMode(.alwaysOriginal)
