@@ -10,7 +10,7 @@
 
 import UIKit
 import RxSwift
-
+import RxGesture
 protocol ChangePasswordViewControllerInput {
 
 }
