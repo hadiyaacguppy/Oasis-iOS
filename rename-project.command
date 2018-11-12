@@ -23,7 +23,7 @@ read NEW_NAME
 
 #Confirmation
 echo "New name is $NEW_NAME in $DIRECTORY"
-read -p "Are you sure? " -n 1 -r
+read -p "Are you sure? y/N " -n 1 -r
 echo ""
 
 if [[ ! $REPLY =~ ^[Yy]$ ]]
@@ -48,6 +48,6 @@ git remote remove origin
 
 
 #Success message
-echo "Success"
+echo "Success. Base project renamed to $NEW_NAME. Have fun!"
 
 git status
