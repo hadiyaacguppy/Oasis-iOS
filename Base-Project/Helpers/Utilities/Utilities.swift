@@ -128,7 +128,15 @@ struct Utilities  {
                 }
             }
         }
+        
+        static func showActivityController(withLinkToShare link : String ,andWithPresenter presenter: UIViewController) {
+            let activityItems = [link]
+            let activityController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+            presenter.present(activityController, animated: true, completion: nil)
         }
+      
+        
+    }
     
     struct Font{
         
