@@ -52,6 +52,7 @@
 		6754244D20EE7FF600783123 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6754244C20EE7FF600783123 /* BaseNavigationController.swift */; };
 		90BF2E7761749FD7B6527C0A /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA13A42E9542A840EF7B74A5 /* Pods_OneSignalNotificationServiceExtension.framework */; };
 		CF0598EC210F154F00C2645F /* TDPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0598EB210F154F00C2645F /* TDPicker.swift */; };
+		CF06BE5F2199CFC4004B763B /* Reactive+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06BE5E2199CFC4004B763B /* Reactive+Validation.swift */; };
 		CF09C0D02180A511003DF186 /* BaseWebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF09C0C92180A511003DF186 /* BaseWebView.storyboard */; };
 		CF09C0D12180A511003DF186 /* BaseWebViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF09C0CA2180A511003DF186 /* BaseWebViewPresenter.swift */; };
 		CF09C0D22180A511003DF186 /* BaseWebViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF09C0CB2180A511003DF186 /* BaseWebViewRouter.swift */; };
@@ -220,6 +221,7 @@
 		C65CEF44A2A6134604793718 /* Pods-Base-ProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-ProjectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Base-ProjectUITests/Pods-Base-ProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C950BD45C779722DCB3D76B0 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		CF0598EB210F154F00C2645F /* TDPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDPicker.swift; sourceTree = "<group>"; };
+		CF06BE5E2199CFC4004B763B /* Reactive+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Validation.swift"; sourceTree = "<group>"; };
 		CF09C0C92180A511003DF186 /* BaseWebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BaseWebView.storyboard; sourceTree = "<group>"; };
 		CF09C0CA2180A511003DF186 /* BaseWebViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWebViewPresenter.swift; sourceTree = "<group>"; };
 		CF09C0CB2180A511003DF186 /* BaseWebViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWebViewRouter.swift; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 			children = (
 				CF56472C211B1B740092EFBD /* Reactive+UIImageView.swift */,
 				0FD65F1420D014F40075E251 /* Reactive+UIButton.swift */,
+				CF06BE5E2199CFC4004B763B /* Reactive+Validation.swift */,
 				CFE27A16214A9BE200DBB917 /* Reactive+Dictionary.swift */,
 			);
 			path = "Rx+Extensions";
@@ -1040,6 +1043,7 @@
 				CF8C5CA020EF9CCA00236C7B /* BaseTransparentNavigationBar.swift in Sources */,
 				0FD65F1520D014F40075E251 /* Reactive+UIButton.swift in Sources */,
 				CF181BA020809874002603A1 /* UINavigationBar+Extensions.swift in Sources */,
+				CF06BE5F2199CFC4004B763B /* Reactive+Validation.swift in Sources */,
 				0F57539320EE16560069C139 /* R.generated.swift in Sources */,
 				CF40385E216CF78F001F649B /* InitialConfigurator.swift in Sources */,
 				CFC2BFE6216CA3C800DC31A7 /* ErrorViewModel.swift in Sources */,
