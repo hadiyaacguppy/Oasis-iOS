@@ -6,6 +6,7 @@
 //  Copyright © 2018 Tedmob. All rights reserved.
 //
 
+
 import Foundation
 import UIKit
 import OneSignal
@@ -14,27 +15,6 @@ import RxSwift
 
 
 
-
-struct NotificationPayload  {
-    
-    /* Notification Payload */
-    public private(set) var payload : OSNotificationPayload?
-    
-    /* Set to true when the user was able to see the notification and reacted to it
-     Set to false when app is in focus and in-app alerts are disabled, or the remote notification is silent. */
-    public private(set) var wasShown : Bool?
-    
-    
-    
-    /* Set to true if the app was in focus when the notification  */
-    public private(set) var wasAppInFocus : Bool?
-    
-    /* Set to true when the received notification is silent
-     Silent means there is no alert, sound, or badge payload in the aps dictionary
-     requires remote-notification within UIBackgroundModes array of the Info.plist */
-    public private(set) var isSilentNotification : Bool?
-    
-}
 
 
 final class OneSignalPushService: NSObject{
@@ -59,10 +39,15 @@ final class OneSignalPushService: NSObject{
     }
     
     var notificationsIsAllowed : Bool = false
+    
     var receivedNotifications : Array<OSNotification> = Array<OSNotification>()
     
     
-    
+    var shouldShowNotificationWhileAppIsOpen : Bool = true {
+        didSet {
+            updateInFocusDisplayType()
+        }
+    }
     func initializeOneSignal(withLaunchOptions launchOptions  : [UIApplicationLaunchOptionsKey: Any]? ,andAppID appId : String){
         
         
@@ -70,6 +55,7 @@ final class OneSignalPushService: NSObject{
         // Add OneSignalPushService as Observer
         OneSignal.add(self as OSPermissionObserver)
         OneSignal.add(self as OSSubscriptionObserver)
+        
         self.userId = OneSignal.getPermissionSubscriptionState().subscriptionStatus.userId
         
         
@@ -77,12 +63,16 @@ final class OneSignalPushService: NSObject{
             guard notification != nil else {
                 return
             }
-            self.receivedNotifications.append(notification!)
+            print("DID RECEIVE NOTIFICATION")
+            
+            PushParser.shared.handleDidReceiveNotification(withPayload: NotificationPayload(payload: notification!.payload, wasShown: notification!.wasShown, wasAppInFocus: notification!.wasAppInFocus, isSilentNotification: notification!.isSilentNotification))
+            
+            //            self.receivedNotifications.append(notification!)
             
         }
         
         let notificationOpenedBlock: OSHandleNotificationActionBlock = { result in
-
+            
             self.setupNotificationAction(withResult: result)
         }
         
@@ -95,6 +85,14 @@ final class OneSignalPushService: NSObject{
         
         OneSignal.inFocusDisplayType = .notification
         promptForPushNotification()
+    }
+    
+    func updateInFocusDisplayType(){
+        if self.shouldShowNotificationWhileAppIsOpen {
+            OneSignal.inFocusDisplayType = .notification
+        }else {
+            OneSignal.inFocusDisplayType = .none
+        }
     }
     
 }
@@ -118,7 +116,7 @@ extension OneSignalPushService: OSPermissionObserver,OSSubscriptionObserver{
     func onOSSubscriptionChanged(_ stateChanges: OSSubscriptionStateChanges!) {
         if let userId = stateChanges.to.userId  {
             self.userId = userId
-            print( "User id (player-id) is --" + stateChanges.to.userId)
+            print( "User id (player-id) is -- " + stateChanges.to.userId)
         }
         
     }
@@ -169,7 +167,7 @@ extension OneSignalPushService{
         
         
         if let payload = self.payLoadMessage {
-            PushParser.shared.handlerDidReceivePush(withPayload: payload)
+            PushParser.shared.handleDidOpenNotification(withPayload: payload)
             self.payLoadMessage = nil
         }
         

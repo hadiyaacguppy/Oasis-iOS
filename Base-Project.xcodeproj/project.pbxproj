@@ -72,6 +72,7 @@
 		CF40385D216CF78F001F649B /* InitialInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF403856216CF78F001F649B /* InitialInteractor.swift */; };
 		CF40385E216CF78F001F649B /* InitialConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF403857216CF78F001F649B /* InitialConfigurator.swift */; };
 		CF45F0C9201B42DF004A39E2 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF45F0C8201B42DF004A39E2 /* Async.swift */; };
+		CF50F7AC219AC028000E5E4E /* NotificationPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50F7AB219AC028000E5E4E /* NotificationPayload.swift */; };
 		CF564702211B142E0092EFBD /* OneSignalPushService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF564701211B142E0092EFBD /* OneSignalPushService.swift */; };
 		CF56471A211B15590092EFBD /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF564719211B15590092EFBD /* NotificationService.swift */; };
 		CF56471E211B15590092EFBD /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CF564717211B15590092EFBD /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -250,6 +251,7 @@
 		CF403856216CF78F001F649B /* InitialInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialInteractor.swift; sourceTree = "<group>"; };
 		CF403857216CF78F001F649B /* InitialConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialConfigurator.swift; sourceTree = "<group>"; };
 		CF45F0C8201B42DF004A39E2 /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
+		CF50F7AB219AC028000E5E4E /* NotificationPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPayload.swift; sourceTree = "<group>"; };
 		CF564701211B142E0092EFBD /* OneSignalPushService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneSignalPushService.swift; sourceTree = "<group>"; };
 		CF564717211B15590092EFBD /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF564719211B15590092EFBD /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
@@ -580,6 +582,7 @@
 			children = (
 				CF564701211B142E0092EFBD /* OneSignalPushService.swift */,
 				CF56472A211B18050092EFBD /* PushParser.swift */,
+				CF50F7AB219AC028000E5E4E /* NotificationPayload.swift */,
 			);
 			path = Push;
 			sourceTree = "<group>";
@@ -1015,6 +1018,7 @@
 				0FD65F1920D018480075E251 /* Double+Extensions.swift in Sources */,
 				CF40385A216CF78F001F649B /* InitialRouter.swift in Sources */,
 				CF09C0D12180A511003DF186 /* BaseWebViewPresenter.swift in Sources */,
+				CF50F7AC219AC028000E5E4E /* NotificationPayload.swift in Sources */,
 				0F57538E20EE12EB0069C139 /* Constants.swift in Sources */,
 				CF8C5CAC20EF9D7E00236C7B /* UICollectionView+Extensions.swift in Sources */,
 				CF564727211B16480092EFBD /* Queue.swift in Sources */,

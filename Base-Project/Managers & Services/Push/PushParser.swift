@@ -13,8 +13,12 @@ class PushParser {
     static let shared = PushParser()
     
     
-    func handlerDidReceivePush(withPayload payload : NotificationPayload){
-        
+    
+    func handleDidReceiveNotification(withPayload payload : NotificationPayload){
+     
+    }
+    func handleDidOpenNotification(withPayload payload : NotificationPayload){
+     
     }
     
 }
