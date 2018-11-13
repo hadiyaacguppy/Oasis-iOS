@@ -69,11 +69,11 @@ extension String {
     /// This function will return the id of any valid youtube link
     ///
     /// - Returns: Video Id
-    mutating
+    
     func getYoutubeVideoId()
         -> String? {
             //Step 1: First remove the spaces if exist, since the url will not be valid
-            self = self.trimmingCharacters(in: .whitespaces)
+            let trimmedString = self.trimmingCharacters(in: .whitespaces)
             /* Step 2:
              Here we get the component of the given URL, it's GREAT in Lebanese in how it works!read about it.
              First we try to get the queryItems
@@ -94,11 +94,11 @@ extension String {
              */
             
             //That's it.:)
-            guard let value = URLComponents(string: self)?
+            guard let value = URLComponents(string: trimmedString)?
                 .queryItems?
                 .first(where: { $0.name == "v" })?
                 .value else{
-                    return URLComponents(string: self)?
+                    return URLComponents(string: trimmedString)?
                         .path
                         .replacingOccurrences(of: "/", with: "")
             }
@@ -180,7 +180,8 @@ extension Optional where Wrapped == String{
         
         //Create NSMutableAttriburedString form the data , if fails a nil will be returned
         guard let attr = try? NSMutableAttributedString(data: data,
-                                                        options: [.documentType: NSAttributedString.DocumentType.html],
+                                                        options: [.documentType: NSAttributedString.DocumentType.html,
+                                                                  .characterEncoding: String.Encoding.utf8.rawValue],
                                                         documentAttributes: nil
             ) else {
                 return nil

@@ -18,6 +18,8 @@ class BaseViewController : UIViewController,BaseController {
     
     var didTapOnRetryPlaceHolderButton: (() -> ())?
     
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addBackButton()

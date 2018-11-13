@@ -72,6 +72,13 @@ struct Constants {
         enum SocialMediaApps : String{
             case whatsapp = "whatsapp://"
         }
+        
+        enum MailApps : String{
+            case gmail = "googlegmail:///"
+            case outlook = "ms-outlook://"
+            case spark = "readdle-spark://"
+            case inboxGmail = "inbox-gmail://"
+        }
     }
     
  

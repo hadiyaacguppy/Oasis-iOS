@@ -39,40 +39,95 @@ struct Utilities  {
         }
     }
     
-    static func sendThirdPartyEmails(To to : String , subject s : String , content con : String){
+    static func sendEmail(To to : String,
+                          withSubject subject : String?,
+                          andContent content : String?,
+                          withPresentingViewController vc : (UIViewController & MFMailComposeViewControllerDelegate))  {
         
-        if UIApplication.shared.canOpenURL(URL(string: "googlegmail:///")!) {
-            UIApplication.shared.open(URL(string: "googlegmail:///co?su bject=\(s)&body=\(con)&to=\(to)")!)
-            
-        }else  if UIApplication.shared.canOpenURL(URL(string: "ms-outlook://")!){
-            UIApplication.shared.open(URL(string: "ms-outlook://compose?to=\(to)&subject=\(s)&body=\(con)")!)
-            
-        }else if UIApplication.shared.canOpenURL(URL(string: "readdle-spark://")!){
-            UIApplication.shared.open(URL(string: "readdle-spark://compose?subject=\(s)&body=\(con)&recipient=\(to)")!)
-            
-        } else if UIApplication.shared.canOpenURL(URL(string: "inbox-gmail://")!) {
-            UIApplication.shared.open(URL(string: "inbox-gmail://co?to=\(to)&subject=\(s)&body=\(con)")!)
+        let actionSheet = UIAlertController(title: "Choose email".localized,
+                                            message: "",
+                                            preferredStyle: .actionSheet)
+        
+        var actionArray = [TDAlertAction]()
+        
+        let gmailSchema = Constants.URLSchemas.MailApps.gmail.rawValue
+        let sparkSchema = Constants.URLSchemas.MailApps.spark.rawValue
+        let outlookSchema = Constants.URLSchemas.MailApps.outlook.rawValue
+        let inboxGmailSchema = Constants.URLSchemas.MailApps.inboxGmail.rawValue
+        
+        
+        if canOpen(url: "mailto:".asURL()){
+            let mail = TDAlertAction.handlerSavingAlertAction(title: "Mail".localized,
+                                                              style: .default,
+                                                              completionHandler: { (alert) in
+                                                                let composeVC = MFMailComposeViewController()
+                                                                composeVC.mailComposeDelegate = vc
+                                                                composeVC.setToRecipients([to])
+                                                                if subject != nil { composeVC.setSubject(subject!) }
+                                                                if content != nil { composeVC.setMessageBody(content!, isHTML: true) }
+                                                                vc.present(composeVC, animated: true, completion: nil)
+            })
+            actionArray.append(mail)
         }
         
-
+        if canOpen(url: gmailSchema.asURL()){
+            let gmail = TDAlertAction.handlerSavingAlertAction(title: "Gmail".localized,
+                                                               style: .default,
+                                                               completionHandler: { (alert) in
+                                                                let urlToOpen = gmailSchema + "co?subject=\(subject ?? "")&body=\(content ?? "")&to=\(to)"
+                                                                openURL(withString: urlToOpen)
+            })
+            actionArray.append(gmail)
+        }
+        
+        if canOpen(url: outlookSchema.asURL()){
+            let outlook = TDAlertAction.handlerSavingAlertAction(title: "Outlook".localized,
+                                                                 style: .default,
+                                                                 completionHandler: { (alert) in
+                                                                    let urlToOpen = outlookSchema + "compose?to=\(to)&subject=\(subject ?? "")&body=\(content ?? "")"
+                                                                    openURL(withString: urlToOpen)
+            })
+            actionArray.append(outlook)
+        }
+        
+        if canOpen(url: sparkSchema.asURL()){
+            let spark = TDAlertAction.handlerSavingAlertAction(title: "Spark".localized,
+                                                               style: .default,
+                                                               completionHandler: { (alert) in
+                                                                let urlToOpen = sparkSchema + "compose?subject=\(subject ?? "")&body=\(content ?? "")&recipient=\(to)"
+                                                                openURL(withString: urlToOpen)
+            })
+            actionArray.append(spark)
+        }
+        
+        if canOpen(url: inboxGmailSchema.asURL()){
+            let inbox = TDAlertAction.handlerSavingAlertAction(title: "Inbox".localized,
+                                                               style: .default,
+                                                               completionHandler: { (alert) in
+                                                                let urlToOpen = inboxGmailSchema + "co?to=\(to)&subject=\(subject ?? "")&body=\(content ?? "")"
+                                                                openURL(withString: urlToOpen)
+            })
+            actionArray.append(inbox)
+        }
+        if actionArray.count == 0 { return }
+        if actionArray.count == 1 {
+            let action = actionArray[0]
+            if let handler = action.completionHandler{
+                handler(action)
+                return
+            }
+        }
+        actionArray.forEach{actionSheet.addAction($0)}
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel".localized,
+                                            style: .cancel,
+                                            handler: nil))
+        
+        vc.present(actionSheet,
+                   animated: true,
+                   completion: nil)
     }
     
-    static func sendEmail(To to : String , subject s : String , content con : String,withPresentingViewController vc : UIViewController){
-        guard MFMailComposeViewController.canSendMail() else {
-            self.sendThirdPartyEmails(To: to, subject: s, content: con)
-            return
-        }
-        let composeVC = MFMailComposeViewController()
-        composeVC.mailComposeDelegate = vc as! MFMailComposeViewControllerDelegate
-        // Configure the fields of the interface.
-        composeVC.setToRecipients([to])
-        composeVC.setSubject(s)
-        composeVC.setMessageBody(con, isHTML: true)
-        // Present the view controller modally.
-        vc.present(composeVC, animated: true, completion: nil)
-        
-        
-    }
     
     struct AlertViews {
         static func showAlertView(_ title: String, message: String, actions: [UIAlertAction], withPresenter presenter: UIViewController, withCompletionHandler handler: (() -> Void)?) {
@@ -92,7 +147,7 @@ struct Utilities  {
             
             
             alertController.addAction(UIAlertAction(title: "Dismiss", style: .default) { action in 
-                 dimiss?()
+                dimiss?()
             })
             OperationQueue.main.addOperation {
                 presenter.present(alertController, animated: true) {
@@ -134,7 +189,7 @@ struct Utilities  {
             let activityController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
             presenter.present(activityController, animated: true, completion: nil)
         }
-      
+        
         
     }
     
@@ -146,7 +201,8 @@ struct Utilities  {
         ///   - fromFont: Original Font
         ///   - toFont: Custom font to be used
         /// - Returns: New font with the original font traits
-        static func copySymbolicTraits(from fromFont : UIFont, to toFont : UIFont) -> UIFont?{
+        static func copySymbolicTraits(from fromFont : UIFont,
+                                       to toFont : UIFont) -> UIFont?{
             let fromFontSymbolicTraits = fromFont.fontDescriptor.symbolicTraits
             guard let toFontWithSymbolicTraits = toFont.fontDescriptor.withSymbolicTraits(fromFontSymbolicTraits) else {
                 return nil
@@ -203,21 +259,19 @@ struct Utilities  {
             textView.inputAccessoryView = toolbar
         }
     }
+    
     struct GoogleMaps {
         
         static func goToGoogleMapsNavigation(withLongitude long : Double , andLatitude lat : Double){
             goToGoogleMapsNavigation(withLongitude: Float(long), andLatitude: Float(lat))
         }
-       
+        
         static func goToGoogleMapsNavigation(withLongitude long : Float , andLatitude lat : Float){
-            if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
-                UIApplication.shared.openURL(NSURL(string:
-                    "comgooglemaps://?daddr=\(lat),\(long)&directionsmode=driving")! as URL)
-                
+            if Utilities.canOpen(url: URL(string:"comgooglemaps://")){
+                Utilities.openURL(withString: "comgooglemaps://?daddr=\(lat),\(long)&directionsmode=driving")
             } else {
                 // if GoogleMap App is not installed
-                UIApplication.shared.openURL(NSURL(string:
-                    "https://www.google.co.in/maps/dir/?&daddr=\(lat),\(long)&directionsmode=driving")! as URL)
+                Utilities.openURL(withString: "https://www.google.co.in/maps/dir/?&daddr=\(lat),\(long)&directionsmode=driving")
             }
         }
     }
@@ -304,19 +358,22 @@ struct Utilities  {
         static func openLink(forURL url : String){
             guard let urlToOpen = URL(string: url)  else { return }
             
+            var actionArray = [TDAlertAction]()
+            
             let actionSheet = UIAlertController(title: "Where do you want to open it".localized,
                                                 message: "",
                                                 preferredStyle: .actionSheet)
             
             if UIApplication.shared.canOpenURL(urlToOpen) {
-                actionSheet.addAction(UIAlertAction(title: "Safari".localized,
-                                                    style: .default,
-                                                    handler: {
-                                                        (alert: UIAlertAction!) -> Void in
-                                                        UIApplication.shared.open(URL(string: url)!,
-                                                                                  options: [:],
-                                                                                  completionHandler: nil)
-                }))
+                let safari = TDAlertAction.handlerSavingAlertAction(title: "Safari".localized,
+                                                                    style: .default,
+                                                                    completionHandler: {
+                                                                        (alert: UIAlertAction!) -> Void in
+                                                                        UIApplication.shared.open(URL(string: url)!,
+                                                                                                  options: [:],
+                                                                                                  completionHandler: nil)
+                })
+                actionArray.append(safari)
             }
             
             var chromeSchema : String?
@@ -345,14 +402,15 @@ struct Utilities  {
                     chromeURL = URL(string:chromeSchema! + host)
                     if chromeURL != nil {
                         if UIApplication.shared.canOpenURL(chromeURL!) {
-                            actionSheet.addAction(UIAlertAction(title: "Chrome".localized,
-                                                                style: .default,
-                                                                handler: {
-                                                                    (alert: UIAlertAction!) -> Void in
-                                                                    UIApplication.shared.open(chromeURL!,
-                                                                                              options: [:],
-                                                                                              completionHandler: nil)
-                            }))
+                            let chrome = TDAlertAction.handlerSavingAlertAction(title: "Chrome".localized,
+                                                                                style: .default,
+                                                                                completionHandler: {
+                                                                                    (alert: UIAlertAction!) -> Void in
+                                                                                    UIApplication.shared.open(chromeURL!,
+                                                                                                              options: [:],
+                                                                                                              completionHandler: nil)
+                            })
+                            actionArray.append(chrome)
                         }
                     }
                 }
@@ -364,14 +422,15 @@ struct Utilities  {
                     fireFoxURL = URL(string: fireFoxSchema! + host)
                     if fireFoxURL != nil{
                         if UIApplication.shared.canOpenURL(fireFoxURL!) {
-                            actionSheet.addAction(UIAlertAction(title: "Fire Fox".localized,
-                                                                style: .default,
-                                                                handler: {
-                                                                    (alert: UIAlertAction!) -> Void in
-                                                                    UIApplication.shared.open(fireFoxURL!,
-                                                                                              options: [:],
-                                                                                              completionHandler: nil)
-                            }))
+                            let firefox = TDAlertAction.handlerSavingAlertAction(title: "FireFox".localized,
+                                                                                 style: .default,
+                                                                                 completionHandler: {
+                                                                                    (alert: UIAlertAction!) -> Void in
+                                                                                    UIApplication.shared.open(fireFoxURL!,
+                                                                                                              options: [:],
+                                                                                                              completionHandler: nil)
+                            })
+                            actionArray.append(firefox)
                         }
                     }
                 }
@@ -383,18 +442,30 @@ struct Utilities  {
                     operaURL = URL(string: operaSchema! + host)
                     if operaURL != nil{
                         if UIApplication.shared.canOpenURL(operaURL!) {
-                            actionSheet.addAction(UIAlertAction(title: "Opera".localized,
-                                                                style: .default,
-                                                                handler: {
-                                                                    (alert: UIAlertAction!) -> Void in
-                                                                    UIApplication.shared.open(operaURL!,
-                                                                                              options: [:],
-                                                                                              completionHandler: nil)
-                            }))
+                            let opera = TDAlertAction.handlerSavingAlertAction(title: "Opera".localized,
+                                                                               style: .default,
+                                                                               completionHandler: {
+                                                                                (alert: UIAlertAction!) -> Void in
+                                                                                UIApplication.shared.open(operaURL!,
+                                                                                                          options: [:],
+                                                                                                          completionHandler: nil)
+                            })
+                            actionArray.append(opera)
                         }
                     }
                 }
             }
+            
+            
+            if actionArray.count == 0 { return }
+            if actionArray.count == 1 {
+                let action = actionArray[0]
+                if let handler = action.completionHandler{
+                    handler(action)
+                    return
+                }
+            }
+            actionArray.forEach{actionSheet.addAction($0)}
             
             actionSheet.addAction(UIAlertAction(title: "Cancel".localized,
                                                 style: .cancel,
@@ -414,18 +485,18 @@ struct Utilities  {
             return  Float(UIDevice.current.systemVersion)!
         }
         
-
+        
         var height : CGFloat{
-           return  UIScreen.main.bounds.size.height
+            return  UIScreen.main.bounds.size.height
         }
         
         var width : CGFloat{
             return  UIScreen.main.bounds.size.width
         }
         var isIpad : Bool {
-           return UIDevice.current.userInterfaceIdiom == .pad
+            return UIDevice.current.userInterfaceIdiom == .pad
         }
-       
+        
         var isIPhone : Bool {
             return UIDevice.current.userInterfaceIdiom == .phone
         }
@@ -434,11 +505,11 @@ struct Utilities  {
             case 2436:
                 return true
             default:
-                 return false
+                return false
             }
         }
-
-      
+        
+        
     }
     
     
@@ -451,8 +522,8 @@ struct Utilities  {
         ///   - to: end value
         /// - Returns: Observable of the countDown
         static func countDown(from: Int,
-                       to: Int,
-                       interval : Double)
+                              to: Int,
+                              interval : Double)
             -> Observable<Int> {
                 return Observable<Int>
                     .timer( 1, period: interval, scheduler: MainScheduler.instance)
@@ -460,7 +531,7 @@ struct Utilities  {
                     .map { from - $0 }
         }
     }
-
+    
     struct Storage {
         static func deviceRemainingFreeSpaceInBytes() -> Int64? {
             let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last!
@@ -487,8 +558,3 @@ struct Utilities  {
         }
     }
 }
-
-
-
-
-

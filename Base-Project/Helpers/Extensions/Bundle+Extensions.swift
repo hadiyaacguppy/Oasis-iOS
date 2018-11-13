@@ -11,20 +11,24 @@ import Foundation
 
 extension Bundle {
     
-    var appName: String {
-        return infoDictionary?["CFBundleName"] as! String
+    static
+    var appName: String? {
+        return self.main.infoDictionary?["CFBundleName"] as? String
     }
     
-    var bundleId: String {
-        return bundleIdentifier!
+    static
+    var bundleId: String? {
+        return self.main.bundleIdentifier
     }
     
-    var versionNumber: String {
-        return infoDictionary?["CFBundleShortVersionString"] as! String
+    static
+    var versionNumber: String? {
+        return self.main.infoDictionary?["CFBundleShortVersionString"] as? String
     }
     
-    var buildNumber: String {
-        return infoDictionary?["CFBundleVersion"] as! String
+    static
+    var buildNumber: String? {
+        return self.main.infoDictionary?["CFBundleVersion"] as? String
     }
     
 }
