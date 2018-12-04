@@ -57,7 +57,8 @@ final class OneSignalPushService: NSObject{
     var playerId : String?{
         return userId
     }
-    
+    var playerIdDidChange : ((String) -> ())?
+
     var notificationsIsAllowed : Bool = false
     var receivedNotifications : Array<OSNotification> = Array<OSNotification>()
     
@@ -119,7 +120,10 @@ extension OneSignalPushService: OSPermissionObserver,OSSubscriptionObserver{
         if let userId = stateChanges.to.userId  {
             self.userId = userId
             print( "User id (player-id) is --" + stateChanges.to.userId)
+            playerIdDidChange?(userId)
+
         }
+        
         
     }
     
