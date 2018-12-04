@@ -11,10 +11,6 @@ import UIKit
 import OneSignal
 import RxSwift
 
-
-
-
-
 struct NotificationPayload  {
     
     /* Notification Payload */
@@ -212,6 +208,7 @@ extension OneSignalPushService{
 
 //TODO : Deep Link
 extension Array where Element == OSNotification {
+    
     mutating func removeNotification(Withid id : String){
         for  (index , element) in self.enumerated() {
             if element.payload.notificationID == id {
@@ -220,4 +217,5 @@ extension Array where Element == OSNotification {
             }
         }
     }
+    
 }

@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         OneSignalPushService.shared.initializeOneSignal(withLaunchOptions: launchOptions, andAppID: oneSignalAppId)
         OneSignalPushService.shared.playerIdDidChange = { token in
             APIClient.shared.setOneSignalToken(withToken: token)
+            .subscribe()
+            
         }
         
         return true
