@@ -118,9 +118,13 @@ extension OneSignalPushService: OSPermissionObserver,OSSubscriptionObserver{
     
     func onOSSubscriptionChanged(_ stateChanges: OSSubscriptionStateChanges!) {
         if let userId = stateChanges.to.userId  {
-            self.userId = userId
+            
             print( "User id (player-id) is --" + stateChanges.to.userId)
-            playerIdDidChange?(userId)
+            if self.userId != nil && self.userId! != userId {
+                self.playerIdDidChange?(userId)
+            }
+            self.userId = userId
+            
 
         }
         
