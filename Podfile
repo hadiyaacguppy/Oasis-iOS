@@ -10,6 +10,7 @@ target 'Base-Project' do
   pod 'CZPicker'
   pod 'RxGesture'
   pod 'OneSignal', '>= 2.6.2', '< 3.0'
+pod 'SDWebImage', '~> 4.0'
 end
 
 
