@@ -8,21 +8,14 @@
 
 import Foundation
 import Moya
-
+import SessionManager
 enum BaseProjectService {
     
-    // MARK : Login - Register - Password Change etc..
-    ///Example
-    //case loginWithGoogle(googleUserID : String, email : String, firstName : String, lastName : String, imageUrl : String)
-    
-    
-    // MARK : Payment
-    
-    // MARK : Profile
-    
-    // MARK : Push
-    case setPush(pushId : String)
-    
+    var sessionManager : SessionManager  {
+       return SessionManager.shared
+    }
+    case setOneSignalUserPush( token : String)
+
     // MARK : Others
 }
 
@@ -37,13 +30,13 @@ extension BaseProjectService: TargetType {
         
         switch self {
             
-        case .setPush:
-            return "/push"
+        case .setOneSignalUserPush:
+            return "push/set_user_push"
         }
     }
     var method: Moya.Method {
         switch self {
-        case .setPush:
+        case .setOneSignalUserPush:
             return .post
         }
     }
@@ -51,8 +44,8 @@ extension BaseProjectService: TargetType {
     var task: Task {
         switch self {
             
-        case .setPush(let pushId):
-            return .requestParameters(parameters: ["push_id" : pushId], encoding: URLEncoding.default)
+        case .setOneSignalUserPush(let token):
+            return .requestParameters(parameters: ["player_id":token], encoding: URLEncoding.default)
         
             
         }
@@ -63,10 +56,7 @@ extension BaseProjectService: TargetType {
     }
     
     var headers: [String: String]? {
-        switch self {
-        case .setPush:
-            return ["session-token" : ""]
-        }
+       return ["session-token" : self.sessionManager.token ?? "" ]
     }
     
     var validationType : ValidationType {

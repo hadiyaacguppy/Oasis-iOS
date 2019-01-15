@@ -25,27 +25,10 @@ class  APIClient {
     }
     
     
-    // MARK : - Others
-    ///Example
-    
-    /*
-    func setPush(pushId: String) -> Observable<Void>{
-        return Observable.create({ observer in
-            _ = self.provider.rx.request(.setPush(pushId: pushId))
-                .subscribe(onSuccess: { (response) in
-                    observer.onNext(())
-                    observer.onCompleted()
-     
-                },onError: { (error) in
-                    let clientError = error.errorResponse
-                    observer.onError(clientError)
-                })
-            return Disposables.create {
-                print(#function + "Disposed")
-            }
-        })
+    func setOneSignalToken(withToken token : String) -> Single<Void>{
+        return self.provider.rx.request(.setOneSignalUserPush(token: token))
+            .map {_ in return Void()}
     }
-    */
     
 }
 

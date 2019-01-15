@@ -14,10 +14,7 @@ struct Constants {
     
 
     struct Network {
-        
-        static let baseURl : String = "https://google.com"
-        static let SessionTokenExpiredCode = -777
-        
+        static let baseURl : String = "https://google.com/"
     }
     
     struct Colors {

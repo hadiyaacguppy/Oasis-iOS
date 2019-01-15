@@ -22,6 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("Base Project Version 2.0")
         OneSignalPushService.shared.initializeOneSignal(withLaunchOptions: launchOptions, andAppID: oneSignalAppId)
+        OneSignalPushService.shared.playerIdDidChange = { token in
+            APIClient.shared.setOneSignalToken(withToken: token)
+            .subscribe()
+            
+        }
+        
         return true
     }
 
