@@ -60,7 +60,7 @@ public class SessionManager {
     
     public var isFirstTime : Bool {
         if !UserDefaults.standard.bool(forKey: SessionManagerConstants.UserDefaultKeys.firsTime) {
-            UserDefaults.standard.set(false , forKey: SessionManagerConstants.UserDefaultKeys.firsTime)
+            UserDefaults.standard.set(true , forKey: SessionManagerConstants.UserDefaultKeys.firsTime)
             return true
         }
         return false
