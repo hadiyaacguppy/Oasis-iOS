@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F266AF321F7686800A840ED /* PIN.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F266AEC21F7686800A840ED /* PIN.storyboard */; };
+		0F266AF421F7686800A840ED /* PINPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F266AED21F7686800A840ED /* PINPresenter.swift */; };
+		0F266AF521F7686800A840ED /* PINRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F266AEE21F7686800A840ED /* PINRouter.swift */; };
+		0F266AF621F7686800A840ED /* PINModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F266AEF21F7686800A840ED /* PINModels.swift */; };
+		0F266AF721F7686800A840ED /* PINViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F266AF021F7686800A840ED /* PINViewController.swift */; };
+		0F266AF821F7686800A840ED /* PINInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F266AF121F7686800A840ED /* PINInteractor.swift */; };
+		0F266AF921F7686800A840ED /* PINConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F266AF221F7686800A840ED /* PINConfigurator.swift */; };
 		0F484B4F2165FF5C0060C463 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F484B4E2165FF5C0060C463 /* Date+Extensions.swift */; };
 		0F57538E20EE12EB0069C139 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57538D20EE12EB0069C139 /* Constants.swift */; };
 		0F57539120EE13660069C139 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539020EE13660069C139 /* DataManager.swift */; };
@@ -183,6 +190,13 @@
 
 /* Begin PBXFileReference section */
 		0A6FC7C665C3EC115CF8C0BC /* Pods-Base-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project.release.xcconfig"; sourceTree = "<group>"; };
+		0F266AEC21F7686800A840ED /* PIN.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PIN.storyboard; sourceTree = "<group>"; };
+		0F266AED21F7686800A840ED /* PINPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINPresenter.swift; sourceTree = "<group>"; };
+		0F266AEE21F7686800A840ED /* PINRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINRouter.swift; sourceTree = "<group>"; };
+		0F266AEF21F7686800A840ED /* PINModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINModels.swift; sourceTree = "<group>"; };
+		0F266AF021F7686800A840ED /* PINViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINViewController.swift; sourceTree = "<group>"; };
+		0F266AF121F7686800A840ED /* PINInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINInteractor.swift; sourceTree = "<group>"; };
+		0F266AF221F7686800A840ED /* PINConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINConfigurator.swift; sourceTree = "<group>"; };
 		0F484B4E2165FF5C0060C463 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		0F57538D20EE12EB0069C139 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0F57539020EE13660069C139 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -355,6 +369,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F266AEB21F7682F00A840ED /* 4 Digit PIN */ = {
+			isa = PBXGroup;
+			children = (
+				0F266AEC21F7686800A840ED /* PIN.storyboard */,
+				0F266AED21F7686800A840ED /* PINPresenter.swift */,
+				0F266AEE21F7686800A840ED /* PINRouter.swift */,
+				0F266AEF21F7686800A840ED /* PINModels.swift */,
+				0F266AF021F7686800A840ED /* PINViewController.swift */,
+				0F266AF121F7686800A840ED /* PINInteractor.swift */,
+				0F266AF221F7686800A840ED /* PINConfigurator.swift */,
+			);
+			path = "4 Digit PIN";
+			sourceTree = "<group>";
+		};
 		0F57538F20EE13570069C139 /* Managers & Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -655,6 +683,7 @@
 		CF87EDA9201EECFA00562226 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0F266AEB21F7682F00A840ED /* 4 Digit PIN */,
 				4A20A2252179E9A2002C2AAA /* Change Password */,
 				CF09C0C82180A4FF003DF186 /* Base Web View */,
 				CF87EDB6201EED1500562226 /* Initial */,
@@ -861,6 +890,7 @@
 			files = (
 				CF403858216CF78F001F649B /* Initial.storyboard in Resources */,
 				4A20A22D2179E9C5002C2AAA /* ChangePassword.storyboard in Resources */,
+				0F266AF321F7686800A840ED /* PIN.storyboard in Resources */,
 				CF09C0D02180A511003DF186 /* BaseWebView.storyboard in Resources */,
 				112239221FD5C7B000486528 /* LaunchScreen.storyboard in Resources */,
 				1122391F1FD5C7B000486528 /* Assets.xcassets in Resources */,
@@ -915,7 +945,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Base-Project/Pods-Base-Project-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CZPicker/CZPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
@@ -942,7 +972,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Base-Project/Pods-Base-Project-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CA642901AF8E8321064F02E7 /* [CP] Check Pods Manifest.lock */ = {
@@ -1029,6 +1059,7 @@
 				CF8C5CA820EF9D5400236C7B /* Bool+Extensions.swift in Sources */,
 				CFF69D772195593A003BE6BF /* URLRequest+Extensions.swift in Sources */,
 				4A20A2302179E9C5002C2AAA /* ChangePasswordModels.swift in Sources */,
+				0F266AF721F7686800A840ED /* PINViewController.swift in Sources */,
 				CF8C5CB020EF9DC900236C7B /* UIImage+Extensions.swift in Sources */,
 				CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */,
 				672909FE210E43F900632C4F /* PlaceHolderCreator.swift in Sources */,
@@ -1039,15 +1070,18 @@
 				3EAFC549219B2D2F00E3C2BB /* TDAlertAction.swift in Sources */,
 				CF56472D211B1B740092EFBD /* Reactive+UIImageView.swift in Sources */,
 				67290A02210E441400632C4F /* PlaceHolderHelper.swift in Sources */,
+				0F266AF421F7686800A840ED /* PINPresenter.swift in Sources */,
 				CF8C5CAA20EF9D6700236C7B /* Int+Extensions.swift in Sources */,
 				CF7BC6791FD91D83008E80AC /* ObservableType+ObjectMapper.swift in Sources */,
 				CFF69D6A219551B4003BE6BF /* UIViewController+Extensions.swift in Sources */,
+				0F266AF521F7686800A840ED /* PINRouter.swift in Sources */,
 				4A20A2322179E9C5002C2AAA /* ChangePasswordInteractor.swift in Sources */,
 				0FD65F1D20D01BBD0075E251 /* CGFloat+Extensions.swift in Sources */,
 				CF09C0D52180A511003DF186 /* BaseWebViewInteractor.swift in Sources */,
 				CF40385B216CF78F001F649B /* InitialModels.swift in Sources */,
 				4A20A22F2179E9C5002C2AAA /* ChangePasswordRouter.swift in Sources */,
 				CF09C0D32180A511003DF186 /* BaseWebViewModels.swift in Sources */,
+				0F266AF921F7686800A840ED /* PINConfigurator.swift in Sources */,
 				0F57539F20EE1EC90069C139 /* Relays.swift in Sources */,
 				CFF69D682195513C003BE6BF /* UIScreen+Extensions.swift in Sources */,
 				0F57539B20EE19CD0069C139 /* BaseProjectService.swift in Sources */,
@@ -1071,9 +1105,11 @@
 				6754244D20EE7FF600783123 /* BaseNavigationController.swift in Sources */,
 				672909FC210E43EA00632C4F /* PlaceHolderView.swift in Sources */,
 				117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */,
+				0F266AF621F7686800A840ED /* PINModels.swift in Sources */,
 				CF181BA420809E28002603A1 /* UIColor+Extensions.swift in Sources */,
 				16CE4041215D7249002634C7 /* Bundle+Extensions.swift in Sources */,
 				CF09C0D22180A511003DF186 /* BaseWebViewRouter.swift in Sources */,
+				0F266AF821F7686800A840ED /* PINInteractor.swift in Sources */,
 				CF403859216CF78F001F649B /* InitialPresenter.swift in Sources */,
 				0F57539520EE185F0069C139 /* Array+Extensions.swift in Sources */,
 				3E6DEFB321623D7A00978FDC /* UITableView+Extensions.swift in Sources */,

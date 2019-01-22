@@ -80,7 +80,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
   struct storyboard {
     /// Storyboard `BaseWebView`.
     static let baseWebView = _R.storyboard.baseWebView()
@@ -90,6 +90,8 @@ struct R: Rswift.Validatable {
     static let initial = _R.storyboard.initial()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `PIN`.
+    static let piN = _R.storyboard.piN()
     
     /// `UIStoryboard(name: "BaseWebView", bundle: ...)`
     static func baseWebView(_: Void = ()) -> UIKit.UIStoryboard {
@@ -109,6 +111,11 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    
+    /// `UIStoryboard(name: "PIN", bundle: ...)`
+    static func piN(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.piN)
     }
     
     fileprivate init() {}
@@ -145,6 +152,7 @@ struct _R: Rswift.Validatable {
     static func validate() throws {
       try baseWebView.validate()
       try initial.validate()
+      try piN.validate()
       try changePassword.validate()
     }
     
@@ -208,6 +216,24 @@ struct _R: Rswift.Validatable {
       
       let bundle = R.hostingBundle
       let name = "LaunchScreen"
+      
+      fileprivate init() {}
+    }
+    
+    struct piN: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UINavigationController
+      
+      let bundle = R.hostingBundle
+      let name = "PIN"
+      let pinViewControllerVC = StoryboardViewControllerResource<PINViewController>(identifier: "PinViewControllerVC")
+      
+      func pinViewControllerVC(_: Void = ()) -> PINViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: pinViewControllerVC)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.piN().pinViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'pinViewControllerVC' could not be loaded from storyboard 'PIN' as 'PINViewController'.") }
+      }
       
       fileprivate init() {}
     }
