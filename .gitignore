@@ -17,3 +17,6 @@ Carthage/Build
 Carthage/
 build
 docs
+*.app.dSYM.zip
+*.ipa
+

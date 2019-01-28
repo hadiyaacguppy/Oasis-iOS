@@ -16,7 +16,7 @@ class LocationService {
     
     static var shared = LocationService()
     
-    /// Zabre Zabrwe Za
+    
     var authorizationStatus  : ReplaySubject<CLAuthorizationStatus> = ReplaySubject<CLAuthorizationStatus>.create(bufferSize: 2)
     
     var locationDidChange : ReplaySubject<CLLocation> =  ReplaySubject<CLLocation>.create(bufferSize: 10)
