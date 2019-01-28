@@ -89,6 +89,7 @@
 		CF56472D211B1B740092EFBD /* Reactive+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF56472C211B1B740092EFBD /* Reactive+UIImageView.swift */; };
 		CF56472F211B1BA50092EFBD /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF56472E211B1BA50092EFBD /* UIImageView+Extensions.swift */; };
 		CF564731211B1C910092EFBD /* InputValidationExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF564730211B1C910092EFBD /* InputValidationExpression.swift */; };
+		CF6B70F221EDD5F700204B65 /* VersionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6B70F121EDD5F700204B65 /* VersionLabel.swift */; };
 		CF7823B420EF95A7003069BD /* APIErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7823B320EF95A7003069BD /* APIErrorManager.swift */; };
 		CF7823B720EF95C6003069BD /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7823B620EF95C6003069BD /* APIError.swift */; };
 		CF7BC66A1FD8F739008E80AC /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7BC6641FD8F739008E80AC /* RxCocoa.framework */; };
@@ -279,6 +280,7 @@
 		CF56472C211B1B740092EFBD /* Reactive+UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reactive+UIImageView.swift"; sourceTree = "<group>"; };
 		CF56472E211B1BA50092EFBD /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		CF564730211B1C910092EFBD /* InputValidationExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidationExpression.swift; sourceTree = "<group>"; };
+		CF6B70F121EDD5F700204B65 /* VersionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionLabel.swift; sourceTree = "<group>"; };
 		CF7823B320EF95A7003069BD /* APIErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorManager.swift; sourceTree = "<group>"; };
 		CF7823B620EF95C6003069BD /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		CF7BC6641FD8F739008E80AC /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -676,6 +678,7 @@
 				CF8C5C9F20EF9CCA00236C7B /* BaseTransparentNavigationBar.swift */,
 				CF0598EB210F154F00C2645F /* TDPicker.swift */,
 				CFC2BFE5216CA3C800DC31A7 /* ErrorViewModel.swift */,
+				CF6B70F121EDD5F700204B65 /* VersionLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1066,6 +1069,7 @@
 				117C4AB01FD864DE008BB445 /* UILabel+Extensions.swift in Sources */,
 				CFF69D6F219554E7003BE6BF /* CGRect+Extensions.swift in Sources */,
 				117C4AB21FD864FD008BB445 /* String+Extensions.swift in Sources */,
+				CF6B70F221EDD5F700204B65 /* VersionLabel.swift in Sources */,
 				CF87EDA0201B6EF700562226 /* BaseViewController.swift in Sources */,
 				3EAFC549219B2D2F00E3C2BB /* TDAlertAction.swift in Sources */,
 				CF56472D211B1B740092EFBD /* Reactive+UIImageView.swift in Sources */,
