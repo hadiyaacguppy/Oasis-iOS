@@ -24,6 +24,7 @@
 		0F57539D20EE1C430069C139 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539C20EE1C430069C139 /* APIClient.swift */; };
 		0F57539F20EE1EC90069C139 /* Relays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539E20EE1EC90069C139 /* Relays.swift */; };
 		0F5753A120EE1F450069C139 /* TraingleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5753A020EE1F450069C139 /* TraingleView.swift */; };
+		0FD0C6EC2200B662000C5881 /* UIFont+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD0C6EB2200B662000C5881 /* UIFont+Extentions.swift */; };
 		0FD65F1520D014F40075E251 /* Reactive+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD65F1420D014F40075E251 /* Reactive+UIButton.swift */; };
 		0FD65F1920D018480075E251 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD65F1820D018480075E251 /* Double+Extensions.swift */; };
 		0FD65F1B20D018730075E251 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD65F1A20D018730075E251 /* UIButton+Extensions.swift */; };
@@ -208,6 +209,7 @@
 		0F57539C20EE1C430069C139 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		0F57539E20EE1EC90069C139 /* Relays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Relays.swift; sourceTree = "<group>"; };
 		0F5753A020EE1F450069C139 /* TraingleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraingleView.swift; sourceTree = "<group>"; };
+		0FD0C6EB2200B662000C5881 /* UIFont+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extentions.swift"; sourceTree = "<group>"; };
 		0FD65F1420D014F40075E251 /* Reactive+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+UIButton.swift"; sourceTree = "<group>"; };
 		0FD65F1820D018480075E251 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		0FD65F1A20D018730075E251 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 				CF8C5CAD20EF9D8F00236C7B /* UIApplication+Extensions.swift */,
 				CFF69D672195513C003BE6BF /* UIScreen+Extensions.swift */,
 				3E6DEFB221623D7A00978FDC /* UITableView+Extensions.swift */,
+				0FD0C6EB2200B662000C5881 /* UIFont+Extentions.swift */,
 			);
 			path = "UI+Extensions";
 			sourceTree = "<group>";
@@ -1077,6 +1080,7 @@
 				0F266AF421F7686800A840ED /* PINPresenter.swift in Sources */,
 				CF8C5CAA20EF9D6700236C7B /* Int+Extensions.swift in Sources */,
 				CF7BC6791FD91D83008E80AC /* ObservableType+ObjectMapper.swift in Sources */,
+				0FD0C6EC2200B662000C5881 /* UIFont+Extentions.swift in Sources */,
 				CFF69D6A219551B4003BE6BF /* UIViewController+Extensions.swift in Sources */,
 				0F266AF521F7686800A840ED /* PINRouter.swift in Sources */,
 				4A20A2322179E9C5002C2AAA /* ChangePasswordInteractor.swift in Sources */,
