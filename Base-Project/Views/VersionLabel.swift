@@ -11,7 +11,8 @@ class VersionLabel: UILabel {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.text = "v\(Bundle.main.versionNumber)/\(Bundle.main.buildNumber)"
+        self.text = "v\(Bundle.versionNumber)/\(Bundle.buildNumber)"
     }
     
 }
+
