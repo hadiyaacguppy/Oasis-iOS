@@ -40,8 +40,9 @@ struct Constants {
     }
     
     struct DefaultValues {
-        
+        static let SMSTimerInterval = 60
     }
+
     
     struct ControllersIdentifiers {
         

@@ -7,13 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F266AF321F7686800A840ED /* PIN.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F266AEC21F7686800A840ED /* PIN.storyboard */; };
-		0F266AF421F7686800A840ED /* PINPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F266AED21F7686800A840ED /* PINPresenter.swift */; };
-		0F266AF521F7686800A840ED /* PINRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F266AEE21F7686800A840ED /* PINRouter.swift */; };
-		0F266AF621F7686800A840ED /* PINModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F266AEF21F7686800A840ED /* PINModels.swift */; };
-		0F266AF721F7686800A840ED /* PINViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F266AF021F7686800A840ED /* PINViewController.swift */; };
-		0F266AF821F7686800A840ED /* PINInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F266AF121F7686800A840ED /* PINInteractor.swift */; };
-		0F266AF921F7686800A840ED /* PINConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F266AF221F7686800A840ED /* PINConfigurator.swift */; };
 		0F484B4F2165FF5C0060C463 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F484B4E2165FF5C0060C463 /* Date+Extensions.swift */; };
 		0F57538E20EE12EB0069C139 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57538D20EE12EB0069C139 /* Constants.swift */; };
 		0F57539120EE13660069C139 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539020EE13660069C139 /* DataManager.swift */; };
@@ -54,6 +47,15 @@
 		4A20A2312179E9C5002C2AAA /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A20A22A2179E9C5002C2AAA /* ChangePasswordViewController.swift */; };
 		4A20A2322179E9C5002C2AAA /* ChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A20A22B2179E9C5002C2AAA /* ChangePasswordInteractor.swift */; };
 		4A20A2332179E9C5002C2AAA /* ChangePasswordConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A20A22C2179E9C5002C2AAA /* ChangePasswordConfigurator.swift */; };
+		4AEF647522107DC000D53D75 /* AppBaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF647422107DC000D53D75 /* AppBaseButton.swift */; };
+		4AEF64772210842F00D53D75 /* BaseSkyFloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF64762210842F00D53D75 /* BaseSkyFloatingTextField.swift */; };
+		4AEF648022108F8C00D53D75 /* PinVerificationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF647922108F8C00D53D75 /* PinVerificationRouter.swift */; };
+		4AEF648122108F8C00D53D75 /* PinVerification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AEF647A22108F8C00D53D75 /* PinVerification.storyboard */; };
+		4AEF648222108F8C00D53D75 /* PinVerificationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF647B22108F8C00D53D75 /* PinVerificationModels.swift */; };
+		4AEF648322108F8C00D53D75 /* PinVerificationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF647C22108F8C00D53D75 /* PinVerificationInteractor.swift */; };
+		4AEF648422108F8C00D53D75 /* PinVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF647D22108F8C00D53D75 /* PinVerificationViewController.swift */; };
+		4AEF648522108F8C00D53D75 /* PinVerificationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF647E22108F8C00D53D75 /* PinVerificationConfigurator.swift */; };
+		4AEF648622108F8C00D53D75 /* PinVerificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF647F22108F8C00D53D75 /* PinVerificationPresenter.swift */; };
 		4B00E64AA8A0A7582597A76A /* Pods_Base_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BA0D1007DC66F24CD1D64E /* Pods_Base_Project.framework */; };
 		672909FC210E43EA00632C4F /* PlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672909FB210E43EA00632C4F /* PlaceHolderView.swift */; };
 		672909FE210E43F900632C4F /* PlaceHolderCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672909FD210E43F900632C4F /* PlaceHolderCreator.swift */; };
@@ -192,13 +194,6 @@
 
 /* Begin PBXFileReference section */
 		0A6FC7C665C3EC115CF8C0BC /* Pods-Base-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project.release.xcconfig"; sourceTree = "<group>"; };
-		0F266AEC21F7686800A840ED /* PIN.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PIN.storyboard; sourceTree = "<group>"; };
-		0F266AED21F7686800A840ED /* PINPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINPresenter.swift; sourceTree = "<group>"; };
-		0F266AEE21F7686800A840ED /* PINRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINRouter.swift; sourceTree = "<group>"; };
-		0F266AEF21F7686800A840ED /* PINModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINModels.swift; sourceTree = "<group>"; };
-		0F266AF021F7686800A840ED /* PINViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINViewController.swift; sourceTree = "<group>"; };
-		0F266AF121F7686800A840ED /* PINInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINInteractor.swift; sourceTree = "<group>"; };
-		0F266AF221F7686800A840ED /* PINConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINConfigurator.swift; sourceTree = "<group>"; };
 		0F484B4E2165FF5C0060C463 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		0F57538D20EE12EB0069C139 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0F57539020EE13660069C139 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -238,6 +233,15 @@
 		4A20A22A2179E9C5002C2AAA /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		4A20A22B2179E9C5002C2AAA /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
 		4A20A22C2179E9C5002C2AAA /* ChangePasswordConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordConfigurator.swift; sourceTree = "<group>"; };
+		4AEF647422107DC000D53D75 /* AppBaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBaseButton.swift; sourceTree = "<group>"; };
+		4AEF64762210842F00D53D75 /* BaseSkyFloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSkyFloatingTextField.swift; sourceTree = "<group>"; };
+		4AEF647922108F8C00D53D75 /* PinVerificationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinVerificationRouter.swift; sourceTree = "<group>"; };
+		4AEF647A22108F8C00D53D75 /* PinVerification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PinVerification.storyboard; sourceTree = "<group>"; };
+		4AEF647B22108F8C00D53D75 /* PinVerificationModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinVerificationModels.swift; sourceTree = "<group>"; };
+		4AEF647C22108F8C00D53D75 /* PinVerificationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinVerificationInteractor.swift; sourceTree = "<group>"; };
+		4AEF647D22108F8C00D53D75 /* PinVerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinVerificationViewController.swift; sourceTree = "<group>"; };
+		4AEF647E22108F8C00D53D75 /* PinVerificationConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinVerificationConfigurator.swift; sourceTree = "<group>"; };
+		4AEF647F22108F8C00D53D75 /* PinVerificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinVerificationPresenter.swift; sourceTree = "<group>"; };
 		509696D7EE45B0E48C61927E /* Pods-Base-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-ProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Base-ProjectTests/Pods-Base-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		5F0CB28320C7D9C3EA885DBF /* Pods-Base-ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-ProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Base-ProjectUITests/Pods-Base-ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		672909FB210E43EA00632C4F /* PlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderView.swift; sourceTree = "<group>"; };
@@ -373,20 +377,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F266AEB21F7682F00A840ED /* 4 Digit PIN */ = {
-			isa = PBXGroup;
-			children = (
-				0F266AEC21F7686800A840ED /* PIN.storyboard */,
-				0F266AED21F7686800A840ED /* PINPresenter.swift */,
-				0F266AEE21F7686800A840ED /* PINRouter.swift */,
-				0F266AEF21F7686800A840ED /* PINModels.swift */,
-				0F266AF021F7686800A840ED /* PINViewController.swift */,
-				0F266AF121F7686800A840ED /* PINInteractor.swift */,
-				0F266AF221F7686800A840ED /* PINConfigurator.swift */,
-			);
-			path = "4 Digit PIN";
-			sourceTree = "<group>";
-		};
 		0F57538F20EE13570069C139 /* Managers & Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -558,6 +548,81 @@
 			path = "Change Password";
 			sourceTree = "<group>";
 		};
+		4AEF646D22107D2500D53D75 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3E6DEFB02162111100978FDC /* BaseController.swift */,
+				CF87ED9F201B6EF700562226 /* BaseViewController.swift */,
+				CF8C5C9B20EF97AE00236C7B /* BaseTableViewController.swift */,
+				6754244C20EE7FF600783123 /* BaseNavigationController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4AEF646E22107D3E00D53D75 /* Navigation Bars */ = {
+			isa = PBXGroup;
+			children = (
+				CF8C5C9F20EF9CCA00236C7B /* BaseTransparentNavigationBar.swift */,
+			);
+			path = "Navigation Bars";
+			sourceTree = "<group>";
+		};
+		4AEF646F22107D5600D53D75 /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				CF87EDA3201B8C2500562226 /* BaseTextField.swift */,
+				4AEF64762210842F00D53D75 /* BaseSkyFloatingTextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		4AEF647022107D6600D53D75 /* Special Views */ = {
+			isa = PBXGroup;
+			children = (
+				0F5753A020EE1F450069C139 /* TraingleView.swift */,
+			);
+			path = "Special Views";
+			sourceTree = "<group>";
+		};
+		4AEF647122107D7B00D53D75 /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				CF8C5C9D20EF9CA400236C7B /* DatePickerDialog.swift */,
+				CF0598EB210F154F00C2645F /* TDPicker.swift */,
+			);
+			path = Pickers;
+			sourceTree = "<group>";
+		};
+		4AEF647222107DA300D53D75 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				CF6B70F121EDD5F700204B65 /* VersionLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		4AEF647322107DAE00D53D75 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				4AEF647422107DC000D53D75 /* AppBaseButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		4AEF647822108F8C00D53D75 /* Pin Verification */ = {
+			isa = PBXGroup;
+			children = (
+				4AEF647922108F8C00D53D75 /* PinVerificationRouter.swift */,
+				4AEF647A22108F8C00D53D75 /* PinVerification.storyboard */,
+				4AEF647B22108F8C00D53D75 /* PinVerificationModels.swift */,
+				4AEF647C22108F8C00D53D75 /* PinVerificationInteractor.swift */,
+				4AEF647D22108F8C00D53D75 /* PinVerificationViewController.swift */,
+				4AEF647E22108F8C00D53D75 /* PinVerificationConfigurator.swift */,
+				4AEF647F22108F8C00D53D75 /* PinVerificationPresenter.swift */,
+			);
+			path = "Pin Verification";
+			sourceTree = "<group>";
+		};
 		4EB46AC4F5A03B9A5DD78099 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -645,6 +710,7 @@
 			isa = PBXGroup;
 			children = (
 				CF564725211B163E0092EFBD /* Data structures */,
+				CFC2BFE5216CA3C800DC31A7 /* ErrorViewModel.swift */,
 				CF7823B620EF95C6003069BD /* APIError.swift */,
 			);
 			path = Models;
@@ -671,17 +737,13 @@
 		CF87EDA2201B8BEB00562226 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3E6DEFB02162111100978FDC /* BaseController.swift */,
-				CF87ED9F201B6EF700562226 /* BaseViewController.swift */,
-				CF8C5C9B20EF97AE00236C7B /* BaseTableViewController.swift */,
-				CF87EDA3201B8C2500562226 /* BaseTextField.swift */,
-				0F5753A020EE1F450069C139 /* TraingleView.swift */,
-				6754244C20EE7FF600783123 /* BaseNavigationController.swift */,
-				CF8C5C9D20EF9CA400236C7B /* DatePickerDialog.swift */,
-				CF8C5C9F20EF9CCA00236C7B /* BaseTransparentNavigationBar.swift */,
-				CF0598EB210F154F00C2645F /* TDPicker.swift */,
-				CFC2BFE5216CA3C800DC31A7 /* ErrorViewModel.swift */,
-				CF6B70F121EDD5F700204B65 /* VersionLabel.swift */,
+				4AEF647322107DAE00D53D75 /* Buttons */,
+				4AEF647222107DA300D53D75 /* Labels */,
+				4AEF647122107D7B00D53D75 /* Pickers */,
+				4AEF647022107D6600D53D75 /* Special Views */,
+				4AEF646F22107D5600D53D75 /* TextFields */,
+				4AEF646E22107D3E00D53D75 /* Navigation Bars */,
+				4AEF646D22107D2500D53D75 /* Controllers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -689,7 +751,7 @@
 		CF87EDA9201EECFA00562226 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				0F266AEB21F7682F00A840ED /* 4 Digit PIN */,
+				4AEF647822108F8C00D53D75 /* Pin Verification */,
 				4A20A2252179E9A2002C2AAA /* Change Password */,
 				CF09C0C82180A4FF003DF186 /* Base Web View */,
 				CF87EDB6201EED1500562226 /* Initial */,
@@ -758,6 +820,7 @@
 				98B7E6723CD6E9868C61C5B1 /* [CP] Embed Pods Frameworks */,
 				CF8C5CCC20EF9E7200236C7B /* Embed Frameworks */,
 				CF564722211B15590092EFBD /* Embed App Extensions */,
+				F8E0F4652B6903B32F3EB7E6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -778,6 +841,7 @@
 				CF564713211B15590092EFBD /* Sources */,
 				CF564714211B15590092EFBD /* Frameworks */,
 				CF564715211B15590092EFBD /* Resources */,
+				5219382F9F23670CF2836487 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -895,8 +959,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF403858216CF78F001F649B /* Initial.storyboard in Resources */,
+				4AEF648122108F8C00D53D75 /* PinVerification.storyboard in Resources */,
 				4A20A22D2179E9C5002C2AAA /* ChangePassword.storyboard in Resources */,
-				0F266AF321F7686800A840ED /* PIN.storyboard in Resources */,
 				CF09C0D02180A511003DF186 /* BaseWebView.storyboard in Resources */,
 				112239221FD5C7B000486528 /* LaunchScreen.storyboard in Resources */,
 				1122391F1FD5C7B000486528 /* Assets.xcassets in Resources */,
@@ -945,13 +1009,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5219382F9F23670CF2836487 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		98B7E6723CD6E9868C61C5B1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Base-Project/Pods-Base-Project-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CZPicker/CZPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
@@ -959,6 +1038,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -972,13 +1052,14 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Base-Project/Pods-Base-Project-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CA642901AF8E8321064F02E7 /* [CP] Check Pods Manifest.lock */ = {
@@ -1034,6 +1115,21 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"\n";
 		};
+		F8E0F4652B6903B32F3EB7E6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1056,6 +1152,7 @@
 				CF8C5C9E20EF9CA400236C7B /* DatePickerDialog.swift in Sources */,
 				CF564702211B142E0092EFBD /* OneSignalPushService.swift in Sources */,
 				0FD65F1920D018480075E251 /* Double+Extensions.swift in Sources */,
+				4AEF647522107DC000D53D75 /* AppBaseButton.swift in Sources */,
 				CF40385A216CF78F001F649B /* InitialRouter.swift in Sources */,
 				CF09C0D12180A511003DF186 /* BaseWebViewPresenter.swift in Sources */,
 				CF50F7AC219AC028000E5E4E /* NotificationPayload.swift in Sources */,
@@ -1065,7 +1162,6 @@
 				CF8C5CA820EF9D5400236C7B /* Bool+Extensions.swift in Sources */,
 				CFF69D772195593A003BE6BF /* URLRequest+Extensions.swift in Sources */,
 				4A20A2302179E9C5002C2AAA /* ChangePasswordModels.swift in Sources */,
-				0F266AF721F7686800A840ED /* PINViewController.swift in Sources */,
 				CF8C5CB020EF9DC900236C7B /* UIImage+Extensions.swift in Sources */,
 				CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */,
 				672909FE210E43F900632C4F /* PlaceHolderCreator.swift in Sources */,
@@ -1077,30 +1173,34 @@
 				3EAFC549219B2D2F00E3C2BB /* TDAlertAction.swift in Sources */,
 				CF56472D211B1B740092EFBD /* Reactive+UIImageView.swift in Sources */,
 				67290A02210E441400632C4F /* PlaceHolderHelper.swift in Sources */,
-				0F266AF421F7686800A840ED /* PINPresenter.swift in Sources */,
 				CF8C5CAA20EF9D6700236C7B /* Int+Extensions.swift in Sources */,
 				CF7BC6791FD91D83008E80AC /* ObservableType+ObjectMapper.swift in Sources */,
 				0FD0C6EC2200B662000C5881 /* UIFont+Extentions.swift in Sources */,
 				CFF69D6A219551B4003BE6BF /* UIViewController+Extensions.swift in Sources */,
-				0F266AF521F7686800A840ED /* PINRouter.swift in Sources */,
 				4A20A2322179E9C5002C2AAA /* ChangePasswordInteractor.swift in Sources */,
 				0FD65F1D20D01BBD0075E251 /* CGFloat+Extensions.swift in Sources */,
+				4AEF64772210842F00D53D75 /* BaseSkyFloatingTextField.swift in Sources */,
 				CF09C0D52180A511003DF186 /* BaseWebViewInteractor.swift in Sources */,
 				CF40385B216CF78F001F649B /* InitialModels.swift in Sources */,
 				4A20A22F2179E9C5002C2AAA /* ChangePasswordRouter.swift in Sources */,
 				CF09C0D32180A511003DF186 /* BaseWebViewModels.swift in Sources */,
-				0F266AF921F7686800A840ED /* PINConfigurator.swift in Sources */,
+				4AEF648622108F8C00D53D75 /* PinVerificationPresenter.swift in Sources */,
 				0F57539F20EE1EC90069C139 /* Relays.swift in Sources */,
 				CFF69D682195513C003BE6BF /* UIScreen+Extensions.swift in Sources */,
 				0F57539B20EE19CD0069C139 /* BaseProjectService.swift in Sources */,
 				CFF69D7121955680003BE6BF /* Dictionary+Extensions.swift in Sources */,
+				4AEF648322108F8C00D53D75 /* PinVerificationInteractor.swift in Sources */,
 				112239151FD5C7AF00486528 /* AppDelegate.swift in Sources */,
 				117C4AAE1FD864AD008BB445 /* UIView+Extensions.swift in Sources */,
 				0F57539120EE13660069C139 /* DataManager.swift in Sources */,
+				4AEF648422108F8C00D53D75 /* PinVerificationViewController.swift in Sources */,
 				4A20A2312179E9C5002C2AAA /* ChangePasswordViewController.swift in Sources */,
 				0F57539720EE19090069C139 /* LocationService.swift in Sources */,
 				CF8C5C9C20EF97AE00236C7B /* BaseTableViewController.swift in Sources */,
+				4AEF648022108F8C00D53D75 /* PinVerificationRouter.swift in Sources */,
+				4AEF648222108F8C00D53D75 /* PinVerificationModels.swift in Sources */,
 				117C4AAB1FD86050008BB445 /* Utilities.swift in Sources */,
+				4AEF648522108F8C00D53D75 /* PinVerificationConfigurator.swift in Sources */,
 				4A20A2332179E9C5002C2AAA /* ChangePasswordConfigurator.swift in Sources */,
 				CF40385D216CF78F001F649B /* InitialInteractor.swift in Sources */,
 				3E5EECD5211B0F5A008AE39D /* (null) in Sources */,
@@ -1113,11 +1213,9 @@
 				6754244D20EE7FF600783123 /* BaseNavigationController.swift in Sources */,
 				672909FC210E43EA00632C4F /* PlaceHolderView.swift in Sources */,
 				117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */,
-				0F266AF621F7686800A840ED /* PINModels.swift in Sources */,
 				CF181BA420809E28002603A1 /* UIColor+Extensions.swift in Sources */,
 				16CE4041215D7249002634C7 /* Bundle+Extensions.swift in Sources */,
 				CF09C0D22180A511003DF186 /* BaseWebViewRouter.swift in Sources */,
-				0F266AF821F7686800A840ED /* PINInteractor.swift in Sources */,
 				CF403859216CF78F001F649B /* InitialPresenter.swift in Sources */,
 				0F57539520EE185F0069C139 /* Array+Extensions.swift in Sources */,
 				3E6DEFB321623D7A00978FDC /* UITableView+Extensions.swift in Sources */,

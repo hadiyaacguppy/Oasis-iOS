@@ -90,8 +90,8 @@ struct R: Rswift.Validatable {
     static let initial = _R.storyboard.initial()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
-    /// Storyboard `PIN`.
-    static let piN = _R.storyboard.piN()
+    /// Storyboard `PinVerification`.
+    static let pinVerification = _R.storyboard.pinVerification()
     
     /// `UIStoryboard(name: "BaseWebView", bundle: ...)`
     static func baseWebView(_: Void = ()) -> UIKit.UIStoryboard {
@@ -113,9 +113,9 @@ struct R: Rswift.Validatable {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
     }
     
-    /// `UIStoryboard(name: "PIN", bundle: ...)`
-    static func piN(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.piN)
+    /// `UIStoryboard(name: "PinVerification", bundle: ...)`
+    static func pinVerification(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.pinVerification)
     }
     
     fileprivate init() {}
@@ -152,7 +152,7 @@ struct _R: Rswift.Validatable {
     static func validate() throws {
       try baseWebView.validate()
       try initial.validate()
-      try piN.validate()
+      try pinVerification.validate()
       try changePassword.validate()
     }
     
@@ -220,19 +220,25 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct piN: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = UIKit.UINavigationController
+    struct pinVerification: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseNavigationController
       
       let bundle = R.hostingBundle
-      let name = "PIN"
-      let pinViewControllerVC = StoryboardViewControllerResource<PINViewController>(identifier: "PinViewControllerVC")
+      let name = "PinVerification"
+      let pinVerificationNav = StoryboardViewControllerResource<BaseNavigationController>(identifier: "pinVerificationNav")
+      let pinVerificationViewControllerTableVC = StoryboardViewControllerResource<PinVerificationViewController>(identifier: "PinVerificationViewControllerTableVC")
       
-      func pinViewControllerVC(_: Void = ()) -> PINViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: pinViewControllerVC)
+      func pinVerificationNav(_: Void = ()) -> BaseNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: pinVerificationNav)
+      }
+      
+      func pinVerificationViewControllerTableVC(_: Void = ()) -> PinVerificationViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: pinVerificationViewControllerTableVC)
       }
       
       static func validate() throws {
-        if _R.storyboard.piN().pinViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'pinViewControllerVC' could not be loaded from storyboard 'PIN' as 'PINViewController'.") }
+        if _R.storyboard.pinVerification().pinVerificationViewControllerTableVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'pinVerificationViewControllerTableVC' could not be loaded from storyboard 'PinVerification' as 'PinVerificationViewController'.") }
+        if _R.storyboard.pinVerification().pinVerificationNav() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'pinVerificationNav' could not be loaded from storyboard 'PinVerification' as 'BaseNavigationController'.") }
       }
       
       fileprivate init() {}
