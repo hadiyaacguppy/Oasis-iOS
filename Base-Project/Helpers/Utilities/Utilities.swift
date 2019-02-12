@@ -130,60 +130,7 @@ struct Utilities  {
     
     
     struct AlertViews {
-        static func showAlertView(_ title: String, message: String, actions: [UIAlertAction], withPresenter presenter: UIViewController, withCompletionHandler handler: (() -> Void)?) {
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            for action in actions {
-                alertController.addAction(action)
-            }
-            OperationQueue.main.addOperation {
-                presenter.present(alertController, animated: true) {
-                    handler?()
-                }
-            }
-        }
-        
-        static func showSimpleAlertView(_ title: String, message: String, withPresneter presenter: UIViewController, withCompletionHandler handler: (() -> Void)? ,andDismissHandler dimiss :  (() -> Void)? = nil ) {
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            
-            
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default) { action in 
-                dimiss?()
-            })
-            OperationQueue.main.addOperation {
-                presenter.present(alertController, animated: true) {
-                    handler?()
-                }
-            }
-        }
-        
-        static func showNoInternetAlertView(withPresenter presenter: UIViewController) {
-            let alertController = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("Internet connection is not available", comment: ""), preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: NSLocalizedString("Dismiss", comment: ""), style: .default, handler: nil))
-            OperationQueue.main.addOperation {
-                presenter.present(alertController, animated: true, completion: nil)
-            }
-        }
-        
-        static func showServerErrorAlertView(withPresenter presenter: UIViewController) {
-            let alertController = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("A server error has occured. please try again later", comment: ""), preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: NSLocalizedString("Dismiss", comment: ""), style: .default, handler: nil))
-            OperationQueue.main.addOperation {
-                presenter.present(alertController, animated: true, completion: nil)
-            }
-        }
-        
-        static func showActionSheet(wthTitle title: String?, withMessage message: String?, havingOptions actions: [UIAlertAction], withPresenter presenter: UIViewController, withCompletionHandler handler: (() -> Void)?) {
-            let actionSheet = UIAlertController(title: title ?? "", message: message ?? "", preferredStyle: .actionSheet)
-            for action in actions {
-                actionSheet.addAction(action)
-            }
-            OperationQueue.main.addOperation {
-                presenter.present(actionSheet, animated: true) {
-                    handler?()
-                }
-            }
-        }
-        
+       
         static func showActivityController(withLinkToShare link : String ,andWithPresenter presenter: UIViewController) {
             let activityItems = [link]
             let activityController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
