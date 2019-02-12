@@ -352,7 +352,7 @@ struct Utilities  {
         // MARK: - Singletons
         
         var version : Float {
-            return  Float(UIDevice.current.systemVersion)!
+             return  Float(UIDevice.current.systemVersion)!
         }
         
         
@@ -382,11 +382,7 @@ struct Utilities  {
         
     }
     
-    
-    struct Timer{
-        
-        
-    }
+  
     
     struct Storage {
         
