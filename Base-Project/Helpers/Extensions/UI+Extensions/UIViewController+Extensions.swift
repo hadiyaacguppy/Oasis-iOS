@@ -56,6 +56,7 @@ extension UIViewController {
             }
         }
     }
+    
     func showActionSheet(wthTitle title: String?, withMessage message: String?, havingOptions actions: [UIAlertAction], withCompletionHandler handler: (() -> Void)?) {
         let actionSheet = UIAlertController(title: title ?? "", message: message ?? "", preferredStyle: .actionSheet)
         for action in actions {
@@ -66,5 +67,11 @@ extension UIViewController {
                 handler?()
             }
         }
+    }
+    
+    func showActivityShareController(withLinkToShare link : String){
+        let activityItems = [link]
+        let activityController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        self.present(activityController, animated: true, completion: nil)
     }
 }
