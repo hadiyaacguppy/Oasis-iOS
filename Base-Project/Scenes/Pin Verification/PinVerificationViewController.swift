@@ -168,7 +168,7 @@ extension PinVerificationViewController {
         
         let firstPinDigitValidation = firstPinDigitTextField
             .rx
-            .text
+            .textChanged
             .filter { $0 != nil }
             .map { $0!}
             .map{$0.count == 1}
@@ -176,7 +176,7 @@ extension PinVerificationViewController {
         
         let secondPinDigitValidation = secondPinDigitTextField
             .rx
-            .text
+            .textChanged
             .filter { $0 != nil }
             .map { $0!}
             .map{$0.count == 1}
@@ -184,7 +184,7 @@ extension PinVerificationViewController {
         
         let thirdPinDigitValidation = thirdPindigitTextField
             .rx
-            .text
+            .textChanged
             .filter { $0 != nil }
             .map { $0!}
             .map{$0.count == 1}
@@ -192,7 +192,7 @@ extension PinVerificationViewController {
         
         let fourthPinDigitValidation = fourthPinDigitTextField
             .rx
-            .text
+            .textChanged
             .filter { $0 != nil }
             .map { $0!}
             .map{$0.count == 1}
@@ -296,78 +296,64 @@ extension PinVerificationViewController : UITextFieldDelegate {
         firstPinDigitTextField.delegate = self
         firstPinDigitTextField.textAlignment = .center
         firstPinDigitTextField.keyboardType = .numberPad
-        firstPinDigitTextField.addTarget(
-            self,
-            action: #selector(self.textFieldDidChange(textField:)),
-            for: UIControlEvents.editingChanged
-        )
+
         
         secondPinDigitTextField.delegate = self
         secondPinDigitTextField.textAlignment = .center
         secondPinDigitTextField.keyboardType = .numberPad
-        secondPinDigitTextField.addTarget(
-            self,
-            action: #selector(self.textFieldDidChange(textField:)),
-            for: UIControlEvents.editingChanged
-        )
         
         thirdPindigitTextField.delegate = self
         thirdPindigitTextField.textAlignment = .center
         thirdPindigitTextField.keyboardType = .numberPad
-        thirdPindigitTextField.addTarget(
-            self,
-            action: #selector(self.textFieldDidChange(textField:)),
-            for: UIControlEvents.editingChanged
-        )
+
         
         fourthPinDigitTextField.delegate = self
         fourthPinDigitTextField.textAlignment = .center
         fourthPinDigitTextField.keyboardType = .numberPad
-        fourthPinDigitTextField.addTarget(
-            self,
-            action: #selector(self.textFieldDidChange(textField:)),
-            for: UIControlEvents.editingChanged
-        )
-        
-        
-    }
-    
-    @objc func textFieldDidChange(textField: UITextField){
-        if let text = textField.text{
-            if text.count == 1{
-                switch textField{
-                case firstPinDigitTextField:
-                    secondPinDigitTextField.becomeFirstResponder()
-                case secondPinDigitTextField:
-                    thirdPindigitTextField.becomeFirstResponder()
-                case thirdPindigitTextField:
-                    fourthPinDigitTextField.becomeFirstResponder()
-                case fourthPinDigitTextField:
-                    fourthPinDigitTextField.resignFirstResponder()
-                default:
-                    break
-                }
-            }
-        }
+
     }
     
     func textField(_ textField: UITextField,
                    shouldChangeCharactersIn range: NSRange,
                    replacementString string: String)
         -> Bool {
-            if let text  = textField.text{
-                //restrict the uitextfield to accept only numbers
-                let aSet = NSCharacterSet(charactersIn:"0123456789٠١٢٣٤٥٦٧٨٩").inverted
-                let compSepByCharInSet = string.components(separatedBy: aSet)
-                let numberFiltered = compSepByCharInSet.joined(separator: "")
-                //check the length of the text in the textfield
-                let newLength = text.count + string.count - range.length
-                //return true only if the length is less than or equal to 1 and when replacemenetString is done :this to restrict the textfield to accept only numbers
-                return ((newLength <= 1) && (string == numberFiltered))
+            
+            if (textField.text!.count < 1) && (string.count > 0) {
+                if textField == firstPinDigitTextField {
+                    secondPinDigitTextField.becomeFirstResponder()
+                }
+                if textField == secondPinDigitTextField {
+                    thirdPindigitTextField.becomeFirstResponder()
+                }
+                if textField == thirdPindigitTextField {
+                    fourthPinDigitTextField.becomeFirstResponder()
+                }
+                if textField == fourthPinDigitTextField {
+                    fourthPinDigitTextField.resignFirstResponder()
+                }
+                textField.text = string
+                return false
+            } else if ((textField.text!.count >= 1) && string.count == 0 ) {
+                if textField == secondPinDigitTextField {
+                    firstPinDigitTextField.becomeFirstResponder()
+                }
+                if textField == thirdPindigitTextField {
+                    secondPinDigitTextField.becomeFirstResponder()
+                }
+                if textField == fourthPinDigitTextField {
+                    thirdPindigitTextField.becomeFirstResponder()
+                }
+                if textField == firstPinDigitTextField {
+                    firstPinDigitTextField.resignFirstResponder()
+                }
                 
-            }else{
-                return true
+                textField.text = ""
+                return false
+            } else if textField.text!.count >= 1 {
+                textField.text = string
+                return false
             }
+            return true
     }
     
 }
