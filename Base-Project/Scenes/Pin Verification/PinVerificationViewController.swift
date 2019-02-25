@@ -217,50 +217,46 @@ extension PinVerificationViewController {
     fileprivate func subscribeToPinValue(){
         self.firstPinDigitTextField
             .rx
-            .controlEvent(.editingChanged)
-            .withLatestFrom(self.firstPinDigitTextField
-                .rx
-                .text
-                .orEmpty)
+            .textChanged
             .subscribe(onNext : { value in
-                setValuForPin(0, value)
+                if value != nil {
+                    setValuForPin(0, value!)
+                }
+                
             })
             .disposed(by: disposeBag)
         
         self.secondPinDigitTextField
             .rx
-            .controlEvent(.editingChanged)
-            .withLatestFrom(self.secondPinDigitTextField
-                .rx
-                .text
-                .orEmpty)
+            .textChanged
             .subscribe(onNext : { value in
-                setValuForPin(1, value)
+                if value != nil {
+                    setValuForPin(1, value!)
+                }
+                
             })
             .disposed(by: disposeBag)
         
         self.thirdPindigitTextField
             .rx
-            .controlEvent(.editingChanged)
-            .withLatestFrom(self.thirdPindigitTextField
-                .rx
-                .text
-                .orEmpty)
+            .textChanged
             .subscribe(onNext : { value in
-                setValuForPin(2, value)
+                if value != nil {
+                    setValuForPin(2, value!)
+                }
+                
             })
             .disposed(by: disposeBag)
         
         
         self.fourthPinDigitTextField
             .rx
-            .controlEvent(.editingChanged)
-            .withLatestFrom(self.fourthPinDigitTextField
-                .rx
-                .text
-                .orEmpty)
+            .textChanged
             .subscribe(onNext : { value in
-                setValuForPin(3, value)
+                if value != nil {
+                    setValuForPin(3, value!)
+                }
+                
             })
             .disposed(by: disposeBag)
         
