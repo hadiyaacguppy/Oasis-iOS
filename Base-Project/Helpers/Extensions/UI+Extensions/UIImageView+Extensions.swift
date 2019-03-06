@@ -31,7 +31,7 @@ extension UIImageView{
     ///   - placeholderImage: a placeHolder image to show when the image is not available. Default a lightGray image.
     func setImage(forURL url : URL?,
                   withIndicatorEnabled activityEnabled : Bool? = nil,
-                  andIndicatorStyle style : UIActivityIndicatorViewStyle,
+                  andIndicatorStyle style : UIActivityIndicatorView.Style,
                   withPlaceHolderImage placeholderImage : UIImage? = nil){
         
         if let enabled = activityEnabled{

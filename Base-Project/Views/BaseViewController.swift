@@ -61,7 +61,7 @@ class BaseViewController : UIViewController,BaseController {
             
         }
         
-        backButton.imageInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+        backButton.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         navigationItem.leftBarButtonItem = backButton
     }
     
@@ -92,7 +92,7 @@ class BaseViewController : UIViewController,BaseController {
             dismissButton.image = UIImage(named: "iconClose")!.withRenderingMode(.alwaysOriginal)
             
             
-            dismissButton.imageInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+            dismissButton.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             navigationItem.leftBarButtonItem = dismissButton
         }
         

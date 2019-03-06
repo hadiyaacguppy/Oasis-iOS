@@ -34,8 +34,8 @@ struct Utilities  {
     }
     
     static func openAppSettings(){
-        if self.canOpen(url: URL(string:UIApplicationOpenSettingsURLString)){
-            self.openURL(withString: UIApplicationOpenSettingsURLString)
+        if self.canOpen(url: URL(string:UIApplication.openSettingsURLString)){
+            self.openURL(withString: UIApplication.openSettingsURLString)
         }
     }
     
@@ -135,11 +135,11 @@ struct Utilities  {
             let settingsButton = "Settings".localized
             let cancelButton = "Cancel".localized
             let message = "Your need to give a permission from notification settings.".localized
-            let goToSettingsAlert = UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.alert)
+            let goToSettingsAlert = UIAlertController(title: "", message: message, preferredStyle: UIAlertController.Style.alert)
             
             goToSettingsAlert.addAction(UIAlertAction(title: settingsButton, style: .destructive, handler: { (action: UIAlertAction) in
                 DispatchQueue.main.async {
-                    guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {
+                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
                         return
                     }
                     

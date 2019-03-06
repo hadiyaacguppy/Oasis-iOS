@@ -37,7 +37,7 @@ public class PlaceHolderView: UIView {
     lazy var circularProgressIndicator : UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         activityIndicator.center = self.center
-        activityIndicator.activityIndicatorViewStyle = .gray
+        activityIndicator.style = .gray
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.hidesWhenStopped = true
         self.contentView.addSubview(activityIndicator)
@@ -377,7 +377,7 @@ extension PlaceHolderView {
     ///  Title to be used for the specified button state.
     /// Fixed font style will be used by defualt, if no attributes are set. If you want a different font style, return a attributed string.
     @discardableResult
-    public func buttonTitle(_ buttonTitle: NSAttributedString?, for state: UIControlState) -> Self {
+    public func buttonTitle(_ buttonTitle: NSAttributedString?, for state: UIControl.State) -> Self {
         button.setAttributedTitle(buttonTitle, for: state)
         return self
     }
@@ -385,7 +385,7 @@ extension PlaceHolderView {
     /// Image to be used for the specified button state.
     
     @discardableResult
-    public func buttonImage(_ buttonImage: UIImage?, for state: UIControlState) -> Self {
+    public func buttonImage(_ buttonImage: UIImage?, for state: UIControl.State) -> Self {
         button.setImage(buttonImage, for: state)
         return self
     }
@@ -444,7 +444,7 @@ extension PlaceHolderView {
     /// The Background image to be used for the specified button state.
     /// There is no default style for this call.
     @discardableResult
-    public func buttonBackgroundImage(_ buttonBackgroundImage: UIImage?, for state: UIControlState) -> Self {
+    public func buttonBackgroundImage(_ buttonBackgroundImage: UIImage?, for state: UIControl.State) -> Self {
         button.setBackgroundImage(buttonBackgroundImage, for: state)
         return self
     }

@@ -27,8 +27,8 @@ extension UIViewController {
         return self.isViewLoaded && view.window != nil
     }
     public func addChildViewController(_ child: UIViewController, toContainerView containerView: UIView) {
-        addChildViewController(child)
+        addChild(child)
         containerView.addSubview(child.view)
-        child.didMove(toParentViewController: self)
+        child.didMove(toParent: self)
     }
 }

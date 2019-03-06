@@ -84,7 +84,7 @@ class BaseWebViewViewController: BaseViewController, BaseWebViewViewControllerIn
         
         webView.navigationDelegate = self
         
-        self.view.bringSubview(toFront: self.webView)
+        self.view.bringSubviewToFront(self.webView)
         
     }
     // MARK: Requests

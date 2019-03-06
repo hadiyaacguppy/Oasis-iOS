@@ -108,9 +108,9 @@ extension BaseController  where Self: UIViewController{
         
         let transition = CATransition()
         transition.duration = 0.4
-        transition.type = kCATransitionReveal
-        transition.subtype = kCATransitionFromRight
-        transition.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+        transition.type = CATransitionType.reveal
+        transition.subtype = CATransitionSubtype.fromRight
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
         self.view.window!.layer.add(transition, forKey: kCATransition)
         
         self.navigationController?.pushViewController(viewController, animated: animated )
@@ -122,9 +122,9 @@ extension BaseController  where Self: UIViewController{
         
         let transition = CATransition()
         transition.duration = 0.4
-        transition.type = kCATransitionReveal
-        transition.subtype = kCATransitionFromBottom
-        transition.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+        transition.type = CATransitionType.reveal
+        transition.subtype = CATransitionSubtype.fromBottom
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
         self.view.window!.layer.add(transition, forKey: kCATransition)
         self.present(viewController, animated: true  , completion: nil)
         

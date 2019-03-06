@@ -96,7 +96,7 @@ extension UIViewController: UIGestureRecognizerDelegate{
             
             if view.superview == nil {
                 self.view.addSubview(view)
-                self.view.bringSubview(toFront: view)
+                self.view.bringSubviewToFront(view)
             }
             
             // Removing view resetting the view and its constraints it very important to guarantee a good state

@@ -88,23 +88,23 @@ extension UIView {
             slideInFromLeftTransition.delegate = delegate as! CAAnimationDelegate
         }
         // Customize the animation's properties
-        slideInFromLeftTransition.type = kCATransitionPush
-        slideInFromLeftTransition.subtype = kCATransitionFromRight
+        slideInFromLeftTransition.type = CATransitionType.push
+        slideInFromLeftTransition.subtype = CATransitionSubtype.fromRight
         slideInFromLeftTransition.duration = duration
-        slideInFromLeftTransition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        slideInFromLeftTransition.fillMode = kCAFillModeRemoved
+        slideInFromLeftTransition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        slideInFromLeftTransition.fillMode = CAMediaTimingFillMode.removed
         
         // Add the animation to the View's layer
         self.layer.add(slideInFromLeftTransition, forKey: "slideInFromLeftTransition")
     }
     
     func fadeIn(duration: TimeInterval = 1.0, delay: TimeInterval = 0.0, completion: @escaping ((Bool) -> Void) = {(finished: Bool) -> Void in}) {
-        UIView.animate(withDuration: duration, delay: delay, options: UIViewAnimationOptions.curveEaseIn, animations: {
+        UIView.animate(withDuration: duration, delay: delay, options: UIView.AnimationOptions.curveEaseIn, animations: {
             self.alpha = 1.0
         }, completion: completion)  }
     
     func fadeOut(duration: TimeInterval = 1.0, delay: TimeInterval = 0.0, completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in}) {
-        UIView.animate(withDuration: duration, delay: delay, options: UIViewAnimationOptions.curveEaseIn, animations: {
+        UIView.animate(withDuration: duration, delay: delay, options: UIView.AnimationOptions.curveEaseIn, animations: {
             self.alpha = 0.0
         }, completion: completion)
     }
