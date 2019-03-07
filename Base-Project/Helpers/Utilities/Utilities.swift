@@ -190,6 +190,12 @@ struct Utilities  {
             presenter.present(activityController, animated: true, completion: nil)
         }
         
+        static func showChangeLanguageInformativeAlertView(withPresenter presenter: UIViewController){
+            self.showSimpleAlertView("Change Language Guide".localized,
+                                                     message: "In Order to change the language of the app, you to need change the language of the device, Open Settings -> Tap General -> Select Language & Region -> Tap Device language -> Select your language once your device rebooted, reopen the app.".localized,
+                                                     withPresneter: presenter,
+                                                     withCompletionHandler: nil)
+        }
         
     }
     
