@@ -1,27 +1,27 @@
 //
-//  PINPresenter.swift
-//  Base-Project
+//  PinVerificationPresenter.swift
+//  Healr
 //
-//  Created by Hadi on 1/22/19.
-//  Copyright (c) 2019 Tedmob. All rights reserved.
+//  Created by Mhmd Rizk on 11/28/18.
+//  Copyright (c) 2018 Tedmob. All rights reserved.
 //
 
 //  
 import Foundation
 
-protocol PINPresenterOutput: class {
+protocol PinVerificationPresenterOutput: class {
     
-    
+
 }
 
-class PINPresenter {
+class PinVerificationPresenter {
     
-    weak var output: PINPresenterOutput?
+    weak var output: PinVerificationPresenterOutput?
     
     // MARK: Presentation logic
     
 }
-extension PINPresenter: PINInteractorOutput {
+extension PinVerificationPresenter: PinVerificationInteractorOutput {
     
     func apiCallFailed(withError error: ErrorResponse) -> ErrorViewModel {
         return self.parseErrorViewModel(fromErrorResponse:error)

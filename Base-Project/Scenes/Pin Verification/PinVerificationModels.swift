@@ -1,9 +1,9 @@
 //
-//  PINModels.swift
-//  Base-Project
+//  PinVerificationModels.swift
+//  Healr
 //
-//  Created by Hadi on 1/22/19.
-//  Copyright (c) 2019 Tedmob. All rights reserved.
+//  Created by Mhmd Rizk on 11/28/18.
+//  Copyright (c) 2018 Tedmob. All rights reserved.
 //
 
 //  
@@ -12,7 +12,7 @@
 import RxSwift
 import Foundation
 
-struct PINModels {
+struct PinVerificationModels {
     
     struct Requests {
 

@@ -30,3 +30,9 @@ extension Reactive where Base: UITextField {
                                 self.base.rx.controlEvent(.editingDidBegin).withLatestFrom(self.base.rx.text))
     }
 }
+
+
+
+
+
+
