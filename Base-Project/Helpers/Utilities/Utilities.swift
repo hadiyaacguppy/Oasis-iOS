@@ -345,44 +345,7 @@ struct Utilities  {
     }
     
     
-    // MARK: - Device Structure
-    /// Helper functions to detect current device, screen sizes, debug or release, iOS Version and more..
-    struct Device {
-        
-        // MARK: - Singletons
-        
-        var version : Float {
-             return  Float(UIDevice.current.systemVersion)!
-        }
-        
-        
-        var height : CGFloat{
-            return  UIScreen.main.bounds.size.height
-        }
-        
-        var width : CGFloat{
-            return  UIScreen.main.bounds.size.width
-        }
-        var isIpad : Bool {
-            return UIDevice.current.userInterfaceIdiom == .pad
-        }
-        
-        var isIPhone : Bool {
-            return UIDevice.current.userInterfaceIdiom == .phone
-        }
-        var isIphoneX : Bool {
-            switch UIScreen.main.nativeBounds.height {
-            case 2436:
-                return true
-            default:
-                return false
-            }
-        }
-        
-        
-    }
-    
-  
+   
     
     struct Storage {
         
