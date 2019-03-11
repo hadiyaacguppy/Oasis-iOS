@@ -34,8 +34,8 @@ struct Utilities  {
     }
     
     static func openAppSettings(){
-        if self.canOpen(url: URL(string:UIApplicationOpenSettingsURLString)){
-            self.openURL(withString: UIApplicationOpenSettingsURLString)
+        if self.canOpen(url: URL(string:UIApplication.openSettingsURLString)){
+            self.openURL(withString: UIApplication.openSettingsURLString)
         }
     }
     
@@ -130,6 +130,35 @@ struct Utilities  {
     
     
     struct AlertViews {
+        
+        static func showPushNotificationsAlertView(withPresenter presenter: UIViewController, withCompletionHandler handler: (() -> Void)?){
+            let settingsButton = "Settings".localized
+            let cancelButton = "Cancel".localized
+            let message = "Your need to give a permission from notification settings.".localized
+            let goToSettingsAlert = UIAlertController(title: "", message: message, preferredStyle: UIAlertController.Style.alert)
+            
+            goToSettingsAlert.addAction(UIAlertAction(title: settingsButton, style: .destructive, handler: { (action: UIAlertAction) in
+                DispatchQueue.main.async {
+                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                        return
+                    }
+                    
+                    if UIApplication.shared.canOpenURL(settingsUrl) {
+                        if #available(iOS 10.0, *) {
+                            UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                                print("Settings opened: \(success)") // Prints true
+                            })
+                        } else {
+                            UIApplication.shared.openURL(settingsUrl as URL)
+                        }
+                    }
+                }
+            }))
+            
+            goToSettingsAlert.addAction(UIAlertAction(title: cancelButton, style: .cancel, handler: nil))
+            presenter.present(goToSettingsAlert, animated: true, completion: nil)
+        }
+        
         static func showAlertView(_ title: String, message: String, actions: [UIAlertAction], withPresenter presenter: UIViewController, withCompletionHandler handler: (() -> Void)?) {
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             for action in actions {

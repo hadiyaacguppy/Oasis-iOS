@@ -44,7 +44,7 @@ final class OneSignalPushService: NSObject{
             updateInFocusDisplayType()
         }
     }
-    func initializeOneSignal(withLaunchOptions launchOptions  : [UIApplicationLaunchOptionsKey: Any]? ,andAppID appId : String){
+    func initializeOneSignal(withLaunchOptions launchOptions  : [UIApplication.LaunchOptionsKey: Any]? ,andAppID appId : String){
         
         
         

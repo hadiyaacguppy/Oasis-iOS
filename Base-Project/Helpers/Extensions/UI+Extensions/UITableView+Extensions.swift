@@ -12,7 +12,7 @@ import UIKit
 extension UITableView{
     
     func addSpinnerToBottom() -> UIActivityIndicatorView{
-        let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        let spinner = UIActivityIndicatorView(style: .gray)
         OperationQueue.main.addOperation{
             //spinner.color = Colors.pickColor
             spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: self.bounds.width, height: CGFloat(44))

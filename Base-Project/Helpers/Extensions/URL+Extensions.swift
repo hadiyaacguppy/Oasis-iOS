@@ -49,8 +49,8 @@ extension URL{
     }
     public func thumbnail(fromTime time: Float64 = 0) -> UIImage? {
         let imageGenerator = AVAssetImageGenerator(asset: AVAsset(url: self))
-        let time = CMTimeMakeWithSeconds(time, 1)
-        var actualTime = CMTimeMake(0, 0)
+        let time = CMTimeMakeWithSeconds(time, preferredTimescale: 1)
+        var actualTime = CMTimeMake(value: 0, timescale: 0)
         
         guard let cgImage = try? imageGenerator.copyCGImage(at: time, actualTime: &actualTime) else {
             return nil

@@ -15,8 +15,8 @@ class BaseTransparentNavigationBar : UINavigationBar{
         self.shadowImage = UIImage()
         
         self.titleTextAttributes = [
-            NSAttributedStringKey.foregroundColor : UIColor.white,
-            NSAttributedStringKey.font : UIFont(name: "FFYaseer-Regular", size: 19)!
+            NSAttributedString.Key.foregroundColor : UIColor.white,
+            NSAttributedString.Key.font : UIFont(name: "FFYaseer-Regular", size: 19)!
         ]
     }
 }

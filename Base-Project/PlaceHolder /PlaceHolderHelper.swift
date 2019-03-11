@@ -23,7 +23,7 @@ final class PlaceHolderHelper {
             if text == nil {
                 return nil
             }
-            var attributes: [NSAttributedStringKey: Any] = [:]
+            var attributes: [NSAttributedString.Key: Any] = [:]
             if font != nil {
                 attributes[.font] = font!
             }
@@ -43,7 +43,7 @@ final class PlaceHolderHelper {
             if text == nil {
                 return nil
             }
-            var attributes: [NSAttributedStringKey: Any] = [:]
+            var attributes: [NSAttributedString.Key: Any] = [:]
             if font != nil {
                 attributes[.font] = font!
             }
@@ -67,7 +67,7 @@ final class PlaceHolderHelper {
     
     
     
-    static func setButtonTitle(forState state: UIControlState,
+    static func setButtonTitle(forState state: UIControl.State,
                                andText text : String? = nil,
                                withTextColor textColor : UIColor? = nil,
                                andFont font : UIFont? = nil
@@ -77,12 +77,12 @@ final class PlaceHolderHelper {
             if text == nil {
                 return nil
             }
-            var attributes: [NSAttributedStringKey: Any] = [:]
+            var attributes: [NSAttributedString.Key: Any] = [:]
             if font != nil {
-                attributes[NSAttributedStringKey.font] = font!
+                attributes[NSAttributedString.Key.font] = font!
             }
             if textColor != nil {
-                attributes[NSAttributedStringKey.foregroundColor] = textColor
+                attributes[NSAttributedString.Key.foregroundColor] = textColor
             }
             return NSAttributedString.init(string: text!, attributes: attributes)
     }

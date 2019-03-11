@@ -13,6 +13,5 @@ class VersionLabel: UILabel {
         super.awakeFromNib()
         self.text = "v\(Bundle.versionNumber)/\(Bundle.buildNumber)"
     }
-    
 }
 

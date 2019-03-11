@@ -15,7 +15,7 @@ class TDAlertAction: UIAlertAction {
     
     
     class func handlerSavingAlertAction(title: String?,
-                                        style: UIAlertActionStyle,
+                                        style: UIAlertAction.Style,
                                         completionHandler:  @escaping ((UIAlertAction) -> Void))
         -> TDAlertAction {
             let alertAction = self.init(title: title, style: style, handler: completionHandler)
