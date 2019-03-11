@@ -16,21 +16,6 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.color` struct is generated, and contains static references to 0 colors.
-  struct color {
-    fileprivate init() {}
-  }
-  
-  /// This `R.file` struct is generated, and contains static references to 0 files.
-  struct file {
-    fileprivate init() {}
-  }
-  
-  /// This `R.font` struct is generated, and contains static references to 0 fonts.
-  struct font {
-    fileprivate init() {}
-  }
-  
   /// This `R.image` struct is generated, and contains static references to 4 images.
   struct image {
     /// Image `RegistrationNotView`.
@@ -62,21 +47,6 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.offline, compatibleWith: traitCollection)
     }
     
-    fileprivate init() {}
-  }
-  
-  /// This `R.nib` struct is generated, and contains static references to 0 nibs.
-  struct nib {
-    fileprivate init() {}
-  }
-  
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 0 reuse identifiers.
-  struct reuseIdentifier {
-    fileprivate init() {}
-  }
-  
-  /// This `R.segue` struct is generated, and contains static references to 0 view controllers.
-  struct segue {
     fileprivate init() {}
   }
   
@@ -121,11 +91,6 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.string` struct is generated, and contains static references to 0 localization tables.
-  struct string {
-    fileprivate init() {}
-  }
-  
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()
@@ -144,16 +109,13 @@ struct _R: Rswift.Validatable {
     try storyboard.validate()
   }
   
-  struct nib {
-    fileprivate init() {}
-  }
-  
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       try baseWebView.validate()
-      try initial.validate()
-      try pinVerification.validate()
       try changePassword.validate()
+      try initial.validate()
+      try launchScreen.validate()
+      try pinVerification.validate()
     }
     
     struct baseWebView: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
@@ -168,6 +130,8 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
+        if #available(iOS 11.0, *) {
+        }
         if _R.storyboard.baseWebView().baseWebViewViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'baseWebViewViewControllerVC' could not be loaded from storyboard 'BaseWebView' as 'BaseWebViewViewController'.") }
       }
       
@@ -186,7 +150,9 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
-        if UIKit.UIImage(named: "RegistrationNotView") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'RegistrationNotView' is used in storyboard 'ChangePassword', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "RegistrationNotView", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'RegistrationNotView' is used in storyboard 'ChangePassword', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
         if _R.storyboard.changePassword().changePasswordViewControllerTableVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'changePasswordViewControllerTableVC' could not be loaded from storyboard 'ChangePassword' as 'ChangePasswordViewController'.") }
       }
       
@@ -205,17 +171,24 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
+        if #available(iOS 11.0, *) {
+        }
         if _R.storyboard.initial().initialViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'initialViewControllerVC' could not be loaded from storyboard 'Initial' as 'InitialViewController'.") }
       }
       
       fileprivate init() {}
     }
     
-    struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
+    struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = UIKit.UIViewController
       
       let bundle = R.hostingBundle
       let name = "LaunchScreen"
+      
+      static func validate() throws {
+        if #available(iOS 11.0, *) {
+        }
+      }
       
       fileprivate init() {}
     }
@@ -237,6 +210,8 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
+        if #available(iOS 11.0, *) {
+        }
         if _R.storyboard.pinVerification().pinVerificationViewControllerTableVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'pinVerificationViewControllerTableVC' could not be loaded from storyboard 'PinVerification' as 'PinVerificationViewController'.") }
         if _R.storyboard.pinVerification().pinVerificationNav() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'pinVerificationNav' could not be loaded from storyboard 'PinVerification' as 'BaseNavigationController'.") }
       }

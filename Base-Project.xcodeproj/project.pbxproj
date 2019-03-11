@@ -10,7 +10,6 @@
 		0F484B4F2165FF5C0060C463 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F484B4E2165FF5C0060C463 /* Date+Extensions.swift */; };
 		0F57538E20EE12EB0069C139 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57538D20EE12EB0069C139 /* Constants.swift */; };
 		0F57539120EE13660069C139 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539020EE13660069C139 /* DataManager.swift */; };
-		0F57539320EE16560069C139 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539220EE16560069C139 /* R.generated.swift */; };
 		0F57539520EE185F0069C139 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539420EE185F0069C139 /* Array+Extensions.swift */; };
 		0F57539720EE19090069C139 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539620EE19090069C139 /* LocationService.swift */; };
 		0F57539B20EE19CD0069C139 /* BaseProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539A20EE19CD0069C139 /* BaseProjectService.swift */; };
@@ -92,6 +91,7 @@
 		CF56472D211B1B740092EFBD /* Reactive+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF56472C211B1B740092EFBD /* Reactive+UIImageView.swift */; };
 		CF56472F211B1BA50092EFBD /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF56472E211B1BA50092EFBD /* UIImageView+Extensions.swift */; };
 		CF564731211B1C910092EFBD /* InputValidationExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF564730211B1C910092EFBD /* InputValidationExpression.swift */; };
+		CF615FCC22363AEC003C6105 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF615FCB22363AEC003C6105 /* R.generated.swift */; };
 		CF6B70F221EDD5F700204B65 /* VersionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6B70F121EDD5F700204B65 /* VersionLabel.swift */; };
 		CF7823B420EF95A7003069BD /* APIErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7823B320EF95A7003069BD /* APIErrorManager.swift */; };
 		CF7823B720EF95C6003069BD /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7823B620EF95C6003069BD /* APIError.swift */; };
@@ -197,7 +197,6 @@
 		0F484B4E2165FF5C0060C463 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		0F57538D20EE12EB0069C139 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0F57539020EE13660069C139 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		0F57539220EE16560069C139 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		0F57539420EE185F0069C139 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		0F57539620EE19090069C139 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		0F57539A20EE19CD0069C139 /* BaseProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProjectService.swift; sourceTree = "<group>"; };
@@ -286,6 +285,7 @@
 		CF56472C211B1B740092EFBD /* Reactive+UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reactive+UIImageView.swift"; sourceTree = "<group>"; };
 		CF56472E211B1BA50092EFBD /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		CF564730211B1C910092EFBD /* InputValidationExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidationExpression.swift; sourceTree = "<group>"; };
+		CF615FCB22363AEC003C6105 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		CF6B70F121EDD5F700204B65 /* VersionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionLabel.swift; sourceTree = "<group>"; };
 		CF7823B320EF95A7003069BD /* APIErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorManager.swift; sourceTree = "<group>"; };
 		CF7823B620EF95C6003069BD /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -478,8 +478,8 @@
 		117C4AA71FD85FCE008BB445 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CF615FCB22363AEC003C6105 /* R.generated.swift */,
 				CF2F319F215E8C2C007A912A /* Info.plist */,
-				0F57539220EE16560069C139 /* R.generated.swift */,
 				CF7BC67A1FD91E36008E80AC /* App Delegate */,
 			);
 			path = "Supporting Files";
@@ -820,7 +820,6 @@
 				98B7E6723CD6E9868C61C5B1 /* [CP] Embed Pods Frameworks */,
 				CF8C5CCC20EF9E7200236C7B /* Embed Frameworks */,
 				CF564722211B15590092EFBD /* Embed App Extensions */,
-				F8E0F4652B6903B32F3EB7E6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -841,7 +840,6 @@
 				CF564713211B15590092EFBD /* Sources */,
 				CF564714211B15590092EFBD /* Frameworks */,
 				CF564715211B15590092EFBD /* Resources */,
-				5219382F9F23670CF2836487 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1009,21 +1007,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5219382F9F23670CF2836487 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		98B7E6723CD6E9868C61C5B1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1032,8 +1015,9 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CZPicker/CZPicker.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -1046,8 +1030,9 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CZPicker.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -1106,29 +1091,18 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
 			);
 			name = "Run Script";
 			outputPaths = (
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"\n";
-		};
-		F8E0F4652B6903B32F3EB7E6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project-resources.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1196,6 +1170,7 @@
 				4AEF648422108F8C00D53D75 /* PinVerificationViewController.swift in Sources */,
 				4A20A2312179E9C5002C2AAA /* ChangePasswordViewController.swift in Sources */,
 				0F57539720EE19090069C139 /* LocationService.swift in Sources */,
+				CF615FCC22363AEC003C6105 /* R.generated.swift in Sources */,
 				CF8C5C9C20EF97AE00236C7B /* BaseTableViewController.swift in Sources */,
 				4AEF648022108F8C00D53D75 /* PinVerificationRouter.swift in Sources */,
 				4AEF648222108F8C00D53D75 /* PinVerificationModels.swift in Sources */,
@@ -1226,7 +1201,6 @@
 				0FD65F1520D014F40075E251 /* Reactive+UIButton.swift in Sources */,
 				CF181BA020809874002603A1 /* UINavigationBar+Extensions.swift in Sources */,
 				CF06BE5F2199CFC4004B763B /* Reactive+Validation.swift in Sources */,
-				0F57539320EE16560069C139 /* R.generated.swift in Sources */,
 				CF40385E216CF78F001F649B /* InitialConfigurator.swift in Sources */,
 				CFC2BFE6216CA3C800DC31A7 /* ErrorViewModel.swift in Sources */,
 				CF7BC6781FD91D83008E80AC /* Response+ObjectMapper.swift in Sources */,
