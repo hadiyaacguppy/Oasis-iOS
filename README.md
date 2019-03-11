@@ -1,14 +1,12 @@
 ## Base Project iOS/Swift
 
-
+# 2.0 VERSION IN SUPPORT ONLY. All work should go into the  `3.0` branch
 
 This is going to be the starting point  for iOS apps written in Swift at TEDMOB
 
 
 
 Dependencies are handled via Carthage and Cocoapods
-
-
 
 - Carthage :
 
