@@ -6,15 +6,14 @@ target 'Base-Project' do
   use_frameworks!
   pod 'Firebase/Core'
   pod 'R.swift'
-  pod 'SwiftLocation', '~> 3.2.3'
   pod 'CZPicker'
   pod 'RxGesture'
   pod 'OneSignal', '>= 2.6.2', '< 3.0'
-  pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'SDWebImage', '~> 4.0'
+  pod 'SwiftLocation'
 end
 
-
+                    
 
 target 'OneSignalNotificationServiceExtension' do
   use_frameworks!

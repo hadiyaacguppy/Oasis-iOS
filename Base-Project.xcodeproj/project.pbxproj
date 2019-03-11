@@ -92,6 +92,7 @@
 		CF56472F211B1BA50092EFBD /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF56472E211B1BA50092EFBD /* UIImageView+Extensions.swift */; };
 		CF564731211B1C910092EFBD /* InputValidationExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF564730211B1C910092EFBD /* InputValidationExpression.swift */; };
 		CF615FCC22363AEC003C6105 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF615FCB22363AEC003C6105 /* R.generated.swift */; };
+		CF615FCE22363F95003C6105 /* SkyFloatingLabelTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF615FCD22363F95003C6105 /* SkyFloatingLabelTextField.framework */; };
 		CF6B70F221EDD5F700204B65 /* VersionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6B70F121EDD5F700204B65 /* VersionLabel.swift */; };
 		CF7823B420EF95A7003069BD /* APIErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7823B320EF95A7003069BD /* APIErrorManager.swift */; };
 		CF7823B720EF95C6003069BD /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7823B620EF95C6003069BD /* APIError.swift */; };
@@ -286,6 +287,7 @@
 		CF56472E211B1BA50092EFBD /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		CF564730211B1C910092EFBD /* InputValidationExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidationExpression.swift; sourceTree = "<group>"; };
 		CF615FCB22363AEC003C6105 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		CF615FCD22363F95003C6105 /* SkyFloatingLabelTextField.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkyFloatingLabelTextField.framework; path = Carthage/Build/iOS/SkyFloatingLabelTextField.framework; sourceTree = "<group>"; };
 		CF6B70F121EDD5F700204B65 /* VersionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionLabel.swift; sourceTree = "<group>"; };
 		CF7823B320EF95A7003069BD /* APIErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorManager.swift; sourceTree = "<group>"; };
 		CF7823B620EF95C6003069BD /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 				CF7BC66C1FD8F739008E80AC /* RxMoya.framework in Frameworks */,
 				CF7BC66D1FD8F739008E80AC /* RxSwift.framework in Frameworks */,
 				CF7BC66E1FD8F739008E80AC /* Moya.framework in Frameworks */,
+				CF615FCE22363F95003C6105 /* SkyFloatingLabelTextField.framework in Frameworks */,
 				CF7BC66F1FD8F739008E80AC /* ObjectMapper.framework in Frameworks */,
 				4B00E64AA8A0A7582597A76A /* Pods_Base_Project.framework in Frameworks */,
 				CF8C5CCB20EF9E7200236C7B /* SessionManager.framework in Frameworks */,
@@ -651,6 +654,7 @@
 		8A6CF31932BE5291FACE8092 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF615FCD22363F95003C6105 /* SkyFloatingLabelTextField.framework */,
 				CF87ED9D201B5FF300562226 /* SVProgressHUD.framework */,
 				CF7BC6651FD8F739008E80AC /* Alamofire.framework */,
 				CF7BC6681FD8F739008E80AC /* Moya.framework */,
@@ -1079,6 +1083,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SkyFloatingLabelTextField.framework",
 			);
 			outputPaths = (
 			);

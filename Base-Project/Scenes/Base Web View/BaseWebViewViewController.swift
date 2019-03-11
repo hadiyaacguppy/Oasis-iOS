@@ -52,7 +52,13 @@ class BaseWebViewViewController: BaseViewController, BaseWebViewViewControllerIn
     func loadWebView(withURLRequest urlRequest : URLRequest){
         self.webView.load(urlRequest)
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.output?.webViewIsReady()
+            .map { self.loadWebView(withURLRequest: $0)}
+            .subscribe()
+            .disposed(by: disposeBag)
+    }
     fileprivate
     func makebackgroundClear() {
         webView.translatesAutoresizingMaskIntoConstraints = false
@@ -64,11 +70,7 @@ class BaseWebViewViewController: BaseViewController, BaseWebViewViewControllerIn
     func initWebView(){
         
         self.view.backgroundColor = UIColor.black
-        if Utilities.Device().isIphoneX {
-            self.webView = WKWebView()
-        }else {
-            self.webView = WKWebView()
-        }
+        self.webView = WKWebView()
         
         makebackgroundClear()
         
