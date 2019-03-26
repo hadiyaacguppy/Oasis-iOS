@@ -15,6 +15,7 @@ enum DateFormats : String {
     case monthAnYear = "MMMM yyyy" //November 2018
     case monthDayYear = "MMM d, yyyy"//Nov 9, 2018
     case shortDigits = "dd.MM.yy"//09.11.18
+    case everything = "E, d MMM yyyy HH:mm:ss"
 }
 struct Constants {
     
