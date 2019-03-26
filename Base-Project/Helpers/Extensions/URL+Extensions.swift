@@ -39,6 +39,7 @@ extension URL{
         urlComponents.queryItems = items
         return urlComponents.url!
     }
+    
     public func queryValue(for key: String) -> String? {
         let stringURL = absoluteString
         guard let items = URLComponents(string: stringURL)?.queryItems else { return nil }
@@ -47,14 +48,5 @@ extension URL{
         }
         return nil
     }
-    public func thumbnail(fromTime time: Float64 = 0) -> UIImage? {
-        let imageGenerator = AVAssetImageGenerator(asset: AVAsset(url: self))
-        let time = CMTimeMakeWithSeconds(time, preferredTimescale: 1)
-        var actualTime = CMTimeMake(value: 0, timescale: 0)
-        
-        guard let cgImage = try? imageGenerator.copyCGImage(at: time, actualTime: &actualTime) else {
-            return nil
-        }
-        return UIImage(cgImage: cgImage)
-    }
+   
 }

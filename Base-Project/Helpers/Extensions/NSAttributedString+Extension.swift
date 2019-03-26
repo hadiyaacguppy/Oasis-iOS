@@ -9,10 +9,5 @@
 import UIKit
 
 extension NSAttributedString {
-    ///Returns an NSAttributedString object initialized with a given string and an aligment.
-    convenience init(text: String, aligment: NSTextAlignment) {
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = aligment
-        self.init(string: text, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
-    }
+    
 }

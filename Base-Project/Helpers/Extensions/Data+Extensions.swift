@@ -8,9 +8,14 @@
 
 import Foundation
 
-
 extension Data {
-    public func jsonObject(options: JSONSerialization.ReadingOptions = []) throws -> Any {
-        return try JSONSerialization.jsonObject(with: self, options: options)
+    
+    public func jsonObject(options: JSONSerialization.ReadingOptions = []) throws -> [String:Any]? {
+        return try JSONSerialization.jsonObject(with: self, options: options) as? [String: Any]
     }
+    
+    public func jsonArray(options: JSONSerialization.ReadingOptions = []) throws -> [[String:Any]]? {
+        return try JSONSerialization.jsonObject(with: self, options: options) as? [[String: Any]]
+    }
+    
 }

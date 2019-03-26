@@ -335,11 +335,7 @@ struct Utilities  {
     }
     
     struct File {
-        static func getFileURL(_ fileName: String) -> String? {
-            let fileURL = FileManager().urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first
-            
-            return (fileURL?.appendingPathComponent(fileName).path)
-        }
+     
     }
     
     
