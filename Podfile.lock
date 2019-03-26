@@ -77,7 +77,7 @@ DEPENDENCIES:
   - RxGesture
   - SDWebImage (~> 4.0)
   - SkyFloatingLabelTextField (~> 3.0)
-  - SwiftLocation (~> 3.2.3)
+  - SwiftLocation
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -122,6 +122,6 @@ SPEC CHECKSUMS:
   SwiftLocation: a3c3bc2023118171ef3572188a31def94aa0892c
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: c0d2ff2d49a6d2955910bc9e52a6ab093baccb43
+PODFILE CHECKSUM: 54a88aca2ff13d3c0822f7e5245b9be92333df0e
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1

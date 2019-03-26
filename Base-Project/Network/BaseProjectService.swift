@@ -34,6 +34,7 @@ extension BaseProjectService: TargetType {
             return "push/set_user_push"
         }
     }
+    
     var method: Moya.Method {
         switch self {
         case .setOneSignalUserPush:

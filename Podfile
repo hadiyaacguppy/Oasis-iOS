@@ -11,6 +11,8 @@ target 'Base-Project' do
   pod 'OneSignal', '>= 2.6.2', '< 3.0'
   pod 'SDWebImage', '~> 4.0'
   pod 'SwiftLocation'
+  pod 'SkyFloatingLabelTextField', '~> 3.0'
+
 end
 
                     
