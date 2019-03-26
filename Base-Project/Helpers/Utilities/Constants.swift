@@ -10,6 +10,15 @@ import Foundation
 import UIKit
 import SVProgressHUD
 
+/// All the date formats that should be used in the app
+enum DateFormats : String {
+    case words = "EEEE, MMM d, yyyy" //  Friday, Nov 9, 2018
+    case digits = "MM-dd-yyyy HH:mm" //11-09-2018
+    case monthAnYear = "MMMM yyyy" //November 2018
+    case monthDayYear = "MMM d, yyyy"//Nov 9, 2018
+    case shortDigits = "dd.MM.yy"//09.11.18
+    case everything = "E, d MMM yyyy HH:mm:ss"
+}
 struct Constants {
     
 
@@ -21,15 +30,7 @@ struct Constants {
         static let appColor : UIColor  = .red
     }
     
-    struct DateFormats {
-        static let words = "EEEE, MMM d, yyyy" //  Friday, Nov 9, 2018
-        static let digits =  "MM-dd-yyyy HH:mm" //11-09-2018 06:33
-        static let monthAnYear = "MMMM yyyy" //November 2018
-        static let monthDayYear = "MMM d, yyyy"//Nov 9, 2018
-        static let shortDigits  = "dd.MM.yy"//09.11.18
-
-
-    }
+    
     
     struct UserDefaultsKeys {
         
