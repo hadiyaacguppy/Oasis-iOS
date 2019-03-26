@@ -8,10 +8,6 @@
 
 import Foundation
 
-enum ReturnTypeFromTimestamp {
-    case string
-    case date
-}
 
 extension Date{
     
@@ -36,21 +32,14 @@ extension Date{
     public var isInPast: Bool {
         return self < Date()
     }
-    
-    func convertDateToLocalTime(_ iDate: Date) -> Date {
-        let timeZone: TimeZone = TimeZone.autoupdatingCurrent
-        let seconds: Int = timeZone.secondsFromGMT(for: iDate)
-        return Date(timeInterval: TimeInterval(seconds), since: iDate)
+    var toLocalTime : Date {
+        let autoUpdatingTimeZone = TimeZone.autoupdatingCurrent
+        let seconds = autoUpdatingTimeZone.secondsFromGMT()
+        return Date(timeInterval: TimeInterval(seconds), since: self)
     }
     
-    func convertDateToGlobalTime(_ iDate: Date) -> Date {
-        let timeZone: TimeZone = TimeZone.autoupdatingCurrent
-        let seconds: Int = -timeZone.secondsFromGMT(for: iDate)
-        return Date(timeInterval: TimeInterval(seconds), since: iDate)
-    }
     
-    func getCurrentDateInFormat(_ format: String) -> String {
-        
+    func getCurrentDate(inFormat format  : DateFormats) -> String {
         let usLocale: Locale = Locale(identifier: "en_US")
         
         let timeFormatter: DateFormatter = DateFormatter()
@@ -65,43 +54,8 @@ extension Date{
         return stringFromDate
     }
     
-    func getTimeStampForCurrentTime() -> String {
-        let timestampNumber: NSNumber = NSNumber(value: (Date().timeIntervalSince1970) * 1000 as Double)
-        return timestampNumber.stringValue
-    }
     
-    func dateString(ofStyle style: DateFormatter.Style = .medium) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeStyle = .none
-        dateFormatter.dateStyle = style
-        return dateFormatter.string(from: self)
-    }
-    
-    /**
-     transforms a unix time to a Date or String
-     
-     - parameter unixtimeInterval: The epochTime value as 128312087
-     - parameter returnTypeYouAreAimingFor: the type you want this function to return, "Date" or "String", default is Date
-     - parameter stringFormat: The date format, default is yyyy-MM-dd
-     
-     - returns: Any, need to cast as String || Date
-     */
-    func getStringFromTimeStamp(_ unixtimeInterval: Int,_ returnTypeYouAreAimingFor: ReturnTypeFromTimestamp?,_ stringFormat: String = "yyyy-MM-dd") -> Any {
-        
-        let date = Date(timeIntervalSince1970: TimeInterval(unixtimeInterval))
-        if returnTypeYouAreAimingFor == .date {//Return the date as Date Type if user wanted it as date
-            return date
-        }else{
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = stringFormat
-            
-            let strDate = dateFormatter.string(from: date)
-            
-            return strDate
-        }
-    }
-    
-    var relativeString : String {
+    var relativeTimeString : String {
         let secondsAgo = Int(Date().timeIntervalSince(self))
         
         let minute = 60
