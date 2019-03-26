@@ -47,7 +47,7 @@ extension Date{
         let usLocale: Locale = Locale(identifier: "en_US")
         
         let timeFormatter: DateFormatter = DateFormatter()
-        timeFormatter.dateFormat = format
+        timeFormatter.dateFormat = format.rawValue
         
         timeFormatter.timeZone = TimeZone.autoupdatingCurrent
         timeFormatter.locale = usLocale
