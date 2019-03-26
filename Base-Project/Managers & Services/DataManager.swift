@@ -13,11 +13,7 @@ import ObjectMapper
 
 
 class DataManager: NSObject {
-    
-    ///Uncomment This if you want to create a saved instance from the user object
-    //var user: User? = nil
-    
-    static let instance = DataManager()
+    static let shared = DataManager()
     
     override init() {
         

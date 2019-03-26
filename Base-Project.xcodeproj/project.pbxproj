@@ -86,7 +86,6 @@
 		CF564702211B142E0092EFBD /* OneSignalPushService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF564701211B142E0092EFBD /* OneSignalPushService.swift */; };
 		CF56471A211B15590092EFBD /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF564719211B15590092EFBD /* NotificationService.swift */; };
 		CF56471E211B15590092EFBD /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CF564717211B15590092EFBD /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		CF564727211B16480092EFBD /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF564726211B16480092EFBD /* Queue.swift */; };
 		CF56472B211B18050092EFBD /* PushParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF56472A211B18050092EFBD /* PushParser.swift */; };
 		CF56472D211B1B740092EFBD /* Reactive+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF56472C211B1B740092EFBD /* Reactive+UIImageView.swift */; };
 		CF56472F211B1BA50092EFBD /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF56472E211B1BA50092EFBD /* UIImageView+Extensions.swift */; };
@@ -281,7 +280,6 @@
 		CF56471B211B15590092EFBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF564723211B15B00092EFBD /* OneSignalNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneSignalNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
 		CF564724211B15BE0092EFBD /* Base-Project.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Base-Project.entitlements"; sourceTree = "<group>"; };
-		CF564726211B16480092EFBD /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		CF56472A211B18050092EFBD /* PushParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushParser.swift; sourceTree = "<group>"; };
 		CF56472C211B1B740092EFBD /* Reactive+UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reactive+UIImageView.swift"; sourceTree = "<group>"; };
 		CF56472E211B1BA50092EFBD /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
@@ -701,18 +699,9 @@
 			path = OneSignalNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
-		CF564725211B163E0092EFBD /* Data structures */ = {
-			isa = PBXGroup;
-			children = (
-				CF564726211B16480092EFBD /* Queue.swift */,
-			);
-			path = "Data structures";
-			sourceTree = "<group>";
-		};
 		CF7823B520EF95BC003069BD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CF564725211B163E0092EFBD /* Data structures */,
 				CFC2BFE5216CA3C800DC31A7 /* ErrorViewModel.swift */,
 				CF7823B620EF95C6003069BD /* APIError.swift */,
 			);
@@ -1135,7 +1124,6 @@
 				CF50F7AC219AC028000E5E4E /* NotificationPayload.swift in Sources */,
 				0F57538E20EE12EB0069C139 /* Constants.swift in Sources */,
 				CF8C5CAC20EF9D7E00236C7B /* UICollectionView+Extensions.swift in Sources */,
-				CF564727211B16480092EFBD /* Queue.swift in Sources */,
 				CF8C5CA820EF9D5400236C7B /* Bool+Extensions.swift in Sources */,
 				CFF69D772195593A003BE6BF /* URLRequest+Extensions.swift in Sources */,
 				4A20A2302179E9C5002C2AAA /* ChangePasswordModels.swift in Sources */,
