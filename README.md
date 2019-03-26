@@ -1,90 +1,18 @@
 ## Base Project iOS/Swift
 
-# 2.0 VERSION IN SUPPORT ONLY. All work should go into the  `3.0` branch
+### 3.0 Version TODOs:
 
-This is going to be the starting point  for iOS apps written in Swift at TEDMOB
-
-
-
-Dependencies are handled via Carthage and Cocoapods
-
-- Carthage :
-
-- Alamofire
-
-- RxSwift
-
-- ObjectMapper
-
-- Moya/RxSwift
-
-- Cocoapods
-
-- Firebase/Core
-
-- Firebase/Messaging
-
-
-
-It's also going to include a Utilities file with functions that are commonly used.
-
-
-
-
-
-### TODOS:
-
-- [X] Sample API Client
-
-- [X] Gather Extensions from team
-
-- [ ] Nib File of common views
-
+- [ ] Add Device Manager 
 - [ ] Integrate MBProgressHUD
-
-- [ ] Paginatable TableView
-
-- [ ] Sample Views ( Loading Button, Animatable Label..)
-
-- [X] R.Swift Integration
-
-- [X] Add Script for renaming the base project
-
-- [X] Multiple Targets
-
-- [ ] BaseViewController Empty PlaceHolders
-
-- [X] OneSignal
-
-- [ ] Realtime input validation
-
-- [ ] Firebase analytics
-
-- [ ] Base Registration View Controller
-
-- [ ] Change Password View Controller
-
-- [ ] Documentation
+- [ ] Target for Analytics
+- [ ] Add App Manager
+- [ ] Session Manager make more secure
+- [ ] Pagintable Table View
+- [ ] Add NSAttributedString Extensions
+- [ ] Add Crypto Module with basic functionalities
 
 
-### Steps to use
+### Roadmap :
+April 15 stop new feature addition
+April 15 - April 30 Fix the current features , bugs + documentation
 
-Suppose your new project name is `MyApp`. Be sure not to include spaces or any special characters in the project name. App display name can be changed later to match any combination
-
-
-
-1.  `git clone https://gitlab.com/tedmob/ios/base-project-swift.git MyApp`
-
-
-
-2. Run `bash rename-project.command ` once the clone is done.
-
-3. This will ask for the new name and a confirmation
-
-4. Once rename is don, It will commit the new changes with a special commit message
-
-3. Run `carthage update --platform iOS`
-
-4. Run `pod install --verbose`
-
-5. Open `MyApp.xcworkspace` and build
