@@ -64,12 +64,7 @@ class BaseWebViewViewController: BaseViewController, BaseWebViewViewControllerIn
     func initWebView(){
         
         self.view.backgroundColor = UIColor.black
-        if Utilities.Device().isIphoneX {
-            self.webView = WKWebView()
-        }else {
-            self.webView = WKWebView()
-        }
-        
+      self.webView = WKWebView()
         makebackgroundClear()
         
         self.view.addSubview(webView)
