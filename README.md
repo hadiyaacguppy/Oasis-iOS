@@ -3,7 +3,6 @@
 ### 3.0 Version TODOs:
 
 - [ ] Add Device Manager 
-- [ ] Integrate MBProgressHUD
 - [ ] Target for Analytics
 - [ ] Add App Manager
 - [ ] Session Manager make more secure

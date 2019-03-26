@@ -44,6 +44,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (5.3.7):
     - GoogleUtilities/Logger
+  - MBProgressHUD (1.1.0)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -72,6 +73,7 @@ PODS:
 DEPENDENCIES:
   - CZPicker
   - Firebase/Core
+  - MBProgressHUD (~> 1.1.0)
   - OneSignal (< 3.0, >= 2.6.2)
   - R.swift
   - RxGesture
@@ -88,6 +90,7 @@ SPEC REPOS:
     - FirebaseInstanceID
     - GoogleAppMeasurement
     - GoogleUtilities
+    - MBProgressHUD
     - nanopb
     - OneSignal
     - R.swift
@@ -109,6 +112,7 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 97ea7a5dca9afd72c79bfcdddb7a44aa1cbb42a1
   GoogleAppMeasurement: 621f3bc6211d5ba548debe01fafad30cf5ab6859
   GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   OneSignal: ccdeb961882f8668305e5b694e2cb7cb325fc907
   R.swift: 81455d81467763cbd3f4d79d938d05f4ac4c0228
@@ -122,6 +126,6 @@ SPEC CHECKSUMS:
   SwiftLocation: a3c3bc2023118171ef3572188a31def94aa0892c
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 54a88aca2ff13d3c0822f7e5245b9be92333df0e
+PODFILE CHECKSUM: 1d7ce7f550ea7f190da5748ba430d8e758f25cc1
 
 COCOAPODS: 1.6.1

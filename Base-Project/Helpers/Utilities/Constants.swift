@@ -99,7 +99,11 @@ struct Constants {
     
     
     struct PlaceHolderView {
-
+        struct Fonts {
+            
+            static let  boldSubheadline  = UIFont.boldSystemFont(ofSize: 15.0)
+            
+        }
         struct Texts {
             static let loading = "LOADING".localized
             static let wait = "PLEASE WAIT".localized

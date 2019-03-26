@@ -52,7 +52,7 @@ extension BaseController  where Self: UIViewController{
             
             
             view.titleLabelString(PlaceHolderHelper.setTitle(withtext: title,
-                                                             andFont: Constants.Fonts.boldSubheadline,
+                                                             andFont: Constants.PlaceHolderView.Fonts.boldSubheadline,
                                                              andTextColor: Constants.PlaceHolderView.Appearance.textColor)
             )
             
@@ -65,7 +65,7 @@ extension BaseController  where Self: UIViewController{
                 view.buttonTitle(PlaceHolderHelper.setButtonTitle(forState: .normal,
                                                                   andText: Constants.PlaceHolderView.Texts.retry,
                                                                   withTextColor: Constants.PlaceHolderView.Appearance.buttonTextColor,
-                                                                  andFont: Constants.Fonts.boldSubheadline),
+                                                                  andFont: Constants.PlaceHolderView.Fonts.boldSubheadline),
                                  for: .normal)
             }
             
