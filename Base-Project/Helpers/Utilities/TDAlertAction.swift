@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// This is just a wrapper on UIAlertAction. The `action` of this component can be called separately
 class TDAlertAction: UIAlertAction {
     
     var completionHandler: ((UIAlertAction) -> Void)?

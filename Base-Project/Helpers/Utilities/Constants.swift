@@ -127,36 +127,6 @@ struct Constants {
         static let noInternet = "No internet connection".localized
     }
     
-    struct Fonts {
-        
-        static let boldBody = UIFont.boldSystemFont(ofSize: Constants.FontSizes.body)
-        static let boldSubheadline = UIFont.boldSystemFont(ofSize: Constants.FontSizes.subheadline)
-        static let largeBold = UIFont.boldSystemFont(ofSize: Constants.FontSizes.largeTitle)
-        
-        static let largeNormal = UIFont.systemFont(ofSize: Constants.FontSizes.largeTitle)
-        static let normal = UIFont.systemFont(ofSize: Constants.FontSizes.body)
-        static let small = UIFont.systemFont(ofSize: Constants.FontSizes.caption1)
-        
-        static let largeItalic = UIFont.italicSystemFont(ofSize: Constants.FontSizes.largeTitle)
-        static let normalItalic = UIFont.italicSystemFont(ofSize: Constants.FontSizes.body)
-        static let smallItalic = UIFont.italicSystemFont(ofSize: Constants.FontSizes.caption1)
-
-    }
     
-    struct FontSizes {
-        
-        static let largeTitle : CGFloat = 34.0
-        
-        static let  title1  : CGFloat = 28.0
-        static let  title2 : CGFloat = 22.0
-        static let  title3 : CGFloat = 20.0
-        
-        static let  body : CGFloat = 17.0
-        static let  subheadline : CGFloat = 15.0
-        
-        
-        static let  caption1 : CGFloat = 12.0
-        static let  caption2 : CGFloat = 11.0
-    }
 
 }
