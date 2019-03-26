@@ -20,4 +20,4 @@ docs
 *.app.dSYM.zip
 *.ipa
 
-*/xcuserdata/*
+Base-Project.xcworkspace/xcuserdata

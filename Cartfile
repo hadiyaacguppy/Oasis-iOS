@@ -10,7 +10,7 @@ github "SVProgressHUD/SVProgressHUD"
 
 github "flipboard/FLEX" ~> 2.0
 
-github "Skyscanner/SkyFloatingLabelTextField"
+github "dennisweissmann/DeviceKit" ~> 1.3
 
 
 

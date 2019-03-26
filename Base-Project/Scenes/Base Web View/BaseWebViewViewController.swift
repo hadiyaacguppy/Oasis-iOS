@@ -70,8 +70,7 @@ class BaseWebViewViewController: BaseViewController, BaseWebViewViewControllerIn
     func initWebView(){
         
         self.view.backgroundColor = UIColor.black
-        self.webView = WKWebView()
-        
+      self.webView = WKWebView()
         makebackgroundClear()
         
         self.view.addSubview(webView)

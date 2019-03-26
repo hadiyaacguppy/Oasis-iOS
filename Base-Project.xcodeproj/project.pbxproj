@@ -32,9 +32,9 @@
 		117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */; };
 		16CE4041215D7249002634C7 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CE4040215D7249002634C7 /* Bundle+Extensions.swift */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
-		3E5EECD3211B0EF8008AE39D /* (null) in Sources */ = {isa = PBXBuildFile; };
-		3E5EECD5211B0F5A008AE39D /* (null) in Sources */ = {isa = PBXBuildFile; };
-		3E5EECD9211B159E008AE39D /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		3E5EECD3211B0EF8008AE39D /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		3E5EECD5211B0F5A008AE39D /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		3E5EECD9211B159E008AE39D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 		3E6DEFB12162111100978FDC /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DEFB02162111100978FDC /* BaseController.swift */; };
 		3E6DEFB321623D7A00978FDC /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DEFB221623D7A00978FDC /* UITableView+Extensions.swift */; };
 		3E772DF521410050001306AB /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E772DF421410050001306AB /* Optional+Extensions.swift */; };
@@ -91,7 +91,7 @@
 		CF56472D211B1B740092EFBD /* Reactive+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF56472C211B1B740092EFBD /* Reactive+UIImageView.swift */; };
 		CF56472F211B1BA50092EFBD /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF56472E211B1BA50092EFBD /* UIImageView+Extensions.swift */; };
 		CF564731211B1C910092EFBD /* InputValidationExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF564730211B1C910092EFBD /* InputValidationExpression.swift */; };
-		CF615FCC22363AEC003C6105 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF615FCB22363AEC003C6105 /* R.generated.swift */; };
+		CF6030762212F77B003872F3 /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6030752212F77B003872F3 /* DeviceManager.swift */; };
 		CF6B70F221EDD5F700204B65 /* VersionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6B70F121EDD5F700204B65 /* VersionLabel.swift */; };
 		CF7823B420EF95A7003069BD /* APIErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7823B320EF95A7003069BD /* APIErrorManager.swift */; };
 		CF7823B720EF95C6003069BD /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7823B620EF95C6003069BD /* APIError.swift */; };
@@ -285,8 +285,7 @@
 		CF56472C211B1B740092EFBD /* Reactive+UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reactive+UIImageView.swift"; sourceTree = "<group>"; };
 		CF56472E211B1BA50092EFBD /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		CF564730211B1C910092EFBD /* InputValidationExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidationExpression.swift; sourceTree = "<group>"; };
-		CF615FCB22363AEC003C6105 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
-		CF615FCD22363F95003C6105 /* SkyFloatingLabelTextField.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkyFloatingLabelTextField.framework; path = Carthage/Build/iOS/SkyFloatingLabelTextField.framework; sourceTree = "<group>"; };
+		CF6030752212F77B003872F3 /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
 		CF6B70F121EDD5F700204B65 /* VersionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionLabel.swift; sourceTree = "<group>"; };
 		CF7823B320EF95A7003069BD /* APIErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorManager.swift; sourceTree = "<group>"; };
 		CF7823B620EF95C6003069BD /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -339,7 +338,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E5EECD9211B159E008AE39D /* (null) in Frameworks */,
+				3E5EECD9211B159E008AE39D /* BuildFile in Frameworks */,
 				CF7BC66A1FD8F739008E80AC /* RxCocoa.framework in Frameworks */,
 				CF7BC66B1FD8F739008E80AC /* Alamofire.framework in Frameworks */,
 				CF87ED9E201B5FF300562226 /* SVProgressHUD.framework in Frameworks */,
@@ -384,6 +383,7 @@
 				CF564700211B14240092EFBD /* Push */,
 				0F57539020EE13660069C139 /* DataManager.swift */,
 				0F57539620EE19090069C139 /* LocationService.swift */,
+				CF6030752212F77B003872F3 /* DeviceManager.swift */,
 				0F57539E20EE1EC90069C139 /* Relays.swift */,
 				CF8C5CA520EF9D2300236C7B /* FacebookLoginService.swift */,
 				CFAD4D0D21955EF300AF4375 /* LanguageService.swift */,
@@ -1120,7 +1120,7 @@
 				0FD65F1B20D018730075E251 /* UIButton+Extensions.swift in Sources */,
 				CFF69D6D219554C4003BE6BF /* CGPoint+Extensions.swift in Sources */,
 				4A20A22E2179E9C5002C2AAA /* ChangePasswordPresenter.swift in Sources */,
-				3E5EECD3211B0EF8008AE39D /* (null) in Sources */,
+				3E5EECD3211B0EF8008AE39D /* BuildFile in Sources */,
 				CFF69D752195586E003BE6BF /* FileManager+Extensions.swift in Sources */,
 				0F5753A120EE1F450069C139 /* TraingleView.swift in Sources */,
 				CFE27A17214A9BE200DBB917 /* Reactive+Dictionary.swift in Sources */,
@@ -1148,6 +1148,7 @@
 				CF87EDA0201B6EF700562226 /* BaseViewController.swift in Sources */,
 				3EAFC549219B2D2F00E3C2BB /* TDAlertAction.swift in Sources */,
 				CF56472D211B1B740092EFBD /* Reactive+UIImageView.swift in Sources */,
+				CF6030762212F77B003872F3 /* DeviceManager.swift in Sources */,
 				67290A02210E441400632C4F /* PlaceHolderHelper.swift in Sources */,
 				CF8C5CAA20EF9D6700236C7B /* Int+Extensions.swift in Sources */,
 				CF7BC6791FD91D83008E80AC /* ObservableType+ObjectMapper.swift in Sources */,
@@ -1180,7 +1181,7 @@
 				4AEF648522108F8C00D53D75 /* PinVerificationConfigurator.swift in Sources */,
 				4A20A2332179E9C5002C2AAA /* ChangePasswordConfigurator.swift in Sources */,
 				CF40385D216CF78F001F649B /* InitialInteractor.swift in Sources */,
-				3E5EECD5211B0F5A008AE39D /* (null) in Sources */,
+				3E5EECD5211B0F5A008AE39D /* BuildFile in Sources */,
 				CF45F0C9201B42DF004A39E2 /* Async.swift in Sources */,
 				CF7823B720EF95C6003069BD /* APIError.swift in Sources */,
 				CF40385C216CF78F001F649B /* InitialViewController.swift in Sources */,
