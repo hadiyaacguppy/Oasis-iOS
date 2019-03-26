@@ -22,6 +22,10 @@ extension UIImage {
         return img!
     }
     
+    /// Crops the image to a certain CGRect
+    ///
+    /// - Parameter rect: The CGRect to crop the iamge to
+    /// - Returns: a new UIImage with the same size as rect
     public func cropped(to rect: CGRect) -> UIImage {
         guard rect.size.width < size.width && rect.size.height < size.height else { return self }
         guard let image: CGImage = cgImage?.cropping(to: rect) else { return self }
