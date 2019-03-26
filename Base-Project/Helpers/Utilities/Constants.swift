@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import SVProgressHUD
+
+/// All the date formats that should be used in the app
 enum DateFormats : String {
     case words = "EEEE, MMM d, yyyy" //  Friday, Nov 9, 2018
     case digits = "MM-dd-yyyy HH:mm" //11-09-2018

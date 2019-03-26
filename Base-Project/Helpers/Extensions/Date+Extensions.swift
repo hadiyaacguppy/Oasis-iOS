@@ -39,6 +39,10 @@ extension Date{
     }
     
     
+    /// Returns the current time formatted
+    ///
+    /// - Parameter format: case of DateFormats Enum. See Constants file
+    /// - Returns: String value
     func getCurrentDate(inFormat format  : DateFormats) -> String {
         let usLocale: Locale = Locale(identifier: "en_US")
         
@@ -55,6 +59,7 @@ extension Date{
     }
     
     
+    /// Returns the current time in a relative string. For example : 1 day ago. 12 hours ago. 1 month ago
     var relativeTimeString : String {
         let secondsAgo = Int(Date().timeIntervalSince(self))
         
