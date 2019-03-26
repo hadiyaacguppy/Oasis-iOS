@@ -138,7 +138,8 @@ class PinVerificationViewController: BaseTableViewController, PinVerificationVie
     }
     
     func setTimer(){
-        let timerSubscription = Utilities.Timer
+        
+        let timerSubscription = Utilities
             .countDown(from: Constants.DefaultValues.SMSTimerInterval, to: 0, interval: 1)
         timerSubscription
             .map{$0.toTimeParts().description}

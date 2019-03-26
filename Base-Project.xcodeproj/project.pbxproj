@@ -32,9 +32,9 @@
 		117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */; };
 		16CE4041215D7249002634C7 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CE4040215D7249002634C7 /* Bundle+Extensions.swift */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
-		3E5EECD3211B0EF8008AE39D /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		3E5EECD5211B0F5A008AE39D /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		3E5EECD9211B159E008AE39D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		3E5EECD3211B0EF8008AE39D /* (null) in Sources */ = {isa = PBXBuildFile; };
+		3E5EECD5211B0F5A008AE39D /* (null) in Sources */ = {isa = PBXBuildFile; };
+		3E5EECD9211B159E008AE39D /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		3E6DEFB12162111100978FDC /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DEFB02162111100978FDC /* BaseController.swift */; };
 		3E6DEFB321623D7A00978FDC /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DEFB221623D7A00978FDC /* UITableView+Extensions.swift */; };
 		3E772DF521410050001306AB /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E772DF421410050001306AB /* Optional+Extensions.swift */; };
@@ -104,6 +104,7 @@
 		CF7BC6771FD91D83008E80AC /* Single+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7BC6741FD91D82008E80AC /* Single+ObjectMapper.swift */; };
 		CF7BC6781FD91D83008E80AC /* Response+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7BC6751FD91D82008E80AC /* Response+ObjectMapper.swift */; };
 		CF7BC6791FD91D83008E80AC /* ObservableType+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7BC6761FD91D82008E80AC /* ObservableType+ObjectMapper.swift */; };
+		CF8373AD224A7F93000C3E21 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8373AC224A7F93000C3E21 /* R.generated.swift */; };
 		CF87ED9E201B5FF300562226 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF87ED9D201B5FF300562226 /* SVProgressHUD.framework */; };
 		CF87EDA0201B6EF700562226 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87ED9F201B6EF700562226 /* BaseViewController.swift */; };
 		CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87EDA3201B8C2500562226 /* BaseTextField.swift */; };
@@ -298,6 +299,7 @@
 		CF7BC6741FD91D82008E80AC /* Single+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Single+ObjectMapper.swift"; sourceTree = "<group>"; };
 		CF7BC6751FD91D82008E80AC /* Response+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Response+ObjectMapper.swift"; sourceTree = "<group>"; };
 		CF7BC6761FD91D82008E80AC /* ObservableType+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObservableType+ObjectMapper.swift"; sourceTree = "<group>"; };
+		CF8373AC224A7F93000C3E21 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		CF87ED9D201B5FF300562226 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		CF87ED9F201B6EF700562226 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CF87EDA3201B8C2500562226 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
@@ -338,7 +340,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E5EECD9211B159E008AE39D /* BuildFile in Frameworks */,
+				3E5EECD9211B159E008AE39D /* (null) in Frameworks */,
 				CF7BC66A1FD8F739008E80AC /* RxCocoa.framework in Frameworks */,
 				CF7BC66B1FD8F739008E80AC /* Alamofire.framework in Frameworks */,
 				CF87ED9E201B5FF300562226 /* SVProgressHUD.framework in Frameworks */,
@@ -479,7 +481,7 @@
 		117C4AA71FD85FCE008BB445 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CF615FCB22363AEC003C6105 /* R.generated.swift */,
+				CF8373AC224A7F93000C3E21 /* R.generated.swift */,
 				CF2F319F215E8C2C007A912A /* Info.plist */,
 				CF7BC67A1FD91E36008E80AC /* App Delegate */,
 			);
@@ -652,7 +654,6 @@
 		8A6CF31932BE5291FACE8092 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CF615FCD22363F95003C6105 /* SkyFloatingLabelTextField.framework */,
 				CF87ED9D201B5FF300562226 /* SVProgressHUD.framework */,
 				CF7BC6651FD8F739008E80AC /* Alamofire.framework */,
 				CF7BC6681FD8F739008E80AC /* Moya.framework */,
@@ -1120,7 +1121,7 @@
 				0FD65F1B20D018730075E251 /* UIButton+Extensions.swift in Sources */,
 				CFF69D6D219554C4003BE6BF /* CGPoint+Extensions.swift in Sources */,
 				4A20A22E2179E9C5002C2AAA /* ChangePasswordPresenter.swift in Sources */,
-				3E5EECD3211B0EF8008AE39D /* BuildFile in Sources */,
+				3E5EECD3211B0EF8008AE39D /* (null) in Sources */,
 				CFF69D752195586E003BE6BF /* FileManager+Extensions.swift in Sources */,
 				0F5753A120EE1F450069C139 /* TraingleView.swift in Sources */,
 				CFE27A17214A9BE200DBB917 /* Reactive+Dictionary.swift in Sources */,
@@ -1173,15 +1174,15 @@
 				4AEF648422108F8C00D53D75 /* PinVerificationViewController.swift in Sources */,
 				4A20A2312179E9C5002C2AAA /* ChangePasswordViewController.swift in Sources */,
 				0F57539720EE19090069C139 /* LocationService.swift in Sources */,
-				CF615FCC22363AEC003C6105 /* R.generated.swift in Sources */,
 				CF8C5C9C20EF97AE00236C7B /* BaseTableViewController.swift in Sources */,
 				4AEF648022108F8C00D53D75 /* PinVerificationRouter.swift in Sources */,
 				4AEF648222108F8C00D53D75 /* PinVerificationModels.swift in Sources */,
 				117C4AAB1FD86050008BB445 /* Utilities.swift in Sources */,
 				4AEF648522108F8C00D53D75 /* PinVerificationConfigurator.swift in Sources */,
+				CF8373AD224A7F93000C3E21 /* R.generated.swift in Sources */,
 				4A20A2332179E9C5002C2AAA /* ChangePasswordConfigurator.swift in Sources */,
 				CF40385D216CF78F001F649B /* InitialInteractor.swift in Sources */,
-				3E5EECD5211B0F5A008AE39D /* BuildFile in Sources */,
+				3E5EECD5211B0F5A008AE39D /* (null) in Sources */,
 				CF45F0C9201B42DF004A39E2 /* Async.swift in Sources */,
 				CF7823B720EF95C6003069BD /* APIError.swift in Sources */,
 				CF40385C216CF78F001F649B /* InitialViewController.swift in Sources */,
