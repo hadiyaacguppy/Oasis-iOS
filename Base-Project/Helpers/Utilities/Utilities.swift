@@ -150,19 +150,14 @@ struct Utilities  {
             return UIApplication.shared.canOpenURL(url!)
     }
     
-    fileprivate static func openURL(withString str : String){
+     static func openURL(withString str : String){
         if let url = URL(string: str){
             UIApplication.shared.open(url , options: [:], completionHandler: nil)
         }
     }
     
     
-    static func openAppSettings(){
-        if self.canOpen(url: URL(string:UIApplication.openSettingsURLString)){
-            self.openURL(withString: UIApplication.openSettingsURLString)
-        }
-    }
-    
+   
     static func sendEmail(To to : String,
                           withSubject subject : String?,
                           andContent content : String?,
@@ -269,28 +264,6 @@ struct Utilities  {
     }
 
     
-    struct Font{
-        
-        /// This function will apply the symbolic traits i.e(<i> ,<strong>.. tags) from the original font to the newely created Font.
-        ///
-        /// - Parameters:
-        ///   - fromFont: Original Font
-        ///   - toFont: Custom font to be used
-        /// - Returns: New font with the original font traits
-        static func copySymbolicTraits(from fromFont : UIFont,
-                                       to toFont : UIFont) -> UIFont?{
-            let fromFontSymbolicTraits = fromFont.fontDescriptor.symbolicTraits
-            guard let toFontWithSymbolicTraits = toFont.fontDescriptor.withSymbolicTraits(fromFontSymbolicTraits) else {
-                return nil
-            }
-            return UIFont(descriptor: toFontWithSymbolicTraits,
-                          size: 0
-            )
-        }
-    }
-    
-  
-   
     struct GoogleMaps {
         
         static func goToGoogleMapsNavigation(withLongitude long : Double , andLatitude lat : Double){
@@ -334,9 +307,5 @@ struct Utilities  {
         }
     }
     
-    struct File {
-     
-    }
-    
-    
+   
 }

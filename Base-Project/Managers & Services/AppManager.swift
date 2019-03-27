@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 class AppManager {
     
     
@@ -29,6 +30,12 @@ class AppManager {
     var buildNumber: String? {
         return Bundle.main.infoDictionary?["CFBundleVersion"] as? String
     }
+     func openAppSettings(){
+        if Utilities.canOpen(url: URL(string:UIApplication.openSettingsURLString)){
+            Utilities.openURL(withString: UIApplication.openSettingsURLString)
+        }
+    }
+    
     
 }
 
