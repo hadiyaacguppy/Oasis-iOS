@@ -12,6 +12,7 @@ target 'Base-Project' do
   pod 'SDWebImage', '~> 4.0'
   pod 'SwiftLocation'
   pod 'SkyFloatingLabelTextField', '~> 3.0'
+  pod 'DeviceKit', '~> 1.3'
 
 end
 

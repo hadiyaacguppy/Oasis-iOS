@@ -13,6 +13,5 @@ class Relays : NSObject{
     
     static let shared = Relays()
     
-    var exampleOfRelay : PublishRelay<Int?> = PublishRelay<Int?>()
     var sessionIsExpired : PublishRelay<Void> = PublishRelay<Void>()
 }

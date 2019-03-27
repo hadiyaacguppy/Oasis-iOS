@@ -13,12 +13,7 @@ import ObjectMapper
 
 
 class DataManager: NSObject {
+    
     static let shared = DataManager()
-    
-    override init() {
-        
-        super.init()
-    }
-    
-    
+
 }

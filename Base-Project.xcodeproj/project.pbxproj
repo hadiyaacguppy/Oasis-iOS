@@ -29,11 +29,10 @@
 		117C4AB21FD864FD008BB445 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB11FD864FD008BB445 /* String+Extensions.swift */; };
 		117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB31FD8652B008BB445 /* NSIndexPath+Extensions.swift */; };
 		117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */; };
-		16CE4041215D7249002634C7 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CE4040215D7249002634C7 /* Bundle+Extensions.swift */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
-		3E5EECD3211B0EF8008AE39D /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		3E5EECD5211B0F5A008AE39D /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		3E5EECD9211B159E008AE39D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		3E5EECD3211B0EF8008AE39D /* (null) in Sources */ = {isa = PBXBuildFile; };
+		3E5EECD5211B0F5A008AE39D /* (null) in Sources */ = {isa = PBXBuildFile; };
+		3E5EECD9211B159E008AE39D /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		3E6DEFB12162111100978FDC /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DEFB02162111100978FDC /* BaseController.swift */; };
 		3E6DEFB321623D7A00978FDC /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DEFB221623D7A00978FDC /* UITableView+Extensions.swift */; };
 		3EAFC549219B2D2F00E3C2BB /* TDAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAFC548219B2D2F00E3C2BB /* TDAlertAction.swift */; };
@@ -101,6 +100,7 @@
 		CF7BC6781FD91D83008E80AC /* Response+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7BC6751FD91D82008E80AC /* Response+ObjectMapper.swift */; };
 		CF7BC6791FD91D83008E80AC /* ObservableType+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7BC6761FD91D82008E80AC /* ObservableType+ObjectMapper.swift */; };
 		CF8373AD224A7F93000C3E21 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8373AC224A7F93000C3E21 /* R.generated.swift */; };
+		CF8373AF224B8807000C3E21 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8373AE224B8807000C3E21 /* AppManager.swift */; };
 		CF87ED9E201B5FF300562226 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF87ED9D201B5FF300562226 /* SVProgressHUD.framework */; };
 		CF87EDA0201B6EF700562226 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87ED9F201B6EF700562226 /* BaseViewController.swift */; };
 		CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87EDA3201B8C2500562226 /* BaseTextField.swift */; };
@@ -213,7 +213,6 @@
 		117C4AB11FD864FD008BB445 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		117C4AB31FD8652B008BB445 /* NSIndexPath+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSIndexPath+Extensions.swift"; sourceTree = "<group>"; };
 		117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPageViewController+Extensions.swift"; sourceTree = "<group>"; };
-		16CE4040215D7249002634C7 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		22C3C119E084FE2B0FF3C34F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
 		3E6DEFB02162111100978FDC /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
@@ -291,6 +290,7 @@
 		CF7BC6751FD91D82008E80AC /* Response+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Response+ObjectMapper.swift"; sourceTree = "<group>"; };
 		CF7BC6761FD91D82008E80AC /* ObservableType+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObservableType+ObjectMapper.swift"; sourceTree = "<group>"; };
 		CF8373AC224A7F93000C3E21 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		CF8373AE224B8807000C3E21 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		CF87ED9D201B5FF300562226 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		CF87ED9F201B6EF700562226 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CF87EDA3201B8C2500562226 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
@@ -330,7 +330,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E5EECD9211B159E008AE39D /* BuildFile in Frameworks */,
+				3E5EECD9211B159E008AE39D /* (null) in Frameworks */,
 				CF7BC66A1FD8F739008E80AC /* RxCocoa.framework in Frameworks */,
 				CF7BC66B1FD8F739008E80AC /* Alamofire.framework in Frameworks */,
 				CF87ED9E201B5FF300562226 /* SVProgressHUD.framework in Frameworks */,
@@ -376,6 +376,7 @@
 				0F57539020EE13660069C139 /* DataManager.swift */,
 				0F57539620EE19090069C139 /* LocationService.swift */,
 				CF6030752212F77B003872F3 /* DeviceManager.swift */,
+				CF8373AE224B8807000C3E21 /* AppManager.swift */,
 				0F57539E20EE1EC90069C139 /* Relays.swift */,
 				CFAD4D0D21955EF300AF4375 /* LanguageService.swift */,
 			);
@@ -516,7 +517,6 @@
 				CFF69D7021955680003BE6BF /* Dictionary+Extensions.swift */,
 				CFF69D722195578F003BE6BF /* Data+Extensions.swift */,
 				CFF69D742195586E003BE6BF /* FileManager+Extensions.swift */,
-				16CE4040215D7249002634C7 /* Bundle+Extensions.swift */,
 				CF2F319D215E8BA0007A912A /* URL+Extensions.swift */,
 				CFF69D762195593A003BE6BF /* URLRequest+Extensions.swift */,
 				0F484B4E2165FF5C0060C463 /* Date+Extensions.swift */,
@@ -987,8 +987,8 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Base-Project/Pods-Base-Project-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CZPicker/CZPicker.framework",
+				"${BUILT_PRODUCTS_DIR}/DeviceKit/DeviceKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -1003,8 +1003,8 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CZPicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeviceKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -1072,7 +1072,7 @@
 			);
 			name = "Run Script";
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1091,7 +1091,7 @@
 				0FD65F1B20D018730075E251 /* UIButton+Extensions.swift in Sources */,
 				CFF69D6D219554C4003BE6BF /* CGPoint+Extensions.swift in Sources */,
 				4A20A22E2179E9C5002C2AAA /* ChangePasswordPresenter.swift in Sources */,
-				3E5EECD3211B0EF8008AE39D /* BuildFile in Sources */,
+				3E5EECD3211B0EF8008AE39D /* (null) in Sources */,
 				CFF69D752195586E003BE6BF /* FileManager+Extensions.swift in Sources */,
 				CFE27A17214A9BE200DBB917 /* Reactive+Dictionary.swift in Sources */,
 				117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */,
@@ -1136,6 +1136,7 @@
 				0F57539B20EE19CD0069C139 /* BaseProjectService.swift in Sources */,
 				CFF69D7121955680003BE6BF /* Dictionary+Extensions.swift in Sources */,
 				4AEF648322108F8C00D53D75 /* PinVerificationInteractor.swift in Sources */,
+				CF8373AF224B8807000C3E21 /* AppManager.swift in Sources */,
 				112239151FD5C7AF00486528 /* AppDelegate.swift in Sources */,
 				117C4AAE1FD864AD008BB445 /* UIView+Extensions.swift in Sources */,
 				0F57539120EE13660069C139 /* DataManager.swift in Sources */,
@@ -1150,7 +1151,7 @@
 				CF8373AD224A7F93000C3E21 /* R.generated.swift in Sources */,
 				4A20A2332179E9C5002C2AAA /* ChangePasswordConfigurator.swift in Sources */,
 				CF40385D216CF78F001F649B /* InitialInteractor.swift in Sources */,
-				3E5EECD5211B0F5A008AE39D /* BuildFile in Sources */,
+				3E5EECD5211B0F5A008AE39D /* (null) in Sources */,
 				CF7823B720EF95C6003069BD /* APIError.swift in Sources */,
 				CF40385C216CF78F001F649B /* InitialViewController.swift in Sources */,
 				3E6DEFB12162111100978FDC /* BaseController.swift in Sources */,
@@ -1159,7 +1160,6 @@
 				672909FC210E43EA00632C4F /* PlaceHolderView.swift in Sources */,
 				117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */,
 				CF181BA420809E28002603A1 /* UIColor+Extensions.swift in Sources */,
-				16CE4041215D7249002634C7 /* Bundle+Extensions.swift in Sources */,
 				CF09C0D22180A511003DF186 /* BaseWebViewRouter.swift in Sources */,
 				CF403859216CF78F001F649B /* InitialPresenter.swift in Sources */,
 				0F57539520EE185F0069C139 /* Array+Extensions.swift in Sources */,
