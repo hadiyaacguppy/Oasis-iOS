@@ -29,34 +29,6 @@ public class SessionManager {
         }
     }
     
-    public var currentUserName : String? {
-        get {
-            guard let sid = UserDefaults.standard.string(forKey: SessionManagerConstants.UserDefaultKeys.usernameKey) else {
-                return nil
-            }
-            return sid
-        }set {
-            print("Session Manager ===> Setting new usename to \(newValue)")
-            
-            UserDefaults.standard.set(newValue, forKey: SessionManagerConstants.UserDefaultKeys.usernameKey)
-            
-        }
-    }
-    
-    
-    public var currentUserPassword : String? {
-        get {
-            guard let sid = UserDefaults.standard.string(forKey: SessionManagerConstants.UserDefaultKeys.passwordKey) else {
-                return nil
-            }
-            return sid
-        }set {
-            print("Session Manager ===> Setting new password  to \(newValue)")
-            
-            UserDefaults.standard.set(newValue, forKey: SessionManagerConstants.UserDefaultKeys.passwordKey)
-            
-        }
-    }
     
     public var isFirstTime : Bool {
         if !UserDefaults.standard.bool(forKey: SessionManagerConstants.UserDefaultKeys.firsTime) {

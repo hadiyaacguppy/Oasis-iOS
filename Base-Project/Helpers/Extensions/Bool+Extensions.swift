@@ -8,6 +8,7 @@
 
 import Foundation
 extension Bool {
+    /// Returns the bool as integer. 1 if true. 0 otherwise
     var toInt : Int {
         if self == false {
             return 0

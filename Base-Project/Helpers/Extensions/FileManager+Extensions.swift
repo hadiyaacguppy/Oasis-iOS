@@ -34,6 +34,10 @@ public extension FileManager {
         return json as? [[String: Any]]
     }
     
+    /// Returns the URL of the file given a name
+    ///
+    /// - Parameter fileName: The file name of the file + extension
+    /// - Returns: The URL as String
     static func getFileURL(_ fileName: String) -> String? {
         let fileURL = FileManager().urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first
         return (fileURL?.appendingPathComponent(fileName).path)

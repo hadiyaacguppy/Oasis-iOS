@@ -16,6 +16,9 @@ import MessageUI
 
 struct Utilities  {
     
+    /// calls a certain phone number. don't include tel://
+    ///
+    /// - Parameter pn: the phone number to call/ 96170777111
     static func call(phoneNumber pn : String){
         guard let number = URL(string: "tel://" + pn) else { return }
         UIApplication.shared.open(number)
@@ -150,14 +153,24 @@ struct Utilities  {
             return UIApplication.shared.canOpenURL(url!)
     }
     
-     static func openURL(withString str : String){
+    /// Opens a certain URL in safari
+    ///
+    /// - Parameter str: The url to open as string
+    static func openURL(withString str : String){
         if let url = URL(string: str){
             UIApplication.shared.open(url , options: [:], completionHandler: nil)
         }
     }
     
     
-   
+    
+    /// Sends an email. Checks all available mail apps.
+    ///
+    /// - Parameters:
+    ///   - to: recipient
+    ///   - subject: the subject of the email
+    ///   - content: the body of the email
+    ///   - vc: the ViewController that will present the MailComposeViewController. IT SHOULD CONFORM TO MFMailComposeViewControllerDelegate
     static func sendEmail(To to : String,
                           withSubject subject : String?,
                           andContent content : String?,
@@ -262,7 +275,7 @@ struct Utilities  {
                 .take(from - to + 1)
                 .map { from - $0 }
     }
-
+    
     
     struct GoogleMaps {
         
@@ -280,7 +293,7 @@ struct Utilities  {
         }
     }
     
-   
+    
     struct ProgressHUD {
         static func showLoading(){
             SVProgressHUD.setDefaultStyle(Constants.ProgressHud.style)
@@ -307,5 +320,24 @@ struct Utilities  {
         }
     }
     
-   
+    struct Font{
+        
+        /// This function will apply the symbolic traits i.e(<i> ,<strong>.. tags) from the original font to the newely created Font.
+        ///
+        /// - Parameters:
+        ///   - fromFont: Original Font
+        ///   - toFont: Custom font to be used
+        /// - Returns: New font with the original font traits
+        static func copySymbolicTraits(from fromFont : UIFont,
+                                       to toFont : UIFont) -> UIFont?{
+            let fromFontSymbolicTraits = fromFont.fontDescriptor.symbolicTraits
+            guard let toFontWithSymbolicTraits = toFont.fontDescriptor.withSymbolicTraits(fromFontSymbolicTraits) else {
+                return nil
+            }
+            return UIFont(descriptor: toFontWithSymbolicTraits,
+                          size: 0
+            )
+        }
+    }
+    
 }

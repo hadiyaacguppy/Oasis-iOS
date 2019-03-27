@@ -8,6 +8,7 @@
 
 import Foundation
 extension Optional where Wrapped == Int {
+    /// Returns the Int as bool.
     var  toBool : Bool{
         
         if self == nil {
