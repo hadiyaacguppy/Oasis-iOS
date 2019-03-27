@@ -3,7 +3,13 @@ import Foundation
 
 class DeviceManager {
     
-    static func deviceRemainingFreeSpaceInBytes() -> Int64? {
+    var pvercentageOfRemainingCapacity : Float? {
+        if deviceTotalSpaceInBytes == nil || deviceTotalSpaceInBytes == nil {
+            return nil
+        }
+        return Float(deviceRemainingFreeSpaceInBytes! / deviceTotalSpaceInBytes!)
+    }
+    var deviceRemainingFreeSpaceInBytes : Int64? {
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last!
         guard
             let systemAttributes = try? FileManager.default.attributesOfFileSystem(forPath: documentDirectory),
@@ -14,8 +20,8 @@ class DeviceManager {
         }
         return freeSize.int64Value
     }
-    
-    static func deviceTotalSpaceInBytes() -> Int64? {
+   
+    var deviceTotalSpaceInBytes : Int64? {
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last!
         guard
             let systemAttributes = try? FileManager.default.attributesOfFileSystem(forPath: documentDirectory),
@@ -26,4 +32,5 @@ class DeviceManager {
         }
         return freeSize.int64Value
     }
+    
 }
