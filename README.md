@@ -2,9 +2,9 @@
 
 ### 3.0 Version TODOs:
 
-- [ ] Add Device Manager 
+- [X] Add Device Manager 
 - [ ] Target for Analytics
-- [ ] Add App Manager
+- [X] Add App Manager
 - [ ] Session Manager make more secure
 - [ ] Pagintable Table View
 - [ ] Add NSAttributedString Extensions
