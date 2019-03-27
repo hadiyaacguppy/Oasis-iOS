@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AnalyticsManager.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>18</integer>
+		</dict>
 		<key>Base-Project.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,7 +17,7 @@
 		<key>Base-Project.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>22</integer>
+			<integer>15</integer>
 		</dict>
 		<key>OneSignalNotificationServiceExtension.xcscheme</key>
 		<dict>
@@ -22,7 +27,7 @@
 		<key>OneSignalNotificationServiceExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>24</integer>
+			<integer>17</integer>
 		</dict>
 		<key>SessionManager.xcscheme</key>
 		<dict>
@@ -32,7 +37,7 @@
 		<key>SessionManager.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>23</integer>
+			<integer>16</integer>
 		</dict>
 	</dict>
 </dict>

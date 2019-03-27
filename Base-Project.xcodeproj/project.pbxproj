@@ -30,9 +30,9 @@
 		117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB31FD8652B008BB445 /* NSIndexPath+Extensions.swift */; };
 		117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
-		3E5EECD3211B0EF8008AE39D /* (null) in Sources */ = {isa = PBXBuildFile; };
-		3E5EECD5211B0F5A008AE39D /* (null) in Sources */ = {isa = PBXBuildFile; };
-		3E5EECD9211B159E008AE39D /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		3E5EECD3211B0EF8008AE39D /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		3E5EECD5211B0F5A008AE39D /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		3E5EECD9211B159E008AE39D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 		3E6DEFB12162111100978FDC /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DEFB02162111100978FDC /* BaseController.swift */; };
 		3E6DEFB321623D7A00978FDC /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DEFB221623D7A00978FDC /* UITableView+Extensions.swift */; };
 		3EAFC549219B2D2F00E3C2BB /* TDAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAFC548219B2D2F00E3C2BB /* TDAlertAction.swift */; };
@@ -101,6 +101,11 @@
 		CF7BC6791FD91D83008E80AC /* ObservableType+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7BC6761FD91D82008E80AC /* ObservableType+ObjectMapper.swift */; };
 		CF8373AD224A7F93000C3E21 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8373AC224A7F93000C3E21 /* R.generated.swift */; };
 		CF8373AF224B8807000C3E21 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8373AE224B8807000C3E21 /* AppManager.swift */; };
+		CF8373CF224B8CA7000C3E21 /* AnalyticsManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8373C6224B8CA7000C3E21 /* AnalyticsManager.framework */; };
+		CF8373D6224B8CA7000C3E21 /* AnalyticsManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8373D5224B8CA7000C3E21 /* AnalyticsManagerTests.swift */; };
+		CF8373D8224B8CA7000C3E21 /* AnalyticsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CF8373C8224B8CA7000C3E21 /* AnalyticsManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF8373DB224B8CA7000C3E21 /* AnalyticsManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8373C6224B8CA7000C3E21 /* AnalyticsManager.framework */; };
+		CF8373DC224B8CA7000C3E21 /* AnalyticsManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF8373C6224B8CA7000C3E21 /* AnalyticsManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF87ED9E201B5FF300562226 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF87ED9D201B5FF300562226 /* SVProgressHUD.framework */; };
 		CF87EDA0201B6EF700562226 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87ED9F201B6EF700562226 /* BaseViewController.swift */; };
 		CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87EDA3201B8C2500562226 /* BaseTextField.swift */; };
@@ -139,6 +144,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = CF564716211B15590092EFBD;
 			remoteInfo = OneSignalNotificationServiceExtension;
+		};
+		CF8373D0224B8CA7000C3E21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 112239091FD5C7AF00486528 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF8373C5224B8CA7000C3E21;
+			remoteInfo = AnalyticsManager;
+		};
+		CF8373D2224B8CA7000C3E21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 112239091FD5C7AF00486528 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 112239101FD5C7AF00486528;
+			remoteInfo = "Base-Project";
+		};
+		CF8373D9224B8CA7000C3E21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 112239091FD5C7AF00486528 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF8373C5224B8CA7000C3E21;
+			remoteInfo = AnalyticsManager;
 		};
 		CF8C5CC020EF9E7200236C7B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -182,6 +208,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				CF8C5CCD20EF9E7200236C7B /* SessionManager.framework in Embed Frameworks */,
+				CF8373DC224B8CA7000C3E21 /* AnalyticsManager.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +318,12 @@
 		CF7BC6761FD91D82008E80AC /* ObservableType+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObservableType+ObjectMapper.swift"; sourceTree = "<group>"; };
 		CF8373AC224A7F93000C3E21 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		CF8373AE224B8807000C3E21 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		CF8373C6224B8CA7000C3E21 /* AnalyticsManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AnalyticsManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF8373C8224B8CA7000C3E21 /* AnalyticsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnalyticsManager.h; sourceTree = "<group>"; };
+		CF8373C9224B8CA7000C3E21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF8373CE224B8CA7000C3E21 /* AnalyticsManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnalyticsManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF8373D5224B8CA7000C3E21 /* AnalyticsManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManagerTests.swift; sourceTree = "<group>"; };
+		CF8373D7224B8CA7000C3E21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF87ED9D201B5FF300562226 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		CF87ED9F201B6EF700562226 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CF87EDA3201B8C2500562226 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
@@ -330,10 +363,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E5EECD9211B159E008AE39D /* (null) in Frameworks */,
+				3E5EECD9211B159E008AE39D /* BuildFile in Frameworks */,
 				CF7BC66A1FD8F739008E80AC /* RxCocoa.framework in Frameworks */,
 				CF7BC66B1FD8F739008E80AC /* Alamofire.framework in Frameworks */,
 				CF87ED9E201B5FF300562226 /* SVProgressHUD.framework in Frameworks */,
+				CF8373DB224B8CA7000C3E21 /* AnalyticsManager.framework in Frameworks */,
 				CF7BC66C1FD8F739008E80AC /* RxMoya.framework in Frameworks */,
 				CF7BC66D1FD8F739008E80AC /* RxSwift.framework in Frameworks */,
 				CF7BC66E1FD8F739008E80AC /* Moya.framework in Frameworks */,
@@ -348,6 +382,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				90BF2E7761749FD7B6527C0A /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF8373C3224B8CA7000C3E21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF8373CB224B8CA7000C3E21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF8373CF224B8CA7000C3E21 /* AnalyticsManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +482,8 @@
 				CF8C5CB720EF9E7200236C7B /* SessionManager */,
 				CF8C5CC420EF9E7200236C7B /* SessionManagerTests */,
 				CF564718211B15590092EFBD /* OneSignalNotificationServiceExtension */,
+				CF8373C7224B8CA7000C3E21 /* AnalyticsManager */,
+				CF8373D4224B8CA7000C3E21 /* AnalyticsManagerTests */,
 				112239121FD5C7AF00486528 /* Products */,
 				8A6CF31932BE5291FACE8092 /* Frameworks */,
 				4EB46AC4F5A03B9A5DD78099 /* Pods */,
@@ -446,6 +497,8 @@
 				CF8C5CB620EF9E7200236C7B /* SessionManager.framework */,
 				CF8C5CBE20EF9E7200236C7B /* SessionManagerTests.xctest */,
 				CF564717211B15590092EFBD /* OneSignalNotificationServiceExtension.appex */,
+				CF8373C6224B8CA7000C3E21 /* AnalyticsManager.framework */,
+				CF8373CE224B8CA7000C3E21 /* AnalyticsManagerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -707,6 +760,24 @@
 			path = "App Delegate";
 			sourceTree = "<group>";
 		};
+		CF8373C7224B8CA7000C3E21 /* AnalyticsManager */ = {
+			isa = PBXGroup;
+			children = (
+				CF8373C8224B8CA7000C3E21 /* AnalyticsManager.h */,
+				CF8373C9224B8CA7000C3E21 /* Info.plist */,
+			);
+			path = AnalyticsManager;
+			sourceTree = "<group>";
+		};
+		CF8373D4224B8CA7000C3E21 /* AnalyticsManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF8373D5224B8CA7000C3E21 /* AnalyticsManagerTests.swift */,
+				CF8373D7224B8CA7000C3E21 /* Info.plist */,
+			);
+			path = AnalyticsManagerTests;
+			sourceTree = "<group>";
+		};
 		CF87EDA2201B8BEB00562226 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -768,6 +839,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		CF8373C1224B8CA7000C3E21 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF8373D8224B8CA7000C3E21 /* AnalyticsManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CF8C5CB320EF9E7200236C7B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -798,6 +877,7 @@
 			dependencies = (
 				CF8C5CCA20EF9E7200236C7B /* PBXTargetDependency */,
 				CF56471D211B15590092EFBD /* PBXTargetDependency */,
+				CF8373DA224B8CA7000C3E21 /* PBXTargetDependency */,
 			);
 			name = "Base-Project";
 			productName = "Base-Project";
@@ -821,6 +901,43 @@
 			productName = OneSignalNotificationServiceExtension;
 			productReference = CF564717211B15590092EFBD /* OneSignalNotificationServiceExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
+		};
+		CF8373C5224B8CA7000C3E21 /* AnalyticsManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF8373E1224B8CA7000C3E21 /* Build configuration list for PBXNativeTarget "AnalyticsManager" */;
+			buildPhases = (
+				CF8373C1224B8CA7000C3E21 /* Headers */,
+				CF8373C2224B8CA7000C3E21 /* Sources */,
+				CF8373C3224B8CA7000C3E21 /* Frameworks */,
+				CF8373C4224B8CA7000C3E21 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AnalyticsManager;
+			productName = AnalyticsManager;
+			productReference = CF8373C6224B8CA7000C3E21 /* AnalyticsManager.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CF8373CD224B8CA7000C3E21 /* AnalyticsManagerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF8373E2224B8CA7000C3E21 /* Build configuration list for PBXNativeTarget "AnalyticsManagerTests" */;
+			buildPhases = (
+				CF8373CA224B8CA7000C3E21 /* Sources */,
+				CF8373CB224B8CA7000C3E21 /* Frameworks */,
+				CF8373CC224B8CA7000C3E21 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF8373D1224B8CA7000C3E21 /* PBXTargetDependency */,
+				CF8373D3224B8CA7000C3E21 /* PBXTargetDependency */,
+			);
+			name = AnalyticsManagerTests;
+			productName = AnalyticsManagerTests;
+			productReference = CF8373CE224B8CA7000C3E21 /* AnalyticsManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		CF8C5CB520EF9E7200236C7B /* SessionManager */ = {
 			isa = PBXNativeTarget;
@@ -865,7 +982,7 @@
 		112239091FD5C7AF00486528 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Tedmob;
 				TargetAttributes = {
@@ -889,6 +1006,15 @@
 								enabled = 0;
 							};
 						};
+					};
+					CF8373C5224B8CA7000C3E21 = {
+						CreatedOnToolsVersion = 10.2;
+						ProvisioningStyle = Automatic;
+					};
+					CF8373CD224B8CA7000C3E21 = {
+						CreatedOnToolsVersion = 10.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 112239101FD5C7AF00486528;
 					};
 					CF8C5CB520EF9E7200236C7B = {
 						CreatedOnToolsVersion = 9.3;
@@ -919,6 +1045,8 @@
 				CF8C5CB520EF9E7200236C7B /* SessionManager */,
 				CF8C5CBD20EF9E7200236C7B /* SessionManagerTests */,
 				CF564716211B15590092EFBD /* OneSignalNotificationServiceExtension */,
+				CF8373C5224B8CA7000C3E21 /* AnalyticsManager */,
+				CF8373CD224B8CA7000C3E21 /* AnalyticsManagerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -938,6 +1066,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CF564715211B15590092EFBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF8373C4224B8CA7000C3E21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF8373CC224B8CA7000C3E21 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -988,7 +1130,6 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Base-Project/Pods-Base-Project-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CZPicker/CZPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/DeviceKit/DeviceKit.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -998,13 +1139,11 @@
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CZPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeviceKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -1014,7 +1153,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1072,7 +1210,7 @@
 			);
 			name = "Run Script";
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1091,7 +1229,7 @@
 				0FD65F1B20D018730075E251 /* UIButton+Extensions.swift in Sources */,
 				CFF69D6D219554C4003BE6BF /* CGPoint+Extensions.swift in Sources */,
 				4A20A22E2179E9C5002C2AAA /* ChangePasswordPresenter.swift in Sources */,
-				3E5EECD3211B0EF8008AE39D /* (null) in Sources */,
+				3E5EECD3211B0EF8008AE39D /* BuildFile in Sources */,
 				CFF69D752195586E003BE6BF /* FileManager+Extensions.swift in Sources */,
 				CFE27A17214A9BE200DBB917 /* Reactive+Dictionary.swift in Sources */,
 				117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */,
@@ -1151,7 +1289,7 @@
 				CF8373AD224A7F93000C3E21 /* R.generated.swift in Sources */,
 				4A20A2332179E9C5002C2AAA /* ChangePasswordConfigurator.swift in Sources */,
 				CF40385D216CF78F001F649B /* InitialInteractor.swift in Sources */,
-				3E5EECD5211B0F5A008AE39D /* (null) in Sources */,
+				3E5EECD5211B0F5A008AE39D /* BuildFile in Sources */,
 				CF7823B720EF95C6003069BD /* APIError.swift in Sources */,
 				CF40385C216CF78F001F649B /* InitialViewController.swift in Sources */,
 				3E6DEFB12162111100978FDC /* BaseController.swift in Sources */,
@@ -1194,6 +1332,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CF8373C2224B8CA7000C3E21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF8373CA224B8CA7000C3E21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF8373D6224B8CA7000C3E21 /* AnalyticsManagerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CF8C5CB120EF9E7200236C7B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1218,6 +1371,21 @@
 			isa = PBXTargetDependency;
 			target = CF564716211B15590092EFBD /* OneSignalNotificationServiceExtension */;
 			targetProxy = CF56471C211B15590092EFBD /* PBXContainerItemProxy */;
+		};
+		CF8373D1224B8CA7000C3E21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF8373C5224B8CA7000C3E21 /* AnalyticsManager */;
+			targetProxy = CF8373D0224B8CA7000C3E21 /* PBXContainerItemProxy */;
+		};
+		CF8373D3224B8CA7000C3E21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 112239101FD5C7AF00486528 /* Base-Project */;
+			targetProxy = CF8373D2224B8CA7000C3E21 /* PBXContainerItemProxy */;
+		};
+		CF8373DA224B8CA7000C3E21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF8373C5224B8CA7000C3E21 /* AnalyticsManager */;
+			targetProxy = CF8373D9224B8CA7000C3E21 /* PBXContainerItemProxy */;
 		};
 		CF8C5CC120EF9E7200236C7B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1441,6 +1609,108 @@
 			};
 			name = Release;
 		};
+		CF8373DD224B8CA7000C3E21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 924RDGY8WL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AnalyticsManager/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.AnalyticsManager;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CF8373DE224B8CA7000C3E21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 924RDGY8WL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AnalyticsManager/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.AnalyticsManager;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CF8373DF224B8CA7000C3E21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 924RDGY8WL;
+				INFOPLIST_FILE = AnalyticsManagerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.AnalyticsManagerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Base-Project.app/Base-Project";
+			};
+			name = Debug;
+		};
+		CF8373E0224B8CA7000C3E21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 924RDGY8WL;
+				INFOPLIST_FILE = AnalyticsManagerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.AnalyticsManagerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Base-Project.app/Base-Project";
+			};
+			name = Release;
+		};
 		CF8C5CCF20EF9E7200236C7B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1566,6 +1836,24 @@
 			buildConfigurations = (
 				CF56471F211B15590092EFBD /* Debug */,
 				CF564720211B15590092EFBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF8373E1224B8CA7000C3E21 /* Build configuration list for PBXNativeTarget "AnalyticsManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF8373DD224B8CA7000C3E21 /* Debug */,
+				CF8373DE224B8CA7000C3E21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF8373E2224B8CA7000C3E21 /* Build configuration list for PBXNativeTarget "AnalyticsManagerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF8373DF224B8CA7000C3E21 /* Debug */,
+				CF8373E0224B8CA7000C3E21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

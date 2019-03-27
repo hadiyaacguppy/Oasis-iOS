@@ -4,7 +4,6 @@
 target 'Base-Project' do
   # Pods for Base-Project
   use_frameworks!
-  pod 'Firebase/Core'
   pod 'R.swift'
   pod 'CZPicker'
   pod 'RxGesture'
