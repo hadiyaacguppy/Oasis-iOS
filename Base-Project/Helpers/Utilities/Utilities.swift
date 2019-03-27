@@ -14,7 +14,7 @@ import SystemConfiguration
 import RxSwift
 import MessageUI
 
-struct Utilities  {
+public struct Utilities  {
     
     /// calls a certain phone number. don't include tel://
     ///
@@ -156,7 +156,7 @@ struct Utilities  {
     /// Opens a certain URL in safari
     ///
     /// - Parameter str: The url to open as string
-    static func openURL(withString str : String){
+    public static func openURL(withString str : String){
         if let url = URL(string: str){
             UIApplication.shared.open(url , options: [:], completionHandler: nil)
         }

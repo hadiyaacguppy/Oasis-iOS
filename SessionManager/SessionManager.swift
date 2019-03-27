@@ -22,7 +22,7 @@ public class SessionManager {
             }
             return sid
         }set {
-            print("Session Manager ===> Setting new session id to \(newValue)")
+            print("Session Manager ===> Setting new session id to \(String(describing: newValue))")
             UserDefaults.standard.set(newValue, forKey: SessionManagerConstants.UserDefaultKeys.sessionIdKey)
             UserDefaults.standard.synchronize()
             

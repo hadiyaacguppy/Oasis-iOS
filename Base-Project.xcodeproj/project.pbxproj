@@ -30,9 +30,9 @@
 		117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB31FD8652B008BB445 /* NSIndexPath+Extensions.swift */; };
 		117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
-		3E5EECD3211B0EF8008AE39D /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		3E5EECD5211B0F5A008AE39D /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		3E5EECD9211B159E008AE39D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		3E5EECD3211B0EF8008AE39D /* (null) in Sources */ = {isa = PBXBuildFile; };
+		3E5EECD5211B0F5A008AE39D /* (null) in Sources */ = {isa = PBXBuildFile; };
+		3E5EECD9211B159E008AE39D /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		3E6DEFB12162111100978FDC /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DEFB02162111100978FDC /* BaseController.swift */; };
 		3E6DEFB321623D7A00978FDC /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DEFB221623D7A00978FDC /* UITableView+Extensions.swift */; };
 		3EAFC549219B2D2F00E3C2BB /* TDAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAFC548219B2D2F00E3C2BB /* TDAlertAction.swift */; };
@@ -106,6 +106,8 @@
 		CF8373D8224B8CA7000C3E21 /* AnalyticsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CF8373C8224B8CA7000C3E21 /* AnalyticsManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF8373DB224B8CA7000C3E21 /* AnalyticsManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8373C6224B8CA7000C3E21 /* AnalyticsManager.framework */; };
 		CF8373DC224B8CA7000C3E21 /* AnalyticsManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF8373C6224B8CA7000C3E21 /* AnalyticsManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CF8373E4224B8E2B000C3E21 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8373E3224B8E2B000C3E21 /* AnalyticsManager.swift */; };
+		CF8373E6224B8E48000C3E21 /* AnalyticsManagerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8373E5224B8E48000C3E21 /* AnalyticsManagerConstants.swift */; };
 		CF87ED9E201B5FF300562226 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF87ED9D201B5FF300562226 /* SVProgressHUD.framework */; };
 		CF87EDA0201B6EF700562226 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87ED9F201B6EF700562226 /* BaseViewController.swift */; };
 		CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87EDA3201B8C2500562226 /* BaseTextField.swift */; };
@@ -324,6 +326,8 @@
 		CF8373CE224B8CA7000C3E21 /* AnalyticsManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnalyticsManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8373D5224B8CA7000C3E21 /* AnalyticsManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManagerTests.swift; sourceTree = "<group>"; };
 		CF8373D7224B8CA7000C3E21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF8373E3224B8E2B000C3E21 /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
+		CF8373E5224B8E48000C3E21 /* AnalyticsManagerConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManagerConstants.swift; sourceTree = "<group>"; };
 		CF87ED9D201B5FF300562226 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		CF87ED9F201B6EF700562226 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CF87EDA3201B8C2500562226 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
@@ -363,7 +367,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E5EECD9211B159E008AE39D /* BuildFile in Frameworks */,
+				3E5EECD9211B159E008AE39D /* (null) in Frameworks */,
 				CF7BC66A1FD8F739008E80AC /* RxCocoa.framework in Frameworks */,
 				CF7BC66B1FD8F739008E80AC /* Alamofire.framework in Frameworks */,
 				CF87ED9E201B5FF300562226 /* SVProgressHUD.framework in Frameworks */,
@@ -765,6 +769,8 @@
 			children = (
 				CF8373C8224B8CA7000C3E21 /* AnalyticsManager.h */,
 				CF8373C9224B8CA7000C3E21 /* Info.plist */,
+				CF8373E3224B8E2B000C3E21 /* AnalyticsManager.swift */,
+				CF8373E5224B8E48000C3E21 /* AnalyticsManagerConstants.swift */,
 			);
 			path = AnalyticsManager;
 			sourceTree = "<group>";
@@ -1009,6 +1015,7 @@
 					};
 					CF8373C5224B8CA7000C3E21 = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					CF8373CD224B8CA7000C3E21 = {
@@ -1210,7 +1217,7 @@
 			);
 			name = "Run Script";
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1229,7 +1236,7 @@
 				0FD65F1B20D018730075E251 /* UIButton+Extensions.swift in Sources */,
 				CFF69D6D219554C4003BE6BF /* CGPoint+Extensions.swift in Sources */,
 				4A20A22E2179E9C5002C2AAA /* ChangePasswordPresenter.swift in Sources */,
-				3E5EECD3211B0EF8008AE39D /* BuildFile in Sources */,
+				3E5EECD3211B0EF8008AE39D /* (null) in Sources */,
 				CFF69D752195586E003BE6BF /* FileManager+Extensions.swift in Sources */,
 				CFE27A17214A9BE200DBB917 /* Reactive+Dictionary.swift in Sources */,
 				117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */,
@@ -1289,7 +1296,7 @@
 				CF8373AD224A7F93000C3E21 /* R.generated.swift in Sources */,
 				4A20A2332179E9C5002C2AAA /* ChangePasswordConfigurator.swift in Sources */,
 				CF40385D216CF78F001F649B /* InitialInteractor.swift in Sources */,
-				3E5EECD5211B0F5A008AE39D /* BuildFile in Sources */,
+				3E5EECD5211B0F5A008AE39D /* (null) in Sources */,
 				CF7823B720EF95C6003069BD /* APIError.swift in Sources */,
 				CF40385C216CF78F001F649B /* InitialViewController.swift in Sources */,
 				3E6DEFB12162111100978FDC /* BaseController.swift in Sources */,
@@ -1336,6 +1343,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF8373E6224B8E48000C3E21 /* AnalyticsManagerConstants.swift in Sources */,
+				CF8373E4224B8E2B000C3E21 /* AnalyticsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1612,6 +1621,7 @@
 		CF8373DD224B8CA7000C3E21 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
@@ -1632,6 +1642,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.AnalyticsManager;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1642,6 +1653,7 @@
 		CF8373DE224B8CA7000C3E21 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;

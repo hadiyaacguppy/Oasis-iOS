@@ -10,11 +10,8 @@ import Foundation
 struct SessionManagerConstants  {
     struct UserDefaultKeys {
         static let sessionIdKey = "sessionId"
-        static let usernameKey  = "usernameKey"
-        //Just for some faking
-        static let passwordKey = "timsetamp_user"
         static let firsTime = "first_time"
         
-    }
+            }
     static let sessionExpiredCode = 101
 }
