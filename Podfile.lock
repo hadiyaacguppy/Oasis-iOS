@@ -1,21 +1,21 @@
 PODS:
   - CZPicker (0.4.3)
-  - DeviceKit (1.12.0)
+  - DeviceKit (1.11.0)
   - OneSignal (2.9.5)
   - R.swift (5.0.2):
     - R.swift.Library (~> 5.0.0)
   - R.swift.Library (5.0.0)
-  - RxAtomic (4.4.0)
-  - RxCocoa (4.4.0):
+  - RxAtomic (4.4.1)
+  - RxCocoa (4.4.1):
     - RxSwift (~> 4.0)
   - RxGesture (2.1.0):
     - RxCocoa (~> 4.4.0)
     - RxSwift (~> 4.4.0)
-  - RxSwift (4.4.0):
+  - RxSwift (4.4.1):
     - RxAtomic (~> 4.4)
-  - SDWebImage (4.4.4):
-    - SDWebImage/Core (= 4.4.4)
-  - SDWebImage/Core (4.4.4)
+  - SDWebImage (4.4.6):
+    - SDWebImage/Core (= 4.4.6)
+  - SDWebImage/Core (4.4.6)
   - SkyFloatingLabelTextField (3.6.0)
   - SwiftLocation (3.2.3):
     - SwiftyJSON (~> 4.0.0-alpha.1)
@@ -49,19 +49,19 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   CZPicker: 55aa1751ea26e209814552da1a9a08cba8bbf72a
-  DeviceKit: f5dbd2e70cafd420d6a09379b8800cdf5fe92ba5
+  DeviceKit: a3a86f8dddbe1317a9a243cdf9646858bf135dce
   OneSignal: ccdeb961882f8668305e5b694e2cb7cb325fc907
   R.swift: 81455d81467763cbd3f4d79d938d05f4ac4c0228
   R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
-  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
-  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
+  RxAtomic: f8d6adc1ccb87a767811269e4875887bc74dbf19
+  RxCocoa: 2f35a76bf8887872e28a1914112395b11b8e0e64
   RxGesture: 7f6dfb45dbde06e618c24442d38493e3144f2c95
-  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
-  SDWebImage: c00ec18ab25d10e5ffac109b0f78d1b4341c9691
+  RxSwift: 92fcf68dfef21f3e2ab1965363d9e7b3d787597e
+  SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
   SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
   SwiftLocation: a3c3bc2023118171ef3572188a31def94aa0892c
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
 PODFILE CHECKSUM: 4b774a3e9a00b976415570d41713076c00b2bc55
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.5.3

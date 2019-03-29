@@ -31,6 +31,15 @@ class BaseTextField : UITextField {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.addToolBar()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         self.addToolBar()
     }
     

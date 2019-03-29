@@ -36,6 +36,11 @@
 		3E6DEFB12162111100978FDC /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DEFB02162111100978FDC /* BaseController.swift */; };
 		3E6DEFB321623D7A00978FDC /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DEFB221623D7A00978FDC /* UITableView+Extensions.swift */; };
 		3EAFC549219B2D2F00E3C2BB /* TDAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAFC548219B2D2F00E3C2BB /* TDAlertAction.swift */; };
+		3EDC4131224E750000624D2B /* CustomOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC4130224E750000624D2B /* CustomOperator.swift */; };
+		3EDC4133224E81BE00624D2B /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC4132224E81BE00624D2B /* ActivityIndicator.swift */; };
+		3EDC4153224E875300624D2B /* Reactive+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC4152224E875300624D2B /* Reactive+UIView.swift */; };
+		3EDC4156224E886500624D2B /* BaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC4155224E886500624D2B /* BaseUIView.swift */; };
+		3EDC4159224E893B00624D2B /* BaseUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC4158224E893B00624D2B /* BaseUIImageView.swift */; };
 		4A20A22D2179E9C5002C2AAA /* ChangePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A20A2262179E9C5002C2AAA /* ChangePassword.storyboard */; };
 		4A20A22E2179E9C5002C2AAA /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A20A2272179E9C5002C2AAA /* ChangePasswordPresenter.swift */; };
 		4A20A22F2179E9C5002C2AAA /* ChangePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A20A2282179E9C5002C2AAA /* ChangePasswordRouter.swift */; };
@@ -43,7 +48,7 @@
 		4A20A2312179E9C5002C2AAA /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A20A22A2179E9C5002C2AAA /* ChangePasswordViewController.swift */; };
 		4A20A2322179E9C5002C2AAA /* ChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A20A22B2179E9C5002C2AAA /* ChangePasswordInteractor.swift */; };
 		4A20A2332179E9C5002C2AAA /* ChangePasswordConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A20A22C2179E9C5002C2AAA /* ChangePasswordConfigurator.swift */; };
-		4AEF647522107DC000D53D75 /* AppBaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF647422107DC000D53D75 /* AppBaseButton.swift */; };
+		4AEF647522107DC000D53D75 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF647422107DC000D53D75 /* BaseButton.swift */; };
 		4AEF64772210842F00D53D75 /* BaseSkyFloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF64762210842F00D53D75 /* BaseSkyFloatingTextField.swift */; };
 		4AEF648022108F8C00D53D75 /* PinVerificationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF647922108F8C00D53D75 /* PinVerificationRouter.swift */; };
 		4AEF648122108F8C00D53D75 /* PinVerification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AEF647A22108F8C00D53D75 /* PinVerification.storyboard */; };
@@ -113,7 +118,7 @@
 		CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87EDA3201B8C2500562226 /* BaseTextField.swift */; };
 		CF8C5C9C20EF97AE00236C7B /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5C9B20EF97AE00236C7B /* BaseTableViewController.swift */; };
 		CF8C5C9E20EF9CA400236C7B /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5C9D20EF9CA400236C7B /* DatePickerDialog.swift */; };
-		CF8C5CA020EF9CCA00236C7B /* BaseTransparentNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5C9F20EF9CCA00236C7B /* BaseTransparentNavigationBar.swift */; };
+		CF8C5CA020EF9CCA00236C7B /* BaseNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5C9F20EF9CCA00236C7B /* BaseNavigationBar.swift */; };
 		CF8C5CA820EF9D5400236C7B /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5CA720EF9D5400236C7B /* Bool+Extensions.swift */; };
 		CF8C5CAA20EF9D6700236C7B /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5CA920EF9D6700236C7B /* Int+Extensions.swift */; };
 		CF8C5CAC20EF9D7E00236C7B /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5CAB20EF9D7E00236C7B /* UICollectionView+Extensions.swift */; };
@@ -247,6 +252,11 @@
 		3E6DEFB02162111100978FDC /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		3E6DEFB221623D7A00978FDC /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		3EAFC548219B2D2F00E3C2BB /* TDAlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDAlertAction.swift; sourceTree = "<group>"; };
+		3EDC4130224E750000624D2B /* CustomOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOperator.swift; sourceTree = "<group>"; };
+		3EDC4132224E81BE00624D2B /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		3EDC4152224E875300624D2B /* Reactive+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+UIView.swift"; sourceTree = "<group>"; };
+		3EDC4155224E886500624D2B /* BaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIView.swift; sourceTree = "<group>"; };
+		3EDC4158224E893B00624D2B /* BaseUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIImageView.swift; sourceTree = "<group>"; };
 		4A20A2262179E9C5002C2AAA /* ChangePassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangePassword.storyboard; sourceTree = "<group>"; };
 		4A20A2272179E9C5002C2AAA /* ChangePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordPresenter.swift; sourceTree = "<group>"; };
 		4A20A2282179E9C5002C2AAA /* ChangePasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRouter.swift; sourceTree = "<group>"; };
@@ -254,7 +264,7 @@
 		4A20A22A2179E9C5002C2AAA /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		4A20A22B2179E9C5002C2AAA /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
 		4A20A22C2179E9C5002C2AAA /* ChangePasswordConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordConfigurator.swift; sourceTree = "<group>"; };
-		4AEF647422107DC000D53D75 /* AppBaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBaseButton.swift; sourceTree = "<group>"; };
+		4AEF647422107DC000D53D75 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		4AEF64762210842F00D53D75 /* BaseSkyFloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSkyFloatingTextField.swift; sourceTree = "<group>"; };
 		4AEF647922108F8C00D53D75 /* PinVerificationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinVerificationRouter.swift; sourceTree = "<group>"; };
 		4AEF647A22108F8C00D53D75 /* PinVerification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PinVerification.storyboard; sourceTree = "<group>"; };
@@ -333,7 +343,7 @@
 		CF87EDA3201B8C2500562226 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
 		CF8C5C9B20EF97AE00236C7B /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		CF8C5C9D20EF9CA400236C7B /* DatePickerDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerDialog.swift; sourceTree = "<group>"; };
-		CF8C5C9F20EF9CCA00236C7B /* BaseTransparentNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTransparentNavigationBar.swift; sourceTree = "<group>"; };
+		CF8C5C9F20EF9CCA00236C7B /* BaseNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationBar.swift; sourceTree = "<group>"; };
 		CF8C5CA720EF9D5400236C7B /* Bool+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extensions.swift"; sourceTree = "<group>"; };
 		CF8C5CA920EF9D6700236C7B /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		CF8C5CAB20EF9D7E00236C7B /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
@@ -475,6 +485,7 @@
 				0FD65F1420D014F40075E251 /* Reactive+UIButton.swift */,
 				CF06BE5E2199CFC4004B763B /* Reactive+Validation.swift */,
 				CFE27A16214A9BE200DBB917 /* Reactive+Dictionary.swift */,
+				3EDC4152224E875300624D2B /* Reactive+UIView.swift */,
 			);
 			path = "Rx+Extensions";
 			sourceTree = "<group>";
@@ -551,6 +562,8 @@
 				0F57538D20EE12EB0069C139 /* Constants.swift */,
 				CF564730211B1C910092EFBD /* InputValidationExpression.swift */,
 				3EAFC548219B2D2F00E3C2BB /* TDAlertAction.swift */,
+				3EDC4130224E750000624D2B /* CustomOperator.swift */,
+				3EDC4132224E81BE00624D2B /* ActivityIndicator.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -581,6 +594,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		3EDC4154224E885E00624D2B /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				3EDC4155224E886500624D2B /* BaseUIView.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		3EDC4157224E892A00624D2B /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				3EDC4158224E893B00624D2B /* BaseUIImageView.swift */,
+			);
+			path = UIImageView;
+			sourceTree = "<group>";
+		};
 		4A20A2252179E9A2002C2AAA /* Change Password */ = {
 			isa = PBXGroup;
 			children = (
@@ -609,7 +638,7 @@
 		4AEF646E22107D3E00D53D75 /* Navigation Bars */ = {
 			isa = PBXGroup;
 			children = (
-				CF8C5C9F20EF9CCA00236C7B /* BaseTransparentNavigationBar.swift */,
+				CF8C5C9F20EF9CCA00236C7B /* BaseNavigationBar.swift */,
 			);
 			path = "Navigation Bars";
 			sourceTree = "<group>";
@@ -643,7 +672,7 @@
 		4AEF647322107DAE00D53D75 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				4AEF647422107DC000D53D75 /* AppBaseButton.swift */,
+				4AEF647422107DC000D53D75 /* BaseButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -787,6 +816,8 @@
 		CF87EDA2201B8BEB00562226 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3EDC4157224E892A00624D2B /* UIImageView */,
+				3EDC4154224E885E00624D2B /* UIView */,
 				4AEF647322107DAE00D53D75 /* Buttons */,
 				4AEF647222107DA300D53D75 /* Labels */,
 				4AEF647122107D7B00D53D75 /* Pickers */,
@@ -1134,7 +1165,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Base-Project/Pods-Base-Project-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CZPicker/CZPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/DeviceKit/DeviceKit.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
@@ -1163,7 +1194,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Base-Project/Pods-Base-Project-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CA642901AF8E8321064F02E7 /* [CP] Check Pods Manifest.lock */ = {
@@ -1232,6 +1263,7 @@
 			files = (
 				CF56472F211B1BA50092EFBD /* UIImageView+Extensions.swift in Sources */,
 				CF181BA2208099A0002603A1 /* UITextField+Extensions.swift in Sources */,
+				3EDC4131224E750000624D2B /* CustomOperator.swift in Sources */,
 				CF0598EC210F154F00C2645F /* TDPicker.swift in Sources */,
 				0FD65F1B20D018730075E251 /* UIButton+Extensions.swift in Sources */,
 				CFF69D6D219554C4003BE6BF /* CGPoint+Extensions.swift in Sources */,
@@ -1243,8 +1275,9 @@
 				CF8C5C9E20EF9CA400236C7B /* DatePickerDialog.swift in Sources */,
 				CF564702211B142E0092EFBD /* OneSignalPushService.swift in Sources */,
 				0FD65F1920D018480075E251 /* Double+Extensions.swift in Sources */,
-				4AEF647522107DC000D53D75 /* AppBaseButton.swift in Sources */,
+				4AEF647522107DC000D53D75 /* BaseButton.swift in Sources */,
 				CF40385A216CF78F001F649B /* InitialRouter.swift in Sources */,
+				3EDC4133224E81BE00624D2B /* ActivityIndicator.swift in Sources */,
 				CF09C0D12180A511003DF186 /* BaseWebViewPresenter.swift in Sources */,
 				CF50F7AC219AC028000E5E4E /* NotificationPayload.swift in Sources */,
 				0F57538E20EE12EB0069C139 /* Constants.swift in Sources */,
@@ -1263,6 +1296,7 @@
 				3EAFC549219B2D2F00E3C2BB /* TDAlertAction.swift in Sources */,
 				CF56472D211B1B740092EFBD /* Reactive+UIImageView.swift in Sources */,
 				CF6030762212F77B003872F3 /* DeviceManager.swift in Sources */,
+				3EDC4156224E886500624D2B /* BaseUIView.swift in Sources */,
 				67290A02210E441400632C4F /* PlaceHolderHelper.swift in Sources */,
 				CF8C5CAA20EF9D6700236C7B /* Int+Extensions.swift in Sources */,
 				CF7BC6791FD91D83008E80AC /* ObservableType+ObjectMapper.swift in Sources */,
@@ -1296,6 +1330,7 @@
 				CF8373AD224A7F93000C3E21 /* R.generated.swift in Sources */,
 				4A20A2332179E9C5002C2AAA /* ChangePasswordConfigurator.swift in Sources */,
 				CF40385D216CF78F001F649B /* InitialInteractor.swift in Sources */,
+				3EDC4153224E875300624D2B /* Reactive+UIView.swift in Sources */,
 				3E5EECD5211B0F5A008AE39D /* (null) in Sources */,
 				CF7823B720EF95C6003069BD /* APIError.swift in Sources */,
 				CF40385C216CF78F001F649B /* InitialViewController.swift in Sources */,
@@ -1312,12 +1347,13 @@
 				CF09C0D42180A511003DF186 /* BaseWebViewViewController.swift in Sources */,
 				CF8C5CAE20EF9D8F00236C7B /* UIApplication+Extensions.swift in Sources */,
 				CF564731211B1C910092EFBD /* InputValidationExpression.swift in Sources */,
-				CF8C5CA020EF9CCA00236C7B /* BaseTransparentNavigationBar.swift in Sources */,
+				CF8C5CA020EF9CCA00236C7B /* BaseNavigationBar.swift in Sources */,
 				0FD65F1520D014F40075E251 /* Reactive+UIButton.swift in Sources */,
 				CF181BA020809874002603A1 /* UINavigationBar+Extensions.swift in Sources */,
 				CF06BE5F2199CFC4004B763B /* Reactive+Validation.swift in Sources */,
 				CF40385E216CF78F001F649B /* InitialConfigurator.swift in Sources */,
 				CFC2BFE6216CA3C800DC31A7 /* ErrorViewModel.swift in Sources */,
+				3EDC4159224E893B00624D2B /* BaseUIImageView.swift in Sources */,
 				CF7BC6781FD91D83008E80AC /* Response+ObjectMapper.swift in Sources */,
 				CF7BC6771FD91D83008E80AC /* Single+ObjectMapper.swift in Sources */,
 				0F57539D20EE1C430069C139 /* APIClient.swift in Sources */,
@@ -1643,7 +1679,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1673,7 +1709,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.AnalyticsManager;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

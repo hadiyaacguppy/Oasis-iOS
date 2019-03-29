@@ -43,9 +43,9 @@ extension UIColor {
     static func randomColor() -> UIColor {
         // If you wanted a random alpha, just create another
         // random number for that too.
-        return UIColor(red:   .random(),
-                       green: .random(),
-                       blue:  .random(),
+        return UIColor(red:   CGFloat.random(in: 1...1000),
+                       green: CGFloat.random(in: 1...1000),
+                       blue:  CGFloat.random(in: 1...1000),
                        alpha: 1.0)
     }
     convenience init(hexFromString:String, alpha:CGFloat = 1.0) {

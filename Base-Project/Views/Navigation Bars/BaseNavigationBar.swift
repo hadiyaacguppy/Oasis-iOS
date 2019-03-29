@@ -8,15 +8,15 @@
 
 import Foundation
 import UIKit
-class BaseTransparentNavigationBar : UINavigationBar{
+
+class BaseNavigationBar : UINavigationBar{
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setBackgroundImage(UIImage(), for: .default)
         self.shadowImage = UIImage()
         
         self.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor : UIColor.white,
-            NSAttributedString.Key.font : UIFont(name: "FFYaseer-Regular", size: 19)!
+            NSAttributedString.Key.foregroundColor : UIColor.white
         ]
     }
 }

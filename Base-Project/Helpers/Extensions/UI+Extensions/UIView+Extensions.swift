@@ -10,6 +10,11 @@
 import UIKit
 import GLKit
 import Foundation
+
+
+fileprivate let kIndicatorViewTag = 998
+
+
 extension UIView {
     /// Adds the ability to circle the corners of anyview
     @IBInspectable var cornerRadius: CGFloat {
@@ -127,4 +132,38 @@ extension UIView {
         }
     }
 
+    func showMyActivityIndicator(){
+        guard self.viewWithTag(kIndicatorViewTag) == nil else { return }
+        createActivityIndicator()
+    }
+    
+    func hideMyActivityIndicator(){
+        guard let indicator = self.viewWithTag(kIndicatorViewTag) as? UIActivityIndicatorView else { return }
+        indicator.stopAnimating()
+        indicator.removeFromSuperview()
+    }
+    
+    func createActivityIndicator(){
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.hidesWhenStopped = true
+        //            activityIndicator.color = Constants.GeneralActivityIndicatorAppearance.color
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        
+        activityIndicator.tag = kIndicatorViewTag
+        self.addSubview(activityIndicator)
+        let xCenterConstraint = NSLayoutConstraint(item: self, attribute: .centerX,
+                                                   relatedBy: .equal, toItem: activityIndicator,
+                                                   attribute: .centerX,
+                                                   multiplier: 1,
+                                                   constant: 0)
+        self.addConstraint(xCenterConstraint)
+        
+        let yCenterConstraint = NSLayoutConstraint(item: self, attribute: .centerY,
+                                                   relatedBy: .equal, toItem: activityIndicator,
+                                                   attribute: .centerY,
+                                                   multiplier: 1,
+                                                   constant: 0)
+        self.addConstraint(yCenterConstraint)
+        activityIndicator.startAnimating()
+    }
 }

@@ -8,23 +8,24 @@
 
 import UIKit
 import CommonCrypto
+
 extension String  :  Error{}
 
 extension String {
     
-    
     func asURL() -> URL? {
         return URL(string: self)
-        
+    }
+    
+    public func queryValue(for key: String) -> String? {
+        guard let items = URLComponents(string: self)?.queryItems else { return nil }
+        return items.first(where: { $0.name == key })?.value
     }
     
     var localized: String {
         return NSLocalizedString(self, comment: "")
-        
     }
-    
-    
-    
+
     /// Compares 2 strings without case sensitivity
     ///
     /// - parameter otherString: The other string to compare
@@ -57,14 +58,15 @@ extension String {
     var utf8Encoded: Data {
         return self.data(using: .utf8)!
     }
+    
     var toAttributed : NSAttributedString {
         return NSAttributedString(string: self)
     }
+    
     func validate(withExpression expr : InputValidationExpression) -> Bool{
         let test = NSPredicate(format:"SELF MATCHES %@", expr.rawValue)
         return test.evaluate(with: self)
     }
-    
     
     /// This function will return the id of any valid youtube link
     ///
@@ -119,10 +121,13 @@ extension String {
             hash.appendFormat("%02x", result[i])
         }
         
-        result.deinitialize()
+        result.deinitialize(count: Int(CC_MD5_DIGEST_LENGTH))
         
         return String(format: hash as String)
     }
+    
+    
+    
     public func truncated(limit: Int) -> String {
         if self.count > limit {
             var truncatedString = self[0..<limit]
@@ -131,7 +136,6 @@ extension String {
         }
         return self
     }
-    
     
     subscript (bounds: CountableClosedRange<Int>) -> String {
         let start = index(startIndex, offsetBy: bounds.lowerBound)
@@ -144,6 +148,7 @@ extension String {
         let end = index(startIndex, offsetBy: bounds.upperBound)
         return String(self[start..<end])
     }
+    
     var wordCount : Int {
         let range = startIndex..<endIndex
         var count = 0
@@ -154,10 +159,12 @@ extension String {
         
         return count
     }
+    
     public var base64Encoded: String? {
         let plainData = data(using: .utf8)
         return plainData?.base64EncodedString()
     }
+    
     public var hasNumbers: Bool {
         return rangeOfCharacter(from: .decimalDigits, options: .literal, range: nil) != nil
     }

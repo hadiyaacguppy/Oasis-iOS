@@ -21,14 +21,11 @@ extension URL{
     }
     
     public var queryParameters: [String: String]? {
-        guard let components = URLComponents(url: self, resolvingAgainstBaseURL: false), let queryItems = components.queryItems else { return nil }
+        guard let components = URLComponents(url: self, resolvingAgainstBaseURL: false),
+            let queryItems = components.queryItems else { return nil }
         
         var items: [String: String] = [:]
-        
-        for queryItem in queryItems {
-            items[queryItem.name] = queryItem.value
-        }
-        
+        queryItems.forEach { items[$0.name] = $0.value }
         return items
     }
 
@@ -40,13 +37,11 @@ extension URL{
         return urlComponents.url!
     }
     
+    
+    
     public func queryValue(for key: String) -> String? {
         let stringURL = absoluteString
-        guard let items = URLComponents(string: stringURL)?.queryItems else { return nil }
-        for item in items where item.name == key {
-            return item.value
-        }
-        return nil
+        return stringURL.queryValue(for: key)
     }
    
 }

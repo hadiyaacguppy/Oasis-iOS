@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 extension Optional where Wrapped == Int {
     /// Returns the Int as bool.
     var  toBool : Bool{
@@ -17,8 +18,13 @@ extension Optional where Wrapped == Int {
         return self! == 1 ? true : false
     }
    
-   
+    var fromEpoch: Date?{
+        guard let self = `self` else { return nil}
+        return Date(timeIntervalSince1970: TimeInterval(self))
+    }
+    
 }
+
 struct TimeParts: CustomStringConvertible {
     var seconds = 0
     var minutes = 0

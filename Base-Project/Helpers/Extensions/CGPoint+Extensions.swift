@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+
 public extension CGPoint {
     /// Overloads + operator for two CGPoints addition
     ///

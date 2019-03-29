@@ -66,7 +66,7 @@ class PinVerificationViewController: BaseTableViewController, PinVerificationVie
         }
     }
     
-    @IBOutlet weak var confirmButton: AppBaseButton!{
+    @IBOutlet weak var confirmButton: BaseButton!{
         didSet{
             confirmButton
                 .rx

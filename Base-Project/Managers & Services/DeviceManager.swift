@@ -1,6 +1,8 @@
 import UIKit
 import Foundation
 import DeviceKit
+import AudioToolbox
+
 class DeviceManager {
     
     /// Returns if this device is an iPHONE. real or simulator.
@@ -85,5 +87,11 @@ class DeviceManager {
     var statusBarHeight : CGFloat {
         return UIApplication.shared.statusBarFrame.height
         
+    }
+    
+    func vibrateDevice(completionHandler : ( () -> Void )?){
+        AudioServicesPlaySystemSoundWithCompletion(kSystemSoundID_Vibrate) {
+            completionHandler?()
+        }
     }
 }
