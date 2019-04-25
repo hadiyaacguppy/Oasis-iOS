@@ -3,11 +3,11 @@
 ### 3.0 Version TODOs:
 
 - [X] Add Device Manager 
-- [ ] Target for Analytics
+- [X] Target for Analytics
 - [X] Add App Manager
 - [ ] Session Manager make more secure
 - [ ] Pagintable Table View
-- [ ] Add NSAttributedString Extensions
+- [X] Add NSAttributedString Extensions
 - [ ] Add Crypto Module with basic functionalities
 
 
