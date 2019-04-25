@@ -9,6 +9,7 @@
 import Foundation
 
 class AnalyticsManager {
+    
     static let shared  = AnalyticsManager()
     func logEvent(withName name : String , andParameters params : [String : Any]) {
         
