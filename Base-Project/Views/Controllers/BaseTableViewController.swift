@@ -8,21 +8,24 @@
 
 import Foundation
 import RxSwift
-
+import AnalyticsManager
 import UIKit
 
 class BaseTableViewController : UITableViewController,BaseController {
    
+    
+   
     var didTapOnRetryPlaceHolderButton: (() -> ())?
     
     var didTapOnPlaceHolderView: (() -> ())?
-    
+    var analyticsManager = AnalyticsManager.shared
     let disposeBag = DisposeBag()
     
     override
     func viewDidLoad() {
         super.viewDidLoad()
         addBackButton()
+        analyticsManager.logEvent(withName: String(describing: type(of: self)) + "View Opened" , andParameters: [:])
     }
     
     override
@@ -34,6 +37,8 @@ class BaseTableViewController : UITableViewController,BaseController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         dismissProgress()
+        analyticsManager.logEvent(withName: String(describing: type(of: self)) + "View Closed" ,
+                                  andParameters: [:])
         
     }
     @objc
@@ -42,7 +47,9 @@ class BaseTableViewController : UITableViewController,BaseController {
             self.navigationController?.popViewController(animated: true)
         }
     }
-    
+    func logEvent(withName name: String, andParameters params: [String : Any]? = nil ) {
+        
+    }
     
     
     func addBackButton(){

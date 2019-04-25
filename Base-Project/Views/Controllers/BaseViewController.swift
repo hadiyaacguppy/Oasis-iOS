@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import  RxSwift
-
+import AnalyticsManager
 
 
 class BaseViewController : UIViewController,BaseController {
@@ -17,17 +17,25 @@ class BaseViewController : UIViewController,BaseController {
     var didTapOnPlaceHolderView: (() -> ())?
     
     var didTapOnRetryPlaceHolderButton: (() -> ())?
-    
+    var analyticsManager = AnalyticsManager.shared
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addBackButton()
+        analyticsManager.logEvent(withName: String(describing: type(of: self)) + "View Opened" , andParameters: [:])
+    }
+    
+    func logEvent(withName name : String ,andParameters params : [String:Any]? = nil ){
+        
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+        super.viewDidDisappear(animated)		
         dismissProgress()
+        analyticsManager.logEvent(withName: String(describing: type(of: self)) + "View Closed" ,
+                                  andParameters: [:])
     }
     
     

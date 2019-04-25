@@ -42,6 +42,7 @@ class InitialViewController: BaseViewController, InitialViewControllerInput {
         //                            title: Constants.PlaceHolderView.Texts.wait)
         output?.viewDidFinishedLoading()
         setupRetryFetchingCallBack()
+        
     }
     
     // MARK: Requests

@@ -22,3 +22,7 @@ target 'OneSignalNotificationServiceExtension' do
     pod 'OneSignal', '>= 2.6.2', '< 3.0'
 end
 
+target 'AnalyticsManager' do
+  use_frameworks!
+  pod 'Firebase/Core'
+end

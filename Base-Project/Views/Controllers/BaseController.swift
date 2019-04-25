@@ -36,6 +36,8 @@ protocol BaseController {
                              title : String,
                              description : String?,
                              image : UIImage?)
+    
+    func logEvent(withName name : String ,andParameters params : [String:Any]?  )
 
     var didTapOnRetryPlaceHolderButton : (() -> ())?{ get }
     var didTapOnPlaceHolderView : (() -> ())?{ get }
