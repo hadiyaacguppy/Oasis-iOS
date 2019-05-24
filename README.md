@@ -9,7 +9,7 @@
 - [ ] Pagintable Table View
 - [X] Add NSAttributedString Extensions
 - [ ] Add Crypto Module with basic functionalities
-
+- [ ] Migrate to Swift 5 and Xcode 10.2 
 
 ### Roadmap :
 April 15 stop new feature addition
