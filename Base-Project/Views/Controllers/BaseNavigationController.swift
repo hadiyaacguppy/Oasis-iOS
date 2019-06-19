@@ -20,10 +20,35 @@ class BaseNavigationController: UINavigationController {
         self.setup()
     }
     
+    override init(navigationBarClass: AnyClass?, toolbarClass: AnyClass?) {
+        super.init(navigationBarClass: navigationBarClass, toolbarClass: toolbarClass)
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         self.setup()
+    }
+    
+    public var style : NavigationBarType? = .normal{
+        didSet{
+            switch style! {
+            case .custom(let appearance):
+                if isNavigationBarHidden { self.setNavigationBarHidden(false, animated: false)}
+                self.navigationBar.applyStyle(appearance: appearance)
+            case .hidden:
+                self.setNavigationBarHidden(true, animated: true)
+            case .normal:
+                if isNavigationBarHidden { self.setNavigationBarHidden(false, animated: false)}
+                self.navigationBar.resetAppearance()
+            case .transparent:
+                if isNavigationBarHidden { self.setNavigationBarHidden(false, animated: false)}
+                self.navigationBar.applyTransparency()
+            case .appDefault:
+                if isNavigationBarHidden { self.setNavigationBarHidden(false, animated: false)}
+                self.navigationBar.applyStyle(appearance: NavigationBarType.NavigationBarAppearance().getAppBaseStyle())
+            }
+        }
     }
     
     private func setup() {

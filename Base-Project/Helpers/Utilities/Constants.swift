@@ -38,6 +38,11 @@ struct Constants {
         static let alertOpenSettingsButtonTitle : String = "Open Settings".localized
     }
     
+    struct StatusBarAppearance {
+        static let appStyle : UIStatusBarStyle = .lightContent
+        static let updateAnimationStyle : UIStatusBarAnimation = .fade
+    }
+    
     struct UserDefaultsKeys {
         
     }

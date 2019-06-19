@@ -21,11 +21,61 @@ class BaseTableViewController : UITableViewController,BaseController {
     var analyticsManager = AnalyticsManager()
     let disposeBag = DisposeBag()
     
+    
+    var prefferedCellBackgroundColor : UIColor = .lightGray
+    
+    var statusBarStyle : UIStatusBarStyle = Constants.StatusBarAppearance.appStyle{
+        didSet{
+            self.setNeedsStatusBarAppearanceUpdate()
+            self.navigationController?.setNeedsStatusBarAppearanceUpdate()
+            switch statusBarStyle {
+            case .default:
+                self.navigationController?.navigationBar.barStyle = .default
+            case .lightContent:
+                self.navigationController?.navigationBar.barStyle = .black
+            @unknown default:
+                self.navigationController?.navigationBar.barStyle = .default
+            }
+        }
+    }
+    
+    var navigationBarStyle : NavigationBarType = .normal{
+        didSet{
+            switch navigationBarStyle{
+            case .hidden:
+                (self.navigationController as? BaseNavigationController)?.style = .hidden
+            case .normal:
+                (self.navigationController as? BaseNavigationController)?.style = .normal
+            case .transparent:
+                (self.navigationController as? BaseNavigationController)?.style = .transparent
+            case .custom(let appearance):
+                (self.navigationController as? BaseNavigationController)?.style = .custom(appearance)
+            case .appDefault:
+                (self.navigationController as? BaseNavigationController)?.style = .appDefault
+            }
+        }
+    }
+    
+    override
+    func tableView(_ tableView: UITableView,
+                   willDisplay cell: UITableViewCell,
+                   forRowAt indexPath: IndexPath) {
+        cell.contentView.backgroundColor = prefferedCellBackgroundColor
+    }
+    
     override
     func viewDidLoad() {
         super.viewDidLoad()
         addBackButton()
         analyticsManager.logEvent(withName: String(describing: type(of: self)) + "View Opened" , andParameters: [:])
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return statusBarStyle
+    }
+    
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation{
+        return Constants.StatusBarAppearance.updateAnimationStyle
     }
     
     override
