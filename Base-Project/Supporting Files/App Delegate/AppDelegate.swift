@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         
+        UIView().createActivityIndicator()
         
         return true
     }

@@ -12,7 +12,7 @@ import  RxSwift
 
 
 
-class BaseViewController : UIViewController,BaseController {
+class BaseViewController : UIViewController, BaseController {
     
     var didTapOnPlaceHolderView: (() -> ())?
     

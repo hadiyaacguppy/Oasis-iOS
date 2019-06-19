@@ -12,7 +12,7 @@ import Foundation
 import Alamofire
 import ObjectMapper
 import RxSwift
-import RxMoya
+
 import Moya
 import SessionManager
 
@@ -68,11 +68,9 @@ class APIErrorManager{
             return ErrorResponse(genericErrorCode: statusCode!)
         }
         
-        if JSON == nil {
-            return ErrorResponse(genericErrorCode: statusCode!)
-        }
+       
         
-        guard let errorJSON = JSON!["error"] as? [String : Any] else {
+        guard let errorJSON = JSON["error"] as? [String : Any] else {
             return ErrorResponse(genericErrorCode: statusCode!)
         }
         

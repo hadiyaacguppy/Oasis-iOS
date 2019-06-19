@@ -6,13 +6,12 @@ target 'Base-Project' do
   use_frameworks!
   pod 'R.swift'
   pod 'CZPicker'
-  pod 'RxGesture'
   pod 'OneSignal', '>= 2.6.2', '< 3.0'
   pod 'SDWebImage', '~> 4.0'
   pod 'SwiftLocation'
-  pod 'SkyFloatingLabelTextField', '~> 3.0'
-  pod 'DeviceKit', '~> 1.3'
+  pod 'Moya/RxSwift', '~> 13.0'
 
+  pod 'RxCocoa'
 end
 
                     
