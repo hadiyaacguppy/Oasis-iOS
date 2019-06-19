@@ -1,9 +1,6 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-def common_pods
-  pod 'Firebase/Core'
-end
 target 'Base-Project' do
   # Pods for Base-Project
   use_frameworks!
@@ -16,12 +13,6 @@ target 'Base-Project' do
 
 
 end
-                    
-target 'Base-Project-Tests' do
-  inherit! :search_paths
-
-end
-
 
 
 target 'OneSignalNotificationServiceExtension' do
@@ -30,16 +21,15 @@ target 'OneSignalNotificationServiceExtension' do
 end
 
 
+
+target 'Base-ProjectTests' do
+  use_frameworks!
+
+end
+
 target 'AnalyticsManager' do
   use_frameworks!
   pod 'Firebase/Core'
-end
-
-
-target 'AnalyticsManagerTests' do
-  inherit! :search_paths
-  use_frameworks!
-
 end
 
 
