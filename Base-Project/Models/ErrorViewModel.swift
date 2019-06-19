@@ -20,3 +20,13 @@ struct ErrorViewModel  : Error{
         self.code = code
     }
 }
+
+
+extension ErrorViewModel{
+    
+    static func generateGenericError() -> ErrorViewModel{
+        return ErrorViewModel(withMessage: Constants.Error.someThingWentWrong,
+                              isNoInternetAvaibleError: false,
+                              withCode: .unknownError)
+    }
+}

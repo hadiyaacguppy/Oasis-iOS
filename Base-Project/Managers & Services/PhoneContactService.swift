@@ -48,6 +48,8 @@ class PhoneContactsService: NSObject,CNContactPickerDelegate{
     /// Called after contacts have been selected by the user.
     var didContactsSelected : (([CNContact]) -> ())?
     
+    
+    /// Create and open ContactPicker ViewController
     func openContactsPicker(){
         let contactVC = CNContactPickerViewController()
         contactVC.delegate = self
@@ -61,6 +63,9 @@ class PhoneContactsService: NSObject,CNContactPickerDelegate{
     }
     
     
+    /// Request Access to contacts data and it will show a Alert that access is needed to continue
+    /// If status is denied
+    /// - Parameter completionHandler: Bool value that indicated if access granted or not. 
     func requestContactAccess(completionHandler: @escaping (_ accessGranted: Bool) -> Void){
         switch CNContactStore.authorizationStatus(for: .contacts) {
         case .authorized:
@@ -93,13 +98,13 @@ class PhoneContactsService: NSObject,CNContactPickerDelegate{
         let settingsAppURL = URL(string: UIApplication.openSettingsURLString)!
         
         let alert = UIAlertController(
-            title: "Permission Access".localized ,
-            message: "App requires access to Contacts to proceed. Would you like to open settings and grant permission to contacts?".localized,
+            title: Constants.PHContactService.alertTitle ,
+            message: Constants.PHContactService.alertMessage,
             preferredStyle: UIAlertController.Style.alert
         )
         
-        alert.addAction(UIAlertAction(title: "Cancel".localized, style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Open Settings".localized,
+        alert.addAction(UIAlertAction(title: Constants.PHContactService.alertCancelButtonTitle, style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: Constants.PHContactService.alertOpenSettingsButtonTitle,
                                       style: .cancel,
                                       handler: { (alert) -> Void in
                                         UIApplication.shared.open(settingsAppURL,
