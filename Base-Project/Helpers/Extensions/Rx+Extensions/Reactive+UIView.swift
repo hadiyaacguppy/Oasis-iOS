@@ -11,9 +11,7 @@ import RxSwift
 import RxCocoa
 
 extension Reactive where Base : UIView{
-    
-    
-    
+
     var isEnabledAndOpaque : Binder<Bool>{
         return Binder(self.base) { (view, value) in
             switch value{
@@ -27,21 +25,26 @@ extension Reactive where Base : UIView{
         }
     }
     
-    var isLoading : Binder<Bool?>{
-        return Binder(base) { view, value in
-            switch value{
-            case true:
-                self.base.isUserInteractionEnabled = false
-                self.base.alpha = 0.5
-                self.base.showMyActivityIndicator()
-            default :
-                self.base.isUserInteractionEnabled = true
-                self.base.alpha = 1
-                self.base.hideMyActivityIndicator()
+    func addLoadingIndicator( color : UIColor? = nil,
+                              position : UIView.ActivityIndicatorPostion)
+        -> Binder<Bool?>{
+            return Binder(base) { view, value in
+                switch value{
+                case true:
+                    self.base.isUserInteractionEnabled = false
+                    switch position{
+                    case .bounds:
+                        self.base.alpha = 0.0
+                    case .center:
+                        self.base.alpha = 0.5
+                    }
+                    self.base.addActivityIndicator(at: position, withColor: color)
+                default :
+                    self.base.isUserInteractionEnabled = true
+                    self.base.alpha = 1
+                    self.base.hideActivityIndicator(at: position)
+                }
             }
-        }
     }
-    
-    
     
 }

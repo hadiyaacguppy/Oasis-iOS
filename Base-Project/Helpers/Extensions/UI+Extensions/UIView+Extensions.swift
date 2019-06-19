@@ -16,6 +16,12 @@ fileprivate let kIndicatorViewTag = 998
 
 
 extension UIView {
+    
+    enum ActivityIndicatorPostion{
+        case center
+        case bounds
+    }
+    
     /// Adds the ability to circle the corners of anyview
     @IBInspectable var cornerRadius: CGFloat {
         get {
@@ -132,39 +138,126 @@ extension UIView {
         }
     }
 
-    func showMyActivityIndicator(){
+    func addActivityIndicator(at postion : ActivityIndicatorPostion,
+                              withColor color : UIColor? = .white){
         guard self.viewWithTag(kIndicatorViewTag) == nil else { return }
-        createActivityIndicator()
+        createActivityIndicator(at: postion, withColor: color ?? .white)
     }
     
-    func hideMyActivityIndicator(){
-        guard let indicator = self.viewWithTag(kIndicatorViewTag) as? UIActivityIndicatorView else { return }
-        indicator.stopAnimating()
-        indicator.removeFromSuperview()
+    
+    func hideActivityIndicator(at postion : ActivityIndicatorPostion){
+        switch postion{
+        case .center:
+            guard let indicator = self.viewWithTag(kIndicatorViewTag) as? UIActivityIndicatorView else { return }
+            indicator.stopAnimating()
+            indicator.removeFromSuperview()
+        case .bounds:
+            guard let indicator = self.superview?.viewWithTag(kIndicatorViewTag) as? UIActivityIndicatorView else { return }
+            indicator.stopAnimating()
+            indicator.removeFromSuperview()
+        }
+        
     }
     
-    // Warning: The Tag 998 is reserved for the Activity Indicator
-    func createActivityIndicator(){
+    func createActivityIndicator(at postion : ActivityIndicatorPostion,withColor color : UIColor){
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.hidesWhenStopped = true
-        //            activityIndicator.color = Constants.GeneralActivityIndicatorAppearance.color
+        activityIndicator.color = color
+        //        activityIndicator.activityIndicatorViewStyle = .white
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         
         activityIndicator.tag = kIndicatorViewTag
-        self.addSubview(activityIndicator)
-        let xCenterConstraint = NSLayoutConstraint(item: self, attribute: .centerX,
-                                                   relatedBy: .equal, toItem: activityIndicator,
-                                                   attribute: .centerX,
-                                                   multiplier: 1,
-                                                   constant: 0)
-        self.addConstraint(xCenterConstraint)
+        activityIndicator.isUserInteractionEnabled = false
         
-        let yCenterConstraint = NSLayoutConstraint(item: self, attribute: .centerY,
-                                                   relatedBy: .equal, toItem: activityIndicator,
-                                                   attribute: .centerY,
-                                                   multiplier: 1,
-                                                   constant: 0)
-        self.addConstraint(yCenterConstraint)
+        switch postion {
+        case .center:
+            self.addSubview(activityIndicator)
+            let xCenterConstraint = NSLayoutConstraint(item: self, attribute: .centerX,
+                                                       relatedBy: .equal, toItem: activityIndicator,
+                                                       attribute: .centerX,
+                                                       multiplier: 1,
+                                                       constant: 0)
+            self.addConstraint(xCenterConstraint)
+            
+            let yCenterConstraint = NSLayoutConstraint(item: self, attribute: .centerY,
+                                                       relatedBy: .equal, toItem: activityIndicator,
+                                                       attribute: .centerY,
+                                                       multiplier: 1,
+                                                       constant: 0)
+            self.addConstraint(yCenterConstraint)
+        case .bounds:
+            guard let superview = self.superview else {
+                self.alpha = 0.5
+                self.addSubview(activityIndicator)
+                let xCenterConstraint = NSLayoutConstraint(item: self, attribute: .centerX,
+                                                           relatedBy: .equal, toItem: activityIndicator,
+                                                           attribute: .centerX,
+                                                           multiplier: 1,
+                                                           constant: 0)
+                self.addConstraint(xCenterConstraint)
+                
+                let yCenterConstraint = NSLayoutConstraint(item: self, attribute: .centerY,
+                                                           relatedBy: .equal, toItem: activityIndicator,
+                                                           attribute: .centerY,
+                                                           multiplier: 1,
+                                                           constant: 0)
+                self.addConstraint(yCenterConstraint)
+                return
+            }
+            superview.addSubview(activityIndicator)
+            superview.bringSubviewToFront(activityIndicator)
+            //  activityIndicator.bindFrame(toBounds: self)
+            let xCenterConstraint = NSLayoutConstraint(item: self, attribute: .centerX,
+                                                       relatedBy: .equal, toItem: activityIndicator,
+                                                       attribute: .centerX,
+                                                       multiplier: 1,
+                                                       constant: 0)
+            superview.addConstraint(xCenterConstraint)
+            
+            let yCenterConstraint = NSLayoutConstraint(item: self, attribute: .centerY,
+                                                       relatedBy: .equal, toItem: activityIndicator,
+                                                       attribute: .centerY,
+                                                       multiplier: 1,
+                                                       constant: 0)
+            superview.addConstraint(yCenterConstraint)
+        }
+        
+        //Start animating
         activityIndicator.startAnimating()
+    }
+    
+    func applyDropShadow(withOffset offset: CGSize, opacity: Float, radius: CGFloat, color: UIColor) {
+        layer.applyDropShadow(withOffset: offset, opacity: opacity, radius: radius, color: color)
+    }
+    
+    func removeDropShadow() {
+        layer.removeDropShadow()
+    }
+    
+    func applyFrameStyle(roundCorners: UIView.RoundCorners, border: UIView.Border) {
+        
+        let borderLayer = CAShapeLayer()
+        
+        var cornerRadius: CGFloat = 0
+        var corners: UIRectCorner = []
+        (corners, cornerRadius) = roundCorners.cornerValues ?? ([], 0)
+        
+        let size = CGSize(width: cornerRadius, height: cornerRadius)
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: size)
+        
+        if !corners.isEmpty && cornerRadius > 0 {
+            let maskLayer = CAShapeLayer()
+            maskLayer.path = path.cgPath
+            layer.mask = maskLayer
+        }
+        
+        if let borderValues = border.borderValues {
+            borderLayer.path = path.cgPath
+            borderLayer.fillColor = UIColor.clear.cgColor
+            borderLayer.strokeColor = borderValues.color.cgColor
+            borderLayer.lineWidth = borderValues.width
+            borderLayer.frame = bounds
+            layer.addSublayer(borderLayer)
+        }
     }
 }
