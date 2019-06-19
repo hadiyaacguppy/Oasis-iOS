@@ -32,9 +32,6 @@ class BaseSkyFloatingTextField : SkyFloatingLabelTextField {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.addToolBar()
-        self.keyboardAppearance = .dark
-        
     }
     
     func setupValidation(){
@@ -74,6 +71,10 @@ class BaseSkyFloatingTextField : SkyFloatingLabelTextField {
  
     func configureTextField(){
      
+        self.addToolBar()
+        
+        self.keyboardAppearance = .dark
+        
         self.titleFont = UIFont.boldSystemFont(ofSize: 14)
         
         self.tintColor = .black

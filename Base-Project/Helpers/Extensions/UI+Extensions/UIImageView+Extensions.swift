@@ -6,7 +6,7 @@
 //  Copyright © 2018 Tedmob. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import SDWebImage
 
 extension UIImageView{
@@ -32,11 +32,24 @@ extension UIImageView{
     func setImage(forURL url : URL?,
                   withIndicatorEnabled activityEnabled : Bool? = nil,
                   andIndicatorStyle style : UIActivityIndicatorView.Style,
-                  withPlaceHolderImage placeholderImage : UIImage? = nil){
+                  withPlaceHolderImage placeholderImage : UIImage? = nil,
+                  placeholderContentModel : UIView.ContentMode = .scaleAspectFit){
+        let oldContentModel = self.contentMode
+        self.contentMode = placeholderContentModel
         
-        if let enabled = activityEnabled{
-            self.sd_setShowActivityIndicatorView(enabled)
-            self.sd_setIndicatorStyle(style)
+        if  activityEnabled == true{
+            switch style{
+            case .gray:
+                self.sd_imageIndicator = SDWebImageActivityIndicator.gray
+            case .white:
+                self.sd_imageIndicator = SDWebImageActivityIndicator.white
+            case .whiteLarge:
+                self.sd_imageIndicator = SDWebImageActivityIndicator.whiteLarge
+            @unknown default:
+                self.sd_imageIndicator = SDWebImageActivityIndicator.gray
+            }
+            
+            self.sd_imageIndicator = SDWebImageProgressIndicator.default
         }
         
         guard placeholderImage != nil else{
@@ -48,11 +61,13 @@ extension UIImageView{
         }
         
         self.sd_setImage(with: url,
-                         placeholderImage: placeholderImage!,
-                         completed: nil
-        )
-        
+                         placeholderImage: placeholderImage!) { (_, _, _, _) in
+                            self.contentMode = oldContentModel
+        }
     }
+    
+    
+    
     public func blur(withStyle style: UIBlurEffect.Style = .light) {
         let blurEffect = UIBlurEffect(style: style)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)

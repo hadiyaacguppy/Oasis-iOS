@@ -10,7 +10,7 @@ target 'Base-Project' do
   pod 'R.swift'
   pod 'CZPicker'
   pod 'OneSignal'
-  pod 'SDWebImage', '~> 4.0'
+  pod 'SDWebImage', '~> 5.0'
   pod 'SwiftLocation'
   pod "RxGesture"
 
