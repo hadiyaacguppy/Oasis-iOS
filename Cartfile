@@ -8,6 +8,6 @@ github "dennisweissmann/DeviceKit"
 
 github "Skyscanner/SkyFloatingLabelTextField"
 
-github "devicekit/DeviceKit" ~> 2.0
-
 github "RxSwiftCommunity/RxGesture" ~> 3.0
+
+github "Moya/Moya" ~> 14.0.0-alpha.1

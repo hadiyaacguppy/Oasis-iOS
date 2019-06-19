@@ -6,10 +6,7 @@
 //  Copyright © 2018 Tedmob. All rights reserved.
 //
 
-import UIKit
-import Alamofire
-import ObjectMapper
-
+import Foundation
 
 
 class DataManager: NSObject {

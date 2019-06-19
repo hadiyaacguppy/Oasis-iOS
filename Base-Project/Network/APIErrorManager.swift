@@ -6,13 +6,10 @@
 //  Copyright © 2018 Tedmob. All rights reserved.
 //
 
-
-
 import Foundation
 import Alamofire
 import ObjectMapper
 import RxSwift
-
 import Moya
 import SessionManager
 

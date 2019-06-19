@@ -8,12 +8,12 @@
 
 import Foundation
 
-
-
 enum Languages:String {
     case arabic = "ar"
     case english = "en"
 }
+
+
 class LanguageService {
     
     var rtlLanguages : [Languages] = [.arabic]

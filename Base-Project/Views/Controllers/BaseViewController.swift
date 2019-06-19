@@ -17,7 +17,7 @@ class BaseViewController : UIViewController, BaseController {
     var didTapOnPlaceHolderView: (() -> ())?
     
     var didTapOnRetryPlaceHolderButton: (() -> ())?
-    var analyticsManager = AnalyticsManager.shared
+    var analyticsManager = AnalyticsManager()
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {

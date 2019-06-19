@@ -293,7 +293,7 @@ public struct Utilities  {
         }
     }
     
-    
+    // DO NOT use this on UIViewController. Rely on self.showLoading() instead
     struct ProgressHUD {
         static func showLoading(){
             SVProgressHUD.setDefaultStyle(Constants.ProgressHud.style)

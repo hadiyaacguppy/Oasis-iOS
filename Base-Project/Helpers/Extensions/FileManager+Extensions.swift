@@ -14,7 +14,7 @@ public extension FileManager {
     ///   - options: JSONSerialization reading options.
     /// - Returns: Optional dictionary.
     /// - Throws: Throws any errors thrown by Data creation or JSON serialization.
-    public func jsonFromFile( atPath path: String, readingOptions: JSONSerialization.ReadingOptions = .allowFragments) throws -> [String: Any]? {
+    func jsonFromFile( atPath path: String, readingOptions: JSONSerialization.ReadingOptions = .allowFragments) throws -> [String: Any]? {
         
         let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
         let json = try JSONSerialization.jsonObject(with: data, options: readingOptions)
@@ -26,7 +26,7 @@ public extension FileManager {
     ///   - options: JSONSerialization reading options.
     /// - Returns: Optional dictionary.
     /// - Throws: Throws any errors thrown by Data creation or JSON serialization.
-    public func jsonArrayFromFile( atPath path: String, readingOptions: JSONSerialization.ReadingOptions = .allowFragments) throws -> [[String: Any]]? {
+    func jsonArrayFromFile( atPath path: String, readingOptions: JSONSerialization.ReadingOptions = .allowFragments) throws -> [[String: Any]]? {
         
         let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
         let json = try JSONSerialization.jsonObject(with: data, options: readingOptions)

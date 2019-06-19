@@ -12,8 +12,10 @@ import ObjectMapper
 import RxSwift
 
 enum JSONMappingError : Swift.Error {
+    
     case mappingError([String : Any])
     case arrayMappingError(Any)
+    
     public var errorDescription: String? {
         switch self {
         case let .mappingError(json):
@@ -23,8 +25,9 @@ enum JSONMappingError : Swift.Error {
         }
     }
 }
-public extension PrimitiveSequence where Trait == SingleTrait , ElementType == [ String : Any]{
-    public func mapObject<T: BaseMappable>(_ type: T.Type,atKeyPath keyPath : String? = nil, context: MapContext? = nil )  -> Single<T> {
+
+public extension PrimitiveSequence where Trait == SingleTrait , Element == [ String : Any]{
+    func mapObject<T: BaseMappable>(_ type: T.Type,atKeyPath keyPath : String? = nil, context: MapContext? = nil )  -> Single<T> {
         return flatMap { json -> Single<T> in
             if keyPath == nil {
                 guard let obj = Mapper<T>().map(JSON: json) else {
@@ -42,11 +45,10 @@ public extension PrimitiveSequence where Trait == SingleTrait , ElementType == [
         }
         
     }
-    
-    
 }
-public extension PrimitiveSequence where Trait == SingleTrait , ElementType == Any{
-    public func mapArray<T: BaseMappable>(_ type: T.Type,atKeyPath keyPath : String? = nil, context: MapContext? = nil )  -> Single<[T]> {
+
+public extension PrimitiveSequence where Trait == SingleTrait , Element == Any{
+    func mapArray<T: BaseMappable>(_ type: T.Type,atKeyPath keyPath : String? = nil, context: MapContext? = nil )  -> Single<[T]> {
         return flatMap { json -> Single<[T]> in
             if keyPath == nil {
                 guard let jsonArray =  json as? [[String : Any]] else {

@@ -19,6 +19,7 @@ enum DateFormats : String {
     case shortDigits = "dd.MM.yy"//09.11.18
     case everything = "E, d MMM yyyy HH:mm:ss"
 }
+
 struct Constants {
     
 

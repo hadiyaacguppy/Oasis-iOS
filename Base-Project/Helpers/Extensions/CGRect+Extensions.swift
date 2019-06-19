@@ -6,8 +6,8 @@
 //  Copyright © 2018 Tedmob. All rights reserved.
 //
 
-import Foundation
 import UIKit
+
 public extension CGRect {
     
     ///aspect ratio of the rect, i.e. width/height. For a height of 0 the aspect ratio is 0

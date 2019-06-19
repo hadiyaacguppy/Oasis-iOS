@@ -1,12 +1,11 @@
 //
 //  ActivityIndicator.swift
-//  Base-Project
+//  Alfa-SelfCare
 //
-//  Created by Mojtaba Al Moussawi on 3/29/19.
+//  Created by Mojtaba Al Moussawi on 5/8/19.
 //  Copyright © 2019 Tedmob. All rights reserved.
 //
 
-import Foundation
 import RxSwift
 import RxCocoa
 
@@ -14,7 +13,7 @@ private struct ActivityToken<E> : ObservableConvertibleType, Disposable {
     private let _source: Observable<E>
     private let _dispose: Cancelable
     
-    init(source: Observable<E>, disposeAction: @escaping () -> ()) {
+    init(source: Observable<E>, disposeAction: @escaping () -> Void) {
         _source = source
         _dispose = Disposables.create(with: disposeAction)
     }
@@ -34,7 +33,7 @@ private struct ActivityToken<E> : ObservableConvertibleType, Disposable {
  When all activities complete `false` will be sent.
  */
 public class ActivityIndicator : SharedSequenceConvertibleType {
-    public typealias E = Bool
+    public typealias Element = Bool
     public typealias SharingStrategy = DriverSharingStrategy
     
     private let _lock = NSRecursiveLock()
@@ -47,8 +46,8 @@ public class ActivityIndicator : SharedSequenceConvertibleType {
             .distinctUntilChanged()
     }
     
-    fileprivate func trackActivityOfObservable<O: ObservableConvertibleType>(_ source: O) -> Observable<O.E> {
-        return Observable.using({ () -> ActivityToken<O.E> in
+    fileprivate func trackActivityOfObservable<Source: ObservableConvertibleType>(_ source: Source) -> Observable<Source.Element> {
+        return Observable.using({ () -> ActivityToken<Source.Element> in
             self.increment()
             return ActivityToken(source: source.asObservable(), disposeAction: self.decrement)
         }) { t in
@@ -68,13 +67,14 @@ public class ActivityIndicator : SharedSequenceConvertibleType {
         _lock.unlock()
     }
     
-    public func asSharedSequence() -> SharedSequence<SharingStrategy, E> {
+    public func asSharedSequence() -> SharedSequence<SharingStrategy, Element> {
         return _loading
     }
 }
 
 extension ObservableConvertibleType {
-    public func trackActivity(_ activityIndicator: ActivityIndicator) -> Observable<E> {
+    public func trackActivity(_ activityIndicator: ActivityIndicator) -> Observable<Element> {
         return activityIndicator.trackActivityOfObservable(self)
     }
 }
+                                                                                                           

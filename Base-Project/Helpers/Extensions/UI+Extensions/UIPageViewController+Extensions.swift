@@ -19,7 +19,12 @@ extension UIPageViewController {
     /// - parameter viewControllers: the UIViewController array that feeds the pageView
     ///
     /// - returns: The index of the visible view controller
-    func getVisibleViewControllerIndex(_ viewControllers: [UIViewController]) -> Int {
-        return viewControllers.index(of: currentVisibleController!)!
+    func getVisibleViewControllerIndex(_ viewControllers: [UIViewController]) -> Int? {
+        guard let visibleVC = currentVisibleController else {
+            return nil
+        }
+        
+        return viewControllers.firstIndex(of: visibleVC)
     }
+    
 }

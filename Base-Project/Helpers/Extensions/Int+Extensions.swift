@@ -11,11 +11,10 @@ import Foundation
 extension Optional where Wrapped == Int {
     /// Returns the Int as bool.
     var  toBool : Bool{
-        
-        if self == nil {
+        guard let self = self else {
             return false
         }
-        return self! == 1 ? true : false
+        return self == 1 ? true : false
     }
    
     var fromEpoch: Date?{

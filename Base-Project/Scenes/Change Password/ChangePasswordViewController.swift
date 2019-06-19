@@ -5,9 +5,6 @@
 //  Created by Mhmd Rizk on 10/19/18.
 //  Copyright (c) 2018 Tedmob. All rights reserved.
 //
-
-//
-
 import UIKit
 import RxSwift
 import RxGesture

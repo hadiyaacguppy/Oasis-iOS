@@ -11,7 +11,7 @@ public extension URLRequest {
     
     ///
     /// - Parameter urlString: URL string to initialize URL request from
-    public init?(urlString: String) {
+    init?(urlString: String) {
         guard let url = URL(string: urlString) else { return nil }
         self.init(url: url)
     }

@@ -142,7 +142,8 @@ extension UIView {
         indicator.stopAnimating()
         indicator.removeFromSuperview()
     }
-    #warning("The Tag 998 is reserved for the Activity INdicator")
+    
+    // Warning: The Tag 998 is reserved for the Activity Indicator
     func createActivityIndicator(){
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.hidesWhenStopped = true

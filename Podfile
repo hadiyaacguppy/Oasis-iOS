@@ -6,12 +6,12 @@ target 'Base-Project' do
   use_frameworks!
   pod 'R.swift'
   pod 'CZPicker'
-  pod 'OneSignal', '>= 2.6.2', '< 3.0'
+  pod 'OneSignal'
   pod 'SDWebImage', '~> 4.0'
   pod 'SwiftLocation'
-  pod 'Moya/RxSwift', '~> 13.0'
+  pod "RxGesture"
 
-  pod 'RxCocoa'
+
 end
 
                     
@@ -24,4 +24,11 @@ end
 target 'AnalyticsManager' do
   use_frameworks!
   pod 'Firebase/Core'
+end
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['SWIFT_VERSION'] = '5.0'
+      end
+  end
 end

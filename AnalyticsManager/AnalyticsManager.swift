@@ -11,14 +11,14 @@ import Firebase
 public class AnalyticsManager {
     
     public static let shared  = AnalyticsManager()
-    init() {
+    
+    public init() {
         guard checkIfGooglePlistFileExists() else {
             print("GoogleService-Info.plist does not exists. not initiating analytics manager")
             return
         }
         FirebaseApp.configure()
     }
-    
     
     public func logEvent(withName name : String , andParameters params : [String : Any]? = nil ) {
         var newParams = params
@@ -30,6 +30,7 @@ public class AnalyticsManager {
         self.logFirebase(withName: name, andParameter: newParams)
         
     }
+    
     func checkIfGooglePlistFileExists() -> Bool {
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
         let url = NSURL(fileURLWithPath: path)
@@ -46,7 +47,9 @@ public class AnalyticsManager {
     }
 }
 extension AnalyticsManager {
+    
     func logFirebase(withName name : String , andParameter params : [String:Any]? = nil ){
         Analytics.logEvent(AnalyticsEventSelectContent, parameters: params)
     }
+    
 }
