@@ -8,9 +8,7 @@
 
 import Foundation
 import UIKit
- class AppManager {
-    
-    
+ class AppManager {  
     
     var appName: String? {
         return Bundle.main.infoDictionary?["CFBundleName"] as? String
