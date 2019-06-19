@@ -126,8 +126,6 @@ extension String {
         return String(format: hash as String)
     }
     
-    
-    
     public func truncated(limit: Int) -> String {
         if self.count > limit {
             var truncatedString = self[0..<limit]
