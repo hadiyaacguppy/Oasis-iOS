@@ -12,7 +12,7 @@ import  RxSwift
 import AnalyticsManager
 
 
-class BaseViewController : UIViewController,BaseController {
+class BaseViewController : UIViewController, BaseController {
     
     var didTapOnPlaceHolderView: (() -> ())?
     

@@ -16,10 +16,10 @@ enum BaseProjectService {
     }
     case setOneSignalUserPush( token : String)
 
-    // MARK : Others
+    
 }
 
-// MARK: - TargetType Protocol Implementation
+
 extension BaseProjectService: TargetType {
     
     var baseURL: URL {

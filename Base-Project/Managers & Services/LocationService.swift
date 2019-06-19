@@ -1,6 +1,6 @@
 //
 //  LocationManager.swift
-//  Base-Project
+//  Alfa-SelfCare
 //
 //  Created by Hadi on 7/5/18.
 //  Copyright © 2018 Tedmob. All rights reserved.
@@ -11,17 +11,18 @@ import RxCocoa
 import RxSwift
 import SwiftLocation
 import CoreLocation
+import SwiftLocation
 
 class LocationService {
     
     static var shared = LocationService()
     
     
-    var authorizationStatus  : ReplaySubject<CLAuthorizationStatus> = ReplaySubject<CLAuthorizationStatus>.create(bufferSize: 2)
+    var authorizationStatus  : ReplaySubject<LocationManager.State> = ReplaySubject<LocationManager.State>.create(bufferSize: 2)
     
     var locationDidChange : ReplaySubject<CLLocation> =  ReplaySubject<CLLocation>.create(bufferSize: 10)
     
-    
+    let locator = LocationManager.shared
     
     var currentPosition : CLLocation?
     
@@ -29,31 +30,33 @@ class LocationService {
     var locationSubscription : LocationRequest!
     
     init() {
-        _ = Locator.events.listen{ self.authorizationStatus.onNext($0) }
         
-        locationSubscription = Locator.subscribePosition(accuracy: .any, onUpdate: {
-            self.currentPosition = $0
-            self.locationDidChange.onNext($0)
-        }) { (error , loation) -> (Void) in
-            
+        locator.onAuthorizationChange.add { (state) in
+            self.authorizationStatus.onNext(state)
         }
         
         
-        Locator.subscribeSignificantLocations(onUpdate: { newLocation in
-            self.currentPosition = newLocation
-        }) { (err, lastLocation) -> (Void) in
-            
+        locator.locateFromGPS(.continous,
+                              accuracy: .any) { (locationRequestData) in
+                                do{
+                                    let current = try locationRequestData.get()
+                                    self.currentPosition = current
+                                    self.locationDidChange.onNext(current)
+                                    
+                                }
+                                catch{
+                                    return
+                                }
+                                
         }
-        
-        
     }
     
     func requestAlwaysLocation(){
-        Locator.requestAuthorizationIfNeeded(.always)
+        locator.requireUserAuthorization(.always)
     }
     
     func requestWhenInUse(){
-        Locator.requestAuthorizationIfNeeded(.whenInUse)
+        locator.requireUserAuthorization(.whenInUse)
     }
     
     func stop(){
