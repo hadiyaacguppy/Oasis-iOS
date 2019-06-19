@@ -35,8 +35,8 @@ extension UIImageView{
                   withPlaceHolderImage placeholderImage : UIImage? = nil){
         
         if let enabled = activityEnabled{
-            self.sd_setShowActivityIndicatorView(enabled)
-            self.sd_setIndicatorStyle(style)
+            self.sd_imageIndicator = SDWebImageActivityIndicator.gray
+            self.sd_imageIndicator = SDWebImageProgressIndicator.default
         }
         
         guard placeholderImage != nil else{
