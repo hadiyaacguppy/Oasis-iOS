@@ -8,27 +8,30 @@
 
 import Foundation
 import UIKit
- class AppManager {  
+
+class AppManager {
     
-    var appName: String? {
-        return Bundle.main.infoDictionary?["CFBundleName"] as? String
+    static let current =  AppManager()
+    private init() {}
+    var appName: String {
+        return (Bundle.main.infoDictionary?["CFBundleName"] as? String) ?? ""
     }
     
     
-    var bundleId: String? {
-        return Bundle.main.bundleIdentifier
+    var bundleId: String {
+        return Bundle.main.bundleIdentifier ?? ""
     }
     
     
-    var versionNumber: String? {
-        return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+    var versionNumber: String {
+        return (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? ""
     }
     
     
-    var buildNumber: String? {
-        return Bundle.main.infoDictionary?["CFBundleVersion"] as? String
+    var buildNumber: String {
+        return ( Bundle.main.infoDictionary?["CFBundleVersion"] as? String) ?? "" 
     }
-     func openAppSettings(){
+    func openAppSettings(){
         if Utilities.canOpen(url: URL(string:UIApplication.openSettingsURLString)){
             Utilities.openURL(withString: UIApplication.openSettingsURLString)
         }

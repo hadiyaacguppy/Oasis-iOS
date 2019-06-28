@@ -11,8 +11,8 @@ class VersionLabel: UILabel {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        guard  let versionNum = AppManager().versionNumber else { return }
-        guard let buildNumber = AppManager().buildNumber else { return }
+        let versionNum = AppManager.current.versionNumber
+        let buildNumber = AppManager.current.buildNumber
         self.text = "v\(versionNum)/\((buildNumber))"
     }
 }

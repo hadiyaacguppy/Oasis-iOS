@@ -136,6 +136,7 @@
 		CF8C5CD720EF9E9500236C7B /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5CD620EF9E9500236C7B /* SessionManager.swift */; };
 		CFAD4D0E21955EF300AF4375 /* LanguageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD4D0D21955EF300AF4375 /* LanguageService.swift */; };
 		CFC2BFE6216CA3C800DC31A7 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2BFE5216CA3C800DC31A7 /* ErrorViewModel.swift */; };
+		CFDB669B22C601BB006278A2 /* AppDelegate+OneSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDB669A22C601BB006278A2 /* AppDelegate+OneSignal.swift */; };
 		CFE27A17214A9BE200DBB917 /* Reactive+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE27A16214A9BE200DBB917 /* Reactive+Dictionary.swift */; };
 		CFF69D682195513C003BE6BF /* UIScreen+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF69D672195513C003BE6BF /* UIScreen+Extensions.swift */; };
 		CFF69D6A219551B4003BE6BF /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF69D69219551B4003BE6BF /* UIViewController+Extensions.swift */; };
@@ -357,6 +358,7 @@
 		CF8C5CD620EF9E9500236C7B /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		CFAD4D0D21955EF300AF4375 /* LanguageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageService.swift; sourceTree = "<group>"; };
 		CFC2BFE5216CA3C800DC31A7 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
+		CFDB669A22C601BB006278A2 /* AppDelegate+OneSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+OneSignal.swift"; sourceTree = "<group>"; };
 		CFE27A16214A9BE200DBB917 /* Reactive+Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Dictionary.swift"; sourceTree = "<group>"; };
 		CFF69D672195513C003BE6BF /* UIScreen+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extensions.swift"; sourceTree = "<group>"; };
 		CFF69D69219551B4003BE6BF /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -821,6 +823,7 @@
 			isa = PBXGroup;
 			children = (
 				112239141FD5C7AF00486528 /* AppDelegate.swift */,
+				CFDB669A22C601BB006278A2 /* AppDelegate+OneSignal.swift */,
 			);
 			path = "App Delegate";
 			sourceTree = "<group>";
@@ -1303,6 +1306,7 @@
 				3E1DEAF622BA63E900FAD9F4 /* UIRectCorner+Extensions.swift in Sources */,
 				CF8C5C9E20EF9CA400236C7B /* DatePickerDialog.swift in Sources */,
 				CF564702211B142E0092EFBD /* OneSignalPushService.swift in Sources */,
+				CFDB669B22C601BB006278A2 /* AppDelegate+OneSignal.swift in Sources */,
 				0FD65F1920D018480075E251 /* Double+Extensions.swift in Sources */,
 				4AEF647522107DC000D53D75 /* BaseButton.swift in Sources */,
 				CF40385A216CF78F001F649B /* InitialRouter.swift in Sources */,

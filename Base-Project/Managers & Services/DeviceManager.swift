@@ -4,7 +4,9 @@ import DeviceKit
 import AudioToolbox
 
 class DeviceManager {
+    private init() {}
     
+    static let current =  DeviceManager()
     /// Returns if this device is an iPHONE. real or simulator.
     var isPhone  : Bool {
         
