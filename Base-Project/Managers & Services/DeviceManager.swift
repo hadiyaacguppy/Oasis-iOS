@@ -5,10 +5,11 @@ import AudioToolbox
 
 class DeviceManager {
     private init() {}
-    
+
     static let current =  DeviceManager()
+    
     /// Returns if this device is an iPHONE. real or simulator.
-    var isPhone  : Bool {
+    var isiPhone  : Bool {
         
         return Device.current.isPhone
     }
@@ -33,16 +34,21 @@ class DeviceManager {
     
     /// Returns true if app is running on an X-Series Device. iPhoneX iPhoneXs iPhoneXsMax iPhoneXr]
     var isXSeries : Bool{
-        return Device.current.isOneOf(Device.allXSeriesDevices)
+        return Device.current.realDevice.isOneOf(Device.allXSeriesDevices)
     }
     /// Returns true if app is running on Real X-Series Device. iPhoneX iPhoneXs iPhoneXsMax iPhoneXr]
     var isRealXSeries : Bool {
-        return Device.current.isOneOf(Device.allXSeriesDevices) && !Device.current.isSimulator
+        return Device.current.isOneOf(Device.allXSeriesDevices)
+    }
+    
+    /// Returns true if app is running on any iPhone plus Device. iPhone 8-Plus iPhone 7-Plus iPhone 6s-Plus iPhone 6-Plus
+    var isPlusSized : Bool{
+        return Device.current.realDevice.isOneOf(Device.allPlusSizedDevices)
     }
     
     /// Returns true if device has FaceID or TouchID
     var hasBiometricScanner : Bool {
-        return Device.current.hasBiometricSensor
+        return Device.current.realDevice.hasBiometricSensor
     }
     /// Returns the name of the device. For example : 'Wassim's iPhone X', 'Hadi's iPhone'
     var deviceName : String {
@@ -107,5 +113,36 @@ class DeviceManager {
         AudioServicesPlaySystemSoundWithCompletion(kSystemSoundID_Vibrate) {
             completionHandler?()
         }
+    }
+    
+    
+    /// Generate notification feedback to communicate that a task or action has succeeded, failed, or produced a warning of some kind..
+    ///
+    /// - Parameter type: Types of haptic notification
+    func generateHaptic(type : NotificationHaptic){
+        guard let value = type.value else {
+            return
+        }
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(value)
+    }
+    
+    /// Generate impact feedback to indicate that an impact has occurred.
+    /// For example, you might trigger impact feedback when a user interface object collides with another object or snaps into place.
+    ///
+    /// - Parameter style: Physical impacts haptic style.
+    func generateImpact(style : ImpactFeedback){
+        guard let value = style.value else {
+            return
+        }
+        let generator = UIImpactFeedbackGenerator(style: value)
+        generator.impactOccurred()
+    }
+    
+    
+    /// Genereate haptics to indicate a change in selection.
+    func generateSelectionFeedback(){
+        let generator = UISelectionFeedbackGenerator()
+        generator.selectionChanged()
     }
 }

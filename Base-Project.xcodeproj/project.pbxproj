@@ -39,6 +39,7 @@
 		3E1DEAFD22BA674D00FAD9F4 /* NavigationBarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1DEAFC22BA674D00FAD9F4 /* NavigationBarType.swift */; };
 		3E6DEFB12162111100978FDC /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DEFB02162111100978FDC /* BaseController.swift */; };
 		3E6DEFB321623D7A00978FDC /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6DEFB221623D7A00978FDC /* UITableView+Extensions.swift */; };
+		3E7367F422C6605A00B4C71D /* FeedbackTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7367F322C6605A00B4C71D /* FeedbackTypes.swift */; };
 		3EAFC549219B2D2F00E3C2BB /* TDAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAFC548219B2D2F00E3C2BB /* TDAlertAction.swift */; };
 		3EDC4131224E750000624D2B /* CustomOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC4130224E750000624D2B /* CustomOperator.swift */; };
 		3EDC4133224E81BE00624D2B /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC4132224E81BE00624D2B /* ActivityIndicator.swift */; };
@@ -243,6 +244,7 @@
 		3E1DEAFC22BA674D00FAD9F4 /* NavigationBarType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarType.swift; sourceTree = "<group>"; };
 		3E6DEFB02162111100978FDC /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		3E6DEFB221623D7A00978FDC /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		3E7367F322C6605A00B4C71D /* FeedbackTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTypes.swift; sourceTree = "<group>"; };
 		3EAFC548219B2D2F00E3C2BB /* TDAlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDAlertAction.swift; sourceTree = "<group>"; };
 		3EDC4130224E750000624D2B /* CustomOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOperator.swift; sourceTree = "<group>"; };
 		3EDC4132224E81BE00624D2B /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
@@ -564,6 +566,7 @@
 				3EDC4130224E750000624D2B /* CustomOperator.swift */,
 				3EDC4132224E81BE00624D2B /* ActivityIndicator.swift */,
 				3E1DEAFC22BA674D00FAD9F4 /* NavigationBarType.swift */,
+				3E7367F322C6605A00B4C71D /* FeedbackTypes.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1312,6 +1315,7 @@
 				CF40385A216CF78F001F649B /* InitialRouter.swift in Sources */,
 				3EDC4133224E81BE00624D2B /* ActivityIndicator.swift in Sources */,
 				CF09C0D12180A511003DF186 /* BaseWebViewPresenter.swift in Sources */,
+				3E7367F422C6605A00B4C71D /* FeedbackTypes.swift in Sources */,
 				CF50F7AC219AC028000E5E4E /* NotificationPayload.swift in Sources */,
 				0F57538E20EE12EB0069C139 /* Constants.swift in Sources */,
 				CF8C5CAC20EF9D7E00236C7B /* UICollectionView+Extensions.swift in Sources */,
