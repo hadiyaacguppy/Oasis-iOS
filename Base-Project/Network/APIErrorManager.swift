@@ -23,7 +23,7 @@ class APIErrorManager{
     var networkIsReachable : Bool{
         return reachabilityManager?.isReachable ?? false
     }
-    var appSessionManager = SessionManager.shared
+    var appSessionManager = SessionManager()
     
     fileprivate
     func checkSessionValidity(_ errorObject: APIError) {

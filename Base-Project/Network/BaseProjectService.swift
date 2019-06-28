@@ -14,7 +14,7 @@ import SessionManager
 enum BaseProjectService {
     
     var sessionManager : SessionManager  {
-       return SessionManager.shared
+       return SessionManager()
     }
     case setOneSignalUserPush( token : String)
 
@@ -59,7 +59,7 @@ extension BaseProjectService: TargetType {
     }
     
     var headers: [String: String]? {
-       return ["session-token" : self.sessionManager.token ?? "" ]
+       return ["session-token" : self.sessionManager.currentUser.token ?? "" ]
     }
     
     var validationType : ValidationType {

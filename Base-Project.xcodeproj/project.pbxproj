@@ -77,6 +77,8 @@
 		CF09C0D42180A511003DF186 /* BaseWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF09C0CD2180A511003DF186 /* BaseWebViewViewController.swift */; };
 		CF09C0D52180A511003DF186 /* BaseWebViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF09C0CE2180A511003DF186 /* BaseWebViewInteractor.swift */; };
 		CF09C0D62180A511003DF186 /* BaseWebViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF09C0CF2180A511003DF186 /* BaseWebViewConfigurator.swift */; };
+		CF16ED2722C66F4000B2E0D7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16ED2422C66F1A00B2E0D7 /* User.swift */; };
+		CF16ED2822C66F6600B2E0D7 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7BC6691FD8F739008E80AC /* ObjectMapper.framework */; };
 		CF181BA020809874002603A1 /* UINavigationBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF181B9F20809874002603A1 /* UINavigationBar+Extensions.swift */; };
 		CF181BA2208099A0002603A1 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF181BA1208099A0002603A1 /* UITextField+Extensions.swift */; };
 		CF181BA420809E28002603A1 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF181BA320809E28002603A1 /* UIColor+Extensions.swift */; };
@@ -293,6 +295,7 @@
 		CF09C0CD2180A511003DF186 /* BaseWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWebViewViewController.swift; sourceTree = "<group>"; };
 		CF09C0CE2180A511003DF186 /* BaseWebViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWebViewInteractor.swift; sourceTree = "<group>"; };
 		CF09C0CF2180A511003DF186 /* BaseWebViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWebViewConfigurator.swift; sourceTree = "<group>"; };
+		CF16ED2422C66F1A00B2E0D7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CF181B9F20809874002603A1 /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extensions.swift"; sourceTree = "<group>"; };
 		CF181BA1208099A0002603A1 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		CF181BA320809E28002603A1 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
@@ -424,6 +427,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF16ED2822C66F6600B2E0D7 /* ObjectMapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -882,6 +886,7 @@
 		CF8C5CB720EF9E7200236C7B /* SessionManager */ = {
 			isa = PBXGroup;
 			children = (
+				CF16ED2422C66F1A00B2E0D7 /* User.swift */,
 				CF8C5CB820EF9E7200236C7B /* SessionManager.h */,
 				CF8C5CB920EF9E7200236C7B /* Info.plist */,
 				CF8C5CD420EF9E8700236C7B /* SessionManagerContants.swift */,
@@ -1436,6 +1441,7 @@
 			files = (
 				CF8C5CD720EF9E9500236C7B /* SessionManager.swift in Sources */,
 				CF8C5CD520EF9E8700236C7B /* SessionManagerContants.swift in Sources */,
+				CF16ED2722C66F4000B2E0D7 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1839,6 +1845,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SessionManager/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1869,6 +1879,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SessionManager/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

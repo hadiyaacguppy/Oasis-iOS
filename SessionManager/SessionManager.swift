@@ -13,18 +13,21 @@ public class SessionManager {
     public init(){
         
     }
-    public static let shared = SessionManager()
-    
     public var token : String? {
         get {
-            guard let sid = UserDefaults.standard.string(forKey: SessionManagerConstants.UserDefaultKeys.sessionIdKey) else {
-                return nil
-            }
-            return sid
+            return self.currentUser.token
         }set {
-            print("Session Manager ===> Setting new session id to \(String(describing: newValue))")
-            UserDefaults.standard.set(newValue, forKey: SessionManagerConstants.UserDefaultKeys.sessionIdKey)
-            UserDefaults.standard.synchronize()
+            self.currentUser.token = newValue
+            
+        }
+    }
+    public var currentUser: User {
+        get {
+            //NSKEyed Archiver get
+            return User()
+        }
+        set {
+            // Set them
             
         }
     }
@@ -38,7 +41,7 @@ public class SessionManager {
         return false
     }
     public var userIsLoggedIn : Bool! {
-        return  self.token != nil
+        return  self.currentUser != nil
     }
     
     public var isInExploreMode : Bool = false

@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import UserNotifications
+import SessionManager
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -18,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         print("Base Project Version 3.0")
+        
         
         if !self.oneSignalAppId.isEmpty {
             initOneSignal(withLaunchOption: launchOptions, andOneSignalId: oneSignalAppId)
