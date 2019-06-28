@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0F484B4F2165FF5C0060C463 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F484B4E2165FF5C0060C463 /* Date+Extensions.swift */; };
 		0F57538E20EE12EB0069C139 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57538D20EE12EB0069C139 /* Constants.swift */; };
-		0F57539120EE13660069C139 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539020EE13660069C139 /* DataManager.swift */; };
 		0F57539520EE185F0069C139 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539420EE185F0069C139 /* Array+Extensions.swift */; };
 		0F57539720EE19090069C139 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539620EE19090069C139 /* LocationService.swift */; };
 		0F57539B20EE19CD0069C139 /* BaseProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539A20EE19CD0069C139 /* BaseProjectService.swift */; };
@@ -131,11 +130,11 @@
 		CF8C5CAC20EF9D7E00236C7B /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5CAB20EF9D7E00236C7B /* UICollectionView+Extensions.swift */; };
 		CF8C5CAE20EF9D8F00236C7B /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5CAD20EF9D8F00236C7B /* UIApplication+Extensions.swift */; };
 		CF8C5CB020EF9DC900236C7B /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5CAF20EF9DC900236C7B /* UIImage+Extensions.swift */; };
-		CF8C5CC820EF9E7200236C7B /* SessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CF8C5CB820EF9E7200236C7B /* SessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CF8C5CCB20EF9E7200236C7B /* SessionManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C5CB620EF9E7200236C7B /* SessionManager.framework */; };
-		CF8C5CCD20EF9E7200236C7B /* SessionManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C5CB620EF9E7200236C7B /* SessionManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CF8C5CC820EF9E7200236C7B /* SessionRepository.h in Headers */ = {isa = PBXBuildFile; fileRef = CF8C5CB820EF9E7200236C7B /* SessionRepository.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF8C5CCB20EF9E7200236C7B /* SessionRepository.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C5CB620EF9E7200236C7B /* SessionRepository.framework */; };
+		CF8C5CCD20EF9E7200236C7B /* SessionRepository.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C5CB620EF9E7200236C7B /* SessionRepository.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF8C5CD520EF9E8700236C7B /* SessionManagerContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5CD420EF9E8700236C7B /* SessionManagerContants.swift */; };
-		CF8C5CD720EF9E9500236C7B /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5CD620EF9E9500236C7B /* SessionManager.swift */; };
+		CF8C5CD720EF9E9500236C7B /* SessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5CD620EF9E9500236C7B /* SessionRepository.swift */; };
 		CFAD4D0E21955EF300AF4375 /* LanguageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD4D0D21955EF300AF4375 /* LanguageService.swift */; };
 		CFC2BFE6216CA3C800DC31A7 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2BFE5216CA3C800DC31A7 /* ErrorViewModel.swift */; };
 		CFDB669B22C601BB006278A2 /* AppDelegate+OneSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDB669A22C601BB006278A2 /* AppDelegate+OneSignal.swift */; };
@@ -201,7 +200,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CF8C5CCD20EF9E7200236C7B /* SessionManager.framework in Embed Frameworks */,
+				CF8C5CCD20EF9E7200236C7B /* SessionRepository.framework in Embed Frameworks */,
 				CF8373DC224B8CA7000C3E21 /* AnalyticsManager.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -213,7 +212,6 @@
 		0A6FC7C665C3EC115CF8C0BC /* Pods-Base-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project.release.xcconfig"; sourceTree = "<group>"; };
 		0F484B4E2165FF5C0060C463 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		0F57538D20EE12EB0069C139 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		0F57539020EE13660069C139 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		0F57539420EE185F0069C139 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		0F57539620EE19090069C139 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		0F57539A20EE19CD0069C139 /* BaseProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProjectService.swift; sourceTree = "<group>"; };
@@ -354,11 +352,11 @@
 		CF8C5CAB20EF9D7E00236C7B /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		CF8C5CAD20EF9D8F00236C7B /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		CF8C5CAF20EF9DC900236C7B /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
-		CF8C5CB620EF9E7200236C7B /* SessionManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SessionManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF8C5CB820EF9E7200236C7B /* SessionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SessionManager.h; sourceTree = "<group>"; };
+		CF8C5CB620EF9E7200236C7B /* SessionRepository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SessionRepository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF8C5CB820EF9E7200236C7B /* SessionRepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SessionRepository.h; sourceTree = "<group>"; };
 		CF8C5CB920EF9E7200236C7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF8C5CD420EF9E8700236C7B /* SessionManagerContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagerContants.swift; sourceTree = "<group>"; };
-		CF8C5CD620EF9E9500236C7B /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		CF8C5CD620EF9E9500236C7B /* SessionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRepository.swift; sourceTree = "<group>"; };
 		CFAD4D0D21955EF300AF4375 /* LanguageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageService.swift; sourceTree = "<group>"; };
 		CFC2BFE5216CA3C800DC31A7 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
 		CFDB669A22C601BB006278A2 /* AppDelegate+OneSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+OneSignal.swift"; sourceTree = "<group>"; };
@@ -392,7 +390,7 @@
 				CF7D83FF22BA31D400397093 /* RxRelay.framework in Frameworks */,
 				CF7BC66F1FD8F739008E80AC /* ObjectMapper.framework in Frameworks */,
 				4B00E64AA8A0A7582597A76A /* Pods_Base_Project.framework in Frameworks */,
-				CF8C5CCB20EF9E7200236C7B /* SessionManager.framework in Frameworks */,
+				CF8C5CCB20EF9E7200236C7B /* SessionRepository.framework in Frameworks */,
 				CF7D840322BA345400397093 /* RxCocoa.framework in Frameworks */,
 				CF7D840B22BA37BF00397093 /* RxMoya.framework in Frameworks */,
 				CF7D83FC22BA30B400397093 /* DeviceKit.framework in Frameworks */,
@@ -438,7 +436,6 @@
 			isa = PBXGroup;
 			children = (
 				CF564700211B14240092EFBD /* Push */,
-				0F57539020EE13660069C139 /* DataManager.swift */,
 				0F57539620EE19090069C139 /* LocationService.swift */,
 				CF6030752212F77B003872F3 /* DeviceManager.swift */,
 				CF8373AE224B8807000C3E21 /* AppManager.swift */,
@@ -498,7 +495,7 @@
 			isa = PBXGroup;
 			children = (
 				112239131FD5C7AF00486528 /* Base-Project */,
-				CF8C5CB720EF9E7200236C7B /* SessionManager */,
+				CF8C5CB720EF9E7200236C7B /* SessionRepository */,
 				CF564718211B15590092EFBD /* OneSignalNotificationServiceExtension */,
 				CF8373C7224B8CA7000C3E21 /* AnalyticsManager */,
 				CF06A90022BA791D00496C0E /* Base-ProjectTests */,
@@ -512,7 +509,7 @@
 			isa = PBXGroup;
 			children = (
 				112239111FD5C7AF00486528 /* Base-Project.app */,
-				CF8C5CB620EF9E7200236C7B /* SessionManager.framework */,
+				CF8C5CB620EF9E7200236C7B /* SessionRepository.framework */,
 				CF564717211B15590092EFBD /* OneSignalNotificationServiceExtension.appex */,
 				CF8373C6224B8CA7000C3E21 /* AnalyticsManager.framework */,
 				CF06A8FF22BA791D00496C0E /* Base-ProjectTests.xctest */,
@@ -883,16 +880,16 @@
 			path = Initial;
 			sourceTree = "<group>";
 		};
-		CF8C5CB720EF9E7200236C7B /* SessionManager */ = {
+		CF8C5CB720EF9E7200236C7B /* SessionRepository */ = {
 			isa = PBXGroup;
 			children = (
 				CF16ED2422C66F1A00B2E0D7 /* User.swift */,
-				CF8C5CB820EF9E7200236C7B /* SessionManager.h */,
+				CF8C5CB820EF9E7200236C7B /* SessionRepository.h */,
 				CF8C5CB920EF9E7200236C7B /* Info.plist */,
 				CF8C5CD420EF9E8700236C7B /* SessionManagerContants.swift */,
-				CF8C5CD620EF9E9500236C7B /* SessionManager.swift */,
+				CF8C5CD620EF9E9500236C7B /* SessionRepository.swift */,
 			);
-			path = SessionManager;
+			path = SessionRepository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -910,7 +907,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF8C5CC820EF9E7200236C7B /* SessionManager.h in Headers */,
+				CF8C5CC820EF9E7200236C7B /* SessionRepository.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -999,9 +996,9 @@
 			productReference = CF8373C6224B8CA7000C3E21 /* AnalyticsManager.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CF8C5CB520EF9E7200236C7B /* SessionManager */ = {
+		CF8C5CB520EF9E7200236C7B /* SessionRepository */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CF8C5CCE20EF9E7200236C7B /* Build configuration list for PBXNativeTarget "SessionManager" */;
+			buildConfigurationList = CF8C5CCE20EF9E7200236C7B /* Build configuration list for PBXNativeTarget "SessionRepository" */;
 			buildPhases = (
 				CF8C5CB120EF9E7200236C7B /* Sources */,
 				CF8C5CB220EF9E7200236C7B /* Frameworks */,
@@ -1012,9 +1009,9 @@
 			);
 			dependencies = (
 			);
-			name = SessionManager;
+			name = SessionRepository;
 			productName = SessionManager;
-			productReference = CF8C5CB620EF9E7200236C7B /* SessionManager.framework */;
+			productReference = CF8C5CB620EF9E7200236C7B /* SessionRepository.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -1079,7 +1076,7 @@
 			projectRoot = "";
 			targets = (
 				112239101FD5C7AF00486528 /* Base-Project */,
-				CF8C5CB520EF9E7200236C7B /* SessionManager */,
+				CF8C5CB520EF9E7200236C7B /* SessionRepository */,
 				CF564716211B15590092EFBD /* OneSignalNotificationServiceExtension */,
 				CF8373C5224B8CA7000C3E21 /* AnalyticsManager */,
 				CF06A8FE22BA791D00496C0E /* Base-ProjectTests */,
@@ -1356,7 +1353,6 @@
 				CF8373AF224B8807000C3E21 /* AppManager.swift in Sources */,
 				112239151FD5C7AF00486528 /* AppDelegate.swift in Sources */,
 				117C4AAE1FD864AD008BB445 /* UIView+Extensions.swift in Sources */,
-				0F57539120EE13660069C139 /* DataManager.swift in Sources */,
 				4AEF648422108F8C00D53D75 /* PinVerificationViewController.swift in Sources */,
 				4A20A2312179E9C5002C2AAA /* ChangePasswordViewController.swift in Sources */,
 				3E1DEAF422BA634A00FAD9F4 /* UIView+Rounded.swift in Sources */,
@@ -1439,7 +1435,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF8C5CD720EF9E9500236C7B /* SessionManager.swift in Sources */,
+				CF8C5CD720EF9E9500236C7B /* SessionRepository.swift in Sources */,
 				CF8C5CD520EF9E8700236C7B /* SessionManagerContants.swift in Sources */,
 				CF16ED2722C66F4000B2E0D7 /* User.swift in Sources */,
 			);
@@ -1465,7 +1461,7 @@
 		};
 		CF8C5CCA20EF9E7200236C7B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CF8C5CB520EF9E7200236C7B /* SessionManager */;
+			target = CF8C5CB520EF9E7200236C7B /* SessionRepository */;
 			targetProxy = CF8C5CC920EF9E7200236C7B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1849,11 +1845,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = SessionManager/Info.plist;
+				INFOPLIST_FILE = SessionRepository/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.SessionManager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.SessionRepository;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1883,11 +1879,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = SessionManager/Info.plist;
+				INFOPLIST_FILE = SessionRepository/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.SessionManager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.SessionRepository;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -1945,7 +1941,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CF8C5CCE20EF9E7200236C7B /* Build configuration list for PBXNativeTarget "SessionManager" */ = {
+		CF8C5CCE20EF9E7200236C7B /* Build configuration list for PBXNativeTarget "SessionRepository" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF8C5CCF20EF9E7200236C7B /* Debug */,

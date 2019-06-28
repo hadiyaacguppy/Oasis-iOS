@@ -1,13 +1,13 @@
 //
-//  SessionManagerConstants.swift
-//  SessionManager
+//  SessionRepositoryConstants.swift
+//  SessionRepository
 //
 //  Created by Wassim on 6/11/18.
 //  Copyright © 2018 Tedmob. All rights reserved.
 //
 
 import Foundation
-struct SessionManagerConstants  {
+struct SessionRepositoryConstants  {
     struct UserDefaultKeys {
         static let sessionIdKey = "sessionId"
         static let firsTime = "first_time"

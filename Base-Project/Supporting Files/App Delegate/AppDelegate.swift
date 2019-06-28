@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 import UserNotifications
-import SessionManager
+import SessionRepository
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

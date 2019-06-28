@@ -8,13 +8,13 @@
 
 import Foundation
 import Moya
-import SessionManager
+import SessionRepository
 
 
 enum BaseProjectService {
     
-    var sessionManager : SessionManager  {
-       return SessionManager()
+    var sessionRepository : SessionRepository  {
+       return SessionRepository()
     }
     case setOneSignalUserPush( token : String)
 
@@ -59,7 +59,7 @@ extension BaseProjectService: TargetType {
     }
     
     var headers: [String: String]? {
-       return ["session-token" : self.sessionManager.currentUser.token ?? "" ]
+       return ["session-token" : self.sessionRepository.currentUser?.token ?? "" ]
     }
     
     var validationType : ValidationType {

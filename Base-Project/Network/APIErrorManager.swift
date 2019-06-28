@@ -11,7 +11,7 @@ import Alamofire
 import ObjectMapper
 import RxSwift
 import Moya
-import SessionManager
+import SessionRepository
 
 extension ErrorResponse : Error{}
 
@@ -23,11 +23,11 @@ class APIErrorManager{
     var networkIsReachable : Bool{
         return reachabilityManager?.isReachable ?? false
     }
-    var appSessionManager = SessionManager()
+    var appSessionRepository = SessionRepository()
     
     fileprivate
     func checkSessionValidity(_ errorObject: APIError) {
-        if appSessionManager.sessionIsValid(withErrorCode: errorObject.code!) {
+        if appSessionRepository.sessionIsValid(withErrorCode: errorObject.code!) {
             Relays.shared.sessionIsExpired.accept(())
         }
     }
