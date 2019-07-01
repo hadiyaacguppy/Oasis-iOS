@@ -142,6 +142,7 @@
 		CFE259DA22C9BB11006B0472 /* SessionRepository.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C5CB620EF9E7200236C7B /* SessionRepository.framework */; };
 		CFE259E422C9C3CA006B0472 /* CGRectExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE259E322C9C3CA006B0472 /* CGRectExtensionsTests.swift */; };
 		CFE259E622C9C4D5006B0472 /* AppDelegate+SessionExpiry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE259E522C9C4D5006B0472 /* AppDelegate+SessionExpiry.swift */; };
+		CFE259E822C9CDB4006B0472 /* TDFullIMageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE259E722C9CDB4006B0472 /* TDFullIMageView.swift */; };
 		CFE27A17214A9BE200DBB917 /* Reactive+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE27A16214A9BE200DBB917 /* Reactive+Dictionary.swift */; };
 		CFF69D682195513C003BE6BF /* UIScreen+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF69D672195513C003BE6BF /* UIScreen+Extensions.swift */; };
 		CFF69D6A219551B4003BE6BF /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF69D69219551B4003BE6BF /* UIViewController+Extensions.swift */; };
@@ -376,6 +377,7 @@
 		CFE259D922C9BB11006B0472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFE259E322C9C3CA006B0472 /* CGRectExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRectExtensionsTests.swift; sourceTree = "<group>"; };
 		CFE259E522C9C4D5006B0472 /* AppDelegate+SessionExpiry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+SessionExpiry.swift"; sourceTree = "<group>"; };
+		CFE259E722C9CDB4006B0472 /* TDFullIMageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDFullIMageView.swift; sourceTree = "<group>"; };
 		CFE27A16214A9BE200DBB917 /* Reactive+Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Dictionary.swift"; sourceTree = "<group>"; };
 		CFF69D672195513C003BE6BF /* UIScreen+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extensions.swift"; sourceTree = "<group>"; };
 		CFF69D69219551B4003BE6BF /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -879,6 +881,7 @@
 				4AEF646F22107D5600D53D75 /* TextFields */,
 				4AEF646E22107D3E00D53D75 /* Navigation Bars */,
 				4AEF646D22107D2500D53D75 /* Controllers */,
+				CFE259E722C9CDB4006B0472 /* TDFullIMageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1352,7 +1355,7 @@
 			);
 			name = R.Swift;
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1395,6 +1398,7 @@
 				3E1DEAF622BA63E900FAD9F4 /* UIRectCorner+Extensions.swift in Sources */,
 				CF8C5C9E20EF9CA400236C7B /* DatePickerDialog.swift in Sources */,
 				CF564702211B142E0092EFBD /* OneSignalPushService.swift in Sources */,
+				CFE259E822C9CDB4006B0472 /* TDFullIMageView.swift in Sources */,
 				CFDB669B22C601BB006278A2 /* AppDelegate+OneSignal.swift in Sources */,
 				0FD65F1920D018480075E251 /* Double+Extensions.swift in Sources */,
 				4AEF647522107DC000D53D75 /* BaseButton.swift in Sources */,
