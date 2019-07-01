@@ -23,8 +23,19 @@ extension UIViewController: UIGestureRecognizerDelegate{
     struct AssociatedKeys {
         static var kPlaceHolderView = "placeHolderView"
         static var kConfigurePlaceHolderView = "configurePlaceHolderView"
+        static var kTableViewHeader = "TableViewHeader"
     }
     
+    
+    private
+    var tableViewHeader : UIView?{
+        get{
+            return objc_getAssociatedObject(self, &AssociatedKeys.kTableViewHeader) as? UIView
+        }
+        set{
+            objc_setAssociatedObject(self, &AssociatedKeys.kTableViewHeader, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        }
+    }
     
     private
     var configurePlaceHolderView: ((PlaceHolderView) -> Void)? {
@@ -95,8 +106,16 @@ extension UIViewController: UIGestureRecognizerDelegate{
         if let view = placeHolderView {
             
             if view.superview == nil {
-                self.view.addSubview(view)
-                self.view.bringSubviewToFront(view)
+                if self is UITableViewController{
+                    let headerView = UIView(frame: self.view.frame)
+                    headerView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+                    headerView.addSubview(view)
+                    self.tableViewHeader = (self as! UITableViewController).tableView.tableHeaderView
+                    (self as! UITableViewController).tableView.tableHeaderView = headerView
+                }else{
+                    self.view.addSubview(view)
+                    self.view.bringSubviewToFront(view)
+                }
             }
             
             // Removing view resetting the view and its constraints it very important to guarantee a good state
@@ -120,14 +139,16 @@ extension UIViewController: UIGestureRecognizerDelegate{
     
     public
     func removePlaceHolder(){
-        
         if let view = placeHolderView{
             view.prepareForReuse()
             placeHolderView = nil
-            view.removeFromSuperview()
+            if self is UITableViewController{
+                (self as! UITableViewController).tableView.tableHeaderView = tableViewHeader
+            }else{
+                view.removeFromSuperview()
+            }
             self.view.layoutIfNeeded()
         }
-        
     }
     
     public

@@ -21,7 +21,7 @@ public class PlaceHolderView: UIView {
         return contentView
     }()
     
-    fileprivate
+    
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -122,6 +122,10 @@ public class PlaceHolderView: UIView {
     }
     
     
+    var isLoadingImage : Bool = false
+    
+    private var loadingImageSize : CGSize = .zero
+    
     var customView: UIView? {
         willSet {
             if let customView = customView {
@@ -169,12 +173,13 @@ public class PlaceHolderView: UIView {
             contentView.alpha = 1
         }
     }
-    
+    var imageConstratins = [NSLayoutConstraint]()
     // MARK: - Action Methods
     
     func removeAllConstraints() {
         removeConstraints(constraints)
         contentView.removeConstraints(contentView.constraints)
+        imageConstratins.forEach{$0.isActive = false}
     }
     
     func prepareForReuse() {
@@ -183,6 +188,8 @@ public class PlaceHolderView: UIView {
         imageView.image = nil
         progressActive = false
         mustShowProgress = false
+        isLoadingImage = false
+        loadingImageSize = .zero
         button.backgroundColor = .clear
         button.dropShadow = false
         button.rounded = false
@@ -242,8 +249,6 @@ public class PlaceHolderView: UIView {
             }
             self.addConstraints([centerXConstraint, centerYConstraint])
             self.addConstraints([heightConstarint, widthConstarint])
-            //            contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[customView]|", options: [], metrics: nil, views: ["customView": customView]))
-            //            contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[customView]|", options: [], metrics: nil, views: ["customView": customView]))
         } else {
             
             let width = frame.width > 0 ? frame.width : UIScreen.main.bounds.width
@@ -257,11 +262,33 @@ public class PlaceHolderView: UIView {
             // Assign the image view's horizontal constraints
             if canShowImage {
                 imageView.isHidden = false
-                 circularProgressIndicator.stopAnimating()
+                circularProgressIndicator.stopAnimating()
                 subviewStrings.append("imageView")
                 views[subviewStrings.last!] = imageView
                 
                 contentView.addConstraint(NSLayoutConstraint.init(item: imageView, attribute: .centerX, relatedBy: .equal, toItem: contentView, attribute: .centerX, multiplier: 1.0, constant: 0.0))
+                if isLoadingImage{
+                    imageConstratins = [
+                        NSLayoutConstraint(item: imageView,
+                                           attribute: .height,
+                                           relatedBy: .equal,
+                                           toItem: nil,
+                                           attribute: .notAnAttribute,
+                                           multiplier: 1,
+                                           constant: self.loadingImageSize.height),
+                        NSLayoutConstraint(item: imageView,
+                                           attribute: .width,
+                                           relatedBy: .equal,
+                                           toItem: nil,
+                                           attribute: .notAnAttribute,
+                                           multiplier: 1,
+                                           constant: self.loadingImageSize.height)
+                    ]
+                    
+                    imageConstratins.forEach{$0.isActive = true }
+                }else{
+                    
+                }
             } else {
                 imageView.isHidden = true
                 subviewStrings.append("circularProgress")
@@ -353,8 +380,9 @@ extension PlaceHolderView {
     
     /// Set the image for the PlaceHolder
     @discardableResult
-    public func image(_ image: UIImage?) -> Self {
+    public func image(_ image: UIImage?,withSize size : CGSize = .zero) -> Self {
         imageView.image = image
+        loadingImageSize = size
         return self
     }
     

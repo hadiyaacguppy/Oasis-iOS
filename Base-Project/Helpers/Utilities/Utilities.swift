@@ -268,10 +268,10 @@ public struct Utilities  {
     /// - Returns: Observable of the countDown
     static func countDown(from: Int,
                           to: Int,
-                          interval : Double)
+                          interval : Int)
         -> Observable<Int> {
             return Observable<Int>
-                .timer( 1, period: interval, scheduler: MainScheduler.instance)
+                .interval(.seconds(1), scheduler: MainScheduler.instance)
                 .take(from - to + 1)
                 .map { from - $0 }
     }
