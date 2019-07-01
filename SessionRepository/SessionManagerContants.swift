@@ -9,9 +9,9 @@
 import Foundation
 struct SessionRepositoryConstants  {
     struct UserDefaultKeys {
-        static let sessionIdKey = "sessionId"
-        static let firsTime = "first_time"
+        static let firstTime = "first_time"
+        static let userKey = "first_launch_u"
         
-            }
+    }
     static let sessionExpiredCode = 101
 }

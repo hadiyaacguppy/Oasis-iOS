@@ -20,35 +20,65 @@ public class SessionRepository {
             
         }
     }
+    
     public var currentUser: User? {
         get {
-            //NSKEyed Archiver get
-            return User()
+            return getArchivedUser()
         }
         set {
-            // Set them
+            guard let newValue = newValue else {
+                print("Removing User Object ")
+                deleteArhivedUser()
+                return
+            }
+            print("Saving User Object")
+            persistUser(user: newValue)
             
         }
     }
     
-    
     public var isFirstTime : Bool {
-        if !UserDefaults.standard.bool(forKey: SessionRepositoryConstants.UserDefaultKeys.firsTime) {
-            UserDefaults.standard.set(true , forKey: SessionRepositoryConstants.UserDefaultKeys.firsTime)
+        if !UserDefaults.standard.bool(forKey: SessionRepositoryConstants.UserDefaultKeys.firstTime) {
+            UserDefaults.standard.set(true , forKey: SessionRepositoryConstants.UserDefaultKeys.firstTime)
             return true
         }
         return false
     }
+    
     public var userIsLoggedIn : Bool! {
-        return  self.currentUser != nil
+        return  self.currentUser != nil && self.currentUser?.token != nil
     }
     
     public var isInExploreMode : Bool = false
     
     public func sessionIsValid(withErrorCode code : Int) -> Bool {
-         return code != SessionRepositoryConstants.sessionExpiredCode
-            
+        return code != SessionRepositoryConstants.sessionExpiredCode
+        
     }
     
+}
+private extension SessionRepository {
     
+    func persistUser(user : User){
+        let data = NSKeyedArchiver.archivedData(withRootObject: user)
+        UserDefaults.standard.set(data, forKey: SessionRepositoryConstants.UserDefaultKeys.userKey)
+    }
+    
+    func getArchivedUser() -> User?{
+        guard let data = UserDefaults.standard.value(forKey: SessionRepositoryConstants.UserDefaultKeys.userKey) as? Data else {
+            return nil
+        }
+        
+        guard let encodedData = NSKeyedUnarchiver.unarchiveObject(with: data) else {
+            return nil
+        }
+        guard let user = encodedData as? User else {
+            return nil
+        }
+        return user
+    }
+    
+    func deleteArhivedUser() {
+        UserDefaults.standard.removeObject(forKey: SessionRepositoryConstants.UserDefaultKeys.userKey)
+    }
 }

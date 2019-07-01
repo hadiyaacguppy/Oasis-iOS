@@ -8,6 +8,7 @@
 - [X] Add NSAttributedString Extensions
 - [X] Migrate to Swift 5 and Xcode 10.2 
 - [ ] Session Manager make more secure
+- [ ] Add SwiftLog
 - [ ] Pagintable Table View
 
 

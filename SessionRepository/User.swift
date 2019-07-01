@@ -13,34 +13,25 @@ import ObjectMapper
 public class User : NSObject, NSCoding, Mappable{
     public var token: String?
     
-    
-    class func newInstance(map: Map) -> Mappable?{
-        return User()
-    }
     required public init?(map: Map){}
     override init(){}
     
-    public func mapping(map: Map)
-    {
+    public func mapping(map: Map){
         
     }
     
-    /**
-     * NSCoding required initializer.
-     * Fills the data from the passed decoder
-     */
-    @objc required public init(coder aDecoder: NSCoder)
-    {
+
+    @objc required public init(coder aDecoder: NSCoder){
+        token = aDecoder.decodeObject(forKey: "token") as? String
         
     }
     
-    /**
-     * NSCoding required method.
-     * Encodes mode properties into the decoder
-     */
-    @objc public func encode(with aCoder: NSCoder)
-    {
+   
+    @objc public func encode(with aCoder: NSCoder){
         
+        if token != nil{
+            aCoder.encode(token, forKey: "token")
+        }
     }
     
 }

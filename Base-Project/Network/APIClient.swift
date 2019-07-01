@@ -30,7 +30,6 @@ class  APIClient {
 
     func setOneSignalToken(withToken token : String) -> Single<Void>{
         return self.provider.rx.request(.setOneSignalUserPush(token: token))
-            .addTo
             .map {_ in return Void()}
     }
     
