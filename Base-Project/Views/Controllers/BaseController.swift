@@ -21,12 +21,7 @@ protocol BaseController {
     
     func dismissProgress()
     
-    func pushAnimated(viewController : UIViewController,
-                      animated : Bool)
-    
-    func presentAnimated(viewController : UIViewController,
-                         animated : Bool)
-    
+   
     func addBackButton()
     
     func addDismissButton()
@@ -105,33 +100,6 @@ extension BaseController  where Self: UIViewController{
     }
     
     
-    func pushAnimated(viewController : UIViewController,
-                      animated : Bool){
-        
-        let transition = CATransition()
-        transition.duration = 0.4
-        transition.type = CATransitionType.reveal
-        transition.subtype = CATransitionSubtype.fromRight
-        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
-        self.view.window!.layer.add(transition, forKey: kCATransition)
-        
-        self.navigationController?.pushViewController(viewController, animated: animated )
-    }
-    
-    
-    func presentAnimated(viewController : UIViewController,
-                         animated : Bool){
-        
-        
-        let transition = CATransition()
-        transition.duration = 0.4
-        transition.type = CATransitionType.reveal
-        transition.subtype = CATransitionSubtype.fromBottom
-        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
-        self.view.window!.layer.add(transition, forKey: kCATransition)
-        self.present(viewController, animated: true  , completion: nil)
-        
-    }
     
     func preparePlaceHolderView(withErrorViewModel errorViewModel : ErrorViewModel){
         switch errorViewModel.code{
