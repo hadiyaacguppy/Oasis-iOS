@@ -31,12 +31,7 @@ struct Constants {
         static let appColor : UIColor  = .red
     }
     
-    struct PHContactService{
-        static let alertTitle : String = "Permission Access".localized
-        static let alertMessage : String = "App requires access to Contacts to proceed. Would you like to open settings and grant permission to contacts?".localized
-        static let alertCancelButtonTitle : String = "Cancel".localized
-        static let alertOpenSettingsButtonTitle : String = "Open Settings".localized
-    }
+    
     
     struct StatusBarAppearance {
         static let appStyle : UIStatusBarStyle = .lightContent

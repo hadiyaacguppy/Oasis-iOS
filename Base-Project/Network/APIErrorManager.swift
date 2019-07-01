@@ -27,7 +27,7 @@ class APIErrorManager{
     
     fileprivate
     func checkSessionValidity(_ errorObject: APIError) {
-        if appSessionRepository.sessionIsValid(withErrorCode: errorObject.code!) {
+        if !appSessionRepository.sessionIsValid(withErrorCode: errorObject.code!) {
             Relays.shared.sessionIsExpired.accept(())
         }
     }

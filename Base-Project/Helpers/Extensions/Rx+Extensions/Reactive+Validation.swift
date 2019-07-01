@@ -27,7 +27,7 @@ extension Reactive where Base: UISearchBar {
 extension Reactive where Base: UITextField {
     var textChanged : Observable<String?>{
         return Observable.merge(self.base.rx.observe(String.self, "text"),
-                                self.base.rx.controlEvent(.editingDidBegin).withLatestFrom(self.base.rx.text))
+                                self.base.rx.controlEvent(.editingChanged).withLatestFrom(self.base.rx.text))
     }
 }
 

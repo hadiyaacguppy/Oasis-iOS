@@ -64,6 +64,11 @@ public class SessionRepository {
         
     }
     
+    public func prepareLogout( _ handler :(() -> ())? = nil ) {
+        self.currentUser = nil
+        self.token = nil
+    }
+    
 }
 private extension SessionRepository {
     
