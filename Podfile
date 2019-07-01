@@ -10,7 +10,7 @@ target 'Base-Project' do
   pod 'SDWebImage', '~> 5.0'
   pod 'SwiftLocation'
   pod "RxGesture"
-
+  pod 'Logging', '~> 1.1'
 
 end
 

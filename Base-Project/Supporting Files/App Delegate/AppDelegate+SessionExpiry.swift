@@ -11,7 +11,7 @@ import Foundation
 extension AppDelegate {
     func subscribeToSessionExpiryRelay() {
         sessionExpiryRelaySubscription = Relays.shared.sessionIsExpired.subscribe(onNext: { _ in
-            print("SESSION EXPIRED")
+            logger.warning("SESSION EXPIRED")
         })
     }
 }

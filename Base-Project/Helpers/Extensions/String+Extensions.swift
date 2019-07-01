@@ -42,7 +42,7 @@ extension String {
                                                     .characterEncoding: String.Encoding.utf8.rawValue],
                                           documentAttributes: nil)
         } catch {
-            print("error:", error)
+            
             return  nil
         }
     }

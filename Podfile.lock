@@ -45,6 +45,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.2.0):
     - GoogleUtilities/Logger
+  - Logging (1.1.0)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -71,6 +72,7 @@ PODS:
 DEPENDENCIES:
   - CZPicker
   - Firebase/Core
+  - Logging (~> 1.1)
   - OneSignal
   - OneSignal (< 3.0, >= 2.6.2)
   - R.swift
@@ -87,6 +89,7 @@ SPEC REPOS:
     - FirebaseInstanceID
     - GoogleAppMeasurement
     - GoogleUtilities
+    - Logging
     - nanopb
     - OneSignal
     - R.swift
@@ -106,6 +109,7 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: cdb3827746d53ece7ae87a5c51c25c3055443366
   GoogleAppMeasurement: 51d8d9ea48f0ca44484d29cfbdef976fbd4fc336
   GoogleUtilities: 996e0db07153674fd1b54b220fda3a3dc3547cba
+  Logging: 0f0b5d7d124fab770fde88cf942cb57a63804236
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   OneSignal: 0f5ff711d9f25da54885e4ab06ef0abc221a46ef
   R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
@@ -117,6 +121,6 @@ SPEC CHECKSUMS:
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   SwiftLocation: 4f030832331a21abaa4e0c5189d0f80ab8d3e377
 
-PODFILE CHECKSUM: e86d6dd1ee9961945fe3f46dbe242180cf9e25fa
+PODFILE CHECKSUM: 531e076c5a59dcfd6f29ba6e735edf7efcac459f
 
 COCOAPODS: 1.6.1

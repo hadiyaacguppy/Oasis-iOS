@@ -59,7 +59,8 @@ final class OneSignalPushService: NSObject{
             guard notification != nil else {
                 return
             }
-            print("DID RECEIVE NOTIFICATION")
+            logger.info("DID RECEIVE NOTIFICATION")
+            
             
             PushParser.shared.handleDidReceiveNotification(withPayload: NotificationPayload(payload: notification!.payload, wasShown: notification!.wasShown, wasAppInFocus: notification!.wasAppInFocus, isSilentNotification: notification!.isSilentNotification))
             
@@ -105,14 +106,15 @@ extension OneSignalPushService: OSPermissionObserver,OSSubscriptionObserver{
                 self.notificationsIsAllowed = false
             }
         }
-        // prints out all properties
-        print("PermissionStateChanges: \n\(String(describing: stateChanges))")
+        
+        
+        logger.info("PermissionStateChanges: \n\(String(describing: stateChanges))")
     }
     
     func onOSSubscriptionChanged(_ stateChanges: OSSubscriptionStateChanges!) {
         if let userId = stateChanges.to.userId  {
             
-            print( "User id (player-id) is --" + stateChanges.to.userId)
+            logger.info( "User id (player-id) is -- \(String(describing: stateChanges.to.userId))" )
             if self.userId == nil {
                 self.userId = userId
                 self.playerIdDidChange?(userId)
@@ -138,7 +140,7 @@ extension OneSignalPushService{
     
     func promptForPushNotification(){
         OneSignal.promptForPushNotifications(userResponse: { accepted in
-            print("User accepted notifications: \(accepted)")
+            logger.info("User accepted notifications: \(accepted)")
         })
     }
     
