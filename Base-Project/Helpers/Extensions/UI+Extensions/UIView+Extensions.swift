@@ -10,6 +10,7 @@
 import UIKit
 import GLKit
 import Foundation
+import RxSwift
 
 
 fileprivate let kIndicatorViewTag = 998
@@ -259,5 +260,10 @@ extension UIView {
             borderLayer.frame = bounds
             layer.addSublayer(borderLayer)
         }
+    }
+    
+    @discardableResult
+    func onTap( _ action : (() -> ())? ) -> Disposable{
+        return self.rx.tap().bind{action?()}
     }
 }

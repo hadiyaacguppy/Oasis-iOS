@@ -47,4 +47,8 @@ extension Reactive where Base : UIView{
             }
     }
     
+    func tap() -> Observable<Void> {
+        return tapGesture().when(.recognized).mapToVoid()
+    }
+    
 }
