@@ -16,7 +16,15 @@ public class SessionRepository {
         get {
             return self.currentUser?.token
         }set {
-            self.currentUser?.token = newValue
+            if currentUser == nil {
+                let newUser = User()
+                newUser.token = newValue
+                self.currentUser = newUser
+                
+            }else{
+                self.currentUser?.token = newValue
+            }
+            
             
         }
     }

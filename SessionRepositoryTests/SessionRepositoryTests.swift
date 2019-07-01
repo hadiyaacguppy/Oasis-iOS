@@ -9,15 +9,15 @@
 import XCTest
 @testable import SessionRepository
 class SessionRepositoryTests: XCTestCase {
-
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-
+    
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
+    
     func testSavingUser(){
         let user = User()
         SessionRepository().currentUser = user
@@ -38,7 +38,20 @@ class SessionRepositoryTests: XCTestCase {
         SessionRepository().currentUser = nil
         assert(SessionRepository().currentUser == nil )
     }
-
+    
+    func testTokenWithoutUser(){
+        SessionRepository().currentUser = nil
+        assert(SessionRepository().currentUser == nil )
+        
+        SessionRepository().token = "123"
+        
+        assert(SessionRepository().currentUser != nil )
+        assert(SessionRepository().currentUser?.token != nil )
+        assert(SessionRepository().token != nil )
+        assert(SessionRepository().token == "123" )
+        assert(SessionRepository().currentUser?.token == "123" )
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
@@ -46,5 +59,5 @@ class SessionRepositoryTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
+    
 }
