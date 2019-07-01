@@ -9,7 +9,8 @@
 import UIKit
 
 extension AppDelegate {
-    func initOneSignal (withLaunchOption launchOptions: [UIApplication.LaunchOptionsKey: Any]?, andOneSignalId oneSignalID: String) {
+    
+    func initOneSignal(withLaunchOption launchOptions: [UIApplication.LaunchOptionsKey: Any]?, andOneSignalId oneSignalID: String) {
         OneSignalPushService.shared.initializeOneSignal(withLaunchOptions: launchOptions, andAppID: oneSignalAppId)
         OneSignalPushService.shared.playerIdDidChange = { token in
             _ = APIClient.shared.setOneSignalToken(withToken: token)
@@ -17,4 +18,5 @@ extension AppDelegate {
             
         }
     }
+    
 }

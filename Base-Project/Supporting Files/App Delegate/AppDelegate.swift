@@ -10,12 +10,14 @@ import UIKit
 import CoreData
 import UserNotifications
 import SessionRepository
+import RxSwift
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var oneSignalAppId : String = ""
-    
+    var sessionExpiryRelaySubscription: Disposable?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         print("Base Project Version 3.0")
@@ -25,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }else {
             print("Will not init OneSignal. App ID is empty")
         }
+        
+        subscribeToSessionExpiryRelay()
+        
         
         return true
     }

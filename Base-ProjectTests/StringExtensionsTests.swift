@@ -22,6 +22,7 @@ class StringExtensionTests : XCTestCase {
         assert(goodURL.asURL() != nil , "URL is valid")
     
     }
+    
     func testQueryValue(){
         let url = "https://www.youtube.com/results?search_query=search&page=&utm_source=opensearch"
         assert(url.queryValue(for: "search_query") == "search")
@@ -46,10 +47,13 @@ class StringExtensionTests : XCTestCase {
     
     func testWordCount(){
         let paragraph = "iOS Develpoment is Good. TEDMOB is GOOD"
-        
-        
         assert(paragraph.wordCount == 7 )
         
+    }
+    
+    func testHasNumbers() {
+        let str = "123dasd123.asd13"
+        assert(str.hasNumbers == true)
     }
     
 }

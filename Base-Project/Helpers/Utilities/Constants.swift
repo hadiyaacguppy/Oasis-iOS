@@ -55,19 +55,7 @@ struct Constants {
         static let SMSTimerInterval = 60
     }
 
-    
-    struct ControllersIdentifiers {
-        
-    }
-    
-    struct SegueIdentifiers {
-        
-    }
-    
-    struct  NSTimerIntervals {
-        
-    }
-    
+
     struct URLSchemas{
         
         enum Browsers : String{
