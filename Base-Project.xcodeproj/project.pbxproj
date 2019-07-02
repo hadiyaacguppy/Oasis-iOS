@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F1B7FAD22CA6C910079F752 /* Countries.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0F1B7FAC22CA6C910079F752 /* Countries.bundle */; };
+		0F1B7FB022CA6C9D0079F752 /* UISearchBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B7FAE22CA6C9D0079F752 /* UISearchBar+Extensions.swift */; };
+		0F1B7FB122CA6C9D0079F752 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B7FAF22CA6C9D0079F752 /* UIAlertController+Extensions.swift */; };
+		0F1B7FB322CA6CA40079F752 /* LocalePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B7FB222CA6CA40079F752 /* LocalePickerViewController.swift */; };
+		0F1B7FB522CA6CAE0079F752 /* LocaleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B7FB422CA6CAE0079F752 /* LocaleStore.swift */; };
+		0F1B7FB722CA6CB50079F752 /* LocaleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B7FB622CA6CB50079F752 /* LocaleInfo.swift */; };
+		0F1B7FBB22CA6CBD0079F752 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B7FB822CA6CBD0079F752 /* CurrencyCell.swift */; };
+		0F1B7FBC22CA6CBD0079F752 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B7FB922CA6CBD0079F752 /* CountryCell.swift */; };
+		0F1B7FBD22CA6CBD0079F752 /* PhoneCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B7FBA22CA6CBD0079F752 /* PhoneCodeCell.swift */; };
 		0F484B4F2165FF5C0060C463 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F484B4E2165FF5C0060C463 /* Date+Extensions.swift */; };
 		0F57538E20EE12EB0069C139 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57538D20EE12EB0069C139 /* Constants.swift */; };
 		0F57539520EE185F0069C139 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539420EE185F0069C139 /* Array+Extensions.swift */; };
@@ -223,6 +232,15 @@
 
 /* Begin PBXFileReference section */
 		0A6FC7C665C3EC115CF8C0BC /* Pods-Base-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project.release.xcconfig"; sourceTree = "<group>"; };
+		0F1B7FAC22CA6C910079F752 /* Countries.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Countries.bundle; sourceTree = "<group>"; };
+		0F1B7FAE22CA6C9D0079F752 /* UISearchBar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Extensions.swift"; sourceTree = "<group>"; };
+		0F1B7FAF22CA6C9D0079F752 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
+		0F1B7FB222CA6CA40079F752 /* LocalePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalePickerViewController.swift; sourceTree = "<group>"; };
+		0F1B7FB422CA6CAE0079F752 /* LocaleStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocaleStore.swift; sourceTree = "<group>"; };
+		0F1B7FB622CA6CB50079F752 /* LocaleInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocaleInfo.swift; sourceTree = "<group>"; };
+		0F1B7FB822CA6CBD0079F752 /* CurrencyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
+		0F1B7FB922CA6CBD0079F752 /* CountryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
+		0F1B7FBA22CA6CBD0079F752 /* PhoneCodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneCodeCell.swift; sourceTree = "<group>"; };
 		0F484B4E2165FF5C0060C463 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		0F57538D20EE12EB0069C139 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0F57539420EE185F0069C139 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
@@ -460,6 +478,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F1B7FA622CA6C550079F752 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0F1B7FA722CA6C5F0079F752 /* Country Picker */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0F1B7FA722CA6C5F0079F752 /* Country Picker */ = {
+			isa = PBXGroup;
+			children = (
+				0F1B7FB222CA6CA40079F752 /* LocalePickerViewController.swift */,
+				0F1B7FAC22CA6C910079F752 /* Countries.bundle */,
+				0F1B7FAB22CA6C810079F752 /* Views */,
+				0F1B7FAA22CA6C7C0079F752 /* Models */,
+				0F1B7FA922CA6C740079F752 /* Managers */,
+				0F1B7FA822CA6C6F0079F752 /* Extensions */,
+			);
+			path = "Country Picker";
+			sourceTree = "<group>";
+		};
+		0F1B7FA822CA6C6F0079F752 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0F1B7FAF22CA6C9D0079F752 /* UIAlertController+Extensions.swift */,
+				0F1B7FAE22CA6C9D0079F752 /* UISearchBar+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0F1B7FA922CA6C740079F752 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0F1B7FB422CA6CAE0079F752 /* LocaleStore.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		0F1B7FAA22CA6C7C0079F752 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0F1B7FB622CA6CB50079F752 /* LocaleInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0F1B7FAB22CA6C810079F752 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0F1B7FB922CA6CBD0079F752 /* CountryCell.swift */,
+				0F1B7FB822CA6CBD0079F752 /* CurrencyCell.swift */,
+				0F1B7FBA22CA6CBD0079F752 /* PhoneCodeCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0F57538F20EE13570069C139 /* Managers & Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -552,6 +626,7 @@
 			isa = PBXGroup;
 			children = (
 				CF564724211B15BE0092EFBD /* Base-Project.entitlements */,
+				0F1B7FA622CA6C550079F752 /* Resources */,
 				672909FA210E43C900632C4F /* PlaceHolder  */,
 				CF7823B520EF95BC003069BD /* Models */,
 				0F57539920EE19BD0069C139 /* Network */,
@@ -1159,6 +1234,7 @@
 				CF403858216CF78F001F649B /* Initial.storyboard in Resources */,
 				4AEF648122108F8C00D53D75 /* PinVerification.storyboard in Resources */,
 				4A20A22D2179E9C5002C2AAA /* ChangePassword.storyboard in Resources */,
+				0F1B7FAD22CA6C910079F752 /* Countries.bundle in Resources */,
 				CF09C0D02180A511003DF186 /* BaseWebView.storyboard in Resources */,
 				112239221FD5C7B000486528 /* LaunchScreen.storyboard in Resources */,
 				1122391F1FD5C7B000486528 /* Assets.xcassets in Resources */,
@@ -1395,6 +1471,8 @@
 				0FD65F1B20D018730075E251 /* UIButton+Extensions.swift in Sources */,
 				CFF69D6D219554C4003BE6BF /* CGPoint+Extensions.swift in Sources */,
 				4A20A22E2179E9C5002C2AAA /* ChangePasswordPresenter.swift in Sources */,
+				0F1B7FB022CA6C9D0079F752 /* UISearchBar+Extensions.swift in Sources */,
+				0F1B7FB522CA6CAE0079F752 /* LocaleStore.swift in Sources */,
 				CFF69D752195586E003BE6BF /* FileManager+Extensions.swift in Sources */,
 				CFE27A17214A9BE200DBB917 /* Reactive+Dictionary.swift in Sources */,
 				117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */,
@@ -1428,6 +1506,7 @@
 				CF6030762212F77B003872F3 /* DeviceManager.swift in Sources */,
 				3EDC4156224E886500624D2B /* BaseUIView.swift in Sources */,
 				67290A02210E441400632C4F /* PlaceHolderHelper.swift in Sources */,
+				0F1B7FBD22CA6CBD0079F752 /* PhoneCodeCell.swift in Sources */,
 				CF8C5CAA20EF9D6700236C7B /* Int+Extensions.swift in Sources */,
 				3E8E350422CA0BDE009A3113 /* Observable+Operators.swift in Sources */,
 				3E1DEAFA22BA660F00FAD9F4 /* BaseLabel.swift in Sources */,
@@ -1459,9 +1538,11 @@
 				4AEF648222108F8C00D53D75 /* PinVerificationModels.swift in Sources */,
 				117C4AAB1FD86050008BB445 /* Utilities.swift in Sources */,
 				4AEF648522108F8C00D53D75 /* PinVerificationConfigurator.swift in Sources */,
+				0F1B7FBB22CA6CBD0079F752 /* CurrencyCell.swift in Sources */,
 				3E1DEAF222BA632600FAD9F4 /* UIView+Border.swift in Sources */,
 				CF8373AD224A7F93000C3E21 /* R.generated.swift in Sources */,
 				4A20A2332179E9C5002C2AAA /* ChangePasswordConfigurator.swift in Sources */,
+				0F1B7FB122CA6C9D0079F752 /* UIAlertController+Extensions.swift in Sources */,
 				CF40385D216CF78F001F649B /* InitialInteractor.swift in Sources */,
 				3EDC4153224E875300624D2B /* Reactive+UIView.swift in Sources */,
 				3E1DEAFD22BA674D00FAD9F4 /* NavigationBarType.swift in Sources */,
@@ -1474,6 +1555,7 @@
 				672909FC210E43EA00632C4F /* PlaceHolderView.swift in Sources */,
 				117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */,
 				CF181BA420809E28002603A1 /* UIColor+Extensions.swift in Sources */,
+				0F1B7FBC22CA6CBD0079F752 /* CountryCell.swift in Sources */,
 				CF09C0D22180A511003DF186 /* BaseWebViewRouter.swift in Sources */,
 				CF403859216CF78F001F649B /* InitialPresenter.swift in Sources */,
 				0F57539520EE185F0069C139 /* Array+Extensions.swift in Sources */,
@@ -1487,6 +1569,7 @@
 				CF06BE5F2199CFC4004B763B /* Reactive+Validation.swift in Sources */,
 				CF40385E216CF78F001F649B /* InitialConfigurator.swift in Sources */,
 				CFC2BFE6216CA3C800DC31A7 /* ErrorViewModel.swift in Sources */,
+				0F1B7FB722CA6CB50079F752 /* LocaleInfo.swift in Sources */,
 				3EDC4159224E893B00624D2B /* BaseUIImageView.swift in Sources */,
 				CF7BC6781FD91D83008E80AC /* Response+ObjectMapper.swift in Sources */,
 				CF7BC6771FD91D83008E80AC /* Single+ObjectMapper.swift in Sources */,
@@ -1494,6 +1577,7 @@
 				3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */,
 				0F484B4F2165FF5C0060C463 /* Date+Extensions.swift in Sources */,
 				CF2F319E215E8BA0007A912A /* URL+Extensions.swift in Sources */,
+				0F1B7FB322CA6CA40079F752 /* LocalePickerViewController.swift in Sources */,
 				CFF69D732195578F003BE6BF /* Data+Extensions.swift in Sources */,
 				CF7823B420EF95A7003069BD /* APIErrorManager.swift in Sources */,
 				3E1DEAF022BA62FD00FAD9F4 /* UIView+Shadow.swift in Sources */,

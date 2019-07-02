@@ -82,4 +82,9 @@ extension UIViewController {
         let activityController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
         self.present(activityController, animated: true, completion: nil)
     }
+    
+    var alertController: UIAlertController? {
+        guard let alert = UIApplication.topViewController() as? UIAlertController else { return nil }
+        return alert
+    }
 }
