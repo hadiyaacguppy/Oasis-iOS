@@ -247,9 +247,18 @@ extension UIView {
         let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: size)
         
         if !corners.isEmpty && cornerRadius > 0 {
-            let maskLayer = CAShapeLayer()
-            maskLayer.path = path.cgPath
-            layer.mask = maskLayer
+            
+            if #available(iOS 11.0, *) {
+                if let maskedCorners = roundCorners.transformToCornerMask(){
+                    layer.cornerRadius = cornerRadius
+                    layer.maskedCorners = .init(arrayLiteral: maskedCorners)
+                }
+            } else {
+                let maskLayer = CAShapeLayer()
+                maskLayer.path = path.cgPath
+                layer.mask = maskLayer
+            }
+            
         }
         
         if let borderValues = border.borderValues {
