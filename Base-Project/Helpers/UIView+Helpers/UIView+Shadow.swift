@@ -33,7 +33,14 @@ extension UIView{
             }
         }
         
-        
+        var isActive: Bool {
+            switch self {
+            case .none:
+                return false
+            default:
+                return true
+            }
+        }
     }
     
 }
