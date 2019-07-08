@@ -328,7 +328,7 @@ extension LocalePickerViewController: UITableViewDataSource {
         if orderedInfo[sortedInfoKeys[index == 0 || index == 1 ? 0 : index - 1]]!.count > 0 {
             tableView.scrollToRow(at: IndexPath(row: 0, section: index), at: .top , animated: false)
         }
-        return sortedInfoKeys.index(of: title)!
+        return sortedInfoKeys.firstIndex(of: title)!
     }
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
