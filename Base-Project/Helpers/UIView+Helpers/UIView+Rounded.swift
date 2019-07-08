@@ -37,6 +37,18 @@ extension UIView {
         /** Only the *bottom* left corner will be round */
         case bottomLeft(radius: CGFloat)
         
+        /** Only the *bottom* right and the *top* left corner will be round */
+        case topLeftBottomRight(radius: CGFloat)
+        
+        /** Only the *bottom* left and the *top* right corner will be round */
+        case topRightBottomLeft(radius: CGFloat)
+        
+        /** Only the *bottom* left and the *top* left corner will be round */
+        case topLeftBottomLeft(radius: CGFloat)
+        
+        /** Only the *bottom* right and the *top* right corner will be round */
+        case topRightBottomRight(radius: CGFloat)
+        
         var hasRoundCorners: Bool {
             switch self {
             case .none:
@@ -64,6 +76,14 @@ extension UIView {
                 return (value: .bottomRight, radius: radius)
             case .bottomLeft(let radius):
                 return (value: .bottomLeft, radius: radius)
+            case .topLeftBottomRight(let radius):
+                return (value: .topLeftBottomRight, radius: radius)
+            case .topRightBottomLeft(let radius):
+                return (value: .topRightBottomLeft, radius: radius)
+            case .topLeftBottomLeft(let radius):
+                return (value: .topLeftBottomLeft, radius: radius)
+            case .topRightBottomRight(let radius):
+                return (value: .topRightBottomRight, radius: radius)
             }
         }
         
@@ -87,11 +107,20 @@ extension UIView {
                 return lRadius == rRadius
             case (.bottomLeft(let lRadius), .bottomLeft(let rRadius)):
                 return lRadius == rRadius
-                
+            case (.topLeftBottomRight(let lRadius),.topLeftBottomRight(let rRadius) ):
+                return lRadius == rRadius
+            case (.topRightBottomLeft(let lRadius),.topRightBottomLeft(let rRadius)):
+                return lRadius == rRadius
+            case (.topLeftBottomLeft(let lRadius),.topLeftBottomLeft(let rRadius)):
+                return lRadius == rRadius
+            case (.topRightBottomRight(let lRadius),.topRightBottomRight(let rRadius)):
+                return lRadius == rRadius
             default:
                 return false
             }
         }
+        
+        
     }
 }
 
