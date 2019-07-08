@@ -120,7 +120,67 @@ extension UIView {
             }
         }
         
-        
+        func transformToCornerMask() -> CACornerMask?{
+            
+            /*
+             layerMaxXMaxYCorner – lower right corner
+             layerMaxXMinYCorner – top right corner
+             layerMinXMaxYCorner – lower left corner
+             layerMinXMinYCorner – top left corner
+             */
+            
+            switch self {
+                
+                /** *None* of the corners will be round */
+            case .none:
+                return nil
+                
+                /** *All* of the corners will be round */
+            case .all:
+                return CACornerMask.init(arrayLiteral: [.layerMaxXMaxYCorner,.layerMaxXMinYCorner,.layerMinXMaxYCorner,.layerMinXMinYCorner])
+                
+                /** Only the *top* left and right corners will be round */
+            case .top:
+                return CACornerMask.init(arrayLiteral: [.layerMaxXMinYCorner,.layerMinXMinYCorner])
+                
+                /** Only the *top* right corner will be round */
+            case .topRight:
+                return CACornerMask.init(arrayLiteral: [.layerMaxXMinYCorner])
+                
+                /** Only the *top* left  corner will be round */
+            case .topLeft:
+                return CACornerMask.init(arrayLiteral: [.layerMinXMinYCorner])
+                
+                /** Only the *bottom* left and right corners will be round */
+            case .bottom:
+                return CACornerMask.init(arrayLiteral: [.layerMaxXMaxYCorner,.layerMinXMaxYCorner])
+                
+                /** Only the *bottom* right corner will be round */
+            case .bottomRight:
+                return CACornerMask.init(arrayLiteral: [.layerMaxXMaxYCorner])
+                
+                /** Only the *bottom* left corner will be round */
+            case .bottomLeft:
+                return CACornerMask.init(arrayLiteral: [.layerMinXMaxYCorner])
+                
+                /** Only the *bottom* right and the *top* left corner will be round */
+            case .topLeftBottomRight:
+                return CACornerMask.init(arrayLiteral: [.layerMinXMinYCorner,.layerMaxXMaxYCorner])
+                
+                /** Only the *bottom* left and the *top* right corner will be round */
+            case .topRightBottomLeft:
+                return CACornerMask.init(arrayLiteral: [.layerMaxXMinYCorner,.layerMinXMaxYCorner])
+                
+                /** Only the *bottom* left and the *top* left corner will be round */
+            case .topLeftBottomLeft:
+                return CACornerMask.init(arrayLiteral: [.layerMinXMinYCorner,.layerMinXMaxYCorner])
+                
+                /** Only the *bottom* right and the *top* right corner will be round */
+            case .topRightBottomRight:
+                return CACornerMask.init(arrayLiteral: [.layerMaxXMinYCorner,.layerMaxXMaxYCorner])
+                
+            }
+        }
     }
 }
 
