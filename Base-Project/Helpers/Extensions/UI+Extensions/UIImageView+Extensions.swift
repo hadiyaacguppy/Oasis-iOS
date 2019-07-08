@@ -5,68 +5,92 @@
 //  Created by Mojtaba Al Mousawi on 8/8/18.
 //  Copyright © 2018 Tedmob. All rights reserved.
 //
-
 import UIKit
 import SDWebImage
 
 extension UIImageView{
     
     
+    /** The image indicator applied to the ImageView when request is loading */
+    enum ImageIndicator {
+        /** No indicator */
+        case none
+        
+        /** Progres Indicator */
+        case progressIndictor(style : SDWebImageProgressIndicator)
+        
+        /** Activity Indicator */
+        case activityIndicator(style : SDWebImageActivityIndicator)
+        
+    }
+    
+    /** Loader Appearance */
+    struct ImageLoaderAppearance{
+        
+        /// placeholder image
+        var placeholderImage : UIImage
+        
+        /// placeholder image contentMode
+        var placeholderContentMode : UIView.ContentMode
+        
+        /// Image indicator Style
+        var imageIndicator : ImageIndicator
+        
+        /// State if the indicator should animate
+        var indicatorEnabled : Bool
+        
+        init(indicatorEnabled : Bool = true,
+             imageIndicatorStyle : ImageIndicator,
+             placeholderImage : UIImage = UIImage.from(color: .lightGray),
+             placeholderContentMode : UIView.ContentMode) {
+            self.indicatorEnabled = indicatorEnabled
+            self.imageIndicator = imageIndicatorStyle
+            self.placeholderImage = placeholderImage
+            self.placeholderContentMode = placeholderContentMode
+        }
+    }
+    
+    
     /// Sets the image by using SDWebImage Library with the provided url,with activity indicator enabled.
     /// To set image with more option take a look at setImage method.
     /// - Parameter url: url that holds the image link
     func setNormalImage(withURL url : URL?){
-        self.setImage(forURL: url,
-                      withIndicatorEnabled: true,
-                      andIndicatorStyle: .gray
+        let appearance = ImageLoaderAppearance.init(indicatorEnabled: true,
+                                                    imageIndicatorStyle: .activityIndicator(style: .gray),
+                                                    placeholderContentMode: self.contentMode
         )
+        
+        self.setImage(forURL: url,
+                      withAppearance: appearance)
     }
     
     /// Flexible method to set the image using SDWebImage Library wihtout getting touch with the library details.
     ///
     /// - Parameters:
     ///   - url: The link for the image to set.
-    ///   - activityEnabled: Enable or disable the activity indicator
-    ///   - style: supported styles, gray,white and largeWhite.
-    ///   - placeholderImage: a placeHolder image to show when the image is not available. Default a lightGray image.
+    ///   - appearance: imageLoaderAppearance
     func setImage(forURL url : URL?,
-                  withIndicatorEnabled activityEnabled : Bool? = nil,
-                  andIndicatorStyle style : UIActivityIndicatorView.Style,
-                  withPlaceHolderImage placeholderImage : UIImage? = nil,
-                  placeholderContentModel : UIView.ContentMode = .scaleAspectFit){
+                  withAppearance appearance : ImageLoaderAppearance){
+        
         let oldContentModel = self.contentMode
-        self.contentMode = placeholderContentModel
+        self.contentMode = appearance.placeholderContentMode
         
-        if  activityEnabled == true{
-            switch style{
-            case .gray:
-                self.sd_imageIndicator = SDWebImageActivityIndicator.gray
-            case .white:
-                self.sd_imageIndicator = SDWebImageActivityIndicator.white
-            case .whiteLarge:
-                self.sd_imageIndicator = SDWebImageActivityIndicator.whiteLarge
-            @unknown default:
-                self.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        if  appearance.indicatorEnabled {
+            switch appearance.imageIndicator{
+            case let .progressIndictor(style):
+                self.sd_imageIndicator = style
+            case let .activityIndicator(style):
+                self.sd_imageIndicator = style
+            case .none:
+                break
             }
-            
-            self.sd_imageIndicator = SDWebImageProgressIndicator.default
         }
         
-        guard placeholderImage != nil else{
-            self.sd_setImage(with: url,
-                             placeholderImage: UIImage.from(color: .lightGray),
-                             completed: nil
-            )
-            return
-        }
-        
-        self.sd_setImage(with: url,
-                         placeholderImage: placeholderImage!) { (_, _, _, _) in
-                            self.contentMode = oldContentModel
+        self.sd_setImage(with: url, placeholderImage: appearance.placeholderImage){ [weak self](_, _, _, _) in
+            guard let self = self else { return }
+            self.contentMode = oldContentModel
         }
     }
-    
-    
     
     public func blur(withStyle style: UIBlurEffect.Style = .light) {
         let blurEffect = UIBlurEffect(style: style)
