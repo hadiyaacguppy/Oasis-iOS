@@ -33,7 +33,7 @@
 
   
 
--  [X] Session Manager make more secure
+-  [ ] Session Manager make more secure
 
   
 
