@@ -20,9 +20,14 @@ extension UIView{
         
         /** The shadow properties */
         struct Value {
+
+            ///Radius controls how blurred the shadow is. This defaults to 3 points.
             let radius: CGFloat
+            ///Opacity controls how transparent the shadow is. This defaults to 0, meaning “invisible”.
             let opacity: Float
+            ///Controls the color of the shadow, and can be used to make shadows (dark colors) or glows (light colors). This defaults to black.
             let color: UIColor
+            ///Offset controls how far the shadow is moved away from its view. This defaults to 3 points up from the view.
             let offset: CGSize
             
             init(color: UIColor = .black, opacity: Float, radius: CGFloat, offset: CGSize = .zero) {

@@ -235,6 +235,17 @@ extension UIView {
         layer.removeDropShadow()
     }
     
+    func removeFrameStyle(){
+        layer.borderColor =  UIColor.clear.cgColor
+        layer.borderWidth = 0
+        
+        if #available(iOS 11.0, *) {
+                layer.cornerRadius = 0
+        } else {
+            layer.mask = nil
+        }
+    }
+    
     func applyFrameStyle(roundCorners: UIView.RoundCorners, border: UIView.Border) {
         
         let borderLayer = CAShapeLayer()
@@ -262,12 +273,21 @@ extension UIView {
         }
         
         if let borderValues = border.borderValues {
-            borderLayer.path = path.cgPath
-            borderLayer.fillColor = UIColor.clear.cgColor
-            borderLayer.strokeColor = borderValues.color.cgColor
-            borderLayer.lineWidth = borderValues.width
-            borderLayer.frame = bounds
-            layer.addSublayer(borderLayer)
+            if #available(iOS 11.0, *) {
+                layer.borderColor =  borderValues.color.cgColor
+                layer.borderWidth = borderValues.width
+            }else{
+                borderLayer.path = path.cgPath
+                borderLayer.fillColor = UIColor.clear.cgColor
+                borderLayer.strokeColor = borderValues.color.cgColor
+                borderLayer.lineWidth = borderValues.width
+                borderLayer.frame = bounds
+                layer.addSublayer(borderLayer)
+            }
+        }
+        if !border.hasBorder{
+            layer.borderColor =  UIColor.clear.cgColor
+            layer.borderWidth = 0
         }
     }
     

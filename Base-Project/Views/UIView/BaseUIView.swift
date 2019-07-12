@@ -28,25 +28,58 @@ class BaseUIView: UIView{
     /// default value is 20
     public var extendedHitAreaValue: CGFloat = 20
     
+    //* Backgroundview it's main objective is to apply the shadow on it (if exists) in system versions less than iOS 11
+    private var backgroundView : BaseUIView!
     
+   private var backgroundViewFrame : CGRect!
+    
+    /// Shadow to apply on the View
     public var shadow = UIView.Shadow.none{
         didSet{
             configureDropShadow()
         }
     }
     
-    public var roundCorners = UIView.RoundCorners.none{
+    ///Animating Corners
+    public var isCornersAnimatable : Bool = false {
         didSet{
-            self.applyFrameStyle(roundCorners: roundCorners, border: border)
+            removeFrameStyle()
+            UIViewPropertyAnimator(duration: 1.0, curve: .easeInOut) {
+                self.prepareToApplyFrameStyle()
+                }.startAnimation()
         }
     }
     
-    public var border = UIView.Border.none{
+    ///Corners Animation Duration, default value is 1.0
+    public var cornersAnimationDuration : TimeInterval = 1.0
+    
+    ///Corners Animation, default value is easeInOut
+    public var cornersAnimationCurve : UIView.AnimationCurve = .easeInOut
+
+    /// Corner value to set on the View
+    public var roundCorners = UIView.RoundCorners.none{
         didSet{
-            self.applyFrameStyle(roundCorners: roundCorners, border: border)
+            if isCornersAnimatable{
+            UIViewPropertyAnimator(duration: cornersAnimationDuration,
+                                   curve: cornersAnimationCurve) {
+                self.prepareToApplyFrameStyle()
+                }.startAnimation()
+            }else { self.prepareToApplyFrameStyle() }
         }
     }
-
+    
+    /// Border to set on the View
+    public var border = UIView.Border.none{
+        didSet{
+            if isCornersAnimatable{
+                UIViewPropertyAnimator(duration: cornersAnimationDuration,
+                                       curve: cornersAnimationCurve) {
+                                        self.prepareToApplyFrameStyle()
+                    }.startAnimation()
+            }else { self.prepareToApplyFrameStyle() }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -57,28 +90,8 @@ class BaseUIView: UIView{
         
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        if roundCorners == .none && border == .none{
-            return
-        }
-        self.applyFrameStyle(roundCorners: roundCorners, border: border)
-    }
-    
     deinit {
         disposeBag = DisposeBag()
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        let activityIndicatorPosition : UIView.ActivityIndicatorPostion = shouldReplacedWhenLoading ? .bounds : .center
-        let replaceByBinder = self.rx.addLoadingIndicator(color: self.activityIndicatorColor,
-                                                          position: activityIndicatorPosition)
-        isBusy.asObservable()
-            .bind(to: replaceByBinder)
-            .disposed(by: disposeBag)
-        
     }
     
     override
@@ -98,17 +111,124 @@ class BaseUIView: UIView{
             return hitFrame.contains(point)
     }
     
+}
+
+//MARK:- ViewLifeCycle
+extension BaseUIView{
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        let activityIndicatorPosition : UIView.ActivityIndicatorPostion = shouldReplacedWhenLoading ? .bounds : .center
+        let replaceByBinder = self.rx.addLoadingIndicator(color: self.activityIndicatorColor,
+                                                          position: activityIndicatorPosition)
+        isBusy.asObservable()
+            .bind(to: replaceByBinder)
+            .disposed(by: disposeBag)
+        
+    }
     
-    // Apply drop shadow
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if #available(iOS 11.0, *) {} else {
+            if backgroundView != nil {
+                backgroundView.frame = backgroundViewFrame
+            }
+        }
+        
+        if roundCorners == .none && border == .none{
+            return
+        }
+        if isCornersAnimatable{
+            UIViewPropertyAnimator(duration: cornersAnimationDuration,
+                                   curve: cornersAnimationCurve) {
+                                    self.prepareToApplyFrameStyle()
+                }.startAnimation()
+        }else { self.prepareToApplyFrameStyle() }
+    }
+}
+
+//MARK:- Observables
+extension BaseUIView{
+    override func observeValue(forKeyPath keyPath: String?,
+                               of object: Any?,
+                               change: [NSKeyValueChangeKey : Any]?,
+                               context: UnsafeMutableRawPointer?) {
+        if keyPath == "backgroundColor" {
+            guard let color = change?[.newKey] as? UIColor else {return}
+            if self.backgroundView != nil{ self.backgroundView.backgroundColor = color}
+        }
+    }
+}
+
+//MARK:- FrameStyle
+extension BaseUIView{
+    
+    /** Before Applying Frame style this method will be called to check,*/
+    /** if shadow is enabled and if we are running on iOS less than 11 */
+    /** If so, we need to apply corner radius to background view also */
+    private func prepareToApplyFrameStyle(){
+        if #available(iOS 11.0, *) {
+            applyFrameStyle(roundCorners: roundCorners, border: border)
+        }else{
+            if shadow.isActive{
+                if backgroundView != nil {
+                    var cornerRadius: CGFloat = 0
+                    (_, cornerRadius) = roundCorners.cornerValues ?? ([], 0)
+                    backgroundView.cornerRadius =  cornerRadius
+                    applyFrameStyle(roundCorners: .all(radius: cornerRadius), border: border)
+                }
+            }
+        }
+    }
+}
+
+//MARK:- Shadow
+extension BaseUIView{
+    
+    // Apply drop shadow on the actual View
     private func configureDropShadow() {
         switch shadow {
         case .active(with: let value):
-            applyDropShadow(withOffset: value.offset, opacity: value.opacity, radius: value.radius, color: value.color)
-            self.layer.cornerRadius = 15
-            self.layer.masksToBounds = false
+            if #available(iOS 11.0, *) {
+                applyDropShadow(withOffset: value.offset,
+                                opacity: value.opacity,
+                                radius: value.radius,
+                                color: value.color)
+            }else{
+                if backgroundView == nil {
+                    createBackgroundView {
+                        applyBackgroundViewShadow(withValue: value)
+                    }
+                }
+            }
+            
         case .none:
-            removeDropShadow()
+            if #available(iOS 11.0, *) {
+                removeDropShadow()
+            }else{
+                backgroundView.removeDropShadow()
+            }
         }
+    }
+    
+    //Create another view (BackgroundView) for applying Shadow
+    private func createBackgroundView(addedCompletion : () -> ()){
+        backgroundView = BaseUIView(frame: .zero)
+        self.backgroundViewFrame = CGRect(x: self.frame.origin.x,
+                                          y: self.frame.origin.y,
+                                          width: bounds.width,
+                                          height: bounds.height)
+        backgroundView.frame = self.backgroundViewFrame
+        backgroundView.backgroundColor = self.backgroundColor
+        superview?.insertSubview(backgroundView, belowSubview: self)
+        addedCompletion()
+    }
+    
+    // Apply shadow on backgroundView
+    private func applyBackgroundViewShadow(withValue value : UIView.Shadow.Value){
+        backgroundView.applyDropShadow(withOffset: value.offset,
+                                       opacity: value.opacity,
+                                       radius: value.radius,
+                                       color: value.color)
     }
 }
