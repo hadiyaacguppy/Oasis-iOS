@@ -6,6 +6,7 @@
 //  Copyright © 2019 Tedmob. All rights reserved.
 //
 
+
 import UIKit
 import RxSwift
 
@@ -30,15 +31,58 @@ class BaseButton: UIButton {
         }
     }
     
+    /// Shadow to apply on the View
     public var shadow = UIView.Shadow.none{
         didSet{
             configureDropShadow()
         }
     }
     
-    public var roundCorners = UIView.RoundCorners.none
+    //* Backgroundview it's main objective is to add the shadow on it if exists in system versions less than 11
+    private var backgroundView : BaseUIView!
     
-    public var border = UIView.Border.none
+    private var backgroundViewFrame : CGRect!
+    
+    
+    ///Animating Corners
+    public var isCornersAnimatable : Bool = false {
+        didSet{
+            removeFrameStyle()
+            UIViewPropertyAnimator(duration: 1.0, curve: .easeInOut) {
+                self.prepareToApplyFrameStyle()
+                }.startAnimation()
+        }
+    }
+    
+    ///Corners Animation Duration, default value is 1.0
+    public var cornersAnimationDuration : TimeInterval = 1.0
+    
+    ///Corners Animation, default value is easeInOut
+    public var cornersAnimationCurve : UIView.AnimationCurve = .easeInOut
+    
+    /// Corner value to set on the View
+    public var roundCorners = UIView.RoundCorners.none{
+        didSet{
+            if isCornersAnimatable{
+                UIViewPropertyAnimator(duration: cornersAnimationDuration,
+                                       curve: cornersAnimationCurve) {
+                                        self.prepareToApplyFrameStyle()
+                    }.startAnimation()
+            }else { self.prepareToApplyFrameStyle() }
+        }
+    }
+    
+    /// Border to set on the View
+    public var border = UIView.Border.none{
+        didSet{
+            if isCornersAnimatable{
+                UIViewPropertyAnimator(duration: cornersAnimationDuration,
+                                       curve: cornersAnimationCurve) {
+                                        self.prepareToApplyFrameStyle()
+                    }.startAnimation()
+            }else { self.prepareToApplyFrameStyle() }
+        }
+    }
     
     
     private var disposeBag = DisposeBag()
@@ -58,28 +102,6 @@ class BaseButton: UIButton {
         didSet{
             add(style: style)
         }
-    }
-    
-    override
-    func layoutSubviews() {
-        super.layoutSubviews()
-        self.applyFrameStyle(roundCorners: roundCorners, border: border)
-    }
-    
-    override
-    init(frame: CGRect) {
-        super.init(frame: frame)
-        configureButton()
-    }
-    
-    deinit {
-        disposeBag = DisposeBag()
-    }
-    
-    required
-    init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        configureButton()
     }
     
     //MARK: - Image
@@ -162,11 +184,48 @@ class BaseButton: UIButton {
     var rippleColor: UIColor = UIColor(white: 1.0, alpha: 0.3)
     var rippleSpeed: Double = 1.0
     
+    override
+    init(frame: CGRect) {
+        super.init(frame: frame)
+        configureButton()
+    }
+    
+    deinit {
+        disposeBag = DisposeBag()
+    }
+    
+    required
+    init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        configureButton()
+    }
     
 }
 
+//MARK:- ViewLifeCycle
+extension BaseButton{
+    override
+    func layoutSubviews() {
+        super.layoutSubviews()
+        if #available(iOS 11.0, *) {} else {
+            if backgroundView != nil {
+                backgroundView.frame = backgroundViewFrame
+            }
+        }
+        
+        if roundCorners == .none && border == .none{
+            return
+        }
+        if isCornersAnimatable{
+            UIViewPropertyAnimator(duration: cornersAnimationDuration,
+                                   curve: cornersAnimationCurve) {
+                                    self.prepareToApplyFrameStyle()
+                }.startAnimation()
+        }else { self.prepareToApplyFrameStyle() }
+    }
+}
 
-//MARK: ActivityIndicator
+//MARK:- ActivityIndicator
 extension BaseButton{
     
     /**
@@ -221,16 +280,57 @@ extension BaseButton{
     
 }
 
-//MARK: Configuration
+//MARK:- Configuration
 extension BaseButton{
     
-    fileprivate
-    func configureButton(){
+    private func configureButton(){
         addisBusyObservable()
     }
     
-    fileprivate
-    func addisBusyObservable(){
+    private func add(style : ButtonStyle){
+        self.backgroundColor = style.backgroundColor
+        self.tintColor = style.titleColor
+        self.titleLabel?.font = style.titleFont
+    }
+}
+
+//MARK:- Observables
+extension BaseButton{
+    
+    override func observeValue(forKeyPath keyPath: String?,
+                               of object: Any?,
+                               change: [NSKeyValueChangeKey : Any]?,
+                               context: UnsafeMutableRawPointer?) {
+        if keyPath == "backgroundColor" {
+            /// Background color has changed
+            /// Your view which backgroundColor it is
+            /*
+             guard let view = object as? UIView else {return}
+             print(view.backgroundColor)
+             */
+            //OR
+            guard let color = change?[.newKey] as? UIColor else {return}
+            if self.backgroundView != nil{ self.backgroundView.backgroundColor = color}
+        }
+    }
+    
+    private func addisBusyObservable(){
+        /*
+         isBusy.asObservable().bind(to: self.rx.addLoadingIndicator(position: .center))
+         .disposed(by: disposeBag)
+         isBusy.asObservable()
+         .skip(1)
+         .subscribe(onNext: { (value) in
+         if value == true{
+         self.buttonTitle = self.titleLabel?.text
+         self.setTitle("", for: .normal)
+         }else{
+         
+         self.setTitle(self.buttonTitle, for: .normal)
+         
+         }
+         }).disposed(by: disposeBag)
+         */
         isBusy
             .asObservable()
             .skip(1)
@@ -240,36 +340,87 @@ extension BaseButton{
                 case true :
                     self.showLoader()
                 case false :
-                    self.hideLoader()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                        self.hideLoader()
+                    })
                 }
             })
             .disposed(by: self.disposeBag)
     }
-    
-    fileprivate
-    func add(style : ButtonStyle){
-        self.backgroundColor = style.backgroundColor
-        self.tintColor = style.titleColor
-        self.titleLabel?.font = style.titleFont
-    }
-    
-    // Apply drop shadow
-    fileprivate
-    func configureDropShadow() {
-        switch shadow {
-        case .active(with: let value):
-            applyDropShadow(withOffset: value.offset,
-                            opacity: value.opacity,
-                            radius: value.radius,
-                            color: value.color)
-        case .none:
-            removeDropShadow()
+}
+
+//MARK:- FrameStyle
+extension BaseButton{
+    /** Before Applying Frame style this method will be called to check,*/
+    /** if shadow is enabled and if we are running on iOS less than 11 */
+    /** If so, we need to apply corner radius to background view also */
+    private func prepareToApplyFrameStyle(){
+        if #available(iOS 11.0, *) {
+            applyFrameStyle(roundCorners: roundCorners, border: border)
+        }else{
+            if shadow.isActive{
+                if backgroundView != nil {
+                    var cornerRadius: CGFloat = 0
+                    (_, cornerRadius) = roundCorners.cornerValues ?? ([], 0)
+                    backgroundView.cornerRadius =  cornerRadius
+                    applyFrameStyle(roundCorners: .all(radius: cornerRadius), border: border)
+                }
+            }
         }
     }
 }
 
+//MARK:- Shadow
+extension BaseButton{
+    // Apply drop shadow
+    private func configureDropShadow() {
+        switch shadow {
+        case .active(with: let value):
+            if #available(iOS 11.0, *) {
+                applyDropShadow(withOffset: value.offset,
+                                opacity: value.opacity,
+                                radius: value.radius,
+                                color: value.color)
+            }else{
+                if backgroundView == nil {
+                    createBackgroundView {
+                        applyBackgroundViewShadow(withValue: value)
+                    }
+                }
+            }
+            
+        case .none:
+            if #available(iOS 11.0, *) {
+                removeDropShadow()
+            }else{
+                backgroundView.removeDropShadow()
+            }
+        }
+    }
+    
+    //Create another view (BackgroundView) for applying Shadow
+    private func createBackgroundView(addedCompletion : () -> ()){
+        backgroundView = BaseUIView(frame: .zero)
+        self.backgroundViewFrame = CGRect(x: self.frame.origin.x,
+                                          y: self.frame.origin.y,
+                                          width: bounds.width,
+                                          height: bounds.height)
+        backgroundView.frame = self.backgroundViewFrame
+        backgroundView.backgroundColor = self.backgroundColor
+        superview?.insertSubview(backgroundView, belowSubview: self)
+        addedCompletion()
+    }
+    
+    // Apply shadow on backgroundView
+    private func applyBackgroundViewShadow(withValue value : UIView.Shadow.Value){
+        backgroundView.applyDropShadow(withOffset: value.offset,
+                                       opacity: value.opacity,
+                                       radius: value.radius,
+                                       color: value.color)
+    }
+}
 
-//MARK: Ripple Button
+//MARK:- Ripple Button
 extension BaseButton: CAAnimationDelegate{
     
     //MARK: Material touch animation for ripple button
