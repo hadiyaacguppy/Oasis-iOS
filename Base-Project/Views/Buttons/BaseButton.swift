@@ -89,7 +89,7 @@ class BaseButton: UIButton {
     
     public var isBusy = ActivityIndicator()
     
-    //private var buttonTitle: String?
+    private var buttonTitle: String?
     
     /// default value white
     var activityIndicatorColor : UIColor = .white
@@ -238,7 +238,8 @@ extension BaseButton{
         isLoading = true
         self.isUserInteractionEnabled = false
         UIView.transition(with: self, duration: 0.5, options: .curveEaseOut, animations: {
-            self.titleLabel?.alpha = 0.0
+            self.buttonTitle = self.titleLabel?.text
+            self.setTitle("", for: .normal)
             self.imageAlpha = 0.0
         }) { (finished) in
             self.addSubview(self.indicator)
@@ -256,7 +257,7 @@ extension BaseButton{
         self.indicator.stopAnimating()
         self.indicator.removeFromSuperview()
         UIView.transition(with: self, duration: 0.5, options: .curveEaseIn, animations: {
-            self.titleLabel?.alpha = 1.0
+            self.setTitle(self.buttonTitle, for: .normal)
             self.imageAlpha = 1.0
         }) { (finished) in
         }
