@@ -12,7 +12,7 @@ import UIKit
 import RxSwift
 import WebKit
 protocol BaseWebViewViewControllerInput {
-
+    
 }
 
 protocol BaseWebViewViewControllerOutput {
@@ -22,43 +22,47 @@ protocol BaseWebViewViewControllerOutput {
     func retryLoadingRequested()
     
     func webViewIsReady() -> Single<URLRequest>
+    
     var urlString : String {get set }
 }
 
 class BaseWebViewViewController: BaseViewController, BaseWebViewViewControllerInput {
-
+    
     var output: BaseWebViewViewControllerOutput?
     var router: BaseWebViewRouter?
     var webView : WKWebView!
-
+    
     // MARK: Object lifecycle
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         BaseWebViewConfigurator.shared.configure(viewController: self)
     }
-
+    
     // MARK: View lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        showPlaceHolderView(withAppearanceType: .loading,
-        //                            title: Constants.PlaceHolderView.Texts.wait)
+        self.initWebView()
         output?.viewDidFinishedLoading()
-        setupRetryFetchingCallBack()
     }
     
     
     func loadWebView(withURLRequest urlRequest : URLRequest){
         self.webView.load(urlRequest)
+        //        self.webView.sizeToFit()
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.output?.webViewIsReady()
+            .map {url in //self.initWebView() ;
+                return url}
             .map { self.loadWebView(withURLRequest: $0)}
             .subscribe()
             .disposed(by: disposeBag)
     }
+    
     fileprivate
     func makebackgroundClear() {
         webView.translatesAutoresizingMaskIntoConstraints = false
@@ -67,46 +71,46 @@ class BaseWebViewViewController: BaseViewController, BaseWebViewViewControllerIn
         self.webView!.scrollView.backgroundColor = UIColor.clear
     }
     
-    func initWebView(){
-        
-        self.view.backgroundColor = UIColor.black
-      self.webView = WKWebView()
-        makebackgroundClear()
-        
-        self.view.addSubview(webView)
-        NSLayoutConstraint.activate([
-            webView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            webView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
-            webView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
-            webView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
-            ])
-        
-        
-        
-        webView.navigationDelegate = self
-        
-        self.view.bringSubviewToFront(self.webView)
-        
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        webView.frame = self.view.bounds
     }
+    
+    func initWebView(){
+        var webViewFrame = CGRect()
+        webViewFrame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        
+        self.webView = WKWebView(frame: webViewFrame)
+        webView.navigationDelegate = self
+        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        self.view.addSubview(self.webView)
+        self.view.bringSubviewToFront(self.webView)
+        self.view.clipsToBounds = true
+    }
+    
     // MARK: Requests
     
-    fileprivate
-    func setupRetryFetchingCallBack(){
-        self.didTapOnRetryPlaceHolderButton = {
-            
-            self.showPlaceHolderView(withAppearanceType: .loading,
-                                     title: Constants.PlaceHolderView.Texts.wait)
-            
-            self.output?.retryLoadingRequested()
-        }
+    public
+    func reloadWebViewWithURLString(string : String){
+        
+        self.output?.urlString = string
+        self.output?.webViewIsReady()
+            .map { self.loadWebView(withURLRequest: $0)}
+            .subscribe()
+            .disposed(by: disposeBag)
     }
-
-
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        Utilities.ProgressHUD.dismissLoading()
+    }
+    
     // MARK: Display logic
-
+    
 }
 extension BaseWebViewViewController: BaseWebViewPresenterOutput {
- 
+    
     
     
 }
@@ -119,7 +123,7 @@ extension BaseWebViewViewController :WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!)  {
         Utilities.ProgressHUD.dismissLoading()
-       
     }
     
 }
+
