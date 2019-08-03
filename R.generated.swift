@@ -30,8 +30,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 4 images.
+  /// This `R.image` struct is generated, and contains static references to 7 images.
   struct image {
+    /// Image `NavBackAr`.
+    static let navBackAr = Rswift.ImageResource(bundle: R.hostingBundle, name: "NavBackAr")
+    /// Image `NavBack`.
+    static let navBack = Rswift.ImageResource(bundle: R.hostingBundle, name: "NavBack")
+    /// Image `NavClose`.
+    static let navClose = Rswift.ImageResource(bundle: R.hostingBundle, name: "NavClose")
     /// Image `RegistrationNotView`.
     static let registrationNotView = Rswift.ImageResource(bundle: R.hostingBundle, name: "RegistrationNotView")
     /// Image `RegistrationView`.
@@ -40,6 +46,21 @@ struct R: Rswift.Validatable {
     static let error = Rswift.ImageResource(bundle: R.hostingBundle, name: "error")
     /// Image `offline`.
     static let offline = Rswift.ImageResource(bundle: R.hostingBundle, name: "offline")
+    
+    /// `UIImage(named: "NavBack", bundle: ..., traitCollection: ...)`
+    static func navBack(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.navBack, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "NavBackAr", bundle: ..., traitCollection: ...)`
+    static func navBackAr(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.navBackAr, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "NavClose", bundle: ..., traitCollection: ...)`
+    static func navClose(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.navClose, compatibleWith: traitCollection)
+    }
     
     /// `UIImage(named: "RegistrationNotView", bundle: ..., traitCollection: ...)`
     static func registrationNotView(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {

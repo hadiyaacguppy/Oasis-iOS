@@ -15,7 +15,6 @@ import AnalyticsManager
 class BaseViewController : UIViewController, BaseController {
     
     var didTapOnPlaceHolderView: (() -> ())?
-    
     var didTapOnRetryPlaceHolderButton: (() -> ())?
     var analyticsManager = AnalyticsManager()
     let disposeBag = DisposeBag()
@@ -104,10 +103,9 @@ class BaseViewController : UIViewController, BaseController {
         
         
         if LanguageService().isRTL{
-            backButton.image = UIImage(named: "NavBackiconAR")!.withRenderingMode(.alwaysOriginal)
+            backButton.image = R.image.navBackAr()!.withRenderingMode(.alwaysOriginal)
         }else {
-            backButton.image = UIImage(named: "NavBackicon")!.withRenderingMode(.alwaysOriginal)
-            
+            backButton.image = R.image.navBack()!.withRenderingMode(.alwaysOriginal)
         }
         
         backButton.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -125,7 +123,7 @@ class BaseViewController : UIViewController, BaseController {
         if self.navigationController == nil {
             
             let dismissButton = UIButton()
-            dismissButton.frame = CGRect(x: 20  , y: 20, width: 34, height: 34  )
+            dismissButton.frame = CGRect(x: 20  , y: 20, width: 34, height: 34)
             dismissButton.addTarget(self ,
                                     action: #selector(self.dismissButtonTapped),
                                     for: .touchUpInside)
@@ -138,13 +136,10 @@ class BaseViewController : UIViewController, BaseController {
                                                 target: self,
                                                 action: #selector(self.dismissButtonTapped))
             
-            dismissButton.image = UIImage(named: "iconClose")!.withRenderingMode(.alwaysOriginal)
-            
+            dismissButton.image = R.image.navClose()!.withRenderingMode(.alwaysOriginal)
             
             dismissButton.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             navigationItem.leftBarButtonItem = dismissButton
         }
-        
     }
-    
 }

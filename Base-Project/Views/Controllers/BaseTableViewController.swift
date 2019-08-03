@@ -119,10 +119,9 @@ class BaseTableViewController : UITableViewController,BaseController {
         
         
         if LanguageService().isRTL{
-            backButton.image = UIImage(named: "NavBackiconAR")!.withRenderingMode(.alwaysOriginal)
+            backButton.image = R.image.navBackAr()!.withRenderingMode(.alwaysOriginal)
         }else {
-            backButton.image = UIImage(named: "NavBackicon")!.withRenderingMode(.alwaysOriginal)
-            
+            backButton.image = R.image.navBack()!.withRenderingMode(.alwaysOriginal)
         }
         
         backButton.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -153,8 +152,7 @@ class BaseTableViewController : UITableViewController,BaseController {
                                                 target: self,
                                                 action: #selector(self.dismissButtonTapped))
             
-            dismissButton.image = UIImage(named: "iconClose")!.withRenderingMode(.alwaysOriginal)
-            
+            dismissButton.image = R.image.navClose()!.withRenderingMode(.alwaysOriginal)
             
             dismissButton.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             navigationItem.leftBarButtonItem = dismissButton
