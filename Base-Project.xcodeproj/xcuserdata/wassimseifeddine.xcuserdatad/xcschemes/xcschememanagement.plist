@@ -7,7 +7,7 @@
 		<key>AnalyticsManager.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>21</integer>
+			<integer>3</integer>
 		</dict>
 		<key>Base-Project.xcscheme</key>
 		<dict>
@@ -17,12 +17,12 @@
 		<key>Base-Project.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>19</integer>
+			<integer>1</integer>
 		</dict>
 		<key>OneSignalNotificationServiceExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>20</integer>
+			<integer>2</integer>
 		</dict>
 		<key>SessionManager.xcscheme_^#shared#^_</key>
 		<dict>
@@ -32,7 +32,7 @@
 		<key>SessionRepositoryTests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>22</integer>
+			<integer>4</integer>
 		</dict>
 	</dict>
 </dict>
