@@ -83,7 +83,7 @@ DEPENDENCIES:
   - SwiftLocation
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - CZPicker
     - Firebase
     - FirebaseAnalytics
