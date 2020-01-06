@@ -24,6 +24,7 @@
 		0F57539B20EE19CD0069C139 /* BaseProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539A20EE19CD0069C139 /* BaseProjectService.swift */; };
 		0F57539D20EE1C430069C139 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539C20EE1C430069C139 /* APIClient.swift */; };
 		0F57539F20EE1EC90069C139 /* Relays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539E20EE1EC90069C139 /* Relays.swift */; };
+		0F8ADF1522FC231000FCB14E /* MultiLineField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8ADF1422FC231000FCB14E /* MultiLineField.swift */; };
 		0FD0C6EC2200B662000C5881 /* UIFont+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD0C6EB2200B662000C5881 /* UIFont+Extentions.swift */; };
 		0FD65F1520D014F40075E251 /* Reactive+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD65F1420D014F40075E251 /* Reactive+UIButton.swift */; };
 		0FD65F1920D018480075E251 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD65F1820D018480075E251 /* Double+Extensions.swift */; };
@@ -252,6 +253,7 @@
 		0F57539A20EE19CD0069C139 /* BaseProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProjectService.swift; sourceTree = "<group>"; };
 		0F57539C20EE1C430069C139 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		0F57539E20EE1EC90069C139 /* Relays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Relays.swift; sourceTree = "<group>"; };
+		0F8ADF1422FC231000FCB14E /* MultiLineField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLineField.swift; sourceTree = "<group>"; };
 		0FD0C6EB2200B662000C5881 /* UIFont+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extentions.swift"; sourceTree = "<group>"; };
 		0FD65F1420D014F40075E251 /* Reactive+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+UIButton.swift"; sourceTree = "<group>"; };
 		0FD65F1820D018480075E251 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
@@ -969,6 +971,7 @@
 				4AEF646E22107D3E00D53D75 /* Navigation Bars */,
 				4AEF646D22107D2500D53D75 /* Controllers */,
 				CFE259E722C9CDB4006B0472 /* TDFullIMageView.swift */,
+				0F8ADF1422FC231000FCB14E /* MultiLineField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1479,6 +1482,7 @@
 				117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */,
 				3E1DEAF622BA63E900FAD9F4 /* UIRectCorner+Extensions.swift in Sources */,
 				CF8C5C9E20EF9CA400236C7B /* DatePickerDialog.swift in Sources */,
+				0F8ADF1522FC231000FCB14E /* MultiLineField.swift in Sources */,
 				CF564702211B142E0092EFBD /* OneSignalPushService.swift in Sources */,
 				CFE259E822C9CDB4006B0472 /* TDFullIMageView.swift in Sources */,
 				CFDB669B22C601BB006278A2 /* AppDelegate+OneSignal.swift in Sources */,
