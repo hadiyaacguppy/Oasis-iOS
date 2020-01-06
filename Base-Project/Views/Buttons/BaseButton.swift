@@ -24,7 +24,7 @@ class BaseButton: UIButton {
         /** BackgroundColor of the button */
         public var backgroundColor : UIColor
         
-        public init(titleFont: UIFont = UIFont.boldSystemFont(ofSize: 15), titleColor: UIColor, backgroundColor: UIColor){
+        public init(titleFont: UIFont = MainFont.bold.with(size: 15), titleColor: UIColor, backgroundColor: UIColor){
             self.titleFont = titleFont
             self.titleColor = titleColor
             self.backgroundColor = backgroundColor
@@ -96,7 +96,7 @@ class BaseButton: UIButton {
     
     
     public
-    var style : ButtonStyle = .init(titleFont: UIFont.boldSystemFont(ofSize: 15),
+    var style : ButtonStyle = .init(titleFont: MainFont.bold.with(size: 15),
                                     titleColor: .blue,
                                     backgroundColor: .white){
         didSet{

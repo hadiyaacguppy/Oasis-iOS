@@ -48,9 +48,7 @@ extension BaseProjectService: TargetType {
         switch self {
             
         case .setOneSignalUserPush(let token):
-            return .requestParameters(parameters: ["player_id":token], encoding: URLEncoding.default)
-        
-            
+            return requestParameters(parameters: ["player_id":token])
         }
     }
     
@@ -64,6 +62,12 @@ extension BaseProjectService: TargetType {
     
     var validationType : ValidationType {
         return .successCodes
-        
+    }
+}
+
+
+extension BaseProjectService {
+    func requestParameters(parameters : [String : Any]) -> Task {
+        return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
     }
 }

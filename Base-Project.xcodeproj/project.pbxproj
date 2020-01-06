@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F101DAC234B435C00E580E5 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F101DAB234B435C00E580E5 /* Font.swift */; };
 		0F1B7FAD22CA6C910079F752 /* Countries.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0F1B7FAC22CA6C910079F752 /* Countries.bundle */; };
 		0F1B7FB022CA6C9D0079F752 /* UISearchBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B7FAE22CA6C9D0079F752 /* UISearchBar+Extensions.swift */; };
 		0F1B7FB122CA6C9D0079F752 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B7FAF22CA6C9D0079F752 /* UIAlertController+Extensions.swift */; };
@@ -233,6 +234,7 @@
 
 /* Begin PBXFileReference section */
 		0A6FC7C665C3EC115CF8C0BC /* Pods-Base-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Base-Project/Pods-Base-Project.release.xcconfig"; sourceTree = "<group>"; };
+		0F101DAB234B435C00E580E5 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		0F1B7FAC22CA6C910079F752 /* Countries.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Countries.bundle; sourceTree = "<group>"; };
 		0F1B7FAE22CA6C9D0079F752 /* UISearchBar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Extensions.swift"; sourceTree = "<group>"; };
 		0F1B7FAF22CA6C9D0079F752 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
@@ -674,6 +676,7 @@
 				3EDC4132224E81BE00624D2B /* ActivityIndicator.swift */,
 				3E1DEAFC22BA674D00FAD9F4 /* NavigationBarType.swift */,
 				3E7367F322C6605A00B4C71D /* FeedbackTypes.swift */,
+				0F101DAB234B435C00E580E5 /* Font.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1575,6 +1578,7 @@
 				CF2F319E215E8BA0007A912A /* URL+Extensions.swift in Sources */,
 				0F1B7FB322CA6CA40079F752 /* LocalePickerViewController.swift in Sources */,
 				CFF69D732195578F003BE6BF /* Data+Extensions.swift in Sources */,
+				0F101DAC234B435C00E580E5 /* Font.swift in Sources */,
 				CF7823B420EF95A7003069BD /* APIErrorManager.swift in Sources */,
 				3E1DEAF022BA62FD00FAD9F4 /* UIView+Shadow.swift in Sources */,
 				CFAD4D0E21955EF300AF4375 /* LanguageService.swift in Sources */,
