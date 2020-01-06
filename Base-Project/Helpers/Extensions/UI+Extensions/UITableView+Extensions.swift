@@ -80,6 +80,19 @@ extension UITableView{
         guard indexPath.row < numberOfRows(inSection: indexPath.section) else { return }
         scrollToRow(at: indexPath, at: scrollPosition, animated: animated)
     }
-
+    
+    func configure(withSelectionAllowed selectionAllowed : Bool? = true,
+                   andSperatorStyle sepratorStyle : UITableViewCell.SeparatorStyle,
+                   andBackgroundColor bgdColor : UIColor? = .lightGray,
+                   isBouncingEnabled bouncingEnables : Bool? = nil){
+        self.allowsSelection = selectionAllowed ?? true
+        self.separatorStyle = sepratorStyle
+        self.backgroundColor = bgdColor
+        if bouncingEnables != nil {
+            self.bounces = bouncingEnables!
+        }
+        self.showsHorizontalScrollIndicator = false
+        self.showsVerticalScrollIndicator = false
+    }
 
 }
