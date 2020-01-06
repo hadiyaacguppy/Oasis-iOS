@@ -95,7 +95,7 @@ struct Constants {
     struct PlaceHolderView {
         struct Fonts {
             
-            static let  boldSubheadline  = UIFont.boldSystemFont(ofSize: 15.0)
+            static let  boldSubheadline  = MainFont.bold.with(size: 15)
             
         }
         struct Texts {

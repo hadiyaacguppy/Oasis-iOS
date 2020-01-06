@@ -50,7 +50,7 @@ public class PlaceHolderView: UIView {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.backgroundColor = UIColor.clear
         
-        titleLabel.font = UIFont.systemFont(ofSize: 27.0)
+        titleLabel.font = MainFont.normal.with(size: 27.0)
         titleLabel.textColor = UIColor(white: 0.6, alpha: 1.0)
         titleLabel.textAlignment = .center
         titleLabel.lineBreakMode = .byWordWrapping
@@ -66,7 +66,7 @@ public class PlaceHolderView: UIView {
         detailLabel.translatesAutoresizingMaskIntoConstraints = false
         detailLabel.backgroundColor = UIColor.clear
         
-        detailLabel.font = UIFont.systemFont(ofSize: 17.0)
+        detailLabel.font = MainFont.normal.with(size: 17.0)
         detailLabel.textColor = UIColor(white: 0.6, alpha: 1.0)
         detailLabel.textAlignment = .center
         detailLabel.lineBreakMode = .byWordWrapping

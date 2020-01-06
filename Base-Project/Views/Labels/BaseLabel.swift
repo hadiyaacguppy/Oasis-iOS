@@ -35,7 +35,7 @@ class BaseLabel : UILabel{
     }
     
     public
-    var style : LabelStyle = .init(font: UIFont.systemFont(ofSize: UIFont.systemFontSize), color: .black){
+    var style : LabelStyle = .init(font: MainFont.normal.with(size: UIFont.systemFontSize), color: .black){
         didSet{
             add(style: style)
         }

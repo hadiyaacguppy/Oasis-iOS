@@ -75,7 +75,7 @@ class BaseSkyFloatingTextField : SkyFloatingLabelTextField {
         
         self.keyboardAppearance = .dark
         
-        self.titleFont = UIFont.boldSystemFont(ofSize: 14)
+        self.titleFont = MainFont.bold.with(size: 14)
         
         self.tintColor = .black
         
