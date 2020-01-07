@@ -1456,7 +1456,6 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
 			);
 			outputFileListPaths = (
 			);
