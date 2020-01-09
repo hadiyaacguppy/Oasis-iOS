@@ -21,7 +21,7 @@ public class SessionRepository {
             }
             return accessToken
         }set {
-            print("🙍‍♂️ \(#file) Sets new Access Token of \(String(describing: newValue)) in \(#function) at line \(#line) ")
+            print("🔐 \(#file) Sets new Access Token of \(String(describing: newValue)) in \(#function) at line \(#line) ")
             UserDefaults.standard.set(newValue, forKey: SessionRepositoryConstants.UserDefaultKeys.accessToken)
             UserDefaults.standard.synchronize()
         }
@@ -37,9 +37,11 @@ public class SessionRepository {
                 deleteArchivedUser()
                 return
             }
-            print("Saving User Object")
+            print("🙍‍♂️Saving User Object")
             persistUser(user: newValue)
-            
+            if newValue.token != nil {
+                self.token = newValue.token
+            }
         }
     }
     
