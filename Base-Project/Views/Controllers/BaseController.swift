@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import RxSwift
-
+import AnalyticsManager
 
 protocol BaseController {
     
@@ -20,8 +20,7 @@ protocol BaseController {
     func display(errorMessage msg : String )
     
     func dismissProgress()
-    
-   
+       
     func addBackButton()
     
     func addDismissButton()
@@ -39,7 +38,6 @@ protocol BaseController {
 }
 
 extension BaseController  where Self: UIViewController{
-    
     
     func showPlaceHolderView(withAppearanceType type : PlaceHolderAppearanceType,
                              title : String,
@@ -98,9 +96,7 @@ extension BaseController  where Self: UIViewController{
         }
         
     }
-    
-    
-    
+        
     func preparePlaceHolderView(withErrorViewModel errorViewModel : ErrorViewModel){
         switch errorViewModel.code{
         case .apiError(_):
@@ -114,6 +110,10 @@ extension BaseController  where Self: UIViewController{
             self.showPlaceHolderView(withAppearanceType: .networkError,
                                         title: errorViewModel.message)
         }
+    }
+    
+    func logEvent(withName name : String ,andParameters params : [String:Any]?){
+        AnalyticsManager.shared.logEvent(withName: name, andParameters: params)
     }
     
 }

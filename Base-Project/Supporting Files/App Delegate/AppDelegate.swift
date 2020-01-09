@@ -7,11 +7,10 @@
 //
 
 import UIKit
-import CoreData
-import UserNotifications
 import SessionRepository
 import RxSwift
 import Logging
+import AnalyticsManager
 
 var logger = Logger(label: "Base-Project-Logger")
 
@@ -34,8 +33,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         subscribeToSessionExpiryRelay()
 
-        
         return true
+    }
+    
+    override init() {
+        super.init()
+        AnalyticsManager.shared.initFirebaseApp()
     }
 }
 

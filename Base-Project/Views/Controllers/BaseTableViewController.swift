@@ -6,30 +6,29 @@
 //  Copyright © 2018 Tedmob. All rights reserved.
 //
 
-import Foundation
 import RxSwift
 import AnalyticsManager
 import UIKit
 
 class BaseTableViewController : UITableViewController,BaseController {
-   
     
-   
     var didTapOnRetryPlaceHolderButton: (() -> ())?
-    
     var didTapOnPlaceHolderView: (() -> ())?
-    var analyticsManager = AnalyticsManager()
-    let disposeBag = DisposeBag()
     
+    private var analyticsManager : AnalyticsManager{
+        return AnalyticsManager.shared
+    }
     
-    var prefferedCellBackgroundColor : UIColor = .lightGray
+    let disposeBag = DisposeBag()    
+    
+    var preferredCellBackgroundColor : UIColor = Constants.Colors.TableView.preferredCellBackgroundColor
     
     var statusBarStyle : UIStatusBarStyle = Constants.StatusBarAppearance.appStyle{
         didSet{
             self.setNeedsStatusBarAppearanceUpdate()
             self.navigationController?.setNeedsStatusBarAppearanceUpdate()
             switch statusBarStyle {
-            case .default:
+            case .default,.darkContent:
                 self.navigationController?.navigationBar.barStyle = .default
             case .lightContent:
                 self.navigationController?.navigationBar.barStyle = .black
@@ -55,13 +54,22 @@ class BaseTableViewController : UITableViewController,BaseController {
             }
         }
     }
-    
-    override
-    func tableView(_ tableView: UITableView,
-                   willDisplay cell: UITableViewCell,
-                   forRowAt indexPath: IndexPath) {
-        cell.contentView.backgroundColor = prefferedCellBackgroundColor
+
+}
+
+//MARK:- StatusBarAppearance
+extension BaseTableViewController{
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return statusBarStyle
     }
+    
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation{
+        return Constants.StatusBarAppearance.animationStyle
+    }
+}
+
+//MARK:- ViewLifeCycle
+extension BaseTableViewController{
     
     override
     func viewDidLoad() {
@@ -70,37 +78,30 @@ class BaseTableViewController : UITableViewController,BaseController {
         analyticsManager.logEvent(withName: String(describing: type(of: self)) + "View Opened" , andParameters: [:])
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return statusBarStyle
-    }
-    
-    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation{
-        return Constants.StatusBarAppearance.updateAnimationStyle
-    }
-    
     override
     func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.deselectSelectedRow(animated: true)
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    override
+    func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         dismissProgress()
         analyticsManager.logEvent(withName: String(describing: type(of: self)) + "View Closed" ,
                                   andParameters: [:])
         
     }
-    @objc
-    func backButtonTapped(){
+}
+
+//MARK:- NavigationBarItems
+extension BaseTableViewController{
+    
+    @objc func backButtonTapped(){
         DispatchQueue.main.async {
             self.navigationController?.popViewController(animated: true)
         }
     }
-    func logEvent(withName name: String, andParameters params: [String : Any]? = nil ) {
-        
-    }
-    
     
     func addBackButton(){
         if self.navigationController == nil {
@@ -159,5 +160,14 @@ class BaseTableViewController : UITableViewController,BaseController {
         }
         
     }
-    
+}
+
+//MARK:- TableViewDelegates
+extension BaseTableViewController{
+    override
+    func tableView(_ tableView: UITableView,
+                   willDisplay cell: UITableViewCell,
+                   forRowAt indexPath: IndexPath) {
+        cell.contentView.backgroundColor = preferredCellBackgroundColor
+    }
 }

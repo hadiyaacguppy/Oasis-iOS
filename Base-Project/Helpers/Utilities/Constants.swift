@@ -21,7 +21,6 @@ enum DateFormats : String {
 }
 
 struct Constants {
-    
 
     struct Network {
         static let baseURl : String = "https://google.com/"
@@ -29,13 +28,15 @@ struct Constants {
     
     struct Colors {
         static let appColor : UIColor  = .red
+        
+        struct TableView{
+            static let preferredCellBackgroundColor : UIColor = .white
+        }
     }
-    
-    
     
     struct StatusBarAppearance {
         static let appStyle : UIStatusBarStyle = .lightContent
-        static let updateAnimationStyle : UIStatusBarAnimation = .fade
+        static let animationStyle : UIStatusBarAnimation = .fade
     }
     
     struct UserDefaultsKeys {
@@ -94,10 +95,9 @@ struct Constants {
     
     struct PlaceHolderView {
         struct Fonts {
-            
             static let  boldSubheadline  = MainFont.bold.with(size: 15)
-            
         }
+        
         struct Texts {
             static let loading = "LOADING".localized
             static let wait = "PLEASE WAIT".localized

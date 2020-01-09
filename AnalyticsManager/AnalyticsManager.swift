@@ -12,7 +12,10 @@ public class AnalyticsManager {
     
     public static let shared  = AnalyticsManager()
     
-    public init() {
+    public init() { }
+    
+    public func initFirebaseApp(){
+        guard FirebaseApp.app() == nil else { return }
         guard checkIfGooglePlistFileExists() else {
             print("GoogleService-Info.plist does not exists. not initiating analytics manager")
             return
@@ -28,22 +31,13 @@ public class AnalyticsManager {
             newParams!["platform"] =  "ios"
         }
         self.logFirebase(withName: name, andParameter: newParams)
-        
     }
     
-    func checkIfGooglePlistFileExists() -> Bool {
-        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-        let url = NSURL(fileURLWithPath: path)
-        guard let pathComponent = url.appendingPathComponent("GoogleService-Info.plist")  else {
+    private func checkIfGooglePlistFileExists() -> Bool {
+        guard Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist") != nil else {
             return false
         }
-        let filePath = pathComponent.path
-        let fileManager = FileManager.default
-        if fileManager.fileExists(atPath: filePath) {
-            return true
-        } else {
-            return false
-        }
+        return true
     }
 }
 extension AnalyticsManager {

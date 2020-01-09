@@ -6,26 +6,27 @@
 //  Copyright © 2018 Tedmob. All rights reserved.
 //
 
-import Foundation
 import UIKit
-import  RxSwift
+import RxSwift
 import AnalyticsManager
-
 
 class BaseViewController : UIViewController, BaseController {
     
     var didTapOnPlaceHolderView: (() -> ())?
     var didTapOnRetryPlaceHolderButton: (() -> ())?
-    var analyticsManager = AnalyticsManager()
-    let disposeBag = DisposeBag()
     
+    private var analyticsManager : AnalyticsManager{
+        return AnalyticsManager.shared
+    }
+    
+    let disposeBag = DisposeBag()
     
     var statusBarStyle : UIStatusBarStyle = Constants.StatusBarAppearance.appStyle{
         didSet{
             self.setNeedsStatusBarAppearanceUpdate()
             self.navigationController?.setNeedsStatusBarAppearanceUpdate()
             switch statusBarStyle {
-            case .default:
+            case .default,.darkContent:
                 self.navigationController?.navigationBar.barStyle = .default
             case .lightContent:
                 self.navigationController?.navigationBar.barStyle = .black
@@ -51,14 +52,10 @@ class BaseViewController : UIViewController, BaseController {
             }
         }
     }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return statusBarStyle
-    }
-    
-    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation{
-        return Constants.StatusBarAppearance.updateAnimationStyle
-    }
+}
+
+//MARK:- ViewLifeCycle
+extension BaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,21 +63,28 @@ class BaseViewController : UIViewController, BaseController {
         analyticsManager.logEvent(withName: String(describing: type(of: self)) + "View Opened" , andParameters: [:])
     }
     
-    func logEvent(withName name : String ,andParameters params : [String:Any]? = nil ){
-        
-        
-    }
-    
     override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)		
+        super.viewDidDisappear(animated)
         dismissProgress()
         analyticsManager.logEvent(withName: String(describing: type(of: self)) + "View Closed" ,
                                   andParameters: [:])
     }
+}
+
+//MARK:- StatusBarAppearance
+extension BaseViewController{
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return statusBarStyle
+    }
     
-    
-    @objc
-    func backButtonTapped(){
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation{
+        return Constants.StatusBarAppearance.animationStyle
+    }
+}
+
+//MARK:- NavigationBarItems
+extension BaseViewController{
+    @objc func backButtonTapped(){
         DispatchQueue.main.async {
             self.navigationController?.popViewController(animated: true)
         }
