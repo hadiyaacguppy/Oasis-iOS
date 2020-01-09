@@ -12,20 +12,18 @@ public class SessionRepository {
     
     public init(){}
     
+    public static let shared = SessionRepository()
+    
     public var token : String? {
         get {
-            return self.currentUser?.token
-        }set {
-            if currentUser == nil {
-                let newUser = User()
-                newUser.token = newValue
-                self.currentUser = newUser
-                
-            }else{
-                self.currentUser?.token = newValue
+            guard let accessToken = UserDefaults.standard.string(forKey: SessionRepositoryConstants.UserDefaultKeys.accessToken) else {
+                return nil
             }
-            
-            
+            return accessToken
+        }set {
+            print("🙍‍♂️ \(#file) Sets new Access Token of \(String(describing: newValue)) in \(#function) at line \(#line) ")
+            UserDefaults.standard.set(newValue, forKey: SessionRepositoryConstants.UserDefaultKeys.accessToken)
+            UserDefaults.standard.synchronize()
         }
     }
     
@@ -36,7 +34,7 @@ public class SessionRepository {
         set {
             guard let newValue = newValue else {
                 print("Removing User Object ")
-                deleteArhivedUser()
+                deleteArchivedUser()
                 return
             }
             print("Saving User Object")
@@ -53,20 +51,18 @@ public class SessionRepository {
         return false
     }
     
-    public var userIsLoggedIn : Bool! {
+    public var userIsLoggedIn : Bool {
         return  self.currentUser != nil && self.currentUser?.token != nil
     }
     
-    public var isInExploreMode : Bool = false
-    
     public func sessionIsValid(withErrorCode code : Int) -> Bool {
         return code != SessionRepositoryConstants.sessionExpiredCode
-        
     }
     
     public func prepareLogout( _ handler :(() -> ())? = nil ) {
         self.currentUser = nil
         self.token = nil
+        handler?()
     }
     
 }
@@ -91,7 +87,7 @@ private extension SessionRepository {
         return user
     }
     
-    func deleteArhivedUser() {
+    func deleteArchivedUser() {
         UserDefaults.standard.removeObject(forKey: SessionRepositoryConstants.UserDefaultKeys.userKey)
     }
 }

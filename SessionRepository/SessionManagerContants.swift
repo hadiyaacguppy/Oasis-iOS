@@ -11,6 +11,7 @@ struct SessionRepositoryConstants  {
     struct UserDefaultKeys {
         static let firstTime = "first_time"
         static let userKey = "first_launch_u"
+        static let accessToken = "access_token"
         
     }
     static let sessionExpiredCode = 101
