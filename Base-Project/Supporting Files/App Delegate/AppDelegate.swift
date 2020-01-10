@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        logger.info("Base Project Version 3.0")
+        logger.info("Base Project Version 3.1")
         
         if !self.oneSignalAppId.isEmpty {
             initOneSignal(withLaunchOption: launchOptions, andOneSignalId: oneSignalAppId)
