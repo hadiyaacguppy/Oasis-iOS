@@ -346,6 +346,15 @@ extension UIView {
         getSubview(view: self)
         return all
     }
+    
+    /*
+     This function creates any UIView from nib file by inferring its type.
+     Usage: let myCustomView: CustomView = UIView.fromNib()
+     Or even : let myCustomView: CustomView = .fromNib()
+     */
+    class func fromNib<T: UIView>() -> T {
+        return Bundle.main.loadNibNamed(String(describing: T.self), owner: nil, options: nil)![0] as! T
+    }
 }
 
 //MARK:- SafeArea&Constraints
