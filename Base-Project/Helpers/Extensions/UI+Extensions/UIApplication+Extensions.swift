@@ -24,3 +24,11 @@ extension UIApplication {
         return base
     }
 }
+
+//MARK:- SafeArea
+extension UIApplication{
+
+    var windowSafeAreaInsets : UIEdgeInsets{ self.windows.first{$0.isKeyWindow }?.safeAreaInsets ?? .zero }
+     
+    var bottomWindowIndicatorHeight : CGFloat{ self.windows.first{$0.isKeyWindow }?.safeAreaInsets.bottom ?? 0 }
+}
