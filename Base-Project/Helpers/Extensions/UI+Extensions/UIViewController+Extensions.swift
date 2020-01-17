@@ -88,3 +88,15 @@ extension UIViewController {
         return alert
     }
 }
+
+//MARK:- SafeArea
+extension UIViewController{
+    
+    var bottomHomeScreenIndicatorHeight : CGFloat{ view.safeAreaInsets.bottom }
+    
+    var topSafeAreaInsets : CGFloat{  view.safeAreaInsets.top }
+    
+    var safeAreaHeight: CGFloat{ view.safeAreaLayoutGuide.layoutFrame.size.height }
+    
+    var safeAreaFrame: CGRect{ view.safeAreaLayoutGuide.layoutFrame }
+}

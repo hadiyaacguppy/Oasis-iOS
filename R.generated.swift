@@ -89,7 +89,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 6 storyboards.
   struct storyboard {
     /// Storyboard `BaseWebView`.
     static let baseWebView = _R.storyboard.baseWebView()
@@ -101,6 +101,8 @@ struct R: Rswift.Validatable {
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `PinVerification`.
     static let pinVerification = _R.storyboard.pinVerification()
+    /// Storyboard `PushNotification`.
+    static let pushNotification = _R.storyboard.pushNotification()
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "BaseWebView", bundle: ...)`
@@ -134,6 +136,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "PinVerification", bundle: ...)`
     static func pinVerification(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.pinVerification)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "PushNotification", bundle: ...)`
+    static func pushNotification(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.pushNotification)
     }
     #endif
 
@@ -269,6 +278,9 @@ struct _R: Rswift.Validatable {
       #if os(iOS) || os(tvOS)
       try pinVerification.validate()
       #endif
+      #if os(iOS) || os(tvOS)
+      try pushNotification.validate()
+      #endif
     }
 
     #if os(iOS) || os(tvOS)
@@ -376,6 +388,40 @@ struct _R: Rswift.Validatable {
         }
         if _R.storyboard.pinVerification().pinVerificationViewControllerTableVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'pinVerificationViewControllerTableVC' could not be loaded from storyboard 'PinVerification' as 'PinVerificationViewController'.") }
         if _R.storyboard.pinVerification().pinVerificationNav() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'pinVerificationNav' could not be loaded from storyboard 'PinVerification' as 'BaseNavigationController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct pushNotification: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseNavigationController
+
+      let bundle = R.hostingBundle
+      let name = "PushNotification"
+      let pushNotificationContainer = StoryboardViewControllerResource<PushNotificationContainer>(identifier: "PushNotificationContainer")
+      let pushNotificationMessageController = StoryboardViewControllerResource<PushNotificationMessageController>(identifier: "PushNotificationMessageController")
+      let pushNotificationNavVC = StoryboardViewControllerResource<BaseNavigationController>(identifier: "PushNotificationNavVC")
+
+      func pushNotificationContainer(_: Void = ()) -> PushNotificationContainer? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: pushNotificationContainer)
+      }
+
+      func pushNotificationMessageController(_: Void = ()) -> PushNotificationMessageController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: pushNotificationMessageController)
+      }
+
+      func pushNotificationNavVC(_: Void = ()) -> BaseNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: pushNotificationNavVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.pushNotification().pushNotificationContainer() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'pushNotificationContainer' could not be loaded from storyboard 'PushNotification' as 'PushNotificationContainer'.") }
+        if _R.storyboard.pushNotification().pushNotificationMessageController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'pushNotificationMessageController' could not be loaded from storyboard 'PushNotification' as 'PushNotificationMessageController'.") }
+        if _R.storyboard.pushNotification().pushNotificationNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'pushNotificationNavVC' could not be loaded from storyboard 'PushNotification' as 'BaseNavigationController'.") }
       }
 
       fileprivate init() {}
