@@ -24,6 +24,30 @@ public struct Utilities  {
         UIApplication.shared.open(number)
     }
     
+    /// Open  a chat with specific phone number. Just pass the phone number
+    ///
+    /// - Parameter pn: the phone number to send message eg: 96170024284
+    static func whatsapp(phoneNumber pn : String){
+        let urlWhats = "whatsapp://send?phone=\(pn)"
+        if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed){
+            if let whatsappURL = URL(string: urlString) {
+                if UIApplication.shared.canOpenURL(whatsappURL){
+                    if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(whatsappURL, options: [:], completionHandler: nil)
+                    }else {
+                        UIApplication.shared.openURL(whatsappURL)
+                    }
+                }else {
+                    if let whatsappURL = URL(string: "https://api.whatsapp.com/send?phone=\(pn)"){
+                        if UIApplication.shared.canOpenURL(whatsappURL) {
+                            UIApplication.shared.open(whatsappURL, options: [:], completionHandler: nil)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     /// Present an action sheet that displays the browser's app that can open the given link
     ///
     /// - Parameter url: the string that represent the url top be openned.
