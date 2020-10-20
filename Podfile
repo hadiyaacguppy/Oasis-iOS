@@ -1,7 +1,7 @@
 platform :ios, '11.0'
 
 def install_oneSignalPod
-	pod 'OneSignal', '>= 2.6.2', '< 3.0'
+	pod 'OneSignal', '>= 2.11.2', '< 3.0'
 end
 
 target 'Base-Project' do
