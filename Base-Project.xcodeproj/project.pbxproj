@@ -63,22 +63,8 @@
 		3EDC4153224E875300624D2B /* Reactive+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC4152224E875300624D2B /* Reactive+UIView.swift */; };
 		3EDC4156224E886500624D2B /* BaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC4155224E886500624D2B /* BaseUIView.swift */; };
 		3EDC4159224E893B00624D2B /* BaseUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC4158224E893B00624D2B /* BaseUIImageView.swift */; };
-		4A20A22D2179E9C5002C2AAA /* ChangePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A20A2262179E9C5002C2AAA /* ChangePassword.storyboard */; };
-		4A20A22E2179E9C5002C2AAA /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A20A2272179E9C5002C2AAA /* ChangePasswordPresenter.swift */; };
-		4A20A22F2179E9C5002C2AAA /* ChangePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A20A2282179E9C5002C2AAA /* ChangePasswordRouter.swift */; };
-		4A20A2302179E9C5002C2AAA /* ChangePasswordModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A20A2292179E9C5002C2AAA /* ChangePasswordModels.swift */; };
-		4A20A2312179E9C5002C2AAA /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A20A22A2179E9C5002C2AAA /* ChangePasswordViewController.swift */; };
-		4A20A2322179E9C5002C2AAA /* ChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A20A22B2179E9C5002C2AAA /* ChangePasswordInteractor.swift */; };
-		4A20A2332179E9C5002C2AAA /* ChangePasswordConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A20A22C2179E9C5002C2AAA /* ChangePasswordConfigurator.swift */; };
 		4AEF647522107DC000D53D75 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF647422107DC000D53D75 /* BaseButton.swift */; };
 		4AEF64772210842F00D53D75 /* BaseSkyFloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF64762210842F00D53D75 /* BaseSkyFloatingTextField.swift */; };
-		4AEF648022108F8C00D53D75 /* PinVerificationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF647922108F8C00D53D75 /* PinVerificationRouter.swift */; };
-		4AEF648122108F8C00D53D75 /* PinVerification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AEF647A22108F8C00D53D75 /* PinVerification.storyboard */; };
-		4AEF648222108F8C00D53D75 /* PinVerificationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF647B22108F8C00D53D75 /* PinVerificationModels.swift */; };
-		4AEF648322108F8C00D53D75 /* PinVerificationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF647C22108F8C00D53D75 /* PinVerificationInteractor.swift */; };
-		4AEF648422108F8C00D53D75 /* PinVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF647D22108F8C00D53D75 /* PinVerificationViewController.swift */; };
-		4AEF648522108F8C00D53D75 /* PinVerificationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF647E22108F8C00D53D75 /* PinVerificationConfigurator.swift */; };
-		4AEF648622108F8C00D53D75 /* PinVerificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF647F22108F8C00D53D75 /* PinVerificationPresenter.swift */; };
 		4B00E64AA8A0A7582597A76A /* Pods_Base_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BA0D1007DC66F24CD1D64E /* Pods_Base_Project.framework */; };
 		672909FC210E43EA00632C4F /* PlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672909FB210E43EA00632C4F /* PlaceHolderView.swift */; };
 		672909FE210E43F900632C4F /* PlaceHolderCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672909FD210E43F900632C4F /* PlaceHolderCreator.swift */; };
@@ -301,22 +287,8 @@
 		3EDC4155224E886500624D2B /* BaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIView.swift; sourceTree = "<group>"; };
 		3EDC4158224E893B00624D2B /* BaseUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIImageView.swift; sourceTree = "<group>"; };
 		47B856E2D549B6D7F5D7E98B /* Pods-Base-Project-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-Project-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Base-Project-Tests/Pods-Base-Project-Tests.release.xcconfig"; sourceTree = "<group>"; };
-		4A20A2262179E9C5002C2AAA /* ChangePassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangePassword.storyboard; sourceTree = "<group>"; };
-		4A20A2272179E9C5002C2AAA /* ChangePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordPresenter.swift; sourceTree = "<group>"; };
-		4A20A2282179E9C5002C2AAA /* ChangePasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRouter.swift; sourceTree = "<group>"; };
-		4A20A2292179E9C5002C2AAA /* ChangePasswordModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModels.swift; sourceTree = "<group>"; };
-		4A20A22A2179E9C5002C2AAA /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
-		4A20A22B2179E9C5002C2AAA /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
-		4A20A22C2179E9C5002C2AAA /* ChangePasswordConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordConfigurator.swift; sourceTree = "<group>"; };
 		4AEF647422107DC000D53D75 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		4AEF64762210842F00D53D75 /* BaseSkyFloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSkyFloatingTextField.swift; sourceTree = "<group>"; };
-		4AEF647922108F8C00D53D75 /* PinVerificationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinVerificationRouter.swift; sourceTree = "<group>"; };
-		4AEF647A22108F8C00D53D75 /* PinVerification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PinVerification.storyboard; sourceTree = "<group>"; };
-		4AEF647B22108F8C00D53D75 /* PinVerificationModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinVerificationModels.swift; sourceTree = "<group>"; };
-		4AEF647C22108F8C00D53D75 /* PinVerificationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinVerificationInteractor.swift; sourceTree = "<group>"; };
-		4AEF647D22108F8C00D53D75 /* PinVerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinVerificationViewController.swift; sourceTree = "<group>"; };
-		4AEF647E22108F8C00D53D75 /* PinVerificationConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinVerificationConfigurator.swift; sourceTree = "<group>"; };
-		4AEF647F22108F8C00D53D75 /* PinVerificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinVerificationPresenter.swift; sourceTree = "<group>"; };
 		509696D7EE45B0E48C61927E /* Pods-Base-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-ProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Base-ProjectTests/Pods-Base-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		5F0CB28320C7D9C3EA885DBF /* Pods-Base-ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-ProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Base-ProjectUITests/Pods-Base-ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		672909FB210E43EA00632C4F /* PlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderView.swift; sourceTree = "<group>"; };
@@ -760,20 +732,6 @@
 			path = UIImageView;
 			sourceTree = "<group>";
 		};
-		4A20A2252179E9A2002C2AAA /* Change Password */ = {
-			isa = PBXGroup;
-			children = (
-				4A20A2262179E9C5002C2AAA /* ChangePassword.storyboard */,
-				4A20A2272179E9C5002C2AAA /* ChangePasswordPresenter.swift */,
-				4A20A2282179E9C5002C2AAA /* ChangePasswordRouter.swift */,
-				4A20A2292179E9C5002C2AAA /* ChangePasswordModels.swift */,
-				4A20A22A2179E9C5002C2AAA /* ChangePasswordViewController.swift */,
-				4A20A22B2179E9C5002C2AAA /* ChangePasswordInteractor.swift */,
-				4A20A22C2179E9C5002C2AAA /* ChangePasswordConfigurator.swift */,
-			);
-			path = "Change Password";
-			sourceTree = "<group>";
-		};
 		4AEF646D22107D2500D53D75 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -826,20 +784,6 @@
 				4AEF647422107DC000D53D75 /* BaseButton.swift */,
 			);
 			path = Buttons;
-			sourceTree = "<group>";
-		};
-		4AEF647822108F8C00D53D75 /* Pin Verification */ = {
-			isa = PBXGroup;
-			children = (
-				4AEF647922108F8C00D53D75 /* PinVerificationRouter.swift */,
-				4AEF647A22108F8C00D53D75 /* PinVerification.storyboard */,
-				4AEF647B22108F8C00D53D75 /* PinVerificationModels.swift */,
-				4AEF647C22108F8C00D53D75 /* PinVerificationInteractor.swift */,
-				4AEF647D22108F8C00D53D75 /* PinVerificationViewController.swift */,
-				4AEF647E22108F8C00D53D75 /* PinVerificationConfigurator.swift */,
-				4AEF647F22108F8C00D53D75 /* PinVerificationPresenter.swift */,
-			);
-			path = "Pin Verification";
 			sourceTree = "<group>";
 		};
 		4EB46AC4F5A03B9A5DD78099 /* Pods */ = {
@@ -1006,8 +950,6 @@
 			isa = PBXGroup;
 			children = (
 				3ECBAAB123D06DB8003672DA /* PushNotification */,
-				4AEF647822108F8C00D53D75 /* Pin Verification */,
-				4A20A2252179E9A2002C2AAA /* Change Password */,
 				CF09C0C82180A4FF003DF186 /* Base Web View */,
 				CF87EDB6201EED1500562226 /* Initial */,
 			);
@@ -1272,8 +1214,6 @@
 			files = (
 				CF403858216CF78F001F649B /* Initial.storyboard in Resources */,
 				3ECBAAB523D06DD8003672DA /* PushNotification.storyboard in Resources */,
-				4AEF648122108F8C00D53D75 /* PinVerification.storyboard in Resources */,
-				4A20A22D2179E9C5002C2AAA /* ChangePassword.storyboard in Resources */,
 				0F1B7FAD22CA6C910079F752 /* Countries.bundle in Resources */,
 				CF09C0D02180A511003DF186 /* BaseWebView.storyboard in Resources */,
 				112239221FD5C7B000486528 /* LaunchScreen.storyboard in Resources */,
@@ -1468,7 +1408,7 @@
 			);
 			name = R.Swift;
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1503,7 +1443,6 @@
 				CF0598EC210F154F00C2645F /* TDPicker.swift in Sources */,
 				0FD65F1B20D018730075E251 /* UIButton+Extensions.swift in Sources */,
 				CFF69D6D219554C4003BE6BF /* CGPoint+Extensions.swift in Sources */,
-				4A20A22E2179E9C5002C2AAA /* ChangePasswordPresenter.swift in Sources */,
 				0F1B7FB022CA6C9D0079F752 /* UISearchBar+Extensions.swift in Sources */,
 				0F1B7FB522CA6CAE0079F752 /* LocaleStore.swift in Sources */,
 				CFF69D752195586E003BE6BF /* FileManager+Extensions.swift in Sources */,
@@ -1526,7 +1465,6 @@
 				CF8C5CAC20EF9D7E00236C7B /* UICollectionView+Extensions.swift in Sources */,
 				CF8C5CA820EF9D5400236C7B /* Bool+Extensions.swift in Sources */,
 				CFF69D772195593A003BE6BF /* URLRequest+Extensions.swift in Sources */,
-				4A20A2302179E9C5002C2AAA /* ChangePasswordModels.swift in Sources */,
 				CF8C5CB020EF9DC900236C7B /* UIImage+Extensions.swift in Sources */,
 				CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */,
 				672909FE210E43F900632C4F /* PlaceHolderCreator.swift in Sources */,
@@ -1550,37 +1488,27 @@
 				CF7BC6791FD91D83008E80AC /* ObservableType+ObjectMapper.swift in Sources */,
 				0FD0C6EC2200B662000C5881 /* UIFont+Extentions.swift in Sources */,
 				CFF69D6A219551B4003BE6BF /* UIViewController+Extensions.swift in Sources */,
-				4A20A2322179E9C5002C2AAA /* ChangePasswordInteractor.swift in Sources */,
 				4AEF64772210842F00D53D75 /* BaseSkyFloatingTextField.swift in Sources */,
 				CF09C0D52180A511003DF186 /* BaseWebViewInteractor.swift in Sources */,
 				11CD5280230AFF91003D08BE /* ViewEmbedder.swift in Sources */,
 				CF40385B216CF78F001F649B /* InitialModels.swift in Sources */,
-				4A20A22F2179E9C5002C2AAA /* ChangePasswordRouter.swift in Sources */,
 				CF09C0D32180A511003DF186 /* BaseWebViewModels.swift in Sources */,
-				4AEF648622108F8C00D53D75 /* PinVerificationPresenter.swift in Sources */,
 				0F57539F20EE1EC90069C139 /* Relays.swift in Sources */,
 				CFF69D682195513C003BE6BF /* UIScreen+Extensions.swift in Sources */,
 				0F57539B20EE19CD0069C139 /* BaseProjectService.swift in Sources */,
 				CFF69D7121955680003BE6BF /* Dictionary+Extensions.swift in Sources */,
-				4AEF648322108F8C00D53D75 /* PinVerificationInteractor.swift in Sources */,
 				CF8373AF224B8807000C3E21 /* AppManager.swift in Sources */,
 				112239151FD5C7AF00486528 /* AppDelegate.swift in Sources */,
 				117C4AAE1FD864AD008BB445 /* UIView+Extensions.swift in Sources */,
 				3ECAFE3A23C3996A00E83552 /* MultiLineField.swift in Sources */,
-				4AEF648422108F8C00D53D75 /* PinVerificationViewController.swift in Sources */,
-				4A20A2312179E9C5002C2AAA /* ChangePasswordViewController.swift in Sources */,
 				3E1DEAF422BA634A00FAD9F4 /* UIView+Rounded.swift in Sources */,
 				0F57539720EE19090069C139 /* LocationService.swift in Sources */,
 				CFE259E622C9C4D5006B0472 /* AppDelegate+SessionExpiry.swift in Sources */,
 				CF8C5C9C20EF97AE00236C7B /* BaseTableViewController.swift in Sources */,
-				4AEF648022108F8C00D53D75 /* PinVerificationRouter.swift in Sources */,
-				4AEF648222108F8C00D53D75 /* PinVerificationModels.swift in Sources */,
 				117C4AAB1FD86050008BB445 /* Utilities.swift in Sources */,
-				4AEF648522108F8C00D53D75 /* PinVerificationConfigurator.swift in Sources */,
 				0F1B7FBB22CA6CBD0079F752 /* CurrencyCell.swift in Sources */,
 				3E1DEAF222BA632600FAD9F4 /* UIView+Border.swift in Sources */,
 				CF8373AD224A7F93000C3E21 /* R.generated.swift in Sources */,
-				4A20A2332179E9C5002C2AAA /* ChangePasswordConfigurator.swift in Sources */,
 				0F1B7FB122CA6C9D0079F752 /* UIAlertController+Extensions.swift in Sources */,
 				CF40385D216CF78F001F649B /* InitialInteractor.swift in Sources */,
 				3EDC4153224E875300624D2B /* Reactive+UIView.swift in Sources */,

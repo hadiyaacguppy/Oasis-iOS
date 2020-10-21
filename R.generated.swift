@@ -89,18 +89,14 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 6 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
   struct storyboard {
     /// Storyboard `BaseWebView`.
     static let baseWebView = _R.storyboard.baseWebView()
-    /// Storyboard `ChangePassword`.
-    static let changePassword = _R.storyboard.changePassword()
     /// Storyboard `Initial`.
     static let initial = _R.storyboard.initial()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
-    /// Storyboard `PinVerification`.
-    static let pinVerification = _R.storyboard.pinVerification()
     /// Storyboard `PushNotification`.
     static let pushNotification = _R.storyboard.pushNotification()
 
@@ -108,13 +104,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "BaseWebView", bundle: ...)`
     static func baseWebView(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.baseWebView)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIStoryboard(name: "ChangePassword", bundle: ...)`
-    static func changePassword(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.changePassword)
     }
     #endif
 
@@ -129,13 +118,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIStoryboard(name: "PinVerification", bundle: ...)`
-    static func pinVerification(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.pinVerification)
     }
     #endif
 
@@ -267,16 +249,10 @@ struct _R: Rswift.Validatable {
       try baseWebView.validate()
       #endif
       #if os(iOS) || os(tvOS)
-      try changePassword.validate()
-      #endif
-      #if os(iOS) || os(tvOS)
       try initial.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try launchScreen.validate()
-      #endif
-      #if os(iOS) || os(tvOS)
-      try pinVerification.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try pushNotification.validate()
@@ -299,29 +275,6 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.baseWebView().baseWebViewViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'baseWebViewViewControllerVC' could not be loaded from storyboard 'BaseWebView' as 'BaseWebViewViewController'.") }
-      }
-
-      fileprivate init() {}
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    struct changePassword: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = UIKit.UINavigationController
-
-      let bundle = R.hostingBundle
-      let changePasswordViewControllerTableVC = StoryboardViewControllerResource<ChangePasswordViewController>(identifier: "ChangePasswordViewControllerTableVC")
-      let name = "ChangePassword"
-
-      func changePasswordViewControllerTableVC(_: Void = ()) -> ChangePasswordViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: changePasswordViewControllerTableVC)
-      }
-
-      static func validate() throws {
-        if UIKit.UIImage(named: "RegistrationNotView", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'RegistrationNotView' is used in storyboard 'ChangePassword', but couldn't be loaded.") }
-        if #available(iOS 11.0, tvOS 11.0, *) {
-        }
-        if _R.storyboard.changePassword().changePasswordViewControllerTableVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'changePasswordViewControllerTableVC' could not be loaded from storyboard 'ChangePassword' as 'ChangePasswordViewController'.") }
       }
 
       fileprivate init() {}
@@ -360,34 +313,6 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
-      }
-
-      fileprivate init() {}
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    struct pinVerification: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = BaseNavigationController
-
-      let bundle = R.hostingBundle
-      let name = "PinVerification"
-      let pinVerificationNav = StoryboardViewControllerResource<BaseNavigationController>(identifier: "pinVerificationNav")
-      let pinVerificationViewControllerTableVC = StoryboardViewControllerResource<PinVerificationViewController>(identifier: "PinVerificationViewControllerTableVC")
-
-      func pinVerificationNav(_: Void = ()) -> BaseNavigationController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: pinVerificationNav)
-      }
-
-      func pinVerificationViewControllerTableVC(_: Void = ()) -> PinVerificationViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: pinVerificationViewControllerTableVC)
-      }
-
-      static func validate() throws {
-        if #available(iOS 11.0, tvOS 11.0, *) {
-        }
-        if _R.storyboard.pinVerification().pinVerificationViewControllerTableVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'pinVerificationViewControllerTableVC' could not be loaded from storyboard 'PinVerification' as 'PinVerificationViewController'.") }
-        if _R.storyboard.pinVerification().pinVerificationNav() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'pinVerificationNav' could not be loaded from storyboard 'PinVerification' as 'BaseNavigationController'.") }
       }
 
       fileprivate init() {}

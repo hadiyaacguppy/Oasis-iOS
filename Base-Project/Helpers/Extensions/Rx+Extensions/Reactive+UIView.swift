@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
-import UIKit
+import RxGesture
 
 extension Reactive where Base : UIView{
 
