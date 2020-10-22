@@ -54,6 +54,7 @@
 		3E7367F422C6605A00B4C71D /* FeedbackTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7367F322C6605A00B4C71D /* FeedbackTypes.swift */; };
 		3E8E350422CA0BDE009A3113 /* Observable+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8E350322CA0BDE009A3113 /* Observable+Operators.swift */; };
 		3EAFC549219B2D2F00E3C2BB /* TDAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAFC548219B2D2F00E3C2BB /* TDAlertAction.swift */; };
+		3EBDE0402541E8670056A0C4 /* AppDelegate+PopupConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBDE03F2541E8670056A0C4 /* AppDelegate+PopupConfig.swift */; };
 		3ECAFE3A23C3996A00E83552 /* MultiLineField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECAFE3923C3996A00E83552 /* MultiLineField.swift */; };
 		3ECBAAB523D06DD8003672DA /* PushNotification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ECBAAB223D06DD7003672DA /* PushNotification.storyboard */; };
 		3ECBAAB623D06DD8003672DA /* PushNotificationMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECBAAB323D06DD7003672DA /* PushNotificationMessageController.swift */; };
@@ -277,6 +278,7 @@
 		3E7367F322C6605A00B4C71D /* FeedbackTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTypes.swift; sourceTree = "<group>"; };
 		3E8E350322CA0BDE009A3113 /* Observable+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Operators.swift"; sourceTree = "<group>"; };
 		3EAFC548219B2D2F00E3C2BB /* TDAlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDAlertAction.swift; sourceTree = "<group>"; };
+		3EBDE03F2541E8670056A0C4 /* AppDelegate+PopupConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+PopupConfig.swift"; sourceTree = "<group>"; };
 		3ECAFE3923C3996A00E83552 /* MultiLineField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiLineField.swift; sourceTree = "<group>"; };
 		3ECBAAB223D06DD7003672DA /* PushNotification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PushNotification.storyboard; sourceTree = "<group>"; };
 		3ECBAAB323D06DD7003672DA /* PushNotificationMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationMessageController.swift; sourceTree = "<group>"; };
@@ -911,6 +913,7 @@
 			isa = PBXGroup;
 			children = (
 				112239141FD5C7AF00486528 /* AppDelegate.swift */,
+				3EBDE03F2541E8670056A0C4 /* AppDelegate+PopupConfig.swift */,
 				CFDB669A22C601BB006278A2 /* AppDelegate+OneSignal.swift */,
 				CFE259E522C9C4D5006B0472 /* AppDelegate+SessionExpiry.swift */,
 			);
@@ -1308,9 +1311,12 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Base-Project/Pods-Base-Project-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CZPicker/CZPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/Logging/Logging.framework",
+				"${BUILT_PRODUCTS_DIR}/QuickLayout/QuickLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftEntryKit/SwiftEntryKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
+				"${BUILT_PRODUCTS_DIR}/TDPopupKit/TDPopupKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -1319,9 +1325,12 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CZPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Logging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QuickLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftEntryKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TDPopupKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -1547,6 +1556,7 @@
 				CF2F319E215E8BA0007A912A /* URL+Extensions.swift in Sources */,
 				0F1B7FB322CA6CA40079F752 /* LocalePickerViewController.swift in Sources */,
 				CFF69D732195578F003BE6BF /* Data+Extensions.swift in Sources */,
+				3EBDE0402541E8670056A0C4 /* AppDelegate+PopupConfig.swift in Sources */,
 				CF7823B420EF95A7003069BD /* APIErrorManager.swift in Sources */,
 				3E1DEAF022BA62FD00FAD9F4 /* UIView+Shadow.swift in Sources */,
 				CFAD4D0E21955EF300AF4375 /* LanguageService.swift in Sources */,

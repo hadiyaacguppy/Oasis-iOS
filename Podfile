@@ -11,7 +11,8 @@ target 'Base-Project' do
   	pod 'CZPicker'
   	pod 'SDWebImage', '~> 5.0'
   	pod 'SwiftLocation'
-	pod 'Logging', '~> 1.1'
+	pod 'Logging', '~> 1.1'	
+	pod 'TDPopupKit'
 	install_oneSignalPod
 end
 

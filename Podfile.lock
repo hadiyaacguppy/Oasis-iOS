@@ -74,13 +74,18 @@ PODS:
   - nanopb/encode (1.30906.0)
   - OneSignal (2.15.4)
   - PromisesObjC (1.2.11)
+  - QuickLayout (3.0.0)
   - R.swift (5.2.2):
     - R.swift.Library (~> 5.2.0)
   - R.swift.Library (5.2.0)
   - SDWebImage (5.9.3):
     - SDWebImage/Core (= 5.9.3)
   - SDWebImage/Core (5.9.3)
+  - SwiftEntryKit (1.2.6):
+    - QuickLayout (= 3.0.0)
   - SwiftLocation (4.2.0)
+  - TDPopupKit (0.1.5):
+    - SwiftEntryKit (= 1.2.6)
 
 DEPENDENCIES:
   - CZPicker
@@ -91,6 +96,7 @@ DEPENDENCIES:
   - R.swift
   - SDWebImage (~> 5.0)
   - SwiftLocation
+  - TDPopupKit
 
 SPEC REPOS:
   trunk:
@@ -108,10 +114,13 @@ SPEC REPOS:
     - nanopb
     - OneSignal
     - PromisesObjC
+    - QuickLayout
     - R.swift
     - R.swift.Library
     - SDWebImage
+    - SwiftEntryKit
     - SwiftLocation
+    - TDPopupKit
 
 SPEC CHECKSUMS:
   CZPicker: 55aa1751ea26e209814552da1a9a08cba8bbf72a
@@ -128,11 +137,14 @@ SPEC CHECKSUMS:
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   OneSignal: 6647275955d0f06d9e17c90dc93af9d85ecfd2b9
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
+  QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
   R.swift: 7c52cdc57a66840ffe6cbd8a823d732059d42a32
   R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
   SDWebImage: a31ee8e90a97303529e03fb0c333eae0eacb88e9
+  SwiftEntryKit: 96a2fa90b2631bbbfac50d18449e9ca3d0635f13
   SwiftLocation: 609ac8859f2c5d48a6cadd2a58c63b1dae02dc25
+  TDPopupKit: bd24bf7432dd2b42984fcdd4b1c64d33db7fc422
 
-PODFILE CHECKSUM: 8259b61c6d7f838b8351e51e9ea4591faec0096e
+PODFILE CHECKSUM: 377c64230e65989dcc3226c704c4e6d9e248cbcd
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0

@@ -87,7 +87,6 @@ extension BaseTableViewController{
     override
     func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        dismissProgress()
         analyticsManager.logEvent(withName: String(describing: type(of: self)) + "View Closed" ,
                                   andParameters: [:])
         

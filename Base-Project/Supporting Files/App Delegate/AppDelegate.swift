@@ -6,11 +6,11 @@
 //  Copyright © 2017 Tedmob. All rights reserved.
 //
 
-import UIKit
-import SessionRepository
+
 import RxSwift
 import Logging
 import AnalyticsManager
+import TDPopupKit
 
 var logger = Logger(label: "Base-Project-Logger")
 
@@ -22,8 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var sessionExpiryRelaySubscription: Disposable?
     
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        logger.info("Base Project Version 3.1")
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)
+    -> Bool {
+        logger.info("Base Project Version 3.2")
+        configurePopupKitAppearance()
         
         if !self.oneSignalAppId.isEmpty {
             initOneSignal(withLaunchOption: launchOptions, andOneSignalId: oneSignalAppId)
@@ -32,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         subscribeToSessionExpiryRelay()
-
+        
         return true
     }
     

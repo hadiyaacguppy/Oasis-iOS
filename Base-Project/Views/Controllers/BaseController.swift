@@ -6,10 +6,9 @@
 //  Copyright © 2018 Tedmob. All rights reserved.
 //
 
-import Foundation
-import UIKit
 import RxSwift
 import AnalyticsManager
+import TDPopupKit
 
 protocol BaseController {
     
@@ -121,21 +120,19 @@ extension BaseController  where Self: UIViewController{
 extension BaseController {
     
     func showLoadingProgress(){
-        Utilities.ProgressHUD.showLoading(withMessage: "Loading".localized)
+        PopupService.showLoadingNotifation(text: "Loading".localized)
     }
     
     func display(successMessage msg : String){
-        dismissProgress()
-        Utilities.ProgressHUD.showSuccess(withMessage: msg)
+        PopupService.showSuccessNote(text: msg)
     }
     
     func display(errorMessage msg : String ){
-        dismissProgress()
-        Utilities.ProgressHUD.showError(withMessage: msg)
+        PopupService.showErrorNote(text: msg)
     }
     
     func dismissProgress(){
-        Utilities.ProgressHUD.dismissLoading()
+        PopupService.dismiss()
     }
     
 }
