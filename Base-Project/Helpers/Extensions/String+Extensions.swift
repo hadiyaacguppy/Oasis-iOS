@@ -249,5 +249,8 @@ extension Optional where Wrapped == String{
         return attr
     }
     
+    var notNilNorEmpty : Bool {
+        return self != nil && !self!.isEmpty
+    }
     
 }
