@@ -207,6 +207,19 @@ extension String {
         }
         return stringToReturn
     }
+
+       /*
+        This function removes all characters after the specific provided character
+     */
+    public
+    func removeAllCharacters(afterSpecificCharacter character : String) -> String{
+        if let index = self.range(of: character)?.lowerBound {
+            let substring = self[..<index]
+            let string = String(substring)
+            return string
+        }
+        return ""
+    }
 }
 
 extension Optional where Wrapped == String{
