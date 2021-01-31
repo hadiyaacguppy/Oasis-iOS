@@ -101,3 +101,10 @@ extension UIImageView{
         clipsToBounds = true
     }
 }
+
+public extension UIImage {
+    var hasContent: Bool {
+        return cgImage != nil || ciImage != nil
+    }
+}
+
