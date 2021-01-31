@@ -87,6 +87,12 @@ extension UIViewController {
         guard let alert = UIApplication.topViewController() as? UIAlertController else { return nil }
         return alert
     }
+
+     func embedInNavigationController() -> UINavigationController{
+        let navigationController = BaseNavigationController(navigationBarClass: BaseNavigationBar.self, toolbarClass: nil)
+        navigationController.viewControllers = [self]
+        return navigationController
+    }
 }
 
 //MARK:- SafeArea
