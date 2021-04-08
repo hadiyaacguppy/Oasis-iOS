@@ -49,4 +49,19 @@ extension Double {
         return dateFormatter.string(from: date)
     }
     
+    /// This function returns a string with a formatted number with commas. Usually use this function for prices, points etc..
+    /// - Example: 65,000 OR 124,927,250 OR 5,000.23
+    /// - Parameters:
+    ///   - minimumFractionDigits: The minimum number of digits after the decimal separator.
+    ///   - maximumFractionDigits: The maximum number of digits after the decimal separator.
+    /// - Returns: string with a formatted number with commas
+    func formatNumberWithCommas(minimumFractionDigits: Int = 0, maximumFractionDigits: Int = 2) -> String{
+        let formatter = NumberFormatter()
+        formatter.groupingSeparator = ","
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = minimumFractionDigits
+        formatter.maximumFractionDigits = maximumFractionDigits
+        return formatter.string(for: self) ?? ""
+    }
+    
 }
