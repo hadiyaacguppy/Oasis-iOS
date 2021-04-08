@@ -146,4 +146,24 @@ struct Constants {
         static let cancelBtnTitle = "Cancel"
         
     }
+    
+    struct DeepLink {
+        static let minimumAppVersion = "1.0.0"
+        static let appStoreId = ""
+        static let androidPackageName = ""
+        static let androidMinimumVersion = 1
+        static let deepLinkURL = ""
+        static let dynamicLinksDomainURIPrefix = ""
+        static let dynamicLinksFallbackUrl = ""
+    }
+    
+    struct Tedmob {
+        static let youtube = "https://www.youtube.com/channel/UC-StGhNhuiivUU_kCHV9GcA"
+        static let facebook = "https://www.facebook.com/TEDMOB"
+        static let linkedin = "https://www.linkedin.com/company/tedmob"
+        static let instagram = "https://www.instagram.com/tedmob.agency/"
+        static let twitter = "https://twitter.com/ted_mob"
+        static let website = "www.tedmob.com"
+    }
+    
 }
