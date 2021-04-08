@@ -1,12 +1,62 @@
 # Changelog
 
+## Version 4.3.0
+
+Releasedate: 2021-02-12
+
+```ruby
+pod 'DeviceKit', '~> 4.3'
+```
+
+This version adds support for the Simulator running on Apple Silicon and fixes documentation:
+
+- Support for running in Simulator on Apple Silicon. ([#273](https://github.com/devicekit/DeviceKit/pull/273))
+- Fix tech specs link and images for iPhone 12 models and iPad Air (4th generation). ([#272](https://github.com/devicekit/DeviceKit/pull/272))
+
+## Version 4.2.1
+
+Releasedate: 2020-10-22
+
+```ruby
+pod 'DeviceKit', '~> 4.2'
+```
+
+This version fixes a couple of bugs introduced in the v4.2.0 release:
+
+- `Device.allDevicesWithALidarSensor` didn't include iPhone 12 Pro and iPhone 12 Pro Max. ([#268](https://github.com/devicekit/DeviceKit/pull/268) [#266](https://github.com/devicekit/DeviceKit/issues/266))
+- `Device.iPadAir4.screenRatio` returned an invalid screen ratio. ([#268](https://github.com/devicekit/DeviceKit/pull/268) [#267](https://github.com/devicekit/DeviceKit/issues/267))
+
+## Version 4.2.0
+
+Releasedate: 2020-10-21
+
+```ruby
+pod 'DeviceKit', '~> 4.2'
+```
+
+This release will add support for the October 2020 devices. ([#262](https://github.com/devicekit/DeviceKit/pull/262))
+
+- iPad Air (4th generation)
+- iPhone 12
+- iPhone 12 mini
+- iPhone 12 Pro
+- iPhone 12 Pro Max
+```swift
+Device.iPadAir4
+
+Device.iPhone12
+Device.iPhone12Mini
+
+Device.iPhone12Pro
+Device.iPhone12ProMax
+```
+
 ## Version 4.1.0
 
 Releasedate: 2020-09-21
 
 ```ruby
-pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch => 'master'
-#pod 'DeviceKit', '~> 4.1'
+pod 'DeviceKit', '~> 4.1'
 ```
 
 This release will add support for the September 2020 devices, which will be released on the 18th of September: ([#256](https://github.com/devicekit/DeviceKit/pull/256))
