@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.2
 
 import PackageDescription
 
@@ -11,7 +11,7 @@ let package = Package(
         .library(name: "Quick", targets: ["Quick"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Quick/Nimble.git", from: "8.0.0"),
+        .package(url: "https://github.com/Quick/Nimble.git", from: "9.0.0-rc.1"),
     ],
     targets: {
         var targets: [Target] = [

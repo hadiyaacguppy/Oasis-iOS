@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 `Alamofire` adheres to [Semantic Versioning](https://semver.org/).
 
 #### 5.x Releases
+- `5.4.x` Releases - [5.4.0](#540) | [5.4.1](#541) | [5.4.2](#542)
 - `5.3.x` Releases - [5.3.0](#530)
 - `5.2.x` Releases - [5.2.0](#520) | [5.2.1](#521) | [5.2.2](#522)
 - `5.1.x` Releases - [5.1.0](#510)
@@ -41,6 +42,41 @@ All notable changes to this project will be documented in this file.
 - `1.2.x` Releases - [1.2.0](#120) | [1.2.1](#121) | [1.2.2](#122) | [1.2.3](#123)
 - `1.1.x` Releases - [1.1.0](#110) | [1.1.1](#111) | [1.1.2](#112) | [1.1.3](#113) | [1.1.4](#114) | [1.1.5](#115)
 - `1.0.x` Releases - [1.0.0](#100) | [1.0.1](#101)
+
+---
+
+## [5.4.2](https://github.com/Alamofire/Alamofire/releases/tag/5.4.2)
+Released on 2020-04-03. All issues associated with this milestone can be found using this [filter](https://github.com/Alamofire/Alamofire/milestone/76?closed=1).
+
+#### Updated
+- Resume data handling for `DownloadRequest`s to access resume data from errors as well as cancellation.
+  - Updated by [Jon Shier](https://github.com/jshier) in Pull Request [#3419](https://github.com/Alamofire/Alamofire/pull/3419).
+- Project files and templates for Xcode 12.4 and GitHub templates.
+  - Updated by [Jon Shier](https://github.com/jshier) in Pull Request [#3414](https://github.com/Alamofire/Alamofire/pull/3414).
+
+#### Fixed
+- `MultipartUpload` thread-safety.
+  - Fixed by [Jon Shier](https://github.com/jshier) in Pull Request [#3421](https://github.com/Alamofire/Alamofire/pull/3421).
+- Multipart body stream length handling to better handle partial streams.
+  - Fixed by [Yu Ao](https://github.com/YuAo) and [Jon Shier](https://github.com/jshier) in Pull Requests [#3380](https://github.com/Alamofire/Alamofire/pull/3380) and [#3420](https://github.com/Alamofire/Alamofire/pull/3420).
+
+## [5.4.1](https://github.com/Alamofire/Alamofire/releases/tag/5.4.1)
+Released on 2020-12-20. All issues associated with this milestone can be found using this [filter](https://github.com/Alamofire/Alamofire/milestone/75?closed=1).
+
+#### Updated
+- Project and CocoaPods installation of Obj-C header.
+  - Updated by [Jon Shier](https://github.com/jshier) in Pull Request [#3378](https://github.com/Alamofire/Alamofire/pull/3378).
+
+## [5.4.0](https://github.com/Alamofire/Alamofire/releases/tag/5.4.0)
+Released on 2020-10-17. All issues associated with this milestone can be found using this [filter](https://github.com/Alamofire/Alamofire/milestone/74?closed=1).
+
+#### Added
+- `URLResponseSerializer` and attendant convenience methods so downloads can produce a non-optional `URL`.
+  - Added by[Jon Shier](https://github.com/jshier) in Pull Request [#3343](https://github.com/Alamofire/Alamofire/pull/3343).
+
+#### Updated
+- Handing of `file://` `URL`s, removing error added in 5.3.0 and adding support for `DownloadRequest`.
+  - Updated by [Jon Shier](https://github.com/jshier) in Pull Request [#3342](https://github.com/Alamofire/Alamofire/pull/3342).
 
 ---
 

@@ -101,6 +101,7 @@ open class DatePickerDialog: UIView {
         self.datePicker.date = self.defaultDate ?? Date()
         self.datePicker.maximumDate = maximumDate
         self.datePicker.minimumDate = minimumDate
+        if #available(iOS 13.4, *) { datePicker.preferredDatePickerStyle = .wheels }
         if let locale = self.locale {
             self.datePicker.locale = locale
         }
