@@ -98,7 +98,9 @@ extension UIViewController {
 //MARK:- SafeArea
 extension UIViewController{
     
-    var bottomHomeScreenIndicatorHeight : CGFloat{ view.safeAreaInsets.bottom }
+    var bottomHomeScreenIndicatorHeight : CGFloat{
+        UIApplication.shared.windows.first{$0.isKeyWindow }?.safeAreaInsets.bottom ?? 0
+    }
     
     var topSafeAreaInsets : CGFloat{  view.safeAreaInsets.top }
     
