@@ -72,10 +72,11 @@
 		67290A02210E441400632C4F /* PlaceHolderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67290A01210E441400632C4F /* PlaceHolderHelper.swift */; };
 		6754244D20EE7FF600783123 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6754244C20EE7FF600783123 /* BaseNavigationController.swift */; };
 		67B66256235CBBFE00107D47 /* RxGesture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B66255235CBBFE00107D47 /* RxGesture.framework */; };
+		67C958F42624782100A67399 /* Reactive+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C958F32624782100A67399 /* Reactive+UITextField.swift */; };
+		67C959002624787400A67399 /* Reactive+UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C958FF2624787400A67399 /* Reactive+UITextView.swift */; };
 		90BF2E7761749FD7B6527C0A /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA13A42E9542A840EF7B74A5 /* Pods_OneSignalNotificationServiceExtension.framework */; };
 		CF0598EC210F154F00C2645F /* TDPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0598EB210F154F00C2645F /* TDPicker.swift */; };
 		CF06A90222BA791D00496C0E /* Base_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06A90122BA791D00496C0E /* Base_ProjectTests.swift */; };
-		CF06BE5F2199CFC4004B763B /* Reactive+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06BE5E2199CFC4004B763B /* Reactive+Validation.swift */; };
 		CF09C0D02180A511003DF186 /* BaseWebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF09C0C92180A511003DF186 /* BaseWebView.storyboard */; };
 		CF09C0D12180A511003DF186 /* BaseWebViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF09C0CA2180A511003DF186 /* BaseWebViewPresenter.swift */; };
 		CF09C0D22180A511003DF186 /* BaseWebViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF09C0CB2180A511003DF186 /* BaseWebViewRouter.swift */; };
@@ -298,6 +299,8 @@
 		67290A01210E441400632C4F /* PlaceHolderHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderHelper.swift; sourceTree = "<group>"; };
 		6754244C20EE7FF600783123 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		67B66255235CBBFE00107D47 /* RxGesture.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxGesture.framework; path = Carthage/Build/iOS/RxGesture.framework; sourceTree = "<group>"; };
+		67C958F32624782100A67399 /* Reactive+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+UITextField.swift"; sourceTree = "<group>"; };
+		67C958FF2624787400A67399 /* Reactive+UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+UITextView.swift"; sourceTree = "<group>"; };
 		77F8AA6138E1453C21DD5A80 /* Pods-AnalyticsManagerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsManagerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AnalyticsManagerTests/Pods-AnalyticsManagerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7C8C14F2B49C3D837C9C6EF6 /* Pods_AnalyticsManagerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnalyticsManagerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B66C5D6B0826B75B9813C2 /* Pods_AnalyticsManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnalyticsManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -311,7 +314,6 @@
 		CF06A8FF22BA791D00496C0E /* Base-ProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Base-ProjectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF06A90122BA791D00496C0E /* Base_ProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base_ProjectTests.swift; sourceTree = "<group>"; };
 		CF06A90322BA791D00496C0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF06BE5E2199CFC4004B763B /* Reactive+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Validation.swift"; sourceTree = "<group>"; };
 		CF09C0C92180A511003DF186 /* BaseWebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BaseWebView.storyboard; sourceTree = "<group>"; };
 		CF09C0CA2180A511003DF186 /* BaseWebViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWebViewPresenter.swift; sourceTree = "<group>"; };
 		CF09C0CB2180A511003DF186 /* BaseWebViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWebViewRouter.swift; sourceTree = "<group>"; };
@@ -582,10 +584,11 @@
 			children = (
 				CF56472C211B1B740092EFBD /* Reactive+UIImageView.swift */,
 				0FD65F1420D014F40075E251 /* Reactive+UIButton.swift */,
-				CF06BE5E2199CFC4004B763B /* Reactive+Validation.swift */,
 				CFE27A16214A9BE200DBB917 /* Reactive+Dictionary.swift */,
 				3EDC4152224E875300624D2B /* Reactive+UIView.swift */,
 				3E8E350322CA0BDE009A3113 /* Observable+Operators.swift */,
+				67C958F32624782100A67399 /* Reactive+UITextField.swift */,
+				67C958FF2624787400A67399 /* Reactive+UITextView.swift */,
 			);
 			path = "Rx+Extensions";
 			sourceTree = "<group>";
@@ -1503,6 +1506,7 @@
 				CF40385B216CF78F001F649B /* InitialModels.swift in Sources */,
 				CF09C0D32180A511003DF186 /* BaseWebViewModels.swift in Sources */,
 				0F57539F20EE1EC90069C139 /* Relays.swift in Sources */,
+				67C959002624787400A67399 /* Reactive+UITextView.swift in Sources */,
 				CFF69D682195513C003BE6BF /* UIScreen+Extensions.swift in Sources */,
 				0F57539B20EE19CD0069C139 /* BaseProjectService.swift in Sources */,
 				CFF69D7121955680003BE6BF /* Dictionary+Extensions.swift in Sources */,
@@ -1533,6 +1537,7 @@
 				CF181BA420809E28002603A1 /* UIColor+Extensions.swift in Sources */,
 				0F1B7FBC22CA6CBD0079F752 /* CountryCell.swift in Sources */,
 				CF09C0D22180A511003DF186 /* BaseWebViewRouter.swift in Sources */,
+				67C958F42624782100A67399 /* Reactive+UITextField.swift in Sources */,
 				CF403859216CF78F001F649B /* InitialPresenter.swift in Sources */,
 				0F57539520EE185F0069C139 /* Array+Extensions.swift in Sources */,
 				3E6DEFB321623D7A00978FDC /* UITableView+Extensions.swift in Sources */,
@@ -1543,7 +1548,6 @@
 				0F508C2F23A2AE5E00E1F333 /* TDProgressHUD.swift in Sources */,
 				0FD65F1520D014F40075E251 /* Reactive+UIButton.swift in Sources */,
 				CF181BA020809874002603A1 /* UINavigationBar+Extensions.swift in Sources */,
-				CF06BE5F2199CFC4004B763B /* Reactive+Validation.swift in Sources */,
 				CF40385E216CF78F001F649B /* InitialConfigurator.swift in Sources */,
 				CFC2BFE6216CA3C800DC31A7 /* ErrorViewModel.swift in Sources */,
 				0F1B7FB722CA6CB50079F752 /* LocaleInfo.swift in Sources */,

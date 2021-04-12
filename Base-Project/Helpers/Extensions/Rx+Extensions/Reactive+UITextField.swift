@@ -1,18 +1,15 @@
 //
-//  Reactive+Validation.swift
+//  Reactive+UITextField.swift
 //  Base-Project
 //
-//  Created by Wassim on 11/12/18.
-//  Copyright © 2018 Tedmob. All rights reserved.
+//  Created by Mojtaba Al Moussawi on 4/12/21.
+//  Copyright © 2021 Tedmob. All rights reserved.
 //
 
-import Foundation
-import RxSwift
-import RxCocoa
 import UIKit
+import RxSwift
 
-/// Extension Usage:
-/// This is to add the ability for checking for UITextField.text even if changes was'nt done by user - Keyboard input
+/// This is to add the ability for checking for UITextField.text even if changes wasn't done by the user - Keyboard input
 /// For cases when text property is edited from code, picker etc..
 extension Reactive where Base: UITextField {
     var textChanged : Observable<String?>{
@@ -20,9 +17,3 @@ extension Reactive where Base: UITextField {
                                 self.base.rx.controlEvent(.editingChanged).withLatestFrom(self.base.rx.text))
     }
 }
-
-
-
-
-
-
