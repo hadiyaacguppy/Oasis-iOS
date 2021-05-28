@@ -8,12 +8,9 @@
 
 import Foundation
 import Alamofire
-import ObjectMapper
 import RxSwift
-import Moya
 import SessionRepository
-
-extension ErrorResponse : Error{}
+import Moya
 
 class APIErrorManager{
     
@@ -26,18 +23,15 @@ class APIErrorManager{
     var appSessionRepository = SessionRepository()
     
     fileprivate
-    func checkSessionValidity(_ errorObject: APIError) {
+    func checkSessionValidity(_ errorObject: APIErrorModel) {
         if !appSessionRepository.sessionIsValid(withErrorCode: errorObject.code!) {
             Relays.shared.sessionIsExpired.accept(())
         }
     }
     
-    fileprivate
-    func parseError(withError errorData : Error) -> ErrorResponse{
-        
-        
+    func parseError(withError errorData : Error) -> NetworkErrorResponse{
         guard networkIsReachable else {
-            return ErrorResponse(genericErrorCode: -7777)
+            return NetworkErrorResponse(code: -7777)
         }
         let moyaError: MoyaError? = errorData as? MoyaError
         
@@ -45,7 +39,7 @@ class APIErrorManager{
         
         let statusCode : Int? = response?.statusCode
         
-        let unknownError = ErrorResponse(genericErrorCode: -10)
+        let unknownError = NetworkErrorResponse(code: -10)
         
         guard response != nil else{
             return unknownError
@@ -62,104 +56,24 @@ class APIErrorManager{
         }
         
         guard let JSON = try? JSONSerialization.jsonObject(with: bodyData!, options: []) as? [String : Any] else {
-            return ErrorResponse(genericErrorCode: statusCode!)
+            return NetworkErrorResponse(code: statusCode!)
         }
-        
-       
         
         guard let errorJSON = JSON["error"] as? [String : Any] else {
-            return ErrorResponse(genericErrorCode: statusCode!)
+            return NetworkErrorResponse(code: statusCode!)
         }
         
-        guard let errorObject  = Mapper<APIError>().map(JSON: errorJSON) else {
-            return ErrorResponse(genericErrorCode: statusCode!)
+        guard let errorObject  = try? APIErrorModel(from: errorJSON) else {
+            return NetworkErrorResponse(code: statusCode!)
         }
         guard errorObject.message != nil  else {
             return unknownError
         }
         
-        let errorResponse =  ErrorResponse(errorObject.code!, message: errorObject.message!)
+        let errorResponse =  NetworkErrorResponse(errorObject.code!, message: errorObject.message!)
         checkSessionValidity(errorObject)
         return errorResponse
         
-        
-        
-        
-    }
-}
-
-
-public enum Code  : Equatable {
-    
-    case badRequest
-    case unauthorized
-    case forbidden
-    case notFound
-    case internalServerError
-    case unknownError
-    case noInternetConnection
-    case apiError(Int)
-    
-    public static func == (lhs: Code, rhs: Code) -> Bool {
-        switch (lhs, rhs) {
-        case let (.apiError(l), .apiError(r)): return l == r
-        case (.badRequest,.badRequest):
-            return true
-        case (.unauthorized,.unauthorized):
-            return true
-        case (.forbidden,.forbidden):
-            return true
-        case (.internalServerError,.internalServerError):
-            return true
-        case (.unknownError,.unknownError):
-            return true
-        case (.noInternetConnection,.noInternetConnection):
-            return true
-        default:
-            return false
-        }
-    }
-    
-}
-public struct ErrorResponse {
-    
-    var code : Code
-    var message : String
-    
-    init( _ code : Int, message msg : String) {
-        self.code = .apiError(code)
-        self.message = msg
-    }
-    
-    init(genericErrorCode  gcode : Int) {
-        switch gcode {
-        case 400:
-            self.code = .badRequest
-            self.message = Constants.Error.badRequest
-        case 500:
-            self.code = .internalServerError
-            self.message = Constants.Error.someThingWentWrong
-        case 403:
-            self.code = .forbidden
-            self.message = Constants.Error.someThingWentWrong
-        case 404:
-            self.code = .notFound
-            self.message = Constants.Error.notFound
-        case -7777:
-            self.code = .noInternetConnection
-            self.message = Constants.Error.noInternet
-        default :
-            self.code = .unknownError
-            self.message = Constants.Error.unknown
-        }
-        
-    }
-}
-
-
-extension Error {
-    public var errorResponse: ErrorResponse {
-        return APIErrorManager().parseError(withError: self)
     }
 }
 

@@ -16,7 +16,7 @@ protocol BaseWebViewInteractorInput {
 
 protocol BaseWebViewInteractorOutput {
     
-     func apiCallFailed(withError error : ErrorResponse) -> ErrorViewModel
+     func apiCallFailed(withError error : NetworkErrorResponse) -> ErrorViewModel
     
 }
 

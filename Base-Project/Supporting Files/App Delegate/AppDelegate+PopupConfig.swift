@@ -14,9 +14,9 @@ extension AppDelegate{
      func configurePopupKitAppearance(){
         
         /** You can customize the text color and popups background color */
-        PopupService.preferences.config.loadingPopupStyle = .init(textColor: <#T##UIColor#>, popupBackgroundColor: <#T##UIColor#>)
-        PopupService.preferences.config.successPopupStyle = .init(textColor: <#T##UIColor#>, popupBackgroundColor: <#T##UIColor#>)
-        PopupService.preferences.config.errorPopupStyle = .init(textColor: <#T##UIColor#>, popupBackgroundColor: <#T##UIColor#>)
+        PopupService.preferences.config.loadingPopupStyle = .init(textColor: .clear, popupBackgroundColor: .clear)
+        PopupService.preferences.config.successPopupStyle = .init(textColor: .clear, popupBackgroundColor: .clear)
+        PopupService.preferences.config.errorPopupStyle = .init(textColor: .clear, popupBackgroundColor: .clear)
         
         /** You can customize as well the default fonts used by PopupKit */
         
