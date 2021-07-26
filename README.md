@@ -1,4 +1,3 @@
-
   
 
 ## Base Project Swift
@@ -136,7 +135,21 @@ carthage "$@"
 
   
 
-7. Open `MyApp.xcworkspace` and build
+7. Add your remote origin since git was reinitialized:
+```
+git remote add origin git@gitlab.com:tedmob/MyApp.git
+git add .
+git commit -m "Initial commit"
+git push -u origin master 
+```
+
+
+
+
+
+
+8. Open `MyApp.xcworkspace` and build
+
 
   
   
