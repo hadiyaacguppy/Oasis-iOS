@@ -1,0 +1,39 @@
+## OS X temporary files that should never be committed
+.DS_Store
+*.swp
+*.lock
+profile
+
+## Objective-C/Swift specific
+*.hmap
+*.ipa
+*.app.dSYM.zip
+
+## Xcode build files
+DerivedData/
+build/
+Builds/
+
+## Others
+docs
+
+## User settings
+xcuserdata/
+
+## CocoaPods
+Pods/
+!Podfile
+!Podfile.lock
+
+## R.Generated
+*.generated.swift
+
+## Carthage
+Carthage/Build.rbenv-vars
+Carthage/
+!Cartfile
+!Cartfile.private
+!Cartfile.resolved
+
+## AppCode
+.idea/
