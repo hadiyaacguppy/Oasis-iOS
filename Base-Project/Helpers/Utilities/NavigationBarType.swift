@@ -20,14 +20,13 @@ enum NavigationBarType{
     
     case appDefault
     
-    
     struct NavigationBarAppearance {
-        
         var barTintColor : UIColor?
         var tintColor : UIColor
         var isTranslucent : Bool
         var titleTextAttributes : [NSAttributedString.Key : Any]?
         var shadowImage : UIImage?
+        var shadowColor: UIColor?//For iOS 13
         var shouldClipsToBound : Bool
         var backgroundImage : UIImage?
         var position : UIBarPosition?
@@ -38,6 +37,7 @@ enum NavigationBarType{
              isTranslucent : Bool,
              titleTextAttributes :[NSAttributedString.Key : Any]? = nil,
              shadowImage : UIImage? = nil,
+             shadowColor: UIColor? = nil ,
              shouldClipsToBound : Bool = false,
              barPosition : UIBarPosition? = nil,
              barMetrics : UIBarMetrics = .default,
@@ -46,12 +46,12 @@ enum NavigationBarType{
             self.tintColor = tintColor
             self.isTranslucent = isTranslucent
             self.shadowImage = shadowImage
+            self.shadowColor = nil
             self.shouldClipsToBound  = shouldClipsToBound
             self.titleTextAttributes = titleTextAttributes
             self.backgroundImage = backgroundImage
             self.position = barPosition
             self.metrics = barMetrics
-            
         }
         
         init() {
@@ -81,7 +81,6 @@ enum NavigationBarType{
     }
 }
 
-
 extension NavigationBarType.NavigationBarAppearance{
     
     func getAppBaseStyle() -> NavigationBarType.NavigationBarAppearance{
@@ -90,7 +89,7 @@ extension NavigationBarType.NavigationBarAppearance{
         appearance.metrics = .default
         appearance.shadowImage = UIImage()
         appearance.titleTextAttributes = [ .foregroundColor : UIColor.black]
+        appearance.barTintColor = .white
         return appearance
     }
-    
 }

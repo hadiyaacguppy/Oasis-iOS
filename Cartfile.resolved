@@ -5,5 +5,8 @@ github "ReactiveCocoa/ReactiveSwift" "6.6.1"
 github "ReactiveX/RxSwift" "5.1.2"
 github "RxSwiftCommunity/RxGesture" "3.0.3"
 github "SVProgressHUD/SVProgressHUD" "2.2.5"
+<<<<<<< HEAD
 github "Skyscanner/SkyFloatingLabelTextField" "4.0.0"
+=======
+>>>>>>> navigationbar-iOS13
 github "dennisweissmann/DeviceKit" "4.4.0"

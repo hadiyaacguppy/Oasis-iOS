@@ -12,21 +12,21 @@ class BaseNavigationController: UINavigationController {
     
     override init(rootViewController: UIViewController) {
         super.init(rootViewController: rootViewController)
+        self.setup()
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
         self.setup()
     }
     
     override init(navigationBarClass: AnyClass?, toolbarClass: AnyClass?) {
         super.init(navigationBarClass: navigationBarClass, toolbarClass: toolbarClass)
+        self.setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
         self.setup()
     }
     
@@ -55,13 +55,23 @@ class BaseNavigationController: UINavigationController {
         delegate = self
     }
     
+    override open var childForStatusBarStyle: UIViewController? {
+        return topViewController
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return topViewController?.preferredStatusBarStyle ?? .default
+    }
+    
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation{
+        return topViewController?.preferredStatusBarUpdateAnimation ?? .slide
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // This needs to be in here, not in init
         interactivePopGestureRecognizer?.delegate = self
-        
-        
+        //        hidesBarsOnSwipe = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,16 +85,13 @@ class BaseNavigationController: UINavigationController {
     }
     
     // MARK: - Overrides
-    
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         duringPushAnimation = true
-        
         super.pushViewController(viewController, animated: animated)
     }
     
     
     // MARK: - Private Properties
-    
     fileprivate var duringPushAnimation = false
 }
 
@@ -104,7 +111,6 @@ extension BaseNavigationController: UINavigationControllerDelegate {
                               to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return nil
     }
-    
 }
 
 // MARK: - UIGestureRecognizerDelegate

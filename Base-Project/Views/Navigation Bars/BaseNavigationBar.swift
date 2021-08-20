@@ -14,7 +14,6 @@ class BaseNavigationBar : UINavigationBar{
         super.awakeFromNib()
         self.setBackgroundImage(UIImage(), for: .default)
         self.shadowImage = UIImage()
-        
         self.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor : UIColor.white
         ]
