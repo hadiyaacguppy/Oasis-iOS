@@ -104,8 +104,6 @@
 		CF6B70F221EDD5F700204B65 /* VersionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6B70F121EDD5F700204B65 /* VersionLabel.swift */; };
 		CF7823B420EF95A7003069BD /* APIErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7823B320EF95A7003069BD /* APIErrorManager.swift */; };
 		CF7BC66B1FD8F739008E80AC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7BC6651FD8F739008E80AC /* Alamofire.framework */; };
-		CF7BC66F1FD8F739008E80AC /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7BC6691FD8F739008E80AC /* ObjectMapper.framework */; };
-		CF7D83FC22BA30B400397093 /* DeviceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7D83FA22BA30B300397093 /* DeviceKit.framework */; };
 		CF7D83FF22BA31D400397093 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7D83FE22BA31D300397093 /* RxRelay.framework */; };
 		CF7D840122BA344F00397093 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7D840022BA344F00397093 /* RxSwift.framework */; };
 		CF7D840322BA345400397093 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7D840222BA345400397093 /* RxCocoa.framework */; };
@@ -118,7 +116,6 @@
 		CF8373DC224B8CA7000C3E21 /* AnalyticsManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF8373C6224B8CA7000C3E21 /* AnalyticsManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF8373E4224B8E2B000C3E21 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8373E3224B8E2B000C3E21 /* AnalyticsManager.swift */; };
 		CF8373E6224B8E48000C3E21 /* AnalyticsManagerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8373E5224B8E48000C3E21 /* AnalyticsManagerConstants.swift */; };
-		CF87ED9E201B5FF300562226 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF87ED9D201B5FF300562226 /* SVProgressHUD.framework */; };
 		CF87EDA0201B6EF700562226 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87ED9F201B6EF700562226 /* BaseViewController.swift */; };
 		CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87EDA3201B8C2500562226 /* BaseTextField.swift */; };
 		CF8C5C9C20EF97AE00236C7B /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5C9B20EF97AE00236C7B /* BaseTableViewController.swift */; };
@@ -401,16 +398,13 @@
 				CF7D840722BA346100397093 /* Moya.framework in Frameworks */,
 				CF7D840122BA344F00397093 /* RxSwift.framework in Frameworks */,
 				CF7BC66B1FD8F739008E80AC /* Alamofire.framework in Frameworks */,
-				CF87ED9E201B5FF300562226 /* SVProgressHUD.framework in Frameworks */,
 				CF8373DB224B8CA7000C3E21 /* AnalyticsManager.framework in Frameworks */,
 				CF7D83FF22BA31D400397093 /* RxRelay.framework in Frameworks */,
-				CF7BC66F1FD8F739008E80AC /* ObjectMapper.framework in Frameworks */,
 				4B00E64AA8A0A7582597A76A /* Pods_Base_Project.framework in Frameworks */,
 				CF8C5CCB20EF9E7200236C7B /* SessionRepository.framework in Frameworks */,
 				CF7D840322BA345400397093 /* RxCocoa.framework in Frameworks */,
 				CF7D840B22BA37BF00397093 /* RxMoya.framework in Frameworks */,
 				67B66256235CBBFE00107D47 /* RxGesture.framework in Frameworks */,
-				CF7D83FC22BA30B400397093 /* DeviceKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1352,10 +1346,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SkyFloatingLabelTextField.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/DeviceKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
