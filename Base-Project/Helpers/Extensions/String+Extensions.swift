@@ -207,6 +207,53 @@ extension String {
         }
         return stringToReturn
     }
+    
+    ///This function used for localization with arguments
+    /// - Parameter arguments: values to be substituted
+    /// - Returns: String initialized by using a given format string as a template into which the remaining argument values are substituted
+    func localizeWithFormat(arguments: CVarArg...) -> String{
+        return String(format: self.localized, arguments: arguments)
+    }
+    
+    /// This function adds strikethrough style (a horizontal line goes through the text) mostly used when there is discount
+    /// - Parameter color: color of the text
+    /// - Returns: attributed text with strikethrough style
+    func strikethroughStyle(color: UIColor = .black) -> NSAttributedString {
+        let attributeString = NSAttributedString(string: self, attributes: [.baselineOffset: 1,
+                                                                            .strikethroughStyle: 1,
+                                                                            .strikethroughColor : color])
+        return attributeString
+    }
+    
+    /// This function determins the width of the label depending on fixed height, font and string length
+    /// - Parameters:
+    ///   - height: fixed height
+    ///   - font: the font used
+    /// - Returns: needed width for the label
+    func width(withConstrainedHeight height: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: .greatestFiniteMagnitude, height: height)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
+        
+        return ceil(boundingBox.width)
+    }
+    
+    /// This function determins the height of the label depending on fixed width, font and string length
+    /// - Parameters:
+    ///   - width: fixed width
+    ///   - font: the font used
+    /// - Returns: needed height for the label
+    func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
+        
+        return ceil(boundingBox.height)
+    }
+    
+    func getQueryStringParameter(param: String)
+        -> String? {
+            guard let url = URLComponents(string: self) else { return nil }
+            return url.queryItems?.first(where: { $0.name == param })?.value
+    }
 }
 
 extension Optional where Wrapped == String{
