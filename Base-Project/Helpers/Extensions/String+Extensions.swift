@@ -207,6 +207,33 @@ extension String {
         }
         return stringToReturn
     }
+
+       /*
+    /// Removes all characters after the given string.
+    ///
+    /// Use this method to remove all characters after the given string or character
+    /// The order of the remaining elements is preserved.
+    /// This example removes all elements after ",":
+    ///
+    ///     var fullAddress = "Lebanon, Beirut - Dbayeh"
+    ///
+    ///     let countryName = fullAddress.removeAll(after: ",")
+    ///     // countryName == "Lebanon"
+    ///
+    /// - Parameter shouldBeRemoved: The given string to be removed or from a specified character
+    ///
+    /// - Returns: Return the new string after removing all characters after given string,
+    ///            If character not found, self will be returned
+     */
+    public
+    func removeAll(after shouldBeRemoved : String) -> String{
+        if let index = self.range(of: character)?.lowerBound {
+            let substring = self[..<index]
+            let string = String(substring)
+            return String(self[..<index])
+        }
+        return ""
+    }
     
     ///This function used for localization with arguments
     /// - Parameter arguments: values to be substituted
