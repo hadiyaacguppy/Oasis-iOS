@@ -230,7 +230,7 @@ extension String {
         if let index = self.range(of: character)?.lowerBound {
             let substring = self[..<index]
             let string = String(substring)
-            return string
+            return String(self[..<index])
         }
         return ""
     }
