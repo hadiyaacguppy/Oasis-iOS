@@ -8,9 +8,7 @@ target 'Base-Project' do
   # Pods for Base-Project
   use_frameworks!
   	pod 'R.swift'
-  	pod 'CZPicker'
   	pod 'SDWebImage', '~> 5.0'
-  	pod 'SwiftLocation'
 	pod 'Logging', '~> 1.1'	
 	pod 'TDPopupKit'
 	install_oneSignalPod

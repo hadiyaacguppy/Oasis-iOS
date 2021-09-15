@@ -1,5 +1,4 @@
 PODS:
-  - CZPicker (0.4.3)
   - Firebase/Analytics (8.7.0):
     - Firebase/Core
   - Firebase/Core (8.7.0):
@@ -102,29 +101,20 @@ PODS:
   - SDWebImage/Core (5.11.1)
   - SwiftEntryKit (1.2.6):
     - QuickLayout (= 3.0.0)
-  - SwiftLocation (5.1.0):
-    - SwiftLocation/BeaconBroadcaster (= 5.1.0)
-    - SwiftLocation/Core (= 5.1.0)
-  - SwiftLocation/BeaconBroadcaster (5.1.0):
-    - SwiftLocation/Core
-  - SwiftLocation/Core (5.1.0)
   - TDPopupKit (0.1.5):
     - SwiftEntryKit (= 1.2.6)
 
 DEPENDENCIES:
-  - CZPicker
   - Firebase/Analytics
   - Firebase/Crashlytics
   - Logging (~> 1.1)
   - OneSignal (< 3.0, >= 2.11.2)
   - R.swift
   - SDWebImage (~> 5.0)
-  - SwiftLocation
   - TDPopupKit
 
 SPEC REPOS:
   trunk:
-    - CZPicker
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -143,11 +133,9 @@ SPEC REPOS:
     - R.swift.Library
     - SDWebImage
     - SwiftEntryKit
-    - SwiftLocation
     - TDPopupKit
 
 SPEC CHECKSUMS:
-  CZPicker: 55aa1751ea26e209814552da1a9a08cba8bbf72a
   Firebase: bc9325d5ee2041524bac78a5213d0e530c651309
   FirebaseAnalytics: 52768800c2add1d84b751420cb4caaf8195f2c41
   FirebaseCore: f4804c1d3f4bbbefc88904d15653038f2c99ddf7
@@ -166,9 +154,8 @@ SPEC CHECKSUMS:
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SwiftEntryKit: 96a2fa90b2631bbbfac50d18449e9ca3d0635f13
-  SwiftLocation: 83e0ea75a1969cee3a1197e2b7095603fc23fde5
   TDPopupKit: bd24bf7432dd2b42984fcdd4b1c64d33db7fc422
 
-PODFILE CHECKSUM: 377c64230e65989dcc3226c704c4e6d9e248cbcd
+PODFILE CHECKSUM: f71265b5d3c2a56657d7f33960c9975f5624cc50
 
 COCOAPODS: 1.11.0

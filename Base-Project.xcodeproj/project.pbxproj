@@ -20,7 +20,6 @@
 		0F508C2F23A2AE5E00E1F333 /* TDProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F508C2E23A2AE5E00E1F333 /* TDProgressHUD.swift */; };
 		0F57538E20EE12EB0069C139 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57538D20EE12EB0069C139 /* Constants.swift */; };
 		0F57539520EE185F0069C139 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539420EE185F0069C139 /* Array+Extensions.swift */; };
-		0F57539720EE19090069C139 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539620EE19090069C139 /* LocationService.swift */; };
 		0F57539B20EE19CD0069C139 /* BaseProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539A20EE19CD0069C139 /* BaseProjectService.swift */; };
 		0F57539D20EE1C430069C139 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539C20EE1C430069C139 /* APIClient.swift */; };
 		0F57539F20EE1EC90069C139 /* Relays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57539E20EE1EC90069C139 /* Relays.swift */; };
@@ -75,7 +74,6 @@
 		67C958F42624782100A67399 /* Reactive+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C958F32624782100A67399 /* Reactive+UITextField.swift */; };
 		67C959002624787400A67399 /* Reactive+UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C958FF2624787400A67399 /* Reactive+UITextView.swift */; };
 		90BF2E7761749FD7B6527C0A /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA13A42E9542A840EF7B74A5 /* Pods_OneSignalNotificationServiceExtension.framework */; };
-		CF0598EC210F154F00C2645F /* TDPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0598EB210F154F00C2645F /* TDPicker.swift */; };
 		CF06A90222BA791D00496C0E /* Base_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06A90122BA791D00496C0E /* Base_ProjectTests.swift */; };
 		CF09C0D02180A511003DF186 /* BaseWebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF09C0C92180A511003DF186 /* BaseWebView.storyboard */; };
 		CF09C0D12180A511003DF186 /* BaseWebViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF09C0CA2180A511003DF186 /* BaseWebViewPresenter.swift */; };
@@ -243,7 +241,6 @@
 		0F508C2E23A2AE5E00E1F333 /* TDProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDProgressHUD.swift; sourceTree = "<group>"; };
 		0F57538D20EE12EB0069C139 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0F57539420EE185F0069C139 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
-		0F57539620EE19090069C139 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		0F57539A20EE19CD0069C139 /* BaseProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProjectService.swift; sourceTree = "<group>"; };
 		0F57539C20EE1C430069C139 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		0F57539E20EE1EC90069C139 /* Relays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Relays.swift; sourceTree = "<group>"; };
@@ -310,7 +307,6 @@
 		AA4A7C456244C0A9209BA4D6 /* Pods-Base-Project-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-Project-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Base-Project-Tests/Pods-Base-Project-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C65CEF44A2A6134604793718 /* Pods-Base-ProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-ProjectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Base-ProjectUITests/Pods-Base-ProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C950BD45C779722DCB3D76B0 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		CF0598EB210F154F00C2645F /* TDPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDPicker.swift; sourceTree = "<group>"; };
 		CF06A8FF22BA791D00496C0E /* Base-ProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Base-ProjectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF06A90122BA791D00496C0E /* Base_ProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base_ProjectTests.swift; sourceTree = "<group>"; };
 		CF06A90322BA791D00496C0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -535,7 +531,6 @@
 			isa = PBXGroup;
 			children = (
 				CF564700211B14240092EFBD /* Push */,
-				0F57539620EE19090069C139 /* LocationService.swift */,
 				CF6030752212F77B003872F3 /* DeviceManager.swift */,
 				CF8373AE224B8807000C3E21 /* AppManager.swift */,
 				0F57539E20EE1EC90069C139 /* Relays.swift */,
@@ -769,7 +764,6 @@
 			isa = PBXGroup;
 			children = (
 				CF8C5C9D20EF9CA400236C7B /* DatePickerDialog.swift */,
-				CF0598EB210F154F00C2645F /* TDPicker.swift */,
 			);
 			path = Pickers;
 			sourceTree = "<group>";
@@ -1312,13 +1306,11 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Base-Project/Pods-Base-Project-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CZPicker/CZPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/Logging/Logging.framework",
 				"${BUILT_PRODUCTS_DIR}/QuickLayout/QuickLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftEntryKit/SwiftEntryKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
 				"${BUILT_PRODUCTS_DIR}/TDPopupKit/TDPopupKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
@@ -1331,13 +1323,11 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CZPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Logging.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QuickLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftEntryKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TDPopupKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
@@ -1430,7 +1420,7 @@
 			);
 			name = R.Swift;
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1462,7 +1452,6 @@
 			files = (
 				CF56472F211B1BA50092EFBD /* UIImageView+Extensions.swift in Sources */,
 				CF181BA2208099A0002603A1 /* UITextField+Extensions.swift in Sources */,
-				CF0598EC210F154F00C2645F /* TDPicker.swift in Sources */,
 				0FD65F1B20D018730075E251 /* UIButton+Extensions.swift in Sources */,
 				CFF69D6D219554C4003BE6BF /* CGPoint+Extensions.swift in Sources */,
 				0F1B7FB022CA6C9D0079F752 /* UISearchBar+Extensions.swift in Sources */,
@@ -1525,7 +1514,6 @@
 				117C4AAE1FD864AD008BB445 /* UIView+Extensions.swift in Sources */,
 				3ECAFE3A23C3996A00E83552 /* MultiLineField.swift in Sources */,
 				3E1DEAF422BA634A00FAD9F4 /* UIView+Rounded.swift in Sources */,
-				0F57539720EE19090069C139 /* LocationService.swift in Sources */,
 				CFE259E622C9C4D5006B0472 /* AppDelegate+SessionExpiry.swift in Sources */,
 				CF8C5C9C20EF97AE00236C7B /* BaseTableViewController.swift in Sources */,
 				117C4AAB1FD86050008BB445 /* Utilities.swift in Sources */,

@@ -1,9 +1,3 @@
-github "Hearst-DD/ObjectMapper"
-
-github "SVProgressHUD/SVProgressHUD"
-
-github "dennisweissmann/DeviceKit"
-
 github "Skyscanner/SkyFloatingLabelTextField"
 
 github "RxSwiftCommunity/RxGesture" ~> 3.0
