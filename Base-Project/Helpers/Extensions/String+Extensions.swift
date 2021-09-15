@@ -226,7 +226,7 @@ extension String {
     ///            If character not found, self will be returned
      */
     public
-    func removeAllCharacters(afterSpecificCharacter character : String) -> String{
+    func removeAll(after shouldBeRemoved : String) -> String{
         if let index = self.range(of: character)?.lowerBound {
             let substring = self[..<index]
             let string = String(substring)
