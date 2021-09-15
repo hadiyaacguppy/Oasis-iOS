@@ -9,7 +9,7 @@
 //  
 import Foundation
 
-protocol InitialPresenterOutput: class {
+protocol InitialPresenterOutput: AnyObject {
     
     
 }
@@ -23,11 +23,11 @@ class InitialPresenter {
 }
 extension InitialPresenter: InitialInteractorOutput {
     
-    func apiCallFailed(withError error: ErrorResponse) -> ErrorViewModel {
+    func apiCallFailed(withError error: NetworkErrorResponse) -> ErrorViewModel {
         return self.parseErrorViewModel(fromErrorResponse:error)
     }
     
-    func parseErrorViewModel(fromErrorResponse errorResponse : ErrorResponse) -> ErrorViewModel {
+    func parseErrorViewModel(fromErrorResponse errorResponse : NetworkErrorResponse) -> ErrorViewModel {
         
         switch errorResponse.code{
         case .apiError:

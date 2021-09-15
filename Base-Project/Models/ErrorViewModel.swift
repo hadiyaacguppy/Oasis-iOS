@@ -10,10 +10,10 @@ import Foundation
 struct ErrorViewModel  : Error{
     
     var message : String
-    var code : Code
+    var code : NetworkCode
     var isNoInternetAvailableError : Bool
     
-    init(withMessage msg : String , isNoInternetAvaibleError internet : Bool ,withCode code : Code ) {
+    init(withMessage msg : String , isNoInternetAvaibleError internet : Bool ,withCode code : NetworkCode ) {
         self.message = msg
         self.isNoInternetAvailableError = internet
         self.code = code
