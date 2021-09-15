@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+github "SVProgressHUD/SVProgressHUD"
+
+github "dennisweissmann/DeviceKit"
+
+>>>>>>> origin/removing-objectMapper
 github "Skyscanner/SkyFloatingLabelTextField"
 
 github "RxSwiftCommunity/RxGesture" ~> 3.0

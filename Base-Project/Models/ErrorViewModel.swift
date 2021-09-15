@@ -7,7 +7,6 @@
 //
 import Foundation
 
-
 struct ErrorViewModel  : Error{
     
     var message : String
