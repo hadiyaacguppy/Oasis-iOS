@@ -16,10 +16,23 @@ extension Optional where Wrapped == Int {
         }
         return self == 1 ? true : false
     }
-   
+    
     var fromEpoch: Date?{
         guard let self = `self` else { return nil}
         return Date(timeIntervalSince1970: TimeInterval(self))
+    }
+    
+    /// This function returns a string with a formatted number with commas. Usually use this function for prices, points etc..
+    /// - Example: 65,000 OR 124,927,250 OR 5,000.00
+    /// - Parameters:
+    ///   - minimumFractionDigits: The minimum number of digits after the decimal separator.
+    /// - Returns: string with a formatted number with commas
+    func formatNumberWithCommas(minimumFractionDigits: Int = 0) -> String{
+        let formatter = NumberFormatter()
+        formatter.groupingSeparator = ","
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = minimumFractionDigits
+        return formatter.string(for: self) ?? ""
     }
     
 }
