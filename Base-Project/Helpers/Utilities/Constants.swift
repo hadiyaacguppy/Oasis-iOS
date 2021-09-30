@@ -6,9 +6,7 @@
 //  Copyright © 2018 Tedmob. All rights reserved.
 //
 
-import Foundation
 import UIKit
-import SVProgressHUD
 
 /// All the date formats that should be used in the app
 enum DateFormats : String {
@@ -74,24 +72,7 @@ struct Constants {
             case inboxGmail = "inbox-gmail://"
         }
     }
-    
- 
-    
-    struct ProgressHud {
-        struct ProgressStyle {
-            static let dark = SVProgressHUDStyle.dark
-            static let light = SVProgressHUDStyle.light
-        }
-        
-        struct ProgressAnimationType {
-            static let flat = SVProgressHUDAnimationType.flat
-            static let native = SVProgressHUDAnimationType.native
-            
-        }
-        static let style = ProgressStyle.dark
-        static let animationType = ProgressAnimationType.native
-    }
-    
+
     
     struct PlaceHolderView {
         struct Fonts {

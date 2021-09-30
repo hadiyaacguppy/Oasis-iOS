@@ -80,7 +80,6 @@
 		90BF2E7761749FD7B6527C0A /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA13A42E9542A840EF7B74A5 /* Pods_OneSignalNotificationServiceExtension.framework */; };
 		CF06A90222BA791D00496C0E /* Base_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06A90122BA791D00496C0E /* Base_ProjectTests.swift */; };
 		CF16ED2722C66F4000B2E0D7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16ED2422C66F1A00B2E0D7 /* User.swift */; };
-		CF16ED2822C66F6600B2E0D7 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7BC6691FD8F739008E80AC /* ObjectMapper.framework */; };
 		CF181BA020809874002603A1 /* UINavigationBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF181B9F20809874002603A1 /* UINavigationBar+Extensions.swift */; };
 		CF181BA2208099A0002603A1 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF181BA1208099A0002603A1 /* UITextField+Extensions.swift */; };
 		CF181BA420809E28002603A1 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF181BA320809E28002603A1 /* UIColor+Extensions.swift */; };
@@ -436,7 +435,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF16ED2822C66F6600B2E0D7 /* ObjectMapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

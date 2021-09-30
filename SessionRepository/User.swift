@@ -7,31 +7,18 @@
 //
 
 import Foundation
-import ObjectMapper
 
-
-public class User : NSObject, NSCoding, Mappable{
-    public var token: String?
+public struct User : Codable {
     
-    required public init?(map: Map){}
-    override init(){}
+    public let token : String?
     
-    public func mapping(map: Map){
-        
+    enum CodingKeys: String, CodingKey {
+        case token = "token"
     }
     
-
-    @objc required public init(coder aDecoder: NSCoder){
-        token = aDecoder.decodeObject(forKey: "token") as? String
-        
-    }
-    
-   
-    @objc public func encode(with aCoder: NSCoder){
-        
-        if token != nil{
-            aCoder.encode(token, forKey: "token")
-        }
+    public init(from decoder: Decoder) throws {
+        let values = try? decoder.container(keyedBy: CodingKeys.self)
+        token = try? values?.decodeIfPresent(String.self, forKey: .token)
     }
     
 }

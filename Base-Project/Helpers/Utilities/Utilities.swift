@@ -6,10 +6,8 @@
 //  Copyright © 2017 Tedmob. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import MapKit
-import SVProgressHUD
 import SystemConfiguration
 import RxSwift
 import MessageUI
@@ -314,33 +312,6 @@ public struct Utilities  {
                 // if GoogleMap App is not installed
                 Utilities.openURL(withString: "https://www.google.co.in/maps/dir/?&daddr=\(lat),\(long)&directionsmode=driving")
             }
-        }
-    }
-    
-    // DO NOT use this on UIViewController. Rely on self.showLoading() instead
-    struct ProgressHUD {
-        static func showLoading(){
-            SVProgressHUD.setDefaultStyle(Constants.ProgressHud.style)
-            SVProgressHUD.setDefaultAnimationType(Constants.ProgressHud.animationType)
-            SVProgressHUD.show()
-        }
-        static func showLoading(withMessage msg : String ){
-            SVProgressHUD.setDefaultStyle(Constants.ProgressHud.style)
-            SVProgressHUD.setDefaultAnimationType(Constants.ProgressHud.animationType)
-            SVProgressHUD.show(withStatus: msg )
-        }
-        static func showSuccess(withMessage msg : String ){
-            SVProgressHUD.setDefaultStyle(Constants.ProgressHud.style)
-            SVProgressHUD.setDefaultAnimationType(Constants.ProgressHud.animationType)
-            SVProgressHUD.showSuccess(withStatus: msg)
-        }
-        static func showError(withMessage msg : String ){
-            SVProgressHUD.setDefaultStyle(Constants.ProgressHud.style)
-            SVProgressHUD.setDefaultAnimationType(Constants.ProgressHud.animationType)
-            SVProgressHUD.showError(withStatus: msg)
-        }
-        static func dismissLoading(){
-            SVProgressHUD.dismiss()
         }
     }
     

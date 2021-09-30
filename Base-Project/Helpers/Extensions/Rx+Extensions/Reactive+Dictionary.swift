@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import ObjectMapper
-
 import RxSwift
 
 enum JSONMappingError : Swift.Error {
@@ -26,47 +24,3 @@ enum JSONMappingError : Swift.Error {
     }
 }
 
-public extension PrimitiveSequence where Trait == SingleTrait , Element == [ String : Any]{
-    func mapObject<T: BaseMappable>(_ type: T.Type,atKeyPath keyPath : String? = nil, context: MapContext? = nil )  -> Single<T> {
-        return flatMap { json -> Single<T> in
-            if keyPath == nil {
-                guard let obj = Mapper<T>().map(JSON: json) else {
-                    return Single.error(JSONMappingError.mappingError(json))
-                }
-                return Single.just(obj)
-            }
-            guard let customJSONDictionary = json[keyPath!] as? [String : Any] else {
-                return Single.error(JSONMappingError.mappingError(json))
-            }
-            guard let object = Mapper<T>(context: context).map(JSONObject: customJSONDictionary) else {
-                return Single.error(JSONMappingError.mappingError(json))
-            }
-            return Single.just(object)
-        }
-        
-    }
-}
-
-public extension PrimitiveSequence where Trait == SingleTrait , Element == Any{
-    func mapArray<T: BaseMappable>(_ type: T.Type,atKeyPath keyPath : String? = nil, context: MapContext? = nil )  -> Single<[T]> {
-        return flatMap { json -> Single<[T]> in
-            if keyPath == nil {
-                guard let jsonArray =  json as? [[String : Any]] else {
-                    return Single.error(JSONMappingError.arrayMappingError(json))
-                    
-                }
-                return Single.just(Mapper<T>().mapArray(JSONArray: jsonArray))
-            }
-            
-            guard let jsonObj = json as? [String : Any] else {
-                return Single.error(JSONMappingError.arrayMappingError(json))
-            }
-            guard let customJSONDictionary = jsonObj[keyPath!] as? [[String : Any]] else {
-                return Single.error(JSONMappingError.arrayMappingError(json))
-            }
-            return Single.just(Mapper<T>().mapArray(JSONArray: customJSONDictionary))
-            
-        }
-        
-    }
-}
