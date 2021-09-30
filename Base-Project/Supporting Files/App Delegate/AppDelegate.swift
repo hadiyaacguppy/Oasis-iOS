@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)
     -> Bool {
-        logger.info("Base Project Version 3.2")
+        logger.info("Base Project Version 4.0")
         configurePopupKitAppearance()
         
         if !self.oneSignalAppId.isEmpty {
