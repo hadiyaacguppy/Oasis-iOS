@@ -28,7 +28,7 @@ class BaseUIView: UIView{
     /// default value is 20
     public var extendedHitAreaValue: CGFloat = 20
     
-    //* Backgroundview it's main objective is to apply the shadow on it (if exists) in system versions less than iOS 11
+    //* Background view it's main objective is to apply the shadow on it (if exists) in system versions less than iOS 11
     private var backgroundView : BaseUIView!
     
    private var backgroundViewFrame : CGRect!

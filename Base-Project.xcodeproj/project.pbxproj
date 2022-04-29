@@ -65,6 +65,9 @@
 		4AEF647522107DC000D53D75 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF647422107DC000D53D75 /* BaseButton.swift */; };
 		4AEF64772210842F00D53D75 /* BaseSkyFloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF64762210842F00D53D75 /* BaseSkyFloatingTextField.swift */; };
 		4B00E64AA8A0A7582597A76A /* Pods_Base_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BA0D1007DC66F24CD1D64E /* Pods_Base_Project.framework */; };
+		671336F42818417D006CECE4 /* languages.json in Resources */ = {isa = PBXBuildFile; fileRef = 671336F32818417D006CECE4 /* languages.json */; };
+		671336F728184208006CECE4 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671336F628184208006CECE4 /* Language.swift */; };
+		67283E47281AC81A007C5FF4 /* PushServiceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67283E46281AC81A007C5FF4 /* PushServiceRouter.swift */; };
 		672909FC210E43EA00632C4F /* PlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672909FB210E43EA00632C4F /* PlaceHolderView.swift */; };
 		672909FE210E43F900632C4F /* PlaceHolderCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672909FD210E43F900632C4F /* PlaceHolderCreator.swift */; };
 		67290A02210E441400632C4F /* PlaceHolderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67290A01210E441400632C4F /* PlaceHolderHelper.swift */; };
@@ -91,11 +94,9 @@
 		CF40385C216CF78F001F649B /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF403855216CF78F001F649B /* InitialViewController.swift */; };
 		CF40385D216CF78F001F649B /* InitialInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF403856216CF78F001F649B /* InitialInteractor.swift */; };
 		CF40385E216CF78F001F649B /* InitialConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF403857216CF78F001F649B /* InitialConfigurator.swift */; };
-		CF50F7AC219AC028000E5E4E /* NotificationPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50F7AB219AC028000E5E4E /* NotificationPayload.swift */; };
 		CF564702211B142E0092EFBD /* OneSignalPushService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF564701211B142E0092EFBD /* OneSignalPushService.swift */; };
 		CF56471A211B15590092EFBD /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF564719211B15590092EFBD /* NotificationService.swift */; };
 		CF56471E211B15590092EFBD /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CF564717211B15590092EFBD /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		CF56472B211B18050092EFBD /* PushParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF56472A211B18050092EFBD /* PushParser.swift */; };
 		CF56472D211B1B740092EFBD /* Reactive+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF56472C211B1B740092EFBD /* Reactive+UIImageView.swift */; };
 		CF56472F211B1BA50092EFBD /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF56472E211B1BA50092EFBD /* UIImageView+Extensions.swift */; };
 		CF564731211B1C910092EFBD /* InputValidationExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF564730211B1C910092EFBD /* InputValidationExpression.swift */; };
@@ -279,6 +280,9 @@
 		4AEF64762210842F00D53D75 /* BaseSkyFloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSkyFloatingTextField.swift; sourceTree = "<group>"; };
 		509696D7EE45B0E48C61927E /* Pods-Base-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-ProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Base-ProjectTests/Pods-Base-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		5F0CB28320C7D9C3EA885DBF /* Pods-Base-ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-ProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Base-ProjectUITests/Pods-Base-ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		671336F32818417D006CECE4 /* languages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = languages.json; sourceTree = "<group>"; };
+		671336F628184208006CECE4 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		67283E46281AC81A007C5FF4 /* PushServiceRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushServiceRouter.swift; sourceTree = "<group>"; };
 		672909FB210E43EA00632C4F /* PlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderView.swift; sourceTree = "<group>"; };
 		672909FD210E43F900632C4F /* PlaceHolderCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderCreator.swift; sourceTree = "<group>"; };
 		67290A01210E441400632C4F /* PlaceHolderHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderHelper.swift; sourceTree = "<group>"; };
@@ -316,14 +320,12 @@
 		CF403855216CF78F001F649B /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		CF403856216CF78F001F649B /* InitialInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialInteractor.swift; sourceTree = "<group>"; };
 		CF403857216CF78F001F649B /* InitialConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialConfigurator.swift; sourceTree = "<group>"; };
-		CF50F7AB219AC028000E5E4E /* NotificationPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPayload.swift; sourceTree = "<group>"; };
 		CF564701211B142E0092EFBD /* OneSignalPushService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneSignalPushService.swift; sourceTree = "<group>"; };
 		CF564717211B15590092EFBD /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF564719211B15590092EFBD /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		CF56471B211B15590092EFBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF564723211B15B00092EFBD /* OneSignalNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneSignalNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
 		CF564724211B15BE0092EFBD /* Base-Project.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Base-Project.entitlements"; sourceTree = "<group>"; };
-		CF56472A211B18050092EFBD /* PushParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushParser.swift; sourceTree = "<group>"; };
 		CF56472C211B1B740092EFBD /* Reactive+UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reactive+UIImageView.swift"; sourceTree = "<group>"; };
 		CF56472E211B1BA50092EFBD /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		CF564730211B1C910092EFBD /* InputValidationExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidationExpression.swift; sourceTree = "<group>"; };
@@ -452,6 +454,8 @@
 		0F1B7FA622CA6C550079F752 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				671336F5281841FB006CECE4 /* Languages */,
+				671336F32818417D006CECE4 /* languages.json */,
 				0F1B7FA722CA6C5F0079F752 /* Country Picker */,
 			);
 			path = Resources;
@@ -786,6 +790,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		671336F5281841FB006CECE4 /* Languages */ = {
+			isa = PBXGroup;
+			children = (
+				671336F628184208006CECE4 /* Language.swift */,
+			);
+			path = Languages;
+			sourceTree = "<group>";
+		};
 		672909FA210E43C900632C4F /* PlaceHolder  */ = {
 			isa = PBXGroup;
 			children = (
@@ -836,9 +848,8 @@
 			isa = PBXGroup;
 			children = (
 				CF564701211B142E0092EFBD /* OneSignalPushService.swift */,
-				CF56472A211B18050092EFBD /* PushParser.swift */,
-				CF50F7AB219AC028000E5E4E /* NotificationPayload.swift */,
 				3ECBAAB823D06E11003672DA /* PushMessageContent.swift */,
+				67283E46281AC81A007C5FF4 /* PushServiceRouter.swift */,
 			);
 			path = Push;
 			sourceTree = "<group>";
@@ -1170,6 +1181,7 @@
 				CF403858216CF78F001F649B /* Initial.storyboard in Resources */,
 				3ECBAAB523D06DD8003672DA /* PushNotification.storyboard in Resources */,
 				0F1B7FAD22CA6C910079F752 /* Countries.bundle in Resources */,
+				671336F42818417D006CECE4 /* languages.json in Resources */,
 				112239221FD5C7B000486528 /* LaunchScreen.storyboard in Resources */,
 				1122391F1FD5C7B000486528 /* Assets.xcassets in Resources */,
 			);
@@ -1274,6 +1286,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OneSignalXCFramework/OneSignal.framework/OneSignal",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1291,6 +1304,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneSignal.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1422,7 +1436,6 @@
 				CF40385A216CF78F001F649B /* InitialRouter.swift in Sources */,
 				3EDC4133224E81BE00624D2B /* ActivityIndicator.swift in Sources */,
 				3E7367F422C6605A00B4C71D /* FeedbackTypes.swift in Sources */,
-				CF50F7AC219AC028000E5E4E /* NotificationPayload.swift in Sources */,
 				0F57538E20EE12EB0069C139 /* Constants.swift in Sources */,
 				CF8C5CAC20EF9D7E00236C7B /* UICollectionView+Extensions.swift in Sources */,
 				CF8C5CA820EF9D5400236C7B /* Bool+Extensions.swift in Sources */,
@@ -1490,6 +1503,7 @@
 				CF564731211B1C910092EFBD /* InputValidationExpression.swift in Sources */,
 				CF8C5CA020EF9CCA00236C7B /* BaseNavigationBar.swift in Sources */,
 				0F508C2F23A2AE5E00E1F333 /* TDProgressHUD.swift in Sources */,
+				67283E47281AC81A007C5FF4 /* PushServiceRouter.swift in Sources */,
 				0FD65F1520D014F40075E251 /* Reactive+UIButton.swift in Sources */,
 				CF181BA020809874002603A1 /* UINavigationBar+Extensions.swift in Sources */,
 				CF40385E216CF78F001F649B /* InitialConfigurator.swift in Sources */,
@@ -1506,7 +1520,7 @@
 				CF7823B420EF95A7003069BD /* APIErrorManager.swift in Sources */,
 				3E1DEAF022BA62FD00FAD9F4 /* UIView+Shadow.swift in Sources */,
 				CFAD4D0E21955EF300AF4375 /* LanguageService.swift in Sources */,
-				CF56472B211B18050092EFBD /* PushParser.swift in Sources */,
+				671336F728184208006CECE4 /* Language.swift in Sources */,
 				3ECBAAB923D06E11003672DA /* PushMessageContent.swift in Sources */,
 				67C9592B26249C7400A67399 /* Decodable+Extensions.swift in Sources */,
 			);

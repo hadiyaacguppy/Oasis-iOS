@@ -12,93 +12,61 @@ import UIKit
 import OneSignal
 import RxSwift
 
-final class OneSignalPushService: NSObject{
-    
+public final class OneSignalPushService: NSObject{
     
     static let shared = OneSignalPushService()
     
-    fileprivate var payLoadMessage : NotificationPayload?
-    
-    private lazy var timerToSendAddtionalData : Timer = Timer.scheduledTimer(timeInterval: 0.5,
-                                                                             target: self,
-                                                                             selector: #selector(self.trytoSendAddtionalData),
-                                                                             userInfo: nil, repeats: true
-    )
-    
-    private let center = UNUserNotificationCenter.current()
+    private let notificationCenter = UNUserNotificationCenter.current()
     
     private var userId : String?
     
-    var playerId : String?{
+    public var playerId : String?{
         return userId
     }
-    var playerIdDidChange : ((String) -> ())?
+    
+    public var playerIdDidChange : ((String) -> ())?
 
-    var notificationsIsAllowed : Bool = false
-    
-    var receivedNotifications : Array<OSNotification> = Array<OSNotification>()
-    
-    
-    var shouldShowNotificationWhileAppIsOpen : Bool = true {
-        didSet {
-            updateInFocusDisplayType()
+    public var notificationsIsAllowed : Bool = false
+
+    public func initializeOneSignal(withLaunchOptions launchOptions  : [UIApplication.LaunchOptionsKey: Any]? ,
+                             andAppID appId : String){
+        
+        // Remove this method to stop OneSignal Debugging
+        OneSignal.setLogLevel(.LL_VERBOSE, visualLevel: .LL_NONE)
+        
+        // OneSignal initialization
+        OneSignal.initWithLaunchOptions(launchOptions)
+        OneSignal.setAppId(appId)
+
+        let notifWillShowInForegroundHandler: OSNotificationWillShowInForegroundBlock = { notification, completion in
+            logger.info("DID RECEIVE NOTIFICATION")
         }
-    }
-    func initializeOneSignal(withLaunchOptions launchOptions  : [UIApplication.LaunchOptionsKey: Any]? ,andAppID appId : String){
+
         
-        
-        
+        let notificationOpenedBlock: OSNotificationOpenedBlock = { result in
+            logger.info("DID OPEN NOTIFICATION")
+            self.handleNotificationOpen(notification: result.notification)
+        }
+
+        OneSignal.setNotificationWillShowInForegroundHandler(notifWillShowInForegroundHandler)
+        OneSignal.setNotificationOpenedHandler(notificationOpenedBlock)
+
         // Add OneSignalPushService as Observer
         OneSignal.add(self as OSPermissionObserver)
         OneSignal.add(self as OSSubscriptionObserver)
         
-        self.userId = OneSignal.getPermissionSubscriptionState().subscriptionStatus.userId
+        self.userId = OneSignal.getDeviceState().userId
         
-        
-        let  notificationReceivedBlock : OSHandleNotificationReceivedBlock = { notification in
-            guard notification != nil else {
-                return
-            }
-            logger.info("DID RECEIVE NOTIFICATION")
-            
-            
-            PushParser.shared.handleDidReceiveNotification(withPayload: NotificationPayload(payload: notification!.payload, wasShown: notification!.wasShown, wasAppInFocus: notification!.wasAppInFocus, isSilentNotification: notification!.isSilentNotification))
-            
-            //            self.receivedNotifications.append(notification!)
-            
-        }
-        
-        let notificationOpenedBlock: OSHandleNotificationActionBlock = { result in
-            
-            self.setupNotificationAction(withResult: result)
-        }
-        
-        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false,kOSSettingsKeyInAppLaunchURL: true]
-        
-        OneSignal.initWithLaunchOptions(launchOptions,
-                                        appId: appId,
-                                        handleNotificationReceived: notificationReceivedBlock, handleNotificationAction: notificationOpenedBlock,
-                                        settings: onesignalInitSettings)
-        
-        OneSignal.inFocusDisplayType = .notification
         promptForPushNotification()
     }
     
-    func updateInFocusDisplayType(){
-        if self.shouldShowNotificationWhileAppIsOpen {
-            OneSignal.inFocusDisplayType = .notification
-        }else {
-            OneSignal.inFocusDisplayType = .none
-        }
-    }
     
 }
 
-//MARK: Permission And Subscription Delegates
-extension OneSignalPushService: OSPermissionObserver,OSSubscriptionObserver{
+//MARK: - Permission And Subscription Delegates
+extension OneSignalPushService: OSPermissionObserver, OSSubscriptionObserver{
     
-    func onOSPermissionChanged(_ stateChanges: OSPermissionStateChanges!) {
-        // Example of detecting answering the permission prompt
+    public func onOSPermissionChanged(_ stateChanges: OSPermissionStateChanges) {
         if stateChanges.from.status == OSNotificationPermission.notDetermined {
             if stateChanges.to.status == OSNotificationPermission.authorized {
                 self.notificationsIsAllowed = true
@@ -106,14 +74,11 @@ extension OneSignalPushService: OSPermissionObserver,OSSubscriptionObserver{
                 self.notificationsIsAllowed = false
             }
         }
-        
-        
         logger.info("PermissionStateChanges: \n\(String(describing: stateChanges))")
     }
     
-    func onOSSubscriptionChanged(_ stateChanges: OSSubscriptionStateChanges!) {
+    public func onOSSubscriptionChanged(_ stateChanges: OSSubscriptionStateChanges) {
         if let userId = stateChanges.to.userId  {
-            
             logger.info( "User id (player-id) is -- \(String(describing: stateChanges.to.userId))" )
             if self.userId == nil {
                 self.userId = userId
@@ -124,102 +89,70 @@ extension OneSignalPushService: OSPermissionObserver,OSSubscriptionObserver{
                 self.playerIdDidChange?(userId)
             }
             self.userId = userId
-            
-
         }
-        
-        
     }
-    
-    
-    
 }
 
+//MARK: - HandleNotificationObservers
+extension OneSignalPushService{
+    private func handleNotificationOpen(notification : OSNotification){
+        guard let title = notification.title else { return }
+        guard let body = notification.body else { return }
+        
+        let image = notification.additionalData?["image_url"] as? String
+        let imageHeight = notification.additionalData?["image_height"] as? Double
+        let imageWidth = notification.additionalData?["image_width"] as? Double
+        let pushMessage = PushMessageContent(title: title,
+                                             body: body,
+                                             image: image,
+                                             imageHeight: imageHeight,
+                                             imageWidth: imageWidth)
+        PushServiceRouter.shared.open(notification: pushMessage)
+    }
+}
 
+//MARK: - Prompt
 extension OneSignalPushService{
     
-    func promptForPushNotification(){
+    private func promptForPushNotification(){
+        // promptForPushNotifications will show the native iOS notification permission prompt.
+        // We recommend removing the following code and instead using an In-App Message to prompt for notification permission (See step 8)
         OneSignal.promptForPushNotifications(userResponse: { accepted in
             logger.info("User accepted notifications: \(accepted)")
         })
     }
-    
-    func setupNotificationAction(withResult result : OSNotificationOpenedResult?){
-        
-        
-        let payload = NotificationPayload(payload: result?.notification.payload, wasShown: result?.notification.wasShown  , wasAppInFocus: result?.notification.wasAppInFocus, isSilentNotification: result?.notification.isSilentNotification )
-        
-        
-        self.payLoadMessage = payload
-        
-        self.timerToSendAddtionalData = Timer.scheduledTimer(timeInterval: 5,
-                                                             target: self,
-                                                             selector: #selector(self.trytoSendAddtionalData),
-                                                             userInfo: nil, repeats: true
-        )
-        
-        self.timerToSendAddtionalData.fire()
-        
-    }
-    
-    @objc
-    func trytoSendAddtionalData(){
-        guard self.payLoadMessage != nil else {
-            self.timerToSendAddtionalData.invalidate()
-            return
-        }
-        
-        
-        
-        guard UIApplication.topViewController() != nil else {
-            return
-        }
-        
-        
-        if let payload = self.payLoadMessage {
-            PushParser.shared.handleDidOpenNotification(withPayload: payload)
-            self.payLoadMessage = nil
-        }
-        
-        
-    }
-    
 }
 
+//MARK: - Attributes
+extension OneSignalPushService{
+    public func setLanguage(code : String){
+        OneSignal.setLanguage(code)
+    }
+    
+    public func setExternalId(userId : String){
+        OneSignal.setExternalUserId(userId)
+    }
+}
+
+//MARK: - NotificationCenter
 extension OneSignalPushService{
     
-    func removeAllNotifications(){
-        center.removeAllDeliveredNotifications()
+    private func removeAllNotifications(){
+        notificationCenter.removeAllDeliveredNotifications()
         removeAllPendingNotifications()
         resetBadgeCountNumber()
     }
     
-    func removeNotification(forId id : String){
-        self.receivedNotifications.removeNotification(Withid: id)
-        center.removeDeliveredNotifications(withIdentifiers: [id])
+    private func removeNotification(forId id : String){
+        notificationCenter.removeDeliveredNotifications(withIdentifiers: [id])
     }
     
-    fileprivate
-    func removeAllPendingNotifications(){
-        center.removeAllPendingNotificationRequests()
+    private func removeAllPendingNotifications(){
+        notificationCenter.removeAllPendingNotificationRequests()
     }
     
-    fileprivate
-    func resetBadgeCountNumber(){
-        UIApplication.shared.applicationIconBadgeNumber = 0 // to clear the icon notification badge
+    private func resetBadgeCountNumber(){
+        UIApplication.shared.applicationIconBadgeNumber = 0
     }
 }
 
-//TODO : Deep Link
-extension Array where Element == OSNotification {
-    
-    mutating func removeNotification(Withid id : String){
-        for  (index , element) in self.enumerated() {
-            if element.payload.notificationID == id {
-                self.remove(at: index)
-                break
-            }
-        }
-    }
-    
-}
