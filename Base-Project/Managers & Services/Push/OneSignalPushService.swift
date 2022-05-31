@@ -1,13 +1,11 @@
 //
 //  OneSignalPushService.swift
-//  Base-Project
+//  OMT-New
 //
 //  Created by Wassim on 8/8/18.
 //  Copyright © 2018 Tedmob. All rights reserved.
 //
 
-
-import Foundation
 import UIKit
 import OneSignal
 import RxSwift
@@ -25,11 +23,11 @@ public final class OneSignalPushService: NSObject{
     }
     
     public var playerIdDidChange : ((String) -> ())?
-
+    
     public var notificationsIsAllowed : Bool = false
-
-    public func initializeOneSignal(withLaunchOptions launchOptions  : [UIApplication.LaunchOptionsKey: Any]? ,
-                             andAppID appId : String){
+    
+    public func initializeOneSignal(withLaunchOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?,
+                                    andAppID appId: String){
         
         // Remove this method to stop OneSignal Debugging
         OneSignal.setLogLevel(.LL_VERBOSE, visualLevel: .LL_NONE)
@@ -37,34 +35,47 @@ public final class OneSignalPushService: NSObject{
         // OneSignal initialization
         OneSignal.initWithLaunchOptions(launchOptions)
         OneSignal.setAppId(appId)
-
+        
+        if let subscribedPlayerId = self.userId{
+            logger.info( "🙋‍♂️User id (player-id) is -- (subscribed before) \(subscribedPlayerId)")
+        }
+        
+        // Remove this method to stop OneSignal Debugging
+        OneSignal.setLogLevel(.LL_VERBOSE, visualLevel: .LL_NONE)
+        
+        // OneSignal initialization
+        OneSignal.initWithLaunchOptions(launchOptions)
+        OneSignal.setAppId(appId)
+        
         let notifWillShowInForegroundHandler: OSNotificationWillShowInForegroundBlock = { notification, completion in
             logger.info("DID RECEIVE NOTIFICATION")
+            //MARK: Uncomment the below if you need to send silent push
+            //            if notification.notificationId == "example_silent_notif" {
+            //                completion(nil)
+            //            } else {
+            completion(notification)
+            //            }
         }
-
         
         let notificationOpenedBlock: OSNotificationOpenedBlock = { result in
             logger.info("DID OPEN NOTIFICATION")
             self.handleNotificationOpen(notification: result.notification)
         }
-
+        
         OneSignal.setNotificationWillShowInForegroundHandler(notifWillShowInForegroundHandler)
         OneSignal.setNotificationOpenedHandler(notificationOpenedBlock)
-
+        
         // Add OneSignalPushService as Observer
         OneSignal.add(self as OSPermissionObserver)
         OneSignal.add(self as OSSubscriptionObserver)
         
         self.userId = OneSignal.getDeviceState().userId
-        
         promptForPushNotification()
     }
-    
-    
 }
 
-//MARK: - Permission And Subscription Delegates
-extension OneSignalPushService: OSPermissionObserver, OSSubscriptionObserver{
+//MARK: Permission And Subscription Delegates
+extension OneSignalPushService: OSPermissionObserver,OSSubscriptionObserver{
     
     public func onOSPermissionChanged(_ stateChanges: OSPermissionStateChanges) {
         if stateChanges.from.status == OSNotificationPermission.notDetermined {
@@ -79,13 +90,13 @@ extension OneSignalPushService: OSPermissionObserver, OSSubscriptionObserver{
     
     public func onOSSubscriptionChanged(_ stateChanges: OSSubscriptionStateChanges) {
         if let userId = stateChanges.to.userId  {
-            logger.info( "User id (player-id) is -- \(String(describing: stateChanges.to.userId))" )
+            logger.info("🙋‍♂️User id (player-id) is -- \(userId)")
             if self.userId == nil {
                 self.userId = userId
                 self.playerIdDidChange?(userId)
                 return
             }
-            if  self.userId! != userId {
+            if self.userId! != userId {
                 self.playerIdDidChange?(userId)
             }
             self.userId = userId
@@ -102,11 +113,19 @@ extension OneSignalPushService{
         let image = notification.additionalData?["image_url"] as? String
         let imageHeight = notification.additionalData?["image_height"] as? Double
         let imageWidth = notification.additionalData?["image_width"] as? Double
+        
+        var type = PushType.general
+        if let pushType = notification.additionalData?["type"] as? String{
+            type = PushType(rawValue: pushType) ?? .general
+        }
+        
         let pushMessage = PushMessageContent(title: title,
                                              body: body,
                                              image: image,
                                              imageHeight: imageHeight,
-                                             imageWidth: imageWidth)
+                                             imageWidth: imageWidth,
+                                             type: type)
+        
         PushServiceRouter.shared.open(notification: pushMessage)
     }
 }
@@ -116,7 +135,7 @@ extension OneSignalPushService{
     
     private func promptForPushNotification(){
         // promptForPushNotifications will show the native iOS notification permission prompt.
-        // We recommend removing the following code and instead using an In-App Message to prompt for notification permission (See step 8)
+        // We recommend removing the following code and instead using an In-App Message to prompt for notification permission
         OneSignal.promptForPushNotifications(userResponse: { accepted in
             logger.info("User accepted notifications: \(accepted)")
         })
@@ -155,4 +174,3 @@ extension OneSignalPushService{
         UIApplication.shared.applicationIconBadgeNumber = 0
     }
 }
-

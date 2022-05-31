@@ -197,7 +197,6 @@ enum Languages:String {
 //    case Zulu
 }
 
-
 class LanguageService {
     
     var rtlLanguages : [Languages] = [.arabic]

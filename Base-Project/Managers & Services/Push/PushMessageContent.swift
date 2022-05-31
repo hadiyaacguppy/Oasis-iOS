@@ -15,4 +15,5 @@ struct PushMessageContent{
     let image : String?
     let imageHeight : Double?
     let imageWidth : Double?
+    let type: PushType?
 }
