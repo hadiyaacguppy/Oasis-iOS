@@ -2,8 +2,8 @@
 //  OneSignalPushService.swift
 //  OMT-New
 //
-//  Created by Wassim on 8/8/18.
-//  Copyright © 2018 Tedmob. All rights reserved.
+//  Created by Mojtaba Al Moussawi on 1/08/22.
+//  Copyright © 2022 Tedmob. All rights reserved.
 //
 
 import UIKit
@@ -30,18 +30,8 @@ public final class OneSignalPushService: NSObject{
                                     andAppID appId: String){
         
         // Remove this method to stop OneSignal Debugging
-        OneSignal.setLogLevel(.LL_VERBOSE, visualLevel: .LL_NONE)
-        
-        // OneSignal initialization
-        OneSignal.initWithLaunchOptions(launchOptions)
-        OneSignal.setAppId(appId)
-        
-        if let subscribedPlayerId = self.userId{
-            logger.info( "🙋‍♂️User id (player-id) is -- (subscribed before) \(subscribedPlayerId)")
-        }
-        
-        // Remove this method to stop OneSignal Debugging
-        OneSignal.setLogLevel(.LL_VERBOSE, visualLevel: .LL_NONE)
+        OneSignal.setLogLevel(.LL_VERBOSE,
+                              visualLevel: .LL_NONE)
         
         // OneSignal initialization
         OneSignal.initWithLaunchOptions(launchOptions)
@@ -49,12 +39,11 @@ public final class OneSignalPushService: NSObject{
         
         let notifWillShowInForegroundHandler: OSNotificationWillShowInForegroundBlock = { notification, completion in
             logger.info("DID RECEIVE NOTIFICATION")
-            //MARK: Uncomment the below if you need to send silent push
-            //            if notification.notificationId == "example_silent_notif" {
-            //                completion(nil)
-            //            } else {
-            completion(notification)
-            //            }
+            if notification.notificationId == "example_silent_notif" {
+                completion(nil)
+            } else {
+                completion(notification)
+            }
         }
         
         let notificationOpenedBlock: OSNotificationOpenedBlock = { result in
@@ -70,6 +59,10 @@ public final class OneSignalPushService: NSObject{
         OneSignal.add(self as OSSubscriptionObserver)
         
         self.userId = OneSignal.getDeviceState().userId
+        if let subscribedPlayerId = self.userId{
+            logger.info( "🙋‍♂️User id (player-id) is -- (subscribed before) \(subscribedPlayerId)")
+        }
+        
         promptForPushNotification()
     }
 }
@@ -172,5 +165,18 @@ extension OneSignalPushService{
     
     private func resetBadgeCountNumber(){
         UIApplication.shared.applicationIconBadgeNumber = 0
+    }
+}
+
+//TODO : Deep Link
+extension Array where Element == OSNotification {
+    
+    mutating func removeNotification(Withid id : String){
+        for  (index , element) in self.enumerated() {
+            if element.notificationId == id {
+                self.remove(at: index)
+                break
+            }
+        }
     }
 }
