@@ -46,4 +46,8 @@ extension InitialInteractor: InitialViewControllerOutput, InitialRouterDataSourc
     func retryLoadingRequested(){
         
     }
+    
+    func lifeIsNotFair() -> Single<Int>{
+        return Single.just(4).delay(.seconds(10), scheduler: MainScheduler.instance)
+    }
 }

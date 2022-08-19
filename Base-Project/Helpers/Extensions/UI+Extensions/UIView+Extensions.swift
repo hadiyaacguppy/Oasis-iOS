@@ -263,6 +263,7 @@ extension UIView {
                 if let maskedCorners = roundCorners.transformToCornerMask(){
                     layer.cornerRadius = cornerRadius
                     layer.maskedCorners = .init(arrayLiteral: maskedCorners)
+                    
                 }
             } else {
                 let maskLayer = CAShapeLayer()
