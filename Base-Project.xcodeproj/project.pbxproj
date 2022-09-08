@@ -80,7 +80,6 @@
 		67F03A5C26F20AA600ED91ED /* NetworkErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C95917262483EA00A67399 /* NetworkErrorResponse.swift */; };
 		67F03A5E26F20B7000ED91ED /* MediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F03A5D26F20B7000ED91ED /* MediaManager.swift */; };
 		90BF2E7761749FD7B6527C0A /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA13A42E9542A840EF7B74A5 /* Pods_OneSignalNotificationServiceExtension.framework */; };
-		922EED0028466B6000D19A01 /* languages.json in Resources */ = {isa = PBXBuildFile; fileRef = 922EECFF28466B6000D19A01 /* languages.json */; };
 		922EED0328466BA800D19A01 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922EED0228466BA800D19A01 /* Queue.swift */; };
 		CF06A90222BA791D00496C0E /* Base_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06A90122BA791D00496C0E /* Base_ProjectTests.swift */; };
 		CF16ED2722C66F4000B2E0D7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16ED2422C66F1A00B2E0D7 /* User.swift */; };
@@ -299,7 +298,6 @@
 		7C8C14F2B49C3D837C9C6EF6 /* Pods_AnalyticsManagerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnalyticsManagerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B66C5D6B0826B75B9813C2 /* Pods_AnalyticsManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnalyticsManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82DBF649C4CDA64602D90424 /* Pods-AnalyticsManagerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsManagerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnalyticsManagerTests/Pods-AnalyticsManagerTests.release.xcconfig"; sourceTree = "<group>"; };
-		922EECFF28466B6000D19A01 /* languages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = languages.json; path = "../../../../../TEDMOB/omt-new/OMT-New/Resources/Languages/languages.json"; sourceTree = "<group>"; };
 		922EED0228466BA800D19A01 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		96BA0D1007DC66F24CD1D64E /* Pods_Base_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Base_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E33F06E417414D3283B2A5 /* Pods-Base-ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-ProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Base-ProjectTests/Pods-Base-ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -796,7 +794,6 @@
 			isa = PBXGroup;
 			children = (
 				671336F628184208006CECE4 /* Language.swift */,
-				922EECFF28466B6000D19A01 /* languages.json */,
 			);
 			path = Languages;
 			sourceTree = "<group>";
@@ -1192,7 +1189,6 @@
 				CF403858216CF78F001F649B /* Initial.storyboard in Resources */,
 				3ECBAAB523D06DD8003672DA /* PushNotification.storyboard in Resources */,
 				0F1B7FAD22CA6C910079F752 /* Countries.bundle in Resources */,
-				922EED0028466B6000D19A01 /* languages.json in Resources */,
 				112239221FD5C7B000486528 /* LaunchScreen.storyboard in Resources */,
 				1122391F1FD5C7B000486528 /* Assets.xcassets in Resources */,
 			);
@@ -1404,7 +1400,7 @@
 			);
 			name = R.Swift;
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
