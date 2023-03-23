@@ -13,6 +13,12 @@ target 'Base-Project' do
   pod 'SDWebImage', '~> 5.0'
   pod 'Logging', '~> 1.1'
   pod 'TDPopupKit'
+  pod 'SkyFloatingLabelTextField', '~> 3.0'
+  pod 'RxGesture'
+  pod 'Moya', '~> 14.0'
+
+
+
   install_oneSignalPod
 end
 

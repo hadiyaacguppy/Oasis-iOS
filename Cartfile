@@ -1,5 +1,0 @@
-github "Skyscanner/SkyFloatingLabelTextField"
-
-github "RxSwiftCommunity/RxGesture" ~> 3.0
-
-github "Moya/Moya" ~> 14.0
