@@ -2,9 +2,9 @@
 
 export PATH=$PATH:~/usr/local/bin
 
-BASE_NAME="Base-Project"
+BASE_NAME="Oasis"
 #For UnitTests, UITests , CoreData
-BASE_NAME_SECONDARY="Base_Project"
+BASE_NAME_SECONDARY="Oasis"
 
 #Renaming
 transform() {

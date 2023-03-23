@@ -1,6 +1,6 @@
 //
 //  User.swift
-//  Base-Project
+//  Oasis
 //
 //  Created by Wassim on 6/28/19.
 //  Copyright © 2019 Tedmob. All rights reserved.

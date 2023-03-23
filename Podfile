@@ -6,8 +6,8 @@ def install_oneSignalPod
   pod 'OneSignal', '>= 3.0.0', '< 4.0'
 end
 
-target 'Base-Project' do
-  # Pods for Base-Project
+target 'Oasis' do
+  # Pods for Oasis
   use_frameworks!
   pod 'R.swift'
   pod 'SDWebImage', '~> 5.0'
@@ -27,7 +27,7 @@ target 'OneSignalNotificationServiceExtension' do
   install_oneSignalPod
 end
 
-target 'Base-ProjectTests' do
+target 'OasisTests' do
   use_frameworks!
 end
 
@@ -51,7 +51,7 @@ end
 def remove_duplicate_dependencies(installer)
   
   applicationTargets = [
-  'Pods-Base-Project',
+  'Pods-Oasis',
   ]
   libraryTargets = [
   'Pods-AnalyticsManager',

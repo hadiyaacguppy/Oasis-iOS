@@ -1,6 +1,6 @@
-module: Base_Project
+module: Oasis
 skip_undocumented: false
-xcodebuild_arguments: [-project, Base-Project.xcodeproj, -target, Base-Project]
+xcodebuild_arguments: [-project, Oasis.xcodeproj, -target, Oasis]
 clean : true
 min_acl: private
 theme: apple
