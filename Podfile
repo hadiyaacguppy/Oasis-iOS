@@ -16,7 +16,7 @@ target 'Oasis' do
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'RxGesture'
   pod 'Moya', '~> 14.0'
-
+  pod 'Moya/RxSwift', '~> 14.0'
 
 
   install_oneSignalPod

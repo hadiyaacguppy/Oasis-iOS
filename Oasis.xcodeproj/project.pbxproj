@@ -38,6 +38,7 @@
 		117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */; };
 		11CD5280230AFF91003D08BE /* ViewEmbedder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CD527F230AFF91003D08BE /* ViewEmbedder.swift */; };
 		1ACED86ADAA2441F495B6912 /* Pods_AnalyticsManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B66C5D6B0826B75B9813C2 /* Pods_AnalyticsManager.framework */; };
+		374FA5CB00801009F6B43FDB /* Pods_OasisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64659B367BA850135AB1D5E9 /* Pods_OasisTests.framework */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
 		3E1DEAF022BA62FD00FAD9F4 /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1DEAEF22BA62FD00FAD9F4 /* UIView+Shadow.swift */; };
 		3E1DEAF222BA632600FAD9F4 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1DEAF122BA632600FAD9F4 /* UIView+Border.swift */; };
@@ -64,14 +65,12 @@
 		3EDC4159224E893B00624D2B /* BaseUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC4158224E893B00624D2B /* BaseUIImageView.swift */; };
 		4AEF647522107DC000D53D75 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF647422107DC000D53D75 /* BaseButton.swift */; };
 		4AEF64772210842F00D53D75 /* BaseSkyFloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF64762210842F00D53D75 /* BaseSkyFloatingTextField.swift */; };
-		4B00E64AA8A0A7582597A76A /* Pods_Base_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BA0D1007DC66F24CD1D64E /* Pods_Base_Project.framework */; };
 		671336F728184208006CECE4 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671336F628184208006CECE4 /* Language.swift */; };
 		67283E47281AC81A007C5FF4 /* PushServiceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67283E46281AC81A007C5FF4 /* PushServiceRouter.swift */; };
 		672909FC210E43EA00632C4F /* PlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672909FB210E43EA00632C4F /* PlaceHolderView.swift */; };
 		672909FE210E43F900632C4F /* PlaceHolderCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672909FD210E43F900632C4F /* PlaceHolderCreator.swift */; };
 		67290A02210E441400632C4F /* PlaceHolderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67290A01210E441400632C4F /* PlaceHolderHelper.swift */; };
 		6754244D20EE7FF600783123 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6754244C20EE7FF600783123 /* BaseNavigationController.swift */; };
-		67B66256235CBBFE00107D47 /* RxGesture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B66255235CBBFE00107D47 /* RxGesture.framework */; };
 		67C958F42624782100A67399 /* Reactive+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C958F32624782100A67399 /* Reactive+UITextField.swift */; };
 		67C959002624787400A67399 /* Reactive+UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C958FF2624787400A67399 /* Reactive+UITextView.swift */; };
 		67C9591126247EF300A67399 /* APIErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C9591026247EF300A67399 /* APIErrorModel.swift */; };
@@ -81,6 +80,7 @@
 		67F03A5E26F20B7000ED91ED /* MediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F03A5D26F20B7000ED91ED /* MediaManager.swift */; };
 		90BF2E7761749FD7B6527C0A /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA13A42E9542A840EF7B74A5 /* Pods_OneSignalNotificationServiceExtension.framework */; };
 		922EED0328466BA800D19A01 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922EED0228466BA800D19A01 /* Queue.swift */; };
+		BA6C5AC6867C6FD6BCA4B182 /* Pods_Oasis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8107181ABB3EEDDC4964B3CB /* Pods_Oasis.framework */; };
 		CF06A90222BA791D00496C0E /* Base_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06A90122BA791D00496C0E /* Base_ProjectTests.swift */; };
 		CF16ED2722C66F4000B2E0D7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16ED2422C66F1A00B2E0D7 /* User.swift */; };
 		CF181BA020809874002603A1 /* UINavigationBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF181B9F20809874002603A1 /* UINavigationBar+Extensions.swift */; };
@@ -103,12 +103,6 @@
 		CF6030762212F77B003872F3 /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6030752212F77B003872F3 /* DeviceManager.swift */; };
 		CF6B70F221EDD5F700204B65 /* VersionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6B70F121EDD5F700204B65 /* VersionLabel.swift */; };
 		CF7823B420EF95A7003069BD /* APIErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7823B320EF95A7003069BD /* APIErrorManager.swift */; };
-		CF7BC66B1FD8F739008E80AC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7BC6651FD8F739008E80AC /* Alamofire.framework */; };
-		CF7D83FF22BA31D400397093 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7D83FE22BA31D300397093 /* RxRelay.framework */; };
-		CF7D840122BA344F00397093 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7D840022BA344F00397093 /* RxSwift.framework */; };
-		CF7D840322BA345400397093 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7D840222BA345400397093 /* RxCocoa.framework */; };
-		CF7D840722BA346100397093 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7D840622BA346100397093 /* Moya.framework */; };
-		CF7D840B22BA37BF00397093 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7D840A22BA37BF00397093 /* RxMoya.framework */; };
 		CF8373AD224A7F93000C3E21 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8373AC224A7F93000C3E21 /* R.generated.swift */; };
 		CF8373AF224B8807000C3E21 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8373AE224B8807000C3E21 /* AppManager.swift */; };
 		CF8373D8224B8CA7000C3E21 /* AnalyticsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CF8373C8224B8CA7000C3E21 /* AnalyticsManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -149,7 +143,6 @@
 		CFF69D752195586E003BE6BF /* FileManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF69D742195586E003BE6BF /* FileManager+Extensions.swift */; };
 		CFF69D772195593A003BE6BF /* URLRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF69D762195593A003BE6BF /* URLRequest+Extensions.swift */; };
 		D09D9FA9CFB5645C9CCDA875 /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09D9F8D8E6102B0CEB22B1E /* StringExtensionsTests.swift */; };
-		F70A133A5CE1B044BC2D90FE /* Pods_Base_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE6C2A7E0D1EFD5689117CC /* Pods_Base_ProjectTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,7 +151,7 @@
 			containerPortal = 112239091FD5C7AF00486528 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 112239101FD5C7AF00486528;
-			remoteInfo = "Oasis";
+			remoteInfo = Oasis;
 		};
 		CF56471C211B15590092EFBD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -238,7 +231,7 @@
 		0FD65F1420D014F40075E251 /* Reactive+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+UIButton.swift"; sourceTree = "<group>"; };
 		0FD65F1820D018480075E251 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		0FD65F1A20D018730075E251 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
-		112239111FD5C7AF00486528 /* Oasis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oasis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		112239111FD5C7AF00486528 /* Oasis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oasis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		112239141FD5C7AF00486528 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1122391E1FD5C7B000486528 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		112239211FD5C7B000486528 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -280,6 +273,7 @@
 		4AEF64762210842F00D53D75 /* BaseSkyFloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSkyFloatingTextField.swift; sourceTree = "<group>"; };
 		509696D7EE45B0E48C61927E /* Pods-OasisTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OasisTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OasisTests/Pods-OasisTests.release.xcconfig"; sourceTree = "<group>"; };
 		5F0CB28320C7D9C3EA885DBF /* Pods-OasisUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OasisUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OasisUITests/Pods-OasisUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		64659B367BA850135AB1D5E9 /* Pods_OasisTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OasisTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		671336F628184208006CECE4 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		67283E46281AC81A007C5FF4 /* PushServiceRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushServiceRouter.swift; sourceTree = "<group>"; };
 		672909FB210E43EA00632C4F /* PlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderView.swift; sourceTree = "<group>"; };
@@ -297,14 +291,14 @@
 		77F8AA6138E1453C21DD5A80 /* Pods-AnalyticsManagerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsManagerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AnalyticsManagerTests/Pods-AnalyticsManagerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7C8C14F2B49C3D837C9C6EF6 /* Pods_AnalyticsManagerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnalyticsManagerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B66C5D6B0826B75B9813C2 /* Pods_AnalyticsManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnalyticsManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8107181ABB3EEDDC4964B3CB /* Pods_Oasis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Oasis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82DBF649C4CDA64602D90424 /* Pods-AnalyticsManagerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsManagerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnalyticsManagerTests/Pods-AnalyticsManagerTests.release.xcconfig"; sourceTree = "<group>"; };
 		922EED0228466BA800D19A01 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
-		96BA0D1007DC66F24CD1D64E /* Pods_Base_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Base_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E33F06E417414D3283B2A5 /* Pods-OasisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OasisTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OasisTests/Pods-OasisTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AA4A7C456244C0A9209BA4D6 /* Pods-Oasis-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oasis-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Oasis-Tests/Pods-Oasis-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C65CEF44A2A6134604793718 /* Pods-OasisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OasisUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OasisUITests/Pods-OasisUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C950BD45C779722DCB3D76B0 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		CF06A8FF22BA791D00496C0E /* OasisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OasisTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF06A8FF22BA791D00496C0E /* OasisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OasisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF06A90122BA791D00496C0E /* Base_ProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base_ProjectTests.swift; sourceTree = "<group>"; };
 		CF06A90322BA791D00496C0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF16ED2422C66F1A00B2E0D7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -312,7 +306,7 @@
 		CF181BA1208099A0002603A1 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		CF181BA320809E28002603A1 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		CF2F319D215E8BA0007A912A /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
-		CF2F319F215E8C2C007A912A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Oasis/Info.plist"; sourceTree = SOURCE_ROOT; };
+		CF2F319F215E8C2C007A912A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Oasis/Info.plist; sourceTree = SOURCE_ROOT; };
 		CF403851216CF78F001F649B /* Initial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
 		CF403852216CF78F001F649B /* InitialPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialPresenter.swift; sourceTree = "<group>"; };
 		CF403853216CF78F001F649B /* InitialRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialRouter.swift; sourceTree = "<group>"; };
@@ -325,7 +319,7 @@
 		CF564719211B15590092EFBD /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		CF56471B211B15590092EFBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF564723211B15B00092EFBD /* OneSignalNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneSignalNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
-		CF564724211B15BE0092EFBD /* Oasis.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Oasis.entitlements"; sourceTree = "<group>"; };
+		CF564724211B15BE0092EFBD /* Oasis.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Oasis.entitlements; sourceTree = "<group>"; };
 		CF56472C211B1B740092EFBD /* Reactive+UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reactive+UIImageView.swift"; sourceTree = "<group>"; };
 		CF56472E211B1BA50092EFBD /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		CF564730211B1C910092EFBD /* InputValidationExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidationExpression.swift; sourceTree = "<group>"; };
@@ -387,7 +381,6 @@
 		D09D9F8D8E6102B0CEB22B1E /* StringExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionsTests.swift; sourceTree = "<group>"; };
 		DA13A42E9542A840EF7B74A5 /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1579D38C4908074091D9B67 /* libPods-Oasis-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Oasis-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EAE6C2A7E0D1EFD5689117CC /* Pods_Base_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Base_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F67502C09ED37847CBD63117 /* Pods-Oasis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oasis.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Oasis/Pods-Oasis.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -396,16 +389,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF7D840722BA346100397093 /* Moya.framework in Frameworks */,
-				CF7D840122BA344F00397093 /* RxSwift.framework in Frameworks */,
-				CF7BC66B1FD8F739008E80AC /* Alamofire.framework in Frameworks */,
 				CF8373DB224B8CA7000C3E21 /* AnalyticsManager.framework in Frameworks */,
-				CF7D83FF22BA31D400397093 /* RxRelay.framework in Frameworks */,
-				4B00E64AA8A0A7582597A76A /* Pods_Base_Project.framework in Frameworks */,
 				CF8C5CCB20EF9E7200236C7B /* SessionRepository.framework in Frameworks */,
-				CF7D840322BA345400397093 /* RxCocoa.framework in Frameworks */,
-				CF7D840B22BA37BF00397093 /* RxMoya.framework in Frameworks */,
-				67B66256235CBBFE00107D47 /* RxGesture.framework in Frameworks */,
+				BA6C5AC6867C6FD6BCA4B182 /* Pods_Oasis.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,7 +399,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F70A133A5CE1B044BC2D90FE /* Pods_Base_ProjectTests.framework in Frameworks */,
+				374FA5CB00801009F6B43FDB /* Pods_OasisTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,7 +602,7 @@
 				112239201FD5C7B000486528 /* LaunchScreen.storyboard */,
 				117C4AA71FD85FCE008BB445 /* Supporting Files */,
 			);
-			path = "Oasis";
+			path = Oasis;
 			sourceTree = "<group>";
 		};
 		117C4AA71FD85FCE008BB445 /* Supporting Files */ = {
@@ -823,12 +809,12 @@
 				CF7D83FB22BA30B300397093 /* SVProgressHUD.framework */,
 				CF7BC6651FD8F739008E80AC /* Alamofire.framework */,
 				CF7BC6691FD8F739008E80AC /* ObjectMapper.framework */,
-				96BA0D1007DC66F24CD1D64E /* Pods_Base_Project.framework */,
 				DA13A42E9542A840EF7B74A5 /* Pods_OneSignalNotificationServiceExtension.framework */,
 				80B66C5D6B0826B75B9813C2 /* Pods_AnalyticsManager.framework */,
 				E1579D38C4908074091D9B67 /* libPods-Oasis-Tests.a */,
 				7C8C14F2B49C3D837C9C6EF6 /* Pods_AnalyticsManagerTests.framework */,
-				EAE6C2A7E0D1EFD5689117CC /* Pods_Base_ProjectTests.framework */,
+				8107181ABB3EEDDC4964B3CB /* Pods_Oasis.framework */,
+				64659B367BA850135AB1D5E9 /* Pods_OasisTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -849,7 +835,7 @@
 				D09D9F8D8E6102B0CEB22B1E /* StringExtensionsTests.swift */,
 				CFE259E322C9C3CA006B0472 /* CGRectExtensionsTests.swift */,
 			);
-			path = "OasisTests";
+			path = OasisTests;
 			sourceTree = "<group>";
 		};
 		CF564700211B14240092EFBD /* Push */ = {
@@ -996,7 +982,6 @@
 				1122390D1FD5C7AF00486528 /* Sources */,
 				1122390E1FD5C7AF00486528 /* Frameworks */,
 				1122390F1FD5C7AF00486528 /* Resources */,
-				CF7BC6701FD8F75D008E80AC /* Carthage */,
 				98B7E6723CD6E9868C61C5B1 /* [CP] Embed Pods Frameworks */,
 				CF8C5CCC20EF9E7200236C7B /* Embed Frameworks */,
 				CF564722211B15590092EFBD /* Embed App Extensions */,
@@ -1008,8 +993,8 @@
 				CF56471D211B15590092EFBD /* PBXTargetDependency */,
 				CF8373DA224B8CA7000C3E21 /* PBXTargetDependency */,
 			);
-			name = "Oasis";
-			productName = "Oasis";
+			name = Oasis;
+			productName = Oasis;
 			productReference = 112239111FD5C7AF00486528 /* Oasis.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -1027,8 +1012,8 @@
 			dependencies = (
 				CF06A90522BA791D00496C0E /* PBXTargetDependency */,
 			);
-			name = "OasisTests";
-			productName = "OasisTests";
+			name = OasisTests;
+			productName = OasisTests;
 			productReference = CF06A8FF22BA791D00496C0E /* OasisTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -1279,14 +1264,20 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Oasis/Pods-Oasis-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Logging/Logging.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/QuickLayout/QuickLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftEntryKit/SwiftEntryKit.framework",
 				"${BUILT_PRODUCTS_DIR}/TDPopupKit/TDPopupKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseCoreInternal/FirebaseCoreInternal.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseCrashlytics/FirebaseCrashlytics.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
@@ -1301,14 +1292,20 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Logging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QuickLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftEntryKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TDPopupKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreInternal.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCrashlytics.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
@@ -1365,28 +1362,6 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
-		};
-		CF7BC6701FD8F75D008E80AC /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SkyFloatingLabelTextField.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxGesture.framework",
-			);
-			name = Carthage;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		CF90C7FC2080AF8E00C3F025 /* R.Swift */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1748,17 +1723,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Oasis/Oasis.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Oasis/Oasis.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 924RDGY8WL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "Oasis/Info.plist";
+				INFOPLIST_FILE = Oasis/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tedmob.Oasis";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.Oasis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1771,17 +1746,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Oasis/Oasis.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Oasis/Oasis.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 924RDGY8WL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "Oasis/Info.plist";
+				INFOPLIST_FILE = Oasis/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tedmob.Oasis";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.Oasis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1819,12 +1794,12 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxRelay/RxRelay.framework/Headers\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift/RxSwift.framework/Headers\"",
 				);
-				INFOPLIST_FILE = "OasisTests/Info.plist";
+				INFOPLIST_FILE = OasisTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tedmob.OasisTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.OasisTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1863,11 +1838,11 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxRelay/RxRelay.framework/Headers\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift/RxSwift.framework/Headers\"",
 				);
-				INFOPLIST_FILE = "OasisTests/Info.plist";
+				INFOPLIST_FILE = OasisTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tedmob.OasisTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.OasisTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1887,7 +1862,7 @@
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tedmob.Oasis.OneSignalNotificationServiceExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.Oasis.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -1907,7 +1882,7 @@
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tedmob.Oasis.OneSignalNotificationServiceExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.Oasis.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
