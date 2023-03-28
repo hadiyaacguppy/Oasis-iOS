@@ -37,6 +37,13 @@
 		117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB31FD8652B008BB445 /* NSIndexPath+Extensions.swift */; };
 		117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */; };
 		11CD5280230AFF91003D08BE /* ViewEmbedder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CD527F230AFF91003D08BE /* ViewEmbedder.swift */; };
+		161F3B8029D3708E0053158A /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 161F3B7929D3708E0053158A /* Test.storyboard */; };
+		161F3B8129D3708E0053158A /* TestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3B7A29D3708E0053158A /* TestPresenter.swift */; };
+		161F3B8229D3708E0053158A /* TestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3B7B29D3708E0053158A /* TestRouter.swift */; };
+		161F3B8329D3708E0053158A /* TestModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3B7C29D3708E0053158A /* TestModels.swift */; };
+		161F3B8429D3708E0053158A /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3B7D29D3708E0053158A /* TestViewController.swift */; };
+		161F3B8529D3708E0053158A /* TestInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3B7E29D3708E0053158A /* TestInteractor.swift */; };
+		161F3B8629D3708E0053158A /* TestConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3B7F29D3708E0053158A /* TestConfigurator.swift */; };
 		1ACED86ADAA2441F495B6912 /* Pods_AnalyticsManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B66C5D6B0826B75B9813C2 /* Pods_AnalyticsManager.framework */; };
 		374FA5CB00801009F6B43FDB /* Pods_OasisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64659B367BA850135AB1D5E9 /* Pods_OasisTests.framework */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
@@ -242,6 +249,13 @@
 		117C4AB31FD8652B008BB445 /* NSIndexPath+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSIndexPath+Extensions.swift"; sourceTree = "<group>"; };
 		117C4AB51FD86544008BB445 /* UIPageViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPageViewController+Extensions.swift"; sourceTree = "<group>"; };
 		11CD527F230AFF91003D08BE /* ViewEmbedder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEmbedder.swift; sourceTree = "<group>"; };
+		161F3B7929D3708E0053158A /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
+		161F3B7A29D3708E0053158A /* TestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPresenter.swift; sourceTree = "<group>"; };
+		161F3B7B29D3708E0053158A /* TestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRouter.swift; sourceTree = "<group>"; };
+		161F3B7C29D3708E0053158A /* TestModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModels.swift; sourceTree = "<group>"; };
+		161F3B7D29D3708E0053158A /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		161F3B7E29D3708E0053158A /* TestInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestInteractor.swift; sourceTree = "<group>"; };
+		161F3B7F29D3708E0053158A /* TestConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfigurator.swift; sourceTree = "<group>"; };
 		1D7408F9BE9E6B05F6D17E8A /* Pods-AnalyticsManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnalyticsManager/Pods-AnalyticsManager.release.xcconfig"; sourceTree = "<group>"; };
 		22C3C119E084FE2B0FF3C34F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
@@ -589,6 +603,7 @@
 		112239131FD5C7AF00486528 /* Oasis */ = {
 			isa = PBXGroup;
 			children = (
+				166EF2F929D36FC90029908E /* Flows */,
 				CF564724211B15BE0092EFBD /* Oasis.entitlements */,
 				0F1B7FA622CA6C550079F752 /* Resources */,
 				672909FA210E43C900632C4F /* PlaceHolder  */,
@@ -664,6 +679,68 @@
 				67C9592A26249C7400A67399 /* Decodable+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		166EF2F929D36FC90029908E /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				166EF2FE29D36FE20029908E /* Common Flows */,
+				166EF2FD29D36FD20029908E /* Kids */,
+				166EF2FC29D36FD00029908E /* Teens */,
+				166EF2FB29D36FCE0029908E /* Adults */,
+				166EF2FA29D36FCC0029908E /* Parents */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		166EF2FA29D36FCC0029908E /* Parents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Parents;
+			sourceTree = "<group>";
+		};
+		166EF2FB29D36FCE0029908E /* Adults */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Adults;
+			sourceTree = "<group>";
+		};
+		166EF2FC29D36FD00029908E /* Teens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Teens;
+			sourceTree = "<group>";
+		};
+		166EF2FD29D36FD20029908E /* Kids */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Kids;
+			sourceTree = "<group>";
+		};
+		166EF2FE29D36FE20029908E /* Common Flows */ = {
+			isa = PBXGroup;
+			children = (
+				166EF2FF29D36FEB0029908E /* Test */,
+			);
+			path = "Common Flows";
+			sourceTree = "<group>";
+		};
+		166EF2FF29D36FEB0029908E /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				161F3B7929D3708E0053158A /* Test.storyboard */,
+				161F3B7A29D3708E0053158A /* TestPresenter.swift */,
+				161F3B7B29D3708E0053158A /* TestRouter.swift */,
+				161F3B7C29D3708E0053158A /* TestModels.swift */,
+				161F3B7D29D3708E0053158A /* TestViewController.swift */,
+				161F3B7E29D3708E0053158A /* TestInteractor.swift */,
+				161F3B7F29D3708E0053158A /* TestConfigurator.swift */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 		3E1DEAEE22BA62F400FAD9F4 /* UIView+Helpers */ = {
@@ -1171,6 +1248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				161F3B8029D3708E0053158A /* Test.storyboard in Resources */,
 				CF403858216CF78F001F649B /* Initial.storyboard in Resources */,
 				3ECBAAB523D06DD8003672DA /* PushNotification.storyboard in Resources */,
 				0F1B7FAD22CA6C910079F752 /* Countries.bundle in Resources */,
@@ -1417,13 +1495,16 @@
 				3E1DEAF622BA63E900FAD9F4 /* UIRectCorner+Extensions.swift in Sources */,
 				CF8C5C9E20EF9CA400236C7B /* DatePickerDialog.swift in Sources */,
 				CF564702211B142E0092EFBD /* OneSignalPushService.swift in Sources */,
+				161F3B8129D3708E0053158A /* TestPresenter.swift in Sources */,
 				67F03A5C26F20AA600ED91ED /* NetworkErrorResponse.swift in Sources */,
 				CFE259E822C9CDB4006B0472 /* TDFullIMageView.swift in Sources */,
+				161F3B8329D3708E0053158A /* TestModels.swift in Sources */,
 				CFDB669B22C601BB006278A2 /* AppDelegate+OneSignal.swift in Sources */,
 				3ECBAAB623D06DD8003672DA /* PushNotificationMessageController.swift in Sources */,
 				0FD65F1920D018480075E251 /* Double+Extensions.swift in Sources */,
 				4AEF647522107DC000D53D75 /* BaseButton.swift in Sources */,
 				CF40385A216CF78F001F649B /* InitialRouter.swift in Sources */,
+				161F3B8429D3708E0053158A /* TestViewController.swift in Sources */,
 				3EDC4133224E81BE00624D2B /* ActivityIndicator.swift in Sources */,
 				3E7367F422C6605A00B4C71D /* FeedbackTypes.swift in Sources */,
 				0F57538E20EE12EB0069C139 /* Constants.swift in Sources */,
@@ -1444,6 +1525,7 @@
 				CF6030762212F77B003872F3 /* DeviceManager.swift in Sources */,
 				3ECBAAB723D06DD8003672DA /* PushNotificationContainer.swift in Sources */,
 				3EDC4156224E886500624D2B /* BaseUIView.swift in Sources */,
+				161F3B8629D3708E0053158A /* TestConfigurator.swift in Sources */,
 				3E59224C23C3992100E729B7 /* Font.swift in Sources */,
 				67290A02210E441400632C4F /* PlaceHolderHelper.swift in Sources */,
 				0F1B7FBD22CA6CBD0079F752 /* PhoneCodeCell.swift in Sources */,
@@ -1454,6 +1536,7 @@
 				0FD0C6EC2200B662000C5881 /* UIFont+Extentions.swift in Sources */,
 				CFF69D6A219551B4003BE6BF /* UIViewController+Extensions.swift in Sources */,
 				4AEF64772210842F00D53D75 /* BaseSkyFloatingTextField.swift in Sources */,
+				161F3B8529D3708E0053158A /* TestInteractor.swift in Sources */,
 				11CD5280230AFF91003D08BE /* ViewEmbedder.swift in Sources */,
 				CF40385B216CF78F001F649B /* InitialModels.swift in Sources */,
 				0F57539F20EE1EC90069C139 /* Relays.swift in Sources */,
@@ -1505,6 +1588,7 @@
 				3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */,
 				0F484B4F2165FF5C0060C463 /* Date+Extensions.swift in Sources */,
 				CF2F319E215E8BA0007A912A /* URL+Extensions.swift in Sources */,
+				161F3B8229D3708E0053158A /* TestRouter.swift in Sources */,
 				0F1B7FB322CA6CA40079F752 /* LocalePickerViewController.swift in Sources */,
 				CFF69D732195578F003BE6BF /* Data+Extensions.swift in Sources */,
 				3EBDE0402541E8670056A0C4 /* AppDelegate+PopupConfig.swift in Sources */,
