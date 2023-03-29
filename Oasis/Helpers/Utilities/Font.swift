@@ -8,15 +8,15 @@
 
 import UIKit
 
-typealias MainFont = Font.HelveticaNeue
+typealias MainFont = Font.Montserrat
 
 enum Font {
     
-    enum HelveticaNeue: String {
+    enum Montserrat: String {
         case ultraLightItalic = "UltraLightItalic"
         case medium = "Medium"
         case mediumItalic = "MediumItalic"
-        case ultraLight = "UltraLight"
+        case ultraLight = "ExtraLight"
         case italic = "Italic"
         case light = "Light"
         case thinItalic = "ThinItalic"
@@ -26,13 +26,13 @@ enum Font {
         case condensedBlack = "CondensedBlack"
         case condensedBold = "CondensedBold"
         case boldItalic = "BoldItalic"
-        case normal = ""
+        case normal = "Regular"
         
         func with(size: CGFloat) -> UIFont {
             if rawValue.isEmpty{
-                return UIFont(name: "HelveticaNeue", size: size)!
+                return UIFont(name: "Montserrat", size: size)!
             }
-            return UIFont(name: "HelveticaNeue-\(rawValue)", size: size)!
+            return UIFont(name: "Montserrat-\(rawValue)", size: size)!
         }
     }
 }
