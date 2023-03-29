@@ -10,6 +10,7 @@
 
 import UIKit
 import RxSwift
+import SessionRepository
 
 protocol InitialViewControllerInput {
 
@@ -42,7 +43,17 @@ class InitialViewController: BaseViewController, InitialViewControllerInput {
         //                            title: Constants.PlaceHolderView.Texts.wait)
         output?.viewDidFinishedLoading()
         setupRetryFetchingCallBack()
-        
+        decideRedirection()
+    }
+    
+    
+    private
+    func decideRedirection(){
+        if SessionRepository.shared.userIsLoggedIn {
+            
+        }else{
+            self.router?.redirectToOnboardingScene()
+        }
     }
     
     // MARK: Requests

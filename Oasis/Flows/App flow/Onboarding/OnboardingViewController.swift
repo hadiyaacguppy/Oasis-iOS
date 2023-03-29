@@ -37,6 +37,7 @@ extension OnboardingViewController{
         //                            title: Constants.PlaceHolderView.Texts.wait)
         setupNavBarAppearance()
         setupRetryFetchingCallBack()
+        setupOnboarding()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,8 +59,8 @@ extension OnboardingViewController{
             OnboardingConfig.Content(
                 title: OnboardingConfig.Title(text: $0.key),
                 description: OnboardingConfig.Description(text: $0.value),
-                image: OnboardingConfig.Image(image: UIImage(named: $0.key.replacingOccurrences(of: " ", with: ""))!)
-            )
+                image: OnboardingConfig.Image())
+            //OnboardingConfig.Image(image: UIImage(named: $0.key.replacingOccurrences(of: " ", with: ""))!)
         }
         
         let skipButton = OnboardingConfig.SkipButton(

@@ -35,6 +35,15 @@ class InitialRouter: InitialRouterInput {
     }
     
     // MARK: Navigation
+    func redirectToOnboardingScene(){
+        let vc = R.storyboard.onboarding.onboardingViewControllerNavVC()!
+        let window = (UIApplication.shared.delegate as! AppDelegate).window!
+        DispatchQueue.main.async {
+            UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromBottom, animations: {
+                window.rootViewController = vc
+            })
+        }
+    }
     
     ///Pop The view from the view hierarchy
     func popView(){
