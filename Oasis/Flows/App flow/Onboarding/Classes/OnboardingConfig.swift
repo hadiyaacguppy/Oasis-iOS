@@ -124,7 +124,7 @@ extension OnboardingConfig {
                     lineBreakMode: NSLineBreakMode = .byClipping,
                     numberOfLines: Int = 0,
                     attributedText: NSAttributedString? = nil) {
-            self.text = text
+            self.text = ""
             self.font = font
             self.textColor = textColor
             self.lineBreakMode = lineBreakMode
@@ -159,12 +159,12 @@ extension OnboardingConfig {
         
         public init(text: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     font: UIFont = .systemFont(ofSize: 14.0, weight: .medium),
-                    textColor: UIColor = UIColor(red: 108.0 / 255.0, green: 107.0 / 255.0, blue: 125.0 / 255.0, alpha: 1.0),
+                    textColor: UIColor = .white,
                     lineBreakMode: NSLineBreakMode = .byClipping,
                     numberOfLines: Int = 0,
                     attributedText: NSAttributedString? = nil) {
             self.text = text
-            self.font = font
+            self.font = MainFont.medium.with(size: 30)
             self.textColor = textColor
             self.lineBreakMode = lineBreakMode
             self.numberOfLines = numberOfLines
@@ -201,12 +201,12 @@ extension OnboardingConfig {
                     isHidden: Bool = false,
                     isSkipButtonHiddenWhenLastContentShown: Bool = true,
                     font: UIFont = .systemFont(ofSize: 13.0, weight: .medium),
-                    titleColor: UIColor = UIColor(red: 108.0 / 255.0, green: 107.0 / 255.0, blue: 125.0 / 255.0, alpha: 1.0)) {
+                    titleColor: UIColor = .white) {
             self.title = title
             self.attributedTitle = attributedTitle
             self.isHidden = isHidden
             self.isSkipButtonHiddenWhenLastContentShown = isSkipButtonHiddenWhenLastContentShown
-            self.font = font
+            self.font = MainFont.medium.with(size: 22)
             self.titleColor = titleColor
         }
     }
@@ -241,8 +241,12 @@ extension OnboardingConfig {
         /// Button background color, default `UIColor(red: 0.0 / 255.0, green: 102.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)`
         let backgroundColor: UIColor
         
-        /// Button layer.cornerRadius, default `16.0`
+        /// Button layer.cornerRadius, default `22.0`
         let cornerRadius: CGFloat
+        
+        
+        let borderColor : UIColor
+        
         
         public init(title: String = "Next",
                     attributedTitle: NSAttributedString? = nil,
@@ -252,16 +256,18 @@ extension OnboardingConfig {
                     font: UIFont = .systemFont(ofSize: 14.0, weight: .bold),
                     titleColor: UIColor = .white,
                     backgroundColor: UIColor = UIColor(red: 0.0 / 255.0, green: 102.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0),
-                    cornerRadius: CGFloat = 16.0) {
+                    cornerRadius: CGFloat = 29,
+                    borderColor : UIColor = .white) {
             self.title = title
             self.attributedTitle = attributedTitle
             self.lastTitle = lastTitle
             self.lastAttributedTitle = lastAttributedTitle
             self.isHidden = isHidden
-            self.font = font
+            self.font = MainFont.bold.with(size: 18)
             self.titleColor = titleColor
             self.backgroundColor = backgroundColor
             self.cornerRadius = cornerRadius
+            self.borderColor = borderColor
         }
     }
 }

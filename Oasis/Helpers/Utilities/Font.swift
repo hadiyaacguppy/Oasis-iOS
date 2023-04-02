@@ -10,9 +10,9 @@ import UIKit
 
 typealias MainFont = Font.Montserrat
 
-enum Font {
+public enum Font {
     
-    enum Montserrat: String {
+    public enum Montserrat: String {
         case ultraLightItalic = "UltraLightItalic"
         case medium = "Medium"
         case mediumItalic = "MediumItalic"

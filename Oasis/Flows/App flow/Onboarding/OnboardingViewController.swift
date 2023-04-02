@@ -47,12 +47,10 @@ extension OnboardingViewController{
     
     private func setupOnboarding(){
         let titlesAndDescriptions: [String: String] = [
-            "Make Great Things": "We build products that are fast, effortless to use and aesthetically pleased. We roll up our sleeves and create things worthy of our clients’ and users’ time.",
-            "Deliver Results": "There’s nothing like watching your app come alive. Each week we deliver a build of your app with release notes on what’s new, updated, fixed, or in progress.",
-            "Embrace Transparency": "Each idea, code commit, or design concept is put into a shared space. You don’t just get an email that shows what we did when we’re done.",
-            "Seek Mastery": "We build products that are fast, effortless to use and aesthetically pleased. We roll up our sleeves and create things worthy of our clients’ and users’ time.",
-            "Take Ownership": "We take ownership of the solutions that we provide to our customers. We are not afraid to speak up and stand for what we think is true.",
-            "Have Fun": "We believe businesses that encourage having fun are the ones where the best people do their best work."
+            "page1": "Learn about spending, saving & earning !",
+            "page2": "Send and request money in one click !",
+            "page3": "Complete tasks to get paid instantly with Oasis !",
+            "page4": "Get Rewarded and unlock special offers !"
         ]
         
         let contents: [OnboardingConfig.Content] = titlesAndDescriptions.compactMap {
@@ -67,21 +65,20 @@ extension OnboardingViewController{
             attributedTitle: NSAttributedString(
                 string: "Login",
                 attributes: [
-                    NSAttributedString.Key.foregroundColor: UIColor(red: 0.0 / 255.0, green: 102.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0),
-                    NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue
+                    NSAttributedString.Key.foregroundColor: UIColor.white
                 ])
         )
         
         let pageControl = OnboardingConfig.PageControl(
-            currentPageIndicatorTintColor: UIColor(red: 0.0 / 255.0, green: 102.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0),
-            pageIndicatorTintColor: UIColor(red: 0.0 / 255.0, green: 102.0 / 255.0, blue: 255.0 / 255.0, alpha: 0.4)
+            currentPageIndicatorTintColor: .white,
+            pageIndicatorTintColor: UIColor(red: 255 / 255.0, green: 255 / 255.0, blue: 255.0 / 255.0, alpha: 0.24)
         )
         
         let nextButton = OnboardingConfig.NextButton(
-            title: "Next",
+            title: "Register",
             lastTitle: "Let's Go",
             titleColor: .white,
-            backgroundColor: UIColor(red: 0.0 / 255.0, green: 102.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)
+            backgroundColor: .clear
         )
         
         let config = OnboardingConfig(

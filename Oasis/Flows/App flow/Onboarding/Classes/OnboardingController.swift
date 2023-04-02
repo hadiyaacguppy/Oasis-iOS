@@ -41,6 +41,14 @@ public class OnboardingController: UIViewController {
         return button
     }()
     
+    private let backgroundImage: UIImageView = {
+        let imageV = UIImageView()
+        imageV.translatesAutoresizingMaskIntoConstraints = false
+        imageV.image = R.image.backgroundHomepageBox()!
+        imageV.contentMode = .scaleAspectFill
+        return imageV
+    }()
+    
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -103,10 +111,21 @@ public class OnboardingController: UIViewController {
 extension OnboardingController {
     
     private func addSubviews() {
+        addBackgroundImage()
         addSkipButton()
         addNextButton()
         addPageControl()
         addCollectionView()
+    }
+    
+    private func addBackgroundImage(){
+        view.addSubview(backgroundImage)
+        NSLayoutConstraint.activate([
+            backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+        ])
     }
     
     private func addSkipButton() {
@@ -127,7 +146,7 @@ extension OnboardingController {
             nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
             nextButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 32),
             nextButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -32),
-            nextButton.heightAnchor.constraint(equalToConstant: 44)
+            nextButton.heightAnchor.constraint(equalToConstant: 58)
         ])
     }
     
@@ -183,7 +202,8 @@ extension OnboardingController {
         nextButton.titleLabel?.font = config.nextButton.font
         nextButton.layer.cornerRadius = config.nextButton.cornerRadius
         nextButton.backgroundColor = config.nextButton.backgroundColor
-        
+        nextButton.borderColor = config.nextButton.borderColor
+        nextButton.borderWidth = 2.0
         if let attributedTitle = config.nextButton.attributedTitle {
             nextButton.setAttributedTitle(attributedTitle, for: .normal)
         }
