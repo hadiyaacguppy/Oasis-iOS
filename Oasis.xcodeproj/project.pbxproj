@@ -660,7 +660,6 @@
 		112239131FD5C7AF00486528 /* Oasis */ = {
 			isa = PBXGroup;
 			children = (
-				166EF2F929D36FC90029908E /* Flows */,
 				CF564724211B15BE0092EFBD /* Oasis.entitlements */,
 				0F1B7FA622CA6C550079F752 /* Resources */,
 				672909FA210E43C900632C4F /* PlaceHolder  */,
@@ -1127,6 +1126,7 @@
 		CF87EDA9201EECFA00562226 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				166EF2F929D36FC90029908E /* Flows */,
 				3ECBAAB123D06DB8003672DA /* PushNotification */,
 				CF87EDB6201EED1500562226 /* Initial */,
 			);
