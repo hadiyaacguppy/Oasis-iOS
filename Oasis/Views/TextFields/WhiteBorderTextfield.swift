@@ -29,5 +29,7 @@ class WhiteBorderTextfield: BaseTextField {
         self.borderColor = .white
         self.font = MainFont.medium.with(size: 28)
         self.cornerRadius = 14
+        self.backgroundColor = .clear
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
 }

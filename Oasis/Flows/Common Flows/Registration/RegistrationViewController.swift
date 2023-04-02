@@ -29,8 +29,9 @@ class RegistrationViewController: BaseViewController {
     private lazy var mainStackView = {
         UIStackView()
             .axis(.vertical)
-            .spacing(4)
+            .spacing(40)
             .autoLayout()
+            .distributionMode(.fill)
     }()
     
     private lazy var firstNameStackview = {
@@ -38,28 +39,28 @@ class RegistrationViewController: BaseViewController {
             .axis(.vertical)
             .spacing(4)
             .autoLayout()
-    }
+    }()
     
     private lazy var lastNameStackview = {
         UIStackView()
             .axis(.vertical)
             .spacing(4)
             .autoLayout()
-    }
+    }()
     
     private lazy var mobileStackview = {
         UIStackView()
             .axis(.vertical)
             .spacing(4)
             .autoLayout()
-    }
+    }()
     
     private lazy var emailStackview = {
         UIStackView()
             .axis(.vertical)
             .spacing(4)
             .autoLayout()
-    }
+    }()
     
     private lazy var firstNameTitleLabel : BaseLabel = {
         let label = BaseLabel()
@@ -88,6 +89,15 @@ class RegistrationViewController: BaseViewController {
         return label
     }()
     
+    private lazy var emailTitleLabel : BaseLabel = {
+        let label = BaseLabel()
+        label.font = MainFont.medium.with(size: 33)
+        label.textColor = .white
+        label.numberOfLines = 2
+        label.text = "And your email?".localized
+        return label
+    }()
+    
     private lazy var nextButton : BaseButton = {
         let btn = BaseButton()
        // btn.imageStyle  = .init(image: <#T##UIImage#>, imagePadding: <#T##CGFloat#>, imagePlacement: <#T##NSDirectionalRectEdge#>)
@@ -95,7 +105,24 @@ class RegistrationViewController: BaseViewController {
                           titleColor: .white,
                           backgroundColor: .clear)
         btn.setTitle("Next".localized, for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        
         return btn
+    }()
+    
+    private lazy var firstNameTextfield : WhiteBorderTextfield = {
+        let txtf = WhiteBorderTextfield()
+        return txtf
+    }()
+    
+    private lazy var lastNameTextfield : WhiteBorderTextfield = {
+        let txtf = WhiteBorderTextfield()
+        return txtf
+    }()
+    
+    private lazy var emailTextfield : WhiteBorderTextfield = {
+        let txtf = WhiteBorderTextfield()
+        return txtf
     }()
 }
 
@@ -124,6 +151,21 @@ extension RegistrationViewController{
     fileprivate
     func setupUI(){
         addBackgroundImage()
+        addNextButton()
+        buildStacks()
+        buildFirstNameStack()
+        buildLastNameStack()
+        buildEmailStack()
+    }
+    
+    private func addNextButton(){
+        view.addSubview(nextButton)
+        NSLayoutConstraint.activate([
+            nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 8),
+            nextButton.heightAnchor.constraint(equalToConstant: 35),
+            nextButton.widthAnchor.constraint(equalToConstant: 80),
+            nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -24)
+        ])
     }
     
     private func addBackgroundImage(){
@@ -134,6 +176,40 @@ extension RegistrationViewController{
             backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor)
         ])
+    }
+    
+    private func buildStacks(){
+        view.addSubview(mainStackView)
+        NSLayoutConstraint.activate([
+            mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
+            mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+            //mainStackView.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: 8)
+        ])
+        mainStackView.addArrangedSubview(firstNameStackview)
+        mainStackView.addArrangedSubview(lastNameStackview)
+        mainStackView.addArrangedSubview(emailStackview)
+    }
+    
+    private func buildFirstNameStack(){
+        firstNameStackview.addArrangedSubview(firstNameTitleLabel)
+        firstNameStackview.addArrangedSubview(firstNameTextfield)
+        
+        firstNameTextfield.heightAnchor.constraint(equalToConstant: 68).isActive = true
+    }
+    
+    private func buildLastNameStack(){
+        lastNameStackview.addArrangedSubview(lastNameTitleLabel)
+        lastNameStackview.addArrangedSubview(lastNameTextfield)
+        
+        lastNameTextfield.heightAnchor.constraint(equalToConstant: 68).isActive = true
+    }
+    
+    private func buildEmailStack(){
+        emailStackview.addArrangedSubview(emailTitleLabel)
+        emailStackview.addArrangedSubview(emailTextfield)
+        
+        emailTextfield.heightAnchor.constraint(equalToConstant: 68).isActive = true
     }
 }
 
