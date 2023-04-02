@@ -26,6 +26,77 @@ class RegistrationViewController: BaseViewController {
         return imageV
     }()
     
+    private lazy var mainStackView = {
+        UIStackView()
+            .axis(.vertical)
+            .spacing(4)
+            .autoLayout()
+    }()
+    
+    private lazy var firstNameStackview = {
+        UIStackView()
+            .axis(.vertical)
+            .spacing(4)
+            .autoLayout()
+    }
+    
+    private lazy var lastNameStackview = {
+        UIStackView()
+            .axis(.vertical)
+            .spacing(4)
+            .autoLayout()
+    }
+    
+    private lazy var mobileStackview = {
+        UIStackView()
+            .axis(.vertical)
+            .spacing(4)
+            .autoLayout()
+    }
+    
+    private lazy var emailStackview = {
+        UIStackView()
+            .axis(.vertical)
+            .spacing(4)
+            .autoLayout()
+    }
+    
+    private lazy var firstNameTitleLabel : BaseLabel = {
+        let label = BaseLabel()
+        label.font = MainFont.medium.with(size: 33)
+        label.textColor = .white
+        label.numberOfLines = 2
+        label.text = "What's your first name?".localized
+        return label
+    }()
+    
+    private lazy var lastNameTitleLabel : BaseLabel = {
+        let label = BaseLabel()
+        label.font = MainFont.medium.with(size: 33)
+        label.textColor = .white
+        label.numberOfLines = 2
+        label.text = "What's your last name?".localized
+        return label
+    }()
+    
+    private lazy var mobileTitleLabel : BaseLabel = {
+        let label = BaseLabel()
+        label.font = MainFont.medium.with(size: 33)
+        label.textColor = .white
+        label.numberOfLines = 2
+        label.text = "And mobile number?".localized
+        return label
+    }()
+    
+    private lazy var nextButton : BaseButton = {
+        let btn = BaseButton()
+       // btn.imageStyle  = .init(image: <#T##UIImage#>, imagePadding: <#T##CGFloat#>, imagePlacement: <#T##NSDirectionalRectEdge#>)
+        btn.style = .init(titleFont: MainFont.bold.with(size: 20),
+                          titleColor: .white,
+                          backgroundColor: .clear)
+        btn.setTitle("Next".localized, for: .normal)
+        return btn
+    }()
 }
 
 //MARK:- View Lifecycle

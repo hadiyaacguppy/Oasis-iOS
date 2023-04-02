@@ -400,3 +400,119 @@ extension UIView{
 
     var safeRightAnchor: NSLayoutXAxisAnchor { safeAreaLayoutGuide.rightAnchor }
 }
+
+extension UIView {
+    @discardableResult
+    func cornerRadius(_ radius: CGFloat) -> Self {
+        self.layer.cornerRadius = radius
+        clipsToBounds = true
+        return self
+    }
+    
+    func addSubviews(_ views: UIView...) {
+        views.forEach({ addSubview($0) })
+    }
+    
+    @discardableResult
+    func disablingAutoresizing() -> Self {
+        translatesAutoresizingMaskIntoConstraints = false
+        return self
+    }
+    
+    @discardableResult
+    func height(_ constant: CGFloat) -> Self {
+        heightAnchor.constraint(equalToConstant: constant).isActive = true
+        return self
+    }
+    
+    @discardableResult
+    func width(_ constant: CGFloat) -> Self {
+        widthAnchor.constraint(equalToConstant: constant).isActive = true
+        return self
+    }
+    
+    @discardableResult
+    func autoLayout() -> Self {
+        translatesAutoresizingMaskIntoConstraints = false
+        return self
+    }
+
+    func removeAllSubviews() {
+        for subview in self.subviews {
+            subview.removeFromSuperview()
+        }
+    }
+    
+    
+
+    func roundCorners(_ corners:UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.frame = bounds
+        mask.path = path.cgPath
+        layer.mask = mask
+    }
+}
+
+//MARK:- Constraints
+extension UIView{
+    func fillInSuperView(top: CGFloat = 0,
+                         leading: CGFloat = 0,
+                         bottom: CGFloat = 0,
+                         trailing: CGFloat = 0) {
+        if let superView = superview {
+            translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                topAnchor.constraint(equalTo: superView.topAnchor, constant: top),
+                bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -abs(bottom)),
+                leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: leading),
+                trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -abs(trailing))
+            ])
+        }
+    }
+}
+
+extension NSObject {
+
+    class var className: String {
+        return String(describing: self)
+    }
+}
+
+//MARK: - Enable/Disable
+extension UIView{
+    func enableView(){
+        self.alpha = 1
+        self.isUserInteractionEnabled = true
+    }
+
+    func disableView(){
+        self.alpha = 0.5
+        self.isUserInteractionEnabled = false
+    }
+}
+
+//MARK: - Screenshots
+extension UIView{
+    func screenshotForCroppingRect(croppingRect:CGRect) -> UIImage? {
+
+        UIGraphicsBeginImageContextWithOptions(croppingRect.size, false, UIScreen.main.scale);
+
+        let context = UIGraphicsGetCurrentContext()
+        if context == nil {
+            return nil;
+        }
+
+        context!.translateBy(x: -croppingRect.origin.x, y: -croppingRect.origin.y)
+        self.layoutIfNeeded()
+        self.layer.render(in: context!)
+
+        let screenshotImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return screenshotImage
+    }
+
+    @objc var screenshot : UIImage? {
+        return self.screenshotForCroppingRect(croppingRect: self.bounds)
+    }
+}

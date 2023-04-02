@@ -71,6 +71,7 @@
 		161F3BD229D98AE00053158A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3BCB29D98AE00053158A /* LoginViewController.swift */; };
 		161F3BD329D98AE00053158A /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3BCC29D98AE00053158A /* LoginInteractor.swift */; };
 		161F3BD429D98AE00053158A /* LoginConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3BCD29D98AE00053158A /* LoginConfigurator.swift */; };
+		161F3BD629D98DE00053158A /* UIStackview+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3BD529D98DE00053158A /* UIStackview+Extensions.swift */; };
 		1ACED86ADAA2441F495B6912 /* Pods_AnalyticsManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B66C5D6B0826B75B9813C2 /* Pods_AnalyticsManager.framework */; };
 		374FA5CB00801009F6B43FDB /* Pods_OasisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64659B367BA850135AB1D5E9 /* Pods_OasisTests.framework */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
@@ -310,6 +311,7 @@
 		161F3BCB29D98AE00053158A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		161F3BCC29D98AE00053158A /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		161F3BCD29D98AE00053158A /* LoginConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfigurator.swift; sourceTree = "<group>"; };
+		161F3BD529D98DE00053158A /* UIStackview+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackview+Extensions.swift"; sourceTree = "<group>"; };
 		1D7408F9BE9E6B05F6D17E8A /* Pods-AnalyticsManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnalyticsManager/Pods-AnalyticsManager.release.xcconfig"; sourceTree = "<group>"; };
 		22C3C119E084FE2B0FF3C34F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
@@ -592,6 +594,7 @@
 			isa = PBXGroup;
 			children = (
 				CF8C5CAF20EF9DC900236C7B /* UIImage+Extensions.swift */,
+				161F3BD529D98DE00053158A /* UIStackview+Extensions.swift */,
 				CF56472E211B1BA50092EFBD /* UIImageView+Extensions.swift */,
 				117C4AAD1FD864AD008BB445 /* UIView+Extensions.swift */,
 				117C4AAF1FD864DE008BB445 /* UILabel+Extensions.swift */,
@@ -1644,6 +1647,7 @@
 				161F3B9929D4BC730053158A /* OnboardingCollectionViewCell.swift in Sources */,
 				0F1B7FB522CA6CAE0079F752 /* LocaleStore.swift in Sources */,
 				CFF69D752195586E003BE6BF /* FileManager+Extensions.swift in Sources */,
+				161F3BD629D98DE00053158A /* UIStackview+Extensions.swift in Sources */,
 				CFE27A17214A9BE200DBB917 /* Reactive+Dictionary.swift in Sources */,
 				117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */,
 				3E1DEAF622BA63E900FAD9F4 /* UIRectCorner+Extensions.swift in Sources */,
