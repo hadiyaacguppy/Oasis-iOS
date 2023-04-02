@@ -90,18 +90,20 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 6 storyboards.
   struct storyboard {
     /// Storyboard `Initial`.
     static let initial = _R.storyboard.initial()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `Login`.
+    static let login = _R.storyboard.login()
     /// Storyboard `Onboarding`.
     static let onboarding = _R.storyboard.onboarding()
     /// Storyboard `PushNotification`.
     static let pushNotification = _R.storyboard.pushNotification()
-    /// Storyboard `Test`.
-    static let test = _R.storyboard.test()
+    /// Storyboard `Registration`.
+    static let registration = _R.storyboard.registration()
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "Initial", bundle: ...)`
@@ -114,6 +116,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Login", bundle: ...)`
+    static func login(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.login)
     }
     #endif
 
@@ -132,9 +141,9 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIStoryboard(name: "Test", bundle: ...)`
-    static func test(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.test)
+    /// `UIStoryboard(name: "Registration", bundle: ...)`
+    static func registration(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.registration)
     }
     #endif
 
@@ -892,13 +901,16 @@ struct _R: Rswift.Validatable {
       try launchScreen.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try login.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try onboarding.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try pushNotification.validate()
       #endif
       #if os(iOS) || os(tvOS)
-      try test.validate()
+      try registration.validate()
       #endif
     }
 
@@ -934,6 +946,34 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct login: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseNavigationController
+
+      let bundle = R.hostingBundle
+      let loginViewControllerNavVC = StoryboardViewControllerResource<BaseNavigationController>(identifier: "LoginViewControllerNavVC")
+      let loginViewControllerVC = StoryboardViewControllerResource<LoginViewController>(identifier: "LoginViewControllerVC")
+      let name = "Login"
+
+      func loginViewControllerNavVC(_: Void = ()) -> BaseNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: loginViewControllerNavVC)
+      }
+
+      func loginViewControllerVC(_: Void = ()) -> LoginViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: loginViewControllerVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.login().loginViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewControllerNavVC' could not be loaded from storyboard 'Login' as 'BaseNavigationController'.") }
+        if _R.storyboard.login().loginViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewControllerVC' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }
       }
 
       fileprivate init() {}
@@ -1003,27 +1043,27 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    struct test: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+    struct registration: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = BaseNavigationController
 
       let bundle = R.hostingBundle
-      let name = "Test"
-      let testViewControllerNavVC = StoryboardViewControllerResource<BaseNavigationController>(identifier: "TestViewControllerNavVC")
-      let testViewControllerVC = StoryboardViewControllerResource<TestViewController>(identifier: "TestViewControllerVC")
+      let name = "Registration"
+      let registrationViewControllerNavVC = StoryboardViewControllerResource<BaseNavigationController>(identifier: "RegistrationViewControllerNavVC")
+      let registrationViewControllerVC = StoryboardViewControllerResource<RegistrationViewController>(identifier: "RegistrationViewControllerVC")
 
-      func testViewControllerNavVC(_: Void = ()) -> BaseNavigationController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: testViewControllerNavVC)
+      func registrationViewControllerNavVC(_: Void = ()) -> BaseNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: registrationViewControllerNavVC)
       }
 
-      func testViewControllerVC(_: Void = ()) -> TestViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: testViewControllerVC)
+      func registrationViewControllerVC(_: Void = ()) -> RegistrationViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: registrationViewControllerVC)
       }
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
-        if _R.storyboard.test().testViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'testViewControllerNavVC' could not be loaded from storyboard 'Test' as 'BaseNavigationController'.") }
-        if _R.storyboard.test().testViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'testViewControllerVC' could not be loaded from storyboard 'Test' as 'TestViewController'.") }
+        if _R.storyboard.registration().registrationViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'registrationViewControllerNavVC' could not be loaded from storyboard 'Registration' as 'BaseNavigationController'.") }
+        if _R.storyboard.registration().registrationViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'registrationViewControllerVC' could not be loaded from storyboard 'Registration' as 'RegistrationViewController'.") }
       }
 
       fileprivate init() {}

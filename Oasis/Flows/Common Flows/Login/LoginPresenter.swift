@@ -1,17 +1,17 @@
 //
-//  TestPresenter.swift
+//  LoginPresenter.swift
 //  Oasis
 //
-//  Created by Hadi Yaacoub on 28/03/2023.
+//  Created by Hadi Yaacoub on 02/04/2023.
 //  Copyright (c) 2023 Tedmob. All rights reserved.
 //
 
 import Foundation
 import RxSwift
 
-class TestPresenter {}
+class LoginPresenter {}
 
-extension TestPresenter: TestInteractorOutput {
+extension LoginPresenter: LoginInteractorOutput {
     
     func apiCallFailed(withError error: NetworkErrorResponse)
     -> ErrorViewModel {

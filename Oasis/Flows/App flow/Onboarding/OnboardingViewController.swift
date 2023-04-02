@@ -75,8 +75,8 @@ extension OnboardingViewController{
         )
         
         let nextButton = OnboardingConfig.NextButton(
-            title: "Register",
-            lastTitle: "Let's Go",
+            title: "Next",
+            lastTitle: "Register",
             titleColor: .white,
             backgroundColor: .clear
         )
@@ -119,5 +119,10 @@ extension OnboardingViewController{
 extension OnboardingViewController: IntroductionControllerDelegate {
     func didSkipButtonTapped() {
         // do something
+        self.router?.redirectToLogin()
+    }
+    
+    func didNextButtonTappedAtEndOfContents(){
+        self.router?.redirectToRegistration()
     }
 }

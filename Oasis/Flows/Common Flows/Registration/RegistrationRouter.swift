@@ -1,24 +1,24 @@
 //
-//  OnboardingRouter.swift
+//  RegistrationRouter.swift
 //  Oasis
 //
-//  Created by Hadi Yaacoub on 28/03/2023.
+//  Created by Hadi Yaacoub on 02/04/2023.
 //  Copyright (c) 2023 Tedmob. All rights reserved.
 //
 
 import UIKit
 
-protocol OnboardingRouterDataPassing: AnyObject {
-    var dataStore: OnboardingDataStore? { get }
+protocol RegistrationRouterDataPassing: AnyObject {
+    var dataStore: RegistrationDataStore? { get }
 }
 
-class OnboardingRouter: OnboardingRouterDataPassing{
+class RegistrationRouter: RegistrationRouterDataPassing{
     
-    weak var viewController: OnboardingViewController!
-    var dataStore: OnboardingDataStore?
+    weak var viewController: RegistrationViewController!
+    var dataStore: RegistrationDataStore?
     
-    init(viewController: OnboardingViewController,
-         dataStore: OnboardingDataStore){
+    init(viewController: RegistrationViewController,
+         dataStore: RegistrationDataStore){
         self.viewController = viewController
         self.dataStore = dataStore
     }
@@ -33,17 +33,6 @@ class OnboardingRouter: OnboardingRouterDataPassing{
             })
         }
     }
-    
-    func redirectToRegistration(){
-        let vc = R.storyboard.registration.registrationViewControllerNavVC()!
-        let window = (UIApplication.shared.delegate as! AppDelegate).window!
-        DispatchQueue.main.async {
-            UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft, animations: {
-                window.rootViewController = vc
-            })
-        }
-    }
-    
     ///Pop The view from the view hierarchy
     func popView(){
         DispatchQueue.main
