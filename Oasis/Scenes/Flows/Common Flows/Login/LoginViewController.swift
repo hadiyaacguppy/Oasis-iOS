@@ -22,7 +22,7 @@ class LoginViewController: BaseViewController {
     private let backgroundImage: UIImageView = {
         let imageV = UIImageView()
         imageV.translatesAutoresizingMaskIntoConstraints = false
-        imageV.image = R.image.backgroundHomepageBox()!
+        imageV.image = R.image.newBackground()!
         imageV.contentMode = .scaleAspectFill
         return imageV
     }()

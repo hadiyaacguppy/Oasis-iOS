@@ -33,6 +33,16 @@ class RegistrationRouter: RegistrationRouterDataPassing{
             })
         }
     }
+    
+    func pushToOTPVerificationsScene(){
+        let vc = R.storyboard.otpVerification.otpVerificationViewControllerVC()!
+        DispatchQueue
+            .main
+            .async {
+                self.viewController.navigationController?.pushViewController(vc, animated: true)
+            }
+    }
+    
     ///Pop The view from the view hierarchy
     func popView(){
         DispatchQueue.main

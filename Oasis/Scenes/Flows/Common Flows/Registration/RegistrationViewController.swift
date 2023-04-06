@@ -21,7 +21,7 @@ class RegistrationViewController: BaseViewController {
     private let backgroundImage: UIImageView = {
         let imageV = UIImageView()
         imageV.translatesAutoresizingMaskIntoConstraints = false
-        imageV.image = R.image.backgroundHomepageBox()!
+        imageV.image = R.image.newBackground()!
         imageV.contentMode = .scaleAspectFill
         return imageV
     }()
@@ -106,7 +106,9 @@ class RegistrationViewController: BaseViewController {
                           backgroundColor: .clear)
         btn.setTitle("Next".localized, for: .normal)
         btn.translatesAutoresizingMaskIntoConstraints = false
-        
+        btn.onTap {
+            self.router?.pushToOTPVerificationsScene()
+        }
         return btn
     }()
     
@@ -161,10 +163,10 @@ extension RegistrationViewController{
     private func addNextButton(){
         view.addSubview(nextButton)
         NSLayoutConstraint.activate([
-            nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 8),
+            nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
             nextButton.heightAnchor.constraint(equalToConstant: 35),
             nextButton.widthAnchor.constraint(equalToConstant: 80),
-            nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -24)
+            nextButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -24)
         ])
     }
     
