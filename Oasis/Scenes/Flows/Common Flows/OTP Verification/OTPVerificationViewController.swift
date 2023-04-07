@@ -34,14 +34,9 @@ class OTPVerificationViewController: BaseViewController {
         return imageV
     }()
     
-    private lazy var verifyButton : BaseButton = {
-        let button = BaseButton()
-        button.style = .init(titleFont: MainFont.bold.with(size: 18),
-                             titleColor: .white,
-                             backgroundColor: .clear)
+    private lazy var verifyButton : WhiteBorderButton = {
+        let button = WhiteBorderButton()
         button.setTitle("Verify".localized, for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        
         return button
     }()
     
@@ -63,6 +58,19 @@ class OTPVerificationViewController: BaseViewController {
     private lazy var fourthOTPTextfield : WhiteBorderTextfield = {
         let txtf = WhiteBorderTextfield()
         return txtf
+    }()
+    
+    private lazy var fifthOTPTextfield : WhiteBorderTextfield = {
+        let txtf = WhiteBorderTextfield()
+        return txtf
+    }()
+    
+    private lazy var pinStack = {
+        UIStackView()
+            .axis(.horizontal)
+            .spacing(10)
+            .autoLayout()
+            .distributionMode(.fillEqually)
     }()
     
 }
@@ -92,9 +100,10 @@ extension OTPVerificationViewController{
     
     fileprivate
     func setupUI(){
+        addBackgroundImage()
         addVerifyButton()
         addTopStaticLabel()
-        addBackgroundImage()
+        addTextfieldsStack()
     }
     
     private func addBackgroundImage(){
@@ -111,8 +120,8 @@ extension OTPVerificationViewController{
         view.addSubview(topStaticLabel)
         NSLayoutConstraint.activate([
             topStaticLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 43),
-            topStaticLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 46),
-            topStaticLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 30)
+            topStaticLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            topStaticLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30)
         ])
     }
     
@@ -120,10 +129,26 @@ extension OTPVerificationViewController{
         view.addSubview(verifyButton)
         NSLayoutConstraint.activate([
             verifyButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 43),
-            verifyButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 38),
+            verifyButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             verifyButton.heightAnchor.constraint(equalToConstant: 58),
-            verifyButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 66)
+            verifyButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -66)
         ])
+    }
+    
+    private func addTextfieldsStack(){
+        view.addSubview(pinStack)
+        NSLayoutConstraint.activate([
+            pinStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 43),
+            pinStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            pinStack.heightAnchor.constraint(equalToConstant: 70),
+            pinStack.topAnchor.constraint(equalTo: topStaticLabel.bottomAnchor, constant: 22)
+        ])
+        
+        pinStack.addArrangedSubview(firstOTPTextfield)
+        pinStack.addArrangedSubview(secondOTPTextfield)
+        pinStack.addArrangedSubview(thirdOTPTextfield)
+        pinStack.addArrangedSubview(fourthOTPTextfield)
+        pinStack.addArrangedSubview(fifthOTPTextfield)
     }
 }
 
@@ -186,8 +211,16 @@ extension OTPVerificationViewController{
             .map{$0.count == 1}
             .share(replay : 1)
         
-        let verifyButtonTapped = Observable.combineLatest(firstOTPDigitValidation,secondOTPDigitValidation,thirdOTPDigitValidation,fourthOTPDigitValidation) { first,second,third,fourth in
-            return first && second && third && fourth
+        let fifthOTPDigitValidation = fifthOTPTextfield
+            .rx
+            .textChanged
+            .filter { $0 != nil }
+            .map { $0!}
+            .map{$0.count == 1}
+            .share(replay : 1)
+        
+        let verifyButtonTapped = Observable.combineLatest(firstOTPDigitValidation,secondOTPDigitValidation,thirdOTPDigitValidation,fourthOTPDigitValidation, fifthOTPDigitValidation) { first,second,third,fourth, fifth in
+            return first && second && third && fourth && fifth
         }
         
         verifyButtonTapped
