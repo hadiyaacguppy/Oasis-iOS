@@ -105,6 +105,10 @@ class RegistrationViewController: BaseViewController {
                           titleColor: .white,
                           backgroundColor: .clear)
         btn.setTitle("Next".localized, for: .normal)
+        btn.setImage(R.image.iconArrow()!, for: .normal)
+        btn.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+        btn.titleLabel?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+        btn.imageView?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.onTap {
             self.router?.pushToOTPVerificationsScene()
@@ -165,7 +169,7 @@ extension RegistrationViewController{
         NSLayoutConstraint.activate([
             nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
             nextButton.heightAnchor.constraint(equalToConstant: 35),
-            nextButton.widthAnchor.constraint(equalToConstant: 80),
+            nextButton.widthAnchor.constraint(equalToConstant: 90),
             nextButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -24)
         ])
     }

@@ -247,6 +247,7 @@ extension OnboardingConfig {
         
         let borderColor : UIColor
         
+        let btnImage : UIImage
         
         public init(title: String = "Next",
                     attributedTitle: NSAttributedString? = nil,
@@ -257,7 +258,8 @@ extension OnboardingConfig {
                     titleColor: UIColor = .white,
                     backgroundColor: UIColor = UIColor(red: 0.0 / 255.0, green: 102.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0),
                     cornerRadius: CGFloat = 29,
-                    borderColor : UIColor = .white) {
+                    borderColor : UIColor = .white,
+                    btnImage : UIImage = UIImage()) {
             self.title = title
             self.attributedTitle = attributedTitle
             self.lastTitle = lastTitle
@@ -268,6 +270,7 @@ extension OnboardingConfig {
             self.backgroundColor = backgroundColor
             self.cornerRadius = cornerRadius
             self.borderColor = borderColor
+            self.btnImage = btnImage
         }
     }
 }
