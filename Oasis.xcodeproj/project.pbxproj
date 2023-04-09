@@ -80,6 +80,13 @@
 		161F3BE329DAD6FB0053158A /* OTPVerificationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3BDC29DAD6FB0053158A /* OTPVerificationInteractor.swift */; };
 		161F3BE429DAD6FB0053158A /* OTPVerificationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3BDD29DAD6FB0053158A /* OTPVerificationConfigurator.swift */; };
 		161F3BE629DF37F40053158A /* WhiteBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3BE529DF37F40053158A /* WhiteBorderButton.swift */; };
+		161F3BEE29E2FCA20053158A /* CreateConfirmPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 161F3BE729E2FCA20053158A /* CreateConfirmPassword.storyboard */; };
+		161F3BEF29E2FCA20053158A /* CreateConfirmPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3BE829E2FCA20053158A /* CreateConfirmPasswordPresenter.swift */; };
+		161F3BF029E2FCA20053158A /* CreateConfirmPasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3BE929E2FCA20053158A /* CreateConfirmPasswordRouter.swift */; };
+		161F3BF129E2FCA20053158A /* CreateConfirmPasswordModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3BEA29E2FCA20053158A /* CreateConfirmPasswordModels.swift */; };
+		161F3BF229E2FCA20053158A /* CreateConfirmPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3BEB29E2FCA20053158A /* CreateConfirmPasswordViewController.swift */; };
+		161F3BF329E2FCA20053158A /* CreateConfirmPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3BEC29E2FCA20053158A /* CreateConfirmPasswordInteractor.swift */; };
+		161F3BF429E2FCA20053158A /* CreateConfirmPasswordConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3BED29E2FCA20053158A /* CreateConfirmPasswordConfigurator.swift */; };
 		1ACED86ADAA2441F495B6912 /* Pods_AnalyticsManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B66C5D6B0826B75B9813C2 /* Pods_AnalyticsManager.framework */; };
 		374FA5CB00801009F6B43FDB /* Pods_OasisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64659B367BA850135AB1D5E9 /* Pods_OasisTests.framework */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
@@ -328,6 +335,13 @@
 		161F3BDC29DAD6FB0053158A /* OTPVerificationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVerificationInteractor.swift; sourceTree = "<group>"; };
 		161F3BDD29DAD6FB0053158A /* OTPVerificationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVerificationConfigurator.swift; sourceTree = "<group>"; };
 		161F3BE529DF37F40053158A /* WhiteBorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteBorderButton.swift; sourceTree = "<group>"; };
+		161F3BE729E2FCA20053158A /* CreateConfirmPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateConfirmPassword.storyboard; sourceTree = "<group>"; };
+		161F3BE829E2FCA20053158A /* CreateConfirmPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateConfirmPasswordPresenter.swift; sourceTree = "<group>"; };
+		161F3BE929E2FCA20053158A /* CreateConfirmPasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateConfirmPasswordRouter.swift; sourceTree = "<group>"; };
+		161F3BEA29E2FCA20053158A /* CreateConfirmPasswordModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateConfirmPasswordModels.swift; sourceTree = "<group>"; };
+		161F3BEB29E2FCA20053158A /* CreateConfirmPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateConfirmPasswordViewController.swift; sourceTree = "<group>"; };
+		161F3BEC29E2FCA20053158A /* CreateConfirmPasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateConfirmPasswordInteractor.swift; sourceTree = "<group>"; };
+		161F3BED29E2FCA20053158A /* CreateConfirmPasswordConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateConfirmPasswordConfigurator.swift; sourceTree = "<group>"; };
 		1D7408F9BE9E6B05F6D17E8A /* Pods-AnalyticsManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnalyticsManager/Pods-AnalyticsManager.release.xcconfig"; sourceTree = "<group>"; };
 		22C3C119E084FE2B0FF3C34F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
@@ -848,6 +862,13 @@
 		161F3BB729D989E60053158A /* Password & Confirm */ = {
 			isa = PBXGroup;
 			children = (
+				161F3BE729E2FCA20053158A /* CreateConfirmPassword.storyboard */,
+				161F3BE829E2FCA20053158A /* CreateConfirmPasswordPresenter.swift */,
+				161F3BE929E2FCA20053158A /* CreateConfirmPasswordRouter.swift */,
+				161F3BEA29E2FCA20053158A /* CreateConfirmPasswordModels.swift */,
+				161F3BEB29E2FCA20053158A /* CreateConfirmPasswordViewController.swift */,
+				161F3BEC29E2FCA20053158A /* CreateConfirmPasswordInteractor.swift */,
+				161F3BED29E2FCA20053158A /* CreateConfirmPasswordConfigurator.swift */,
 			);
 			path = "Password & Confirm";
 			sourceTree = "<group>";
@@ -896,8 +917,8 @@
 		166EF2FE29D36FE20029908E /* Common Flows */ = {
 			isa = PBXGroup;
 			children = (
-				161F3BB729D989E60053158A /* Password & Confirm */,
 				161F3BB629D989D60053158A /* OTP Verification */,
+				161F3BB729D989E60053158A /* Password & Confirm */,
 				161F3BB529D989D10053158A /* Login */,
 				161F3BB429D989C90053158A /* Registration */,
 			);
@@ -1416,6 +1437,7 @@
 				161F3BA929D4BF670053158A /* Montserrat-Thin.ttf in Resources */,
 				161F3BAC29D4BF670053158A /* Montserrat-Italic.ttf in Resources */,
 				161F3BB029D4BF670053158A /* Montserrat-Light.ttf in Resources */,
+				161F3BEE29E2FCA20053158A /* CreateConfirmPassword.storyboard in Resources */,
 				CF403858216CF78F001F649B /* Initial.storyboard in Resources */,
 				3ECBAAB523D06DD8003672DA /* PushNotification.storyboard in Resources */,
 				161F3BAE29D4BF670053158A /* Montserrat-Bold.ttf in Resources */,
@@ -1665,6 +1687,8 @@
 				CF181BA2208099A0002603A1 /* UITextField+Extensions.swift in Sources */,
 				161F3BC629D98A0E0053158A /* RegistrationConfigurator.swift in Sources */,
 				0FD65F1B20D018730075E251 /* UIButton+Extensions.swift in Sources */,
+				161F3BF229E2FCA20053158A /* CreateConfirmPasswordViewController.swift in Sources */,
+				161F3BF029E2FCA20053158A /* CreateConfirmPasswordRouter.swift in Sources */,
 				161F3B9B29D4BC810053158A /* OnboardingConfig.swift in Sources */,
 				CFF69D6D219554C4003BE6BF /* CGPoint+Extensions.swift in Sources */,
 				0F1B7FB022CA6C9D0079F752 /* UISearchBar+Extensions.swift in Sources */,
@@ -1688,6 +1712,7 @@
 				CF40385A216CF78F001F649B /* InitialRouter.swift in Sources */,
 				3EDC4133224E81BE00624D2B /* ActivityIndicator.swift in Sources */,
 				3E7367F422C6605A00B4C71D /* FeedbackTypes.swift in Sources */,
+				161F3BF429E2FCA20053158A /* CreateConfirmPasswordConfigurator.swift in Sources */,
 				0F57538E20EE12EB0069C139 /* Constants.swift in Sources */,
 				CF8C5CAC20EF9D7E00236C7B /* UICollectionView+Extensions.swift in Sources */,
 				CF8C5CA820EF9D5400236C7B /* Bool+Extensions.swift in Sources */,
@@ -1703,6 +1728,7 @@
 				117C4AB21FD864FD008BB445 /* String+Extensions.swift in Sources */,
 				CF6B70F221EDD5F700204B65 /* VersionLabel.swift in Sources */,
 				CF87EDA0201B6EF700562226 /* BaseViewController.swift in Sources */,
+				161F3BEF29E2FCA20053158A /* CreateConfirmPasswordPresenter.swift in Sources */,
 				161F3B9329D371500053158A /* OnboardingModels.swift in Sources */,
 				3EAFC549219B2D2F00E3C2BB /* TDAlertAction.swift in Sources */,
 				CF56472D211B1B740092EFBD /* Reactive+UIImageView.swift in Sources */,
@@ -1784,6 +1810,7 @@
 				0F1B7FB722CA6CB50079F752 /* LocaleInfo.swift in Sources */,
 				3EDC4159224E893B00624D2B /* BaseUIImageView.swift in Sources */,
 				0F57539D20EE1C430069C139 /* APIClient.swift in Sources */,
+				161F3BF329E2FCA20053158A /* CreateConfirmPasswordInteractor.swift in Sources */,
 				3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */,
 				0F484B4F2165FF5C0060C463 /* Date+Extensions.swift in Sources */,
 				CF2F319E215E8BA0007A912A /* URL+Extensions.swift in Sources */,
@@ -1798,6 +1825,7 @@
 				671336F728184208006CECE4 /* Language.swift in Sources */,
 				3ECBAAB923D06E11003672DA /* PushMessageContent.swift in Sources */,
 				67C9592B26249C7400A67399 /* Decodable+Extensions.swift in Sources */,
+				161F3BF129E2FCA20053158A /* CreateConfirmPasswordModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

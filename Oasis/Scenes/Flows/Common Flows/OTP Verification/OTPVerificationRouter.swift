@@ -24,7 +24,15 @@ class OTPVerificationRouter: OTPVerificationRouterDataPassing{
     }
     
     // MARK: Navigation
-    
+    func pushToCreatePassword(){
+        let vc = R.storyboard.createConfirmPassword.createConfirmPasswordViewControllerVC()!
+        
+        DispatchQueue
+            .main
+            .async {
+                self.viewController.navigationController?.pushViewController(vc, animated: true)
+            }
+    }
     ///Pop The view from the view hierarchy
     func popView(){
         DispatchQueue.main

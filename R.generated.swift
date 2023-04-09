@@ -90,8 +90,10 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 7 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 8 storyboards.
   struct storyboard {
+    /// Storyboard `CreateConfirmPassword`.
+    static let createConfirmPassword = _R.storyboard.createConfirmPassword()
     /// Storyboard `Initial`.
     static let initial = _R.storyboard.initial()
     /// Storyboard `LaunchScreen`.
@@ -106,6 +108,13 @@ struct R: Rswift.Validatable {
     static let pushNotification = _R.storyboard.pushNotification()
     /// Storyboard `Registration`.
     static let registration = _R.storyboard.registration()
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "CreateConfirmPassword", bundle: ...)`
+    static func createConfirmPassword(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.createConfirmPassword)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "Initial", bundle: ...)`
@@ -1147,6 +1156,9 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       #if os(iOS) || os(tvOS)
+      try createConfirmPassword.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try initial.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -1168,6 +1180,34 @@ struct _R: Rswift.Validatable {
       try registration.validate()
       #endif
     }
+
+    #if os(iOS) || os(tvOS)
+    struct createConfirmPassword: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseNavigationController
+
+      let bundle = R.hostingBundle
+      let createConfirmPasswordViewControllerNavVC = StoryboardViewControllerResource<BaseNavigationController>(identifier: "CreateConfirmPasswordViewControllerNavVC")
+      let createConfirmPasswordViewControllerVC = StoryboardViewControllerResource<CreateConfirmPasswordViewController>(identifier: "CreateConfirmPasswordViewControllerVC")
+      let name = "CreateConfirmPassword"
+
+      func createConfirmPasswordViewControllerNavVC(_: Void = ()) -> BaseNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: createConfirmPasswordViewControllerNavVC)
+      }
+
+      func createConfirmPasswordViewControllerVC(_: Void = ()) -> CreateConfirmPasswordViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: createConfirmPasswordViewControllerVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.createConfirmPassword().createConfirmPasswordViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'createConfirmPasswordViewControllerNavVC' could not be loaded from storyboard 'CreateConfirmPassword' as 'BaseNavigationController'.") }
+        if _R.storyboard.createConfirmPassword().createConfirmPasswordViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'createConfirmPasswordViewControllerVC' could not be loaded from storyboard 'CreateConfirmPassword' as 'CreateConfirmPasswordViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     struct initial: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {

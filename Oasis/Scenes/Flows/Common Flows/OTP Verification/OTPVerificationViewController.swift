@@ -37,6 +37,9 @@ class OTPVerificationViewController: BaseViewController {
     private lazy var verifyButton : WhiteBorderButton = {
         let button = WhiteBorderButton()
         button.setTitle("Verify".localized, for: .normal)
+        button.onTap {
+            self.router?.pushToCreatePassword()
+        }
         return button
     }()
     
@@ -115,7 +118,7 @@ class OTPVerificationViewController: BaseViewController {
         lbl.attributedText = attributedString
         
         lbl.onTap {
-            print("Tapped on send new otp")
+            
         }
         return lbl
     }()
