@@ -1,6 +1,6 @@
   
 
-## Base Project Swift
+## Oasis iOS Project
 
   
 
@@ -12,40 +12,37 @@
 
   
 
--  [X] Add Device Manager
+-  [X] Setup project
 
   
 
--  [X] Target for Analytics
+-  [X] Kickoff design dev (Parent flow mainly)
 
   
 
--  [X] Add App Manager
+-  [ ] Start implementing services
 
   
 
--  [X] Add NSAttributedString Extensions
+-  [ ] Adding animations
 
   
 
--  [X] Migrate to Swift 5 and Xcode 10.2
+-  [ ] Create AppStore account
 
   
 
--  [ ] Session Manager make more secure
+-  [ ] Create development certificates and provisioning profiles
 
   
 
--  [X] Add SwiftLog
+-  [ ] Add analytics & crashlytics
 
   
 
 - [ ] Complete Unit Tests
 
   
-
-- [ ] Pagintable Table View
-
   
 
   
@@ -56,41 +53,14 @@
 
   
 
-Suppose your new project name is `MyApp`.
-
-  
-
-** Be sure not to include spaces or any special characters in the project name ** . App display name can be changed later to match any combination
+1.  `git clone https://github.com/HadiYaac/Oasis-iOS.git`
 
   
 
   
 
-1.  `git clone https://gitlab.com/tedmob/ios/base-project-swift.git MyApp`
-
-  
-
-  
-
-2. Run `bash rename-project.command ` once the clone is done.
-
-  
-
-  
-
-3. This will ask for the new name and a confirmation
-
-  
-
-  
-
-4. Once rename is don, It will commit the new changes with a special commit message
-
-  
-
-  
-
-5. Run `carthage update --platform iOS --no-use-binaries`
+2. *Carthage Removed for now *
+Run `carthage update --platform iOS --no-use-binaries`
 <details>
   <summary>Solution for Carthage failure on Xcode 12.0.1 mainly</summary>
   
@@ -129,26 +99,14 @@ carthage "$@"
 
   
 
-6. Run `pod install --verbose`
 
-  
-
-  
-
-7. Add your remote origin since git was reinitialized:
-```
-git remote add origin git@gitlab.com:tedmob/MyApp.git
-git add .
-git commit -m "Initial commit"
-git push -u origin master 
-```
+3. Run `pod install --verbose`
 
 
 
 
 
-
-8. Open `MyApp.xcworkspace` and build
+4. Open `Oasis.xcworkspace` and build
 
 
   
@@ -162,7 +120,7 @@ This project has 2 UnitTest Targets
 
   
 
-1. BaseProjectTest -> Main Test Target for project
+1. OasisProjectTest -> Main Test Target for project
 
 2. SessionRepositoryTests -> Test Target for the SessionRepository Target
 
@@ -191,4 +149,4 @@ Contributions are very welcomed. If you feel that a feature mush be added or a b
 
 6. Submit a pull request
 
-7.  # PLEASE HAVE SOME DOCUMENTATION, EXPLANATION, USAGE (CODE) in the merge request description. ANY empty merge request will be closed & the author has to buy the team fries from massaad
+7.  # PLEASE HAVE SOME DOCUMENTATION, EXPLANATION, USAGE (CODE) in the merge request description.
