@@ -83,7 +83,7 @@ class LoginViewController: BaseViewController {
         let button = WhiteBorderButton()
         button.setTitle("Login".localized, for: .normal)
         button.onTap {
-            
+            self.router?.redirectToHome()
         }
         return button
     }()

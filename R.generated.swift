@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 9 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 10 storyboards.
   struct storyboard {
     /// Storyboard `CreateConfirmPassword`.
     static let createConfirmPassword = _R.storyboard.createConfirmPassword()
@@ -104,6 +104,8 @@ struct R: Rswift.Validatable {
     static let otpVerification = _R.storyboard.otpVerification()
     /// Storyboard `Onboarding`.
     static let onboarding = _R.storyboard.onboarding()
+    /// Storyboard `ParentsHome`.
+    static let parentsHome = _R.storyboard.parentsHome()
     /// Storyboard `PushNotification`.
     static let pushNotification = _R.storyboard.pushNotification()
     /// Storyboard `Registration`.
@@ -150,6 +152,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Onboarding", bundle: ...)`
     static func onboarding(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.onboarding)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "ParentsHome", bundle: ...)`
+    static func parentsHome(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.parentsHome)
     }
     #endif
 
@@ -1240,6 +1249,9 @@ struct _R: Rswift.Validatable {
       try onboarding.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try parentsHome.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try pushNotification.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -1394,6 +1406,34 @@ struct _R: Rswift.Validatable {
         }
         if _R.storyboard.otpVerification().otpVerificationViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'otpVerificationViewControllerNavVC' could not be loaded from storyboard 'OTPVerification' as 'BaseNavigationController'.") }
         if _R.storyboard.otpVerification().otpVerificationViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'otpVerificationViewControllerVC' could not be loaded from storyboard 'OTPVerification' as 'OTPVerificationViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct parentsHome: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseNavigationController
+
+      let bundle = R.hostingBundle
+      let name = "ParentsHome"
+      let parentsHomeViewControllerNavVC = StoryboardViewControllerResource<BaseNavigationController>(identifier: "ParentsHomeViewControllerNavVC")
+      let parentsHomeViewControllerVC = StoryboardViewControllerResource<ParentsHomeViewController>(identifier: "ParentsHomeViewControllerVC")
+
+      func parentsHomeViewControllerNavVC(_: Void = ()) -> BaseNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: parentsHomeViewControllerNavVC)
+      }
+
+      func parentsHomeViewControllerVC(_: Void = ()) -> ParentsHomeViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: parentsHomeViewControllerVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.parentsHome().parentsHomeViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'parentsHomeViewControllerNavVC' could not be loaded from storyboard 'ParentsHome' as 'BaseNavigationController'.") }
+        if _R.storyboard.parentsHome().parentsHomeViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'parentsHomeViewControllerVC' could not be loaded from storyboard 'ParentsHome' as 'ParentsHomeViewController'.") }
       }
 
       fileprivate init() {}

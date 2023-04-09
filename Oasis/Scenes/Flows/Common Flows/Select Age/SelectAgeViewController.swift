@@ -221,7 +221,6 @@ extension SelectAgeViewController:UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.ageCell.identifier, for: indexPath) as! AgeTableViewCell
 
         let newFontSize = 65 - (indexPath.row * 7)
-        print("Font = \(newFontSize)")
         cell.setupCell(ageNumber: datasource[indexPath.row], fontSize: newFontSize > 25 ? CGFloat(newFontSize) : 25, isAgeSelected: indexPath == firstVisibleIndexPath)
         return cell
     }
@@ -234,7 +233,6 @@ extension SelectAgeViewController:UITableViewDataSource {
 
 extension SelectAgeViewController:UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let content = datasource[indexPath.row]
         firstVisibleIndexPath = indexPath
     }
 }

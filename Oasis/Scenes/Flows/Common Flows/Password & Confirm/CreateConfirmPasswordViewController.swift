@@ -177,7 +177,7 @@ extension CreateConfirmPasswordViewController{
         }
         
         if newPass.count > 5 && confirmPass.count > 5 && newPass == confirmPass {
-            showSimpleAlertView("Thanks!", message: "You've completed the steps to register", withCompletionHandler: nil)
+            self.router?.redirectToHome()
         }else{
             showSimpleAlertView("Sorry", message: "Your passwords does not match", withCompletionHandler: nil)
         }
