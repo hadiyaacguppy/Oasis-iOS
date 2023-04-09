@@ -23,7 +23,7 @@ extension Reactive where Base : UIButton {
                 button.alpha = 1.0
             case false :
                 button.isEnabled = false
-                button.alpha = 0.5
+                button.alpha = 0.8
             }
         }
     }
