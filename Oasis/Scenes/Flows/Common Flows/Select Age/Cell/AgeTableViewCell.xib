@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ageCell" rowHeight="165" id="KGk-i7-Jjw" customClass="AgeTableViewCell" customModule="Oasis" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="189" height="165"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="189" height="165"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOR-OK-KYa" customClass="BaseUIView" customModule="Oasis" customModuleProvider="target">
+                        <rect key="frame" x="5" y="5" width="179" height="155"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMF-OE-IH3" customClass="BaseLabel" customModule="Oasis" customModuleProvider="target">
+                        <rect key="frame" x="73.666666666666671" y="72" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="TOR-OK-KYa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="2q8-P5-2dT"/>
+                    <constraint firstItem="FMF-OE-IH3" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="GG6-bD-V2b"/>
+                    <constraint firstAttribute="trailing" secondItem="TOR-OK-KYa" secondAttribute="trailing" constant="5" id="Ryo-93-KlF"/>
+                    <constraint firstAttribute="bottom" secondItem="TOR-OK-KYa" secondAttribute="bottom" constant="5" id="XVz-fr-icw"/>
+                    <constraint firstItem="FMF-OE-IH3" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="iJJ-wm-QYh"/>
+                    <constraint firstItem="TOR-OK-KYa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="yux-f7-OBh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="ageNumberLabel" destination="FMF-OE-IH3" id="YNi-OF-J0z"/>
+                <outlet property="selectionView" destination="TOR-OK-KYa" id="G0L-Aw-XIw"/>
+            </connections>
+            <point key="canvasLocation" x="-256.15384615384613" y="30.924170616113742"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

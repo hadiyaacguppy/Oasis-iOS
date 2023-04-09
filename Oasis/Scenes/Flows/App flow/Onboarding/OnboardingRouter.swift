@@ -35,7 +35,7 @@ class OnboardingRouter: OnboardingRouterDataPassing{
     }
     
     func redirectToRegistration(){
-        let vc = R.storyboard.registration.registrationViewControllerNavVC()!
+        let vc = R.storyboard.selectAge.selectAgeViewControllerNavVC()!
         let window = (UIApplication.shared.delegate as! AppDelegate).window!
         DispatchQueue.main.async {
             UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft, animations: {

@@ -87,6 +87,15 @@
 		161F3BF229E2FCA20053158A /* CreateConfirmPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3BEB29E2FCA20053158A /* CreateConfirmPasswordViewController.swift */; };
 		161F3BF329E2FCA20053158A /* CreateConfirmPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3BEC29E2FCA20053158A /* CreateConfirmPasswordInteractor.swift */; };
 		161F3BF429E2FCA20053158A /* CreateConfirmPasswordConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3BED29E2FCA20053158A /* CreateConfirmPasswordConfigurator.swift */; };
+		161F3BFD29E3157D0053158A /* SelectAge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 161F3BF629E3157D0053158A /* SelectAge.storyboard */; };
+		161F3BFE29E3157D0053158A /* SelectAgePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3BF729E3157D0053158A /* SelectAgePresenter.swift */; };
+		161F3BFF29E3157D0053158A /* SelectAgeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3BF829E3157D0053158A /* SelectAgeRouter.swift */; };
+		161F3C0029E3157D0053158A /* SelectAgeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3BF929E3157D0053158A /* SelectAgeModels.swift */; };
+		161F3C0129E3157D0053158A /* SelectAgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3BFA29E3157D0053158A /* SelectAgeViewController.swift */; };
+		161F3C0229E3157D0053158A /* SelectAgeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3BFB29E3157D0053158A /* SelectAgeInteractor.swift */; };
+		161F3C0329E3157D0053158A /* SelectAgeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3BFC29E3157D0053158A /* SelectAgeConfigurator.swift */; };
+		161F3C0729E319050053158A /* AgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C0529E319050053158A /* AgeTableViewCell.swift */; };
+		161F3C0829E319050053158A /* AgeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161F3C0629E319050053158A /* AgeTableViewCell.xib */; };
 		1ACED86ADAA2441F495B6912 /* Pods_AnalyticsManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B66C5D6B0826B75B9813C2 /* Pods_AnalyticsManager.framework */; };
 		374FA5CB00801009F6B43FDB /* Pods_OasisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64659B367BA850135AB1D5E9 /* Pods_OasisTests.framework */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
@@ -342,6 +351,15 @@
 		161F3BEB29E2FCA20053158A /* CreateConfirmPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateConfirmPasswordViewController.swift; sourceTree = "<group>"; };
 		161F3BEC29E2FCA20053158A /* CreateConfirmPasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateConfirmPasswordInteractor.swift; sourceTree = "<group>"; };
 		161F3BED29E2FCA20053158A /* CreateConfirmPasswordConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateConfirmPasswordConfigurator.swift; sourceTree = "<group>"; };
+		161F3BF629E3157D0053158A /* SelectAge.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectAge.storyboard; sourceTree = "<group>"; };
+		161F3BF729E3157D0053158A /* SelectAgePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAgePresenter.swift; sourceTree = "<group>"; };
+		161F3BF829E3157D0053158A /* SelectAgeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAgeRouter.swift; sourceTree = "<group>"; };
+		161F3BF929E3157D0053158A /* SelectAgeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAgeModels.swift; sourceTree = "<group>"; };
+		161F3BFA29E3157D0053158A /* SelectAgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAgeViewController.swift; sourceTree = "<group>"; };
+		161F3BFB29E3157D0053158A /* SelectAgeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAgeInteractor.swift; sourceTree = "<group>"; };
+		161F3BFC29E3157D0053158A /* SelectAgeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAgeConfigurator.swift; sourceTree = "<group>"; };
+		161F3C0529E319050053158A /* AgeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeTableViewCell.swift; sourceTree = "<group>"; };
+		161F3C0629E319050053158A /* AgeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgeTableViewCell.xib; sourceTree = "<group>"; };
 		1D7408F9BE9E6B05F6D17E8A /* Pods-AnalyticsManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnalyticsManager/Pods-AnalyticsManager.release.xcconfig"; sourceTree = "<group>"; };
 		22C3C119E084FE2B0FF3C34F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
@@ -873,6 +891,30 @@
 			path = "Password & Confirm";
 			sourceTree = "<group>";
 		};
+		161F3BF529E3156F0053158A /* Select Age */ = {
+			isa = PBXGroup;
+			children = (
+				161F3C0429E318F60053158A /* Cell */,
+				161F3BF629E3157D0053158A /* SelectAge.storyboard */,
+				161F3BF729E3157D0053158A /* SelectAgePresenter.swift */,
+				161F3BF829E3157D0053158A /* SelectAgeRouter.swift */,
+				161F3BF929E3157D0053158A /* SelectAgeModels.swift */,
+				161F3BFA29E3157D0053158A /* SelectAgeViewController.swift */,
+				161F3BFB29E3157D0053158A /* SelectAgeInteractor.swift */,
+				161F3BFC29E3157D0053158A /* SelectAgeConfigurator.swift */,
+			);
+			path = "Select Age";
+			sourceTree = "<group>";
+		};
+		161F3C0429E318F60053158A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				161F3C0529E319050053158A /* AgeTableViewCell.swift */,
+				161F3C0629E319050053158A /* AgeTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		166EF2F929D36FC90029908E /* Flows */ = {
 			isa = PBXGroup;
 			children = (
@@ -917,6 +959,7 @@
 		166EF2FE29D36FE20029908E /* Common Flows */ = {
 			isa = PBXGroup;
 			children = (
+				161F3BF529E3156F0053158A /* Select Age */,
 				161F3BB629D989D60053158A /* OTP Verification */,
 				161F3BB729D989E60053158A /* Password & Confirm */,
 				161F3BB529D989D10053158A /* Login */,
@@ -1433,8 +1476,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				161F3BFD29E3157D0053158A /* SelectAge.storyboard in Resources */,
 				161F3BAB29D4BF670053158A /* Montserrat-SemiBold.ttf in Resources */,
 				161F3BA929D4BF670053158A /* Montserrat-Thin.ttf in Resources */,
+				161F3C0829E319050053158A /* AgeTableViewCell.xib in Resources */,
 				161F3BAC29D4BF670053158A /* Montserrat-Italic.ttf in Resources */,
 				161F3BB029D4BF670053158A /* Montserrat-Light.ttf in Resources */,
 				161F3BEE29E2FCA20053158A /* CreateConfirmPassword.storyboard in Resources */,
@@ -1690,6 +1735,7 @@
 				161F3BF229E2FCA20053158A /* CreateConfirmPasswordViewController.swift in Sources */,
 				161F3BF029E2FCA20053158A /* CreateConfirmPasswordRouter.swift in Sources */,
 				161F3B9B29D4BC810053158A /* OnboardingConfig.swift in Sources */,
+				161F3C0729E319050053158A /* AgeTableViewCell.swift in Sources */,
 				CFF69D6D219554C4003BE6BF /* CGPoint+Extensions.swift in Sources */,
 				0F1B7FB022CA6C9D0079F752 /* UISearchBar+Extensions.swift in Sources */,
 				161F3BD429D98AE00053158A /* LoginConfigurator.swift in Sources */,
@@ -1703,6 +1749,7 @@
 				161F3B9229D371500053158A /* OnboardingRouter.swift in Sources */,
 				CF8C5C9E20EF9CA400236C7B /* DatePickerDialog.swift in Sources */,
 				CF564702211B142E0092EFBD /* OneSignalPushService.swift in Sources */,
+				161F3BFE29E3157D0053158A /* SelectAgePresenter.swift in Sources */,
 				67F03A5C26F20AA600ED91ED /* NetworkErrorResponse.swift in Sources */,
 				CFE259E822C9CDB4006B0472 /* TDFullIMageView.swift in Sources */,
 				CFDB669B22C601BB006278A2 /* AppDelegate+OneSignal.swift in Sources */,
@@ -1710,6 +1757,7 @@
 				0FD65F1920D018480075E251 /* Double+Extensions.swift in Sources */,
 				4AEF647522107DC000D53D75 /* BaseButton.swift in Sources */,
 				CF40385A216CF78F001F649B /* InitialRouter.swift in Sources */,
+				161F3BFF29E3157D0053158A /* SelectAgeRouter.swift in Sources */,
 				3EDC4133224E81BE00624D2B /* ActivityIndicator.swift in Sources */,
 				3E7367F422C6605A00B4C71D /* FeedbackTypes.swift in Sources */,
 				161F3BF429E2FCA20053158A /* CreateConfirmPasswordConfigurator.swift in Sources */,
@@ -1736,6 +1784,7 @@
 				3ECBAAB723D06DD8003672DA /* PushNotificationContainer.swift in Sources */,
 				161F3BE129DAD6FB0053158A /* OTPVerificationModels.swift in Sources */,
 				3EDC4156224E886500624D2B /* BaseUIView.swift in Sources */,
+				161F3C0329E3157D0053158A /* SelectAgeConfigurator.swift in Sources */,
 				3E59224C23C3992100E729B7 /* Font.swift in Sources */,
 				67290A02210E441400632C4F /* PlaceHolderHelper.swift in Sources */,
 				0F1B7FBD22CA6CBD0079F752 /* PhoneCodeCell.swift in Sources */,
@@ -1743,6 +1792,7 @@
 				3E8E350422CA0BDE009A3113 /* Observable+Operators.swift in Sources */,
 				161F3B9D29D4BD160053158A /* OnboardingController.swift in Sources */,
 				3E1DEAFA22BA660F00FAD9F4 /* BaseLabel.swift in Sources */,
+				161F3C0229E3157D0053158A /* SelectAgeInteractor.swift in Sources */,
 				161F3BB329D989560053158A /* WhiteBorderTextfield.swift in Sources */,
 				67C9591126247EF300A67399 /* APIErrorModel.swift in Sources */,
 				161F3BD029D98AE00053158A /* LoginRouter.swift in Sources */,
@@ -1793,6 +1843,7 @@
 				67C9591F2624845200A67399 /* NetworkCode.swift in Sources */,
 				161F3B9429D371500053158A /* OnboardingViewController.swift in Sources */,
 				0F1B7FBC22CA6CBD0079F752 /* CountryCell.swift in Sources */,
+				161F3C0129E3157D0053158A /* SelectAgeViewController.swift in Sources */,
 				67C958F42624782100A67399 /* Reactive+UITextField.swift in Sources */,
 				CF403859216CF78F001F649B /* InitialPresenter.swift in Sources */,
 				0F57539520EE185F0069C139 /* Array+Extensions.swift in Sources */,
@@ -1820,6 +1871,7 @@
 				3EBDE0402541E8670056A0C4 /* AppDelegate+PopupConfig.swift in Sources */,
 				CF7823B420EF95A7003069BD /* APIErrorManager.swift in Sources */,
 				3E1DEAF022BA62FD00FAD9F4 /* UIView+Shadow.swift in Sources */,
+				161F3C0029E3157D0053158A /* SelectAgeModels.swift in Sources */,
 				161F3BE229DAD6FB0053158A /* OTPVerificationViewController.swift in Sources */,
 				CFAD4D0E21955EF300AF4375 /* LanguageService.swift in Sources */,
 				671336F728184208006CECE4 /* Language.swift in Sources */,

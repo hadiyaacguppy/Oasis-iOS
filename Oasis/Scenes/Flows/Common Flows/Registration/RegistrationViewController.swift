@@ -100,15 +100,18 @@ class RegistrationViewController: BaseViewController {
     
     private lazy var nextButton : BaseButton = {
         let btn = BaseButton()
-       // btn.imageStyle  = .init(image: <#T##UIImage#>, imagePadding: <#T##CGFloat#>, imagePlacement: <#T##NSDirectionalRectEdge#>)
+        if #available(iOS 15.0, *) {
+            btn.imageStyle  = .init(image: R.image.iconArrow()!, imagePadding: 2.0, imagePlacement: .trailing)
+        } else {
+            btn.setImage(R.image.iconArrow()!, for: .normal)
+            btn.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+            btn.titleLabel?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+            btn.imageView?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+        }
         btn.style = .init(titleFont: MainFont.bold.with(size: 20),
                           titleColor: .white,
                           backgroundColor: .clear)
         btn.setTitle("Next".localized, for: .normal)
-        btn.setImage(R.image.iconArrow()!, for: .normal)
-        btn.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
-        btn.titleLabel?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
-        btn.imageView?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.onTap {
             self.router?.pushToOTPVerificationsScene()

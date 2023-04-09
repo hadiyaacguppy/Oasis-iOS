@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 8 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 9 storyboards.
   struct storyboard {
     /// Storyboard `CreateConfirmPassword`.
     static let createConfirmPassword = _R.storyboard.createConfirmPassword()
@@ -108,6 +108,8 @@ struct R: Rswift.Validatable {
     static let pushNotification = _R.storyboard.pushNotification()
     /// Storyboard `Registration`.
     static let registration = _R.storyboard.registration()
+    /// Storyboard `SelectAge`.
+    static let selectAge = _R.storyboard.selectAge()
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "CreateConfirmPassword", bundle: ...)`
@@ -162,6 +164,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Registration", bundle: ...)`
     static func registration(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.registration)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "SelectAge", bundle: ...)`
+    static func selectAge(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.selectAge)
     }
     #endif
 
@@ -1141,6 +1150,34 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  struct nib {
+    /// Nib `AgeTableViewCell`.
+    static let ageTableViewCell = _R.nib._AgeTableViewCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AgeTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.ageTableViewCell) instead")
+    static func ageTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.ageTableViewCell)
+    }
+    #endif
+
+    static func ageTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AgeTableViewCell? {
+      return R.nib.ageTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AgeTableViewCell
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `ageCell`.
+    static let ageCell: Rswift.ReuseIdentifier<AgeTableViewCell> = Rswift.ReuseIdentifier(identifier: "ageCell")
+
+    fileprivate init() {}
+  }
+
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()
@@ -1160,6 +1197,26 @@ struct _R: Rswift.Validatable {
     try storyboard.validate()
     #endif
   }
+
+  #if os(iOS) || os(tvOS)
+  struct nib {
+    struct _AgeTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = AgeTableViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "ageCell"
+      let name = "AgeTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AgeTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AgeTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
 
   #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {
@@ -1187,6 +1244,9 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try registration.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try selectAge.validate()
       #endif
     }
 
@@ -1396,6 +1456,34 @@ struct _R: Rswift.Validatable {
         }
         if _R.storyboard.registration().registrationViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'registrationViewControllerNavVC' could not be loaded from storyboard 'Registration' as 'BaseNavigationController'.") }
         if _R.storyboard.registration().registrationViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'registrationViewControllerVC' could not be loaded from storyboard 'Registration' as 'RegistrationViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct selectAge: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseNavigationController
+
+      let bundle = R.hostingBundle
+      let name = "SelectAge"
+      let selectAgeViewControllerNavVC = StoryboardViewControllerResource<BaseNavigationController>(identifier: "SelectAgeViewControllerNavVC")
+      let selectAgeViewControllerVC = StoryboardViewControllerResource<SelectAgeViewController>(identifier: "SelectAgeViewControllerVC")
+
+      func selectAgeViewControllerNavVC(_: Void = ()) -> BaseNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: selectAgeViewControllerNavVC)
+      }
+
+      func selectAgeViewControllerVC(_: Void = ()) -> SelectAgeViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: selectAgeViewControllerVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.selectAge().selectAgeViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'selectAgeViewControllerNavVC' could not be loaded from storyboard 'SelectAge' as 'BaseNavigationController'.") }
+        if _R.storyboard.selectAge().selectAgeViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'selectAgeViewControllerVC' could not be loaded from storyboard 'SelectAge' as 'SelectAgeViewController'.") }
       }
 
       fileprivate init() {}
