@@ -103,6 +103,21 @@
 		161F3C1529E322BE0053158A /* ParentsHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C0E29E322BE0053158A /* ParentsHomeViewController.swift */; };
 		161F3C1629E322BE0053158A /* ParentsHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C0F29E322BE0053158A /* ParentsHomeInteractor.swift */; };
 		161F3C1729E322BE0053158A /* ParentsHomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C1029E322BE0053158A /* ParentsHomeConfigurator.swift */; };
+		161F3C2029E5ACD40053158A /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C1929E5ACD30053158A /* Help.swift */; };
+		161F3C2129E5ACD40053158A /* PinterestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C1B29E5ACD40053158A /* PinterestCell.swift */; };
+		161F3C2229E5ACD40053158A /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C1C29E5ACD40053158A /* PinterestLayout.swift */; };
+		161F3C2329E5ACD40053158A /* PinterestLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C1D29E5ACD40053158A /* PinterestLayoutDelegate.swift */; };
+		161F3C2429E5ACD40053158A /* PinterestLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C1E29E5ACD40053158A /* PinterestLayoutAttributes.swift */; };
+		161F3C2529E5ACD40053158A /* PinterestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C1F29E5ACD40053158A /* PinterestVC.swift */; };
+		161F3C2E29E5AD4D0053158A /* Interests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 161F3C2729E5AD4D0053158A /* Interests.storyboard */; };
+		161F3C2F29E5AD4D0053158A /* InterestsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C2829E5AD4D0053158A /* InterestsPresenter.swift */; };
+		161F3C3029E5AD4D0053158A /* InterestsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C2929E5AD4D0053158A /* InterestsRouter.swift */; };
+		161F3C3129E5AD4D0053158A /* InterestsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C2A29E5AD4D0053158A /* InterestsModels.swift */; };
+		161F3C3229E5AD4D0053158A /* InterestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C2B29E5AD4D0053158A /* InterestsViewController.swift */; };
+		161F3C3329E5AD4D0053158A /* InterestsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C2C29E5AD4D0053158A /* InterestsInteractor.swift */; };
+		161F3C3429E5AD4D0053158A /* InterestsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C2D29E5AD4D0053158A /* InterestsConfigurator.swift */; };
+		161F3C3829E5AF330053158A /* InterestsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C3629E5AF330053158A /* InterestsCollectionViewCell.swift */; };
+		161F3C3929E5AF330053158A /* InterestsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161F3C3729E5AF330053158A /* InterestsCollectionViewCell.xib */; };
 		1ACED86ADAA2441F495B6912 /* Pods_AnalyticsManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B66C5D6B0826B75B9813C2 /* Pods_AnalyticsManager.framework */; };
 		374FA5CB00801009F6B43FDB /* Pods_OasisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64659B367BA850135AB1D5E9 /* Pods_OasisTests.framework */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
@@ -374,6 +389,22 @@
 		161F3C0E29E322BE0053158A /* ParentsHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsHomeViewController.swift; sourceTree = "<group>"; };
 		161F3C0F29E322BE0053158A /* ParentsHomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsHomeInteractor.swift; sourceTree = "<group>"; };
 		161F3C1029E322BE0053158A /* ParentsHomeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsHomeConfigurator.swift; sourceTree = "<group>"; };
+		161F3C1929E5ACD30053158A /* Help.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
+		161F3C1A29E5ACD40053158A /* PinterestLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinterestLayout.h; sourceTree = "<group>"; };
+		161F3C1B29E5ACD40053158A /* PinterestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestCell.swift; sourceTree = "<group>"; };
+		161F3C1C29E5ACD40053158A /* PinterestLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
+		161F3C1D29E5ACD40053158A /* PinterestLayoutDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayoutDelegate.swift; sourceTree = "<group>"; };
+		161F3C1E29E5ACD40053158A /* PinterestLayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayoutAttributes.swift; sourceTree = "<group>"; };
+		161F3C1F29E5ACD40053158A /* PinterestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestVC.swift; sourceTree = "<group>"; };
+		161F3C2729E5AD4D0053158A /* Interests.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interests.storyboard; sourceTree = "<group>"; };
+		161F3C2829E5AD4D0053158A /* InterestsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsPresenter.swift; sourceTree = "<group>"; };
+		161F3C2929E5AD4D0053158A /* InterestsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsRouter.swift; sourceTree = "<group>"; };
+		161F3C2A29E5AD4D0053158A /* InterestsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsModels.swift; sourceTree = "<group>"; };
+		161F3C2B29E5AD4D0053158A /* InterestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsViewController.swift; sourceTree = "<group>"; };
+		161F3C2C29E5AD4D0053158A /* InterestsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsInteractor.swift; sourceTree = "<group>"; };
+		161F3C2D29E5AD4D0053158A /* InterestsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsConfigurator.swift; sourceTree = "<group>"; };
+		161F3C3629E5AF330053158A /* InterestsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsCollectionViewCell.swift; sourceTree = "<group>"; };
+		161F3C3729E5AF330053158A /* InterestsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InterestsCollectionViewCell.xib; sourceTree = "<group>"; };
 		1D7408F9BE9E6B05F6D17E8A /* Pods-AnalyticsManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnalyticsManager/Pods-AnalyticsManager.release.xcconfig"; sourceTree = "<group>"; };
 		22C3C119E084FE2B0FF3C34F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
@@ -943,6 +974,44 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		161F3C1829E5ACBC0053158A /* Custom CollectionView Layout */ = {
+			isa = PBXGroup;
+			children = (
+				161F3C1929E5ACD30053158A /* Help.swift */,
+				161F3C1B29E5ACD40053158A /* PinterestCell.swift */,
+				161F3C1A29E5ACD40053158A /* PinterestLayout.h */,
+				161F3C1C29E5ACD40053158A /* PinterestLayout.swift */,
+				161F3C1E29E5ACD40053158A /* PinterestLayoutAttributes.swift */,
+				161F3C1D29E5ACD40053158A /* PinterestLayoutDelegate.swift */,
+				161F3C1F29E5ACD40053158A /* PinterestVC.swift */,
+			);
+			path = "Custom CollectionView Layout";
+			sourceTree = "<group>";
+		};
+		161F3C2629E5AD350053158A /* Set Interests */ = {
+			isa = PBXGroup;
+			children = (
+				161F3C3529E5AF210053158A /* Collection cell */,
+				161F3C2729E5AD4D0053158A /* Interests.storyboard */,
+				161F3C2829E5AD4D0053158A /* InterestsPresenter.swift */,
+				161F3C2929E5AD4D0053158A /* InterestsRouter.swift */,
+				161F3C2A29E5AD4D0053158A /* InterestsModels.swift */,
+				161F3C2B29E5AD4D0053158A /* InterestsViewController.swift */,
+				161F3C2C29E5AD4D0053158A /* InterestsInteractor.swift */,
+				161F3C2D29E5AD4D0053158A /* InterestsConfigurator.swift */,
+			);
+			path = "Set Interests";
+			sourceTree = "<group>";
+		};
+		161F3C3529E5AF210053158A /* Collection cell */ = {
+			isa = PBXGroup;
+			children = (
+				161F3C3629E5AF330053158A /* InterestsCollectionViewCell.swift */,
+				161F3C3729E5AF330053158A /* InterestsCollectionViewCell.xib */,
+			);
+			path = "Collection cell";
+			sourceTree = "<group>";
+		};
 		166EF2F929D36FC90029908E /* Flows */ = {
 			isa = PBXGroup;
 			children = (
@@ -967,6 +1036,7 @@
 		166EF2FB29D36FCE0029908E /* Adults */ = {
 			isa = PBXGroup;
 			children = (
+				161F3C2629E5AD350053158A /* Set Interests */,
 			);
 			path = Adults;
 			sourceTree = "<group>";
@@ -1225,6 +1295,7 @@
 		CF87EDA2201B8BEB00562226 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				161F3C1829E5ACBC0053158A /* Custom CollectionView Layout */,
 				3EDC4157224E892A00624D2B /* UIImageView */,
 				3EDC4154224E885E00624D2B /* UIView */,
 				4AEF647322107DAE00D53D75 /* Buttons */,
@@ -1513,6 +1584,7 @@
 				161F3BB029D4BF670053158A /* Montserrat-Light.ttf in Resources */,
 				161F3BEE29E2FCA20053158A /* CreateConfirmPassword.storyboard in Resources */,
 				CF403858216CF78F001F649B /* Initial.storyboard in Resources */,
+				161F3C3929E5AF330053158A /* InterestsCollectionViewCell.xib in Resources */,
 				3ECBAAB523D06DD8003672DA /* PushNotification.storyboard in Resources */,
 				161F3BAE29D4BF670053158A /* Montserrat-Bold.ttf in Resources */,
 				161F3BAD29D4BF670053158A /* Montserrat-Regular.ttf in Resources */,
@@ -1526,6 +1598,7 @@
 				161F3BA829D4BF670053158A /* Montserrat-ExtraLight.ttf in Resources */,
 				112239221FD5C7B000486528 /* LaunchScreen.storyboard in Resources */,
 				1122391F1FD5C7B000486528 /* Assets.xcassets in Resources */,
+				161F3C2E29E5AD4D0053158A /* Interests.storyboard in Resources */,
 				161F3C1129E322BE0053158A /* ParentsHome.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1775,16 +1848,20 @@
 				161F3BD629D98DE00053158A /* UIStackview+Extensions.swift in Sources */,
 				CFE27A17214A9BE200DBB917 /* Reactive+Dictionary.swift in Sources */,
 				117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */,
+				161F3C2529E5ACD40053158A /* PinterestVC.swift in Sources */,
 				3E1DEAF622BA63E900FAD9F4 /* UIRectCorner+Extensions.swift in Sources */,
 				161F3B9229D371500053158A /* OnboardingRouter.swift in Sources */,
+				161F3C2329E5ACD40053158A /* PinterestLayoutDelegate.swift in Sources */,
 				CF8C5C9E20EF9CA400236C7B /* DatePickerDialog.swift in Sources */,
 				CF564702211B142E0092EFBD /* OneSignalPushService.swift in Sources */,
 				161F3BFE29E3157D0053158A /* SelectAgePresenter.swift in Sources */,
+				161F3C2229E5ACD40053158A /* PinterestLayout.swift in Sources */,
 				67F03A5C26F20AA600ED91ED /* NetworkErrorResponse.swift in Sources */,
 				CFE259E822C9CDB4006B0472 /* TDFullIMageView.swift in Sources */,
 				CFDB669B22C601BB006278A2 /* AppDelegate+OneSignal.swift in Sources */,
 				3ECBAAB623D06DD8003672DA /* PushNotificationMessageController.swift in Sources */,
 				0FD65F1920D018480075E251 /* Double+Extensions.swift in Sources */,
+				161F3C2029E5ACD40053158A /* Help.swift in Sources */,
 				4AEF647522107DC000D53D75 /* BaseButton.swift in Sources */,
 				CF40385A216CF78F001F649B /* InitialRouter.swift in Sources */,
 				161F3BFF29E3157D0053158A /* SelectAgeRouter.swift in Sources */,
@@ -1831,6 +1908,7 @@
 				4AEF64772210842F00D53D75 /* BaseSkyFloatingTextField.swift in Sources */,
 				11CD5280230AFF91003D08BE /* ViewEmbedder.swift in Sources */,
 				161F3B9129D371500053158A /* OnboardingPresenter.swift in Sources */,
+				161F3C2129E5ACD40053158A /* PinterestCell.swift in Sources */,
 				CF40385B216CF78F001F649B /* InitialModels.swift in Sources */,
 				161F3B9529D371500053158A /* OnboardingInteractor.swift in Sources */,
 				0F57539F20EE1EC90069C139 /* Relays.swift in Sources */,
@@ -1840,6 +1918,7 @@
 				CFF69D7121955680003BE6BF /* Dictionary+Extensions.swift in Sources */,
 				CF8373AF224B8807000C3E21 /* AppManager.swift in Sources */,
 				112239151FD5C7AF00486528 /* AppDelegate.swift in Sources */,
+				161F3C3829E5AF330053158A /* InterestsCollectionViewCell.swift in Sources */,
 				117C4AAE1FD864AD008BB445 /* UIView+Extensions.swift in Sources */,
 				161F3BD129D98AE00053158A /* LoginModels.swift in Sources */,
 				3ECAFE3A23C3996A00E83552 /* MultiLineField.swift in Sources */,
@@ -1847,6 +1926,7 @@
 				3E1DEAF422BA634A00FAD9F4 /* UIView+Rounded.swift in Sources */,
 				CFE259E622C9C4D5006B0472 /* AppDelegate+SessionExpiry.swift in Sources */,
 				161F3BDF29DAD6FB0053158A /* OTPVerificationPresenter.swift in Sources */,
+				161F3C2429E5ACD40053158A /* PinterestLayoutAttributes.swift in Sources */,
 				161F3BC429D98A0E0053158A /* RegistrationViewController.swift in Sources */,
 				161F3C1229E322BE0053158A /* ParentsHomePresenter.swift in Sources */,
 				CF8C5C9C20EF97AE00236C7B /* BaseTableViewController.swift in Sources */,
@@ -1870,6 +1950,7 @@
 				672909FC210E43EA00632C4F /* PlaceHolderView.swift in Sources */,
 				161F3BE029DAD6FB0053158A /* OTPVerificationRouter.swift in Sources */,
 				67F03A5E26F20B7000ED91ED /* MediaManager.swift in Sources */,
+				161F3C3429E5AD4D0053158A /* InterestsConfigurator.swift in Sources */,
 				117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */,
 				CF181BA420809E28002603A1 /* UIColor+Extensions.swift in Sources */,
 				161F3BE629DF37F40053158A /* WhiteBorderButton.swift in Sources */,
@@ -1884,19 +1965,23 @@
 				3E6DEFB321623D7A00978FDC /* UITableView+Extensions.swift in Sources */,
 				CF8C5CAE20EF9D8F00236C7B /* UIApplication+Extensions.swift in Sources */,
 				CF564731211B1C910092EFBD /* InputValidationExpression.swift in Sources */,
+				161F3C3029E5AD4D0053158A /* InterestsRouter.swift in Sources */,
 				CF8C5CA020EF9CCA00236C7B /* BaseNavigationBar.swift in Sources */,
 				0F508C2F23A2AE5E00E1F333 /* TDProgressHUD.swift in Sources */,
 				67283E47281AC81A007C5FF4 /* PushServiceRouter.swift in Sources */,
+				161F3C2F29E5AD4D0053158A /* InterestsPresenter.swift in Sources */,
 				0FD65F1520D014F40075E251 /* Reactive+UIButton.swift in Sources */,
 				CF181BA020809874002603A1 /* UINavigationBar+Extensions.swift in Sources */,
 				CF40385E216CF78F001F649B /* InitialConfigurator.swift in Sources */,
 				161F3C1329E322BE0053158A /* ParentsHomeRouter.swift in Sources */,
+				161F3C3129E5AD4D0053158A /* InterestsModels.swift in Sources */,
 				161F3BE429DAD6FB0053158A /* OTPVerificationConfigurator.swift in Sources */,
 				CFC2BFE6216CA3C800DC31A7 /* ErrorViewModel.swift in Sources */,
 				0F1B7FB722CA6CB50079F752 /* LocaleInfo.swift in Sources */,
 				3EDC4159224E893B00624D2B /* BaseUIImageView.swift in Sources */,
 				0F57539D20EE1C430069C139 /* APIClient.swift in Sources */,
 				161F3BF329E2FCA20053158A /* CreateConfirmPasswordInteractor.swift in Sources */,
+				161F3C3329E5AD4D0053158A /* InterestsInteractor.swift in Sources */,
 				3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */,
 				0F484B4F2165FF5C0060C463 /* Date+Extensions.swift in Sources */,
 				CF2F319E215E8BA0007A912A /* URL+Extensions.swift in Sources */,
@@ -1907,6 +1992,7 @@
 				CF7823B420EF95A7003069BD /* APIErrorManager.swift in Sources */,
 				3E1DEAF022BA62FD00FAD9F4 /* UIView+Shadow.swift in Sources */,
 				161F3C0029E3157D0053158A /* SelectAgeModels.swift in Sources */,
+				161F3C3229E5AD4D0053158A /* InterestsViewController.swift in Sources */,
 				161F3BE229DAD6FB0053158A /* OTPVerificationViewController.swift in Sources */,
 				CFAD4D0E21955EF300AF4375 /* LanguageService.swift in Sources */,
 				671336F728184208006CECE4 /* Language.swift in Sources */,

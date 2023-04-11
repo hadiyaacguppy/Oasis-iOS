@@ -176,8 +176,8 @@ extension CreateConfirmPasswordViewController{
             return
         }
         
-        if newPass.count > 5 && confirmPass.count > 5 && newPass == confirmPass {
-            self.router?.redirectToHome()
+        if newPass.count > 1 && confirmPass.count > 1 && newPass == confirmPass {
+            self.router?.redirectToInterests()
         }else{
             showSimpleAlertView("Sorry", message: "Your passwords does not match", withCompletionHandler: nil)
         }

@@ -34,9 +34,9 @@ class OTPVerificationViewController: BaseViewController {
         return imageV
     }()
     
-    private lazy var verifyButton : WhiteBorderButton = {
+    private lazy var submitButton : WhiteBorderButton = {
         let button = WhiteBorderButton()
-        button.setTitle("Verify".localized, for: .normal)
+        button.setTitle("Submit".localized, for: .normal)
         button.onTap {
             self.router?.pushToCreatePassword()
         }
@@ -181,12 +181,12 @@ extension OTPVerificationViewController{
     }
     
     private func addVerifyButton(){
-        view.addSubview(verifyButton)
+        view.addSubview(submitButton)
         NSLayoutConstraint.activate([
-            verifyButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 43),
-            verifyButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            verifyButton.heightAnchor.constraint(equalToConstant: 58),
-            verifyButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -66)
+            submitButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 43),
+            submitButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            submitButton.heightAnchor.constraint(equalToConstant: 58),
+            submitButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -66)
         ])
     }
     
@@ -300,7 +300,7 @@ extension OTPVerificationViewController{
         
         verifyButtonTapped
             .bind(to:
-                    verifyButton
+                    submitButton
                 .rx
                 .isEnabledAndHighlighted
             )

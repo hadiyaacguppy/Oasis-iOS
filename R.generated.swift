@@ -90,12 +90,14 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 10 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 11 storyboards.
   struct storyboard {
     /// Storyboard `CreateConfirmPassword`.
     static let createConfirmPassword = _R.storyboard.createConfirmPassword()
     /// Storyboard `Initial`.
     static let initial = _R.storyboard.initial()
+    /// Storyboard `Interests`.
+    static let interests = _R.storyboard.interests()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Login`.
@@ -124,6 +126,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Initial", bundle: ...)`
     static func initial(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.initial)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Interests", bundle: ...)`
+    static func interests(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.interests)
     }
     #endif
 
@@ -1159,10 +1168,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
     /// Nib `AgeTableViewCell`.
     static let ageTableViewCell = _R.nib._AgeTableViewCell()
+    /// Nib `InterestsCollectionViewCell`.
+    static let interestsCollectionViewCell = _R.nib._InterestsCollectionViewCell()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "AgeTableViewCell", in: bundle)`
@@ -1172,17 +1183,31 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "InterestsCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.interestsCollectionViewCell) instead")
+    static func interestsCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.interestsCollectionViewCell)
+    }
+    #endif
+
     static func ageTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AgeTableViewCell? {
       return R.nib.ageTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AgeTableViewCell
+    }
+
+    static func interestsCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> InterestsCollectionViewCell? {
+      return R.nib.interestsCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? InterestsCollectionViewCell
     }
 
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `ageCell`.
     static let ageCell: Rswift.ReuseIdentifier<AgeTableViewCell> = Rswift.ReuseIdentifier(identifier: "ageCell")
+    /// Reuse identifier `interestsCell`.
+    static let interestsCell: Rswift.ReuseIdentifier<InterestsCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "interestsCell")
 
     fileprivate init() {}
   }
@@ -1223,6 +1248,20 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _InterestsCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = InterestsCollectionViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "interestsCell"
+      let name = "InterestsCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> InterestsCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? InterestsCollectionViewCell
+      }
+
+      fileprivate init() {}
+    }
+
     fileprivate init() {}
   }
   #endif
@@ -1235,6 +1274,9 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try initial.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try interests.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try launchScreen.validate()
@@ -1313,6 +1355,34 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    struct interests: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseNavigationController
+
+      let bundle = R.hostingBundle
+      let interestsViewControllerNavVC = StoryboardViewControllerResource<BaseNavigationController>(identifier: "InterestsViewControllerNavVC")
+      let interestsViewControllerVC = StoryboardViewControllerResource<InterestsViewController>(identifier: "InterestsViewControllerVC")
+      let name = "Interests"
+
+      func interestsViewControllerNavVC(_: Void = ()) -> BaseNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: interestsViewControllerNavVC)
+      }
+
+      func interestsViewControllerVC(_: Void = ()) -> InterestsViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: interestsViewControllerVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.interests().interestsViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'interestsViewControllerNavVC' could not be loaded from storyboard 'Interests' as 'BaseNavigationController'.") }
+        if _R.storyboard.interests().interestsViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'interestsViewControllerVC' could not be loaded from storyboard 'Interests' as 'InterestsViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = UIKit.UIViewController
 
@@ -1320,6 +1390,8 @@ struct _R: Rswift.Validatable {
       let name = "LaunchScreen"
 
       static func validate() throws {
+        if UIKit.UIImage(named: "Logo white", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Logo white' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "NewBackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'NewBackground' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
