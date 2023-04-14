@@ -82,6 +82,13 @@ class SelectAgeViewController: BaseViewController {
         return tableView
     }()
     
+    private lazy var fixedSelection : BaseUIView = {
+        let view = BaseUIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.roundCorners = .all(radius: 8)
+        view.backgroundColor = UIColor(red: 25/255, green: 22/255, blue: 31/255, alpha: 0.47)
+        return view
+    }()
     
     var datasource = Array(7...70).map{ "\($0)" }
     var firstVisibleIndexPath: IndexPath = IndexPath(row: 0, section: 0){
@@ -119,6 +126,7 @@ extension SelectAgeViewController{
         addBackgroundImage()
         addNextButton()
         addTopStaticLabel()
+        addFixedSelection()
         addTableview()
         addYearsOldLabel()
     }
@@ -163,6 +171,17 @@ extension SelectAgeViewController{
         ])
         tableView.reloadData()
     }
+    
+    private func addFixedSelection(){
+        view.addSubview(fixedSelection)
+        NSLayoutConstraint.activate([
+            fixedSelection.topAnchor.constraint(equalTo: topStaticLabel.bottomAnchor, constant: 37),
+            fixedSelection.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            fixedSelection.widthAnchor.constraint(equalToConstant: 120),
+            fixedSelection.heightAnchor.constraint(equalToConstant: 80)
+        ])
+    }
+    
     
     private func addYearsOldLabel(){
         view.addSubview(yearsOldStaticLabel)
