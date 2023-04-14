@@ -29,13 +29,27 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HaI-rZ-cSW">
+                        <rect key="frame" x="190" y="8" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="DyL-do-buV"/>
+                            <constraint firstAttribute="height" constant="30" id="VXF-x7-KNh"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="bZW-PX-4j7" secondAttribute="bottom" id="4IV-d8-8F6"/>
+                <constraint firstItem="HaI-rZ-cSW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="AtO-Ko-g9b"/>
                 <constraint firstItem="bZW-PX-4j7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Caa-5C-GDE"/>
                 <constraint firstAttribute="trailing" secondItem="bZW-PX-4j7" secondAttribute="trailing" id="L8Y-e2-H5v"/>
+                <constraint firstAttribute="trailing" secondItem="HaI-rZ-cSW" secondAttribute="trailing" constant="8" id="YZU-yS-sSG"/>
                 <constraint firstItem="bZW-PX-4j7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ZaY-s2-icC"/>
                 <constraint firstItem="lwM-9o-WXU" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="nyK-DZ-dWb"/>
                 <constraint firstAttribute="bottom" secondItem="lwM-9o-WXU" secondAttribute="bottom" constant="20" id="zFI-Ac-Ljv"/>
@@ -45,6 +59,7 @@
                 <outlet property="descriptionLabel" destination="lwM-9o-WXU" id="HTy-Ku-O3E"/>
                 <outlet property="imageView" destination="bZW-PX-4j7" id="2Ij-WA-Qt4"/>
                 <outlet property="imageViewHeightLayoutConstraint" destination="j5M-3R-PRH" id="s65-0w-I0B"/>
+                <outlet property="rightSelectionIcon" destination="HaI-rZ-cSW" id="YDW-GP-byZ"/>
             </connections>
             <point key="canvasLocation" x="-18.46153846153846" y="100.23696682464454"/>
         </collectionViewCell>

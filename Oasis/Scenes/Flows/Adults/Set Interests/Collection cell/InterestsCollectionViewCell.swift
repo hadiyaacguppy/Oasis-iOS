@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class InterestsCollectionViewCell: UICollectionViewCell {
 
@@ -34,6 +35,27 @@ class InterestsCollectionViewCell: UICollectionViewCell {
                 imageView.backgroundColor = .lightGray
             }
         }
+    }
+    
+    @IBOutlet weak var rightSelectionIcon: UIImageView!
+    
+    public var isInterestSelected : Bool = false{
+        didSet{
+            if isInterestSelected{
+                rightSelectionIcon.backgroundColor = Constants.Colors.aquaMarine
+            }else{
+                rightSelectionIcon.backgroundColor = .clear
+            }
+        }
+    }
+    
+    var disposeBag : DisposeBag!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        disposeBag = DisposeBag()
+        isInterestSelected = false
+        rightSelectionIcon.backgroundColor = .clear
     }
     
     override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {

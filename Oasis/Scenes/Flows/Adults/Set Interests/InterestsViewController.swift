@@ -183,7 +183,7 @@ extension InterestsViewController{
 
 //MARK: UICollectionViewDataSource
 
-extension InterestsViewController: UICollectionViewDataSource {
+extension InterestsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return testImages.count
@@ -196,6 +196,9 @@ extension InterestsViewController: UICollectionViewDataSource {
         let text = testTitles[indexPath.item]
         cell.imageView.image = image
         cell.descriptionLabel.text = text
+        cell.imageView.onTap {
+            cell.isInterestSelected.toggle()
+        }
         return cell
     }
 }
