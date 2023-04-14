@@ -59,7 +59,12 @@ class InterestsViewController: BaseViewController {
         return collectionView
     }()
     
-    var testImages: [UIImage] = [R.image.newBackground()!, R.image.backgroundHomepageBox()!, R.image.birthday()!, R.image.extra()!, R.image.photo1()!, R.image.photo2()!]
+    var testImages: [UIImage] = [R.image.rectangleCopy2()!,
+                                 R.image.rectangleCopy3()!,
+                                 R.image.rectangleCopy4()!,
+                                 R.image.rectangleCopy5()!,
+                                 R.image.rectangleCopy6()!,
+                                 R.image.rectangleCopy()!]
     var testTitles: [String] = ["Dance", "Sports", "Fashion", "Fitness", "Family", "Nightlife"]
 
 }

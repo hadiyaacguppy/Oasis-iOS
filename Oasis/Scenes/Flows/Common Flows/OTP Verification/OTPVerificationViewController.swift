@@ -34,15 +34,6 @@ class OTPVerificationViewController: BaseViewController {
         return imageV
     }()
     
-    private lazy var submitButton : WhiteBorderButton = {
-        let button = WhiteBorderButton()
-        button.setTitle("Submit".localized, for: .normal)
-        button.onTap {
-            self.router?.pushToCreatePassword()
-        }
-        return button
-    }()
-    
     private lazy var firstOTPTextfield : WhiteBorderTextfield = {
         let txtf = WhiteBorderTextfield()
         txtf.keyboardType = .numberPad
@@ -164,7 +155,6 @@ extension OTPVerificationViewController{
     fileprivate
     func setupUI(){
         addBackgroundImage()
-        addVerifyButton()
         addTopStaticLabel()
         addTextfieldsStack()
         addSendNewOTPLabel()
@@ -179,17 +169,7 @@ extension OTPVerificationViewController{
             backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor)
         ])
     }
-    
-    private func addVerifyButton(){
-        view.addSubview(submitButton)
-        NSLayoutConstraint.activate([
-            submitButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 43),
-            submitButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            submitButton.heightAnchor.constraint(equalToConstant: 58),
-            submitButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -66)
-        ])
-    }
-    
+
     private func addTopStaticLabel(){
         view.addSubview(topStaticLabel)
         NSLayoutConstraint.activate([
@@ -297,14 +277,6 @@ extension OTPVerificationViewController{
         let verifyButtonTapped = Observable.combineLatest(firstOTPDigitValidation,secondOTPDigitValidation,thirdOTPDigitValidation,fourthOTPDigitValidation, fifthOTPDigitValidation) { first,second,third,fourth, fifth in
             return first && second && third && fourth && fifth
         }
-        
-        verifyButtonTapped
-            .bind(to:
-                    submitButton
-                .rx
-                .isEnabledAndHighlighted
-            )
-            .disposed(by: disposeBag)
     }
     
     
@@ -406,6 +378,7 @@ extension OTPVerificationViewController : UITextFieldDelegate {
                 }
                 if textField == fifthOTPTextfield {
                     fifthOTPTextfield.resignFirstResponder()
+                    self.router?.pushToCreatePassword()
                 }
                 textField.text = string
                 return false

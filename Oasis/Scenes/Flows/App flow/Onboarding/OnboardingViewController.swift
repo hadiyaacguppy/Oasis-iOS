@@ -57,8 +57,7 @@ extension OnboardingViewController{
             OnboardingConfig.Content(
                 title: OnboardingConfig.Title(text: $0.key),
                 description: OnboardingConfig.Description(text: $0.value),
-                image: OnboardingConfig.Image())
-            //OnboardingConfig.Image(image: UIImage(named: $0.key.replacingOccurrences(of: " ", with: ""))!)
+                image: OnboardingConfig.Image(image: UIImage(named: $0.key.replacingOccurrences(of: " ", with: ""))!))
         }
         
         let skipButton = OnboardingConfig.SkipButton(
@@ -97,7 +96,7 @@ extension OnboardingViewController{
 //MARK:- NavBarAppearance
 extension OnboardingViewController{
     private func setupNavBarAppearance(){
-        statusBarStyle = .default
+        statusBarStyle = .lightContent
         navigationBarStyle = .appDefault
     }
 }
