@@ -187,7 +187,7 @@ extension CreateConfirmPasswordViewController{
 //MARK:- NavBarAppearance
 extension CreateConfirmPasswordViewController{
     private func setupNavBarAppearance(){
-        statusBarStyle = .default
+        statusBarStyle = .lightContent
         navigationBarStyle = .transparent
         
         let loginBarButton = UIBarButtonItem(title: "Login".localized, style: .plain, target: self, action: #selector(loginBarButtonPressed))

@@ -185,7 +185,7 @@ extension OTPVerificationViewController{
         NSLayoutConstraint.activate([
             pinStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 43),
             pinStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            pinStack.heightAnchor.constraint(equalToConstant: 70),
+            pinStack.heightAnchor.constraint(equalToConstant: 60),
             pinStack.topAnchor.constraint(equalTo: topStaticLabel.bottomAnchor, constant: 22)
         ])
         
@@ -274,7 +274,7 @@ extension OTPVerificationViewController{
             .map{$0.count == 1}
             .share(replay : 1)
         
-        let verifyButtonTapped = Observable.combineLatest(firstOTPDigitValidation,secondOTPDigitValidation,thirdOTPDigitValidation,fourthOTPDigitValidation, fifthOTPDigitValidation) { first,second,third,fourth, fifth in
+        _ = Observable.combineLatest(firstOTPDigitValidation,secondOTPDigitValidation,thirdOTPDigitValidation,fourthOTPDigitValidation, fifthOTPDigitValidation) { first,second,third,fourth, fifth in
             return first && second && third && fourth && fifth
         }
     }

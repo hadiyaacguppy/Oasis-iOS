@@ -170,7 +170,7 @@ extension LoginViewController{
 //MARK:- NavBarAppearance
 extension LoginViewController{
     private func setupNavBarAppearance(){
-        statusBarStyle = .default
+        statusBarStyle = .lightContent
         navigationBarStyle = .transparent
         
         let registerBarButton = UIBarButtonItem(title: "Register".localized, style: .plain, target: self, action: #selector(registerBarButtonPressed))
