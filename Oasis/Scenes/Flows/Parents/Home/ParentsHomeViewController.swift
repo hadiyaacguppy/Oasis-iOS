@@ -89,6 +89,202 @@ class ParentsHomeViewController: BaseViewController {
             .autoLayout()
             .distributionMode(.fillEqually)
     }()
+    
+    lazy var sendMoneyActionView : BaseUIView = {
+        let view = BaseUIView(frame: .zero)
+        view.backgroundColor = Constants.Colors.aquaMarine
+        view.roundCorners = .all(radius: 14)
+        view.autoLayout()
+        let img = BaseImageView(frame: .zero)
+        img.image = R.image.sendMoneyIcon()!
+        img.autoLayout()
+        img.contentMode = .scaleAspectFit
+        
+        let label = BaseLabel()
+        label.style = .init(font: MainFont.medium.with(size: 12),
+                            color: .white)
+        label.autoLayout()
+        label.text = "Send".localized
+        view.addSubview(img)
+        view.addSubview(label)
+        NSLayoutConstraint.activate([
+            img.topAnchor.constraint(equalTo: view.topAnchor, constant: 17),
+            img.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            img.heightAnchor.constraint(equalToConstant: 26),
+            label.topAnchor.constraint(equalTo: img.bottomAnchor, constant: 2),
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.heightAnchor.constraint(equalToConstant: 21)
+        ])
+        
+        view.onTap {
+            
+        }
+        return view
+    }()
+    
+    lazy var receiveMoneyActionView : BaseUIView = {
+        let view = BaseUIView(frame: .zero)
+        view.backgroundColor = Constants.Colors.aquaMarine
+        view.roundCorners = .all(radius: 14)
+        view.autoLayout()
+        let img = BaseImageView(frame: .zero)
+        img.image = R.image.receiveMoneyIcon()!
+        img.autoLayout()
+        img.contentMode = .scaleAspectFit
+        
+        let label = BaseLabel()
+        label.style = .init(font: MainFont.medium.with(size: 12),
+                            color: .white)
+        label.autoLayout()
+        label.text = "Receive".localized
+        view.addSubview(img)
+        view.addSubview(label)
+        NSLayoutConstraint.activate([
+            img.topAnchor.constraint(equalTo: view.topAnchor, constant: 17),
+            img.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            img.heightAnchor.constraint(equalToConstant: 26),
+            label.topAnchor.constraint(equalTo: img.bottomAnchor, constant: 2),
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.heightAnchor.constraint(equalToConstant: 21)
+        ])
+        
+        view.onTap {
+            
+        }
+        return view
+    }()
+    
+    
+    lazy var payActionView : BaseUIView = {
+        let view = BaseUIView(frame: .zero)
+        view.backgroundColor = Constants.Colors.aquaMarine
+        view.roundCorners = .all(radius: 14)
+        view.autoLayout()
+        let img = BaseImageView(frame: .zero)
+        img.image = R.image.sendMoneyIcon()!
+        img.autoLayout()
+        img.contentMode = .scaleAspectFit
+        
+        let label = BaseLabel()
+        label.style = .init(font: MainFont.medium.with(size: 12),
+                            color: .white)
+        label.autoLayout()
+        label.text = "Pay".localized
+        view.addSubview(img)
+        view.addSubview(label)
+        NSLayoutConstraint.activate([
+            img.topAnchor.constraint(equalTo: view.topAnchor, constant: 17),
+            img.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            img.heightAnchor.constraint(equalToConstant: 26),
+            label.topAnchor.constraint(equalTo: img.bottomAnchor, constant: 2),
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.heightAnchor.constraint(equalToConstant: 21)
+        ])
+        
+        view.onTap {
+            
+        }
+        return view
+    }()
+    
+    
+    lazy var topUpActionView : BaseUIView = {
+        let view = BaseUIView(frame: .zero)
+        view.backgroundColor = Constants.Colors.aquaMarine
+        view.roundCorners = .all(radius: 14)
+        view.autoLayout()
+        let img = BaseImageView(frame: .zero)
+        img.image = R.image.topUpIcon()!
+        img.autoLayout()
+        img.contentMode = .scaleAspectFit
+        
+        let label = BaseLabel()
+        label.style = .init(font: MainFont.medium.with(size: 12),
+                            color: .white)
+        label.autoLayout()
+        label.text = "Top Up".localized
+        view.addSubview(img)
+        view.addSubview(label)
+        NSLayoutConstraint.activate([
+            img.topAnchor.constraint(equalTo: view.topAnchor, constant: 17),
+            img.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            img.heightAnchor.constraint(equalToConstant: 26),
+            label.topAnchor.constraint(equalTo: img.bottomAnchor, constant: 2),
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.heightAnchor.constraint(equalToConstant: 21)
+        ])
+        
+        view.onTap {
+            
+        }
+        return view
+    }()
+    
+    
+    lazy var sendGiftActionView : BaseUIView = {
+        let view = BaseUIView(frame: .zero)
+        view.backgroundColor = Constants.Colors.aquaMarine
+        view.roundCorners = .all(radius: 14)
+        view.autoLayout()
+        let img = BaseImageView(frame: .zero)
+        img.image = R.image.nounGift5459873()!
+        img.autoLayout()
+        img.contentMode = .scaleAspectFit
+        
+        let label = BaseLabel()
+        label.style = .init(font: MainFont.medium.with(size: 12),
+                            color: .white)
+        label.autoLayout()
+        label.text = "Send gift".localized
+        view.addSubview(img)
+        view.addSubview(label)
+        NSLayoutConstraint.activate([
+            img.topAnchor.constraint(equalTo: view.topAnchor, constant: 17),
+            img.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            img.heightAnchor.constraint(equalToConstant: 26),
+            label.topAnchor.constraint(equalTo: img.bottomAnchor, constant: 2),
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.heightAnchor.constraint(equalToConstant: 21)
+        ])
+        
+        view.onTap {
+            
+        }
+        return view
+    }()
+    
+    
+    lazy var subscriptionsActionView : BaseUIView = {
+        let view = BaseUIView(frame: .zero)
+        view.backgroundColor = Constants.Colors.aquaMarine
+        view.roundCorners = .all(radius: 14)
+        view.autoLayout()
+        let img = BaseImageView(frame: .zero)
+        img.image = R.image.subscriptionIcon()!
+        img.autoLayout()
+        img.contentMode = .scaleAspectFit
+        
+        let label = BaseLabel()
+        label.style = .init(font: MainFont.medium.with(size: 12),
+                            color: .white)
+        label.autoLayout()
+        label.text = "Subscriptions".localized
+        view.addSubview(img)
+        view.addSubview(label)
+        NSLayoutConstraint.activate([
+            img.topAnchor.constraint(equalTo: view.topAnchor, constant: 17),
+            img.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            img.heightAnchor.constraint(equalToConstant: 26),
+            label.topAnchor.constraint(equalTo: img.bottomAnchor, constant: 2),
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.heightAnchor.constraint(equalToConstant: 21)
+        ])
+        
+        view.onTap {
+            
+        }
+        return view
+    }()
 }
 
 //MARK:- View Lifecycle
@@ -117,6 +313,7 @@ extension ParentsHomeViewController{
         addTopCurvedImage()
         addScrollView()
         addBalanceStack()
+        addActionsStacksToContainer()
     }
     
     private func addScrollView () {
@@ -172,14 +369,41 @@ extension ParentsHomeViewController{
     
     
     private func addActionsStacksToContainer(){
-        view.addSubview(actionsContainerView)
+        scrollViewContentView.addSubview(actionsContainerView)
         
         NSLayoutConstraint.activate([
-            actionsContainerView.topAnchor.constraint(equalTo: balanceStackView.bottomAnchor, constant: 8),
+            actionsContainerView.topAnchor.constraint(equalTo: balanceStackView.bottomAnchor, constant: 14),
             actionsContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             actionsContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            actionsContainerView.heightAnchor.constraint(equalToConstant: 165)
+            actionsContainerView.heightAnchor.constraint(equalToConstant: 167)
         ])
+        
+        actionsContainerView.addSubview(firstActionsStackView)
+        actionsContainerView.addSubview(secondActionsStackView)
+        
+        NSLayoutConstraint.activate([
+            firstActionsStackView.topAnchor.constraint(equalTo: actionsContainerView.topAnchor),
+            firstActionsStackView.leadingAnchor.constraint(equalTo: actionsContainerView.leadingAnchor),
+            firstActionsStackView.trailingAnchor.constraint(equalTo: actionsContainerView.trailingAnchor),
+            firstActionsStackView.heightAnchor.constraint(equalToConstant: 76),
+            
+            secondActionsStackView.topAnchor.constraint(equalTo: firstActionsStackView.bottomAnchor, constant: 15),
+            secondActionsStackView.leadingAnchor.constraint(equalTo: actionsContainerView.leadingAnchor),
+            secondActionsStackView.trailingAnchor.constraint(equalTo: actionsContainerView.trailingAnchor),
+            secondActionsStackView.heightAnchor.constraint(equalToConstant: 76)
+        ])
+        
+        addActionsToCorrespondingStacks()
+    }
+    
+    private func addActionsToCorrespondingStacks(){
+        firstActionsStackView.addArrangedSubview(sendMoneyActionView)
+        firstActionsStackView.addArrangedSubview(receiveMoneyActionView)
+        firstActionsStackView.addArrangedSubview(payActionView)
+        
+        secondActionsStackView.addArrangedSubview(topUpActionView)
+        secondActionsStackView.addArrangedSubview(sendGiftActionView)
+        secondActionsStackView.addArrangedSubview(subscriptionsActionView)
     }
 }
 
