@@ -21,8 +21,8 @@ class ParentsHomeViewController: BaseViewController {
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.autoLayout()
-        scrollView.contentInsetAdjustmentBehavior = .never
-        scrollView.bounces = false
+        scrollView.contentInsetAdjustmentBehavior = .automatic
+        scrollView.bounces = true
         scrollView.showsVerticalScrollIndicator = false
         //scrollView.delegate = self
         return scrollView
@@ -292,7 +292,10 @@ class ParentsHomeViewController: BaseViewController {
         view.autoLayout()
         return view
     }()
-    
+ 
+    private var isThereUpcomingPayments : Bool = false
+    private var upcomingPaymentsContainerView : BaseUIView = BaseUIView()
+
 }
 
 //MARK:- View Lifecycle
@@ -323,33 +326,30 @@ extension ParentsHomeViewController{
         addBalanceStack()
         addActionsStacksToContainer()
         addAreYouParentView()
+        addUpcomingPaymentsSection(shouldAddPlaceholder: true)
+        addRecentActivitiesSection(shouldAddPlaceholder: false)
     }
     
     private func addScrollView () {
         view.addSubview(scrollView)
         //view.sendSubviewToBack(scrollView)
-        let frameGuide = scrollView.frameLayoutGuide
-        let contentGuide = scrollView.contentLayoutGuide
+//        let frameGuide = scrollView.frameLayoutGuide
+//        let contentGuide = scrollView.contentLayoutGuide
         
         NSLayoutConstraint.activate([
-            frameGuide.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            frameGuide.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            frameGuide.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            frameGuide.topAnchor.constraint(equalTo: view.topAnchor)
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor)
         ])
         
         scrollView.addSubview(scrollViewContentView)
         NSLayoutConstraint.activate([
-            contentGuide.leadingAnchor
-                .constraint(equalTo: scrollViewContentView.leadingAnchor),
-            contentGuide.trailingAnchor
-                .constraint(equalTo: scrollViewContentView.trailingAnchor),
-            contentGuide.topAnchor
-                .constraint(equalTo: scrollViewContentView.topAnchor),
-            contentGuide.bottomAnchor
-                .constraint(equalTo: scrollViewContentView.bottomAnchor),
-            contentGuide.heightAnchor
-                .constraint(equalTo: scrollViewContentView.heightAnchor)
+            scrollViewContentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            scrollViewContentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            scrollViewContentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            scrollViewContentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            scrollViewContentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
     }
     
@@ -415,7 +415,7 @@ extension ParentsHomeViewController{
     }
     
     private func addAreYouParentView(){
-        var areYouParentCardImageView : BaseImageView = {
+        let areYouParentCardImageView : BaseImageView = {
             let img = BaseImageView(frame: .zero)
             img.autoLayout()
             img.image = R.image.backgroundHomepageBox()!
@@ -423,7 +423,7 @@ extension ParentsHomeViewController{
             return img
         }()
         
-        var parentImageView : BaseImageView = {
+        let parentImageView : BaseImageView = {
             let img = BaseImageView(frame: .zero)
             img.autoLayout()
             img.contentMode = .scaleAspectFit
@@ -455,6 +455,126 @@ extension ParentsHomeViewController{
             parentImageView.leadingAnchor.constraint(equalTo: areYouParentContainerView.leadingAnchor)
         ])
         
+    }
+    
+    private func addUpcomingPaymentsSection(shouldAddPlaceholder show: Bool){
+        let ulabel : BaseLabel = BaseLabel()
+        ulabel.style = .init(font: MainFont.bold.with(size: 14), color: .black)
+        ulabel.text = "Upcoming Payments".localized
+        ulabel.autoLayout()
+        
+        scrollViewContentView.addSubview(ulabel)
+        NSLayoutConstraint.activate([
+            ulabel.topAnchor.constraint(equalTo: areYouParentContainerView.bottomAnchor, constant: 13),
+            ulabel.leadingAnchor.constraint(equalTo: scrollViewContentView.leadingAnchor, constant: 30),
+            ulabel.heightAnchor.constraint(equalToConstant: 35)
+        ])
+        
+        func addPlaceholder(){
+            upcomingPaymentsContainerView.autoLayout()
+            upcomingPaymentsContainerView.backgroundColor = .clear
+
+            scrollViewContentView.addSubview(upcomingPaymentsContainerView)
+            
+            NSLayoutConstraint.activate([
+                upcomingPaymentsContainerView.leadingAnchor.constraint(equalTo: scrollViewContentView.leadingAnchor, constant: 30),
+                upcomingPaymentsContainerView.topAnchor.constraint(equalTo: ulabel.bottomAnchor, constant: 2),
+                upcomingPaymentsContainerView.trailingAnchor.constraint(equalTo: scrollViewContentView.trailingAnchor, constant: -30),
+                upcomingPaymentsContainerView.heightAnchor.constraint(equalToConstant: 250)
+            ])
+            
+            let noPaymentsPlaceholderImageview : BaseImageView = {
+                let img = BaseImageView(frame: .zero)
+                img.image = R.image.noPaymentIcon()!
+                img.contentMode = .scaleAspectFit
+                img.autoLayout()
+                return img
+            }()
+            
+            let noPaymentsStaticLabel : BaseLabel = {
+                let lbl = BaseLabel()
+                lbl.style = .init(font: MainFont.medium.with(size: 15), color: .black, alignment: .center, numberOfLines: 2)
+                lbl.text = "You have no upcoming \npayments yet".localized
+                lbl.autoLayout()
+                return lbl
+            }()
+            
+            let addPaymentButton : OasisGradientButton = {
+                let btn = OasisGradientButton(frame: .zero)
+                btn.setTitle("Add a Payment".localized, for: .normal)
+                return btn
+            }()
+            
+            
+            upcomingPaymentsContainerView.addSubview(noPaymentsPlaceholderImageview)
+            upcomingPaymentsContainerView.addSubview(noPaymentsStaticLabel)
+            upcomingPaymentsContainerView.addSubview(addPaymentButton)
+            
+            NSLayoutConstraint.activate([
+                noPaymentsPlaceholderImageview.topAnchor.constraint(equalTo: upcomingPaymentsContainerView.topAnchor, constant: 8),
+                noPaymentsPlaceholderImageview.centerXAnchor.constraint(equalTo: upcomingPaymentsContainerView.centerXAnchor),
+                
+                noPaymentsStaticLabel.topAnchor.constraint(equalTo: noPaymentsPlaceholderImageview.bottomAnchor, constant: 3),
+                noPaymentsStaticLabel.centerXAnchor.constraint(equalTo: upcomingPaymentsContainerView.centerXAnchor),
+                noPaymentsStaticLabel.heightAnchor.constraint(equalToConstant: 38),
+                
+                addPaymentButton.topAnchor.constraint(equalTo: noPaymentsStaticLabel.bottomAnchor, constant: 16),
+                addPaymentButton.centerXAnchor.constraint(equalTo: upcomingPaymentsContainerView.centerXAnchor),
+                addPaymentButton.heightAnchor.constraint(equalToConstant: 48)
+            ])
+        }
+        
+        if show {
+            addPlaceholder()
+        }else{
+            #warning("Should load payments")
+        }
+    }
+    
+    private func addRecentActivitiesSection(shouldAddPlaceholder show: Bool){
+        let ulabel : BaseLabel = BaseLabel()
+        ulabel.style = .init(font: MainFont.bold.with(size: 14), color: .black)
+        ulabel.text = "Recent Activities".localized
+        ulabel.autoLayout()
+        
+        scrollViewContentView.addSubview(ulabel)
+        NSLayoutConstraint.activate([
+            ulabel.topAnchor.constraint(equalTo: upcomingPaymentsContainerView.bottomAnchor, constant: 30),
+            ulabel.leadingAnchor.constraint(equalTo: scrollViewContentView.leadingAnchor, constant: 30),
+            ulabel.heightAnchor.constraint(equalToConstant: 35),
+            ulabel.widthAnchor.constraint(equalToConstant: 120)
+        ])
+        
+//        let viewAllButton: BaseButton = {
+//            let btn = BaseButton()
+//            let yourAttributes: [NSAttributedString.Key: Any] = [
+//                .font: MainFont.medium.with(size: 11),
+//                .foregroundColor: UIColor.black,
+//                .underlineStyle: NSUnderlineStyle.single.rawValue
+//            ]
+//            let attributeString = NSMutableAttributedString(
+//                    string: "View all",
+//                    attributes: yourAttributes
+//                 )
+//            btn.setAttributedTitle(attributeString, for: .normal)
+//            return btn
+//        }()
+//
+//        scrollViewContentView.addSubview(viewAllButton)
+//        NSLayoutConstraint.activate([
+//            viewAllButton.centerYAnchor.constraint(equalTo: ulabel.centerYAnchor),
+//            viewAllButton.trailingAnchor.constraint(equalTo: scrollViewContentView.trailingAnchor, constant: -30),
+//            viewAllButton.heightAnchor.constraint(equalToConstant: 35),
+//            viewAllButton.widthAnchor.constraint(equalToConstant: 120)
+//        ])
+          
+        func addPlaceholder(){
+            
+        }
+        
+        func addTableview(){
+            
+        }
     }
 }
 
