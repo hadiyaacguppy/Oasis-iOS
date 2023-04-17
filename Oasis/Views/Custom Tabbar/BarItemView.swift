@@ -51,6 +51,7 @@ class BarItemView: UIView {
             labelTitle.alpha = isSelected ? 1 : 0
             titleLeadingConstraint?.isActive = isSelected
             button.isSelected = isSelected
+            animateChangingButtonLocation()
         }
     }
     
@@ -101,12 +102,9 @@ class BarItemView: UIView {
             button.leadingAnchor.constraint(equalTo: viewContainer.leadingAnchor, constant: 4),
             button.bottomAnchor.constraint(equalTo: viewContainer.bottomAnchor, constant: -4),
             button.topAnchor.constraint(equalTo: viewContainer.topAnchor, constant: 4),
-            button.heightAnchor.constraint(equalTo: button.widthAnchor),
-            
-            //labelTitle.centerYAnchor.constraint(equalTo: viewContainer.centerYAnchor),
-            //labelTitle.trailingAnchor.constraint(equalTo: viewContainer.trailingAnchor, constant: -4),
+            button.heightAnchor.constraint(equalTo: button.widthAnchor)
         ])
-        
+                
         widthConstraint = viewContainer.widthAnchor.constraint(equalToConstant: 44)
         widthConstraint?.isActive = true
         
@@ -114,6 +112,28 @@ class BarItemView: UIView {
         //titleLeadingConstraint?.isActive = true
     }
 
+    private func animateChangingButtonLocation(){
+        if isSelected{
+            NSLayoutConstraint.activate([
+                button.centerXAnchor.constraint(equalTo: indicatorView.centerXAnchor),
+                button.centerYAnchor.constraint(equalTo: indicatorView.centerYAnchor)
+            ])
+            UIView.animate(withDuration: 0.5) {
+                self.layoutIfNeeded()
+            }
+        }else{
+            NSLayoutConstraint.activate([
+                button.leadingAnchor.constraint(equalTo: viewContainer.leadingAnchor, constant: 4),
+                button.bottomAnchor.constraint(equalTo: viewContainer.bottomAnchor, constant: -4),
+                button.topAnchor.constraint(equalTo: viewContainer.topAnchor, constant: 4),
+                button.heightAnchor.constraint(equalTo: button.widthAnchor)
+            ])
+            UIView.animate(withDuration: 0.5) {
+                self.layoutIfNeeded()
+            }
+        }
+    }
+    
     // MARK: - Lifecycle
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -130,15 +150,13 @@ class BarButton: UIButton {
         super.init(frame: .zero)
         setImage(item.image, for: .normal)
         setImage(item.selectedImage, for: .selected)
-        self.contentMode = .center
         self.imageView?.contentMode = .scaleAspectFit
     }
 
     init(image: UIImage){
         super.init(frame: .zero)
         setImage(image, for: .normal)
-        self.contentMode = .center
-        self.imageView?.contentMode = .scaleAspectFit
+        self.imageView?.contentMode = .center
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -149,7 +167,6 @@ class BarButton: UIButton {
     public override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = bounds.height / 2
-        self.contentMode = .center
-        self.imageView?.contentMode = .scaleAspectFit
+        self.imageView?.contentMode = .center
     }
 }
