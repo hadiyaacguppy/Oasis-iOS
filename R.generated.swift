@@ -370,7 +370,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 88 images.
+  /// This `R.image` struct is generated, and contains static references to 89 images.
   struct image {
     /// Image `2474162 copy`.
     static let copy = Rswift.ImageResource(bundle: R.hostingBundle, name: "2474162 copy")
@@ -508,6 +508,14 @@ struct R: Rswift.Validatable {
     static let nounWifi3622132 = Rswift.ImageResource(bundle: R.hostingBundle, name: "noun-wifi-362213 2")
     /// Image `offline`.
     static let offline = Rswift.ImageResource(bundle: R.hostingBundle, name: "offline")
+    /// Image `page1`.
+    static let page1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "page1")
+    /// Image `page2`.
+    static let page2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "page2")
+    /// Image `page3`.
+    static let page3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "page3")
+    /// Image `page4`.
+    static let page4 = Rswift.ImageResource(bundle: R.hostingBundle, name: "page4")
     /// Image `password icon`.
     static let passwordIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "password icon")
     /// Image `photo 1`.
@@ -516,14 +524,6 @@ struct R: Rswift.Validatable {
     static let photo2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "photo 2")
     /// Image `receive money icon`.
     static let receiveMoneyIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "receive money icon")
-    /// Image `register1`.
-    static let register1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "register1")
-    /// Image `register2`.
-    static let register2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "register2")
-    /// Image `register3`.
-    static let register3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "register3")
-    /// Image `register4`.
-    static let register4 = Rswift.ImageResource(bundle: R.hostingBundle, name: "register4")
     /// Image `security icon`.
     static let securityIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "security icon")
     /// Image `send money icon`.
@@ -546,6 +546,8 @@ struct R: Rswift.Validatable {
     static let voiletHomeShape = Rswift.ImageResource(bundle: R.hostingBundle, name: "voiletHomeShape")
     /// Image `wedding`.
     static let wedding = Rswift.ImageResource(bundle: R.hostingBundle, name: "wedding")
+    /// Image `whiteAlertIcon`.
+    static let whiteAlertIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "whiteAlertIcon")
     /// Image `youtube`.
     static let youtube = Rswift.ImageResource(bundle: R.hostingBundle, name: "youtube")
 
@@ -1026,6 +1028,34 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "page1", bundle: ..., traitCollection: ...)`
+    static func page1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.page1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "page2", bundle: ..., traitCollection: ...)`
+    static func page2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.page2, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "page3", bundle: ..., traitCollection: ...)`
+    static func page3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.page3, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "page4", bundle: ..., traitCollection: ...)`
+    static func page4(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.page4, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "password icon", bundle: ..., traitCollection: ...)`
     static func passwordIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.passwordIcon, compatibleWith: traitCollection)
@@ -1050,34 +1080,6 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "receive money icon", bundle: ..., traitCollection: ...)`
     static func receiveMoneyIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.receiveMoneyIcon, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "register1", bundle: ..., traitCollection: ...)`
-    static func register1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.register1, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "register2", bundle: ..., traitCollection: ...)`
-    static func register2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.register2, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "register3", bundle: ..., traitCollection: ...)`
-    static func register3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.register3, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "register4", bundle: ..., traitCollection: ...)`
-    static func register4(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.register4, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1155,6 +1157,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "wedding", bundle: ..., traitCollection: ...)`
     static func wedding(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.wedding, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "whiteAlertIcon", bundle: ..., traitCollection: ...)`
+    static func whiteAlertIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.whiteAlertIcon, compatibleWith: traitCollection)
     }
     #endif
 
