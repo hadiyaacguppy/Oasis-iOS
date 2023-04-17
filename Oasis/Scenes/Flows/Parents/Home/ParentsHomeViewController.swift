@@ -285,6 +285,14 @@ class ParentsHomeViewController: BaseViewController {
         }
         return view
     }()
+    
+    private lazy var areYouParentContainerView : BaseUIView = {
+        let view = BaseUIView()
+        view.backgroundColor = .clear
+        view.autoLayout()
+        return view
+    }()
+    
 }
 
 //MARK:- View Lifecycle
@@ -314,6 +322,7 @@ extension ParentsHomeViewController{
         addScrollView()
         addBalanceStack()
         addActionsStacksToContainer()
+        addAreYouParentView()
     }
     
     private func addScrollView () {
@@ -367,7 +376,6 @@ extension ParentsHomeViewController{
         balanceStackView.addArrangedSubview(balanceValueLabel)
     }
     
-    
     private func addActionsStacksToContainer(){
         scrollViewContentView.addSubview(actionsContainerView)
         
@@ -404,6 +412,49 @@ extension ParentsHomeViewController{
         secondActionsStackView.addArrangedSubview(topUpActionView)
         secondActionsStackView.addArrangedSubview(sendGiftActionView)
         secondActionsStackView.addArrangedSubview(subscriptionsActionView)
+    }
+    
+    private func addAreYouParentView(){
+        var areYouParentCardImageView : BaseImageView = {
+            let img = BaseImageView(frame: .zero)
+            img.autoLayout()
+            img.image = R.image.backgroundHomepageBox()!
+            img.contentMode = .scaleAspectFill
+            return img
+        }()
+        
+        var parentImageView : BaseImageView = {
+            let img = BaseImageView(frame: .zero)
+            img.autoLayout()
+            img.contentMode = .scaleAspectFit
+            img.image = R.image.parentPic()!
+            img.roundCorners = .all(radius: 14)
+            return img
+        }()
+        
+        scrollViewContentView.addSubview(areYouParentContainerView)
+        
+        NSLayoutConstraint.activate([
+            areYouParentContainerView.topAnchor.constraint(equalTo: actionsContainerView.bottomAnchor, constant: 15),
+            areYouParentContainerView.leadingAnchor.constraint(equalTo: scrollViewContentView.leadingAnchor, constant: 30),
+            areYouParentContainerView.trailingAnchor.constraint(equalTo: scrollViewContentView.trailingAnchor, constant: -30),
+            areYouParentContainerView.heightAnchor.constraint(equalToConstant: 205)
+        ])
+        
+        areYouParentContainerView.addSubview(areYouParentCardImageView)
+        NSLayoutConstraint.activate([
+            areYouParentCardImageView.topAnchor.constraint(equalTo: areYouParentContainerView.topAnchor, constant: 12),
+            areYouParentCardImageView.leadingAnchor.constraint(equalTo: areYouParentContainerView.leadingAnchor),
+            areYouParentCardImageView.trailingAnchor.constraint(equalTo: areYouParentContainerView.trailingAnchor),
+            areYouParentCardImageView.bottomAnchor.constraint(equalTo: areYouParentContainerView.bottomAnchor)
+        ])
+        
+        areYouParentContainerView.addSubview(parentImageView)
+        NSLayoutConstraint.activate([
+            parentImageView.bottomAnchor.constraint(equalTo: areYouParentContainerView.bottomAnchor),
+            parentImageView.leadingAnchor.constraint(equalTo: areYouParentContainerView.leadingAnchor)
+        ])
+        
     }
 }
 

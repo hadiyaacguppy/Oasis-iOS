@@ -370,12 +370,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 95 images.
+  /// This `R.image` struct is generated, and contains static references to 97 images.
   struct image {
     /// Image `2474162 copy`.
     static let copy = Rswift.ImageResource(bundle: R.hostingBundle, name: "2474162 copy")
-    /// Image `Background-Homepage box`.
-    static let backgroundHomepageBox = Rswift.ImageResource(bundle: R.hostingBundle, name: "Background-Homepage box")
+    /// Image `BackgroundHomepage box`.
+    static let backgroundHomepageBox = Rswift.ImageResource(bundle: R.hostingBundle, name: "BackgroundHomepage box")
     /// Image `Bg1`.
     static let bg1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Bg1")
     /// Image `Card 2.1`.
@@ -516,6 +516,10 @@ struct R: Rswift.Validatable {
     static let page3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "page3")
     /// Image `page4`.
     static let page4 = Rswift.ImageResource(bundle: R.hostingBundle, name: "page4")
+    /// Image `parentPicZoomed`.
+    static let parentPicZoomed = Rswift.ImageResource(bundle: R.hostingBundle, name: "parentPicZoomed")
+    /// Image `parentPic`.
+    static let parentPic = Rswift.ImageResource(bundle: R.hostingBundle, name: "parentPic")
     /// Image `password icon`.
     static let passwordIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "password icon")
     /// Image `photo 1`.
@@ -571,7 +575,7 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "Background-Homepage box", bundle: ..., traitCollection: ...)`
+    /// `UIImage(named: "BackgroundHomepage box", bundle: ..., traitCollection: ...)`
     static func backgroundHomepageBox(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.backgroundHomepageBox, compatibleWith: traitCollection)
     }
@@ -1064,6 +1068,20 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "page4", bundle: ..., traitCollection: ...)`
     static func page4(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.page4, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "parentPic", bundle: ..., traitCollection: ...)`
+    static func parentPic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.parentPic, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "parentPicZoomed", bundle: ..., traitCollection: ...)`
+    static func parentPicZoomed(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.parentPicZoomed, compatibleWith: traitCollection)
     }
     #endif
 
