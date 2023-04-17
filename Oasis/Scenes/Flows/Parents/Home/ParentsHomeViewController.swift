@@ -25,15 +25,7 @@ class ParentsHomeViewController: BaseViewController {
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
-    
-    lazy var welcomeLabel : BaseLabel = {
-        let lbl = BaseLabel()
-        lbl.style = .init(font: MainFont.light.with(size: 50), color: .black)
-        lbl.text = "Home Screen"
-        lbl.autoLayout()
-        return lbl
-    }()
-    
+
     lazy var balanceStackView : UIStackView = {
         UIStackView()
             .axis(.vertical)
@@ -44,7 +36,7 @@ class ParentsHomeViewController: BaseViewController {
     
     lazy var balanceStaticLabel : BaseLabel = {
         let lbl = BaseLabel()
-        lbl.style = .init(font: MainFont.medium.with(size: 18), color: .black)
+        lbl.style = .init(font: MainFont.medium.with(size: 18), color: .white)
         lbl.text = "Balance".localized
         lbl.autoLayout()
         return lbl
@@ -52,7 +44,7 @@ class ParentsHomeViewController: BaseViewController {
     
     lazy var balanceValueLabel : BaseLabel = {
         let lbl = BaseLabel()
-        lbl.style = .init(font: MainFont.medium.with(size: 30), color: .black)
+        lbl.style = .init(font: MainFont.medium.with(size: 30), color: .white)
         lbl.text = "0.00 LBP".localized
         lbl.autoLayout()
         return lbl
