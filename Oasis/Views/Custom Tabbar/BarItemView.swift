@@ -16,20 +16,9 @@ class BarItemView: UIView {
     }
 
     // MARK: - Views
-    lazy var indicatorView: UIView = .build { view in
-        
-//        view.layer.shadowOffset = .zero
-//        view.layer.shadowColor = Constants.Colors.glowColor.cgColor
-//        view.layer.shadowRadius = 20
-//        view.layer.shadowOpacity = 1
-//        view.layer.shadowPath = UIBezierPath(rect: view.bounds).cgPath
-        
-        view.layer.masksToBounds = true
+    lazy var indicatorView: BaseUIView = .build { view in
+        view.shadow = .active(with: .init(color: Constants.Colors.glowColor, opacity: 0.8, radius: 6))
         view.clipsToBounds = false
-        view.layer.shadowColor = Constants.Colors.glowColor.cgColor
-        view.layer.shadowOffset = CGSize(width: 1, height: 1)
-        view.layer.shadowRadius = 12
-        view.layer.shadowOpacity = 0.75
     }
 
     private lazy var labelTitle: UILabel = .build { label in
