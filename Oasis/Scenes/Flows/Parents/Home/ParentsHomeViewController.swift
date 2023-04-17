@@ -18,6 +18,23 @@ class ParentsHomeViewController: BaseViewController {
     var interactor: ParentsHomeViewControllerOutput?
     var router: ParentsHomeRouter?
     
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.autoLayout()
+        scrollView.contentInsetAdjustmentBehavior = .never
+        scrollView.bounces = false
+        scrollView.showsVerticalScrollIndicator = false
+        //scrollView.delegate = self
+        return scrollView
+    }()
+    
+    private lazy var scrollViewContentView: UIView = {
+        let v = UIView()
+        v.backgroundColor = .clear
+        v.autoLayout()
+        return v
+    }()
+    
     lazy var topCurvedImageview : BaseImageView = {
         let img = BaseImageView(frame: .zero)
         img.image = R.image.newBg()!
@@ -98,7 +115,36 @@ extension ParentsHomeViewController{
     
     private func setupUI(){
         addTopCurvedImage()
+        addScrollView()
         addBalanceStack()
+    }
+    
+    private func addScrollView () {
+        view.addSubview(scrollView)
+        //view.sendSubviewToBack(scrollView)
+        let frameGuide = scrollView.frameLayoutGuide
+        let contentGuide = scrollView.contentLayoutGuide
+        
+        NSLayoutConstraint.activate([
+            frameGuide.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            frameGuide.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            frameGuide.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            frameGuide.topAnchor.constraint(equalTo: view.topAnchor)
+        ])
+        
+        scrollView.addSubview(scrollViewContentView)
+        NSLayoutConstraint.activate([
+            contentGuide.leadingAnchor
+                .constraint(equalTo: scrollViewContentView.leadingAnchor),
+            contentGuide.trailingAnchor
+                .constraint(equalTo: scrollViewContentView.trailingAnchor),
+            contentGuide.topAnchor
+                .constraint(equalTo: scrollViewContentView.topAnchor),
+            contentGuide.bottomAnchor
+                .constraint(equalTo: scrollViewContentView.bottomAnchor),
+            contentGuide.heightAnchor
+                .constraint(equalTo: scrollViewContentView.heightAnchor)
+        ])
     }
     
     private func addTopCurvedImage(){
@@ -112,12 +158,11 @@ extension ParentsHomeViewController{
     }
     
     private func addBalanceStack(){
-        view.addSubview(balanceStackView)
-        
+        scrollViewContentView.addSubview(balanceStackView)
         NSLayoutConstraint.activate([
-            balanceStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-            balanceStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            balanceStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            balanceStackView.topAnchor.constraint(equalTo: scrollViewContentView.safeAreaLayoutGuide.topAnchor, constant: 16),
+            balanceStackView.leadingAnchor.constraint(equalTo: scrollViewContentView.leadingAnchor, constant: 30),
+            balanceStackView.trailingAnchor.constraint(equalTo: scrollViewContentView.trailingAnchor, constant: -30),
             balanceStackView.heightAnchor.constraint(equalToConstant: 85)
         ])
         
