@@ -370,7 +370,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 89 images.
+  /// This `R.image` struct is generated, and contains static references to 95 images.
   struct image {
     /// Image `2474162 copy`.
     static let copy = Rswift.ImageResource(bundle: R.hostingBundle, name: "2474162 copy")
@@ -534,6 +534,18 @@ struct R: Rswift.Validatable {
     static let shahid = Rswift.ImageResource(bundle: R.hostingBundle, name: "shahid")
     /// Image `subscription icon`.
     static let subscriptionIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "subscription icon")
+    /// Image `tabbarSelectedChildren`.
+    static let tabbarSelectedChildren = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbarSelectedChildren")
+    /// Image `tabbarSelectedHome`.
+    static let tabbarSelectedHome = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbarSelectedHome")
+    /// Image `tabbarSelectedProfile`.
+    static let tabbarSelectedProfile = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbarSelectedProfile")
+    /// Image `tabbarUnSelectedChildren`.
+    static let tabbarUnSelectedChildren = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbarUnSelectedChildren")
+    /// Image `tabbarUnselectedHome`.
+    static let tabbarUnselectedHome = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbarUnselectedHome")
+    /// Image `tabbarUnselectedProfile`.
+    static let tabbarUnselectedProfile = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbarUnselectedProfile")
     /// Image `tasks-icon`.
     static let tasksIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "tasks-icon")
     /// Image `top up icon`.
@@ -1115,6 +1127,48 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "subscription icon", bundle: ..., traitCollection: ...)`
     static func subscriptionIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.subscriptionIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tabbarSelectedChildren", bundle: ..., traitCollection: ...)`
+    static func tabbarSelectedChildren(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tabbarSelectedChildren, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tabbarSelectedHome", bundle: ..., traitCollection: ...)`
+    static func tabbarSelectedHome(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tabbarSelectedHome, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tabbarSelectedProfile", bundle: ..., traitCollection: ...)`
+    static func tabbarSelectedProfile(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tabbarSelectedProfile, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tabbarUnSelectedChildren", bundle: ..., traitCollection: ...)`
+    static func tabbarUnSelectedChildren(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tabbarUnSelectedChildren, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tabbarUnselectedHome", bundle: ..., traitCollection: ...)`
+    static func tabbarUnselectedHome(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tabbarUnselectedHome, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tabbarUnselectedProfile", bundle: ..., traitCollection: ...)`
+    static func tabbarUnselectedProfile(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tabbarUnselectedProfile, compatibleWith: traitCollection)
     }
     #endif
 

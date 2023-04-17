@@ -25,8 +25,21 @@ struct Constants {
     }
     
     struct Colors {
-        static let appColor : UIColor  = .red
+        static let background : UIColor = .brown
+        static let defaultTint : UIColor = .green
+        static let cell_background : UIColor = .yellow
+        static let appColor : UIColor  = .init(hexFromString: "3301a8")
+        static let glowColor : UIColor = .init(red: 197, green: 93, blue: 207)
         static let aquaMarine : UIColor = .init(hexFromString: "#37d09c")
+        
+        struct Navigation {
+            static let background : UIColor = Constants.Colors.appColor
+        }
+
+        struct TabBar {
+            static let itemBackground : UIColor = .white
+            static let title : UIColor = .white
+        }
         
         struct TableView{
             static let preferredCellBackgroundColor : UIColor = .white

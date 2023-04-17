@@ -118,6 +118,10 @@
 		161F3C3429E5AD4D0053158A /* InterestsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C2D29E5AD4D0053158A /* InterestsConfigurator.swift */; };
 		161F3C3829E5AF330053158A /* InterestsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C3629E5AF330053158A /* InterestsCollectionViewCell.swift */; };
 		161F3C3929E5AF330053158A /* InterestsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161F3C3729E5AF330053158A /* InterestsCollectionViewCell.xib */; };
+		161F3C3F29ED3D990053158A /* CardTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C3C29ED3D980053158A /* CardTabBarController.swift */; };
+		161F3C4029ED3D990053158A /* BarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C3D29ED3D980053158A /* BarItemView.swift */; };
+		161F3C4129ED3D990053158A /* CardTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C3E29ED3D990053158A /* CardTabBarView.swift */; };
+		161F3C4429ED41330053158A /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C4329ED41330053158A /* TabbarController.swift */; };
 		1ACED86ADAA2441F495B6912 /* Pods_AnalyticsManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B66C5D6B0826B75B9813C2 /* Pods_AnalyticsManager.framework */; };
 		374FA5CB00801009F6B43FDB /* Pods_OasisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64659B367BA850135AB1D5E9 /* Pods_OasisTests.framework */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
@@ -405,6 +409,10 @@
 		161F3C2D29E5AD4D0053158A /* InterestsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsConfigurator.swift; sourceTree = "<group>"; };
 		161F3C3629E5AF330053158A /* InterestsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsCollectionViewCell.swift; sourceTree = "<group>"; };
 		161F3C3729E5AF330053158A /* InterestsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InterestsCollectionViewCell.xib; sourceTree = "<group>"; };
+		161F3C3C29ED3D980053158A /* CardTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTabBarController.swift; sourceTree = "<group>"; };
+		161F3C3D29ED3D980053158A /* BarItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarItemView.swift; sourceTree = "<group>"; };
+		161F3C3E29ED3D990053158A /* CardTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTabBarView.swift; sourceTree = "<group>"; };
+		161F3C4329ED41330053158A /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		1D7408F9BE9E6B05F6D17E8A /* Pods-AnalyticsManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnalyticsManager/Pods-AnalyticsManager.release.xcconfig"; sourceTree = "<group>"; };
 		22C3C119E084FE2B0FF3C34F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
@@ -1019,6 +1027,24 @@
 			path = "Oasis Controller";
 			sourceTree = "<group>";
 		};
+		161F3C3B29ED3D830053158A /* Custom Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				161F3C3D29ED3D980053158A /* BarItemView.swift */,
+				161F3C3C29ED3D980053158A /* CardTabBarController.swift */,
+				161F3C3E29ED3D990053158A /* CardTabBarView.swift */,
+			);
+			path = "Custom Tabbar";
+			sourceTree = "<group>";
+		};
+		161F3C4229ED41270053158A /* Tabbar Controller */ = {
+			isa = PBXGroup;
+			children = (
+				161F3C4329ED41330053158A /* TabbarController.swift */,
+			);
+			path = "Tabbar Controller";
+			sourceTree = "<group>";
+		};
 		166EF2F929D36FC90029908E /* Flows */ = {
 			isa = PBXGroup;
 			children = (
@@ -1302,6 +1328,7 @@
 		CF87EDA2201B8BEB00562226 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				161F3C3B29ED3D830053158A /* Custom Tabbar */,
 				161F3C3A29ED35C20053158A /* Oasis Controller */,
 				161F3C1829E5ACBC0053158A /* Custom CollectionView Layout */,
 				3EDC4157224E892A00624D2B /* UIImageView */,
@@ -1322,6 +1349,7 @@
 		CF87EDA9201EECFA00562226 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				161F3C4229ED41270053158A /* Tabbar Controller */,
 				166EF2F929D36FC90029908E /* Flows */,
 				3ECBAAB123D06DB8003672DA /* PushNotification */,
 				CF87EDB6201EED1500562226 /* Initial */,
@@ -1871,6 +1899,7 @@
 				0FD65F1920D018480075E251 /* Double+Extensions.swift in Sources */,
 				161F3C2029E5ACD40053158A /* Help.swift in Sources */,
 				4AEF647522107DC000D53D75 /* BaseButton.swift in Sources */,
+				161F3C4029ED3D990053158A /* BarItemView.swift in Sources */,
 				CF40385A216CF78F001F649B /* InitialRouter.swift in Sources */,
 				161F3BFF29E3157D0053158A /* SelectAgeRouter.swift in Sources */,
 				3EDC4133224E81BE00624D2B /* ActivityIndicator.swift in Sources */,
@@ -1892,6 +1921,7 @@
 				CF6B70F221EDD5F700204B65 /* VersionLabel.swift in Sources */,
 				CF87EDA0201B6EF700562226 /* BaseViewController.swift in Sources */,
 				161F3BEF29E2FCA20053158A /* CreateConfirmPasswordPresenter.swift in Sources */,
+				161F3C4129ED3D990053158A /* CardTabBarView.swift in Sources */,
 				161F3B9329D371500053158A /* OnboardingModels.swift in Sources */,
 				3EAFC549219B2D2F00E3C2BB /* TDAlertAction.swift in Sources */,
 				CF56472D211B1B740092EFBD /* Reactive+UIImageView.swift in Sources */,
@@ -1912,6 +1942,7 @@
 				67C9591126247EF300A67399 /* APIErrorModel.swift in Sources */,
 				161F3BD029D98AE00053158A /* LoginRouter.swift in Sources */,
 				0FD0C6EC2200B662000C5881 /* UIFont+Extentions.swift in Sources */,
+				161F3C3F29ED3D990053158A /* CardTabBarController.swift in Sources */,
 				CFF69D6A219551B4003BE6BF /* UIViewController+Extensions.swift in Sources */,
 				4AEF64772210842F00D53D75 /* BaseSkyFloatingTextField.swift in Sources */,
 				11CD5280230AFF91003D08BE /* ViewEmbedder.swift in Sources */,
@@ -1987,6 +2018,7 @@
 				CFC2BFE6216CA3C800DC31A7 /* ErrorViewModel.swift in Sources */,
 				0F1B7FB722CA6CB50079F752 /* LocaleInfo.swift in Sources */,
 				3EDC4159224E893B00624D2B /* BaseUIImageView.swift in Sources */,
+				161F3C4429ED41330053158A /* TabbarController.swift in Sources */,
 				0F57539D20EE1C430069C139 /* APIClient.swift in Sources */,
 				161F3BF329E2FCA20053158A /* CreateConfirmPasswordInteractor.swift in Sources */,
 				161F3C3329E5AD4D0053158A /* InterestsInteractor.swift in Sources */,

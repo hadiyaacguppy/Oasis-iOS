@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 
 extension UIColor {
+    
+    static let barTintColor = UIColor(named: "color_background")
+    static let backgroundColor = UIColor(named: "color_shadow")
+    static let tintColor = UIColor(named: "color_indicator")
+    
     /**
      Initialize a UIColor from RGB Ints
      

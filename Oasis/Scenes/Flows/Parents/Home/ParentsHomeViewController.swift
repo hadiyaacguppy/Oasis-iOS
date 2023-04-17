@@ -19,7 +19,8 @@ class ParentsHomeViewController: BaseViewController {
     var router: ParentsHomeRouter?
     
     lazy var topCurvedImageview : BaseImageView = {
-        let img = BaseImageView(image: R.image.newBg()!)
+        let img = BaseImageView(frame: .zero)
+        img.image = R.image.newBg()!
         img.contentMode = .scaleAspectFill
         img.translatesAutoresizingMaskIntoConstraints = false
         return img

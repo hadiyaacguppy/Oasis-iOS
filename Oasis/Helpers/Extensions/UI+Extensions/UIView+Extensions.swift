@@ -515,4 +515,13 @@ extension UIView{
     @objc var screenshot : UIImage? {
         return self.screenshotForCroppingRect(croppingRect: self.bounds)
     }
+    
+    static func build<T: UIView>(_ builder: ((T) -> Void)? = nil) -> T {
+        let view = T()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        builder?(view)
+
+        return view
+    }
 }
+
