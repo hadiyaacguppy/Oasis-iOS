@@ -21,28 +21,36 @@ class ParentsHomeViewController: BaseViewController {
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.autoLayout()
-        scrollView.contentInsetAdjustmentBehavior = .automatic
-        scrollView.bounces = true
-        scrollView.showsVerticalScrollIndicator = false
-        //scrollView.delegate = self
+        scrollView.backgroundColor = .red
         return scrollView
     }()
     
-    private lazy var scrollViewContentView: UIView = {
-        let v = UIView()
-        v.backgroundColor = .clear
-        v.autoLayout()
-        return v
+    private lazy var contentView: UIView = {
+        let view = UIView()
+        view.autoLayout()
+        view.backgroundColor = .blue
+        return view
     }()
+    
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.spacing = 8
+        stackView.autoLayout()
+        stackView.backgroundColor = .yellow
+        return stackView
+    }()
+    
     
     lazy var topCurvedImageview : BaseImageView = {
         let img = BaseImageView(frame: .zero)
         img.image = R.image.newBg()!
         img.contentMode = .scaleAspectFill
-        img.translatesAutoresizingMaskIntoConstraints = false
+        img.autoLayout()
         return img
     }()
-
+    
     lazy var balanceStackView : UIStackView = {
         UIStackView()
             .axis(.vertical)
@@ -91,10 +99,10 @@ class ParentsHomeViewController: BaseViewController {
     }()
     
     lazy var sendMoneyActionView : BaseUIView = {
-        let view = BaseUIView(frame: .zero)
-        view.backgroundColor = Constants.Colors.aquaMarine
-        view.roundCorners = .all(radius: 14)
-        view.autoLayout()
+        let vW = BaseUIView(frame: .zero)
+        vW.backgroundColor = Constants.Colors.aquaMarine
+        vW.roundCorners = .all(radius: 14)
+        vW.autoLayout()
         let img = BaseImageView(frame: .zero)
         img.image = R.image.sendMoneyIcon()!
         img.autoLayout()
@@ -105,28 +113,28 @@ class ParentsHomeViewController: BaseViewController {
                             color: .white)
         label.autoLayout()
         label.text = "Send".localized
-        view.addSubview(img)
-        view.addSubview(label)
+        vW.addSubview(img)
+        vW.addSubview(label)
         NSLayoutConstraint.activate([
-            img.topAnchor.constraint(equalTo: view.topAnchor, constant: 17),
-            img.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            img.topAnchor.constraint(equalTo: vW.topAnchor, constant: 17),
+            img.centerXAnchor.constraint(equalTo: vW.centerXAnchor),
             img.heightAnchor.constraint(equalToConstant: 26),
             label.topAnchor.constraint(equalTo: img.bottomAnchor, constant: 2),
-            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.centerXAnchor.constraint(equalTo: vW.centerXAnchor),
             label.heightAnchor.constraint(equalToConstant: 21)
         ])
         
-        view.onTap {
+        vW.onTap {
             
         }
-        return view
+        return vW
     }()
     
     lazy var receiveMoneyActionView : BaseUIView = {
-        let view = BaseUIView(frame: .zero)
-        view.backgroundColor = Constants.Colors.aquaMarine
-        view.roundCorners = .all(radius: 14)
-        view.autoLayout()
+        let vW = BaseUIView(frame: .zero)
+        vW.backgroundColor = Constants.Colors.aquaMarine
+        vW.roundCorners = .all(radius: 14)
+        vW.autoLayout()
         let img = BaseImageView(frame: .zero)
         img.image = R.image.receiveMoneyIcon()!
         img.autoLayout()
@@ -137,29 +145,28 @@ class ParentsHomeViewController: BaseViewController {
                             color: .white)
         label.autoLayout()
         label.text = "Receive".localized
-        view.addSubview(img)
-        view.addSubview(label)
+        vW.addSubview(img)
+        vW.addSubview(label)
         NSLayoutConstraint.activate([
-            img.topAnchor.constraint(equalTo: view.topAnchor, constant: 17),
-            img.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            img.topAnchor.constraint(equalTo: vW.topAnchor, constant: 17),
+            img.centerXAnchor.constraint(equalTo: vW.centerXAnchor),
             img.heightAnchor.constraint(equalToConstant: 26),
             label.topAnchor.constraint(equalTo: img.bottomAnchor, constant: 2),
-            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.centerXAnchor.constraint(equalTo: vW.centerXAnchor),
             label.heightAnchor.constraint(equalToConstant: 21)
         ])
         
-        view.onTap {
+        vW.onTap {
             
         }
-        return view
+        return vW
     }()
     
-    
     lazy var payActionView : BaseUIView = {
-        let view = BaseUIView(frame: .zero)
-        view.backgroundColor = Constants.Colors.aquaMarine
-        view.roundCorners = .all(radius: 14)
-        view.autoLayout()
+        let vW = BaseUIView(frame: .zero)
+        vW.backgroundColor = Constants.Colors.aquaMarine
+        vW.roundCorners = .all(radius: 14)
+        vW.autoLayout()
         let img = BaseImageView(frame: .zero)
         img.image = R.image.sendMoneyIcon()!
         img.autoLayout()
@@ -170,29 +177,28 @@ class ParentsHomeViewController: BaseViewController {
                             color: .white)
         label.autoLayout()
         label.text = "Pay".localized
-        view.addSubview(img)
-        view.addSubview(label)
+        vW.addSubview(img)
+        vW.addSubview(label)
         NSLayoutConstraint.activate([
-            img.topAnchor.constraint(equalTo: view.topAnchor, constant: 17),
-            img.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            img.topAnchor.constraint(equalTo: vW.topAnchor, constant: 17),
+            img.centerXAnchor.constraint(equalTo: vW.centerXAnchor),
             img.heightAnchor.constraint(equalToConstant: 26),
             label.topAnchor.constraint(equalTo: img.bottomAnchor, constant: 2),
-            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.centerXAnchor.constraint(equalTo: vW.centerXAnchor),
             label.heightAnchor.constraint(equalToConstant: 21)
         ])
         
-        view.onTap {
+        vW.onTap {
             
         }
-        return view
+        return vW
     }()
     
-    
     lazy var topUpActionView : BaseUIView = {
-        let view = BaseUIView(frame: .zero)
-        view.backgroundColor = Constants.Colors.aquaMarine
-        view.roundCorners = .all(radius: 14)
-        view.autoLayout()
+        let vW = BaseUIView(frame: .zero)
+        vW.backgroundColor = Constants.Colors.aquaMarine
+        vW.roundCorners = .all(radius: 14)
+        vW.autoLayout()
         let img = BaseImageView(frame: .zero)
         img.image = R.image.topUpIcon()!
         img.autoLayout()
@@ -203,29 +209,28 @@ class ParentsHomeViewController: BaseViewController {
                             color: .white)
         label.autoLayout()
         label.text = "Top Up".localized
-        view.addSubview(img)
-        view.addSubview(label)
+        vW.addSubview(img)
+        vW.addSubview(label)
         NSLayoutConstraint.activate([
-            img.topAnchor.constraint(equalTo: view.topAnchor, constant: 17),
-            img.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            img.topAnchor.constraint(equalTo: vW.topAnchor, constant: 17),
+            img.centerXAnchor.constraint(equalTo: vW.centerXAnchor),
             img.heightAnchor.constraint(equalToConstant: 26),
             label.topAnchor.constraint(equalTo: img.bottomAnchor, constant: 2),
-            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.centerXAnchor.constraint(equalTo: vW.centerXAnchor),
             label.heightAnchor.constraint(equalToConstant: 21)
         ])
         
-        view.onTap {
+        vW.onTap {
             
         }
-        return view
+        return vW
     }()
     
-    
     lazy var sendGiftActionView : BaseUIView = {
-        let view = BaseUIView(frame: .zero)
-        view.backgroundColor = Constants.Colors.aquaMarine
-        view.roundCorners = .all(radius: 14)
-        view.autoLayout()
+        let vW = BaseUIView(frame: .zero)
+        vW.backgroundColor = Constants.Colors.aquaMarine
+        vW.roundCorners = .all(radius: 14)
+        vW.autoLayout()
         let img = BaseImageView(frame: .zero)
         img.image = R.image.nounGift5459873()!
         img.autoLayout()
@@ -236,29 +241,28 @@ class ParentsHomeViewController: BaseViewController {
                             color: .white)
         label.autoLayout()
         label.text = "Send gift".localized
-        view.addSubview(img)
-        view.addSubview(label)
+        vW.addSubview(img)
+        vW.addSubview(label)
         NSLayoutConstraint.activate([
-            img.topAnchor.constraint(equalTo: view.topAnchor, constant: 17),
-            img.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            img.topAnchor.constraint(equalTo: vW.topAnchor, constant: 17),
+            img.centerXAnchor.constraint(equalTo: vW.centerXAnchor),
             img.heightAnchor.constraint(equalToConstant: 26),
             label.topAnchor.constraint(equalTo: img.bottomAnchor, constant: 2),
-            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.centerXAnchor.constraint(equalTo: vW.centerXAnchor),
             label.heightAnchor.constraint(equalToConstant: 21)
         ])
         
-        view.onTap {
+        vW.onTap {
             
         }
-        return view
+        return vW
     }()
     
-    
     lazy var subscriptionsActionView : BaseUIView = {
-        let view = BaseUIView(frame: .zero)
-        view.backgroundColor = Constants.Colors.aquaMarine
-        view.roundCorners = .all(radius: 14)
-        view.autoLayout()
+        let vW = BaseUIView(frame: .zero)
+        vW.backgroundColor = Constants.Colors.aquaMarine
+        vW.roundCorners = .all(radius: 14)
+        vW.autoLayout()
         let img = BaseImageView(frame: .zero)
         img.image = R.image.subscriptionIcon()!
         img.autoLayout()
@@ -269,33 +273,33 @@ class ParentsHomeViewController: BaseViewController {
                             color: .white)
         label.autoLayout()
         label.text = "Subscriptions".localized
-        view.addSubview(img)
-        view.addSubview(label)
+        vW.addSubview(img)
+        vW.addSubview(label)
         NSLayoutConstraint.activate([
-            img.topAnchor.constraint(equalTo: view.topAnchor, constant: 17),
-            img.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            img.topAnchor.constraint(equalTo: vW.topAnchor, constant: 17),
+            img.centerXAnchor.constraint(equalTo: vW.centerXAnchor),
             img.heightAnchor.constraint(equalToConstant: 26),
             label.topAnchor.constraint(equalTo: img.bottomAnchor, constant: 2),
-            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.centerXAnchor.constraint(equalTo: vW.centerXAnchor),
             label.heightAnchor.constraint(equalToConstant: 21)
         ])
         
-        view.onTap {
+        vW.onTap {
             
         }
-        return view
+        return vW
     }()
     
     private lazy var areYouParentContainerView : BaseUIView = {
-        let view = BaseUIView()
-        view.backgroundColor = .clear
-        view.autoLayout()
-        return view
+        let vW = BaseUIView()
+        vW.backgroundColor = .clear
+        vW.autoLayout()
+        return vW
     }()
- 
+    
     private var isThereUpcomingPayments : Bool = false
     private var upcomingPaymentsContainerView : BaseUIView = BaseUIView()
-
+    
 }
 
 //MARK:- View Lifecycle
@@ -318,39 +322,12 @@ extension ParentsHomeViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavBarAppearance()
+        //scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height+500)
     }
     
     private func setupUI(){
         addTopCurvedImage()
         addScrollView()
-        addBalanceStack()
-        addActionsStacksToContainer()
-        addAreYouParentView()
-        addUpcomingPaymentsSection(shouldAddPlaceholder: true)
-        addRecentActivitiesSection(shouldAddPlaceholder: false)
-    }
-    
-    private func addScrollView () {
-        view.addSubview(scrollView)
-        //view.sendSubviewToBack(scrollView)
-//        let frameGuide = scrollView.frameLayoutGuide
-//        let contentGuide = scrollView.contentLayoutGuide
-        
-        NSLayoutConstraint.activate([
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor)
-        ])
-        
-        scrollView.addSubview(scrollViewContentView)
-        NSLayoutConstraint.activate([
-            scrollViewContentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            scrollViewContentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            scrollViewContentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            scrollViewContentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            scrollViewContentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
-        ])
     }
     
     private func addTopCurvedImage(){
@@ -362,29 +339,62 @@ extension ParentsHomeViewController{
             topCurvedImageview.heightAnchor.constraint(equalToConstant: 250)
         ])
     }
+
+    private func addScrollView () {
+        view.insertSubview(scrollView, aboveSubview: topCurvedImageview)
+        scrollView.addSubview(contentView)
+        contentView.addSubview(stackView)
+        
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
+        
+        addBalanceStack()
+        addActionsStacksToContainer()
+        addAreYouParentView()
+        addUpcomingPaymentsSection(shouldAddPlaceholder: true)
+        addRecentActivitiesSection(shouldAddPlaceholder: false)
+    }
+    
     
     private func addBalanceStack(){
-        scrollViewContentView.addSubview(balanceStackView)
-        NSLayoutConstraint.activate([
-            balanceStackView.topAnchor.constraint(equalTo: scrollViewContentView.safeAreaLayoutGuide.topAnchor, constant: 16),
-            balanceStackView.leadingAnchor.constraint(equalTo: scrollViewContentView.leadingAnchor, constant: 30),
-            balanceStackView.trailingAnchor.constraint(equalTo: scrollViewContentView.trailingAnchor, constant: -30),
-            balanceStackView.heightAnchor.constraint(equalToConstant: 85)
-        ])
+        stackView.addArrangedSubview(balanceStackView)
+        //        NSLayoutConstraint.activate([
+        //            balanceStackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 90),
+        //            balanceStackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 30),
+        //            balanceStackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -30),
+        //            balanceStackView.heightAnchor.constraint(equalToConstant: 85)
+        //        ])
         
         balanceStackView.addArrangedSubview(balanceStaticLabel)
         balanceStackView.addArrangedSubview(balanceValueLabel)
     }
     
     private func addActionsStacksToContainer(){
-        scrollViewContentView.addSubview(actionsContainerView)
+        stackView.addArrangedSubview(actionsContainerView)
         
-        NSLayoutConstraint.activate([
-            actionsContainerView.topAnchor.constraint(equalTo: balanceStackView.bottomAnchor, constant: 14),
-            actionsContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            actionsContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            actionsContainerView.heightAnchor.constraint(equalToConstant: 167)
-        ])
+        //        NSLayoutConstraint.activate([
+        //            actionsContainerView.topAnchor.constraint(equalTo: balanceStackView.bottomAnchor, constant: 14),
+        //            actionsContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+        //            actionsContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+        //            actionsContainerView.heightAnchor.constraint(equalToConstant: 167)
+        //        ])
+        
+        addActionsToCorrespondingStacks()
         
         actionsContainerView.addSubview(firstActionsStackView)
         actionsContainerView.addSubview(secondActionsStackView)
@@ -401,7 +411,9 @@ extension ParentsHomeViewController{
             secondActionsStackView.heightAnchor.constraint(equalToConstant: 76)
         ])
         
-        addActionsToCorrespondingStacks()
+        
+        
+        
     }
     
     private func addActionsToCorrespondingStacks(){
@@ -432,14 +444,13 @@ extension ParentsHomeViewController{
             return img
         }()
         
-        scrollViewContentView.addSubview(areYouParentContainerView)
-        
-        NSLayoutConstraint.activate([
-            areYouParentContainerView.topAnchor.constraint(equalTo: actionsContainerView.bottomAnchor, constant: 15),
-            areYouParentContainerView.leadingAnchor.constraint(equalTo: scrollViewContentView.leadingAnchor, constant: 30),
-            areYouParentContainerView.trailingAnchor.constraint(equalTo: scrollViewContentView.trailingAnchor, constant: -30),
-            areYouParentContainerView.heightAnchor.constraint(equalToConstant: 205)
-        ])
+        stackView.addArrangedSubview(areYouParentContainerView)
+        //        NSLayoutConstraint.activate([
+        //            areYouParentContainerView.topAnchor.constraint(equalTo: actionsContainerView.bottomAnchor, constant: 15),
+        //            areYouParentContainerView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 30),
+        //            areYouParentContainerView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -30),
+        //            areYouParentContainerView.heightAnchor.constraint(equalToConstant: 205)
+        //        ])
         
         areYouParentContainerView.addSubview(areYouParentCardImageView)
         NSLayoutConstraint.activate([
@@ -455,6 +466,8 @@ extension ParentsHomeViewController{
             parentImageView.leadingAnchor.constraint(equalTo: areYouParentContainerView.leadingAnchor)
         ])
         
+        
+        
     }
     
     private func addUpcomingPaymentsSection(shouldAddPlaceholder show: Bool){
@@ -463,25 +476,25 @@ extension ParentsHomeViewController{
         ulabel.text = "Upcoming Payments".localized
         ulabel.autoLayout()
         
-        scrollViewContentView.addSubview(ulabel)
-        NSLayoutConstraint.activate([
-            ulabel.topAnchor.constraint(equalTo: areYouParentContainerView.bottomAnchor, constant: 13),
-            ulabel.leadingAnchor.constraint(equalTo: scrollViewContentView.leadingAnchor, constant: 30),
-            ulabel.heightAnchor.constraint(equalToConstant: 35)
-        ])
+        stackView.addArrangedSubview(ulabel)
+        //        NSLayoutConstraint.activate([
+        //            ulabel.topAnchor.constraint(equalTo: areYouParentContainerView.bottomAnchor, constant: 13),
+        //            ulabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 30),
+        //            ulabel.heightAnchor.constraint(equalToConstant: 35)
+        //        ])
         
         func addPlaceholder(){
             upcomingPaymentsContainerView.autoLayout()
             upcomingPaymentsContainerView.backgroundColor = .clear
-
-            scrollViewContentView.addSubview(upcomingPaymentsContainerView)
             
-            NSLayoutConstraint.activate([
-                upcomingPaymentsContainerView.leadingAnchor.constraint(equalTo: scrollViewContentView.leadingAnchor, constant: 30),
-                upcomingPaymentsContainerView.topAnchor.constraint(equalTo: ulabel.bottomAnchor, constant: 2),
-                upcomingPaymentsContainerView.trailingAnchor.constraint(equalTo: scrollViewContentView.trailingAnchor, constant: -30),
-                upcomingPaymentsContainerView.heightAnchor.constraint(equalToConstant: 250)
-            ])
+            stackView.addArrangedSubview(upcomingPaymentsContainerView)
+            
+            //            NSLayoutConstraint.activate([
+            //                upcomingPaymentsContainerView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 30),
+            //                upcomingPaymentsContainerView.topAnchor.constraint(equalTo: ulabel.bottomAnchor, constant: 2),
+            //                upcomingPaymentsContainerView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -30),
+            //                upcomingPaymentsContainerView.heightAnchor.constraint(equalToConstant: 250)
+            //            ])
             
             let noPaymentsPlaceholderImageview : BaseImageView = {
                 let img = BaseImageView(frame: .zero)
@@ -527,7 +540,7 @@ extension ParentsHomeViewController{
         if show {
             addPlaceholder()
         }else{
-            #warning("Should load payments")
+#warning("Should load payments")
         }
     }
     
@@ -537,37 +550,36 @@ extension ParentsHomeViewController{
         ulabel.text = "Recent Activities".localized
         ulabel.autoLayout()
         
-        scrollViewContentView.addSubview(ulabel)
-        NSLayoutConstraint.activate([
-            ulabel.topAnchor.constraint(equalTo: upcomingPaymentsContainerView.bottomAnchor, constant: 30),
-            ulabel.leadingAnchor.constraint(equalTo: scrollViewContentView.leadingAnchor, constant: 30),
-            ulabel.heightAnchor.constraint(equalToConstant: 35),
-            ulabel.widthAnchor.constraint(equalToConstant: 120)
-        ])
+        stackView.addArrangedSubview(ulabel)
+        //        NSLayoutConstraint.activate([
+        //            ulabel.topAnchor.constraint(equalTo: upcomingPaymentsContainerView.bottomAnchor, constant: 30),
+        //            ulabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 30),
+        //            ulabel.heightAnchor.constraint(equalToConstant: 35),
+        //            ulabel.widthAnchor.constraint(equalToConstant: 120)
+        //        ])
         
-//        let viewAllButton: BaseButton = {
-//            let btn = BaseButton()
-//            let yourAttributes: [NSAttributedString.Key: Any] = [
-//                .font: MainFont.medium.with(size: 11),
-//                .foregroundColor: UIColor.black,
-//                .underlineStyle: NSUnderlineStyle.single.rawValue
-//            ]
-//            let attributeString = NSMutableAttributedString(
-//                    string: "View all",
-//                    attributes: yourAttributes
-//                 )
-//            btn.setAttributedTitle(attributeString, for: .normal)
-//            return btn
-//        }()
-//
-//        scrollViewContentView.addSubview(viewAllButton)
-//        NSLayoutConstraint.activate([
-//            viewAllButton.centerYAnchor.constraint(equalTo: ulabel.centerYAnchor),
-//            viewAllButton.trailingAnchor.constraint(equalTo: scrollViewContentView.trailingAnchor, constant: -30),
-//            viewAllButton.heightAnchor.constraint(equalToConstant: 35),
-//            viewAllButton.widthAnchor.constraint(equalToConstant: 120)
-//        ])
-          
+        //        let viewAllButton: BaseButton = {
+        //            let btn = BaseButton()
+        //            let yourAttributes: [NSAttributedString.Key: Any] = [
+        //                .font: MainFont.medium.with(size: 11),
+        //                .foregroundColor: UIColor.black,
+        //                .underlineStyle: NSUnderlineStyle.single.rawValue
+        //            ]
+        //            let attributeString = NSMutableAttributedString(
+        //                    string: "View all",
+        //                    attributes: yourAttributes
+        //                 )
+        //            btn.setAttributedTitle(attributeString, for: .normal)
+        //            return btn
+        //        }()
+        //
+        //        scrollView.addSubview(viewAllButton)
+        //        NSLayoutConstraint.activate([
+        //            viewAllButton.topAnchor.constraint(equalTo: upcomingPaymentsContainerView.bottomAnchor, constant: 30),
+        //            viewAllButton.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -30),
+        //            viewAllButton.heightAnchor.constraint(equalToConstant: 35)
+        //        ])
+        
         func addPlaceholder(){
             
         }
@@ -604,7 +616,7 @@ extension ParentsHomeViewController{
             guard let self = self  else { return }
             self.showPlaceHolderView(withAppearanceType: .loading,
                                      title: Constants.PlaceHolderView.Texts.wait)
-            #warning("Retry Action does not set")
+#warning("Retry Action does not set")
         }
     }
 }
