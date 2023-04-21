@@ -31,7 +31,7 @@ struct Constants {
         static let appColor : UIColor  = .init(hexFromString: "3301a8")
         static let glowColor : UIColor = .init(red: 197, green: 93, blue: 207)
         static let aquaMarine : UIColor = .init(hexFromString: "#37d09c")
-        
+        static let textviewBGColor : UIColor = .init(red: 244, green: 244, blue: 244)
         struct Navigation {
             static let background : UIColor = Constants.Colors.appColor
         }

@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 11 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 12 storyboards.
   struct storyboard {
     /// Storyboard `CreateConfirmPassword`.
     static let createConfirmPassword = _R.storyboard.createConfirmPassword()
@@ -114,6 +114,8 @@ struct R: Rswift.Validatable {
     static let registration = _R.storyboard.registration()
     /// Storyboard `SelectAge`.
     static let selectAge = _R.storyboard.selectAge()
+    /// Storyboard `SendGift`.
+    static let sendGift = _R.storyboard.sendGift()
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "CreateConfirmPassword", bundle: ...)`
@@ -189,6 +191,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "SelectAge", bundle: ...)`
     static func selectAge(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.selectAge)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "SendGift", bundle: ...)`
+    static func sendGift(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.sendGift)
     }
     #endif
 
@@ -1383,6 +1392,9 @@ struct _R: Rswift.Validatable {
       #if os(iOS) || os(tvOS)
       try selectAge.validate()
       #endif
+      #if os(iOS) || os(tvOS)
+      try sendGift.validate()
+      #endif
     }
 
     #if os(iOS) || os(tvOS)
@@ -1677,6 +1689,34 @@ struct _R: Rswift.Validatable {
         }
         if _R.storyboard.selectAge().selectAgeViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'selectAgeViewControllerNavVC' could not be loaded from storyboard 'SelectAge' as 'BaseNavigationController'.") }
         if _R.storyboard.selectAge().selectAgeViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'selectAgeViewControllerVC' could not be loaded from storyboard 'SelectAge' as 'SelectAgeViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct sendGift: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseNavigationController
+
+      let bundle = R.hostingBundle
+      let name = "SendGift"
+      let sendGiftViewControllerNavVC = StoryboardViewControllerResource<BaseNavigationController>(identifier: "SendGiftViewControllerNavVC")
+      let sendGiftViewControllerVC = StoryboardViewControllerResource<SendGiftViewController>(identifier: "SendGiftViewControllerVC")
+
+      func sendGiftViewControllerNavVC(_: Void = ()) -> BaseNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: sendGiftViewControllerNavVC)
+      }
+
+      func sendGiftViewControllerVC(_: Void = ()) -> SendGiftViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: sendGiftViewControllerVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.sendGift().sendGiftViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'sendGiftViewControllerNavVC' could not be loaded from storyboard 'SendGift' as 'BaseNavigationController'.") }
+        if _R.storyboard.sendGift().sendGiftViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'sendGiftViewControllerVC' could not be loaded from storyboard 'SendGift' as 'SendGiftViewController'.") }
       }
 
       fileprivate init() {}

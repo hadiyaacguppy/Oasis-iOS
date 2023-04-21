@@ -25,8 +25,8 @@ class ParentsHomeViewController: BaseViewController {
         return scrollView
     }()
     
-    private lazy var contentView: UIView = {
-        let view = UIView()
+    private lazy var contentView: BaseUIView = {
+        let view = BaseUIView()
         view.autoLayout()
         view.backgroundColor = .blue
         return view
@@ -72,6 +72,9 @@ class ParentsHomeViewController: BaseViewController {
         lbl.style = .init(font: MainFont.medium.with(size: 30), color: .white)
         lbl.text = "0.00 LBP".localized
         lbl.autoLayout()
+        lbl.onTap {
+            self.router?.pushToSendGiftController()
+        }
         return lbl
     }()
     
@@ -226,35 +229,11 @@ class ParentsHomeViewController: BaseViewController {
         return vW
     }()
     
-    lazy var sendGiftActionView : BaseUIView = {
-        let vW = BaseUIView(frame: .zero)
+    var sendGiftActionView : BaseUIView = {
+        let vW = BaseUIView()
         vW.backgroundColor = Constants.Colors.aquaMarine
         vW.roundCorners = .all(radius: 14)
         vW.autoLayout()
-        let img = BaseImageView(frame: .zero)
-        img.image = R.image.nounGift5459873()!
-        img.autoLayout()
-        img.contentMode = .scaleAspectFit
-        
-        let label = BaseLabel()
-        label.style = .init(font: MainFont.medium.with(size: 12),
-                            color: .white)
-        label.autoLayout()
-        label.text = "Send gift".localized
-        vW.addSubview(img)
-        vW.addSubview(label)
-        NSLayoutConstraint.activate([
-            img.topAnchor.constraint(equalTo: vW.topAnchor, constant: 17),
-            img.centerXAnchor.constraint(equalTo: vW.centerXAnchor),
-            img.heightAnchor.constraint(equalToConstant: 26),
-            label.topAnchor.constraint(equalTo: img.bottomAnchor, constant: 2),
-            label.centerXAnchor.constraint(equalTo: vW.centerXAnchor),
-            label.heightAnchor.constraint(equalToConstant: 21)
-        ])
-        
-        vW.onTap {
-            
-        }
         return vW
     }()
     
@@ -366,8 +345,8 @@ extension ParentsHomeViewController{
         addBalanceStack()
         addActionsStacksToContainer()
         addAreYouParentView()
-        addUpcomingPaymentsSection(shouldAddPlaceholder: true)
-        addRecentActivitiesSection(shouldAddPlaceholder: false)
+//        addUpcomingPaymentsSection(shouldAddPlaceholder: true)
+//        addRecentActivitiesSection(shouldAddPlaceholder: false)
     }
     
     
@@ -423,9 +402,37 @@ extension ParentsHomeViewController{
         
         secondActionsStackView.addArrangedSubview(topUpActionView)
         secondActionsStackView.addArrangedSubview(sendGiftActionView)
+        setupSendGiftUI()
+
         secondActionsStackView.addArrangedSubview(subscriptionsActionView)
     }
     
+    private func setupSendGiftUI(){
+        let img = BaseImageView(frame: .zero)
+        img.image = R.image.nounGift5459873()!
+        img.autoLayout()
+        img.contentMode = .scaleAspectFit
+        
+        let label = BaseLabel()
+        label.style = .init(font: MainFont.medium.with(size: 12),
+                            color: .white)
+        label.autoLayout()
+        label.text = "Send gift".localized
+        sendGiftActionView.addSubview(img)
+        sendGiftActionView.addSubview(label)
+        NSLayoutConstraint.activate([
+            img.topAnchor.constraint(equalTo: sendGiftActionView.topAnchor, constant: 17),
+            img.centerXAnchor.constraint(equalTo: sendGiftActionView.centerXAnchor),
+            img.heightAnchor.constraint(equalToConstant: 26),
+            label.topAnchor.constraint(equalTo: img.bottomAnchor, constant: 2),
+            label.centerXAnchor.constraint(equalTo: sendGiftActionView.centerXAnchor),
+            label.heightAnchor.constraint(equalToConstant: 21)
+        ])
+        
+        sendGiftActionView.onTap {
+            self.router?.pushToSendGiftController()
+        }
+    }
     private func addAreYouParentView(){
         let areYouParentCardImageView : BaseImageView = {
             let img = BaseImageView(frame: .zero)

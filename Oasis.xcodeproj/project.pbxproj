@@ -123,6 +123,14 @@
 		161F3C4129ED3D990053158A /* CardTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C3E29ED3D990053158A /* CardTabBarView.swift */; };
 		161F3C4429ED41330053158A /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C4329ED41330053158A /* TabbarController.swift */; };
 		161F3C4629EDAC820053158A /* OasisGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C4529EDAC820053158A /* OasisGradientButton.swift */; };
+		161F3C4F29F277A30053158A /* SendGift.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 161F3C4829F277A30053158A /* SendGift.storyboard */; };
+		161F3C5029F277A30053158A /* SendGiftPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C4929F277A30053158A /* SendGiftPresenter.swift */; };
+		161F3C5129F277A30053158A /* SendGiftRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C4A29F277A30053158A /* SendGiftRouter.swift */; };
+		161F3C5229F277A30053158A /* SendGiftModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C4B29F277A30053158A /* SendGiftModels.swift */; };
+		161F3C5329F277A30053158A /* SendGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C4C29F277A30053158A /* SendGiftViewController.swift */; };
+		161F3C5429F277A30053158A /* SendGiftInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C4D29F277A30053158A /* SendGiftInteractor.swift */; };
+		161F3C5529F277A30053158A /* SendGiftConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C4E29F277A30053158A /* SendGiftConfigurator.swift */; };
+		161F3C5729F279C70053158A /* OasisAquaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C5629F279C70053158A /* OasisAquaButton.swift */; };
 		1ACED86ADAA2441F495B6912 /* Pods_AnalyticsManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B66C5D6B0826B75B9813C2 /* Pods_AnalyticsManager.framework */; };
 		374FA5CB00801009F6B43FDB /* Pods_OasisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64659B367BA850135AB1D5E9 /* Pods_OasisTests.framework */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
@@ -415,6 +423,14 @@
 		161F3C3E29ED3D990053158A /* CardTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTabBarView.swift; sourceTree = "<group>"; };
 		161F3C4329ED41330053158A /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		161F3C4529EDAC820053158A /* OasisGradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OasisGradientButton.swift; sourceTree = "<group>"; };
+		161F3C4829F277A30053158A /* SendGift.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SendGift.storyboard; sourceTree = "<group>"; };
+		161F3C4929F277A30053158A /* SendGiftPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendGiftPresenter.swift; sourceTree = "<group>"; };
+		161F3C4A29F277A30053158A /* SendGiftRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendGiftRouter.swift; sourceTree = "<group>"; };
+		161F3C4B29F277A30053158A /* SendGiftModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendGiftModels.swift; sourceTree = "<group>"; };
+		161F3C4C29F277A30053158A /* SendGiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendGiftViewController.swift; sourceTree = "<group>"; };
+		161F3C4D29F277A30053158A /* SendGiftInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendGiftInteractor.swift; sourceTree = "<group>"; };
+		161F3C4E29F277A30053158A /* SendGiftConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendGiftConfigurator.swift; sourceTree = "<group>"; };
+		161F3C5629F279C70053158A /* OasisAquaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OasisAquaButton.swift; sourceTree = "<group>"; };
 		1D7408F9BE9E6B05F6D17E8A /* Pods-AnalyticsManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnalyticsManager/Pods-AnalyticsManager.release.xcconfig"; sourceTree = "<group>"; };
 		22C3C119E084FE2B0FF3C34F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
@@ -1047,6 +1063,20 @@
 			path = "Tabbar Controller";
 			sourceTree = "<group>";
 		};
+		161F3C4729F277860053158A /* Send a Gift */ = {
+			isa = PBXGroup;
+			children = (
+				161F3C4829F277A30053158A /* SendGift.storyboard */,
+				161F3C4929F277A30053158A /* SendGiftPresenter.swift */,
+				161F3C4A29F277A30053158A /* SendGiftRouter.swift */,
+				161F3C4B29F277A30053158A /* SendGiftModels.swift */,
+				161F3C4C29F277A30053158A /* SendGiftViewController.swift */,
+				161F3C4D29F277A30053158A /* SendGiftInteractor.swift */,
+				161F3C4E29F277A30053158A /* SendGiftConfigurator.swift */,
+			);
+			path = "Send a Gift";
+			sourceTree = "<group>";
+		};
 		166EF2F929D36FC90029908E /* Flows */ = {
 			isa = PBXGroup;
 			children = (
@@ -1093,6 +1123,7 @@
 		166EF2FE29D36FE20029908E /* Common Flows */ = {
 			isa = PBXGroup;
 			children = (
+				161F3C4729F277860053158A /* Send a Gift */,
 				161F3BF529E3156F0053158A /* Select Age */,
 				161F3BB629D989D60053158A /* OTP Verification */,
 				161F3BB729D989E60053158A /* Password & Confirm */,
@@ -1190,6 +1221,7 @@
 				4AEF647422107DC000D53D75 /* BaseButton.swift */,
 				161F3BE529DF37F40053158A /* WhiteBorderButton.swift */,
 				161F3C4529EDAC820053158A /* OasisGradientButton.swift */,
+				161F3C5629F279C70053158A /* OasisAquaButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -1617,6 +1649,7 @@
 			files = (
 				161F3BFD29E3157D0053158A /* SelectAge.storyboard in Resources */,
 				161F3BAB29D4BF670053158A /* Montserrat-SemiBold.ttf in Resources */,
+				161F3C4F29F277A30053158A /* SendGift.storyboard in Resources */,
 				161F3BA929D4BF670053158A /* Montserrat-Thin.ttf in Resources */,
 				161F3C0829E319050053158A /* AgeTableViewCell.xib in Resources */,
 				161F3BAC29D4BF670053158A /* Montserrat-Italic.ttf in Resources */,
@@ -1874,6 +1907,7 @@
 				CF181BA2208099A0002603A1 /* UITextField+Extensions.swift in Sources */,
 				161F3BC629D98A0E0053158A /* RegistrationConfigurator.swift in Sources */,
 				0FD65F1B20D018730075E251 /* UIButton+Extensions.swift in Sources */,
+				161F3C5329F277A30053158A /* SendGiftViewController.swift in Sources */,
 				161F3BF229E2FCA20053158A /* CreateConfirmPasswordViewController.swift in Sources */,
 				161F3BF029E2FCA20053158A /* CreateConfirmPasswordRouter.swift in Sources */,
 				161F3B9B29D4BC810053158A /* OnboardingConfig.swift in Sources */,
@@ -1894,6 +1928,7 @@
 				CF8C5C9E20EF9CA400236C7B /* DatePickerDialog.swift in Sources */,
 				CF564702211B142E0092EFBD /* OneSignalPushService.swift in Sources */,
 				161F3BFE29E3157D0053158A /* SelectAgePresenter.swift in Sources */,
+				161F3C5729F279C70053158A /* OasisAquaButton.swift in Sources */,
 				161F3C2229E5ACD40053158A /* PinterestLayout.swift in Sources */,
 				67F03A5C26F20AA600ED91ED /* NetworkErrorResponse.swift in Sources */,
 				CFE259E822C9CDB4006B0472 /* TDFullIMageView.swift in Sources */,
@@ -1901,6 +1936,7 @@
 				3ECBAAB623D06DD8003672DA /* PushNotificationMessageController.swift in Sources */,
 				0FD65F1920D018480075E251 /* Double+Extensions.swift in Sources */,
 				161F3C2029E5ACD40053158A /* Help.swift in Sources */,
+				161F3C5229F277A30053158A /* SendGiftModels.swift in Sources */,
 				4AEF647522107DC000D53D75 /* BaseButton.swift in Sources */,
 				161F3C4029ED3D990053158A /* BarItemView.swift in Sources */,
 				CF40385A216CF78F001F649B /* InitialRouter.swift in Sources */,
@@ -1912,6 +1948,7 @@
 				CF8C5CAC20EF9D7E00236C7B /* UICollectionView+Extensions.swift in Sources */,
 				CF8C5CA820EF9D5400236C7B /* Bool+Extensions.swift in Sources */,
 				161F3BCF29D98AE00053158A /* LoginPresenter.swift in Sources */,
+				161F3C5529F277A30053158A /* SendGiftConfigurator.swift in Sources */,
 				161F3BC229D98A0E0053158A /* RegistrationRouter.swift in Sources */,
 				CFF69D772195593A003BE6BF /* URLRequest+Extensions.swift in Sources */,
 				CF8C5CB020EF9DC900236C7B /* UIImage+Extensions.swift in Sources */,
@@ -1937,6 +1974,7 @@
 				67290A02210E441400632C4F /* PlaceHolderHelper.swift in Sources */,
 				0F1B7FBD22CA6CBD0079F752 /* PhoneCodeCell.swift in Sources */,
 				CF8C5CAA20EF9D6700236C7B /* Int+Extensions.swift in Sources */,
+				161F3C5029F277A30053158A /* SendGiftPresenter.swift in Sources */,
 				3E8E350422CA0BDE009A3113 /* Observable+Operators.swift in Sources */,
 				161F3B9D29D4BD160053158A /* OnboardingController.swift in Sources */,
 				3E1DEAFA22BA660F00FAD9F4 /* BaseLabel.swift in Sources */,
@@ -1977,6 +2015,7 @@
 				3E1DEAF222BA632600FAD9F4 /* UIView+Border.swift in Sources */,
 				CF8373AD224A7F93000C3E21 /* R.generated.swift in Sources */,
 				0F1B7FB122CA6C9D0079F752 /* UIAlertController+Extensions.swift in Sources */,
+				161F3C5429F277A30053158A /* SendGiftInteractor.swift in Sources */,
 				161F3C4629EDAC820053158A /* OasisGradientButton.swift in Sources */,
 				CF40385D216CF78F001F649B /* InitialInteractor.swift in Sources */,
 				3EDC4153224E875300624D2B /* Reactive+UIView.swift in Sources */,
@@ -2023,6 +2062,7 @@
 				0F1B7FB722CA6CB50079F752 /* LocaleInfo.swift in Sources */,
 				3EDC4159224E893B00624D2B /* BaseUIImageView.swift in Sources */,
 				161F3C4429ED41330053158A /* TabbarController.swift in Sources */,
+				161F3C5129F277A30053158A /* SendGiftRouter.swift in Sources */,
 				0F57539D20EE1C430069C139 /* APIClient.swift in Sources */,
 				161F3BF329E2FCA20053158A /* CreateConfirmPasswordInteractor.swift in Sources */,
 				161F3C3329E5AD4D0053158A /* InterestsInteractor.swift in Sources */,
