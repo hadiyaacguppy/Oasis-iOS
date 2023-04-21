@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 12 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 13 storyboards.
   struct storyboard {
     /// Storyboard `CreateConfirmPassword`.
     static let createConfirmPassword = _R.storyboard.createConfirmPassword()
@@ -110,6 +110,8 @@ struct R: Rswift.Validatable {
     static let parentsHome = _R.storyboard.parentsHome()
     /// Storyboard `PushNotification`.
     static let pushNotification = _R.storyboard.pushNotification()
+    /// Storyboard `ReceiveMoney`.
+    static let receiveMoney = _R.storyboard.receiveMoney()
     /// Storyboard `Registration`.
     static let registration = _R.storyboard.registration()
     /// Storyboard `SelectAge`.
@@ -177,6 +179,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "PushNotification", bundle: ...)`
     static func pushNotification(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.pushNotification)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "ReceiveMoney", bundle: ...)`
+    static func receiveMoney(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.receiveMoney)
     }
     #endif
 
@@ -379,7 +388,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 97 images.
+  /// This `R.image` struct is generated, and contains static references to 98 images.
   struct image {
     /// Image `2474162 copy`.
     static let copy = Rswift.ImageResource(bundle: R.hostingBundle, name: "2474162 copy")
@@ -447,6 +456,8 @@ struct R: Rswift.Validatable {
     static let bg3Messagepage = Rswift.ImageResource(bundle: R.hostingBundle, name: "bg3 - messagepage")
     /// Image `birthday`.
     static let birthday = Rswift.ImageResource(bundle: R.hostingBundle, name: "birthday")
+    /// Image `blackBackArrow`.
+    static let blackBackArrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "blackBackArrow")
     /// Image `calendar icon`.
     static let calendarIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "calendar icon")
     /// Image `car-icon`.
@@ -804,6 +815,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "birthday", bundle: ..., traitCollection: ...)`
     static func birthday(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.birthday, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "blackBackArrow", bundle: ..., traitCollection: ...)`
+    static func blackBackArrow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.blackBackArrow, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1387,6 +1405,9 @@ struct _R: Rswift.Validatable {
       try pushNotification.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try receiveMoney.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try registration.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -1633,6 +1654,34 @@ struct _R: Rswift.Validatable {
         if _R.storyboard.pushNotification().pushNotificationContainer() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'pushNotificationContainer' could not be loaded from storyboard 'PushNotification' as 'PushNotificationContainer'.") }
         if _R.storyboard.pushNotification().pushNotificationMessageController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'pushNotificationMessageController' could not be loaded from storyboard 'PushNotification' as 'PushNotificationMessageController'.") }
         if _R.storyboard.pushNotification().pushNotificationNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'pushNotificationNavVC' could not be loaded from storyboard 'PushNotification' as 'BaseNavigationController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct receiveMoney: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseNavigationController
+
+      let bundle = R.hostingBundle
+      let name = "ReceiveMoney"
+      let receiveMoneyViewControllerNavVC = StoryboardViewControllerResource<BaseNavigationController>(identifier: "ReceiveMoneyViewControllerNavVC")
+      let receiveMoneyViewControllerVC = StoryboardViewControllerResource<ReceiveMoneyViewController>(identifier: "ReceiveMoneyViewControllerVC")
+
+      func receiveMoneyViewControllerNavVC(_: Void = ()) -> BaseNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: receiveMoneyViewControllerNavVC)
+      }
+
+      func receiveMoneyViewControllerVC(_: Void = ()) -> ReceiveMoneyViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: receiveMoneyViewControllerVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.receiveMoney().receiveMoneyViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'receiveMoneyViewControllerNavVC' could not be loaded from storyboard 'ReceiveMoney' as 'BaseNavigationController'.") }
+        if _R.storyboard.receiveMoney().receiveMoneyViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'receiveMoneyViewControllerVC' could not be loaded from storyboard 'ReceiveMoney' as 'ReceiveMoneyViewController'.") }
       }
 
       fileprivate init() {}

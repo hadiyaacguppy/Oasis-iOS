@@ -73,7 +73,8 @@ class ParentsHomeViewController: BaseViewController {
         lbl.text = "0.00 LBP".localized
         lbl.autoLayout()
         lbl.onTap {
-            self.router?.pushToSendGiftController()
+            //self.router?.pushToSendGiftController()
+            self.router?.pushToReceiveMoneyController()
         }
         return lbl
     }()

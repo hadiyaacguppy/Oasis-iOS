@@ -131,6 +131,15 @@
 		161F3C5429F277A30053158A /* SendGiftInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C4D29F277A30053158A /* SendGiftInteractor.swift */; };
 		161F3C5529F277A30053158A /* SendGiftConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C4E29F277A30053158A /* SendGiftConfigurator.swift */; };
 		161F3C5729F279C70053158A /* OasisAquaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C5629F279C70053158A /* OasisAquaButton.swift */; };
+		161F3C5929F3167C0053158A /* ControllerLargeTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C5829F3167C0053158A /* ControllerLargeTitleLabel.swift */; };
+		161F3C5B29F31A910053158A /* BlueToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C5A29F31A910053158A /* BlueToastView.swift */; };
+		161F3C6429F31CD00053158A /* ReceiveMoney.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 161F3C5D29F31CD00053158A /* ReceiveMoney.storyboard */; };
+		161F3C6529F31CD00053158A /* ReceiveMoneyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C5E29F31CD00053158A /* ReceiveMoneyPresenter.swift */; };
+		161F3C6629F31CD00053158A /* ReceiveMoneyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C5F29F31CD00053158A /* ReceiveMoneyRouter.swift */; };
+		161F3C6729F31CD00053158A /* ReceiveMoneyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C6029F31CD00053158A /* ReceiveMoneyModels.swift */; };
+		161F3C6829F31CD00053158A /* ReceiveMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C6129F31CD00053158A /* ReceiveMoneyViewController.swift */; };
+		161F3C6929F31CD00053158A /* ReceiveMoneyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C6229F31CD00053158A /* ReceiveMoneyInteractor.swift */; };
+		161F3C6A29F31CD00053158A /* ReceiveMoneyConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C6329F31CD00053158A /* ReceiveMoneyConfigurator.swift */; };
 		1ACED86ADAA2441F495B6912 /* Pods_AnalyticsManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B66C5D6B0826B75B9813C2 /* Pods_AnalyticsManager.framework */; };
 		374FA5CB00801009F6B43FDB /* Pods_OasisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64659B367BA850135AB1D5E9 /* Pods_OasisTests.framework */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
@@ -431,6 +440,15 @@
 		161F3C4D29F277A30053158A /* SendGiftInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendGiftInteractor.swift; sourceTree = "<group>"; };
 		161F3C4E29F277A30053158A /* SendGiftConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendGiftConfigurator.swift; sourceTree = "<group>"; };
 		161F3C5629F279C70053158A /* OasisAquaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OasisAquaButton.swift; sourceTree = "<group>"; };
+		161F3C5829F3167C0053158A /* ControllerLargeTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerLargeTitleLabel.swift; sourceTree = "<group>"; };
+		161F3C5A29F31A910053158A /* BlueToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueToastView.swift; sourceTree = "<group>"; };
+		161F3C5D29F31CD00053158A /* ReceiveMoney.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReceiveMoney.storyboard; sourceTree = "<group>"; };
+		161F3C5E29F31CD00053158A /* ReceiveMoneyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveMoneyPresenter.swift; sourceTree = "<group>"; };
+		161F3C5F29F31CD00053158A /* ReceiveMoneyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveMoneyRouter.swift; sourceTree = "<group>"; };
+		161F3C6029F31CD00053158A /* ReceiveMoneyModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveMoneyModels.swift; sourceTree = "<group>"; };
+		161F3C6129F31CD00053158A /* ReceiveMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveMoneyViewController.swift; sourceTree = "<group>"; };
+		161F3C6229F31CD00053158A /* ReceiveMoneyInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveMoneyInteractor.swift; sourceTree = "<group>"; };
+		161F3C6329F31CD00053158A /* ReceiveMoneyConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveMoneyConfigurator.swift; sourceTree = "<group>"; };
 		1D7408F9BE9E6B05F6D17E8A /* Pods-AnalyticsManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnalyticsManager/Pods-AnalyticsManager.release.xcconfig"; sourceTree = "<group>"; };
 		22C3C119E084FE2B0FF3C34F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
@@ -1077,6 +1095,20 @@
 			path = "Send a Gift";
 			sourceTree = "<group>";
 		};
+		161F3C5C29F31CBD0053158A /* Receive Money */ = {
+			isa = PBXGroup;
+			children = (
+				161F3C5D29F31CD00053158A /* ReceiveMoney.storyboard */,
+				161F3C5E29F31CD00053158A /* ReceiveMoneyPresenter.swift */,
+				161F3C5F29F31CD00053158A /* ReceiveMoneyRouter.swift */,
+				161F3C6029F31CD00053158A /* ReceiveMoneyModels.swift */,
+				161F3C6129F31CD00053158A /* ReceiveMoneyViewController.swift */,
+				161F3C6229F31CD00053158A /* ReceiveMoneyInteractor.swift */,
+				161F3C6329F31CD00053158A /* ReceiveMoneyConfigurator.swift */,
+			);
+			path = "Receive Money";
+			sourceTree = "<group>";
+		};
 		166EF2F929D36FC90029908E /* Flows */ = {
 			isa = PBXGroup;
 			children = (
@@ -1123,6 +1155,7 @@
 		166EF2FE29D36FE20029908E /* Common Flows */ = {
 			isa = PBXGroup;
 			children = (
+				161F3C5C29F31CBD0053158A /* Receive Money */,
 				161F3C4729F277860053158A /* Send a Gift */,
 				161F3BF529E3156F0053158A /* Select Age */,
 				161F3BB629D989D60053158A /* OTP Verification */,
@@ -1157,6 +1190,7 @@
 			isa = PBXGroup;
 			children = (
 				3EDC4155224E886500624D2B /* BaseUIView.swift */,
+				161F3C5A29F31A910053158A /* BlueToastView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -1211,6 +1245,7 @@
 			children = (
 				CF6B70F121EDD5F700204B65 /* VersionLabel.swift */,
 				3E1DEAF922BA660F00FAD9F4 /* BaseLabel.swift */,
+				161F3C5829F3167C0053158A /* ControllerLargeTitleLabel.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
@@ -1672,6 +1707,7 @@
 				1122391F1FD5C7B000486528 /* Assets.xcassets in Resources */,
 				161F3C2E29E5AD4D0053158A /* Interests.storyboard in Resources */,
 				161F3C1129E322BE0053158A /* ParentsHome.storyboard in Resources */,
+				161F3C6429F31CD00053158A /* ReceiveMoney.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1911,11 +1947,13 @@
 				161F3BF229E2FCA20053158A /* CreateConfirmPasswordViewController.swift in Sources */,
 				161F3BF029E2FCA20053158A /* CreateConfirmPasswordRouter.swift in Sources */,
 				161F3B9B29D4BC810053158A /* OnboardingConfig.swift in Sources */,
+				161F3C6729F31CD00053158A /* ReceiveMoneyModels.swift in Sources */,
 				161F3C0729E319050053158A /* AgeTableViewCell.swift in Sources */,
 				CFF69D6D219554C4003BE6BF /* CGPoint+Extensions.swift in Sources */,
 				0F1B7FB022CA6C9D0079F752 /* UISearchBar+Extensions.swift in Sources */,
 				161F3BD429D98AE00053158A /* LoginConfigurator.swift in Sources */,
 				161F3B9929D4BC730053158A /* OnboardingCollectionViewCell.swift in Sources */,
+				161F3C6529F31CD00053158A /* ReceiveMoneyPresenter.swift in Sources */,
 				0F1B7FB522CA6CAE0079F752 /* LocaleStore.swift in Sources */,
 				CFF69D752195586E003BE6BF /* FileManager+Extensions.swift in Sources */,
 				161F3BD629D98DE00053158A /* UIStackview+Extensions.swift in Sources */,
@@ -1927,6 +1965,7 @@
 				161F3C2329E5ACD40053158A /* PinterestLayoutDelegate.swift in Sources */,
 				CF8C5C9E20EF9CA400236C7B /* DatePickerDialog.swift in Sources */,
 				CF564702211B142E0092EFBD /* OneSignalPushService.swift in Sources */,
+				161F3C5B29F31A910053158A /* BlueToastView.swift in Sources */,
 				161F3BFE29E3157D0053158A /* SelectAgePresenter.swift in Sources */,
 				161F3C5729F279C70053158A /* OasisAquaButton.swift in Sources */,
 				161F3C2229E5ACD40053158A /* PinterestLayout.swift in Sources */,
@@ -1981,6 +2020,7 @@
 				161F3C0229E3157D0053158A /* SelectAgeInteractor.swift in Sources */,
 				161F3BB329D989560053158A /* WhiteBorderTextfield.swift in Sources */,
 				67C9591126247EF300A67399 /* APIErrorModel.swift in Sources */,
+				161F3C6929F31CD00053158A /* ReceiveMoneyInteractor.swift in Sources */,
 				161F3BD029D98AE00053158A /* LoginRouter.swift in Sources */,
 				0FD0C6EC2200B662000C5881 /* UIFont+Extentions.swift in Sources */,
 				161F3C3F29ED3D990053158A /* CardTabBarController.swift in Sources */,
@@ -2020,6 +2060,7 @@
 				CF40385D216CF78F001F649B /* InitialInteractor.swift in Sources */,
 				3EDC4153224E875300624D2B /* Reactive+UIView.swift in Sources */,
 				161F3C1629E322BE0053158A /* ParentsHomeInteractor.swift in Sources */,
+				161F3C6629F31CD00053158A /* ReceiveMoneyRouter.swift in Sources */,
 				3E1DEAFD22BA674D00FAD9F4 /* NavigationBarType.swift in Sources */,
 				3E1DEAF822BA641A00FAD9F4 /* CALayer+Extensions.swift in Sources */,
 				161F3BD329D98AE00053158A /* LoginInteractor.swift in Sources */,
@@ -2058,6 +2099,7 @@
 				161F3C1329E322BE0053158A /* ParentsHomeRouter.swift in Sources */,
 				161F3C3129E5AD4D0053158A /* InterestsModels.swift in Sources */,
 				161F3BE429DAD6FB0053158A /* OTPVerificationConfigurator.swift in Sources */,
+				161F3C6829F31CD00053158A /* ReceiveMoneyViewController.swift in Sources */,
 				CFC2BFE6216CA3C800DC31A7 /* ErrorViewModel.swift in Sources */,
 				0F1B7FB722CA6CB50079F752 /* LocaleInfo.swift in Sources */,
 				3EDC4159224E893B00624D2B /* BaseUIImageView.swift in Sources */,
@@ -2072,8 +2114,10 @@
 				0F1B7FB322CA6CA40079F752 /* LocalePickerViewController.swift in Sources */,
 				161F3BD229D98AE00053158A /* LoginViewController.swift in Sources */,
 				CFF69D732195578F003BE6BF /* Data+Extensions.swift in Sources */,
+				161F3C5929F3167C0053158A /* ControllerLargeTitleLabel.swift in Sources */,
 				3EBDE0402541E8670056A0C4 /* AppDelegate+PopupConfig.swift in Sources */,
 				CF7823B420EF95A7003069BD /* APIErrorManager.swift in Sources */,
+				161F3C6A29F31CD00053158A /* ReceiveMoneyConfigurator.swift in Sources */,
 				3E1DEAF022BA62FD00FAD9F4 /* UIView+Shadow.swift in Sources */,
 				161F3C0029E3157D0053158A /* SelectAgeModels.swift in Sources */,
 				161F3C3229E5AD4D0053158A /* InterestsViewController.swift in Sources */,

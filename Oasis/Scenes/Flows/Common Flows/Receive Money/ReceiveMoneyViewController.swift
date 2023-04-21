@@ -1,5 +1,5 @@
 //
-//  SendGiftViewController.swift
+//  ReceiveMoneyViewController.swift
 //  Oasis
 //
 //  Created by Hadi Yaacoub on 21/04/2023.
@@ -9,14 +9,14 @@
 import UIKit
 import RxSwift
 
-protocol SendGiftViewControllerOutput {
+protocol ReceiveMoneyViewControllerOutput {
     
 }
 
-class SendGiftViewController: BaseViewController {
+class ReceiveMoneyViewController: BaseViewController {
     
-    var interactor: SendGiftViewControllerOutput?
-    var router: SendGiftRouter?
+    var interactor: ReceiveMoneyViewControllerOutput?
+    var router: ReceiveMoneyRouter?
     
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -39,78 +39,39 @@ class SendGiftViewController: BaseViewController {
         return stackView
     }()
     
+    lazy var toastView : BlueToastView = {
+        let view = BlueToastView.init(noteLabelText: "You have received 20% more money this month than the last month".localized)
+        return view
+    }()
+    
     lazy var submitButton : OasisAquaButton = {
         let btn = OasisAquaButton()
-        btn.setTitle("Send Gift", for: .normal)
+        btn.setTitle("Request Money", for: .normal)
        // btn.addTarget(self, action: #selector(submitButtonPressed), for: .touchUpInside)
         return btn
     }()
     
-    //MARK: - Note
-    lazy var noteView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Constants.Colors.textviewBGColor
-        view.layer.cornerRadius = 16
-        view.clipsToBounds = true
-        view.contentMode = .scaleAspectFit
-        return view
-    }()
-    
-    var noteTextview: UITextView = {
-        let txtVw = UITextView()
-        txtVw.font = MainFont.normal.with(size: 15)
-        txtVw.translatesAutoresizingMaskIntoConstraints = false
-        txtVw.textColor = .black
-        txtVw.textAlignment = .left
-        txtVw.showsVerticalScrollIndicator = false
-        txtVw.showsHorizontalScrollIndicator = false
-        txtVw.backgroundColor = .clear
-        txtVw.tag = 0
-        return txtVw
-    }()
-    
+
     lazy var topTitleLabel : ControllerLargeTitleLabel = {
         let lbl = ControllerLargeTitleLabel()
-        lbl.text = "Send a Gift".localized
+        lbl.text = "Receive Money".localized
         return lbl
     }()
     
-    lazy var chooseOccasionStaticlabel : BaseLabel = {
+    lazy var fromStaticlabel : BaseLabel = {
         let lbl = BaseLabel()
         lbl.style = .init(font: MainFont.bold.with(size: 14),
                           color: .black)
-        lbl.text = "Choose Occasion".localized
+        lbl.text = "From".localized
         return lbl
     }()
     
-    lazy var toStaticlabel : BaseLabel = {
+    lazy var amountStaticlabel : BaseLabel = {
         let lbl = BaseLabel()
         lbl.style = .init(font: MainFont.bold.with(size: 14),
                           color: .black)
-        lbl.text = "To".localized
+        lbl.text = "Amount to receive".localized
         return lbl
-    }()
-    
-    lazy var giftAmountStaticlabel : BaseLabel = {
-        let lbl = BaseLabel()
-        lbl.style = .init(font: MainFont.bold.with(size: 14),
-                          color: .black)
-        lbl.text = "Gift Amount".localized
-        return lbl
-    }()
-    
-    private let occasionCollectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .clear
-        collectionView.register(OnboardingCollectionViewCell.self, forCellWithReuseIdentifier: "IntroductionCell")
-        collectionView.isPagingEnabled = true
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        return collectionView
     }()
     
     private let receipentCollectionView: UICollectionView = {
@@ -125,14 +86,15 @@ class SendGiftViewController: BaseViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
+    
 }
 
 //MARK:- View Lifecycle
-extension SendGiftViewController{
+extension ReceiveMoneyViewController{
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        SendGiftConfigurator.shared.configure(viewController: self)
+        ReceiveMoneyConfigurator.shared.configure(viewController: self)
     }
     
     override func viewDidLoad() {
@@ -190,26 +152,28 @@ extension SendGiftViewController{
     
     private func setupUI(){
         stackView.addArrangedSubview(topTitleLabel)
-        stackView.addArrangedSubview(chooseOccasionStaticlabel)
-        stackView.addArrangedSubview(occasionCollectionView)
-        stackView.addArrangedSubview(toStaticlabel)
+        stackView.addArrangedSubview(toastView)
+        stackView.addArrangedSubview(fromStaticlabel)
         stackView.addArrangedSubview(receipentCollectionView)
-        stackView.addArrangedSubview(giftAmountStaticlabel)
-        setupNoteView()
+        stackView.addArrangedSubview(amountStaticlabel)
+        
+        NSLayoutConstraint.activate([
+            toastView.heightAnchor.constraint(equalToConstant: 73)
+        ])
     }
+    
 }
 
 //MARK:- NavBarAppearance
-extension SendGiftViewController{
+extension ReceiveMoneyViewController{
     private func setupNavBarAppearance(){
         statusBarStyle = .default
         navigationBarStyle = .transparent
-        navigationItem.title = "Send a Gift".localized
     }
 }
 
 //MARK:- Callbacks
-extension SendGiftViewController{
+extension ReceiveMoneyViewController{
     
     fileprivate
     func setupRetryFetchingCallBack(){
@@ -222,21 +186,4 @@ extension SendGiftViewController{
     }
 }
 
-//MARK: - Account Number
-extension SendGiftViewController{
-    private
-    func setupNoteView(){
-        stackView.addArrangedSubview(noteView)
-        noteView.addSubview(noteTextview)
-        
-        NSLayoutConstraint.activate([
-            noteView.heightAnchor.constraint(equalToConstant: 124),
-            
-            noteTextview.topAnchor.constraint(equalTo: noteView.topAnchor, constant: 8),
-            noteTextview.leadingAnchor.constraint(equalTo: noteView.leadingAnchor, constant: 18),
-            noteTextview.centerYAnchor.constraint(equalTo: noteView.centerYAnchor),
-            noteTextview.centerXAnchor.constraint(equalTo: noteView.centerXAnchor)
-        ])
-        //noteTextview.placeholder = "You can add a note to your gift, type here".localized
-    }
-}
+

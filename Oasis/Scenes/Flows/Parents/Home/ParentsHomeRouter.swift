@@ -34,6 +34,16 @@ class ParentsHomeRouter: ParentsHomeRouterDataPassing{
             }
     }
     
+    
+    func pushToReceiveMoneyController(){
+        let vc = R.storyboard.receiveMoney.receiveMoneyViewControllerVC()!
+        DispatchQueue
+            .main
+            .async {
+                self.viewController.hidesBottomBarWhenPushed = true
+                self.viewController.navigationController?.pushViewController(vc, animated: true)
+            }
+    }
     ///Pop The view from the view hierarchy
     func popView(){
         DispatchQueue.main
