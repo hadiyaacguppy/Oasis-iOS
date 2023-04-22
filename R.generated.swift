@@ -1285,12 +1285,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
     /// Nib `AgeTableViewCell`.
     static let ageTableViewCell = _R.nib._AgeTableViewCell()
     /// Nib `InterestsCollectionViewCell`.
     static let interestsCollectionViewCell = _R.nib._InterestsCollectionViewCell()
+    /// Nib `UpcomingPaymentCollectionViewCell`.
+    static let upcomingPaymentCollectionViewCell = _R.nib._UpcomingPaymentCollectionViewCell()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "AgeTableViewCell", in: bundle)`
@@ -1308,6 +1310,14 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "UpcomingPaymentCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.upcomingPaymentCollectionViewCell) instead")
+    static func upcomingPaymentCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.upcomingPaymentCollectionViewCell)
+    }
+    #endif
+
     static func ageTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AgeTableViewCell? {
       return R.nib.ageTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AgeTableViewCell
     }
@@ -1316,11 +1326,17 @@ struct R: Rswift.Validatable {
       return R.nib.interestsCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? InterestsCollectionViewCell
     }
 
+    static func upcomingPaymentCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UpcomingPaymentCollectionViewCell? {
+      return R.nib.upcomingPaymentCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UpcomingPaymentCollectionViewCell
+    }
+
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `UpcomingPaymentCollectionCell`.
+    static let upcomingPaymentCollectionCell: Rswift.ReuseIdentifier<UpcomingPaymentCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "UpcomingPaymentCollectionCell")
     /// Reuse identifier `ageCell`.
     static let ageCell: Rswift.ReuseIdentifier<AgeTableViewCell> = Rswift.ReuseIdentifier(identifier: "ageCell")
     /// Reuse identifier `interestsCell`.
@@ -1374,6 +1390,20 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> InterestsCollectionViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? InterestsCollectionViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _UpcomingPaymentCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = UpcomingPaymentCollectionViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "UpcomingPaymentCollectionCell"
+      let name = "UpcomingPaymentCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UpcomingPaymentCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UpcomingPaymentCollectionViewCell
       }
 
       fileprivate init() {}

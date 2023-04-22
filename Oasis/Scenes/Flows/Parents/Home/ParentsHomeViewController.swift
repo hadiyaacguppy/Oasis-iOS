@@ -42,7 +42,6 @@ class ParentsHomeViewController: BaseViewController {
         return stackView
     }()
     
-    
     lazy var topCurvedImageview : BaseImageView = {
         let img = BaseImageView(frame: .zero)
         img.image = R.image.newBg()!
@@ -166,6 +165,19 @@ class ParentsHomeViewController: BaseViewController {
     private var isThereUpcomingPayments : Bool = false
     private var upcomingPaymentsContainerView : BaseUIView = BaseUIView()
     
+    private let upcomingPaymentsCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.isPagingEnabled = true
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.autoLayout()
+        collectionView.register(UINib(resource: R.nib.upcomingPaymentCollectionViewCell),
+                                forCellWithReuseIdentifier: R.reuseIdentifier.upcomingPaymentCollectionCell.identifier)
+        return collectionView
+    }()
 }
 
 //MARK:- View Lifecycle
@@ -204,17 +216,17 @@ extension ParentsHomeViewController{
             topCurvedImageview.heightAnchor.constraint(equalToConstant: 250)
         ])
     }
-
+    
     private func addScrollView () {
         view.addSubview(scrollView)
         scrollView.addSubview(stackView)
-       
+        
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-
+            
             stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20),
             stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
@@ -224,7 +236,7 @@ extension ParentsHomeViewController{
         addBalanceStack()
         addActionsStacksToContainer()
         addAreYouParentView()
-        addUpcomingPaymentsSection(shouldAddPlaceholder: true)
+        addUpcomingPaymentsSection(shouldAddPlaceholder: false)
         addRecentActivitiesSection(shouldAddPlaceholder: false)
     }
     
@@ -232,14 +244,14 @@ extension ParentsHomeViewController{
         stackView.addArrangedSubview(balanceStackView)
         
         balanceStackView.heightAnchor.constraint(equalToConstant: 85).isActive = true
-
+        
         balanceStackView.addArrangedSubview(balanceStaticLabel)
         balanceStackView.addArrangedSubview(balanceValueLabel)
     }
     
     private func addActionsStacksToContainer(){
         stackView.addArrangedSubview(actionsContainerView)
-
+        
         addActionsToCorrespondingStacks()
         
         actionsContainerView.addSubview(firstActionsStackView)
@@ -296,7 +308,7 @@ extension ParentsHomeViewController{
         }()
         
         stackView.addArrangedSubview(areYouParentContainerView)
-
+        
         areYouParentContainerView.heightAnchor.constraint(equalToConstant: 205).isActive = true
         
         areYouParentContainerView.addSubview(areYouParentCardImageView)
@@ -323,7 +335,7 @@ extension ParentsHomeViewController{
         ulabel.heightAnchor.constraint(equalToConstant: 35).isActive = true
         
         stackView.addArrangedSubview(ulabel)
-
+        
         func addPlaceholder(){
             upcomingPaymentsContainerView.autoLayout()
             upcomingPaymentsContainerView.backgroundColor = .clear
@@ -372,25 +384,34 @@ extension ParentsHomeViewController{
                 addPaymentButton.heightAnchor.constraint(equalToConstant: 48)
             ])
         }
-        
+        func setupUpcomingPaymentsCollectionView(){
+            
+            stackView.addArrangedSubview(upcomingPaymentsCollectionView)
+            
+            upcomingPaymentsCollectionView.heightAnchor.constraint(equalToConstant: 160).isActive = true
+            upcomingPaymentsCollectionView.dataSource = self
+            upcomingPaymentsCollectionView.delegate = self
+        }
         if show {
             addPlaceholder()
         }else{
-#warning("Should load payments")
+            setupUpcomingPaymentsCollectionView()
         }
+        
+        
     }
     
     private func addRecentActivitiesSection(shouldAddPlaceholder show: Bool){
-
+        
         let containerV = BaseUIView()
         containerV.autoLayout()
         containerV.backgroundColor = .clear
-
+        
         let ulabel : BaseLabel = BaseLabel()
         ulabel.style = .init(font: MainFont.bold.with(size: 14), color: .black)
         ulabel.text = "Recent Activities".localized
         ulabel.autoLayout()
-
+        
         let viewAllButton: BaseButton = {
             let btn = BaseButton()
             btn.autoLayout()
@@ -406,21 +427,21 @@ extension ParentsHomeViewController{
             btn.setAttributedTitle(attributeString, for: .normal)
             return btn
         }()
-
+        
         stackView.addArrangedSubview(containerV)
-
+        
         containerV.addSubview(ulabel)
         containerV.addSubview(viewAllButton)
-
+        
         NSLayoutConstraint.activate([
             containerV.heightAnchor.constraint(equalToConstant: 35),
             ulabel.leadingAnchor.constraint(equalTo: containerV.leadingAnchor, constant: 8),
             ulabel.centerYAnchor.constraint(equalTo: containerV.centerYAnchor),
-
+            
             viewAllButton.trailingAnchor.constraint(equalTo: containerV.trailingAnchor, constant: -8),
             viewAllButton.centerYAnchor.constraint(equalTo: containerV.centerYAnchor)
         ])
-
+        
         func addPlaceholder(){
             
         }
@@ -658,5 +679,38 @@ extension ParentsHomeViewController {
             
         }
     }
-   
+    
+}
+
+extension ParentsHomeViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.upcomingPaymentCollectionCell, for: indexPath)!
+        cell.setupCell(title: "Netflix Subscription", subtitle: "Subtitle test", amount: "600,000 LBP")
+        return cell
+    }
+    
+    
+}
+
+extension ParentsHomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 184, height: 158)
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 16.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout
+                        collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1.0
+    }
 }

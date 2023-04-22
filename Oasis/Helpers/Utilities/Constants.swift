@@ -33,7 +33,7 @@ struct Constants {
         static let aquaMarine : UIColor = .init(hexFromString: "#37d09c")
         static let textviewBGColor : UIColor = .init(red: 244, green: 244, blue: 244)
         static let blueToastViewColor : UIColor = .init(hexFromString: "3a68c9")
-        static let lightGrey : UIColor = .init(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.23)
+        static let lightGrey : UIColor = .init(red: 248, green: 250, blue: 251)
         
         struct Navigation {
             static let background : UIColor = Constants.Colors.appColor
