@@ -17,9 +17,9 @@ target 'Oasis' do
   pod 'RxGesture'
   pod 'Moya', '~> 14.0'
   pod 'Moya/RxSwift', '~> 14.0'
-
-
-  install_oneSignalPod
+  pod 'FSPagerView'
+  
+install_oneSignalPod
 end
 
 target 'OneSignalNotificationServiceExtension' do

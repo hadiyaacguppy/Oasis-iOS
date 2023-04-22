@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="childrenFSPagerCell" id="gTV-IL-0wX" customClass="ChildrenFSPagerViewCell" customModule="Oasis" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="282" height="223"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="282" height="223"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dots" translatesAutoresizingMaskIntoConstraints="NO" id="zXJ-QG-vAS">
+                        <rect key="frame" x="0.0" y="0.0" width="282" height="223"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kid" translatesAutoresizingMaskIntoConstraints="NO" id="MRB-KE-JaV">
+                        <rect key="frame" x="0.0" y="0.0" width="282" height="223"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="childrenYellowNameView" translatesAutoresizingMaskIntoConstraints="NO" id="hBF-29-yd6">
+                        <rect key="frame" x="69.666666666666686" y="126" width="143" height="97"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="143" id="5Vn-ZE-458"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xKl-xY-bXF">
+                        <rect key="frame" x="49.666666666666657" y="135.33333333333334" width="183" height="87.666666666666657"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mahdi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glx-wE-ClJ" customClass="BaseLabel" customModule="Oasis" customModuleProvider="target">
+                                <rect key="frame" x="31.333333333333343" y="12.999999999999998" width="120" height="20.333333333333329"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="YHi-gi-xLX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 years old" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmw-Ft-fe7" customClass="BaseLabel" customModule="Oasis" customModuleProvider="target">
+                                <rect key="frame" x="31.333333333333343" y="37.333333333333314" width="120" height="20.333333333333329"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="Ma9-Jr-kpN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Rmw-Ft-fe7" firstAttribute="centerX" secondItem="glx-wE-ClJ" secondAttribute="centerX" id="O0r-6a-zfn"/>
+                            <constraint firstItem="glx-wE-ClJ" firstAttribute="centerX" secondItem="xKl-xY-bXF" secondAttribute="centerX" id="WfR-h2-fJO"/>
+                            <constraint firstItem="Rmw-Ft-fe7" firstAttribute="top" secondItem="glx-wE-ClJ" secondAttribute="bottom" constant="4" id="ijT-s8-fzZ"/>
+                            <constraint firstAttribute="bottom" secondItem="Rmw-Ft-fe7" secondAttribute="bottom" constant="30" id="sd6-6m-aEU"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="zXJ-QG-vAS" secondAttribute="bottom" id="4yF-mw-WtU"/>
+                <constraint firstItem="MRB-KE-JaV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5FB-xf-tlK"/>
+                <constraint firstItem="hBF-29-yd6" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Dvh-Fh-76k"/>
+                <constraint firstAttribute="trailing" secondItem="MRB-KE-JaV" secondAttribute="trailing" id="Fqu-kz-dCf"/>
+                <constraint firstItem="xKl-xY-bXF" firstAttribute="centerX" secondItem="hBF-29-yd6" secondAttribute="centerX" id="N7V-JN-RyM"/>
+                <constraint firstAttribute="bottom" secondItem="MRB-KE-JaV" secondAttribute="bottom" id="SMQ-md-zy2"/>
+                <constraint firstAttribute="trailing" secondItem="zXJ-QG-vAS" secondAttribute="trailing" id="VnI-Lw-dla"/>
+                <constraint firstAttribute="bottom" secondItem="hBF-29-yd6" secondAttribute="bottom" id="ZeO-0q-V78"/>
+                <constraint firstItem="zXJ-QG-vAS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gzL-RN-Q9G"/>
+                <constraint firstAttribute="bottom" secondItem="xKl-xY-bXF" secondAttribute="bottom" id="mJc-Ps-1Ea"/>
+                <constraint firstItem="MRB-KE-JaV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="qIr-2M-arZ"/>
+                <constraint firstItem="zXJ-QG-vAS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="tP9-sx-rgx"/>
+                <constraint firstItem="xKl-xY-bXF" firstAttribute="height" secondItem="hBF-29-yd6" secondAttribute="height" multiplier="0.90378" id="vQV-Zc-5vG"/>
+                <constraint firstItem="xKl-xY-bXF" firstAttribute="width" secondItem="hBF-29-yd6" secondAttribute="width" multiplier="1.27972" id="wwz-Qx-zFS"/>
+            </constraints>
+            <size key="customSize" width="282" height="223"/>
+            <connections>
+                <outlet property="ageLabel" destination="Rmw-Ft-fe7" id="S82-Br-I97"/>
+                <outlet property="childNameLabel" destination="glx-wE-ClJ" id="u3L-OY-3xm"/>
+                <outlet property="kidImageView" destination="MRB-KE-JaV" id="tVd-G9-pK5"/>
+                <outlet property="shapeImageView" destination="hBF-29-yd6" id="BXs-qP-V1h"/>
+            </connections>
+            <point key="canvasLocation" x="-273.84615384615381" y="-11.729857819905213"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="childrenYellowNameView" width="143" height="97"/>
+        <image name="dots" width="306" height="305"/>
+        <image name="kid" width="312" height="225"/>
+    </resources>
+</document>

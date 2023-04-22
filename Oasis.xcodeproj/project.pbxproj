@@ -151,6 +151,8 @@
 		161F3C8029F3F1190053158A /* UpcomingPaymentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C7E29F3F1190053158A /* UpcomingPaymentCollectionViewCell.swift */; };
 		161F3C8129F3F1190053158A /* UpcomingPaymentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161F3C7F29F3F1190053158A /* UpcomingPaymentCollectionViewCell.xib */; };
 		161F3C8329F3F16A0053158A /* OasisVioletButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C8229F3F16A0053158A /* OasisVioletButton.swift */; };
+		161F3C8729F3FC1A0053158A /* ChildrenFSPagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C8529F3FC1A0053158A /* ChildrenFSPagerViewCell.swift */; };
+		161F3C8829F3FC1A0053158A /* ChildrenFSPagerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161F3C8629F3FC1A0053158A /* ChildrenFSPagerViewCell.xib */; };
 		1ACED86ADAA2441F495B6912 /* Pods_AnalyticsManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B66C5D6B0826B75B9813C2 /* Pods_AnalyticsManager.framework */; };
 		374FA5CB00801009F6B43FDB /* Pods_OasisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64659B367BA850135AB1D5E9 /* Pods_OasisTests.framework */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
@@ -471,6 +473,8 @@
 		161F3C7E29F3F1190053158A /* UpcomingPaymentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingPaymentCollectionViewCell.swift; sourceTree = "<group>"; };
 		161F3C7F29F3F1190053158A /* UpcomingPaymentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingPaymentCollectionViewCell.xib; sourceTree = "<group>"; };
 		161F3C8229F3F16A0053158A /* OasisVioletButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OasisVioletButton.swift; sourceTree = "<group>"; };
+		161F3C8529F3FC1A0053158A /* ChildrenFSPagerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenFSPagerViewCell.swift; sourceTree = "<group>"; };
+		161F3C8629F3FC1A0053158A /* ChildrenFSPagerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChildrenFSPagerViewCell.xib; sourceTree = "<group>"; };
 		1D7408F9BE9E6B05F6D17E8A /* Pods-AnalyticsManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnalyticsManager/Pods-AnalyticsManager.release.xcconfig"; sourceTree = "<group>"; };
 		22C3C119E084FE2B0FF3C34F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
@@ -1029,6 +1033,7 @@
 		161F3C0929E322A90053158A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				161F3C8429F3FBD80053158A /* FSPager Cell */,
 				161F3C7D29F3F1010053158A /* upcoming payments collection */,
 				161F3C0A29E322BE0053158A /* ParentsHome.storyboard */,
 				161F3C0B29E322BE0053158A /* ParentsHomePresenter.swift */,
@@ -1160,6 +1165,15 @@
 				161F3C7F29F3F1190053158A /* UpcomingPaymentCollectionViewCell.xib */,
 			);
 			path = "upcoming payments collection";
+			sourceTree = "<group>";
+		};
+		161F3C8429F3FBD80053158A /* FSPager Cell */ = {
+			isa = PBXGroup;
+			children = (
+				161F3C8529F3FC1A0053158A /* ChildrenFSPagerViewCell.swift */,
+				161F3C8629F3FC1A0053158A /* ChildrenFSPagerViewCell.xib */,
+			);
+			path = "FSPager Cell";
 			sourceTree = "<group>";
 		};
 		166EF2F929D36FC90029908E /* Flows */ = {
@@ -1763,6 +1777,7 @@
 				161F3BAF29D4BF670053158A /* Montserrat-Black.ttf in Resources */,
 				161F3BA829D4BF670053158A /* Montserrat-ExtraLight.ttf in Resources */,
 				112239221FD5C7B000486528 /* LaunchScreen.storyboard in Resources */,
+				161F3C8829F3FC1A0053158A /* ChildrenFSPagerViewCell.xib in Resources */,
 				1122391F1FD5C7B000486528 /* Assets.xcassets in Resources */,
 				161F3C2E29E5AD4D0053158A /* Interests.storyboard in Resources */,
 				161F3C1129E322BE0053158A /* ParentsHome.storyboard in Resources */,
@@ -1856,6 +1871,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Oasis/Pods-Oasis-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
 				"${BUILT_PRODUCTS_DIR}/Logging/Logging.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/QuickLayout/QuickLayout.framework",
@@ -1884,6 +1900,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Logging.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QuickLayout.framework",
@@ -2167,6 +2184,7 @@
 				161F3C3129E5AD4D0053158A /* InterestsModels.swift in Sources */,
 				161F3BE429DAD6FB0053158A /* OTPVerificationConfigurator.swift in Sources */,
 				161F3C6829F31CD00053158A /* ReceiveMoneyViewController.swift in Sources */,
+				161F3C8729F3FC1A0053158A /* ChildrenFSPagerViewCell.swift in Sources */,
 				CFC2BFE6216CA3C800DC31A7 /* ErrorViewModel.swift in Sources */,
 				0F1B7FB722CA6CB50079F752 /* LocaleInfo.swift in Sources */,
 				3EDC4159224E893B00624D2B /* BaseUIImageView.swift in Sources */,

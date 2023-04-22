@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import FSPagerView
 
 protocol ParentsHomeViewControllerOutput {
     
@@ -178,6 +179,20 @@ class ParentsHomeViewController: BaseViewController {
                                 forCellWithReuseIdentifier: R.reuseIdentifier.upcomingPaymentCollectionCell.identifier)
         return collectionView
     }()
+    
+    private lazy var childrenPagerView : FSPagerView = {
+        // Create a pager view
+        let pagerView = FSPagerView(frame: .zero)
+        pagerView.autoLayout()
+        pagerView.dataSource = self
+        pagerView.delegate = self
+        pagerView.isInfinite = false
+        pagerView.itemSize = CGSize(width: 270, height: 250)
+        pagerView.transformer = FSPagerViewTransformer(type: .overlap)
+        pagerView.register(UINib(nibName: R.nib.childrenFSPagerViewCell.name, bundle: nil),
+                           forCellWithReuseIdentifier: R.reuseIdentifier.childrenFSPagerCell.identifier)
+        return pagerView
+    }()
 }
 
 //MARK:- View Lifecycle
@@ -236,6 +251,7 @@ extension ParentsHomeViewController{
         addBalanceStack()
         addActionsStacksToContainer()
         addAreYouParentView()
+        setupChildrenPagerView()
         addUpcomingPaymentsSection(shouldAddPlaceholder: false)
         addRecentActivitiesSection(shouldAddPlaceholder: false)
     }
@@ -324,6 +340,14 @@ extension ParentsHomeViewController{
             parentImageView.bottomAnchor.constraint(equalTo: areYouParentContainerView.bottomAnchor),
             parentImageView.leadingAnchor.constraint(equalTo: areYouParentContainerView.leadingAnchor)
         ])
+    }
+    
+    private func setupChildrenPagerView(){
+        stackView.addArrangedSubview(childrenPagerView)
+        
+        childrenPagerView.heightAnchor.constraint(equalToConstant: 260).isActive = true
+        
+        childrenPagerView.reloadData()
     }
     
     private func addUpcomingPaymentsSection(shouldAddPlaceholder show: Bool){
@@ -712,5 +736,19 @@ extension ParentsHomeViewController: UICollectionViewDelegateFlowLayout {
                         collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 1.0
+    }
+}
+
+extension ParentsHomeViewController: FSPagerViewDelegate, FSPagerViewDataSource{
+    func numberOfItems(in pagerView: FSPagerView) -> Int {
+        return 3
+    }
+    
+    func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.childrenFSPagerCell.identifier, at: index) as! ChildrenFSPagerViewCell
+        
+        cell.setupCell(childName: "Mahdi", age: "4 years old", imageName: index != 0 ? R.image.kidsPic.name : R.image.kid.name)
+        
+        return cell
     }
 }

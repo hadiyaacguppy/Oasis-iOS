@@ -46,6 +46,7 @@ PODS:
     - GoogleUtilities/Environment (~> 7.8)
     - GoogleUtilities/UserDefaults (~> 7.8)
     - PromisesObjC (~> 2.1)
+  - FSPagerView (0.8.3)
   - GoogleAppMeasurement (10.0.0):
     - GoogleAppMeasurement/AdIdSupport (= 10.0.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.8)
@@ -138,6 +139,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Crashlytics
+  - FSPagerView
   - Logging (~> 1.1)
   - Moya (~> 14.0)
   - Moya/RxSwift (~> 14.0)
@@ -157,6 +159,7 @@ SPEC REPOS:
     - FirebaseCoreInternal
     - FirebaseCrashlytics
     - FirebaseInstallations
+    - FSPagerView
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
@@ -185,6 +188,7 @@ SPEC CHECKSUMS:
   FirebaseCoreInternal: c7cd505e2136811096b225ac388d6254a2622362
   FirebaseCrashlytics: 6b0613b548fe096221b5ba6d2f7a9732b451233b
   FirebaseInstallations: 7f1c9ae6bd9df6abe9c74124b38fa8740aba5df4
+  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   GoogleAppMeasurement: 7e48a3249792ac35d6f18f107f63f199a7e9d0ce
   GoogleDataTransport: 1c8145da7117bd68bbbed00cf304edb6a24de00f
   GoogleUtilities: 1d20a6ad97ef46f67bbdec158ce00563a671ebb7
@@ -205,6 +209,6 @@ SPEC CHECKSUMS:
   SwiftEntryKit: 96a2fa90b2631bbbfac50d18449e9ca3d0635f13
   TDPopupKit: bd24bf7432dd2b42984fcdd4b1c64d33db7fc422
 
-PODFILE CHECKSUM: 2553a32a9f5e84760c4a66d9dc27e4668265850b
+PODFILE CHECKSUM: 5b3fc4b107324b23738e613c20d597ea19001f4b
 
 COCOAPODS: 1.11.3

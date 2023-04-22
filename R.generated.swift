@@ -459,8 +459,6 @@ struct R: Rswift.Validatable {
     static let appletv = Rswift.ImageResource(bundle: R.hostingBundle, name: "appletv")
     /// Image `avatar-icon`.
     static let avatarIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "avatar-icon")
-    /// Image `bg2`.
-    static let bg2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "bg2")
     /// Image `bg3 - messagepage`.
     static let bg3Messagepage = Rswift.ImageResource(bundle: R.hostingBundle, name: "bg3 - messagepage")
     /// Image `birthday`.
@@ -475,6 +473,8 @@ struct R: Rswift.Validatable {
     static let cardsIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "cards-icon")
     /// Image `child-icon`.
     static let childIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "child-icon")
+    /// Image `childrenYellowNameView`.
+    static let childrenYellowNameView = Rswift.ImageResource(bundle: R.hostingBundle, name: "childrenYellowNameView")
     /// Image `dots`.
     static let dots = Rswift.ImageResource(bundle: R.hostingBundle, name: "dots")
     /// Image `electricity icon`.
@@ -807,13 +807,6 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "bg2", bundle: ..., traitCollection: ...)`
-    static func bg2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.bg2, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "bg3 - messagepage", bundle: ..., traitCollection: ...)`
     static func bg3Messagepage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.bg3Messagepage, compatibleWith: traitCollection)
@@ -859,6 +852,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "child-icon", bundle: ..., traitCollection: ...)`
     static func childIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.childIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "childrenYellowNameView", bundle: ..., traitCollection: ...)`
+    static func childrenYellowNameView(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.childrenYellowNameView, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1285,10 +1285,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
   struct nib {
     /// Nib `AgeTableViewCell`.
     static let ageTableViewCell = _R.nib._AgeTableViewCell()
+    /// Nib `ChildrenFSPagerViewCell`.
+    static let childrenFSPagerViewCell = _R.nib._ChildrenFSPagerViewCell()
     /// Nib `InterestsCollectionViewCell`.
     static let interestsCollectionViewCell = _R.nib._InterestsCollectionViewCell()
     /// Nib `UpcomingPaymentCollectionViewCell`.
@@ -1299,6 +1301,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.ageTableViewCell) instead")
     static func ageTableViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.ageTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ChildrenFSPagerViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.childrenFSPagerViewCell) instead")
+    static func childrenFSPagerViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.childrenFSPagerViewCell)
     }
     #endif
 
@@ -1322,6 +1332,10 @@ struct R: Rswift.Validatable {
       return R.nib.ageTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AgeTableViewCell
     }
 
+    static func childrenFSPagerViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ChildrenFSPagerViewCell? {
+      return R.nib.childrenFSPagerViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ChildrenFSPagerViewCell
+    }
+
     static func interestsCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> InterestsCollectionViewCell? {
       return R.nib.interestsCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? InterestsCollectionViewCell
     }
@@ -1333,12 +1347,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 4 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `UpcomingPaymentCollectionCell`.
     static let upcomingPaymentCollectionCell: Rswift.ReuseIdentifier<UpcomingPaymentCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "UpcomingPaymentCollectionCell")
     /// Reuse identifier `ageCell`.
     static let ageCell: Rswift.ReuseIdentifier<AgeTableViewCell> = Rswift.ReuseIdentifier(identifier: "ageCell")
+    /// Reuse identifier `childrenFSPagerCell`.
+    static let childrenFSPagerCell: Rswift.ReuseIdentifier<ChildrenFSPagerViewCell> = Rswift.ReuseIdentifier(identifier: "childrenFSPagerCell")
     /// Reuse identifier `interestsCell`.
     static let interestsCell: Rswift.ReuseIdentifier<InterestsCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "interestsCell")
 
@@ -1361,12 +1377,19 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
 
   #if os(iOS) || os(tvOS)
-  struct nib {
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _ChildrenFSPagerViewCell.validate()
+    }
+
     struct _AgeTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
       typealias ReusableType = AgeTableViewCell
 
@@ -1376,6 +1399,28 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AgeTableViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AgeTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ChildrenFSPagerViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = ChildrenFSPagerViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "childrenFSPagerCell"
+      let name = "ChildrenFSPagerViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ChildrenFSPagerViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ChildrenFSPagerViewCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "childrenYellowNameView", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'childrenYellowNameView' is used in nib 'ChildrenFSPagerViewCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "dots", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'dots' is used in nib 'ChildrenFSPagerViewCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "kid", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'kid' is used in nib 'ChildrenFSPagerViewCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}
