@@ -72,10 +72,6 @@ class ParentsHomeViewController: BaseViewController {
         lbl.style = .init(font: MainFont.medium.with(size: 30), color: .white)
         lbl.text = "0.00 LBP".localized
         lbl.autoLayout()
-        lbl.onTap {
-            //self.router?.pushToSendGiftController()
-            self.router?.pushToReceiveMoneyController()
-        }
         return lbl
     }()
     
@@ -157,6 +153,16 @@ class ParentsHomeViewController: BaseViewController {
         return vW
     }()
     
+    private lazy var recentActivitiesStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.spacing = 11
+        stackView.autoLayout()
+        stackView.backgroundColor = .clear
+        return stackView
+    }()
+    
     private var isThereUpcomingPayments : Bool = false
     private var upcomingPaymentsContainerView : BaseUIView = BaseUIView()
     
@@ -182,7 +188,6 @@ extension ParentsHomeViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavBarAppearance()
-        //scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height+500)
     }
     
     private func setupUI(){
@@ -201,28 +206,19 @@ extension ParentsHomeViewController{
     }
 
     private func addScrollView () {
-        //view.insertSubview(scrollView, aboveSubview: topCurvedImageview)
         view.addSubview(scrollView)
-        scrollView.addSubview(contentView)
+        scrollView.addSubview(stackView)
        
-        //view.addSubview(contentView)
-        contentView.addSubview(stackView)
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
-            contentView.topAnchor.constraint(equalTo: view.topAnchor),
-            contentView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            contentView.widthAnchor.constraint(equalTo: view.widthAnchor),
-            
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
-            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20),
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
         ])
         
         addBalanceStack()
@@ -389,12 +385,12 @@ extension ParentsHomeViewController{
         let containerV = BaseUIView()
         containerV.autoLayout()
         containerV.backgroundColor = .clear
-        
+
         let ulabel : BaseLabel = BaseLabel()
         ulabel.style = .init(font: MainFont.bold.with(size: 14), color: .black)
         ulabel.text = "Recent Activities".localized
         ulabel.autoLayout()
-        
+
         let viewAllButton: BaseButton = {
             let btn = BaseButton()
             btn.autoLayout()
@@ -410,27 +406,35 @@ extension ParentsHomeViewController{
             btn.setAttributedTitle(attributeString, for: .normal)
             return btn
         }()
-        
+
         stackView.addArrangedSubview(containerV)
-        
+
         containerV.addSubview(ulabel)
         containerV.addSubview(viewAllButton)
-        
+
         NSLayoutConstraint.activate([
             containerV.heightAnchor.constraint(equalToConstant: 35),
             ulabel.leadingAnchor.constraint(equalTo: containerV.leadingAnchor, constant: 8),
             ulabel.centerYAnchor.constraint(equalTo: containerV.centerYAnchor),
-            
+
             viewAllButton.trailingAnchor.constraint(equalTo: containerV.trailingAnchor, constant: -8),
             viewAllButton.centerYAnchor.constraint(equalTo: containerV.centerYAnchor)
         ])
-        
+
         func addPlaceholder(){
             
         }
         
-        func addTableview(){
-            
+        func addRecentActivities(){
+            recentActivitiesStackView.backgroundColor = .red
+            recentActivitiesStackView.heightAnchor.constraint(equalToConstant: 237).isActive = true
+            stackView.addArrangedSubview(recentActivitiesStackView)
+        }
+        
+        if show{
+            addPlaceholder()
+        }else{
+            addRecentActivities()
         }
     }
 }
@@ -445,6 +449,7 @@ extension ParentsHomeViewController{
                                                           style: .plain,
                                                           target: self,
                                                           action: #selector(alertButtonPressed))
+        navigationItem.rightBarButtonItem = rightNotificationsBarButton
     }
     
     @objc private func alertButtonPressed(){
@@ -546,7 +551,7 @@ extension ParentsHomeViewController {
         ])
         
         receiveMoneyActionView.onTap {
-            
+            self.router?.pushToReceiveMoneyController()
         }
     }
     
