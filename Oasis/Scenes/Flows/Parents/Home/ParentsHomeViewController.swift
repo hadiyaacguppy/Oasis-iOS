@@ -426,9 +426,32 @@ extension ParentsHomeViewController{
         }
         
         func addRecentActivities(){
-            recentActivitiesStackView.backgroundColor = .red
+            recentActivitiesStackView.backgroundColor = .clear
             recentActivitiesStackView.heightAnchor.constraint(equalToConstant: 237).isActive = true
             stackView.addArrangedSubview(recentActivitiesStackView)
+            
+            let vw1 = RecentActivityView.init(title: "Netflix subscription",
+                                              date: "2 Feb 2023",
+                                              amount: "600,000",
+                                              currency: "LBP",
+                                              iconName: R.image.netflix.name)
+            
+            let vw2 = RecentActivityView.init(title: "Money Transfer",
+                                              date: "2 Feb 2023",
+                                              amount: "1,500,000",
+                                              currency: "LBP",
+                                              iconName: R.image.netflix.name)
+            
+            let vw3 = RecentActivityView.init(title: "Netflix subscription",
+                                              date: "2 Feb 2023",
+                                              amount: "500",
+                                              currency: "USD",
+                                              iconName: R.image.netflix.name)
+            
+            recentActivitiesStackView.addArrangedSubview(vw1)
+            recentActivitiesStackView.addArrangedSubview(vw2)
+            recentActivitiesStackView.addArrangedSubview(vw3)
+            
         }
         
         if show{
