@@ -524,7 +524,7 @@ extension ParentsHomeViewController {
         ])
         
         sendMoneyActionView.onTap {
-            
+            self.router?.pushToSendMoneyController()
         }
     }
     

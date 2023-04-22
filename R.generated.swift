@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 13 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 14 storyboards.
   struct storyboard {
     /// Storyboard `CreateConfirmPassword`.
     static let createConfirmPassword = _R.storyboard.createConfirmPassword()
@@ -118,6 +118,8 @@ struct R: Rswift.Validatable {
     static let selectAge = _R.storyboard.selectAge()
     /// Storyboard `SendGift`.
     static let sendGift = _R.storyboard.sendGift()
+    /// Storyboard `SendMoney`.
+    static let sendMoney = _R.storyboard.sendMoney()
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "CreateConfirmPassword", bundle: ...)`
@@ -207,6 +209,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "SendGift", bundle: ...)`
     static func sendGift(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.sendGift)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "SendMoney", bundle: ...)`
+    static func sendMoney(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.sendMoney)
     }
     #endif
 
@@ -1416,6 +1425,9 @@ struct _R: Rswift.Validatable {
       #if os(iOS) || os(tvOS)
       try sendGift.validate()
       #endif
+      #if os(iOS) || os(tvOS)
+      try sendMoney.validate()
+      #endif
     }
 
     #if os(iOS) || os(tvOS)
@@ -1766,6 +1778,34 @@ struct _R: Rswift.Validatable {
         }
         if _R.storyboard.sendGift().sendGiftViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'sendGiftViewControllerNavVC' could not be loaded from storyboard 'SendGift' as 'BaseNavigationController'.") }
         if _R.storyboard.sendGift().sendGiftViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'sendGiftViewControllerVC' could not be loaded from storyboard 'SendGift' as 'SendGiftViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct sendMoney: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseNavigationController
+
+      let bundle = R.hostingBundle
+      let name = "SendMoney"
+      let sendMoneyViewControllerNavVC = StoryboardViewControllerResource<BaseNavigationController>(identifier: "SendMoneyViewControllerNavVC")
+      let sendMoneyViewControllerVC = StoryboardViewControllerResource<SendMoneyViewController>(identifier: "SendMoneyViewControllerVC")
+
+      func sendMoneyViewControllerNavVC(_: Void = ()) -> BaseNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: sendMoneyViewControllerNavVC)
+      }
+
+      func sendMoneyViewControllerVC(_: Void = ()) -> SendMoneyViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: sendMoneyViewControllerVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.sendMoney().sendMoneyViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'sendMoneyViewControllerNavVC' could not be loaded from storyboard 'SendMoney' as 'BaseNavigationController'.") }
+        if _R.storyboard.sendMoney().sendMoneyViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'sendMoneyViewControllerVC' could not be loaded from storyboard 'SendMoney' as 'SendMoneyViewController'.") }
       }
 
       fileprivate init() {}

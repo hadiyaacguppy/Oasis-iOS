@@ -34,6 +34,15 @@ class ParentsHomeRouter: ParentsHomeRouterDataPassing{
             }
     }
     
+    func pushToSendMoneyController(){
+        let vc = R.storyboard.sendMoney.sendMoneyViewControllerVC()!
+        DispatchQueue
+            .main
+            .async {
+                self.viewController.hidesBottomBarWhenPushed = true
+                self.viewController.navigationController?.pushViewController(vc, animated: true)
+            }
+    }
     
     func pushToReceiveMoneyController(){
         let vc = R.storyboard.receiveMoney.receiveMoneyViewControllerVC()!
