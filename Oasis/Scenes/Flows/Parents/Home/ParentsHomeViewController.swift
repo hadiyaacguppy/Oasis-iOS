@@ -232,11 +232,10 @@ extension ParentsHomeViewController{
         addRecentActivitiesSection(shouldAddPlaceholder: false)
     }
     
-    
     private func addBalanceStack(){
-        balanceStackView.heightAnchor.constraint(equalToConstant: 85).isActive = true
-
         stackView.addArrangedSubview(balanceStackView)
+        
+        balanceStackView.heightAnchor.constraint(equalToConstant: 85).isActive = true
 
         balanceStackView.addArrangedSubview(balanceStaticLabel)
         balanceStackView.addArrangedSubview(balanceValueLabel)
@@ -325,25 +324,17 @@ extension ParentsHomeViewController{
         ulabel.text = "Upcoming Payments".localized
         ulabel.autoLayout()
         
-        stackView.addArrangedSubview(ulabel)
-        //        NSLayoutConstraint.activate([
-        //            ulabel.topAnchor.constraint(equalTo: areYouParentContainerView.bottomAnchor, constant: 13),
-        //            ulabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 30),
-        //            ulabel.heightAnchor.constraint(equalToConstant: 35)
-        //        ])
+        ulabel.heightAnchor.constraint(equalToConstant: 35).isActive = true
         
+        stackView.addArrangedSubview(ulabel)
+
         func addPlaceholder(){
             upcomingPaymentsContainerView.autoLayout()
             upcomingPaymentsContainerView.backgroundColor = .clear
             
             stackView.addArrangedSubview(upcomingPaymentsContainerView)
             
-            //            NSLayoutConstraint.activate([
-            //                upcomingPaymentsContainerView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 30),
-            //                upcomingPaymentsContainerView.topAnchor.constraint(equalTo: ulabel.bottomAnchor, constant: 2),
-            //                upcomingPaymentsContainerView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -30),
-            //                upcomingPaymentsContainerView.heightAnchor.constraint(equalToConstant: 250)
-            //            ])
+            upcomingPaymentsContainerView.heightAnchor.constraint(equalToConstant: 250).isActive = true
             
             let noPaymentsPlaceholderImageview : BaseImageView = {
                 let img = BaseImageView(frame: .zero)
@@ -394,40 +385,45 @@ extension ParentsHomeViewController{
     }
     
     private func addRecentActivitiesSection(shouldAddPlaceholder show: Bool){
+
+        let containerV = BaseUIView()
+        containerV.autoLayout()
+        containerV.backgroundColor = .clear
+        
         let ulabel : BaseLabel = BaseLabel()
         ulabel.style = .init(font: MainFont.bold.with(size: 14), color: .black)
         ulabel.text = "Recent Activities".localized
         ulabel.autoLayout()
         
-        stackView.addArrangedSubview(ulabel)
-        //        NSLayoutConstraint.activate([
-        //            ulabel.topAnchor.constraint(equalTo: upcomingPaymentsContainerView.bottomAnchor, constant: 30),
-        //            ulabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 30),
-        //            ulabel.heightAnchor.constraint(equalToConstant: 35),
-        //            ulabel.widthAnchor.constraint(equalToConstant: 120)
-        //        ])
+        let viewAllButton: BaseButton = {
+            let btn = BaseButton()
+            btn.autoLayout()
+            let yourAttributes: [NSAttributedString.Key: Any] = [
+                .font: MainFont.medium.with(size: 11),
+                .foregroundColor: UIColor.black,
+                .underlineStyle: NSUnderlineStyle.single.rawValue
+            ]
+            let attributeString = NSMutableAttributedString(
+                string: "View all",
+                attributes: yourAttributes
+            )
+            btn.setAttributedTitle(attributeString, for: .normal)
+            return btn
+        }()
         
-        //        let viewAllButton: BaseButton = {
-        //            let btn = BaseButton()
-        //            let yourAttributes: [NSAttributedString.Key: Any] = [
-        //                .font: MainFont.medium.with(size: 11),
-        //                .foregroundColor: UIColor.black,
-        //                .underlineStyle: NSUnderlineStyle.single.rawValue
-        //            ]
-        //            let attributeString = NSMutableAttributedString(
-        //                    string: "View all",
-        //                    attributes: yourAttributes
-        //                 )
-        //            btn.setAttributedTitle(attributeString, for: .normal)
-        //            return btn
-        //        }()
-        //
-        //        scrollView.addSubview(viewAllButton)
-        //        NSLayoutConstraint.activate([
-        //            viewAllButton.topAnchor.constraint(equalTo: upcomingPaymentsContainerView.bottomAnchor, constant: 30),
-        //            viewAllButton.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -30),
-        //            viewAllButton.heightAnchor.constraint(equalToConstant: 35)
-        //        ])
+        stackView.addArrangedSubview(containerV)
+        
+        containerV.addSubview(ulabel)
+        containerV.addSubview(viewAllButton)
+        
+        NSLayoutConstraint.activate([
+            containerV.heightAnchor.constraint(equalToConstant: 35),
+            ulabel.leadingAnchor.constraint(equalTo: containerV.leadingAnchor, constant: 8),
+            ulabel.centerYAnchor.constraint(equalTo: containerV.centerYAnchor),
+            
+            viewAllButton.trailingAnchor.constraint(equalTo: containerV.trailingAnchor, constant: -8),
+            viewAllButton.centerYAnchor.constraint(equalTo: containerV.centerYAnchor)
+        ])
         
         func addPlaceholder(){
             
