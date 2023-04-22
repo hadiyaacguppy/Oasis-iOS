@@ -23,6 +23,7 @@ class ParentsHomeViewController: BaseViewController {
         let scrollView = UIScrollView()
         scrollView.autoLayout()
         scrollView.backgroundColor = .clear
+        scrollView.showsVerticalScrollIndicator = false
         return scrollView
     }()
     
@@ -193,6 +194,8 @@ class ParentsHomeViewController: BaseViewController {
                            forCellWithReuseIdentifier: R.reuseIdentifier.childrenFSPagerCell.identifier)
         return pagerView
     }()
+    
+    public var isParent : Bool = false
 }
 
 //MARK:- View Lifecycle
@@ -250,8 +253,12 @@ extension ParentsHomeViewController{
         
         addBalanceStack()
         addActionsStacksToContainer()
-        addAreYouParentView()
-        setupChildrenPagerView()
+        
+        if isParent{
+            setupChildrenPagerView()
+        }else{
+            addAreYouParentView()
+        }
         addUpcomingPaymentsSection(shouldAddPlaceholder: false)
         addRecentActivitiesSection(shouldAddPlaceholder: false)
     }
@@ -323,16 +330,80 @@ extension ParentsHomeViewController{
             return img
         }()
         
+        let staticTitle : BaseLabel = {
+            let lbl = BaseLabel()
+            lbl.style = .init(font: MainFont.medium.with(size: 22), color: .white, numberOfLines: 2)
+            lbl.autoLayout()
+            lbl.text = "Are you a \nparent?".localized
+            return lbl
+        }()
+        
+        let staticSubTitle : BaseLabel = {
+            let lbl = BaseLabel()
+            lbl.style = .init(font: MainFont.medium.with(size: 12), color: .white, numberOfLines: 3)
+            lbl.autoLayout()
+            lbl.text = "Add your childs now and teach them to be financially independant".localized
+            return lbl
+        }()
+        
+        let yesNoStackView : UIStackView = {
+            let stackView = UIStackView()
+            stackView.axis = .horizontal
+            stackView.distribution = .fillEqually
+            stackView.spacing = 12
+            stackView.autoLayout()
+            stackView.backgroundColor = .clear
+            return stackView
+        }()
+        
+        let yesButton : WhiteBorderButton = {
+            let btn = WhiteBorderButton()
+            btn.setTitle("Yes".localized, for: .normal)
+            btn.autoLayout()
+            btn.cornerRad = 20
+            return btn
+        }()
+        
+        let noButton : WhiteBorderButton = {
+            let btn = WhiteBorderButton()
+            btn.setTitle("Yes".localized, for: .normal)
+            btn.cornerRad = 20
+            btn.autoLayout()
+            return btn
+        }()
+        
         stackView.addArrangedSubview(areYouParentContainerView)
         
         areYouParentContainerView.heightAnchor.constraint(equalToConstant: 205).isActive = true
         
         areYouParentContainerView.addSubview(areYouParentCardImageView)
+        areYouParentContainerView.addSubview(staticTitle)
+        areYouParentContainerView.addSubview(staticSubTitle)
+        areYouParentContainerView.addSubview(yesNoStackView)
+        
+        yesNoStackView.addArrangedSubview(yesButton)
+        yesNoStackView.addArrangedSubview(noButton)
+        
         NSLayoutConstraint.activate([
             areYouParentCardImageView.topAnchor.constraint(equalTo: areYouParentContainerView.topAnchor, constant: 12),
-            areYouParentCardImageView.leadingAnchor.constraint(equalTo: areYouParentContainerView.leadingAnchor),
+            areYouParentCardImageView.leadingAnchor.constraint(equalTo: areYouParentContainerView.leadingAnchor, constant: 20),
             areYouParentCardImageView.trailingAnchor.constraint(equalTo: areYouParentContainerView.trailingAnchor),
-            areYouParentCardImageView.bottomAnchor.constraint(equalTo: areYouParentContainerView.bottomAnchor)
+            areYouParentCardImageView.bottomAnchor.constraint(equalTo: areYouParentContainerView.bottomAnchor),
+            
+            yesNoStackView.heightAnchor.constraint(equalToConstant: 40),
+            yesNoStackView.trailingAnchor.constraint(equalTo: areYouParentContainerView.trailingAnchor, constant: -20),
+            yesNoStackView.widthAnchor.constraint(equalToConstant: 180),
+            yesNoStackView.bottomAnchor.constraint(equalTo: areYouParentContainerView.bottomAnchor, constant: -22),
+            
+            staticTitle.leadingAnchor.constraint(equalTo: yesNoStackView.leadingAnchor),
+            staticTitle.topAnchor.constraint(equalTo: areYouParentContainerView.topAnchor, constant: 17),
+            staticTitle.heightAnchor.constraint(equalToConstant: 55),
+            staticTitle.trailingAnchor.constraint(equalTo: yesNoStackView.trailingAnchor),
+            
+            staticSubTitle.leadingAnchor.constraint(equalTo: yesNoStackView.leadingAnchor),
+            staticSubTitle.topAnchor.constraint(equalTo: staticTitle.bottomAnchor, constant: 4),
+            staticSubTitle.heightAnchor.constraint(equalToConstant: 45),
+            staticSubTitle.trailingAnchor.constraint(equalTo: yesNoStackView.trailingAnchor),
         ])
         
         areYouParentContainerView.addSubview(parentImageView)

@@ -10,6 +10,13 @@ import Foundation
 import UIKit
 
 class WhiteBorderButton: BaseButton {
+    
+    public var cornerRad : CGFloat = 28{
+        didSet{
+            self.roundCorners = .all(radius: cornerRad)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -29,7 +36,7 @@ class WhiteBorderButton: BaseButton {
                            titleColor: .white,
                            backgroundColor: .clear)
         self.border = .value(color: .white, width: 1.0)
-        self.roundCorners = .all(radius: 28)
+        self.roundCorners = .all(radius: cornerRad)
         self.translatesAutoresizingMaskIntoConstraints = false
     }
 }
