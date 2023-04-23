@@ -153,6 +153,8 @@
 		161F3C8329F3F16A0053158A /* OasisVioletButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C8229F3F16A0053158A /* OasisVioletButton.swift */; };
 		161F3C8729F3FC1A0053158A /* ChildrenFSPagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C8529F3FC1A0053158A /* ChildrenFSPagerViewCell.swift */; };
 		161F3C8829F3FC1A0053158A /* ChildrenFSPagerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161F3C8629F3FC1A0053158A /* ChildrenFSPagerViewCell.xib */; };
+		16503F8029F488C600875075 /* AmountTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F7F29F488C600875075 /* AmountTextField.swift */; };
+		16503F8229F4893900875075 /* AmountWithCurrencyVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F8129F4893900875075 /* AmountWithCurrencyVIew.swift */; };
 		1ACED86ADAA2441F495B6912 /* Pods_AnalyticsManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B66C5D6B0826B75B9813C2 /* Pods_AnalyticsManager.framework */; };
 		374FA5CB00801009F6B43FDB /* Pods_OasisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64659B367BA850135AB1D5E9 /* Pods_OasisTests.framework */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
@@ -475,6 +477,8 @@
 		161F3C8229F3F16A0053158A /* OasisVioletButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OasisVioletButton.swift; sourceTree = "<group>"; };
 		161F3C8529F3FC1A0053158A /* ChildrenFSPagerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenFSPagerViewCell.swift; sourceTree = "<group>"; };
 		161F3C8629F3FC1A0053158A /* ChildrenFSPagerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChildrenFSPagerViewCell.xib; sourceTree = "<group>"; };
+		16503F7F29F488C600875075 /* AmountTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountTextField.swift; sourceTree = "<group>"; };
+		16503F8129F4893900875075 /* AmountWithCurrencyVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountWithCurrencyVIew.swift; sourceTree = "<group>"; };
 		1D7408F9BE9E6B05F6D17E8A /* Pods-AnalyticsManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnalyticsManager/Pods-AnalyticsManager.release.xcconfig"; sourceTree = "<group>"; };
 		22C3C119E084FE2B0FF3C34F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
@@ -1261,6 +1265,7 @@
 				3EDC4155224E886500624D2B /* BaseUIView.swift */,
 				161F3C5A29F31A910053158A /* BlueToastView.swift */,
 				161F3C7B29F3D9120053158A /* RecentActivityView.swift */,
+				16503F8129F4893900875075 /* AmountWithCurrencyVIew.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -1298,6 +1303,7 @@
 				CF87EDA3201B8C2500562226 /* BaseTextField.swift */,
 				4AEF64762210842F00D53D75 /* BaseSkyFloatingTextField.swift */,
 				161F3BB229D989560053158A /* WhiteBorderTextfield.swift */,
+				16503F7F29F488C600875075 /* AmountTextField.swift */,
 			);
 			path = TextFields;
 			sourceTree = "<group>";
@@ -2014,6 +2020,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF56472F211B1BA50092EFBD /* UIImageView+Extensions.swift in Sources */,
+				16503F8029F488C600875075 /* AmountTextField.swift in Sources */,
+				16503F8229F4893900875075 /* AmountWithCurrencyVIew.swift in Sources */,
 				161F3BC529D98A0E0053158A /* RegistrationInteractor.swift in Sources */,
 				161F3C7629F31EE80053158A /* SendMoneyModels.swift in Sources */,
 				161F3BC129D98A0E0053158A /* RegistrationPresenter.swift in Sources */,

@@ -87,6 +87,10 @@ class SendMoneyViewController: BaseViewController {
         return collectionView
     }()
     
+    private var amountView : AmountWithCurrencyView = {
+        let view = AmountWithCurrencyView(defaultValue: 0.0, currency: "LBP")
+        return view
+    }()
 }
 
 //MARK:- View Lifecycle
@@ -156,12 +160,13 @@ extension SendMoneyViewController{
         stackView.addArrangedSubview(toStaticLabel)
         stackView.addArrangedSubview(receipentCollectionView)
         stackView.addArrangedSubview(amountStaticlabel)
-        
+        stackView.addArrangedSubview(amountView)
         NSLayoutConstraint.activate([
-            toastView.heightAnchor.constraint(equalToConstant: 73)
+            toastView.heightAnchor.constraint(equalToConstant: 73),
+            
+            amountView.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
-    
 }
 
 //MARK:- NavBarAppearance
