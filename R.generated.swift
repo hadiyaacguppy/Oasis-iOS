@@ -90,8 +90,10 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 15 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 16 storyboards.
   struct storyboard {
+    /// Storyboard `Children`.
+    static let children = _R.storyboard.children()
     /// Storyboard `CreateConfirmPassword`.
     static let createConfirmPassword = _R.storyboard.createConfirmPassword()
     /// Storyboard `Initial`.
@@ -122,6 +124,13 @@ struct R: Rswift.Validatable {
     static let sendGift = _R.storyboard.sendGift()
     /// Storyboard `SendMoney`.
     static let sendMoney = _R.storyboard.sendMoney()
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Children", bundle: ...)`
+    static func children(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.children)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "CreateConfirmPassword", bundle: ...)`
@@ -406,7 +415,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 98 images.
+  /// This `R.image` struct is generated, and contains static references to 99 images.
   struct image {
     /// Image `2474162 copy`.
     static let copy = Rswift.ImageResource(bundle: R.hostingBundle, name: "2474162 copy")
@@ -492,6 +501,8 @@ struct R: Rswift.Validatable {
     static let error = Rswift.ImageResource(bundle: R.hostingBundle, name: "error")
     /// Image `extra`.
     static let extra = Rswift.ImageResource(bundle: R.hostingBundle, name: "extra")
+    /// Image `grayShape`.
+    static let grayShape = Rswift.ImageResource(bundle: R.hostingBundle, name: "grayShape")
     /// Image `help icon`.
     static let helpIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "help icon")
     /// Image `icon - notifications`.
@@ -896,6 +907,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "extra", bundle: ..., traitCollection: ...)`
     static func extra(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.extra, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "grayShape", bundle: ..., traitCollection: ...)`
+    static func grayShape(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.grayShape, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1531,6 +1549,9 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       #if os(iOS) || os(tvOS)
+      try children.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try createConfirmPassword.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -1576,6 +1597,34 @@ struct _R: Rswift.Validatable {
       try sendMoney.validate()
       #endif
     }
+
+    #if os(iOS) || os(tvOS)
+    struct children: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseNavigationController
+
+      let bundle = R.hostingBundle
+      let childrenViewControllerNavVC = StoryboardViewControllerResource<BaseNavigationController>(identifier: "ChildrenViewControllerNavVC")
+      let childrenViewControllerVC = StoryboardViewControllerResource<ChildrenViewController>(identifier: "ChildrenViewControllerVC")
+      let name = "Children"
+
+      func childrenViewControllerNavVC(_: Void = ()) -> BaseNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: childrenViewControllerNavVC)
+      }
+
+      func childrenViewControllerVC(_: Void = ()) -> ChildrenViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: childrenViewControllerVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.children().childrenViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'childrenViewControllerNavVC' could not be loaded from storyboard 'Children' as 'BaseNavigationController'.") }
+        if _R.storyboard.children().childrenViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'childrenViewControllerVC' could not be loaded from storyboard 'Children' as 'ChildrenViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     struct createConfirmPassword: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {

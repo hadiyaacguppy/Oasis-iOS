@@ -25,6 +25,7 @@ class ControllerLargeTitleLabel : BaseLabel{
     
     private
     func setup(){
+        self.autoLayout()
         self.style = .init(font: MainFont.medium.with(size: 27),
                            color: .black)
     }

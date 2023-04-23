@@ -39,7 +39,7 @@ final class TabBarController: CardTabBarController {
 
     lazy var childrenTab: UIViewController = {
         let searchTabItem = UITabBarItem(title: "", image: R.image.tabbarUnSelectedChildren()!, selectedImage: R.image.tabbarSelectedChildren()!)
-        let navController = R.storyboard.parentsHome.parentsHomeViewControllerNavVC()!
+        let navController = R.storyboard.children.childrenViewControllerNavVC()!
         navController.tabBarItem = searchTabItem
         return navController
     }()

@@ -174,12 +174,10 @@ extension PaymentsViewController{
         stackView.addArrangedSubview(topTitleLabel)
 
         addActionsStacksToContainer()
-//        stackView.addArrangedSubview(toastView)
-//        toastView.heightAnchor.constraint(equalToConstant: 73).isActive = true
-//
-//
-//        stackView.addArrangedSubview(latestPaymentsStaticLabel)
-        
+        stackView.addArrangedSubview(toastView)
+        toastView.heightAnchor.constraint(equalToConstant: 73).isActive = true
+
+        stackView.addArrangedSubview(latestPaymentsStaticLabel)
     }
     
     private func addActionsStacksToContainer(){
