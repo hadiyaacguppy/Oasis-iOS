@@ -157,6 +157,8 @@
 		16503F8229F4893900875075 /* AmountWithCurrencyVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F8129F4893900875075 /* AmountWithCurrencyVIew.swift */; };
 		16503F8629F53CDE00875075 /* PeopleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F8429F53CDE00875075 /* PeopleCollectionViewCell.swift */; };
 		16503F8729F53CDE00875075 /* PeopleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16503F8529F53CDE00875075 /* PeopleCollectionViewCell.xib */; };
+		16503F8A29F5409900875075 /* OccasionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F8829F5409900875075 /* OccasionCollectionViewCell.swift */; };
+		16503F8B29F5409900875075 /* OccasionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16503F8929F5409900875075 /* OccasionCollectionViewCell.xib */; };
 		1ACED86ADAA2441F495B6912 /* Pods_AnalyticsManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B66C5D6B0826B75B9813C2 /* Pods_AnalyticsManager.framework */; };
 		374FA5CB00801009F6B43FDB /* Pods_OasisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64659B367BA850135AB1D5E9 /* Pods_OasisTests.framework */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
@@ -483,6 +485,8 @@
 		16503F8129F4893900875075 /* AmountWithCurrencyVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountWithCurrencyVIew.swift; sourceTree = "<group>"; };
 		16503F8429F53CDE00875075 /* PeopleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCollectionViewCell.swift; sourceTree = "<group>"; };
 		16503F8529F53CDE00875075 /* PeopleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleCollectionViewCell.xib; sourceTree = "<group>"; };
+		16503F8829F5409900875075 /* OccasionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccasionCollectionViewCell.swift; sourceTree = "<group>"; };
+		16503F8929F5409900875075 /* OccasionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OccasionCollectionViewCell.xib; sourceTree = "<group>"; };
 		1D7408F9BE9E6B05F6D17E8A /* Pods-AnalyticsManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnalyticsManager/Pods-AnalyticsManager.release.xcconfig"; sourceTree = "<group>"; };
 		22C3C119E084FE2B0FF3C34F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
@@ -1189,6 +1193,8 @@
 			children = (
 				16503F8429F53CDE00875075 /* PeopleCollectionViewCell.swift */,
 				16503F8529F53CDE00875075 /* PeopleCollectionViewCell.xib */,
+				16503F8829F5409900875075 /* OccasionCollectionViewCell.swift */,
+				16503F8929F5409900875075 /* OccasionCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1791,6 +1797,7 @@
 				0F1B7FAD22CA6C910079F752 /* Countries.bundle in Resources */,
 				161F3BC029D98A0E0053158A /* Registration.storyboard in Resources */,
 				161F3BDE29DAD6FB0053158A /* OTPVerification.storyboard in Resources */,
+				16503F8B29F5409900875075 /* OccasionCollectionViewCell.xib in Resources */,
 				161F3C7329F31EE80053158A /* SendMoney.storyboard in Resources */,
 				161F3B9029D371500053158A /* Onboarding.storyboard in Resources */,
 				161F3BAA29D4BF670053158A /* Montserrat-Medium.ttf in Resources */,
@@ -2176,6 +2183,7 @@
 				3E6DEFB12162111100978FDC /* BaseController.swift in Sources */,
 				6754244D20EE7FF600783123 /* BaseNavigationController.swift in Sources */,
 				161F3BE329DAD6FB0053158A /* OTPVerificationInteractor.swift in Sources */,
+				16503F8A29F5409900875075 /* OccasionCollectionViewCell.swift in Sources */,
 				672909FC210E43EA00632C4F /* PlaceHolderView.swift in Sources */,
 				161F3BE029DAD6FB0053158A /* OTPVerificationRouter.swift in Sources */,
 				67F03A5E26F20B7000ED91ED /* MediaManager.swift in Sources */,

@@ -100,19 +100,6 @@ class SendGiftViewController: BaseViewController {
         return lbl
     }()
     
-    private let occasionCollectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .clear
-        collectionView.register(OnboardingCollectionViewCell.self, forCellWithReuseIdentifier: "IntroductionCell")
-        collectionView.isPagingEnabled = true
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        return collectionView
-    }()
-    
     private let receipentCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -137,6 +124,20 @@ class SendGiftViewController: BaseViewController {
         collectionView.autoLayout()
         collectionView.register(UINib(resource: R.nib.peopleCollectionViewCell),
                                 forCellWithReuseIdentifier: R.reuseIdentifier.onlyImagePeopleCollectionCell.identifier)
+        return collectionView
+    }()
+    
+    private let occasionCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.isPagingEnabled = true
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.autoLayout()
+        collectionView.register(UINib(resource: R.nib.occasionCollectionViewCell),
+                                forCellWithReuseIdentifier: R.reuseIdentifier.occasionCollectionCell.identifier)
         return collectionView
     }()
     
@@ -221,9 +222,13 @@ extension SendGiftViewController{
         
         amountView.heightAnchor.constraint(equalToConstant: 40).isActive = true
         peopleCollectionView.heightAnchor.constraint(equalToConstant: 80).isActive = true
-
+        occasionCollectionView.heightAnchor.constraint(equalToConstant: 130).isActive = true
+        
         peopleCollectionView.delegate = self
         peopleCollectionView.dataSource = self
+        
+        occasionCollectionView.delegate = self
+        occasionCollectionView.dataSource = self
     }
 }
 
@@ -270,13 +275,23 @@ extension SendGiftViewController{
 }
 extension SendGiftViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        if collectionView == occasionCollectionView {
+            return 6
+        }else{
+            return 10
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.onlyImagePeopleCollectionCell, for: indexPath)!
-        cell.setupCell()
-        return cell
+        if collectionView == occasionCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.occasionCollectionCell, for: indexPath)!
+            cell.setupCell()
+            return cell
+        }else{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.onlyImagePeopleCollectionCell, for: indexPath)!
+            cell.setupCell()
+            return cell
+        }
     }
     
     
@@ -284,7 +299,11 @@ extension SendGiftViewController: UICollectionViewDelegate, UICollectionViewData
 
 extension SendGiftViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 75, height: 75)
+        if collectionView == occasionCollectionView {
+            return CGSize(width: 150, height: 120)
+        }else{
+            return CGSize(width: 75, height: 75)
+        }
     }
     
     
