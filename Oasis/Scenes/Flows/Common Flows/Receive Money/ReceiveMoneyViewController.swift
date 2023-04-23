@@ -87,6 +87,25 @@ class ReceiveMoneyViewController: BaseViewController {
         return collectionView
     }()
     
+    private let peopleCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.isPagingEnabled = true
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.autoLayout()
+        collectionView.register(UINib(resource: R.nib.peopleCollectionViewCell),
+                                forCellWithReuseIdentifier: R.reuseIdentifier.onlyImagePeopleCollectionCell.identifier)
+        return collectionView
+    }()
+    
+    private var amountView : AmountWithCurrencyView = {
+        let view = AmountWithCurrencyView(defaultValue: 0.0, currency: "LBP")
+        return view
+    }()
+    
 }
 
 //MARK:- View Lifecycle
@@ -154,12 +173,20 @@ extension ReceiveMoneyViewController{
         stackView.addArrangedSubview(topTitleLabel)
         stackView.addArrangedSubview(toastView)
         stackView.addArrangedSubview(fromStaticlabel)
+        stackView.addArrangedSubview(peopleCollectionView)
         stackView.addArrangedSubview(receipentCollectionView)
         stackView.addArrangedSubview(amountStaticlabel)
-        
+        stackView.addArrangedSubview(amountView)
+
         NSLayoutConstraint.activate([
-            toastView.heightAnchor.constraint(equalToConstant: 73)
+            toastView.heightAnchor.constraint(equalToConstant: 73),
+            amountView.heightAnchor.constraint(equalToConstant: 40)
         ])
+        
+        peopleCollectionView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        
+        peopleCollectionView.delegate = self
+        peopleCollectionView.dataSource = self
     }
     
 }
@@ -187,3 +214,35 @@ extension ReceiveMoneyViewController{
 }
 
 
+extension ReceiveMoneyViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.onlyImagePeopleCollectionCell, for: indexPath)!
+        cell.setupCell()
+        return cell
+    }
+    
+    
+}
+
+extension ReceiveMoneyViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 75, height: 75)
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 14.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout
+                        collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1.0
+    }
+}
