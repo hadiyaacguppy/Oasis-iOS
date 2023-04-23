@@ -45,15 +45,15 @@ final class TabBarController: CardTabBarController {
     }()
 
     lazy var goalsTab: UIViewController = {
-        let randomTabItem = UITabBarItem(title: "Goals", image: nil, selectedImage: nil)
-        let navController = R.storyboard.parentsHome.parentsHomeViewControllerNavVC()!
+        let randomTabItem = UITabBarItem(title: "", image: R.image.tabbarUnSelectedChildren()!, selectedImage: R.image.tabbarSelectedChildren()!)
+        let navController = R.storyboard.goals.goalsViewControllerNavVC()!
         navController.tabBarItem = randomTabItem
         return navController
     }()
 
     lazy var profileTab: UIViewController = {
         let commentTabItem = UITabBarItem(title: "", image: R.image.tabbarUnselectedProfile()!, selectedImage: R.image.tabbarSelectedProfile()!)
-        let navController = UINavigationController()
+        let navController = R.storyboard.parentProfile.parentProfileViewControllerNavVC()!
         navController.tabBarItem = commentTabItem
         return navController
     }()

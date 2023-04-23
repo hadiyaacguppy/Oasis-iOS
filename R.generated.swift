@@ -90,12 +90,14 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 16 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 18 storyboards.
   struct storyboard {
     /// Storyboard `Children`.
     static let children = _R.storyboard.children()
     /// Storyboard `CreateConfirmPassword`.
     static let createConfirmPassword = _R.storyboard.createConfirmPassword()
+    /// Storyboard `Goals`.
+    static let goals = _R.storyboard.goals()
     /// Storyboard `Initial`.
     static let initial = _R.storyboard.initial()
     /// Storyboard `Interests`.
@@ -108,6 +110,8 @@ struct R: Rswift.Validatable {
     static let otpVerification = _R.storyboard.otpVerification()
     /// Storyboard `Onboarding`.
     static let onboarding = _R.storyboard.onboarding()
+    /// Storyboard `ParentProfile`.
+    static let parentProfile = _R.storyboard.parentProfile()
     /// Storyboard `ParentsHome`.
     static let parentsHome = _R.storyboard.parentsHome()
     /// Storyboard `Payments`.
@@ -136,6 +140,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "CreateConfirmPassword", bundle: ...)`
     static func createConfirmPassword(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.createConfirmPassword)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Goals", bundle: ...)`
+    static func goals(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.goals)
     }
     #endif
 
@@ -178,6 +189,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Onboarding", bundle: ...)`
     static func onboarding(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.onboarding)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "ParentProfile", bundle: ...)`
+    static func parentProfile(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.parentProfile)
     }
     #endif
 
@@ -415,7 +433,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 99 images.
+  /// This `R.image` struct is generated, and contains static references to 100 images.
   struct image {
     /// Image `2474162 copy`.
     static let copy = Rswift.ImageResource(bundle: R.hostingBundle, name: "2474162 copy")
@@ -577,6 +595,8 @@ struct R: Rswift.Validatable {
     static let photo2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "photo 2")
     /// Image `receive money icon`.
     static let receiveMoneyIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "receive money icon")
+    /// Image `redCardFilled`.
+    static let redCardFilled = Rswift.ImageResource(bundle: R.hostingBundle, name: "redCardFilled")
     /// Image `security icon`.
     static let securityIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "security icon")
     /// Image `send money icon`.
@@ -1177,6 +1197,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "redCardFilled", bundle: ..., traitCollection: ...)`
+    static func redCardFilled(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.redCardFilled, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "security icon", bundle: ..., traitCollection: ...)`
     static func securityIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.securityIcon, compatibleWith: traitCollection)
@@ -1312,7 +1339,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 7 nibs.
   struct nib {
     /// Nib `AgeTableViewCell`.
     static let ageTableViewCell = _R.nib._AgeTableViewCell()
@@ -1322,6 +1349,8 @@ struct R: Rswift.Validatable {
     static let interestsCollectionViewCell = _R.nib._InterestsCollectionViewCell()
     /// Nib `OccasionCollectionViewCell`.
     static let occasionCollectionViewCell = _R.nib._OccasionCollectionViewCell()
+    /// Nib `ParentCardFSPagerCell`.
+    static let parentCardFSPagerCell = _R.nib._ParentCardFSPagerCell()
     /// Nib `PeopleCollectionViewCell`.
     static let peopleCollectionViewCell = _R.nib._PeopleCollectionViewCell()
     /// Nib `UpcomingPaymentCollectionViewCell`.
@@ -1360,6 +1389,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ParentCardFSPagerCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.parentCardFSPagerCell) instead")
+    static func parentCardFSPagerCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.parentCardFSPagerCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "PeopleCollectionViewCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.peopleCollectionViewCell) instead")
     static func peopleCollectionViewCell(_: Void = ()) -> UIKit.UINib {
@@ -1391,6 +1428,10 @@ struct R: Rswift.Validatable {
       return R.nib.occasionCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? OccasionCollectionViewCell
     }
 
+    static func parentCardFSPagerCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ParentCardFSPagerCell? {
+      return R.nib.parentCardFSPagerCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ParentCardFSPagerCell
+    }
+
     static func peopleCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PeopleCollectionViewCell? {
       return R.nib.peopleCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PeopleCollectionViewCell
     }
@@ -1402,7 +1443,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 6 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 7 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `UpcomingPaymentCollectionCell`.
     static let upcomingPaymentCollectionCell: Rswift.ReuseIdentifier<UpcomingPaymentCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "UpcomingPaymentCollectionCell")
@@ -1416,6 +1457,8 @@ struct R: Rswift.Validatable {
     static let occasionCollectionCell: Rswift.ReuseIdentifier<OccasionCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "occasionCollectionCell")
     /// Reuse identifier `onlyImagePeopleCollectionCell`.
     static let onlyImagePeopleCollectionCell: Rswift.ReuseIdentifier<PeopleCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "onlyImagePeopleCollectionCell")
+    /// Reuse identifier `parentCardCell`.
+    static let parentCardCell: Rswift.ReuseIdentifier<ParentCardFSPagerCell> = Rswift.ReuseIdentifier(identifier: "parentCardCell")
 
     fileprivate init() {}
   }
@@ -1513,6 +1556,20 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _ParentCardFSPagerCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = ParentCardFSPagerCell
+
+      let bundle = R.hostingBundle
+      let identifier = "parentCardCell"
+      let name = "ParentCardFSPagerCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ParentCardFSPagerCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ParentCardFSPagerCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _PeopleCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
       typealias ReusableType = PeopleCollectionViewCell
 
@@ -1555,6 +1612,9 @@ struct _R: Rswift.Validatable {
       try createConfirmPassword.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try goals.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try initial.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -1571,6 +1631,9 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try onboarding.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try parentProfile.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try parentsHome.validate()
@@ -1648,6 +1711,34 @@ struct _R: Rswift.Validatable {
         }
         if _R.storyboard.createConfirmPassword().createConfirmPasswordViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'createConfirmPasswordViewControllerNavVC' could not be loaded from storyboard 'CreateConfirmPassword' as 'BaseNavigationController'.") }
         if _R.storyboard.createConfirmPassword().createConfirmPasswordViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'createConfirmPasswordViewControllerVC' could not be loaded from storyboard 'CreateConfirmPassword' as 'CreateConfirmPasswordViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct goals: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseNavigationController
+
+      let bundle = R.hostingBundle
+      let goalsViewControllerNavVC = StoryboardViewControllerResource<BaseNavigationController>(identifier: "GoalsViewControllerNavVC")
+      let goalsViewControllerVC = StoryboardViewControllerResource<GoalsViewController>(identifier: "GoalsViewControllerVC")
+      let name = "Goals"
+
+      func goalsViewControllerNavVC(_: Void = ()) -> BaseNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: goalsViewControllerNavVC)
+      }
+
+      func goalsViewControllerVC(_: Void = ()) -> GoalsViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: goalsViewControllerVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.goals().goalsViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'goalsViewControllerNavVC' could not be loaded from storyboard 'Goals' as 'BaseNavigationController'.") }
+        if _R.storyboard.goals().goalsViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'goalsViewControllerVC' could not be loaded from storyboard 'Goals' as 'GoalsViewController'.") }
       }
 
       fileprivate init() {}
@@ -1800,6 +1891,34 @@ struct _R: Rswift.Validatable {
         }
         if _R.storyboard.otpVerification().otpVerificationViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'otpVerificationViewControllerNavVC' could not be loaded from storyboard 'OTPVerification' as 'BaseNavigationController'.") }
         if _R.storyboard.otpVerification().otpVerificationViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'otpVerificationViewControllerVC' could not be loaded from storyboard 'OTPVerification' as 'OTPVerificationViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct parentProfile: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseNavigationController
+
+      let bundle = R.hostingBundle
+      let name = "ParentProfile"
+      let parentProfileViewControllerNavVC = StoryboardViewControllerResource<BaseNavigationController>(identifier: "ParentProfileViewControllerNavVC")
+      let parentProfileViewControllerVC = StoryboardViewControllerResource<ParentProfileViewController>(identifier: "ParentProfileViewControllerVC")
+
+      func parentProfileViewControllerNavVC(_: Void = ()) -> BaseNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: parentProfileViewControllerNavVC)
+      }
+
+      func parentProfileViewControllerVC(_: Void = ()) -> ParentProfileViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: parentProfileViewControllerVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.parentProfile().parentProfileViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'parentProfileViewControllerNavVC' could not be loaded from storyboard 'ParentProfile' as 'BaseNavigationController'.") }
+        if _R.storyboard.parentProfile().parentProfileViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'parentProfileViewControllerVC' could not be loaded from storyboard 'ParentProfile' as 'ParentProfileViewController'.") }
       }
 
       fileprivate init() {}

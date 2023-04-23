@@ -26,14 +26,7 @@ class ParentsHomeViewController: BaseViewController {
         scrollView.showsVerticalScrollIndicator = false
         return scrollView
     }()
-    
-    private lazy var contentView: BaseUIView = {
-        let view = BaseUIView()
-        view.autoLayout()
-        view.backgroundColor = .clear
-        return view
-    }()
-    
+        
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical

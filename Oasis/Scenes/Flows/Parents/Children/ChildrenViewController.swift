@@ -156,7 +156,7 @@ extension ChildrenViewController{
 //MARK:- NavBarAppearance
 extension ChildrenViewController{
     private func setupNavBarAppearance(){
-        statusBarStyle = .lightContent
+        statusBarStyle = .default
         navigationBarStyle = .transparent
         
         let rightNotificationsBarButton = UIBarButtonItem(image: R.image.iconNotifications()!,
