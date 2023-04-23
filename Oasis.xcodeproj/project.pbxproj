@@ -159,6 +159,13 @@
 		16503F8729F53CDE00875075 /* PeopleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16503F8529F53CDE00875075 /* PeopleCollectionViewCell.xib */; };
 		16503F8A29F5409900875075 /* OccasionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F8829F5409900875075 /* OccasionCollectionViewCell.swift */; };
 		16503F8B29F5409900875075 /* OccasionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16503F8929F5409900875075 /* OccasionCollectionViewCell.xib */; };
+		16503F9329F5853600875075 /* Payments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16503F8C29F5853600875075 /* Payments.storyboard */; };
+		16503F9429F5853600875075 /* PaymentsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F8D29F5853600875075 /* PaymentsPresenter.swift */; };
+		16503F9529F5853600875075 /* PaymentsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F8E29F5853600875075 /* PaymentsRouter.swift */; };
+		16503F9629F5853600875075 /* PaymentsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F8F29F5853600875075 /* PaymentsModels.swift */; };
+		16503F9729F5853600875075 /* PaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F9029F5853600875075 /* PaymentsViewController.swift */; };
+		16503F9829F5853600875075 /* PaymentsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F9129F5853600875075 /* PaymentsInteractor.swift */; };
+		16503F9929F5853600875075 /* PaymentsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F9229F5853600875075 /* PaymentsConfigurator.swift */; };
 		1ACED86ADAA2441F495B6912 /* Pods_AnalyticsManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B66C5D6B0826B75B9813C2 /* Pods_AnalyticsManager.framework */; };
 		374FA5CB00801009F6B43FDB /* Pods_OasisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64659B367BA850135AB1D5E9 /* Pods_OasisTests.framework */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
@@ -487,6 +494,13 @@
 		16503F8529F53CDE00875075 /* PeopleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleCollectionViewCell.xib; sourceTree = "<group>"; };
 		16503F8829F5409900875075 /* OccasionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccasionCollectionViewCell.swift; sourceTree = "<group>"; };
 		16503F8929F5409900875075 /* OccasionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OccasionCollectionViewCell.xib; sourceTree = "<group>"; };
+		16503F8C29F5853600875075 /* Payments.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Payments.storyboard; sourceTree = "<group>"; };
+		16503F8D29F5853600875075 /* PaymentsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsPresenter.swift; sourceTree = "<group>"; };
+		16503F8E29F5853600875075 /* PaymentsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsRouter.swift; sourceTree = "<group>"; };
+		16503F8F29F5853600875075 /* PaymentsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsModels.swift; sourceTree = "<group>"; };
+		16503F9029F5853600875075 /* PaymentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsViewController.swift; sourceTree = "<group>"; };
+		16503F9129F5853600875075 /* PaymentsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsInteractor.swift; sourceTree = "<group>"; };
+		16503F9229F5853600875075 /* PaymentsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsConfigurator.swift; sourceTree = "<group>"; };
 		1D7408F9BE9E6B05F6D17E8A /* Pods-AnalyticsManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnalyticsManager/Pods-AnalyticsManager.release.xcconfig"; sourceTree = "<group>"; };
 		22C3C119E084FE2B0FF3C34F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
@@ -1163,11 +1177,18 @@
 			path = "Send Money";
 			sourceTree = "<group>";
 		};
-		161F3C7A29F3D8FF0053158A /* New Group */ = {
+		161F3C7A29F3D8FF0053158A /* Payments */ = {
 			isa = PBXGroup;
 			children = (
+				16503F8C29F5853600875075 /* Payments.storyboard */,
+				16503F8D29F5853600875075 /* PaymentsPresenter.swift */,
+				16503F8E29F5853600875075 /* PaymentsRouter.swift */,
+				16503F8F29F5853600875075 /* PaymentsModels.swift */,
+				16503F9029F5853600875075 /* PaymentsViewController.swift */,
+				16503F9129F5853600875075 /* PaymentsInteractor.swift */,
+				16503F9229F5853600875075 /* PaymentsConfigurator.swift */,
 			);
-			path = "New Group";
+			path = Payments;
 			sourceTree = "<group>";
 		};
 		161F3C7D29F3F1010053158A /* upcoming payments collection */ = {
@@ -1245,7 +1266,7 @@
 		166EF2FE29D36FE20029908E /* Common Flows */ = {
 			isa = PBXGroup;
 			children = (
-				161F3C7A29F3D8FF0053158A /* New Group */,
+				161F3C7A29F3D8FF0053158A /* Payments */,
 				161F3C6B29F31EDC0053158A /* Send Money */,
 				161F3C5C29F31CBD0053158A /* Receive Money */,
 				161F3C4729F277860053158A /* Send a Gift */,
@@ -1806,6 +1827,7 @@
 				112239221FD5C7B000486528 /* LaunchScreen.storyboard in Resources */,
 				161F3C8829F3FC1A0053158A /* ChildrenFSPagerViewCell.xib in Resources */,
 				1122391F1FD5C7B000486528 /* Assets.xcassets in Resources */,
+				16503F9329F5853600875075 /* Payments.storyboard in Resources */,
 				161F3C2E29E5AD4D0053158A /* Interests.storyboard in Resources */,
 				161F3C1129E322BE0053158A /* ParentsHome.storyboard in Resources */,
 				161F3C6429F31CD00053158A /* ReceiveMoney.storyboard in Resources */,
@@ -2104,6 +2126,7 @@
 				CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */,
 				672909FE210E43F900632C4F /* PlaceHolderCreator.swift in Sources */,
 				117C4AB01FD864DE008BB445 /* UILabel+Extensions.swift in Sources */,
+				16503F9729F5853600875075 /* PaymentsViewController.swift in Sources */,
 				CFF69D6F219554E7003BE6BF /* CGRect+Extensions.swift in Sources */,
 				117C4AB21FD864FD008BB445 /* String+Extensions.swift in Sources */,
 				CF6B70F221EDD5F700204B65 /* VersionLabel.swift in Sources */,
@@ -2120,10 +2143,12 @@
 				161F3C0329E3157D0053158A /* SelectAgeConfigurator.swift in Sources */,
 				3E59224C23C3992100E729B7 /* Font.swift in Sources */,
 				67290A02210E441400632C4F /* PlaceHolderHelper.swift in Sources */,
+				16503F9429F5853600875075 /* PaymentsPresenter.swift in Sources */,
 				0F1B7FBD22CA6CBD0079F752 /* PhoneCodeCell.swift in Sources */,
 				CF8C5CAA20EF9D6700236C7B /* Int+Extensions.swift in Sources */,
 				161F3C5029F277A30053158A /* SendGiftPresenter.swift in Sources */,
 				3E8E350422CA0BDE009A3113 /* Observable+Operators.swift in Sources */,
+				16503F9629F5853600875075 /* PaymentsModels.swift in Sources */,
 				161F3B9D29D4BD160053158A /* OnboardingController.swift in Sources */,
 				161F3C7529F31EE80053158A /* SendMoneyRouter.swift in Sources */,
 				3E1DEAFA22BA660F00FAD9F4 /* BaseLabel.swift in Sources */,
@@ -2220,6 +2245,7 @@
 				CFC2BFE6216CA3C800DC31A7 /* ErrorViewModel.swift in Sources */,
 				0F1B7FB722CA6CB50079F752 /* LocaleInfo.swift in Sources */,
 				3EDC4159224E893B00624D2B /* BaseUIImageView.swift in Sources */,
+				16503F9929F5853600875075 /* PaymentsConfigurator.swift in Sources */,
 				161F3C4429ED41330053158A /* TabbarController.swift in Sources */,
 				161F3C5129F277A30053158A /* SendGiftRouter.swift in Sources */,
 				0F57539D20EE1C430069C139 /* APIClient.swift in Sources */,
@@ -2236,10 +2262,12 @@
 				CF7823B420EF95A7003069BD /* APIErrorManager.swift in Sources */,
 				161F3C6A29F31CD00053158A /* ReceiveMoneyConfigurator.swift in Sources */,
 				3E1DEAF022BA62FD00FAD9F4 /* UIView+Shadow.swift in Sources */,
+				16503F9529F5853600875075 /* PaymentsRouter.swift in Sources */,
 				161F3C0029E3157D0053158A /* SelectAgeModels.swift in Sources */,
 				161F3C3229E5AD4D0053158A /* InterestsViewController.swift in Sources */,
 				161F3BE229DAD6FB0053158A /* OTPVerificationViewController.swift in Sources */,
 				CFAD4D0E21955EF300AF4375 /* LanguageService.swift in Sources */,
+				16503F9829F5853600875075 /* PaymentsInteractor.swift in Sources */,
 				671336F728184208006CECE4 /* Language.swift in Sources */,
 				3ECBAAB923D06E11003672DA /* PushMessageContent.swift in Sources */,
 				161F3C1729E322BE0053158A /* ParentsHomeConfigurator.swift in Sources */,

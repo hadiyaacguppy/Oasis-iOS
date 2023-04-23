@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 14 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 15 storyboards.
   struct storyboard {
     /// Storyboard `CreateConfirmPassword`.
     static let createConfirmPassword = _R.storyboard.createConfirmPassword()
@@ -108,6 +108,8 @@ struct R: Rswift.Validatable {
     static let onboarding = _R.storyboard.onboarding()
     /// Storyboard `ParentsHome`.
     static let parentsHome = _R.storyboard.parentsHome()
+    /// Storyboard `Payments`.
+    static let payments = _R.storyboard.payments()
     /// Storyboard `PushNotification`.
     static let pushNotification = _R.storyboard.pushNotification()
     /// Storyboard `ReceiveMoney`.
@@ -174,6 +176,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "ParentsHome", bundle: ...)`
     static func parentsHome(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.parentsHome)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Payments", bundle: ...)`
+    static func payments(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.payments)
     }
     #endif
 
@@ -1546,6 +1555,9 @@ struct _R: Rswift.Validatable {
       try parentsHome.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try payments.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try pushNotification.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -1767,6 +1779,34 @@ struct _R: Rswift.Validatable {
         }
         if _R.storyboard.parentsHome().parentsHomeViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'parentsHomeViewControllerNavVC' could not be loaded from storyboard 'ParentsHome' as 'BaseNavigationController'.") }
         if _R.storyboard.parentsHome().parentsHomeViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'parentsHomeViewControllerVC' could not be loaded from storyboard 'ParentsHome' as 'ParentsHomeViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct payments: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseNavigationController
+
+      let bundle = R.hostingBundle
+      let name = "Payments"
+      let paymentsViewControllerNavVC = StoryboardViewControllerResource<BaseNavigationController>(identifier: "PaymentsViewControllerNavVC")
+      let paymentsViewControllerVC = StoryboardViewControllerResource<PaymentsViewController>(identifier: "PaymentsViewControllerVC")
+
+      func paymentsViewControllerNavVC(_: Void = ()) -> BaseNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: paymentsViewControllerNavVC)
+      }
+
+      func paymentsViewControllerVC(_: Void = ()) -> PaymentsViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: paymentsViewControllerVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.payments().paymentsViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'paymentsViewControllerNavVC' could not be loaded from storyboard 'Payments' as 'BaseNavigationController'.") }
+        if _R.storyboard.payments().paymentsViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'paymentsViewControllerVC' could not be loaded from storyboard 'Payments' as 'PaymentsViewController'.") }
       }
 
       fileprivate init() {}

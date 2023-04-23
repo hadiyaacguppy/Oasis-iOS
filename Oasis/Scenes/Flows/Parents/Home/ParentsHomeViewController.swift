@@ -717,7 +717,7 @@ extension ParentsHomeViewController {
         ])
         
         payActionView.onTap {
-            
+            self.router?.pushToPaymentsController()
         }
     }
     
