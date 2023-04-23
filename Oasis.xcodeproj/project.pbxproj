@@ -155,6 +155,8 @@
 		161F3C8829F3FC1A0053158A /* ChildrenFSPagerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161F3C8629F3FC1A0053158A /* ChildrenFSPagerViewCell.xib */; };
 		16503F8029F488C600875075 /* AmountTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F7F29F488C600875075 /* AmountTextField.swift */; };
 		16503F8229F4893900875075 /* AmountWithCurrencyVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F8129F4893900875075 /* AmountWithCurrencyVIew.swift */; };
+		16503F8629F53CDE00875075 /* PeopleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F8429F53CDE00875075 /* PeopleCollectionViewCell.swift */; };
+		16503F8729F53CDE00875075 /* PeopleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16503F8529F53CDE00875075 /* PeopleCollectionViewCell.xib */; };
 		1ACED86ADAA2441F495B6912 /* Pods_AnalyticsManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B66C5D6B0826B75B9813C2 /* Pods_AnalyticsManager.framework */; };
 		374FA5CB00801009F6B43FDB /* Pods_OasisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64659B367BA850135AB1D5E9 /* Pods_OasisTests.framework */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
@@ -479,6 +481,8 @@
 		161F3C8629F3FC1A0053158A /* ChildrenFSPagerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChildrenFSPagerViewCell.xib; sourceTree = "<group>"; };
 		16503F7F29F488C600875075 /* AmountTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountTextField.swift; sourceTree = "<group>"; };
 		16503F8129F4893900875075 /* AmountWithCurrencyVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountWithCurrencyVIew.swift; sourceTree = "<group>"; };
+		16503F8429F53CDE00875075 /* PeopleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCollectionViewCell.swift; sourceTree = "<group>"; };
+		16503F8529F53CDE00875075 /* PeopleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleCollectionViewCell.xib; sourceTree = "<group>"; };
 		1D7408F9BE9E6B05F6D17E8A /* Pods-AnalyticsManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnalyticsManager/Pods-AnalyticsManager.release.xcconfig"; sourceTree = "<group>"; };
 		22C3C119E084FE2B0FF3C34F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
@@ -1180,6 +1184,15 @@
 			path = "FSPager Cell";
 			sourceTree = "<group>";
 		};
+		16503F8329F53CD000875075 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				16503F8429F53CDE00875075 /* PeopleCollectionViewCell.swift */,
+				16503F8529F53CDE00875075 /* PeopleCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		166EF2F929D36FC90029908E /* Flows */ = {
 			isa = PBXGroup;
 			children = (
@@ -1475,6 +1488,7 @@
 		CF87EDA2201B8BEB00562226 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				16503F8329F53CD000875075 /* Cells */,
 				161F3C3B29ED3D830053158A /* Custom Tabbar */,
 				161F3C3A29ED35C20053158A /* Oasis Controller */,
 				161F3C1829E5ACBC0053158A /* Custom CollectionView Layout */,
@@ -1788,6 +1802,7 @@
 				161F3C2E29E5AD4D0053158A /* Interests.storyboard in Resources */,
 				161F3C1129E322BE0053158A /* ParentsHome.storyboard in Resources */,
 				161F3C6429F31CD00053158A /* ReceiveMoney.storyboard in Resources */,
+				16503F8729F53CDE00875075 /* PeopleCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2036,6 +2051,7 @@
 				161F3C0729E319050053158A /* AgeTableViewCell.swift in Sources */,
 				CFF69D6D219554C4003BE6BF /* CGPoint+Extensions.swift in Sources */,
 				0F1B7FB022CA6C9D0079F752 /* UISearchBar+Extensions.swift in Sources */,
+				16503F8629F53CDE00875075 /* PeopleCollectionViewCell.swift in Sources */,
 				161F3BD429D98AE00053158A /* LoginConfigurator.swift in Sources */,
 				161F3B9929D4BC730053158A /* OnboardingCollectionViewCell.swift in Sources */,
 				161F3C6529F31CD00053158A /* ReceiveMoneyPresenter.swift in Sources */,
