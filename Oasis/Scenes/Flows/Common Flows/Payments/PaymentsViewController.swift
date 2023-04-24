@@ -159,16 +159,15 @@ extension PaymentsViewController{
         
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            scrollView.widthAnchor.constraint(equalTo: view.widthAnchor),
             
             stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20),
-            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
-            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            stackView.widthAnchor.constraint(equalTo: view.widthAnchor)
+            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
         
         stackView.addArrangedSubview(topTitleLabel)
@@ -190,7 +189,6 @@ extension PaymentsViewController{
         
         NSLayoutConstraint.activate([
             actionsContainerView.heightAnchor.constraint(equalToConstant: 167),
-            actionsContainerView.widthAnchor.constraint(equalTo: view.widthAnchor),
             firstActionsStackView.topAnchor.constraint(equalTo: actionsContainerView.topAnchor),
             firstActionsStackView.leadingAnchor.constraint(equalTo: actionsContainerView.leadingAnchor),
             firstActionsStackView.trailingAnchor.constraint(equalTo: actionsContainerView.trailingAnchor),
