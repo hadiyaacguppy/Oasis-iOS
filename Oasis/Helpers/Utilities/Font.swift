@@ -25,7 +25,6 @@ public enum Font {
         case thin = "Thin"
         case condensedBlack = "CondensedBlack"
         case condensedBold = "CondensedBold"
-        case boldItalic = "BoldItalic"
         case normal = "Regular"
         
         func with(size: CGFloat) -> UIFont {
