@@ -139,7 +139,7 @@ extension BaseViewController{
                                                 target: self,
                                                 action: #selector(self.dismissButtonTapped))
             
-            dismissButton.image = R.image.navClose()!.withRenderingMode(.alwaysOriginal)
+            dismissButton.image = R.image.navBlackClose()!.withRenderingMode(.alwaysOriginal)
             
             dismissButton.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             navigationItem.leftBarButtonItem = dismissButton

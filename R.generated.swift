@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 18 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 19 storyboards.
   struct storyboard {
     /// Storyboard `Children`.
     static let children = _R.storyboard.children()
@@ -128,6 +128,8 @@ struct R: Rswift.Validatable {
     static let sendGift = _R.storyboard.sendGift()
     /// Storyboard `SendMoney`.
     static let sendMoney = _R.storyboard.sendMoney()
+    /// Storyboard `Settings`.
+    static let settings = _R.storyboard.settings()
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "Children", bundle: ...)`
@@ -252,6 +254,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "SendMoney", bundle: ...)`
     static func sendMoney(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.sendMoney)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Settings", bundle: ...)`
+    static func settings(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.settings)
     }
     #endif
 
@@ -433,7 +442,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 101 images.
+  /// This `R.image` struct is generated, and contains static references to 102 images.
   struct image {
     /// Image `2474162 copy`.
     static let copy = Rswift.ImageResource(bundle: R.hostingBundle, name: "2474162 copy")
@@ -539,6 +548,8 @@ struct R: Rswift.Validatable {
     static let limitsIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "limits-icon")
     /// Image `logout icon`.
     static let logoutIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "logout icon")
+    /// Image `navBlackClose`.
+    static let navBlackClose = Rswift.ImageResource(bundle: R.hostingBundle, name: "navBlackClose")
     /// Image `netflix`.
     static let netflix = Rswift.ImageResource(bundle: R.hostingBundle, name: "netflix")
     /// Image `new bg`.
@@ -999,6 +1010,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "logout icon", bundle: ..., traitCollection: ...)`
     static func logoutIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.logoutIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "navBlackClose", bundle: ..., traitCollection: ...)`
+    static func navBlackClose(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.navBlackClose, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1668,6 +1686,9 @@ struct _R: Rswift.Validatable {
       #if os(iOS) || os(tvOS)
       try sendMoney.validate()
       #endif
+      #if os(iOS) || os(tvOS)
+      try settings.validate()
+      #endif
     }
 
     #if os(iOS) || os(tvOS)
@@ -2158,6 +2179,34 @@ struct _R: Rswift.Validatable {
         }
         if _R.storyboard.sendMoney().sendMoneyViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'sendMoneyViewControllerNavVC' could not be loaded from storyboard 'SendMoney' as 'BaseNavigationController'.") }
         if _R.storyboard.sendMoney().sendMoneyViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'sendMoneyViewControllerVC' could not be loaded from storyboard 'SendMoney' as 'SendMoneyViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct settings: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseNavigationController
+
+      let bundle = R.hostingBundle
+      let name = "Settings"
+      let settingsViewControllerNavVC = StoryboardViewControllerResource<BaseNavigationController>(identifier: "SettingsViewControllerNavVC")
+      let settingsViewControllerVC = StoryboardViewControllerResource<SettingsViewController>(identifier: "SettingsViewControllerVC")
+
+      func settingsViewControllerNavVC(_: Void = ()) -> BaseNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: settingsViewControllerNavVC)
+      }
+
+      func settingsViewControllerVC(_: Void = ()) -> SettingsViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: settingsViewControllerVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.settings().settingsViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'settingsViewControllerNavVC' could not be loaded from storyboard 'Settings' as 'BaseNavigationController'.") }
+        if _R.storyboard.settings().settingsViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'settingsViewControllerVC' could not be loaded from storyboard 'Settings' as 'SettingsViewController'.") }
       }
 
       fileprivate init() {}

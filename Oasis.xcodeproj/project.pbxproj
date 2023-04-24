@@ -198,6 +198,14 @@
 		16ABACD929F6737000FB937C /* BetterSegmentedControlSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACD629F6737000FB937C /* BetterSegmentedControlSegment.swift */; };
 		16ABACDA29F6737000FB937C /* IconSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACD729F6737000FB937C /* IconSegment.swift */; };
 		16ABACDB29F6737000FB937C /* LabelSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACD829F6737000FB937C /* LabelSegment.swift */; };
+		16ABACE429F68CDD00FB937C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16ABACDD29F68CDD00FB937C /* Settings.storyboard */; };
+		16ABACE529F68CDD00FB937C /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACDE29F68CDD00FB937C /* SettingsPresenter.swift */; };
+		16ABACE629F68CDD00FB937C /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACDF29F68CDD00FB937C /* SettingsRouter.swift */; };
+		16ABACE729F68CDD00FB937C /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACE029F68CDD00FB937C /* SettingsModels.swift */; };
+		16ABACE829F68CDD00FB937C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACE129F68CDD00FB937C /* SettingsViewController.swift */; };
+		16ABACE929F68CDD00FB937C /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACE229F68CDD00FB937C /* SettingsInteractor.swift */; };
+		16ABACEA29F68CDD00FB937C /* SettingsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACE329F68CDD00FB937C /* SettingsConfigurator.swift */; };
+		16ABACEC29F68D7700FB937C /* SettingsClickableOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACEB29F68D7700FB937C /* SettingsClickableOptionView.swift */; };
 		1ACED86ADAA2441F495B6912 /* Pods_AnalyticsManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B66C5D6B0826B75B9813C2 /* Pods_AnalyticsManager.framework */; };
 		374FA5CB00801009F6B43FDB /* Pods_OasisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64659B367BA850135AB1D5E9 /* Pods_OasisTests.framework */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
@@ -565,6 +573,14 @@
 		16ABACD629F6737000FB937C /* BetterSegmentedControlSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetterSegmentedControlSegment.swift; sourceTree = "<group>"; };
 		16ABACD729F6737000FB937C /* IconSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconSegment.swift; sourceTree = "<group>"; };
 		16ABACD829F6737000FB937C /* LabelSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelSegment.swift; sourceTree = "<group>"; };
+		16ABACDD29F68CDD00FB937C /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		16ABACDE29F68CDD00FB937C /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		16ABACDF29F68CDD00FB937C /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		16ABACE029F68CDD00FB937C /* SettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModels.swift; sourceTree = "<group>"; };
+		16ABACE129F68CDD00FB937C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		16ABACE229F68CDD00FB937C /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		16ABACE329F68CDD00FB937C /* SettingsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsConfigurator.swift; sourceTree = "<group>"; };
+		16ABACEB29F68D7700FB937C /* SettingsClickableOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsClickableOptionView.swift; sourceTree = "<group>"; };
 		1D7408F9BE9E6B05F6D17E8A /* Pods-AnalyticsManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnalyticsManager/Pods-AnalyticsManager.release.xcconfig"; sourceTree = "<group>"; };
 		22C3C119E084FE2B0FF3C34F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
@@ -1385,6 +1401,7 @@
 		166EF2FE29D36FE20029908E /* Common Flows */ = {
 			isa = PBXGroup;
 			children = (
+				16ABACDC29F68CCE00FB937C /* Settings */,
 				161F3C7A29F3D8FF0053158A /* Payments */,
 				161F3C6B29F31EDC0053158A /* Send Money */,
 				161F3C5C29F31CBD0053158A /* Receive Money */,
@@ -1414,6 +1431,20 @@
 			path = "Segmented Control";
 			sourceTree = "<group>";
 		};
+		16ABACDC29F68CCE00FB937C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				16ABACDD29F68CDD00FB937C /* Settings.storyboard */,
+				16ABACDE29F68CDD00FB937C /* SettingsPresenter.swift */,
+				16ABACDF29F68CDD00FB937C /* SettingsRouter.swift */,
+				16ABACE029F68CDD00FB937C /* SettingsModels.swift */,
+				16ABACE129F68CDD00FB937C /* SettingsViewController.swift */,
+				16ABACE229F68CDD00FB937C /* SettingsInteractor.swift */,
+				16ABACE329F68CDD00FB937C /* SettingsConfigurator.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		3E1DEAEE22BA62F400FAD9F4 /* UIView+Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1441,6 +1472,7 @@
 				161F3C5A29F31A910053158A /* BlueToastView.swift */,
 				161F3C7B29F3D9120053158A /* RecentActivityView.swift */,
 				16503F8129F4893900875075 /* AmountWithCurrencyVIew.swift */,
+				16ABACEB29F68D7700FB937C /* SettingsClickableOptionView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -1945,6 +1977,7 @@
 				161F3BB029D4BF670053158A /* Montserrat-Light.ttf in Resources */,
 				161F3BEE29E2FCA20053158A /* CreateConfirmPassword.storyboard in Resources */,
 				CF403858216CF78F001F649B /* Initial.storyboard in Resources */,
+				16ABACE429F68CDD00FB937C /* Settings.storyboard in Resources */,
 				16503FC029F5C26A00875075 /* ParentProfile.storyboard in Resources */,
 				16503FB129F5C07400875075 /* Goals.storyboard in Resources */,
 				161F3C3929E5AF330053158A /* InterestsCollectionViewCell.xib in Resources */,
@@ -2214,6 +2247,7 @@
 				161F3BC129D98A0E0053158A /* RegistrationPresenter.swift in Sources */,
 				CF181BA2208099A0002603A1 /* UITextField+Extensions.swift in Sources */,
 				161F3BC629D98A0E0053158A /* RegistrationConfigurator.swift in Sources */,
+				16ABACEA29F68CDD00FB937C /* SettingsConfigurator.swift in Sources */,
 				0FD65F1B20D018730075E251 /* UIButton+Extensions.swift in Sources */,
 				161F3C5329F277A30053158A /* SendGiftViewController.swift in Sources */,
 				161F3BF229E2FCA20053158A /* CreateConfirmPasswordViewController.swift in Sources */,
@@ -2262,6 +2296,7 @@
 				161F3BFF29E3157D0053158A /* SelectAgeRouter.swift in Sources */,
 				3EDC4133224E81BE00624D2B /* ActivityIndicator.swift in Sources */,
 				3E7367F422C6605A00B4C71D /* FeedbackTypes.swift in Sources */,
+				16ABACE529F68CDD00FB937C /* SettingsPresenter.swift in Sources */,
 				161F3BF429E2FCA20053158A /* CreateConfirmPasswordConfigurator.swift in Sources */,
 				0F57538E20EE12EB0069C139 /* Constants.swift in Sources */,
 				CF8C5CAC20EF9D7E00236C7B /* UICollectionView+Extensions.swift in Sources */,
@@ -2305,6 +2340,7 @@
 				16503F9629F5853600875075 /* PaymentsModels.swift in Sources */,
 				161F3B9D29D4BD160053158A /* OnboardingController.swift in Sources */,
 				161F3C7529F31EE80053158A /* SendMoneyRouter.swift in Sources */,
+				16ABACE629F68CDD00FB937C /* SettingsRouter.swift in Sources */,
 				16ABACD929F6737000FB937C /* BetterSegmentedControlSegment.swift in Sources */,
 				3E1DEAFA22BA660F00FAD9F4 /* BaseLabel.swift in Sources */,
 				161F3C0229E3157D0053158A /* SelectAgeInteractor.swift in Sources */,
@@ -2319,6 +2355,7 @@
 				4AEF64772210842F00D53D75 /* BaseSkyFloatingTextField.swift in Sources */,
 				11CD5280230AFF91003D08BE /* ViewEmbedder.swift in Sources */,
 				161F3B9129D371500053158A /* OnboardingPresenter.swift in Sources */,
+				16ABACEC29F68D7700FB937C /* SettingsClickableOptionView.swift in Sources */,
 				161F3C2129E5ACD40053158A /* PinterestCell.swift in Sources */,
 				16503FB529F5C07400875075 /* GoalsViewController.swift in Sources */,
 				CF40385B216CF78F001F649B /* InitialModels.swift in Sources */,
@@ -2389,6 +2426,7 @@
 				0F57539520EE185F0069C139 /* Array+Extensions.swift in Sources */,
 				3E6DEFB321623D7A00978FDC /* UITableView+Extensions.swift in Sources */,
 				CF8C5CAE20EF9D8F00236C7B /* UIApplication+Extensions.swift in Sources */,
+				16ABACE829F68CDD00FB937C /* SettingsViewController.swift in Sources */,
 				161F3C8029F3F1190053158A /* UpcomingPaymentCollectionViewCell.swift in Sources */,
 				CF564731211B1C910092EFBD /* InputValidationExpression.swift in Sources */,
 				161F3C3029E5AD4D0053158A /* InterestsRouter.swift in Sources */,
@@ -2407,6 +2445,7 @@
 				161F3C6829F31CD00053158A /* ReceiveMoneyViewController.swift in Sources */,
 				161F3C8729F3FC1A0053158A /* ChildrenFSPagerViewCell.swift in Sources */,
 				CFC2BFE6216CA3C800DC31A7 /* ErrorViewModel.swift in Sources */,
+				16ABACE729F68CDD00FB937C /* SettingsModels.swift in Sources */,
 				0F1B7FB722CA6CB50079F752 /* LocaleInfo.swift in Sources */,
 				3EDC4159224E893B00624D2B /* BaseUIImageView.swift in Sources */,
 				16503F9929F5853600875075 /* PaymentsConfigurator.swift in Sources */,
@@ -2426,6 +2465,7 @@
 				3EBDE0402541E8670056A0C4 /* AppDelegate+PopupConfig.swift in Sources */,
 				CF7823B420EF95A7003069BD /* APIErrorManager.swift in Sources */,
 				161F3C6A29F31CD00053158A /* ReceiveMoneyConfigurator.swift in Sources */,
+				16ABACE929F68CDD00FB937C /* SettingsInteractor.swift in Sources */,
 				3E1DEAF022BA62FD00FAD9F4 /* UIView+Shadow.swift in Sources */,
 				16503F9529F5853600875075 /* PaymentsRouter.swift in Sources */,
 				161F3C0029E3157D0053158A /* SelectAgeModels.swift in Sources */,
