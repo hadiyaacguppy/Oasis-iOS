@@ -246,6 +246,7 @@ extension ParentsHomeViewController{
             stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -40)
         ])
         
+        scrollView.contentInset = .init(top: 0, left: 0, bottom: 50, right: 0)
         addBalanceStack()
         addActionsStacksToContainer()
         
