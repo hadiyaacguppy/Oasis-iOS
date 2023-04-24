@@ -128,7 +128,7 @@ extension GoalsViewController{
         statusBarStyle = .default
         navigationBarStyle = .transparent
         
-        let rightNotificationsBarButton = UIBarButtonItem(image: R.image.iconNotifications()!,
+        let rightNotificationsBarButton = UIBarButtonItem(image: R.image.iconNotifications()!.withRenderingMode(.alwaysOriginal),
                                                           style: .plain,
                                                           target: self,
                                                           action: #selector(alertButtonPressed))
