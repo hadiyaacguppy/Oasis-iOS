@@ -80,6 +80,10 @@ class SettingsViewController: BaseViewController {
     private lazy var logoutView : SettingsClickableOptionView = {
         let view = SettingsClickableOptionView.init(title: "Logout",
                                                     iconName: R.image.logoutIcon.name, height: 68)
+        view.onTap { [weak self] in
+            guard let self = self else {return}
+            self.router?.redirectToLogin()
+        }
         return view
     }()
 }

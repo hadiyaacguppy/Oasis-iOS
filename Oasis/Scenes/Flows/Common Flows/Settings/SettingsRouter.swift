@@ -24,7 +24,17 @@ class SettingsRouter: SettingsRouterDataPassing{
     }
     
     // MARK: Navigation
-    
+    func redirectToLogin(){
+        let vc = R.storyboard.login.loginViewControllerNavVC()!
+        let window = (UIApplication.shared.delegate as! AppDelegate).window!
+        DispatchQueue.main.async {
+            self.viewController.dismiss(animated: true) {
+                UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+                    window.rootViewController = vc
+                })
+            }
+        }
+    }
     ///Pop The view from the view hierarchy
     func popView(){
         DispatchQueue.main
