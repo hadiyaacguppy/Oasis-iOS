@@ -525,3 +525,7 @@ extension UIView{
     }
 }
 
+extension UIView {
+    var theWidth: CGFloat { bounds.width }
+    var theHeight: CGFloat { bounds.height }
+}
