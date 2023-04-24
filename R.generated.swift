@@ -433,7 +433,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 100 images.
+  /// This `R.image` struct is generated, and contains static references to 101 images.
   struct image {
     /// Image `2474162 copy`.
     static let copy = Rswift.ImageResource(bundle: R.hostingBundle, name: "2474162 copy")
@@ -597,6 +597,8 @@ struct R: Rswift.Validatable {
     static let receiveMoneyIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "receive money icon")
     /// Image `redCardFilled`.
     static let redCardFilled = Rswift.ImageResource(bundle: R.hostingBundle, name: "redCardFilled")
+    /// Image `searchBlackIcon`.
+    static let searchBlackIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "searchBlackIcon")
     /// Image `security icon`.
     static let securityIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "security icon")
     /// Image `send money icon`.
@@ -1200,6 +1202,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "redCardFilled", bundle: ..., traitCollection: ...)`
     static func redCardFilled(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.redCardFilled, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "searchBlackIcon", bundle: ..., traitCollection: ...)`
+    static func searchBlackIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.searchBlackIcon, compatibleWith: traitCollection)
     }
     #endif
 
