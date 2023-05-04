@@ -31,7 +31,24 @@ class ChildrenViewController: BaseViewController {
         return btn
     }()
     
-    var isParent : Bool = false
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.autoLayout()
+        scrollView.backgroundColor = .clear
+        scrollView.showsVerticalScrollIndicator = false
+        return scrollView
+    }()
+    
+    private lazy var childrenCardsStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.spacing = 19
+        stackView.autoLayout()
+        stackView.backgroundColor = .clear
+        return stackView
+    }()
+    var isParent : Bool = true
 }
 
 //MARK:- View Lifecycle
@@ -150,6 +167,52 @@ extension ChildrenViewController{
     
     private func addChildrenCards(){
         
+        self.addScrollView()
+        
+        childrenCardsStackView.topAnchor.constraint(equalTo: self.addChildrenButton.bottomAnchor, constant: 20).isActive = true
+        childrenCardsStackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        childrenCardsStackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 30).isActive = true
+        childrenCardsStackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -30).isActive = true
+        
+        let vw1 = ChildView.init(name: "Michel",
+                                 age: "8 years old",
+                                 valueSpent: "LBP 240,000",
+                                 totalValue: "of lBP 600,000",
+                                 tasks: "2",
+                                 goals: "1",
+                                 imageName: R.image.kid.name)
+        
+        let vw2 = ChildView.init(name: "karen",
+                                 age: "15 years old",
+                                 valueSpent: "LBP 470,000",
+                                 totalValue: "of lBP 600,000",
+                                 tasks: "4",
+                                 goals: "1",
+                                 imageName: R.image.kid.name)
+        
+        let vw3 = ChildView.init(name: "Leo",
+                                 age: "10 years old",
+                                 valueSpent: "LBP 200,000",
+                                 totalValue: "of lBP 600,000",
+                                 tasks: "3",
+                                 goals: "2",
+                                 imageName: R.image.kid.name)
+        
+        childrenCardsStackView.addArrangedSubview(vw1)
+        childrenCardsStackView.addArrangedSubview(vw2)
+        childrenCardsStackView.addArrangedSubview(vw3)
+    }
+    
+    private func addScrollView () {
+        view.addSubview(scrollView)
+        scrollView.addSubview(childrenCardsStackView)
+        
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
     }
 }
 
