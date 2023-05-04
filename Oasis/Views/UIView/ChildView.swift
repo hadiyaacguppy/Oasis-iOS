@@ -178,16 +178,19 @@ class ChildView: BaseUIView {
 
         NSLayoutConstraint.activate([
             childImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            childImageView.leadingAnchor.constraint(equalTo: self.centerXAnchor),
             childImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             
             childNamelabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 26),
             childNamelabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 15),
+            childNamelabel.heightAnchor.constraint(equalToConstant: 35),
             
             childAgelabel.centerYAnchor.constraint(equalTo: self.childNamelabel.centerYAnchor),
             childAgelabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -26),
-            childAgelabel.bottomAnchor.constraint(equalTo: childImageView.topAnchor),
-
+            childAgelabel.heightAnchor.constraint(equalToConstant: 30),
+            
+            childImageView.topAnchor.constraint(greaterThanOrEqualTo: childAgelabel.bottomAnchor),
+            childImageView.widthAnchor.constraint(equalToConstant: 150),
+            
             childInfoView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24),
             childInfoView.trailingAnchor.constraint(equalTo: childImageView.leadingAnchor, constant: 50),
             childInfoView.topAnchor.constraint(equalTo: self.childNamelabel.bottomAnchor, constant: 20),
@@ -195,10 +198,12 @@ class ChildView: BaseUIView {
            
             spentlabel.topAnchor.constraint(equalTo: self.childInfoView.topAnchor),
             spentlabel.leadingAnchor.constraint(equalTo: self.childInfoView.leadingAnchor),
-           
-            valueSpentlabel.topAnchor.constraint(equalTo: self.spentlabel.bottomAnchor),
+            spentlabel.heightAnchor.constraint(equalToConstant: 16),
             
+            valueSpentlabel.topAnchor.constraint(equalTo: self.spentlabel.bottomAnchor),
             valueSpentlabel.leadingAnchor.constraint(equalTo: self.childInfoView.leadingAnchor),
+            valueSpentlabel.heightAnchor.constraint(equalToConstant: 22),
+            
             valueBar.topAnchor.constraint(equalTo: self.valueSpentlabel.bottomAnchor, constant: 2),
             valueBar.leadingAnchor.constraint(equalTo: self.childInfoView.leadingAnchor),
             valueBar.heightAnchor.constraint(equalToConstant: 17),
@@ -206,12 +211,15 @@ class ChildView: BaseUIView {
            
             totalValuelabel.topAnchor.constraint(equalTo: self.valueBar.bottomAnchor, constant: 5),
             totalValuelabel.leadingAnchor.constraint(equalTo: self.childInfoView.leadingAnchor),
-           
+            totalValuelabel.heightAnchor.constraint(equalToConstant: 13),
+            
             taskslabel.topAnchor.constraint(equalTo: self.totalValuelabel.bottomAnchor, constant: 18),
             taskslabel.leadingAnchor.constraint(equalTo: self.childInfoView.leadingAnchor),
+            taskslabel.heightAnchor.constraint(equalToConstant: 19),
             
             numberOfTaskslabel.topAnchor.constraint(equalTo: self.taskslabel.bottomAnchor),
             numberOfTaskslabel.leadingAnchor.constraint(equalTo: self.childInfoView.leadingAnchor),
+            numberOfTaskslabel.heightAnchor.constraint(equalToConstant: 26),
             
             thinLineView.topAnchor.constraint(equalTo: self.taskslabel.topAnchor),
             thinLineView.leadingAnchor.constraint(equalTo: self.taskslabel.trailingAnchor, constant: 10),
@@ -220,10 +228,11 @@ class ChildView: BaseUIView {
            
             goalslabel.topAnchor.constraint(equalTo: self.taskslabel.topAnchor),
             goalslabel.leadingAnchor.constraint(equalTo: self.thinLineView.trailingAnchor, constant: 30),
-           
+            goalslabel.heightAnchor.constraint(equalToConstant: 19),
+
             numberOfGoalslabel.topAnchor.constraint(equalTo: self.goalslabel.bottomAnchor),
-            numberOfGoalslabel.leadingAnchor.constraint(equalTo: self.goalslabel.leadingAnchor)
-            
+            numberOfGoalslabel.leadingAnchor.constraint(equalTo: self.goalslabel.leadingAnchor),
+            numberOfGoalslabel.heightAnchor.constraint(equalToConstant: 26)
         ])
         
         childNamelabel.text = self.nameText

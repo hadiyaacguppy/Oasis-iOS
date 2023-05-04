@@ -169,11 +169,6 @@ extension ChildrenViewController{
         
         self.addScrollView()
         
-        childrenCardsStackView.topAnchor.constraint(equalTo: self.addChildrenButton.bottomAnchor, constant: 20).isActive = true
-        childrenCardsStackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        childrenCardsStackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 30).isActive = true
-        childrenCardsStackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -30).isActive = true
-        
         let vw1 = ChildView.init(name: "Michel",
                                  age: "8 years old",
                                  valueSpent: "LBP 240,000",
@@ -206,13 +201,18 @@ extension ChildrenViewController{
     private func addScrollView () {
         view.addSubview(scrollView)
         scrollView.addSubview(childrenCardsStackView)
-        
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.topAnchor.constraint(equalTo: self.addChildrenButton.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-            ])
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            childrenCardsStackView.topAnchor.constraint(equalTo: self.scrollView.topAnchor),
+            childrenCardsStackView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor),
+            childrenCardsStackView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor, constant: 30),
+            childrenCardsStackView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor, constant: -30),
+            childrenCardsStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -60)
+        ])
     }
 }
 
@@ -243,7 +243,7 @@ extension ChildrenViewController{
             guard let self = self  else { return }
             self.showPlaceHolderView(withAppearanceType: .loading,
                                      title: Constants.PlaceHolderView.Texts.wait)
-            #warning("Retry Action does not set")
+#warning("Retry Action does not set")
         }
     }
 }
