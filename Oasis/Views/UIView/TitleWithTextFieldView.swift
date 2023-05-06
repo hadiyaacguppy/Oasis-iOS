@@ -95,12 +95,12 @@ class TitleWithTextFieldView: BaseUIView {
             requestTitleLabel.heightAnchor.constraint(equalToConstant: 30),
             
             anyTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            anyTextField.topAnchor.constraint(equalTo: self.requestTitleLabel.bottomAnchor),
+            anyTextField.topAnchor.constraint(equalTo: self.requestTitleLabel.bottomAnchor, constant: 10),
             anyTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             anyTextField.heightAnchor.constraint(equalToConstant: 45),
             
             underlineView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            underlineView.topAnchor.constraint(equalTo: self.anyTextField.bottomAnchor),
+            underlineView.topAnchor.constraint(equalTo: self.anyTextField.bottomAnchor, constant: 4),
             underlineView.heightAnchor.constraint(equalToConstant: 1),
             underlineView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             
