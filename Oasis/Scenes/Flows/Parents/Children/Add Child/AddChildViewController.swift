@@ -65,8 +65,8 @@ class AddChildViewController: BaseViewController {
         let view = BaseUIView()
         view.autoLayout()
         view.roundCorners = .all(radius: 35)
-        view.dropShadow = true
-        view.backgroundColor = .init(red: 0, green: 0, blue: 0, alpha: 0.23)
+        view.shadow = .active(with: .init(color: .black, opacity: 0.23, radius: 6))
+        view.backgroundColor = .init(red: 248, green: 250, blue: 251, alpha: 1)
         return view
     }()
     
