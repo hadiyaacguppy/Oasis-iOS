@@ -90,8 +90,10 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 19 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 20 storyboards.
   struct storyboard {
+    /// Storyboard `AddChild`.
+    static let addChild = _R.storyboard.addChild()
     /// Storyboard `Children`.
     static let children = _R.storyboard.children()
     /// Storyboard `CreateConfirmPassword`.
@@ -130,6 +132,13 @@ struct R: Rswift.Validatable {
     static let sendMoney = _R.storyboard.sendMoney()
     /// Storyboard `Settings`.
     static let settings = _R.storyboard.settings()
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "AddChild", bundle: ...)`
+    static func addChild(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.addChild)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "Children", bundle: ...)`
@@ -1633,6 +1642,9 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       #if os(iOS) || os(tvOS)
+      try addChild.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try children.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -1690,6 +1702,34 @@ struct _R: Rswift.Validatable {
       try settings.validate()
       #endif
     }
+
+    #if os(iOS) || os(tvOS)
+    struct addChild: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseNavigationController
+
+      let addChildViewControllerNavVC = StoryboardViewControllerResource<BaseNavigationController>(identifier: "AddChildViewControllerNavVC")
+      let addChildViewControllerVC = StoryboardViewControllerResource<AddChildViewController>(identifier: "AddChildViewControllerVC")
+      let bundle = R.hostingBundle
+      let name = "AddChild"
+
+      func addChildViewControllerNavVC(_: Void = ()) -> BaseNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: addChildViewControllerNavVC)
+      }
+
+      func addChildViewControllerVC(_: Void = ()) -> AddChildViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: addChildViewControllerVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.addChild().addChildViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addChildViewControllerNavVC' could not be loaded from storyboard 'AddChild' as 'BaseNavigationController'.") }
+        if _R.storyboard.addChild().addChildViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addChildViewControllerVC' could not be loaded from storyboard 'AddChild' as 'AddChildViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     struct children: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {

@@ -207,6 +207,14 @@
 		16ABACEA29F68CDD00FB937C /* SettingsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACE329F68CDD00FB937C /* SettingsConfigurator.swift */; };
 		16ABACEC29F68D7700FB937C /* SettingsClickableOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACEB29F68D7700FB937C /* SettingsClickableOptionView.swift */; };
 		16ABACEF2A03AEAD00FB937C /* ChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACEE2A03AEAD00FB937C /* ChildView.swift */; };
+		16ABACF72A04399400FB937C /* AddChild.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16ABACF02A04399400FB937C /* AddChild.storyboard */; };
+		16ABACF82A04399400FB937C /* AddChildPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACF12A04399400FB937C /* AddChildPresenter.swift */; };
+		16ABACF92A04399400FB937C /* AddChildRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACF22A04399400FB937C /* AddChildRouter.swift */; };
+		16ABACFA2A04399400FB937C /* AddChildModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACF32A04399400FB937C /* AddChildModels.swift */; };
+		16ABACFB2A04399400FB937C /* AddChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACF42A04399400FB937C /* AddChildViewController.swift */; };
+		16ABACFC2A04399400FB937C /* AddChildInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACF52A04399400FB937C /* AddChildInteractor.swift */; };
+		16ABACFD2A04399400FB937C /* AddChildConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACF62A04399400FB937C /* AddChildConfigurator.swift */; };
+		16ABAD002A04F4A300FB937C /* TitleWithTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACFF2A04F4A300FB937C /* TitleWithTextFieldView.swift */; };
 		1ACED86ADAA2441F495B6912 /* Pods_AnalyticsManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B66C5D6B0826B75B9813C2 /* Pods_AnalyticsManager.framework */; };
 		374FA5CB00801009F6B43FDB /* Pods_OasisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64659B367BA850135AB1D5E9 /* Pods_OasisTests.framework */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
@@ -583,6 +591,14 @@
 		16ABACE329F68CDD00FB937C /* SettingsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsConfigurator.swift; sourceTree = "<group>"; };
 		16ABACEB29F68D7700FB937C /* SettingsClickableOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsClickableOptionView.swift; sourceTree = "<group>"; };
 		16ABACEE2A03AEAD00FB937C /* ChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildView.swift; sourceTree = "<group>"; };
+		16ABACF02A04399400FB937C /* AddChild.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddChild.storyboard; sourceTree = "<group>"; };
+		16ABACF12A04399400FB937C /* AddChildPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildPresenter.swift; sourceTree = "<group>"; };
+		16ABACF22A04399400FB937C /* AddChildRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildRouter.swift; sourceTree = "<group>"; };
+		16ABACF32A04399400FB937C /* AddChildModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildModels.swift; sourceTree = "<group>"; };
+		16ABACF42A04399400FB937C /* AddChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildViewController.swift; sourceTree = "<group>"; };
+		16ABACF52A04399400FB937C /* AddChildInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildInteractor.swift; sourceTree = "<group>"; };
+		16ABACF62A04399400FB937C /* AddChildConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildConfigurator.swift; sourceTree = "<group>"; };
+		16ABACFF2A04F4A300FB937C /* TitleWithTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleWithTextFieldView.swift; sourceTree = "<group>"; };
 		1D7408F9BE9E6B05F6D17E8A /* Pods-AnalyticsManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnalyticsManager/Pods-AnalyticsManager.release.xcconfig"; sourceTree = "<group>"; };
 		22C3C119E084FE2B0FF3C34F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
@@ -1312,6 +1328,7 @@
 				16503F9F29F58E1900875075 /* ChildrenViewController.swift */,
 				16503FA029F58E1900875075 /* ChildrenInteractor.swift */,
 				16503FA129F58E1900875075 /* ChildrenConfigurator.swift */,
+				16ABACFE2A0439A300FB937C /* Add Child */,
 			);
 			path = Children;
 			sourceTree = "<group>";
@@ -1447,6 +1464,20 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		16ABACFE2A0439A300FB937C /* Add Child */ = {
+			isa = PBXGroup;
+			children = (
+				16ABACF02A04399400FB937C /* AddChild.storyboard */,
+				16ABACF12A04399400FB937C /* AddChildPresenter.swift */,
+				16ABACF22A04399400FB937C /* AddChildRouter.swift */,
+				16ABACF32A04399400FB937C /* AddChildModels.swift */,
+				16ABACF42A04399400FB937C /* AddChildViewController.swift */,
+				16ABACF52A04399400FB937C /* AddChildInteractor.swift */,
+				16ABACF62A04399400FB937C /* AddChildConfigurator.swift */,
+			);
+			path = "Add Child";
+			sourceTree = "<group>";
+		};
 		3E1DEAEE22BA62F400FAD9F4 /* UIView+Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1475,6 +1506,7 @@
 				161F3C5A29F31A910053158A /* BlueToastView.swift */,
 				161F3C7B29F3D9120053158A /* RecentActivityView.swift */,
 				16503F8129F4893900875075 /* AmountWithCurrencyVIew.swift */,
+				16ABACFF2A04F4A300FB937C /* TitleWithTextFieldView.swift */,
 				16ABACEB29F68D7700FB937C /* SettingsClickableOptionView.swift */,
 			);
 			path = UIView;
@@ -2000,6 +2032,7 @@
 				161F3BAF29D4BF670053158A /* Montserrat-Black.ttf in Resources */,
 				161F3BA829D4BF670053158A /* Montserrat-ExtraLight.ttf in Resources */,
 				112239221FD5C7B000486528 /* LaunchScreen.storyboard in Resources */,
+				16ABACF72A04399400FB937C /* AddChild.storyboard in Resources */,
 				161F3C8829F3FC1A0053158A /* ChildrenFSPagerViewCell.xib in Resources */,
 				1122391F1FD5C7B000486528 /* Assets.xcassets in Resources */,
 				16503F9329F5853600875075 /* Payments.storyboard in Resources */,
@@ -2262,6 +2295,7 @@
 				CFF69D6D219554C4003BE6BF /* CGPoint+Extensions.swift in Sources */,
 				0F1B7FB022CA6C9D0079F752 /* UISearchBar+Extensions.swift in Sources */,
 				16503F8629F53CDE00875075 /* PeopleCollectionViewCell.swift in Sources */,
+				16ABACFB2A04399400FB937C /* AddChildViewController.swift in Sources */,
 				161F3BD429D98AE00053158A /* LoginConfigurator.swift in Sources */,
 				16503FC529F5C26A00875075 /* ParentProfileInteractor.swift in Sources */,
 				161F3B9929D4BC730053158A /* OnboardingCollectionViewCell.swift in Sources */,
@@ -2313,6 +2347,7 @@
 				CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */,
 				672909FE210E43F900632C4F /* PlaceHolderCreator.swift in Sources */,
 				117C4AB01FD864DE008BB445 /* UILabel+Extensions.swift in Sources */,
+				16ABACFC2A04399400FB937C /* AddChildInteractor.swift in Sources */,
 				16503F9729F5853600875075 /* PaymentsViewController.swift in Sources */,
 				CFF69D6F219554E7003BE6BF /* CGRect+Extensions.swift in Sources */,
 				117C4AB21FD864FD008BB445 /* String+Extensions.swift in Sources */,
@@ -2341,6 +2376,7 @@
 				161F3C5029F277A30053158A /* SendGiftPresenter.swift in Sources */,
 				3E8E350422CA0BDE009A3113 /* Observable+Operators.swift in Sources */,
 				16503F9629F5853600875075 /* PaymentsModels.swift in Sources */,
+				16ABACF92A04399400FB937C /* AddChildRouter.swift in Sources */,
 				161F3B9D29D4BD160053158A /* OnboardingController.swift in Sources */,
 				161F3C7529F31EE80053158A /* SendMoneyRouter.swift in Sources */,
 				16ABACE629F68CDD00FB937C /* SettingsRouter.swift in Sources */,
@@ -2383,6 +2419,7 @@
 				3E1DEAF422BA634A00FAD9F4 /* UIView+Rounded.swift in Sources */,
 				CFE259E622C9C4D5006B0472 /* AppDelegate+SessionExpiry.swift in Sources */,
 				161F3BDF29DAD6FB0053158A /* OTPVerificationPresenter.swift in Sources */,
+				16ABAD002A04F4A300FB937C /* TitleWithTextFieldView.swift in Sources */,
 				161F3C2429E5ACD40053158A /* PinterestLayoutAttributes.swift in Sources */,
 				161F3BC429D98A0E0053158A /* RegistrationViewController.swift in Sources */,
 				161F3C1229E322BE0053158A /* ParentsHomePresenter.swift in Sources */,
@@ -2421,9 +2458,11 @@
 				161F3BC329D98A0E0053158A /* RegistrationModels.swift in Sources */,
 				67C9591F2624845200A67399 /* NetworkCode.swift in Sources */,
 				16503FB629F5C07400875075 /* GoalsInteractor.swift in Sources */,
+				16ABACFD2A04399400FB937C /* AddChildConfigurator.swift in Sources */,
 				161F3B9429D371500053158A /* OnboardingViewController.swift in Sources */,
 				0F1B7FBC22CA6CBD0079F752 /* CountryCell.swift in Sources */,
 				161F3C0129E3157D0053158A /* SelectAgeViewController.swift in Sources */,
+				16ABACFA2A04399400FB937C /* AddChildModels.swift in Sources */,
 				67C958F42624782100A67399 /* Reactive+UITextField.swift in Sources */,
 				CF403859216CF78F001F649B /* InitialPresenter.swift in Sources */,
 				0F57539520EE185F0069C139 /* Array+Extensions.swift in Sources */,
@@ -2454,6 +2493,7 @@
 				3EDC4159224E893B00624D2B /* BaseUIImageView.swift in Sources */,
 				16503F9929F5853600875075 /* PaymentsConfigurator.swift in Sources */,
 				161F3C4429ED41330053158A /* TabbarController.swift in Sources */,
+				16ABACF82A04399400FB937C /* AddChildPresenter.swift in Sources */,
 				161F3C5129F277A30053158A /* SendGiftRouter.swift in Sources */,
 				0F57539D20EE1C430069C139 /* APIClient.swift in Sources */,
 				161F3BF329E2FCA20053158A /* CreateConfirmPasswordInteractor.swift in Sources */,

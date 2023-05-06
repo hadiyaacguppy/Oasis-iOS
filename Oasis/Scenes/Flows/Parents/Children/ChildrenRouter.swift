@@ -24,6 +24,15 @@ class ChildrenRouter: ChildrenRouterDataPassing{
     }
     
     // MARK: Navigation
+    func pushToAddChildController(){
+        let vc = R.storyboard.addChild.addChildViewControllerVC()!
+        DispatchQueue
+            .main
+            .async {
+                self.viewController.hidesBottomBarWhenPushed = true
+                self.viewController.navigationController?.pushViewController(vc, animated: true)
+            }
+    }
     
     ///Pop The view from the view hierarchy
     func popView(){

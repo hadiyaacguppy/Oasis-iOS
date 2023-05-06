@@ -100,6 +100,10 @@ extension ChildrenViewController{
             addChildrenButton.heightAnchor.constraint(equalToConstant: 58),
             addChildrenButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 38)
         ])
+        
+        addChildrenButton.onTap {
+            self.router?.pushToAddChildController()
+        }
     }
     
     private func addNoChildrenPlaceholder(){
@@ -125,12 +129,12 @@ extension ChildrenViewController{
         let areYouParentLabel = BaseLabel()
         areYouParentLabel.autoLayout()
         areYouParentLabel.style = .init(font: MainFont.medium.with(size: 22), color: .black, alignment: .center)
-        areYouParentLabel.text = "Are you a parent ?"
+        areYouParentLabel.text = "Are you a parent ?".localized
         
         let subtitleLabel = BaseLabel()
         subtitleLabel.autoLayout()
         subtitleLabel.style = .init(font: MainFont.medium.with(size: 15), color: .black, alignment: .center, numberOfLines: 3)
-        subtitleLabel.text = "Add your childs now and teach\nthem to be financially \nindependant"
+        subtitleLabel.text = "Add your childs now and teach\nthem to be financially \nindependant".localized
         
         
         view.addSubview(containerView)

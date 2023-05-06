@@ -30,7 +30,7 @@ class ChildView: BaseUIView {
         let lbl = BaseLabel()
         lbl.style = .init(font: MainFont.medium.with(size: 13),
                           color: .black)
-        lbl.text = "Spent"
+        lbl.text = "Spent".localized
         lbl.autoLayout()
         return lbl
     }()
@@ -55,7 +55,7 @@ class ChildView: BaseUIView {
         let lbl = BaseLabel()
         lbl.style = .init(font: MainFont.medium.with(size: 13),
                           color: .black)
-        lbl.text = "Tasks"
+        lbl.text = "Tasks".localized
         lbl.autoLayout()
         return lbl
     }()
@@ -64,7 +64,7 @@ class ChildView: BaseUIView {
         let lbl = BaseLabel()
         lbl.style = .init(font: MainFont.medium.with(size: 13),
                           color: .black)
-        lbl.text = "Goals"
+        lbl.text = "Goals".localized
         lbl.autoLayout()
         return lbl
     }()
