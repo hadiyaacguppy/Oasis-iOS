@@ -17,8 +17,11 @@ enum BaseProjectService {
        return SessionRepository()
     }
     case setOneSignalUserPush( token : String)
-
     
+    //Registration
+    case sendOTP(dict : [String:Any])
+    case verifyOTP(dict : [String:Any])
+    case register(dict : [String:Any])
 }
 
 
@@ -34,13 +37,21 @@ extension BaseProjectService: TargetType {
             
         case .setOneSignalUserPush:
             return "push/set_user_push"
+        case .register:
+            return "register"
+        case .sendOTP:
+            return "otps/send"
+        case .verifyOTP:
+            return "otps/verify"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .setOneSignalUserPush:
+        case .setOneSignalUserPush, .register, .sendOTP, .verifyOTP:
             return .post
+        default:
+            return .get
         }
     }
     
@@ -49,6 +60,8 @@ extension BaseProjectService: TargetType {
             
         case .setOneSignalUserPush(let token):
             return requestParameters(parameters: ["player_id":token])
+        case .register(let dict), .sendOTP(let dict), .verifyOTP(let dict):
+            return requestParameters(parameters: dict)
         }
     }
     
@@ -57,7 +70,7 @@ extension BaseProjectService: TargetType {
     }
     
     var headers: [String: String]? {
-       return ["session-token" : self.sessionRepository.currentUser?.token ?? "" ]
+       return ["token" : self.sessionRepository.currentUser?.token ?? "" ]
     }
     
     var validationType : ValidationType {

@@ -114,7 +114,7 @@ class RegistrationViewController: BaseViewController {
         btn.setTitle("Next".localized, for: .normal)
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.onTap {
-            self.router?.pushToOTPVerificationsScene()
+            self.validateFields()
         }
         return btn
     }()
@@ -219,6 +219,30 @@ extension RegistrationViewController{
         emailStackview.addArrangedSubview(emailTextfield)
         
         emailTextfield.heightAnchor.constraint(equalToConstant: 68).isActive = true
+    }
+    
+    private func validateFields(){
+        
+        guard !firstNameTextfield.text.notNilNorEmpty else {
+            showSimpleAlertView("", message: "Please fill in your first name", withCompletionHandler: nil)
+            return
+        }
+        
+        guard !lastNameTextfield.text.notNilNorEmpty else {
+            showSimpleAlertView("", message: "Please fill in your last name", withCompletionHandler: nil)
+            return
+        }
+        
+        guard !emailTextfield.text.notNilNorEmpty else {
+            showSimpleAlertView("", message: "Please fill in your email", withCompletionHandler: nil)
+            return
+        }
+        
+        RegistrationDataManager.current.userFirstName = firstNameTextfield.text
+        RegistrationDataManager.current.userLastName = lastNameTextfield.text
+        RegistrationDataManager.current.userEmail = emailTextfield.text
+        
+        self.router?.pushToOTPVerificationsScene()
     }
 }
 

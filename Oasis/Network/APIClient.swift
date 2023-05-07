@@ -12,7 +12,6 @@ import RxSwift
 import SessionRepository
 
 class  APIClient {
-    
     static let shared = APIClient()
     private let provider : MoyaProvider<BaseProjectService>
     
@@ -20,17 +19,31 @@ class  APIClient {
         return SessionRepository()
     }()
     
-    
-    
     init(){
         provider = MoyaProvider<BaseProjectService>()
     }
-
-
+    
     func setOneSignalToken(withToken token : String) -> Single<Void>{
         return self.provider.rx.request(.setOneSignalUserPush(token: token))
             .map {_ in return Void()}
     }
+}
+
+//MARK: - Registration
+extension APIClient {
+    func  sendOTP(dict : [String:Any])-> Single<Void>{
+        return self.provider.rx.request(.register(dict: dict))
+            .map {_ in return Void()}
+    }
     
+    func verifyOTP(dict : [String:Any])-> Single<Void>{
+        return self.provider.rx.request(.register(dict: dict))
+            .map {_ in return Void()}
+    }
+    
+    func register(dict : [String:Any]) -> Single<Void>{
+        return self.provider.rx.request(.register(dict: dict))
+            .map {_ in return Void()}
+    }
 }
 

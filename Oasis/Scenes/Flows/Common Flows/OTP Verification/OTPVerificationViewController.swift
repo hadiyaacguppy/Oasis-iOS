@@ -10,7 +10,8 @@ import UIKit
 import RxSwift
 
 protocol OTPVerificationViewControllerOutput {
-    
+    func verifyOTP(pin: String) -> Single<Void>
+    func sendOTP() -> Single<Void>
 }
 
 class OTPVerificationViewController: BaseViewController {
@@ -145,6 +146,7 @@ extension OTPVerificationViewController{
         subscribeToOTPCompletion()
         subscribeToPinValue()
         setupUI()
+        subscribeForSendingOTP()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -217,7 +219,27 @@ extension OTPVerificationViewController{
 
 //MARK:- Callbacks
 extension OTPVerificationViewController{
+    func subscribeForSendingOTP(){
+        self.interactor?.sendOTP()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { _ in
+                
+            }, onError: {(error) in
+                self.preparePlaceHolderView(withErrorViewModel: error as! ErrorViewModel)
+            })
+            .disposed(by: self.disposeBag)
+    }
     
+    func subscribeForVerifyingOTP(){
+        self.interactor?.verifyOTP(pin: "\(self.pin)")
+            .observeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { _ in
+                self.router?.pushToCreatePassword()
+            }, onError: {(error) in
+                self.preparePlaceHolderView(withErrorViewModel: error as! ErrorViewModel)
+            })
+            .disposed(by: self.disposeBag)
+    }
     fileprivate
     func setupRetryFetchingCallBack(){
         self.didTapOnRetryPlaceHolderButton = { [weak self] in
@@ -378,7 +400,7 @@ extension OTPVerificationViewController : UITextFieldDelegate {
                 }
                 if textField == fifthOTPTextfield {
                     fifthOTPTextfield.resignFirstResponder()
-                    self.router?.pushToCreatePassword()
+                    subscribeForVerifyingOTP()
                 }
                 textField.text = string
                 return false
