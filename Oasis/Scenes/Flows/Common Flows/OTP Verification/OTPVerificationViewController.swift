@@ -220,23 +220,27 @@ extension OTPVerificationViewController{
 //MARK:- Callbacks
 extension OTPVerificationViewController{
     func subscribeForSendingOTP(){
+        showLoadingProgress()
         self.interactor?.sendOTP()
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { _ in
-                
+                self.dismissProgress()
+                print("OTP send")
             }, onError: {(error) in
-                self.preparePlaceHolderView(withErrorViewModel: error as! ErrorViewModel)
+                self.display(errorMessage: (error as! ErrorViewModel).message)
             })
             .disposed(by: self.disposeBag)
     }
     
     func subscribeForVerifyingOTP(){
+        showLoadingProgress()
         self.interactor?.verifyOTP(pin: "\(self.pin)")
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { _ in
+                self.dismissProgress()
                 self.router?.pushToCreatePassword()
             }, onError: {(error) in
-                self.preparePlaceHolderView(withErrorViewModel: error as! ErrorViewModel)
+                self.display(errorMessage: (error as! ErrorViewModel).message)
             })
             .disposed(by: self.disposeBag)
     }

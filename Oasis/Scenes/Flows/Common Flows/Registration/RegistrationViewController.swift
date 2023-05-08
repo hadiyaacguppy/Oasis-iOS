@@ -223,17 +223,17 @@ extension RegistrationViewController{
     
     private func validateFields(){
         
-        guard !firstNameTextfield.text.notNilNorEmpty else {
+        guard firstNameTextfield.text.notNilNorEmpty else {
             showSimpleAlertView("", message: "Please fill in your first name", withCompletionHandler: nil)
             return
         }
         
-        guard !lastNameTextfield.text.notNilNorEmpty else {
+        guard lastNameTextfield.text.notNilNorEmpty else {
             showSimpleAlertView("", message: "Please fill in your last name", withCompletionHandler: nil)
             return
         }
         
-        guard !emailTextfield.text.notNilNorEmpty else {
+        guard emailTextfield.text.notNilNorEmpty else {
             showSimpleAlertView("", message: "Please fill in your email", withCompletionHandler: nil)
             return
         }
