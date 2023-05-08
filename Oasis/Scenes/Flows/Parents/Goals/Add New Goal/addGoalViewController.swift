@@ -1,28 +1,29 @@
 //
-//  AddChildViewController.swift
+//  addGoalViewController.swift
 //  Oasis
 //
-//  Created by Hadi Yaacoub on 04/05/2023.
+//  Created by Hadi Yaacoub on 08/05/2023.
 //  Copyright (c) 2023 Tedmob. All rights reserved.
 //
 
 import UIKit
 import RxSwift
 
-protocol AddChildViewControllerOutput {
+protocol addGoalViewControllerOutput {
     
 }
 
-class AddChildViewController: BaseViewController {
+class addGoalViewController: BaseViewController {
     
-    var interactor: AddChildViewControllerOutput?
-    var router: AddChildRouter?
+    var interactor: addGoalViewControllerOutput?
+    var router: addGoalRouter?
+    
     
     lazy var topTitleLabel :  BaseLabel = {
         let lbl = BaseLabel()
         
         lbl.style = .init(font: MainFont.bold.with(size: 27), color: .black)
-        lbl.text = "Add a Child".localized
+        lbl.text = "Add a Goal".localized
         lbl.autoLayout()
         return lbl
     }()
@@ -45,7 +46,7 @@ class AddChildViewController: BaseViewController {
         return stackView
     }()
     
-    lazy var childInfoStackView: UIStackView = {
+    lazy var goalInfoStackView: UIStackView = {
         UIStackView()
             .axis(.vertical)
             .spacing(15)
@@ -70,20 +71,41 @@ class AddChildViewController: BaseViewController {
         return view
     }()
     
-    lazy var nextButton : OasisGradientButton = {
-        let btn = OasisGradientButton()
-        btn.setTitle("Next >", for: .normal)
+    lazy var goalButton : OasisAquaButton = {
+        let btn = OasisAquaButton()
+        btn.setTitle("Add Goal", for: .normal)
         return btn
     }()
     
+    lazy var endDateView : BaseUIView = {
+        let view = BaseUIView()
+        view.backgroundColor = .clear
+        view.autoLayout()
+        return view
+    }()
+    
+    lazy var enddateLabel : BaseLabel = {
+        let lbl = BaseLabel()
+        lbl.text = "End Date"
+        lbl.style = .init(font: MainFont.bold.with(size: 20), color: .black)
+        return lbl
+    }()
+    
+    lazy var calendarImageView : BaseImageView = {
+        let imgView = BaseImageView(frame: .zero)
+        imgView.contentMode = .scaleAspectFit
+        imgView.autoLayout()
+        imgView.image = R.image.calendarIcon()!
+        return imgView
+    }()
 }
 
 //MARK:- View Lifecycle
-extension AddChildViewController{
+extension addGoalViewController{
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        AddChildConfigurator.shared.configure(viewController: self)
+        addGoalConfigurator.shared.configure(viewController: self)
     }
     
     override func viewDidLoad() {
@@ -92,6 +114,7 @@ extension AddChildViewController{
         //                            title: Constants.PlaceHolderView.Texts.wait)
         setupNavBarAppearance()
         setupRetryFetchingCallBack()
+        
         setupUI()
     }
     
@@ -105,8 +128,8 @@ extension AddChildViewController{
         //First, add Scroll View
         addScrollView()
         
-        //Add Next Button
-        addNextButton()
+        //Add Coal Button
+        addGoalButton()
         
     }
     
@@ -157,29 +180,59 @@ extension AddChildViewController{
         
         scrollView.contentInset = .init(top: 0, left: 0, bottom: 50, right: 0)
         
-        //Third, add the ChildInfo Stack View
-        addChildInfoStackView()
+        //Third, add the GoalInfo Stack View
+        addGoalInfoStackView()
     }
     
-    private func addChildInfoStackView(){
-        stackView.addArrangedSubview(childInfoStackView)
+    private func addGoalInfoStackView(){
         
-        let childInfo1 = TitleWithTextFieldView.init(requestTitle: "What’s your child’s name?",
-                                                     placeHolderTxt: "Child name",
+        stackView.addArrangedSubview(goalInfoStackView)
+        
+        let goalInfo1 = TitleWithTextFieldView.init(requestTitle: "Goal’s name",
+                                                     placeHolderTxt: "What’s your goal?",
                                                      usertext: "",
                                                      isAgeRequest: false,
                                                      hasEditView: false)
         
-        let childInfo2 = TitleWithTextFieldView.init(requestTitle: "Age",
-                                                     placeHolderTxt: "0",
-                                                     usertext: "",
-                                                     isAgeRequest: true,
-                                                     hasEditView: false)
+        let goalInfo2 = AmountWithCurrencyView.init(currency: "LBP", titleLbl: "Amount")
         
-        childInfoStackView.addArrangedSubview(childInfo1)
-        childInfoStackView.addArrangedSubview(childInfo2)
-        childInfoStackView.addArrangedSubview(pictureTitleLabel)
-        childInfoStackView.addArrangedSubview(uploadPictureButtonView)
+        goalInfoStackView.addArrangedSubview(goalInfo1)
+        goalInfoStackView.addArrangedSubview(goalInfo2)
+    
+        //Fourth, add upload Picture view
+        addEndDateView()
+    }
+    
+    //Add End Date label and image
+    private func addEndDateView() {
+        
+        goalInfoStackView.addArrangedSubview(endDateView)
+        
+        endDateView.addSubview(calendarImageView)
+        endDateView.addSubview(enddateLabel)
+        
+        NSLayoutConstraint.activate([
+            endDateView.heightAnchor.constraint(equalToConstant: 50),
+        
+            enddateLabel.leadingAnchor.constraint(equalTo: endDateView.leadingAnchor, constant: 10),
+            enddateLabel.centerYAnchor.constraint(equalTo: endDateView.centerYAnchor),
+            enddateLabel.heightAnchor.constraint(equalToConstant: 40),
+            
+            calendarImageView.trailingAnchor.constraint(equalTo: endDateView.trailingAnchor, constant: -10),
+            calendarImageView.heightAnchor.constraint(equalToConstant: 35),
+            calendarImageView.widthAnchor.constraint(equalToConstant: 35),
+            calendarImageView.centerYAnchor.constraint(equalTo: endDateView.centerYAnchor)
+            ])
+        
+        //Fifth, add upload picture view
+        addUploadPictureView()
+    }
+    
+    //Add upload picture View
+    private func addUploadPictureView(){
+        
+        //goalInfoStackView.addArrangedSubview(pictureTitleLabel)
+        goalInfoStackView.addArrangedSubview(uploadPictureButtonView)
         
         let iconImg = BaseImageView(frame: .zero)
         iconImg.contentMode = .scaleAspectFit
@@ -207,26 +260,22 @@ extension AddChildViewController{
         ])
     }
     
-    //Next Button
-    private func addNextButton(){
-        view.addSubview(nextButton)
+    //Add Goal Button
+    private func addGoalButton(){
+        view.addSubview(goalButton)
         
         NSLayoutConstraint.activate([
-            nextButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -30),
-            nextButton.widthAnchor.constraint(equalToConstant: 140),
-            nextButton.heightAnchor.constraint(equalToConstant: 58),
-            nextButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -60)
+            goalButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -47),
+            goalButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 47),
+            goalButton.heightAnchor.constraint(equalToConstant: 48),
+            goalButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -68)
         ])
-        
-        nextButton.onTap {
-            self.router?.pushToAddGoalController()
-        }
     }
     
 }
 
 //MARK:- NavBarAppearance
-extension AddChildViewController{
+extension addGoalViewController{
     private func setupNavBarAppearance(){
         statusBarStyle = .default
         navigationBarStyle = .transparent
@@ -234,7 +283,7 @@ extension AddChildViewController{
 }
 
 //MARK:- Callbacks
-extension AddChildViewController{
+extension addGoalViewController{
     
     fileprivate
     func setupRetryFetchingCallBack(){
@@ -242,7 +291,7 @@ extension AddChildViewController{
             guard let self = self  else { return }
             self.showPlaceHolderView(withAppearanceType: .loading,
                                      title: Constants.PlaceHolderView.Texts.wait)
-#warning("Retry Action does not set")
+            #warning("Retry Action does not set")
         }
     }
 }

@@ -90,10 +90,12 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 20 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 22 storyboards.
   struct storyboard {
     /// Storyboard `AddChild`.
     static let addChild = _R.storyboard.addChild()
+    /// Storyboard `AddTask`.
+    static let addTask = _R.storyboard.addTask()
     /// Storyboard `Children`.
     static let children = _R.storyboard.children()
     /// Storyboard `CreateConfirmPassword`.
@@ -132,11 +134,20 @@ struct R: Rswift.Validatable {
     static let sendMoney = _R.storyboard.sendMoney()
     /// Storyboard `Settings`.
     static let settings = _R.storyboard.settings()
+    /// Storyboard `addGoal`.
+    static let addGoal = _R.storyboard.addGoal()
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "AddChild", bundle: ...)`
     static func addChild(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.addChild)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "AddTask", bundle: ...)`
+    static func addTask(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.addTask)
     }
     #endif
 
@@ -270,6 +281,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Settings", bundle: ...)`
     static func settings(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.settings)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "addGoal", bundle: ...)`
+    static func addGoal(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.addGoal)
     }
     #endif
 
@@ -1375,7 +1393,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 7 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 8 nibs.
   struct nib {
     /// Nib `AgeTableViewCell`.
     static let ageTableViewCell = _R.nib._AgeTableViewCell()
@@ -1389,6 +1407,8 @@ struct R: Rswift.Validatable {
     static let parentCardFSPagerCell = _R.nib._ParentCardFSPagerCell()
     /// Nib `PeopleCollectionViewCell`.
     static let peopleCollectionViewCell = _R.nib._PeopleCollectionViewCell()
+    /// Nib `TasksCollectionViewCell`.
+    static let tasksCollectionViewCell = _R.nib._TasksCollectionViewCell()
     /// Nib `UpcomingPaymentCollectionViewCell`.
     static let upcomingPaymentCollectionViewCell = _R.nib._UpcomingPaymentCollectionViewCell()
 
@@ -1441,6 +1461,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "TasksCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.tasksCollectionViewCell) instead")
+    static func tasksCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.tasksCollectionViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "UpcomingPaymentCollectionViewCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.upcomingPaymentCollectionViewCell) instead")
     static func upcomingPaymentCollectionViewCell(_: Void = ()) -> UIKit.UINib {
@@ -1472,6 +1500,10 @@ struct R: Rswift.Validatable {
       return R.nib.peopleCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PeopleCollectionViewCell
     }
 
+    static func tasksCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TasksCollectionViewCell? {
+      return R.nib.tasksCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TasksCollectionViewCell
+    }
+
     static func upcomingPaymentCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UpcomingPaymentCollectionViewCell? {
       return R.nib.upcomingPaymentCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UpcomingPaymentCollectionViewCell
     }
@@ -1479,8 +1511,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 7 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 8 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `TasksCollectionCell`.
+    static let tasksCollectionCell: Rswift.ReuseIdentifier<TasksCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "TasksCollectionCell")
     /// Reuse identifier `UpcomingPaymentCollectionCell`.
     static let upcomingPaymentCollectionCell: Rswift.ReuseIdentifier<UpcomingPaymentCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "UpcomingPaymentCollectionCell")
     /// Reuse identifier `ageCell`.
@@ -1620,6 +1654,20 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _TasksCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = TasksCollectionViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "TasksCollectionCell"
+      let name = "TasksCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TasksCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TasksCollectionViewCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _UpcomingPaymentCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
       typealias ReusableType = UpcomingPaymentCollectionViewCell
 
@@ -1643,6 +1691,9 @@ struct _R: Rswift.Validatable {
     static func validate() throws {
       #if os(iOS) || os(tvOS)
       try addChild.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try addTask.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try children.validate()
@@ -1701,6 +1752,9 @@ struct _R: Rswift.Validatable {
       #if os(iOS) || os(tvOS)
       try settings.validate()
       #endif
+      #if os(iOS) || os(tvOS)
+      try addGoal.validate()
+      #endif
     }
 
     #if os(iOS) || os(tvOS)
@@ -1725,6 +1779,62 @@ struct _R: Rswift.Validatable {
         }
         if _R.storyboard.addChild().addChildViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addChildViewControllerNavVC' could not be loaded from storyboard 'AddChild' as 'BaseNavigationController'.") }
         if _R.storyboard.addChild().addChildViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addChildViewControllerVC' could not be loaded from storyboard 'AddChild' as 'AddChildViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct addGoal: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseNavigationController
+
+      let addGoalViewControllerNavVC = StoryboardViewControllerResource<BaseNavigationController>(identifier: "addGoalViewControllerNavVC")
+      let addGoalViewControllerVC = StoryboardViewControllerResource<addGoalViewController>(identifier: "addGoalViewControllerVC")
+      let bundle = R.hostingBundle
+      let name = "addGoal"
+
+      func addGoalViewControllerNavVC(_: Void = ()) -> BaseNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: addGoalViewControllerNavVC)
+      }
+
+      func addGoalViewControllerVC(_: Void = ()) -> addGoalViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: addGoalViewControllerVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.addGoal().addGoalViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addGoalViewControllerNavVC' could not be loaded from storyboard 'addGoal' as 'BaseNavigationController'.") }
+        if _R.storyboard.addGoal().addGoalViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addGoalViewControllerVC' could not be loaded from storyboard 'addGoal' as 'addGoalViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct addTask: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseNavigationController
+
+      let addTaskViewControllerNavVC = StoryboardViewControllerResource<BaseNavigationController>(identifier: "AddTaskViewControllerNavVC")
+      let addTaskViewControllerVC = StoryboardViewControllerResource<AddTaskViewController>(identifier: "AddTaskViewControllerVC")
+      let bundle = R.hostingBundle
+      let name = "AddTask"
+
+      func addTaskViewControllerNavVC(_: Void = ()) -> BaseNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: addTaskViewControllerNavVC)
+      }
+
+      func addTaskViewControllerVC(_: Void = ()) -> AddTaskViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: addTaskViewControllerVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.addTask().addTaskViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addTaskViewControllerNavVC' could not be loaded from storyboard 'AddTask' as 'BaseNavigationController'.") }
+        if _R.storyboard.addTask().addTaskViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addTaskViewControllerVC' could not be loaded from storyboard 'AddTask' as 'AddTaskViewController'.") }
       }
 
       fileprivate init() {}

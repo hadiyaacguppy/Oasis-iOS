@@ -215,6 +215,22 @@
 		16ABACFC2A04399400FB937C /* AddChildInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACF52A04399400FB937C /* AddChildInteractor.swift */; };
 		16ABACFD2A04399400FB937C /* AddChildConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACF62A04399400FB937C /* AddChildConfigurator.swift */; };
 		16ABAD002A04F4A300FB937C /* TitleWithTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACFF2A04F4A300FB937C /* TitleWithTextFieldView.swift */; };
+		16ABAD0B2A08E1A900FB937C /* addGoal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16ABAD042A08E1A800FB937C /* addGoal.storyboard */; };
+		16ABAD0C2A08E1A900FB937C /* addGoalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD052A08E1A800FB937C /* addGoalPresenter.swift */; };
+		16ABAD0D2A08E1A900FB937C /* addGoalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD062A08E1A800FB937C /* addGoalRouter.swift */; };
+		16ABAD0E2A08E1A900FB937C /* addGoalModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD072A08E1A800FB937C /* addGoalModels.swift */; };
+		16ABAD0F2A08E1A900FB937C /* addGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD082A08E1A900FB937C /* addGoalViewController.swift */; };
+		16ABAD102A08E1A900FB937C /* addGoalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD092A08E1A900FB937C /* addGoalInteractor.swift */; };
+		16ABAD112A08E1A900FB937C /* addGoalConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD0A2A08E1A900FB937C /* addGoalConfigurator.swift */; };
+		16ABAD1A2A0910AB00FB937C /* AddTask.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16ABAD132A0910AB00FB937C /* AddTask.storyboard */; };
+		16ABAD1B2A0910AB00FB937C /* AddTaskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD142A0910AB00FB937C /* AddTaskPresenter.swift */; };
+		16ABAD1C2A0910AB00FB937C /* AddTaskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD152A0910AB00FB937C /* AddTaskRouter.swift */; };
+		16ABAD1D2A0910AB00FB937C /* AddTaskModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD162A0910AB00FB937C /* AddTaskModels.swift */; };
+		16ABAD1E2A0910AB00FB937C /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD172A0910AB00FB937C /* AddTaskViewController.swift */; };
+		16ABAD1F2A0910AB00FB937C /* AddTaskInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD182A0910AB00FB937C /* AddTaskInteractor.swift */; };
+		16ABAD202A0910AB00FB937C /* AddTaskConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD192A0910AB00FB937C /* AddTaskConfigurator.swift */; };
+		16ABAD242A0916AE00FB937C /* TasksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD222A0916AE00FB937C /* TasksCollectionViewCell.swift */; };
+		16ABAD252A0916AE00FB937C /* TasksCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16ABAD232A0916AE00FB937C /* TasksCollectionViewCell.xib */; };
 		1ACED86ADAA2441F495B6912 /* Pods_AnalyticsManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B66C5D6B0826B75B9813C2 /* Pods_AnalyticsManager.framework */; };
 		374FA5CB00801009F6B43FDB /* Pods_OasisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64659B367BA850135AB1D5E9 /* Pods_OasisTests.framework */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
@@ -599,6 +615,22 @@
 		16ABACF52A04399400FB937C /* AddChildInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildInteractor.swift; sourceTree = "<group>"; };
 		16ABACF62A04399400FB937C /* AddChildConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildConfigurator.swift; sourceTree = "<group>"; };
 		16ABACFF2A04F4A300FB937C /* TitleWithTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleWithTextFieldView.swift; sourceTree = "<group>"; };
+		16ABAD042A08E1A800FB937C /* addGoal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = addGoal.storyboard; sourceTree = "<group>"; };
+		16ABAD052A08E1A800FB937C /* addGoalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addGoalPresenter.swift; sourceTree = "<group>"; };
+		16ABAD062A08E1A800FB937C /* addGoalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addGoalRouter.swift; sourceTree = "<group>"; };
+		16ABAD072A08E1A800FB937C /* addGoalModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addGoalModels.swift; sourceTree = "<group>"; };
+		16ABAD082A08E1A900FB937C /* addGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addGoalViewController.swift; sourceTree = "<group>"; };
+		16ABAD092A08E1A900FB937C /* addGoalInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addGoalInteractor.swift; sourceTree = "<group>"; };
+		16ABAD0A2A08E1A900FB937C /* addGoalConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addGoalConfigurator.swift; sourceTree = "<group>"; };
+		16ABAD132A0910AB00FB937C /* AddTask.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddTask.storyboard; sourceTree = "<group>"; };
+		16ABAD142A0910AB00FB937C /* AddTaskPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskPresenter.swift; sourceTree = "<group>"; };
+		16ABAD152A0910AB00FB937C /* AddTaskRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskRouter.swift; sourceTree = "<group>"; };
+		16ABAD162A0910AB00FB937C /* AddTaskModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskModels.swift; sourceTree = "<group>"; };
+		16ABAD172A0910AB00FB937C /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		16ABAD182A0910AB00FB937C /* AddTaskInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskInteractor.swift; sourceTree = "<group>"; };
+		16ABAD192A0910AB00FB937C /* AddTaskConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskConfigurator.swift; sourceTree = "<group>"; };
+		16ABAD222A0916AE00FB937C /* TasksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCollectionViewCell.swift; sourceTree = "<group>"; };
+		16ABAD232A0916AE00FB937C /* TasksCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksCollectionViewCell.xib; sourceTree = "<group>"; };
 		1D7408F9BE9E6B05F6D17E8A /* Pods-AnalyticsManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnalyticsManager/Pods-AnalyticsManager.release.xcconfig"; sourceTree = "<group>"; };
 		22C3C119E084FE2B0FF3C34F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
@@ -1343,6 +1375,7 @@
 				16503FAE29F5C07400875075 /* GoalsViewController.swift */,
 				16503FAF29F5C07400875075 /* GoalsInteractor.swift */,
 				16503FB029F5C07400875075 /* GoalsConfigurator.swift */,
+				16ABAD032A08E16F00FB937C /* Add New Goal */,
 			);
 			path = Goals;
 			sourceTree = "<group>";
@@ -1387,6 +1420,7 @@
 		166EF2FA29D36FCC0029908E /* Parents */ = {
 			isa = PBXGroup;
 			children = (
+				16ABAD122A09108400FB937C /* Tasks */,
 				16503FB829F5C25B00875075 /* Profile */,
 				16503FA929F5C06700875075 /* Goals */,
 				16503F9A29F58E0D00875075 /* Children */,
@@ -1476,6 +1510,44 @@
 				16ABACF62A04399400FB937C /* AddChildConfigurator.swift */,
 			);
 			path = "Add Child";
+			sourceTree = "<group>";
+		};
+		16ABAD032A08E16F00FB937C /* Add New Goal */ = {
+			isa = PBXGroup;
+			children = (
+				16ABAD042A08E1A800FB937C /* addGoal.storyboard */,
+				16ABAD052A08E1A800FB937C /* addGoalPresenter.swift */,
+				16ABAD062A08E1A800FB937C /* addGoalRouter.swift */,
+				16ABAD072A08E1A800FB937C /* addGoalModels.swift */,
+				16ABAD082A08E1A900FB937C /* addGoalViewController.swift */,
+				16ABAD092A08E1A900FB937C /* addGoalInteractor.swift */,
+				16ABAD0A2A08E1A900FB937C /* addGoalConfigurator.swift */,
+			);
+			path = "Add New Goal";
+			sourceTree = "<group>";
+		};
+		16ABAD122A09108400FB937C /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				16ABAD212A0914D300FB937C /* Suggested Tasks Collection View Cell */,
+				16ABAD132A0910AB00FB937C /* AddTask.storyboard */,
+				16ABAD142A0910AB00FB937C /* AddTaskPresenter.swift */,
+				16ABAD152A0910AB00FB937C /* AddTaskRouter.swift */,
+				16ABAD162A0910AB00FB937C /* AddTaskModels.swift */,
+				16ABAD172A0910AB00FB937C /* AddTaskViewController.swift */,
+				16ABAD182A0910AB00FB937C /* AddTaskInteractor.swift */,
+				16ABAD192A0910AB00FB937C /* AddTaskConfigurator.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		16ABAD212A0914D300FB937C /* Suggested Tasks Collection View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				16ABAD222A0916AE00FB937C /* TasksCollectionViewCell.swift */,
+				16ABAD232A0916AE00FB937C /* TasksCollectionViewCell.xib */,
+			);
+			path = "Suggested Tasks Collection View Cell";
 			sourceTree = "<group>";
 		};
 		3E1DEAEE22BA62F400FAD9F4 /* UIView+Helpers */ = {
@@ -2016,13 +2088,16 @@
 				16503FC029F5C26A00875075 /* ParentProfile.storyboard in Resources */,
 				16503FB129F5C07400875075 /* Goals.storyboard in Resources */,
 				161F3C3929E5AF330053158A /* InterestsCollectionViewCell.xib in Resources */,
+				16ABAD1A2A0910AB00FB937C /* AddTask.storyboard in Resources */,
 				3ECBAAB523D06DD8003672DA /* PushNotification.storyboard in Resources */,
 				161F3BAE29D4BF670053158A /* Montserrat-Bold.ttf in Resources */,
 				16503FCB29F5C7F200875075 /* ParentCardFSPagerCell.xib in Resources */,
+				16ABAD0B2A08E1A900FB937C /* addGoal.storyboard in Resources */,
 				161F3BAD29D4BF670053158A /* Montserrat-Regular.ttf in Resources */,
 				161F3C8129F3F1190053158A /* UpcomingPaymentCollectionViewCell.xib in Resources */,
 				161F3BCE29D98AE00053158A /* Login.storyboard in Resources */,
 				0F1B7FAD22CA6C910079F752 /* Countries.bundle in Resources */,
+				16ABAD252A0916AE00FB937C /* TasksCollectionViewCell.xib in Resources */,
 				161F3BC029D98A0E0053158A /* Registration.storyboard in Resources */,
 				161F3BDE29DAD6FB0053158A /* OTPVerification.storyboard in Resources */,
 				16503F8B29F5409900875075 /* OccasionCollectionViewCell.xib in Resources */,
@@ -2296,6 +2371,7 @@
 				0F1B7FB022CA6C9D0079F752 /* UISearchBar+Extensions.swift in Sources */,
 				16503F8629F53CDE00875075 /* PeopleCollectionViewCell.swift in Sources */,
 				16ABACFB2A04399400FB937C /* AddChildViewController.swift in Sources */,
+				16ABAD1F2A0910AB00FB937C /* AddTaskInteractor.swift in Sources */,
 				161F3BD429D98AE00053158A /* LoginConfigurator.swift in Sources */,
 				16503FC529F5C26A00875075 /* ParentProfileInteractor.swift in Sources */,
 				161F3B9929D4BC730053158A /* OnboardingCollectionViewCell.swift in Sources */,
@@ -2357,6 +2433,7 @@
 				161F3BEF29E2FCA20053158A /* CreateConfirmPasswordPresenter.swift in Sources */,
 				161F3C4129ED3D990053158A /* CardTabBarView.swift in Sources */,
 				16ABACDA29F6737000FB937C /* IconSegment.swift in Sources */,
+				16ABAD0C2A08E1A900FB937C /* addGoalPresenter.swift in Sources */,
 				161F3B9329D371500053158A /* OnboardingModels.swift in Sources */,
 				16503FC329F5C26A00875075 /* ParentProfileModels.swift in Sources */,
 				3EAFC549219B2D2F00E3C2BB /* TDAlertAction.swift in Sources */,
@@ -2366,6 +2443,7 @@
 				161F3BE129DAD6FB0053158A /* OTPVerificationModels.swift in Sources */,
 				3EDC4156224E886500624D2B /* BaseUIView.swift in Sources */,
 				161F3C0329E3157D0053158A /* SelectAgeConfigurator.swift in Sources */,
+				16ABAD102A08E1A900FB937C /* addGoalInteractor.swift in Sources */,
 				3E59224C23C3992100E729B7 /* Font.swift in Sources */,
 				67290A02210E441400632C4F /* PlaceHolderHelper.swift in Sources */,
 				16503F9429F5853600875075 /* PaymentsPresenter.swift in Sources */,
@@ -2387,6 +2465,7 @@
 				67C9591126247EF300A67399 /* APIErrorModel.swift in Sources */,
 				161F3C6929F31CD00053158A /* ReceiveMoneyInteractor.swift in Sources */,
 				161F3BD029D98AE00053158A /* LoginRouter.swift in Sources */,
+				16ABAD1C2A0910AB00FB937C /* AddTaskRouter.swift in Sources */,
 				16ABACD529F6734800FB937C /* BetterSegmentedControl+IndicatorView.swift in Sources */,
 				0FD0C6EC2200B662000C5881 /* UIFont+Extentions.swift in Sources */,
 				161F3C3F29ED3D990053158A /* CardTabBarController.swift in Sources */,
@@ -2421,11 +2500,13 @@
 				161F3BDF29DAD6FB0053158A /* OTPVerificationPresenter.swift in Sources */,
 				16ABAD002A04F4A300FB937C /* TitleWithTextFieldView.swift in Sources */,
 				161F3C2429E5ACD40053158A /* PinterestLayoutAttributes.swift in Sources */,
+				16ABAD112A08E1A900FB937C /* addGoalConfigurator.swift in Sources */,
 				161F3BC429D98A0E0053158A /* RegistrationViewController.swift in Sources */,
 				161F3C1229E322BE0053158A /* ParentsHomePresenter.swift in Sources */,
 				CF8C5C9C20EF97AE00236C7B /* BaseTableViewController.swift in Sources */,
 				117C4AAB1FD86050008BB445 /* Utilities.swift in Sources */,
 				0F1B7FBB22CA6CBD0079F752 /* CurrencyCell.swift in Sources */,
+				16ABAD0D2A08E1A900FB937C /* addGoalRouter.swift in Sources */,
 				3E1DEAF222BA632600FAD9F4 /* UIView+Border.swift in Sources */,
 				161F3C8329F3F16A0053158A /* OasisVioletButton.swift in Sources */,
 				CF8373AD224A7F93000C3E21 /* R.generated.swift in Sources */,
@@ -2460,6 +2541,7 @@
 				16503FB629F5C07400875075 /* GoalsInteractor.swift in Sources */,
 				16ABACFD2A04399400FB937C /* AddChildConfigurator.swift in Sources */,
 				161F3B9429D371500053158A /* OnboardingViewController.swift in Sources */,
+				16ABAD1E2A0910AB00FB937C /* AddTaskViewController.swift in Sources */,
 				0F1B7FBC22CA6CBD0079F752 /* CountryCell.swift in Sources */,
 				161F3C0129E3157D0053158A /* SelectAgeViewController.swift in Sources */,
 				16ABACFA2A04399400FB937C /* AddChildModels.swift in Sources */,
@@ -2467,6 +2549,7 @@
 				CF403859216CF78F001F649B /* InitialPresenter.swift in Sources */,
 				0F57539520EE185F0069C139 /* Array+Extensions.swift in Sources */,
 				3E6DEFB321623D7A00978FDC /* UITableView+Extensions.swift in Sources */,
+				16ABAD1B2A0910AB00FB937C /* AddTaskPresenter.swift in Sources */,
 				CF8C5CAE20EF9D8F00236C7B /* UIApplication+Extensions.swift in Sources */,
 				16ABACE829F68CDD00FB937C /* SettingsViewController.swift in Sources */,
 				161F3C8029F3F1190053158A /* UpcomingPaymentCollectionViewCell.swift in Sources */,
@@ -2477,8 +2560,10 @@
 				0F508C2F23A2AE5E00E1F333 /* TDProgressHUD.swift in Sources */,
 				161F3C7829F31EE80053158A /* SendMoneyInteractor.swift in Sources */,
 				67283E47281AC81A007C5FF4 /* PushServiceRouter.swift in Sources */,
+				16ABAD202A0910AB00FB937C /* AddTaskConfigurator.swift in Sources */,
 				161F3C2F29E5AD4D0053158A /* InterestsPresenter.swift in Sources */,
 				0FD65F1520D014F40075E251 /* Reactive+UIButton.swift in Sources */,
+				16ABAD0F2A08E1A900FB937C /* addGoalViewController.swift in Sources */,
 				16503FA729F58E1900875075 /* ChildrenInteractor.swift in Sources */,
 				CF181BA020809874002603A1 /* UINavigationBar+Extensions.swift in Sources */,
 				CF40385E216CF78F001F649B /* InitialConfigurator.swift in Sources */,
@@ -2497,11 +2582,13 @@
 				161F3C5129F277A30053158A /* SendGiftRouter.swift in Sources */,
 				0F57539D20EE1C430069C139 /* APIClient.swift in Sources */,
 				161F3BF329E2FCA20053158A /* CreateConfirmPasswordInteractor.swift in Sources */,
+				16ABAD0E2A08E1A900FB937C /* addGoalModels.swift in Sources */,
 				16503FB329F5C07400875075 /* GoalsRouter.swift in Sources */,
 				161F3C3329E5AD4D0053158A /* InterestsInteractor.swift in Sources */,
 				3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */,
 				0F484B4F2165FF5C0060C463 /* Date+Extensions.swift in Sources */,
 				CF2F319E215E8BA0007A912A /* URL+Extensions.swift in Sources */,
+				16ABAD242A0916AE00FB937C /* TasksCollectionViewCell.swift in Sources */,
 				0F1B7FB322CA6CA40079F752 /* LocalePickerViewController.swift in Sources */,
 				161F3BD229D98AE00053158A /* LoginViewController.swift in Sources */,
 				CFF69D732195578F003BE6BF /* Data+Extensions.swift in Sources */,
@@ -2521,6 +2608,7 @@
 				671336F728184208006CECE4 /* Language.swift in Sources */,
 				3ECBAAB923D06E11003672DA /* PushMessageContent.swift in Sources */,
 				16503FC429F5C26A00875075 /* ParentProfileViewController.swift in Sources */,
+				16ABAD1D2A0910AB00FB937C /* AddTaskModels.swift in Sources */,
 				161F3C1729E322BE0053158A /* ParentsHomeConfigurator.swift in Sources */,
 				161F3C7429F31EE80053158A /* SendMoneyPresenter.swift in Sources */,
 				16503FA829F58E1900875075 /* ChildrenConfigurator.swift in Sources */,

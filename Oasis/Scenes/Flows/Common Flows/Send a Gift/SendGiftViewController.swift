@@ -142,7 +142,7 @@ class SendGiftViewController: BaseViewController {
     }()
     
     private var amountView : AmountWithCurrencyView = {
-        let view = AmountWithCurrencyView(defaultValue: 0.0, currency: "LBP")
+        let view = AmountWithCurrencyView(defaultValue: 0.0, currency: "LBP", titleLbl: "Gift Amount")
         return view
     }()
 }
@@ -215,12 +215,12 @@ extension SendGiftViewController{
         stackView.addArrangedSubview(toStaticlabel)
         stackView.addArrangedSubview(peopleCollectionView)
         stackView.addArrangedSubview(receipentCollectionView)
-        stackView.addArrangedSubview(giftAmountStaticlabel)
+        //stackView.addArrangedSubview(giftAmountStaticlabel)
         stackView.addArrangedSubview(amountView)
 
         setupNoteView()
         
-        amountView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        //amountView.heightAnchor.constraint(equalToConstant: 40).isActive = true
         peopleCollectionView.heightAnchor.constraint(equalToConstant: 80).isActive = true
         occasionCollectionView.heightAnchor.constraint(equalToConstant: 130).isActive = true
         

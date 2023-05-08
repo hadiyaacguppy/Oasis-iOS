@@ -11,6 +11,14 @@ import UIKit
 
 class AmountWithCurrencyView: BaseUIView {
     
+    lazy var amountTitleLabel : BaseLabel = {
+        let label = BaseLabel()
+        label.autoLayout()
+        label.style = .init(font: MainFont.medium.with(size: 22), color: .black)
+        return label
+    }()
+    
+    
     lazy var amountTextField : AmountTextField = {
         let txtF = AmountTextField()
         return txtF
@@ -33,10 +41,11 @@ class AmountWithCurrencyView: BaseUIView {
     
     var currencyValue : String = ""
     
-    init(defaultValue defaultV : Float = 0.0, currency : String) {
+    init(defaultValue defaultV : Float = 0.0, currency : String, titleLbl : String) {
         super.init(frame: .zero)
         self.amountTextField.text = "\(defaultV)"
         self.currencyValue = currency
+        self.amountTitleLabel.text = titleLbl
         setupUI()
     }
     
@@ -53,15 +62,22 @@ class AmountWithCurrencyView: BaseUIView {
         self.autoLayout()
         self.backgroundColor = .clear
         
+        self.addSubview(amountTitleLabel)
         self.addSubview(amountTextField)
         self.addSubview(underlineView)
         self.addSubview(currencyLabel)
         
         
         NSLayoutConstraint.activate([
+            
+            amountTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            amountTitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            amountTitleLabel.topAnchor.constraint(equalTo: self.topAnchor),
+            amountTitleLabel.heightAnchor.constraint(equalToConstant: 30),
+            
             amountTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             amountTextField.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            amountTextField.topAnchor.constraint(equalTo: self.topAnchor),
+            amountTextField.topAnchor.constraint(equalTo: self.amountTitleLabel.bottomAnchor, constant: 10),
             
             underlineView.leadingAnchor.constraint(equalTo: amountTextField.leadingAnchor),
             underlineView.topAnchor.constraint(equalTo: amountTextField.bottomAnchor, constant: 4),

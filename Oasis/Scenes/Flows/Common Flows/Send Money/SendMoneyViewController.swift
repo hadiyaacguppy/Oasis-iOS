@@ -88,7 +88,7 @@ class SendMoneyViewController: BaseViewController {
     }()
     
     private var amountView : AmountWithCurrencyView = {
-        let view = AmountWithCurrencyView(defaultValue: 0.0, currency: "LBP")
+        let view = AmountWithCurrencyView(defaultValue: 0.0, currency: "LBP", titleLbl: "Amount to send")
         return view
     }()
     
@@ -174,12 +174,12 @@ extension SendMoneyViewController{
         stackView.addArrangedSubview(toStaticLabel)
         stackView.addArrangedSubview(peopleCollectionView)
         stackView.addArrangedSubview(receipentCollectionView)
-        stackView.addArrangedSubview(amountStaticlabel)
+        //stackView.addArrangedSubview(amountStaticlabel)
         stackView.addArrangedSubview(amountView)
         NSLayoutConstraint.activate([
             toastView.heightAnchor.constraint(equalToConstant: 73),
             
-            amountView.heightAnchor.constraint(equalToConstant: 40),
+           // amountView.heightAnchor.constraint(equalToConstant: 40),
             
             peopleCollectionView.heightAnchor.constraint(equalToConstant: 80)
         ])
