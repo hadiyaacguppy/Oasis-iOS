@@ -28,7 +28,7 @@ class OTPVerificationInteractor: OTPVerificationDataStore{
 extension OTPVerificationInteractor: OTPVerificationViewControllerOutput{
     func sendOTP() -> Single<Void> {
         var dict : [String:Any] = [:]
-        dict["mobile"] = RegistrationDataManager.current.userEmail
+        dict["mobile"] = RegistrationDataManager.current.userEmail!
         return Single<Void>.create(subscribe: { single in
             APIClient.shared.sendOTP(dict: dict)
                 .subscribe(onSuccess: { [weak self] _ in

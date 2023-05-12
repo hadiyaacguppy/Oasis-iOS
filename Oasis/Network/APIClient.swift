@@ -32,12 +32,12 @@ class  APIClient {
 //MARK: - Registration
 extension APIClient {
     func  sendOTP(dict : [String:Any])-> Single<Void>{
-        return self.provider.rx.request(.register(dict: dict))
+        return self.provider.rx.request(.sendOTP(dict: dict))
             .map {_ in return Void()}
     }
     
     func verifyOTP(dict : [String:Any])-> Single<Void>{
-        return self.provider.rx.request(.register(dict: dict))
+        return self.provider.rx.request(.verifyOTP(dict: dict))
             .map {_ in return Void()}
     }
     
