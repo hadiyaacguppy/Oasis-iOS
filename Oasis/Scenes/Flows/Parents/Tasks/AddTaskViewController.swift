@@ -31,13 +31,15 @@ class AddTaskViewController: BaseViewController {
     lazy var createTaskButton : OasisAquaButton = {
         let btn = OasisAquaButton()
         btn.setTitle("+ Create new task", for: .normal)
+        btn.roundCorners = .all(radius: 30)
+        btn.autoLayout()
         return btn
     }()
     
     lazy var suggestedTasksLabel :  BaseLabel = {
         let lbl = BaseLabel()
         
-        lbl.style = .init(font: MainFont.normal.with(size: 20), color: .black)
+        lbl.style = .init(font: MainFont.medium.with(size: 20), color: .black)
         lbl.text = "Suggested Tasks".localized
         lbl.autoLayout()
         return lbl
@@ -51,9 +53,10 @@ class AddTaskViewController: BaseViewController {
         return scrollView
     }()
     
+    //Square Views
     lazy var suggestedTasksStackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.axis = .horizontal
+        stackView.axis = .vertical
         stackView.distribution = .fillEqually
         stackView.spacing = 19
         stackView.autoLayout()
@@ -61,6 +64,7 @@ class AddTaskViewController: BaseViewController {
         return stackView
     }()
     
+    //Horizontal Labels
     private let tasksCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -75,13 +79,28 @@ class AddTaskViewController: BaseViewController {
         return collectionView
     }()
     
+    lazy var suggestedTaskGreenView : BaseUIView = {
+        let view = BaseUIView()
+        view.roundCorners = .all(radius: 14)
+        view.autoLayout()
+        return view
+    }()
+    
+    lazy var smallGreenViewInnerLabel : BaseLabel = {
+        let lbl = BaseLabel()
+        lbl.style = .init(font: MainFont.bold.with(size: 10), color: .black)
+        lbl.autoLayout()
+        return lbl
+    }()
+    
     lazy var addChildButton : OasisGradientButton = {
         let btn = OasisGradientButton()
         btn.setTitle("Add Child", for: .normal)
+        btn.autoLayout()
         return btn
     }()
     
-    private let suggestedTasksdict : [String : Bool] = [:]
+    private let suggestedTasksdict : [String : Bool] = ["ALL" : true, "LEARNING" : false, "SOCIAL" : false, "HOUSEKEEPING" : false]
 }
 
 //MARK:- View Lifecycle
@@ -98,6 +117,7 @@ extension AddTaskViewController{
         //                            title: Constants.PlaceHolderView.Texts.wait)
         setupNavBarAppearance()
         setupRetryFetchingCallBack()
+        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -109,11 +129,12 @@ extension AddTaskViewController{
         //Add Top Title & Create new Task Button
         addTopTitleAndButton()
         
+        //Add AddChild Button
+        addAddChildButton()
+        
         //Add Suggested Tasks
         addSuggestedTasksLabel()
         
-        //Add AddChild Button
-        addAddChildButton()
     }
     
     //Top Title
@@ -124,22 +145,22 @@ extension AddTaskViewController{
         
         //Top Title Constraints
         NSLayoutConstraint.activate([
-            topTitleLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 10),
-            topTitleLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 35),
+            topTitleLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            topTitleLabel.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 35),
             
-            createTaskButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 30),
-            createTaskButton.topAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 10),
-            createTaskButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -30),
+            createTaskButton.leadingAnchor.constraint(equalTo: topTitleLabel.leadingAnchor),
+            createTaskButton.topAnchor.constraint(equalTo: topTitleLabel.bottomAnchor, constant: 20),
+            createTaskButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -30),
             createTaskButton.heightAnchor.constraint(equalToConstant: 58)
         ])
-        
+                
     }
     
     private func addSuggestedTasksLabel(){
         self.view.addSubview(suggestedTasksLabel)
         
         NSLayoutConstraint.activate([
-            suggestedTasksLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 35),
+            suggestedTasksLabel.leadingAnchor.constraint(equalTo: topTitleLabel.leadingAnchor),
             suggestedTasksLabel.topAnchor.constraint(equalTo: createTaskButton.bottomAnchor, constant: 30),
             suggestedTasksLabel.heightAnchor.constraint(equalToConstant: 41),
         ])
@@ -151,25 +172,42 @@ extension AddTaskViewController{
         view.addSubview(addChildButton)
         
         NSLayoutConstraint.activate([
-            addChildButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -30),
-            addChildButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 30),
+            addChildButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -30),
+            addChildButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 30),
             addChildButton.heightAnchor.constraint(equalToConstant: 58),
-            addChildButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -25)
+            addChildButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -25)
         
         ])
     }
+    
     //ScrollView & StackView
     private func addScrollViewAndStackView(){
         view.addSubview(scrollView)
         
         for x in suggestedTasksdict{
-            let lbl = BaseLabel()
-            lbl.text = x.key
-            suggestedTasksStackView.addArrangedSubview(lbl)
+            
+            smallGreenViewInnerLabel.text = x.key
+            
+            if x.value == true{
+                suggestedTaskGreenView.backgroundColor = Constants.Colors.aquaMarine
+                smallGreenViewInnerLabel.textColor = .white
+            }else{
+                suggestedTaskGreenView.backgroundColor = .white
+                smallGreenViewInnerLabel.textColor = .black
+            }
+            suggestedTasksStackView.addArrangedSubview(suggestedTaskGreenView)
+            suggestedTaskGreenView.addSubview(smallGreenViewInnerLabel)
+            
         }
         scrollView.addSubview(suggestedTasksStackView)
         
         NSLayoutConstraint.activate([
+            smallGreenViewInnerLabel.centerYAnchor.constraint(equalTo: suggestedTaskGreenView.centerYAnchor),
+            smallGreenViewInnerLabel.centerXAnchor.constraint(equalTo: suggestedTaskGreenView.centerXAnchor),
+            
+            suggestedTaskGreenView.heightAnchor.constraint(equalToConstant: 29),
+            suggestedTaskGreenView.widthAnchor.constraint(equalToConstant: 64),
+            
             //Scroll View Constraints
             scrollView.topAnchor.constraint(equalTo: suggestedTasksLabel.bottomAnchor, constant: 10),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
@@ -184,6 +222,8 @@ extension AddTaskViewController{
         
         scrollView.contentInset = .init(top: 0, left: 10, bottom: 0, right: 0)
         
+        addsuggestedTasksCollectionView()
+        
     }
     
     //Tasks collectionView
@@ -194,10 +234,10 @@ extension AddTaskViewController{
         tasksCollectionView.delegate = self
         
         NSLayoutConstraint.activate([
-            tasksCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 35),
+            tasksCollectionView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 35),
             tasksCollectionView.topAnchor.constraint(equalTo: suggestedTasksStackView.bottomAnchor, constant: 30),
-            tasksCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            tasksCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            tasksCollectionView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -30),
+            tasksCollectionView.bottomAnchor.constraint(equalTo: addChildButton.topAnchor, constant: -10)
         
         ])
     }
@@ -229,19 +269,26 @@ extension AddTaskViewController{
 extension AddTaskViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.tasksCollectionCell, for: indexPath)!
         cell.setupCell(title: "Gardening", subTitle: "Water plants in the garden and indoors")
+        
         return cell
     }
 }
 
 extension AddTaskViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 153, height: 164)
+        
+       /* let leftAndRightPaddings: CGFloat = 60
+        let numberOfItemsPerRow: CGFloat = 2.0
+            
+        let width = (collectionView.frame.width-leftAndRightPaddings)/numberOfItemsPerRow
+        return CGSize(width: width, height: width) // You can change width and height here as pr your requirement `*/
+       return CGSize(width: 153, height: 164)
     }
     
     
@@ -254,6 +301,6 @@ extension AddTaskViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout
                         collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 1.0
+        return 21.0
     }
 }

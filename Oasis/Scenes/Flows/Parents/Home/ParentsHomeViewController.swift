@@ -740,7 +740,7 @@ extension ParentsHomeViewController {
         ])
         
         topUpActionView.onTap {
-            
+            self.router?.pushToAddTaskController()
         }
     }
     

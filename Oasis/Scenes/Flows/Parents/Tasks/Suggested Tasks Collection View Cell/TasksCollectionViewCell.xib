@@ -31,7 +31,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvR-uO-Tc8" customClass="BaseLabel" customModule="Oasis" customModuleProvider="target">
-                                <rect key="frame" x="19" y="42" width="128" height="21"/>
+                                <rect key="frame" x="19" y="42" width="128" height="69"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -47,11 +47,14 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="width" constant="153" id="6er-NM-UiE"/>
                             <constraint firstAttribute="trailing" secondItem="5vw-eg-rXD" secondAttribute="trailing" constant="6" id="8Pl-MH-Hvt"/>
                             <constraint firstAttribute="trailing" secondItem="cE0-Kt-EIU" secondAttribute="trailing" constant="18" id="Cmm-7t-M1h"/>
+                            <constraint firstItem="cE0-Kt-EIU" firstAttribute="top" secondItem="lvR-uO-Tc8" secondAttribute="bottom" constant="10" id="LPb-zU-wxn"/>
                             <constraint firstItem="5vw-eg-rXD" firstAttribute="top" secondItem="Zs2-ne-d0K" secondAttribute="top" constant="16" id="Raa-Kc-npQ"/>
                             <constraint firstItem="lvR-uO-Tc8" firstAttribute="trailing" secondItem="5vw-eg-rXD" secondAttribute="trailing" id="Vm0-G1-Fve"/>
                             <constraint firstItem="cE0-Kt-EIU" firstAttribute="leading" secondItem="Zs2-ne-d0K" secondAttribute="leading" constant="17" id="WyY-zP-xzp"/>
+                            <constraint firstAttribute="height" constant="164" id="jxF-U6-4c7"/>
                             <constraint firstAttribute="bottom" secondItem="cE0-Kt-EIU" secondAttribute="bottom" constant="9" id="lZz-qL-VNR"/>
                             <constraint firstItem="lvR-uO-Tc8" firstAttribute="top" secondItem="5vw-eg-rXD" secondAttribute="bottom" constant="12" id="ppd-dA-WQ7"/>
                             <constraint firstItem="5vw-eg-rXD" firstAttribute="leading" secondItem="Zs2-ne-d0K" secondAttribute="leading" constant="19" id="xFf-zW-J8D"/>
@@ -62,10 +65,10 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="Zs2-ne-d0K" secondAttribute="top" constant="47" id="Hg9-50-AHQ"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="Zs2-ne-d0K" secondAttribute="bottom" id="SvP-ML-rVX"/>
-                <constraint firstItem="Zs2-ne-d0K" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="avL-4p-HTz"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="Zs2-ne-d0K" secondAttribute="trailing" id="xTe-zb-x2v"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="Zs2-ne-d0K" secondAttribute="bottom" id="LUB-Ld-rCx"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="Zs2-ne-d0K" secondAttribute="top" constant="47" id="RS1-Em-d6g"/>
+                <constraint firstItem="Zs2-ne-d0K" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="bwz-zh-atR"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="Zs2-ne-d0K" secondAttribute="trailing" id="r2L-e9-0Nh"/>
             </constraints>
             <size key="customSize" width="265" height="188"/>
             <connections>

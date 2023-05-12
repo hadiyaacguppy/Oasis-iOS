@@ -24,6 +24,17 @@ class ParentsHomeRouter: ParentsHomeRouterDataPassing{
     }
     
     // MARK: Navigation
+    
+    func pushToAddTaskController(){
+        let vc = R.storyboard.addTask.addTaskViewControllerVC()!
+        DispatchQueue
+            .main
+            .async {
+                self.viewController.hidesBottomBarWhenPushed = true
+                self.viewController.navigationController?.pushViewController(vc, animated: true)
+            }
+    }
+    
     func pushToSendGiftController(){
         let vc = R.storyboard.sendGift.sendGiftViewControllerVC()!
         DispatchQueue
