@@ -232,6 +232,15 @@
 		16ABAD242A0916AE00FB937C /* TasksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD222A0916AE00FB937C /* TasksCollectionViewCell.swift */; };
 		16ABAD252A0916AE00FB937C /* TasksCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16ABAD232A0916AE00FB937C /* TasksCollectionViewCell.xib */; };
 		16ABAD272A0CFE7300FB937C /* SuggestedTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD262A0CFE7300FB937C /* SuggestedTaskView.swift */; };
+		16ABAD302A0E40CD00FB937C /* AssignNewTask.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16ABAD292A0E40CD00FB937C /* AssignNewTask.storyboard */; };
+		16ABAD312A0E40CD00FB937C /* AssignNewTaskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD2A2A0E40CD00FB937C /* AssignNewTaskPresenter.swift */; };
+		16ABAD322A0E40CD00FB937C /* AssignNewTaskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD2B2A0E40CD00FB937C /* AssignNewTaskRouter.swift */; };
+		16ABAD332A0E40CD00FB937C /* AssignNewTaskModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD2C2A0E40CD00FB937C /* AssignNewTaskModels.swift */; };
+		16ABAD342A0E40CD00FB937C /* AssignNewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD2D2A0E40CD00FB937C /* AssignNewTaskViewController.swift */; };
+		16ABAD352A0E40CD00FB937C /* AssignNewTaskInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD2E2A0E40CD00FB937C /* AssignNewTaskInteractor.swift */; };
+		16ABAD362A0E40CD00FB937C /* AssignNewTaskConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD2F2A0E40CD00FB937C /* AssignNewTaskConfigurator.swift */; };
+		16ABAD3A2A0E5E4F00FB937C /* GoalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD382A0E5E4F00FB937C /* GoalCollectionViewCell.swift */; };
+		16ABAD3B2A0E5E4F00FB937C /* GoalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16ABAD392A0E5E4F00FB937C /* GoalCollectionViewCell.xib */; };
 		1ACED86ADAA2441F495B6912 /* Pods_AnalyticsManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B66C5D6B0826B75B9813C2 /* Pods_AnalyticsManager.framework */; };
 		374FA5CB00801009F6B43FDB /* Pods_OasisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64659B367BA850135AB1D5E9 /* Pods_OasisTests.framework */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
@@ -633,6 +642,15 @@
 		16ABAD222A0916AE00FB937C /* TasksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCollectionViewCell.swift; sourceTree = "<group>"; };
 		16ABAD232A0916AE00FB937C /* TasksCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksCollectionViewCell.xib; sourceTree = "<group>"; };
 		16ABAD262A0CFE7300FB937C /* SuggestedTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedTaskView.swift; sourceTree = "<group>"; };
+		16ABAD292A0E40CD00FB937C /* AssignNewTask.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AssignNewTask.storyboard; sourceTree = "<group>"; };
+		16ABAD2A2A0E40CD00FB937C /* AssignNewTaskPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignNewTaskPresenter.swift; sourceTree = "<group>"; };
+		16ABAD2B2A0E40CD00FB937C /* AssignNewTaskRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignNewTaskRouter.swift; sourceTree = "<group>"; };
+		16ABAD2C2A0E40CD00FB937C /* AssignNewTaskModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignNewTaskModels.swift; sourceTree = "<group>"; };
+		16ABAD2D2A0E40CD00FB937C /* AssignNewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignNewTaskViewController.swift; sourceTree = "<group>"; };
+		16ABAD2E2A0E40CD00FB937C /* AssignNewTaskInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignNewTaskInteractor.swift; sourceTree = "<group>"; };
+		16ABAD2F2A0E40CD00FB937C /* AssignNewTaskConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignNewTaskConfigurator.swift; sourceTree = "<group>"; };
+		16ABAD382A0E5E4F00FB937C /* GoalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCollectionViewCell.swift; sourceTree = "<group>"; };
+		16ABAD392A0E5E4F00FB937C /* GoalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalCollectionViewCell.xib; sourceTree = "<group>"; };
 		1D7408F9BE9E6B05F6D17E8A /* Pods-AnalyticsManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnalyticsManager/Pods-AnalyticsManager.release.xcconfig"; sourceTree = "<group>"; };
 		22C3C119E084FE2B0FF3C34F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
@@ -1370,6 +1388,7 @@
 		16503FA929F5C06700875075 /* Goals */ = {
 			isa = PBXGroup;
 			children = (
+				16ABAD372A0E4A3B00FB937C /* Goal CollectionViewCell */,
 				16503FAA29F5C07400875075 /* Goals.storyboard */,
 				16503FAB29F5C07400875075 /* GoalsPresenter.swift */,
 				16503FAC29F5C07400875075 /* GoalsRouter.swift */,
@@ -1531,6 +1550,7 @@
 		16ABAD122A09108400FB937C /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				16ABAD282A0E40AA00FB937C /* Assign New Task */,
 				16ABAD212A0914D300FB937C /* Suggested Tasks Collection View Cell */,
 				16ABAD132A0910AB00FB937C /* AddTask.storyboard */,
 				16ABAD142A0910AB00FB937C /* AddTaskPresenter.swift */,
@@ -1550,6 +1570,29 @@
 				16ABAD232A0916AE00FB937C /* TasksCollectionViewCell.xib */,
 			);
 			path = "Suggested Tasks Collection View Cell";
+			sourceTree = "<group>";
+		};
+		16ABAD282A0E40AA00FB937C /* Assign New Task */ = {
+			isa = PBXGroup;
+			children = (
+				16ABAD292A0E40CD00FB937C /* AssignNewTask.storyboard */,
+				16ABAD2A2A0E40CD00FB937C /* AssignNewTaskPresenter.swift */,
+				16ABAD2B2A0E40CD00FB937C /* AssignNewTaskRouter.swift */,
+				16ABAD2C2A0E40CD00FB937C /* AssignNewTaskModels.swift */,
+				16ABAD2D2A0E40CD00FB937C /* AssignNewTaskViewController.swift */,
+				16ABAD2E2A0E40CD00FB937C /* AssignNewTaskInteractor.swift */,
+				16ABAD2F2A0E40CD00FB937C /* AssignNewTaskConfigurator.swift */,
+			);
+			path = "Assign New Task";
+			sourceTree = "<group>";
+		};
+		16ABAD372A0E4A3B00FB937C /* Goal CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				16ABAD382A0E5E4F00FB937C /* GoalCollectionViewCell.swift */,
+				16ABAD392A0E5E4F00FB937C /* GoalCollectionViewCell.xib */,
+			);
+			path = "Goal CollectionViewCell";
 			sourceTree = "<group>";
 		};
 		3E1DEAEE22BA62F400FAD9F4 /* UIView+Helpers */ = {
@@ -2086,9 +2129,11 @@
 				161F3BAC29D4BF670053158A /* Montserrat-Italic.ttf in Resources */,
 				161F3BB029D4BF670053158A /* Montserrat-Light.ttf in Resources */,
 				161F3BEE29E2FCA20053158A /* CreateConfirmPassword.storyboard in Resources */,
+				16ABAD3B2A0E5E4F00FB937C /* GoalCollectionViewCell.xib in Resources */,
 				CF403858216CF78F001F649B /* Initial.storyboard in Resources */,
 				16ABACE429F68CDD00FB937C /* Settings.storyboard in Resources */,
 				16503FC029F5C26A00875075 /* ParentProfile.storyboard in Resources */,
+				16ABAD302A0E40CD00FB937C /* AssignNewTask.storyboard in Resources */,
 				16503FB129F5C07400875075 /* Goals.storyboard in Resources */,
 				161F3C3929E5AF330053158A /* InterestsCollectionViewCell.xib in Resources */,
 				16ABAD1A2A0910AB00FB937C /* AddTask.storyboard in Resources */,
@@ -2405,6 +2450,7 @@
 				0FD65F1920D018480075E251 /* Double+Extensions.swift in Sources */,
 				16ABACD429F6734800FB937C /* BetterSegmentedControl+UIPointerInteractionDelegate.swift in Sources */,
 				161F3C2029E5ACD40053158A /* Help.swift in Sources */,
+				16ABAD342A0E40CD00FB937C /* AssignNewTaskViewController.swift in Sources */,
 				161F3C5229F277A30053158A /* SendGiftModels.swift in Sources */,
 				4AEF647522107DC000D53D75 /* BaseButton.swift in Sources */,
 				161F3C4029ED3D990053158A /* BarItemView.swift in Sources */,
@@ -2425,6 +2471,7 @@
 				CF8C5CB020EF9DC900236C7B /* UIImage+Extensions.swift in Sources */,
 				922EED0328466BA800D19A01 /* Queue.swift in Sources */,
 				CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */,
+				16ABAD352A0E40CD00FB937C /* AssignNewTaskInteractor.swift in Sources */,
 				672909FE210E43F900632C4F /* PlaceHolderCreator.swift in Sources */,
 				117C4AB01FD864DE008BB445 /* UILabel+Extensions.swift in Sources */,
 				16ABACFC2A04399400FB937C /* AddChildInteractor.swift in Sources */,
@@ -2455,6 +2502,7 @@
 				0F1B7FBD22CA6CBD0079F752 /* PhoneCodeCell.swift in Sources */,
 				16503FCA29F5C7F200875075 /* ParentCardFSPagerCell.swift in Sources */,
 				CF8C5CAA20EF9D6700236C7B /* Int+Extensions.swift in Sources */,
+				16ABAD312A0E40CD00FB937C /* AssignNewTaskPresenter.swift in Sources */,
 				161F3C5029F277A30053158A /* SendGiftPresenter.swift in Sources */,
 				3E8E350422CA0BDE009A3113 /* Observable+Operators.swift in Sources */,
 				16503F9629F5853600875075 /* PaymentsModels.swift in Sources */,
@@ -2470,6 +2518,7 @@
 				161F3C6929F31CD00053158A /* ReceiveMoneyInteractor.swift in Sources */,
 				161F3BD029D98AE00053158A /* LoginRouter.swift in Sources */,
 				16ABAD1C2A0910AB00FB937C /* AddTaskRouter.swift in Sources */,
+				16ABAD332A0E40CD00FB937C /* AssignNewTaskModels.swift in Sources */,
 				16ABACD529F6734800FB937C /* BetterSegmentedControl+IndicatorView.swift in Sources */,
 				0FD0C6EC2200B662000C5881 /* UIFont+Extentions.swift in Sources */,
 				161F3C3F29ED3D990053158A /* CardTabBarController.swift in Sources */,
@@ -2497,6 +2546,7 @@
 				117C4AAE1FD864AD008BB445 /* UIView+Extensions.swift in Sources */,
 				161F3BD129D98AE00053158A /* LoginModels.swift in Sources */,
 				3ECAFE3A23C3996A00E83552 /* MultiLineField.swift in Sources */,
+				16ABAD362A0E40CD00FB937C /* AssignNewTaskConfigurator.swift in Sources */,
 				161F3C1529E322BE0053158A /* ParentsHomeViewController.swift in Sources */,
 				161F3C7729F31EE80053158A /* SendMoneyViewController.swift in Sources */,
 				3E1DEAF422BA634A00FAD9F4 /* UIView+Rounded.swift in Sources */,
@@ -2510,6 +2560,7 @@
 				CF8C5C9C20EF97AE00236C7B /* BaseTableViewController.swift in Sources */,
 				117C4AAB1FD86050008BB445 /* Utilities.swift in Sources */,
 				0F1B7FBB22CA6CBD0079F752 /* CurrencyCell.swift in Sources */,
+				16ABAD3A2A0E5E4F00FB937C /* GoalCollectionViewCell.swift in Sources */,
 				16ABAD0D2A08E1A900FB937C /* addGoalRouter.swift in Sources */,
 				3E1DEAF222BA632600FAD9F4 /* UIView+Border.swift in Sources */,
 				161F3C8329F3F16A0053158A /* OasisVioletButton.swift in Sources */,
@@ -2602,6 +2653,7 @@
 				161F3C6A29F31CD00053158A /* ReceiveMoneyConfigurator.swift in Sources */,
 				16ABACE929F68CDD00FB937C /* SettingsInteractor.swift in Sources */,
 				3E1DEAF022BA62FD00FAD9F4 /* UIView+Shadow.swift in Sources */,
+				16ABAD322A0E40CD00FB937C /* AssignNewTaskRouter.swift in Sources */,
 				16503F9529F5853600875075 /* PaymentsRouter.swift in Sources */,
 				161F3C0029E3157D0053158A /* SelectAgeModels.swift in Sources */,
 				161F3C3229E5AD4D0053158A /* InterestsViewController.swift in Sources */,

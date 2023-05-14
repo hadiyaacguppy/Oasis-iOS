@@ -32,6 +32,7 @@ class GoalsViewController: BaseViewController {
         return btn
     }()
     
+    
     var isThereGoals : Bool = false
 }
 
