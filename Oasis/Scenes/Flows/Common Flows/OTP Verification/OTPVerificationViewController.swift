@@ -115,18 +115,18 @@ class OTPVerificationViewController: BaseViewController {
         return lbl
     }()
     
-    fileprivate var pin : Int! {
-        get {
-            let pinString = firstPin! + secondPin! + thirdPin! + fourthPin!
-            return Int(pinString)!
-        }
-    }
-    
     fileprivate var firstPin : String?
     fileprivate var secondPin : String?
     fileprivate var thirdPin : String?
     fileprivate var fourthPin : String?
-    fileprivate var fifthPin : String?
+    fileprivate var fifthPin : String?{
+        didSet{
+            let pinString = firstPin! + secondPin! + thirdPin! + fourthPin! + fifthPin!
+            if pinString.count == 5 {
+                subscribeForVerifyingOTP(pintString: pinString)
+            }
+        }
+    }
 }
 
 //MARK:- View Lifecycle
@@ -232,9 +232,9 @@ extension OTPVerificationViewController{
             .disposed(by: self.disposeBag)
     }
     
-    func subscribeForVerifyingOTP(){
+    func subscribeForVerifyingOTP(pintString : String){
         showLoadingProgress()
-        self.interactor?.verifyOTP(pin: "\(self.pin)")
+        self.interactor?.verifyOTP(pin: pintString)
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { _ in
                 self.dismissProgress()
@@ -404,7 +404,6 @@ extension OTPVerificationViewController : UITextFieldDelegate {
                 }
                 if textField == fifthOTPTextfield {
                     fifthOTPTextfield.resignFirstResponder()
-                    subscribeForVerifyingOTP()
                 }
                 textField.text = string
                 return false
