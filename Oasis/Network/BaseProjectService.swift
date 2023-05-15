@@ -70,7 +70,15 @@ extension BaseProjectService: TargetType {
     }
     
     var headers: [String: String]? {
-       return ["token" : self.sessionRepository.currentUser?.token ?? "" ]
+        var headersDict : [String:String] = [:]
+        
+        if self.sessionRepository.userIsLoggedIn {
+            headersDict["token"] = self.sessionRepository.currentUser?.token ?? ""
+        }
+        
+        headersDict["Content-Type"] = "application/json"
+        
+       return headersDict
     }
     
     var validationType : ValidationType {
@@ -81,6 +89,6 @@ extension BaseProjectService: TargetType {
 
 extension BaseProjectService {
     func requestParameters(parameters : [String : Any]) -> Task {
-        return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
+        return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
     }
 }
