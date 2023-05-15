@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="taskTitleCollectionVC" id="gTV-IL-0wX" customClass="SuggestedTitlesCollectionViewCell" customModule="Oasis" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="93" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="93" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDc-R1-eux">
+                        <rect key="frame" x="0.0" y="0.0" width="93" height="50"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIU-ZW-2gW" customClass="BaseUIView" customModule="Oasis" customModuleProvider="target">
+                                <rect key="frame" x="15" y="10" width="64" height="29"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Kf-Pd-mZs" customClass="BaseLabel" customModule="Oasis" customModuleProvider="target">
+                                        <rect key="frame" x="11" y="4" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="5Kf-Pd-mZs" firstAttribute="centerY" secondItem="pIU-ZW-2gW" secondAttribute="centerY" id="gmG-VA-g8B"/>
+                                    <constraint firstAttribute="height" constant="29" id="qD6-9r-erT"/>
+                                    <constraint firstItem="5Kf-Pd-mZs" firstAttribute="centerX" secondItem="pIU-ZW-2gW" secondAttribute="centerX" id="ylO-03-9Hp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pIU-ZW-2gW" firstAttribute="top" secondItem="zDc-R1-eux" secondAttribute="top" constant="10" id="PIo-KJ-c1I"/>
+                            <constraint firstAttribute="trailing" secondItem="pIU-ZW-2gW" secondAttribute="trailing" constant="14" id="uYs-jj-vwG"/>
+                            <constraint firstItem="pIU-ZW-2gW" firstAttribute="leading" secondItem="zDc-R1-eux" secondAttribute="leading" constant="15" id="xb6-pF-mce"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="zDc-R1-eux" secondAttribute="trailing" id="Xdc-0e-6PP"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="zDc-R1-eux" secondAttribute="bottom" id="hW7-dY-GPV"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="zDc-R1-eux" secondAttribute="top" constant="47" id="mXn-hL-kGl"/>
+                <constraint firstItem="zDc-R1-eux" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="pmJ-LI-fyy"/>
+            </constraints>
+            <size key="customSize" width="93" height="50"/>
+            <connections>
+                <outlet property="greenBGView" destination="pIU-ZW-2gW" id="Fod-Wh-86a"/>
+                <outlet property="taskLabel" destination="5Kf-Pd-mZs" id="vog-pJ-Mxe"/>
+            </connections>
+            <point key="canvasLocation" x="170" y="20.616113744075829"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

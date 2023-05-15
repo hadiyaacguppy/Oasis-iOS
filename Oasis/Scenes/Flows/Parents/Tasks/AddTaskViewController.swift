@@ -49,12 +49,12 @@ class AddTaskViewController: BaseViewController {
         let scrollView = UIScrollView()
         scrollView.autoLayout()
         scrollView.backgroundColor = .clear
-        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
         return scrollView
     }()
     
-    //Square Views
-    lazy var suggestedTasksStackView: UIStackView = {
+    //Horizontal Labels
+    lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
@@ -64,13 +64,25 @@ class AddTaskViewController: BaseViewController {
         return stackView
     }()
     
-    //Horizontal Labels
+    private let taskTitleCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.autoLayout()
+        collectionView.register(UINib(resource: R.nib.suggestedTitlesCollectionViewCell),
+                                forCellWithReuseIdentifier: R.reuseIdentifier.taskTitleCollectionVC.identifier)
+        return collectionView
+    }()
+    
+    //Square Views
     private let tasksCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
-        collectionView.isPagingEnabled = true
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.autoLayout()
@@ -126,6 +138,10 @@ extension AddTaskViewController{
     }
     
     private func setupUI(){
+        
+        //Add Scroll & StackView
+        addScrollViewAndStackView()
+        
         //Add Top Title & Create new Task Button
         addTopTitleAndButton()
         
@@ -165,7 +181,7 @@ extension AddTaskViewController{
             suggestedTasksLabel.heightAnchor.constraint(equalToConstant: 41),
         ])
         
-        addScrollViewAndStackView()
+        
     }
     
     private func addAddChildButton(){
@@ -184,40 +200,18 @@ extension AddTaskViewController{
     private func addScrollViewAndStackView(){
         view.addSubview(scrollView)
         
-        for x in suggestedTasksdict{
-            
-            smallGreenViewInnerLabel.text = x.key
-            
-            if x.value == true{
-                suggestedTaskGreenView.backgroundColor = Constants.Colors.aquaMarine
-                smallGreenViewInnerLabel.textColor = .white
-            }else{
-                suggestedTaskGreenView.backgroundColor = .white
-                smallGreenViewInnerLabel.textColor = .black
-            }
-            suggestedTasksStackView.addArrangedSubview(suggestedTaskGreenView)
-            suggestedTaskGreenView.addSubview(smallGreenViewInnerLabel)
-            
-        }
-        scrollView.addSubview(suggestedTasksStackView)
+        scrollView.addSubview(stackView)
         
         NSLayoutConstraint.activate([
-            smallGreenViewInnerLabel.centerYAnchor.constraint(equalTo: suggestedTaskGreenView.centerYAnchor),
-            smallGreenViewInnerLabel.centerXAnchor.constraint(equalTo: suggestedTaskGreenView.centerXAnchor),
-            
-            suggestedTaskGreenView.heightAnchor.constraint(equalToConstant: 29),
-            suggestedTaskGreenView.widthAnchor.constraint(equalToConstant: 64),
-            
-            //Scroll View Constraints
-            scrollView.topAnchor.constraint(equalTo: suggestedTasksLabel.bottomAnchor, constant: 10),
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            scrollView.heightAnchor.constraint(equalToConstant: 30),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             
-            suggestedTasksStackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            suggestedTasksStackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 30),
-            suggestedTasksStackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            suggestedTasksStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant : 15),
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 15),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant : 15),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant : 15)
         ])
         
         scrollView.contentInset = .init(top: 0, left: 10, bottom: 0, right: 0)
@@ -235,7 +229,7 @@ extension AddTaskViewController{
         
         NSLayoutConstraint.activate([
             tasksCollectionView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 35),
-            tasksCollectionView.topAnchor.constraint(equalTo: suggestedTasksStackView.bottomAnchor, constant: 30),
+            tasksCollectionView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 30),
             tasksCollectionView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -30),
             tasksCollectionView.bottomAnchor.constraint(equalTo: addChildButton.topAnchor, constant: -10)
         
@@ -269,14 +263,26 @@ extension AddTaskViewController{
 extension AddTaskViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        if collectionView == tasksCollectionView{
+            return 6
+        }else{
+            return 8
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.tasksCollectionCell, for: indexPath)!
-        cell.setupCell(title: "Gardening", subTitle: "Water plants in the garden and indoors")
+        if collectionView == tasksCollectionView{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.tasksCollectionCell, for: indexPath)!
+            cell.setupCell(title: "Gardening", subTitle: "Water plants in the garden and indoors")
+            
+            return cell
+        }else{
+            let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.taskTitleCollectionVC, for: indexPath)!
+            cell.setupCell(taskDict: suggestedTasksdict)
+            
+            return cell
+        }
         
-        return cell
     }
 }
 
@@ -288,7 +294,12 @@ extension AddTaskViewController: UICollectionViewDelegateFlowLayout {
             
         let width = (collectionView.frame.width-leftAndRightPaddings)/numberOfItemsPerRow
         return CGSize(width: width, height: width) // You can change width and height here as pr your requirement `*/
-       return CGSize(width: 153, height: 164)
+        if collectionView == tasksCollectionView{
+            return CGSize(width: 153, height: 164)
+        }else{
+            return CGSize(width: 93, height: 50)
+        }
+       
     }
     
     
@@ -296,6 +307,7 @@ extension AddTaskViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 17.0
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout

@@ -241,6 +241,8 @@
 		16ABAD362A0E40CD00FB937C /* AssignNewTaskConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD2F2A0E40CD00FB937C /* AssignNewTaskConfigurator.swift */; };
 		16ABAD3A2A0E5E4F00FB937C /* GoalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD382A0E5E4F00FB937C /* GoalCollectionViewCell.swift */; };
 		16ABAD3B2A0E5E4F00FB937C /* GoalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16ABAD392A0E5E4F00FB937C /* GoalCollectionViewCell.xib */; };
+		16B044472A1244FB003EC59D /* SuggestedTitlesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B044452A1244FB003EC59D /* SuggestedTitlesCollectionViewCell.swift */; };
+		16B044482A1244FB003EC59D /* SuggestedTitlesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16B044462A1244FB003EC59D /* SuggestedTitlesCollectionViewCell.xib */; };
 		1ACED86ADAA2441F495B6912 /* Pods_AnalyticsManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B66C5D6B0826B75B9813C2 /* Pods_AnalyticsManager.framework */; };
 		374FA5CB00801009F6B43FDB /* Pods_OasisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64659B367BA850135AB1D5E9 /* Pods_OasisTests.framework */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
@@ -651,6 +653,8 @@
 		16ABAD2F2A0E40CD00FB937C /* AssignNewTaskConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignNewTaskConfigurator.swift; sourceTree = "<group>"; };
 		16ABAD382A0E5E4F00FB937C /* GoalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCollectionViewCell.swift; sourceTree = "<group>"; };
 		16ABAD392A0E5E4F00FB937C /* GoalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalCollectionViewCell.xib; sourceTree = "<group>"; };
+		16B044452A1244FB003EC59D /* SuggestedTitlesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedTitlesCollectionViewCell.swift; sourceTree = "<group>"; };
+		16B044462A1244FB003EC59D /* SuggestedTitlesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestedTitlesCollectionViewCell.xib; sourceTree = "<group>"; };
 		1D7408F9BE9E6B05F6D17E8A /* Pods-AnalyticsManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnalyticsManager/Pods-AnalyticsManager.release.xcconfig"; sourceTree = "<group>"; };
 		22C3C119E084FE2B0FF3C34F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
@@ -1551,6 +1555,7 @@
 			isa = PBXGroup;
 			children = (
 				16ABAD282A0E40AA00FB937C /* Assign New Task */,
+				16B044442A1244BA003EC59D /* SuggestedTasksTitlesCollectionViewCell */,
 				16ABAD212A0914D300FB937C /* Suggested Tasks Collection View Cell */,
 				16ABAD132A0910AB00FB937C /* AddTask.storyboard */,
 				16ABAD142A0910AB00FB937C /* AddTaskPresenter.swift */,
@@ -1593,6 +1598,15 @@
 				16ABAD392A0E5E4F00FB937C /* GoalCollectionViewCell.xib */,
 			);
 			path = "Goal CollectionViewCell";
+			sourceTree = "<group>";
+		};
+		16B044442A1244BA003EC59D /* SuggestedTasksTitlesCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				16B044452A1244FB003EC59D /* SuggestedTitlesCollectionViewCell.swift */,
+				16B044462A1244FB003EC59D /* SuggestedTitlesCollectionViewCell.xib */,
+			);
+			path = SuggestedTasksTitlesCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		3E1DEAEE22BA62F400FAD9F4 /* UIView+Helpers */ = {
@@ -2142,6 +2156,7 @@
 				16503FCB29F5C7F200875075 /* ParentCardFSPagerCell.xib in Resources */,
 				16ABAD0B2A08E1A900FB937C /* addGoal.storyboard in Resources */,
 				161F3BAD29D4BF670053158A /* Montserrat-Regular.ttf in Resources */,
+				16B044482A1244FB003EC59D /* SuggestedTitlesCollectionViewCell.xib in Resources */,
 				161F3C8129F3F1190053158A /* UpcomingPaymentCollectionViewCell.xib in Resources */,
 				161F3BCE29D98AE00053158A /* Login.storyboard in Resources */,
 				0F1B7FAD22CA6C910079F752 /* Countries.bundle in Resources */,
@@ -2584,6 +2599,7 @@
 				6754244D20EE7FF600783123 /* BaseNavigationController.swift in Sources */,
 				161F3BE329DAD6FB0053158A /* OTPVerificationInteractor.swift in Sources */,
 				16503F8A29F5409900875075 /* OccasionCollectionViewCell.swift in Sources */,
+				16B044472A1244FB003EC59D /* SuggestedTitlesCollectionViewCell.swift in Sources */,
 				672909FC210E43EA00632C4F /* PlaceHolderView.swift in Sources */,
 				161F3BE029DAD6FB0053158A /* OTPVerificationRouter.swift in Sources */,
 				67F03A5E26F20B7000ED91ED /* MediaManager.swift in Sources */,
