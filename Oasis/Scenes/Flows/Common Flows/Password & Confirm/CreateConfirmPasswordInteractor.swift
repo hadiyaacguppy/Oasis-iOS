@@ -33,7 +33,8 @@ extension CreateConfirmPasswordInteractor: CreateConfirmPasswordViewControllerOu
         dict["last_name"] = RegistrationDataManager.current.userLastName!
         dict["password"] = password
         dict["age"] = RegistrationDataManager.current.userAge!
-        
+        dict["file"] = ""
+        dict["mobile"] = "70024284"
         return Single<Void>.create(subscribe: { single in
             APIClient.shared.sendOTP(dict: dict)
                 .subscribe(onSuccess: { [weak self] _ in
