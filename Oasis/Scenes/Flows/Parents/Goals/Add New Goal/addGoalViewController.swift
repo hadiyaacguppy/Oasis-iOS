@@ -46,14 +46,6 @@ class addGoalViewController: BaseViewController {
         return stackView
     }()
     
-    lazy var goalInfoStackView: UIStackView = {
-        UIStackView()
-            .axis(.vertical)
-            .spacing(15)
-            .autoLayout()
-            .distributionMode(.fill)
-    }()
-    
     lazy var pictureTitleLabel : BaseLabel = {
         let lbl = BaseLabel()
         lbl.text = "Picture"
@@ -87,6 +79,7 @@ class addGoalViewController: BaseViewController {
     lazy var enddateLabel : BaseLabel = {
         let lbl = BaseLabel()
         lbl.text = "End Date"
+        lbl.autoLayout()
         lbl.style = .init(font: MainFont.bold.with(size: 20), color: .black)
         return lbl
     }()
@@ -182,38 +175,33 @@ extension addGoalViewController{
         
         //Third, add the GoalInfo Stack View
         addGoalInfoStackView()
-    }
-    
-    private func addGoalInfoStackView(){
-        
-        stackView.addArrangedSubview(goalInfoStackView)
-        
-        let goalInfo1 = TitleWithTextFieldView.init(requestTitle: "Goal’s name",
-                                                     placeHolderTxt: "What’s your goal?",
-                                                     usertext: "",
-                                                     isAgeRequest: false,
-                                                     hasEditView: false)
-        
-        let goalInfo2 = AmountWithCurrencyView.init(currency: "LBP", titleLbl: "Amount")
-        
-        goalInfoStackView.addArrangedSubview(goalInfo1)
-        goalInfoStackView.addArrangedSubview(goalInfo2)
-    
         //Fourth, add upload Picture view
         addEndDateView()
     }
     
+    private func addGoalInfoStackView(){
+        let goalInfo1 = TitleWithTextFieldView.init(requestTitle: "Goal’s name",
+                                                    placeHolderTxt: "What’s your goal?",
+                                                    usertext: "",
+                                                    isAgeRequest: false,
+                                                    hasEditView: false)
+        
+        let goalInfo2 = AmountWithCurrencyView.init(currency: "LBP", titleLbl: "Amount")
+        
+        stackView.addArrangedSubview(goalInfo1)
+        stackView.addArrangedSubview(goalInfo2)
+    }
+    
     //Add End Date label and image
     private func addEndDateView() {
-        
-        goalInfoStackView.addArrangedSubview(endDateView)
+        stackView.addArrangedSubview(endDateView)
         
         endDateView.addSubview(calendarImageView)
         endDateView.addSubview(enddateLabel)
         
         NSLayoutConstraint.activate([
             endDateView.heightAnchor.constraint(equalToConstant: 50),
-        
+            
             enddateLabel.leadingAnchor.constraint(equalTo: endDateView.leadingAnchor, constant: 10),
             enddateLabel.centerYAnchor.constraint(equalTo: endDateView.centerYAnchor),
             enddateLabel.heightAnchor.constraint(equalToConstant: 40),
@@ -222,7 +210,7 @@ extension addGoalViewController{
             calendarImageView.heightAnchor.constraint(equalToConstant: 35),
             calendarImageView.widthAnchor.constraint(equalToConstant: 35),
             calendarImageView.centerYAnchor.constraint(equalTo: endDateView.centerYAnchor)
-            ])
+        ])
         
         //Fifth, add upload picture view
         addUploadPictureView()
@@ -232,7 +220,7 @@ extension addGoalViewController{
     private func addUploadPictureView(){
         
         //goalInfoStackView.addArrangedSubview(pictureTitleLabel)
-        goalInfoStackView.addArrangedSubview(uploadPictureButtonView)
+        stackView.addArrangedSubview(uploadPictureButtonView)
         
         let iconImg = BaseImageView(frame: .zero)
         iconImg.contentMode = .scaleAspectFit
@@ -243,7 +231,7 @@ extension addGoalViewController{
         lbl.autoLayout()
         lbl.style = .init(font: MainFont.medium.with(size: 16), color: .black)
         lbl.text = "Upload a picture".localized
-
+        
         uploadPictureButtonView.addSubview(iconImg)
         uploadPictureButtonView.addSubview(lbl)
         
@@ -291,7 +279,7 @@ extension addGoalViewController{
             guard let self = self  else { return }
             self.showPlaceHolderView(withAppearanceType: .loading,
                                      title: Constants.PlaceHolderView.Texts.wait)
-            #warning("Retry Action does not set")
+#warning("Retry Action does not set")
         }
     }
 }
