@@ -189,6 +189,12 @@
 		16503FC629F5C26A00875075 /* ParentProfileConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503FBF29F5C26A00875075 /* ParentProfileConfigurator.swift */; };
 		16503FCA29F5C7F200875075 /* ParentCardFSPagerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503FC829F5C7F200875075 /* ParentCardFSPagerCell.swift */; };
 		16503FCB29F5C7F200875075 /* ParentCardFSPagerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16503FC929F5C7F200875075 /* ParentCardFSPagerCell.xib */; };
+		169976EA2A15011D00FDEC97 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976E92A15011D00FDEC97 /* Goal.swift */; };
+		169976EC2A15012500FDEC97 /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976EB2A15012500FDEC97 /* Tasks.swift */; };
+		169976EF2A1504C200FDEC97 /* TaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976EE2A1504C200FDEC97 /* TaskType.swift */; };
+		169976F12A15100B00FDEC97 /* PaymentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976F02A15100B00FDEC97 /* PaymentType.swift */; };
+		169976F32A15127B00FDEC97 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976F22A15127B00FDEC97 /* Payment.swift */; };
+		169976F52A1515B200FDEC97 /* InterestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976F42A1515B200FDEC97 /* InterestType.swift */; };
 		16ABACD029F6734800FB937C /* BetterSegmentedControl+Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACCA29F6734800FB937C /* BetterSegmentedControl+Options.swift */; };
 		16ABACD129F6734800FB937C /* BetterSegmentedControl+PredefinedStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACCB29F6734800FB937C /* BetterSegmentedControl+PredefinedStyles.swift */; };
 		16ABACD229F6734800FB937C /* BetterSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACCC29F6734800FB937C /* BetterSegmentedControl.swift */; };
@@ -216,6 +222,7 @@
 		16ABACFD2A04399400FB937C /* AddChildConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACF62A04399400FB937C /* AddChildConfigurator.swift */; };
 		16ABAD002A04F4A300FB937C /* TitleWithTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABACFF2A04F4A300FB937C /* TitleWithTextFieldView.swift */; };
 		16ABAD022A07F23800FB937C /* RegistrationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD012A07F23800FB937C /* RegistrationDataManager.swift */; };
+		16B0444A2A14FC51003EC59D /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B044492A14FC51003EC59D /* Child.swift */; };
 		1ACED86ADAA2441F495B6912 /* Pods_AnalyticsManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B66C5D6B0826B75B9813C2 /* Pods_AnalyticsManager.framework */; };
 		374FA5CB00801009F6B43FDB /* Pods_OasisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64659B367BA850135AB1D5E9 /* Pods_OasisTests.framework */; };
 		3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */; };
@@ -574,6 +581,12 @@
 		16503FBF29F5C26A00875075 /* ParentProfileConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentProfileConfigurator.swift; sourceTree = "<group>"; };
 		16503FC829F5C7F200875075 /* ParentCardFSPagerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentCardFSPagerCell.swift; sourceTree = "<group>"; };
 		16503FC929F5C7F200875075 /* ParentCardFSPagerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParentCardFSPagerCell.xib; sourceTree = "<group>"; };
+		169976E92A15011D00FDEC97 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		169976EB2A15012500FDEC97 /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
+		169976EE2A1504C200FDEC97 /* TaskType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskType.swift; sourceTree = "<group>"; };
+		169976F02A15100B00FDEC97 /* PaymentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentType.swift; sourceTree = "<group>"; };
+		169976F22A15127B00FDEC97 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		169976F42A1515B200FDEC97 /* InterestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestType.swift; sourceTree = "<group>"; };
 		16ABACCA29F6734800FB937C /* BetterSegmentedControl+Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BetterSegmentedControl+Options.swift"; sourceTree = "<group>"; };
 		16ABACCB29F6734800FB937C /* BetterSegmentedControl+PredefinedStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BetterSegmentedControl+PredefinedStyles.swift"; sourceTree = "<group>"; };
 		16ABACCC29F6734800FB937C /* BetterSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetterSegmentedControl.swift; sourceTree = "<group>"; };
@@ -601,6 +614,7 @@
 		16ABACF62A04399400FB937C /* AddChildConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildConfigurator.swift; sourceTree = "<group>"; };
 		16ABACFF2A04F4A300FB937C /* TitleWithTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleWithTextFieldView.swift; sourceTree = "<group>"; };
 		16ABAD012A07F23800FB937C /* RegistrationDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDataManager.swift; sourceTree = "<group>"; };
+		16B044492A14FC51003EC59D /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
 		1D7408F9BE9E6B05F6D17E8A /* Pods-AnalyticsManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnalyticsManager/Pods-AnalyticsManager.release.xcconfig"; sourceTree = "<group>"; };
 		22C3C119E084FE2B0FF3C34F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		3E0129C321257453000CC626 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
@@ -1437,6 +1451,20 @@
 			path = "Common Flows";
 			sourceTree = "<group>";
 		};
+		169976ED2A15012F00FDEC97 /* App Models */ = {
+			isa = PBXGroup;
+			children = (
+				16B044492A14FC51003EC59D /* Child.swift */,
+				169976EB2A15012500FDEC97 /* Tasks.swift */,
+				169976E92A15011D00FDEC97 /* Goal.swift */,
+				169976EE2A1504C200FDEC97 /* TaskType.swift */,
+				169976F02A15100B00FDEC97 /* PaymentType.swift */,
+				169976F22A15127B00FDEC97 /* Payment.swift */,
+				169976F42A1515B200FDEC97 /* InterestType.swift */,
+			);
+			path = "App Models";
+			sourceTree = "<group>";
+		};
 		16ABACC929F6733700FB937C /* Segmented Control */ = {
 			isa = PBXGroup;
 			children = (
@@ -1689,6 +1717,7 @@
 		CF7823B520EF95BC003069BD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				169976ED2A15012F00FDEC97 /* App Models */,
 				CFC2BFE5216CA3C800DC31A7 /* ErrorViewModel.swift */,
 				67C9591026247EF300A67399 /* APIErrorModel.swift */,
 			);
@@ -2297,6 +2326,7 @@
 				161F3C0729E319050053158A /* AgeTableViewCell.swift in Sources */,
 				CFF69D6D219554C4003BE6BF /* CGPoint+Extensions.swift in Sources */,
 				0F1B7FB022CA6C9D0079F752 /* UISearchBar+Extensions.swift in Sources */,
+				169976EA2A15011D00FDEC97 /* Goal.swift in Sources */,
 				16503F8629F53CDE00875075 /* PeopleCollectionViewCell.swift in Sources */,
 				16ABACFB2A04399400FB937C /* AddChildViewController.swift in Sources */,
 				161F3BD429D98AE00053158A /* LoginConfigurator.swift in Sources */,
@@ -2314,6 +2344,7 @@
 				161F3C7929F31EE80053158A /* SendMoneyConfigurator.swift in Sources */,
 				161F3C2329E5ACD40053158A /* PinterestLayoutDelegate.swift in Sources */,
 				CF8C5C9E20EF9CA400236C7B /* DatePickerDialog.swift in Sources */,
+				169976EC2A15012500FDEC97 /* Tasks.swift in Sources */,
 				CF564702211B142E0092EFBD /* OneSignalPushService.swift in Sources */,
 				161F3C5B29F31A910053158A /* BlueToastView.swift in Sources */,
 				161F3BFE29E3157D0053158A /* SelectAgePresenter.swift in Sources */,
@@ -2349,6 +2380,7 @@
 				922EED0328466BA800D19A01 /* Queue.swift in Sources */,
 				CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */,
 				672909FE210E43F900632C4F /* PlaceHolderCreator.swift in Sources */,
+				16B0444A2A14FC51003EC59D /* Child.swift in Sources */,
 				117C4AB01FD864DE008BB445 /* UILabel+Extensions.swift in Sources */,
 				16ABACFC2A04399400FB937C /* AddChildInteractor.swift in Sources */,
 				16503F9729F5853600875075 /* PaymentsViewController.swift in Sources */,
@@ -2379,6 +2411,7 @@
 				161F3C5029F277A30053158A /* SendGiftPresenter.swift in Sources */,
 				3E8E350422CA0BDE009A3113 /* Observable+Operators.swift in Sources */,
 				16503F9629F5853600875075 /* PaymentsModels.swift in Sources */,
+				169976F52A1515B200FDEC97 /* InterestType.swift in Sources */,
 				16ABACF92A04399400FB937C /* AddChildRouter.swift in Sources */,
 				161F3B9D29D4BD160053158A /* OnboardingController.swift in Sources */,
 				161F3C7529F31EE80053158A /* SendMoneyRouter.swift in Sources */,
@@ -2424,6 +2457,7 @@
 				161F3BDF29DAD6FB0053158A /* OTPVerificationPresenter.swift in Sources */,
 				16ABAD002A04F4A300FB937C /* TitleWithTextFieldView.swift in Sources */,
 				161F3C2429E5ACD40053158A /* PinterestLayoutAttributes.swift in Sources */,
+				169976F12A15100B00FDEC97 /* PaymentType.swift in Sources */,
 				161F3BC429D98A0E0053158A /* RegistrationViewController.swift in Sources */,
 				161F3C1229E322BE0053158A /* ParentsHomePresenter.swift in Sources */,
 				CF8C5C9C20EF97AE00236C7B /* BaseTableViewController.swift in Sources */,
@@ -2437,6 +2471,7 @@
 				161F3C4629EDAC820053158A /* OasisGradientButton.swift in Sources */,
 				CF40385D216CF78F001F649B /* InitialInteractor.swift in Sources */,
 				3EDC4153224E875300624D2B /* Reactive+UIView.swift in Sources */,
+				169976EF2A1504C200FDEC97 /* TaskType.swift in Sources */,
 				161F3C1629E322BE0053158A /* ParentsHomeInteractor.swift in Sources */,
 				161F3C6629F31CD00053158A /* ReceiveMoneyRouter.swift in Sources */,
 				3E1DEAFD22BA674D00FAD9F4 /* NavigationBarType.swift in Sources */,
@@ -2475,6 +2510,7 @@
 				16ABACE829F68CDD00FB937C /* SettingsViewController.swift in Sources */,
 				161F3C8029F3F1190053158A /* UpcomingPaymentCollectionViewCell.swift in Sources */,
 				CF564731211B1C910092EFBD /* InputValidationExpression.swift in Sources */,
+				169976F32A15127B00FDEC97 /* Payment.swift in Sources */,
 				161F3C3029E5AD4D0053158A /* InterestsRouter.swift in Sources */,
 				16ABACEF2A03AEAD00FB937C /* ChildView.swift in Sources */,
 				CF8C5CA020EF9CCA00236C7B /* BaseNavigationBar.swift in Sources */,
