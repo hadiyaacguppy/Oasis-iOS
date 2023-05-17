@@ -32,8 +32,39 @@ class GoalsViewController: BaseViewController {
         return btn
     }()
     
+    lazy var scrollView: UIScrollView = {
+       let scrollView = UIScrollView()
+       scrollView.autoLayout()
+       scrollView.backgroundColor = .clear
+       scrollView.showsVerticalScrollIndicator = false
+       return scrollView
+   }()
+   
+
+   lazy var stackView: UIStackView = {
+       let stackView = UIStackView()
+       stackView.axis = .vertical
+       stackView.distribution = .fillEqually
+       stackView.spacing = 19
+       stackView.autoLayout()
+       stackView.backgroundColor = .clear
+       return stackView
+   }()
     
-    var isThereGoals : Bool = false
+    private let goalsCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.autoLayout()
+        collectionView.register(UINib(resource: R.nib.goalCollectionViewCell),
+                                forCellWithReuseIdentifier: R.reuseIdentifier.goalCollectionVC.identifier)
+        return collectionView
+    }()
+    
+    var isThereGoals : Bool = true
 }
 
 //MARK:- View Lifecycle
@@ -62,8 +93,9 @@ extension GoalsViewController{
     private func setupUI(){
         addTitle()
         addButton()
+        addScrollViewAndStackView()
         if isThereGoals{
-            
+            addGoalsCollectionView()
         }else{
             addNoGoalsPlaceholder()
         }
@@ -86,6 +118,45 @@ extension GoalsViewController{
             addGoalButton.heightAnchor.constraint(equalToConstant: 58),
             addGoalButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 38)
         ])
+        
+        addGoalButton.onTap {
+            self.router?.pushToAddGoalController()
+        }
+    }
+    
+    private func addScrollViewAndStackView(){
+        view.addSubview(scrollView)
+        
+        scrollView.addSubview(stackView)
+        
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: addGoalButton.bottomAnchor, constant: 13),
+            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 15),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -15),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -30)
+        ])
+        scrollView.contentInset = .init(top: 0, left: 0, bottom: 50, right: 0)
+    }
+    private func addGoalsCollectionView(){
+        stackView.addArrangedSubview(goalsCollectionView)
+        
+        goalsCollectionView.delegate = self
+        goalsCollectionView.dataSource = self
+        //goalsCollectionView.isScrollEnabled = false
+        
+        /*NSLayoutConstraint.activate([
+            goalsCollectionView.topAnchor.constraint(equalTo: stackView.topAnchor),
+            goalsCollectionView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            goalsCollectionView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor)
+        
+        ])*/
+        
     }
     
     private func addNoGoalsPlaceholder(){
@@ -157,3 +228,39 @@ extension GoalsViewController{
 }
 
 
+extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.goalCollectionVC, for: indexPath)!
+       
+        cell.setupCell(titleForGoal: "Trip to Paris", savedValue: "LBP 550,000", outOfValue: "LBP 5,000,000", percentageValue: 40.0)
+        return cell
+        
+    }
+}
+
+extension GoalsViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: 327, height: 279)
+       
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 17.0
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout
+                        collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 21.0
+    }
+}

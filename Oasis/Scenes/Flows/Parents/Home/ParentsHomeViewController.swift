@@ -739,9 +739,6 @@ extension ParentsHomeViewController {
             label.heightAnchor.constraint(equalToConstant: 21)
         ])
         
-        topUpActionView.onTap {
-            self.router?.pushToAddTaskController()
-        }
     }
     
     private func setupSubscription(){

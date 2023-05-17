@@ -219,7 +219,7 @@ extension AddChildViewController{
         ])
         
         nextButton.onTap {
-            self.router?.pushToAddGoalController()
+            self.router?.pushToAddTaskController()
         }
     }
     

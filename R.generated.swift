@@ -1548,7 +1548,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 9 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 10 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `TasksCollectionCell`.
     static let tasksCollectionCell: Rswift.ReuseIdentifier<TasksCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "TasksCollectionCell")
@@ -1558,6 +1558,8 @@ struct R: Rswift.Validatable {
     static let ageCell: Rswift.ReuseIdentifier<AgeTableViewCell> = Rswift.ReuseIdentifier(identifier: "ageCell")
     /// Reuse identifier `childrenFSPagerCell`.
     static let childrenFSPagerCell: Rswift.ReuseIdentifier<ChildrenFSPagerViewCell> = Rswift.ReuseIdentifier(identifier: "childrenFSPagerCell")
+    /// Reuse identifier `goalCollectionVC`.
+    static let goalCollectionVC: Rswift.ReuseIdentifier<GoalCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "goalCollectionVC")
     /// Reuse identifier `interestsCell`.
     static let interestsCell: Rswift.ReuseIdentifier<InterestsCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "interestsCell")
     /// Reuse identifier `occasionCollectionCell`.
@@ -1637,8 +1639,11 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _GoalCollectionViewCell: Rswift.NibResourceType {
+    struct _GoalCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = GoalCollectionViewCell
+
       let bundle = R.hostingBundle
+      let identifier = "goalCollectionVC"
       let name = "GoalCollectionViewCell"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GoalCollectionViewCell? {

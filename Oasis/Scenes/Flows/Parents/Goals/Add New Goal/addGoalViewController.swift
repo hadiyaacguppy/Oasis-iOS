@@ -114,6 +114,7 @@ extension addGoalViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavBarAppearance()
+        //self.hidesBottomBarWhenPushed = true
     }
     
     private func setupUI(){
@@ -258,6 +259,10 @@ extension addGoalViewController{
             goalButton.heightAnchor.constraint(equalToConstant: 48),
             goalButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -68)
         ])
+        
+        goalButton.onTap {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
 }

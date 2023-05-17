@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GoalCollectionViewCell" customModule="Oasis" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="goalCollectionVC" id="gTV-IL-0wX" customClass="GoalCollectionViewCell" customModule="Oasis" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="327" height="279"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -65,18 +65,29 @@
                                 <rect key="frame" x="0.0" y="235" width="327" height="44"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MmP-49-ckd" customClass="BaseUIView" customModule="Oasis" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="20" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="77" height="44"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fae-Zp-Col" customClass="BaseLabel" customModule="Oasis" customModuleProvider="target">
+                                                <rect key="frame" x="17.666666666666671" y="11.666666666666657" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="20" id="7hZ-Eb-tfd"/>
+                                            <constraint firstItem="fae-Zp-Col" firstAttribute="centerX" secondItem="MmP-49-ckd" secondAttribute="centerX" id="BFd-6a-KIL"/>
+                                            <constraint firstAttribute="width" constant="77" id="jXL-5L-S7F"/>
+                                            <constraint firstItem="fae-Zp-Col" firstAttribute="centerY" secondItem="MmP-49-ckd" secondAttribute="centerY" id="vsA-Ub-ix3"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="MmP-49-ckd" firstAttribute="height" secondItem="kBc-yf-mxa" secondAttribute="height" id="GgT-Fe-aDo"/>
+                                    <constraint firstItem="MmP-49-ckd" firstAttribute="top" secondItem="kBc-yf-mxa" secondAttribute="top" id="Q3M-op-NaO"/>
                                     <constraint firstAttribute="bottom" secondItem="MmP-49-ckd" secondAttribute="bottom" id="hUz-zo-iAL"/>
                                     <constraint firstItem="MmP-49-ckd" firstAttribute="leading" secondItem="kBc-yf-mxa" secondAttribute="leading" id="mTf-jg-adD"/>
+                                    <constraint firstAttribute="height" constant="44" id="xeh-gJ-cs1"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xC0-ys-2Oh" customClass="BaseLabel" customModule="Oasis" customModuleProvider="target">
@@ -129,6 +140,7 @@
                 <outlet property="outOfValuelabel" destination="xC0-ys-2Oh" id="c3d-17-1Yh"/>
                 <outlet property="outofLabel" destination="W8v-Cd-h7L" id="MaL-Yl-Hbu"/>
                 <outlet property="percentageGreenView" destination="MmP-49-ckd" id="uWC-WC-5Qx"/>
+                <outlet property="percentageLabel" destination="fae-Zp-Col" id="ihT-nk-5ze"/>
                 <outlet property="savedValueLabel" destination="XKe-r3-4gm" id="c1p-MJ-cZj"/>
                 <outlet property="savedlabel" destination="GaB-b9-LS9" id="3Cr-ZO-If2"/>
             </connections>

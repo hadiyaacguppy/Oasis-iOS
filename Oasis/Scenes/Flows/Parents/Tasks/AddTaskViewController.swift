@@ -19,12 +19,9 @@ class AddTaskViewController: BaseViewController {
     var interactor: AddTaskViewControllerOutput?
     var router: AddTaskRouter?
     
-    lazy var topTitleLabel :  BaseLabel = {
-        let lbl = BaseLabel()
-        
-        lbl.style = .init(font: MainFont.bold.with(size: 27), color: .black)
+    lazy var topTitleLabel :  ControllerLargeTitleLabel = {
+        let lbl = ControllerLargeTitleLabel()
         lbl.text = "Add a Task".localized
-        lbl.autoLayout()
         return lbl
     }()
     
@@ -138,19 +135,16 @@ extension AddTaskViewController{
     }
     
     private func setupUI(){
-        
-        //Add Scroll & StackView
-        addScrollViewAndStackView()
-        
-        //Add Top Title & Create new Task Button
+
         addTopTitleAndButton()
         
-        //Add AddChild Button
         addAddChildButton()
         
-        //Add Suggested Tasks
+        addScrollViewAndStackView()
+        
         addSuggestedTasksLabel()
         
+        addsuggestedTasksCollectionView()
     }
     
     //Top Title
@@ -163,25 +157,18 @@ extension AddTaskViewController{
         NSLayoutConstraint.activate([
             topTitleLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10),
             topTitleLabel.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 35),
+            topTitleLabel.heightAnchor.constraint(equalToConstant: 40),
             
             createTaskButton.leadingAnchor.constraint(equalTo: topTitleLabel.leadingAnchor),
             createTaskButton.topAnchor.constraint(equalTo: topTitleLabel.bottomAnchor, constant: 20),
-            createTaskButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -30),
+            createTaskButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -30),
             createTaskButton.heightAnchor.constraint(equalToConstant: 58)
         ])
-                
     }
     
     private func addSuggestedTasksLabel(){
-        self.view.addSubview(suggestedTasksLabel)
-        
-        NSLayoutConstraint.activate([
-            suggestedTasksLabel.leadingAnchor.constraint(equalTo: topTitleLabel.leadingAnchor),
-            suggestedTasksLabel.topAnchor.constraint(equalTo: createTaskButton.bottomAnchor, constant: 30),
-            suggestedTasksLabel.heightAnchor.constraint(equalToConstant: 41),
-        ])
-        
-        
+        stackView.addArrangedSubview(suggestedTasksLabel)
+        suggestedTasksLabel.heightAnchor.constraint(equalToConstant: 41).isActive = true
     }
     
     private func addAddChildButton(){
@@ -203,37 +190,25 @@ extension AddTaskViewController{
         scrollView.addSubview(stackView)
         
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.topAnchor.constraint(equalTo: createTaskButton.bottomAnchor, constant: 40),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             
-            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant : 15),
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 15),
             stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant : 15),
-            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant : 15)
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant : -15),
+            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -30)
         ])
-        
-        scrollView.contentInset = .init(top: 0, left: 10, bottom: 0, right: 0)
-        
-        addsuggestedTasksCollectionView()
-        
     }
     
     //Tasks collectionView
     private func addsuggestedTasksCollectionView(){
-        view.addSubview(tasksCollectionView)
+        stackView.addArrangedSubview(tasksCollectionView)
         
         tasksCollectionView.dataSource = self
         tasksCollectionView.delegate = self
-        
-        NSLayoutConstraint.activate([
-            tasksCollectionView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 35),
-            tasksCollectionView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 30),
-            tasksCollectionView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -30),
-            tasksCollectionView.bottomAnchor.constraint(equalTo: addChildButton.topAnchor, constant: -10)
-        
-        ])
     }
     
 }
