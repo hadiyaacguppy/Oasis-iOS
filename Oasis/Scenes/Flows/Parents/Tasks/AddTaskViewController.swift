@@ -109,7 +109,7 @@ class AddTaskViewController: BaseViewController {
         return btn
     }()
     
-    private let suggestedTasksdict : [String : Bool] = ["ALL" : true, "LEARNING" : false, "SOCIAL" : false, "HOUSEKEEPING" : false]
+    private let suggestedTasksArray : [String] = ["ALL","LEARNING","SOCIAL","HOUSEKEEPING","PETS","FAMILY"]
 }
 
 //MARK:- View Lifecycle
@@ -144,7 +144,7 @@ extension AddTaskViewController{
         
         addSuggestedTasksLabel()
         
-        addsuggestedTasksCollectionView()
+        addCollectionViews()
     }
     
     //Top Title
@@ -193,7 +193,7 @@ extension AddTaskViewController{
             scrollView.topAnchor.constraint(equalTo: createTaskButton.bottomAnchor, constant: 40),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: addChildButton.topAnchor, constant: -15),
             
             stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 15),
@@ -204,8 +204,12 @@ extension AddTaskViewController{
     }
     
     //Tasks collectionView
-    private func addsuggestedTasksCollectionView(){
+    private func addCollectionViews(){
+        stackView.addArrangedSubview(taskTitleCollectionView)
         stackView.addArrangedSubview(tasksCollectionView)
+        
+        taskTitleCollectionView.delegate = self
+        taskTitleCollectionView.dataSource = self
         
         tasksCollectionView.dataSource = self
         tasksCollectionView.delegate = self
@@ -239,9 +243,9 @@ extension AddTaskViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == tasksCollectionView{
-            return 6
+            return 5
         }else{
-            return 8
+            return 6
         }
     }
     
@@ -253,7 +257,7 @@ extension AddTaskViewController: UICollectionViewDelegate, UICollectionViewDataS
             return cell
         }else{
             let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.taskTitleCollectionVC, for: indexPath)!
-            cell.setupCell(taskDict: suggestedTasksdict)
+            cell.setupCell(taskTitle: suggestedTasksArray[indexPath.row], indexOfCell: indexPath.row)
             
             return cell
         }
