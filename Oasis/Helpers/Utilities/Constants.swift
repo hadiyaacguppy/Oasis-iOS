@@ -21,7 +21,7 @@ enum DateFormats : String {
 struct Constants {
 
     struct Network {
-        static let baseURl : String = "https://google.com/"
+        static let baseURl : String = "http://3.16.20.24/"
     }
     
     struct Colors {

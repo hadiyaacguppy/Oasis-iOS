@@ -91,10 +91,17 @@ class SelectAgeViewController: BaseViewController {
     }()
     
     var datasource = Array(7...70).map{ "\($0)" }
+    
     var firstVisibleIndexPath: IndexPath = IndexPath(row: 0, section: 0){
         didSet{
             tableView.reloadData()
             tableView.scrollToRow(at: firstVisibleIndexPath, at: .top, animated: true)
+        }
+    }
+    
+    private var selectedAge : String = "7"{
+        didSet{
+            RegistrationDataManager.current.userAge = selectedAge
         }
     }
 }
@@ -182,7 +189,6 @@ extension SelectAgeViewController{
         ])
     }
     
-    
     private func addYearsOldLabel(){
         view.addSubview(yearsOldStaticLabel)
         NSLayoutConstraint.activate([
@@ -253,6 +259,10 @@ extension SelectAgeViewController:UITableViewDataSource {
 extension SelectAgeViewController:UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         firstVisibleIndexPath = indexPath
+        
+        if let cell = tableView.cellForRow(at: firstVisibleIndexPath) as? AgeTableViewCell{
+            selectedAge = cell.ageNumberLabel.text!
+        }
     }
 }
 

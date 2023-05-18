@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 protocol CreateConfirmPasswordViewControllerOutput {
-    
+    func register(password: String) -> Single<Void>
 }
 
 class CreateConfirmPasswordViewController: BaseViewController {
@@ -177,7 +177,7 @@ extension CreateConfirmPasswordViewController{
         }
         
         if newPass.count > 1 && confirmPass.count > 1 && newPass == confirmPass {
-            self.router?.redirectToInterests()
+            subscribeForRegisteration(password: newPass)
         }else{
             showSimpleAlertView("Sorry", message: "Your passwords does not match", withCompletionHandler: nil)
         }
@@ -205,7 +205,19 @@ extension CreateConfirmPasswordViewController{
 
 //MARK:- Callbacks
 extension CreateConfirmPasswordViewController{
-    
+    fileprivate
+    func subscribeForRegisteration(password: String){
+        showLoadingProgress()
+        self.interactor?.register(password: password)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { _ in
+                self.dismissProgress()
+                self.router?.redirectToInterests()
+            }, onError: {(error) in
+                self.display(errorMessage: (error as! ErrorViewModel).message)
+            })
+            .disposed(by: self.disposeBag)
+    }
     fileprivate
     func setupRetryFetchingCallBack(){
         self.didTapOnRetryPlaceHolderButton = { [weak self] in
