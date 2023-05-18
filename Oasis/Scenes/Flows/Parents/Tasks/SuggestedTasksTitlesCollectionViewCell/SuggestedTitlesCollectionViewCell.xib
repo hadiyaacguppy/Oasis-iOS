@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="93" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDc-R1-eux">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDc-R1-eux" customClass="BaseUIView" customModule="Oasis" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="93" height="50"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIU-ZW-2gW" customClass="BaseUIView" customModule="Oasis" customModuleProvider="target">

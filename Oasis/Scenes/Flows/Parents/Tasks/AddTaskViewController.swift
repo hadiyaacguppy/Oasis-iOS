@@ -88,19 +88,6 @@ class AddTaskViewController: BaseViewController {
         return collectionView
     }()
     
-    lazy var suggestedTaskGreenView : BaseUIView = {
-        let view = BaseUIView()
-        view.roundCorners = .all(radius: 14)
-        view.autoLayout()
-        return view
-    }()
-    
-    lazy var smallGreenViewInnerLabel : BaseLabel = {
-        let lbl = BaseLabel()
-        lbl.style = .init(font: MainFont.bold.with(size: 10), color: .black)
-        lbl.autoLayout()
-        return lbl
-    }()
     
     lazy var addChildButton : OasisGradientButton = {
         let btn = OasisGradientButton()
@@ -251,12 +238,12 @@ extension AddTaskViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == tasksCollectionView{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.tasksCollectionCell, for: indexPath)!
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.tasksCollectionCell, for: indexPath)! as TasksCollectionViewCell
             cell.setupCell(title: "Gardening", subTitle: "Water plants in the garden and indoors")
             
             return cell
         }else{
-            let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.taskTitleCollectionVC, for: indexPath)!
+            let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.taskTitleCollectionVC, for: indexPath)! as SuggestedTitlesCollectionViewCell
             cell.setupCell(taskTitle: suggestedTasksArray[indexPath.row], indexOfCell: indexPath.row)
             
             return cell
