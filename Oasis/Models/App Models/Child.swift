@@ -20,7 +20,7 @@ struct Child : Codable {
     let parentId : String?
     let profile : String?
     let spent : Int?
-    let tasks : [Task]?
+    let tasks : [Tasks]?
 
 
     enum CodingKeys: String, CodingKey {
@@ -48,7 +48,7 @@ struct Child : Codable {
         parentId = try values.decodeIfPresent(String.self, forKey: .parentId)
         profile = try values.decodeIfPresent(String.self, forKey: .profile)
         spent = try values.decodeIfPresent(Int.self, forKey: .spent)
-        tasks = try values.decodeIfPresent([Task].self, forKey: .tasks)
+        tasks = try values.decodeIfPresent([Tasks].self, forKey: .tasks)
     }
 
 

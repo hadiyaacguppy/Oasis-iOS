@@ -30,7 +30,7 @@ extension AddChildInteractor: AddChildViewControllerOutput{
         var dict : [String:Any] = [:]
         dict["id"] = id
         dict["first_name"] = firstName
-        dic["last_name"] = lastName
+        dict["last_name"] = lastName
         dict["file"] = childImage
         return Single<Void>.create(subscribe: { single in
             APIClient.shared.sendOTP(dict: dict)
