@@ -13,6 +13,16 @@ class ChildrenPresenter {}
 
 extension ChildrenPresenter: ChildrenInteractorOutput {
     
+    func didGetchildren() -> [ChildrenModels.ViewModels.Children] {
+        let child = ChildrenModels.ViewModels.Children()
+        return [child]
+        //return array.map{createChild(model: $0)}
+    }
+    
+    func createChild(model : ChildAPIModel) -> ChildrenModels.ViewModels.Children{
+        return ChildrenModels.ViewModels.Children(childName: model.firstName, childAge: model.lastName, childImage: model.profile, moneySpent: model.spent, totalMoneyValue: model.balance, numberOfTasks: model.tasks?.count, numberOfGoals: model.goals?.count)
+    }
+    
     func apiCallFailed(withError error: NetworkErrorResponse)
     -> ErrorViewModel {
         return self.parseErrorViewModel(fromErrorResponse:error)

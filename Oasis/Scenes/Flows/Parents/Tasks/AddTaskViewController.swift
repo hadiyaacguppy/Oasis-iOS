@@ -245,7 +245,7 @@ extension AddTaskViewController: UICollectionViewDelegate, UICollectionViewDataS
         }else{
             let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.taskTitleCollectionVC, for: indexPath)! as SuggestedTitlesCollectionViewCell
             cell.setupCell(taskTitle: suggestedTasksArray[indexPath.row], indexOfCell: indexPath.row)
-            
+
             return cell
         }
         

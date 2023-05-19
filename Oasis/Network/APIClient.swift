@@ -51,12 +51,12 @@ extension APIClient {
             .map {_ in return Void()}
     }
     
-    /*func getChildren() -> Single<[Child]>{
+    func getChildren() -> Single<Void>{
         return self.provider.rx.request(.getChildren)
-            .mapArray(Child.self)
+            .map {_ in return Void()}
     }
     
-    func getTasksTypes() -> Single<[TaskType]>{
+    /*func getTasksTypes() -> Single<[TaskType]>{
         return self.provider.rx.request(.getTasksTypes)
             .mapArray(TaskType.self)
     }

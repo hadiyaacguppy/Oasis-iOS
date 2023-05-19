@@ -22,14 +22,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="93" height="50"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIU-ZW-2gW" customClass="BaseUIView" customModule="Oasis" customModuleProvider="target">
-                                <rect key="frame" x="15" y="10" width="64" height="29"/>
+                                <rect key="frame" x="15" y="10" width="63" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Kf-Pd-mZs" customClass="BaseLabel" customModule="Oasis" customModuleProvider="target">
-                                        <rect key="frame" x="11" y="4" width="42" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="42" id="M53-cW-7AQ"/>
-                                            <constraint firstAttribute="height" constant="21" id="T0D-Rm-4gm"/>
-                                        </constraints>
+                                        <rect key="frame" x="10.666666666666668" y="5" width="41.666666666666657" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -37,27 +33,27 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="5Kf-Pd-mZs" firstAttribute="centerY" secondItem="pIU-ZW-2gW" secondAttribute="centerY" id="gmG-VA-g8B"/>
-                                    <constraint firstAttribute="height" constant="29" id="qD6-9r-erT"/>
-                                    <constraint firstItem="5Kf-Pd-mZs" firstAttribute="centerX" secondItem="pIU-ZW-2gW" secondAttribute="centerX" id="ylO-03-9Hp"/>
+                                    <constraint firstItem="5Kf-Pd-mZs" firstAttribute="centerX" secondItem="pIU-ZW-2gW" secondAttribute="centerX" id="ehW-nb-Ddv"/>
+                                    <constraint firstItem="5Kf-Pd-mZs" firstAttribute="centerY" secondItem="pIU-ZW-2gW" secondAttribute="centerY" id="uBI-4l-tK8"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pIU-ZW-2gW" firstAttribute="top" secondItem="zDc-R1-eux" secondAttribute="top" constant="10" id="PIo-KJ-c1I"/>
-                            <constraint firstAttribute="trailing" secondItem="pIU-ZW-2gW" secondAttribute="trailing" constant="14" id="uYs-jj-vwG"/>
-                            <constraint firstItem="pIU-ZW-2gW" firstAttribute="leading" secondItem="zDc-R1-eux" secondAttribute="leading" constant="15" id="xb6-pF-mce"/>
+                            <constraint firstItem="pIU-ZW-2gW" firstAttribute="centerY" secondItem="zDc-R1-eux" secondAttribute="centerY" id="IDT-ra-E5f"/>
+                            <constraint firstItem="pIU-ZW-2gW" firstAttribute="centerX" secondItem="zDc-R1-eux" secondAttribute="centerX" id="RsA-3e-k0s"/>
+                            <constraint firstItem="pIU-ZW-2gW" firstAttribute="top" secondItem="zDc-R1-eux" secondAttribute="top" constant="10" id="X4O-DM-jJy"/>
+                            <constraint firstItem="pIU-ZW-2gW" firstAttribute="leading" secondItem="zDc-R1-eux" secondAttribute="leading" constant="15" id="q6z-Pc-pOL"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="zDc-R1-eux" secondAttribute="trailing" id="Xdc-0e-6PP"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="zDc-R1-eux" secondAttribute="bottom" id="hW7-dY-GPV"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="zDc-R1-eux" secondAttribute="top" constant="47" id="mXn-hL-kGl"/>
-                <constraint firstItem="zDc-R1-eux" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="pmJ-LI-fyy"/>
+                <constraint firstItem="zDc-R1-eux" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="WOh-tu-Oiv"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="zDc-R1-eux" secondAttribute="bottom" id="hzi-hm-P5Q"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="zDc-R1-eux" secondAttribute="trailing" id="xKD-vW-yJF"/>
+                <constraint firstItem="zDc-R1-eux" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="yFI-lf-KnO"/>
             </constraints>
             <size key="customSize" width="93" height="50"/>
             <connections>

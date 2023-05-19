@@ -26,9 +26,9 @@ class AddChildInteractor: AddChildDataStore{
 }
 
 extension AddChildInteractor: AddChildViewControllerOutput{
-    func addchild(id : String, firstName : String, lastName : String, childImage : String) -> Single<Void> {
+    func addchild(email : String, firstName : String, lastName : String, childImage : String) -> Single<Void> {
         var dict : [String:Any] = [:]
-        dict["id"] = id
+        dict["id"] = email
         dict["first_name"] = firstName
         dict["last_name"] = lastName
         dict["file"] = childImage

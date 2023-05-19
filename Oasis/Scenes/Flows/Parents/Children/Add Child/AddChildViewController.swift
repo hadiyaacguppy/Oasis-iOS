@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 protocol AddChildViewControllerOutput {
-    
+    func addchild(email : String, firstName : String, lastName : String, childImage : String) -> Single<Void>
 }
 
 class AddChildViewController: BaseViewController {
@@ -164,20 +164,27 @@ extension AddChildViewController{
     private func addChildInfoStackView(){
         stackView.addArrangedSubview(childInfoStackView)
         
-        let childInfo1 = TitleWithTextFieldView.init(requestTitle: "What’s your child’s name?",
-                                                     placeHolderTxt: "Child name",
+        let childInfo1 = TitleWithTextFieldView.init(requestTitle: "What’s your child’s first name?",
+                                                     placeHolderTxt: "First Name",
                                                      usertext: "",
                                                      isAgeRequest: false,
                                                      hasEditView: false)
         
-        let childInfo2 = TitleWithTextFieldView.init(requestTitle: "Age",
-                                                     placeHolderTxt: "0",
+        let childInfo2 = TitleWithTextFieldView.init(requestTitle: "What’s your child’s last name?",
+                                                     placeHolderTxt: "Last Name",
                                                      usertext: "",
-                                                     isAgeRequest: true,
+                                                     isAgeRequest: false,
                                                      hasEditView: false)
         
+        let childInfo3 = TitleWithTextFieldView.init(requestTitle: "What’s your child’s email?",
+                                                     placeHolderTxt: "Email",
+                                                     usertext: "",
+                                                     isAgeRequest: false,
+                                                     hasEditView: false)
         childInfoStackView.addArrangedSubview(childInfo1)
         childInfoStackView.addArrangedSubview(childInfo2)
+        childInfoStackView.addArrangedSubview(childInfo3)
+
         childInfoStackView.addArrangedSubview(pictureTitleLabel)
         childInfoStackView.addArrangedSubview(uploadPictureButtonView)
         
@@ -242,8 +249,19 @@ extension AddChildViewController{
             guard let self = self  else { return }
             self.showPlaceHolderView(withAppearanceType: .loading,
                                      title: Constants.PlaceHolderView.Texts.wait)
-#warning("Retry Action does not set")
+        #warning("Retry Action does not set")
         }
+    }
+    
+    private func subscribeForAddChild(){
+        self.interactor?.addchild(email: "", firstName: "", lastName: "", childImage: "")
+            .observeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { [weak self] _ in
+                self!.display(successMessage: "Child is added successfuly")
+                }, onError: { [weak self](error) in
+                    self!.display(errorMessage: (error as! ErrorViewModel).message)
+            })
+            .disposed(by: self.disposeBag)
     }
 }
 

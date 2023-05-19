@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Goal : Codable {
+struct GoalAPIModel : Codable {
 
     let amount : Int?
     let createdAt : String?

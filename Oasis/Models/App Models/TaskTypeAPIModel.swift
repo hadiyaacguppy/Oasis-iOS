@@ -1,5 +1,5 @@
 //
-//  PaymentType.swift
+//  TaskType.swift
 //  Oasis
 //
 //  Created by Hadi Yaacoub on 17/05/2023.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PaymentType : Codable {
+struct TaskTypeAPIModel : Codable {
 
     let id : Int?
     let name : String?

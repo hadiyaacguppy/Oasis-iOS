@@ -8,19 +8,19 @@
 
 import Foundation
 
-struct Child : Codable {
+struct ChildAPIModel : Codable {
 
     let age : String?
     let avatarId : String?
     let balance : Int?
     let firstName : String?
-    let goals : [Goal]?
+    let goals : [GoalAPIModel]?
     let id : String?
     let lastName : String?
     let parentId : String?
     let profile : String?
     let spent : Int?
-    let tasks : [Tasks]?
+    let tasks : [TasksAPIModel]?
 
 
     enum CodingKeys: String, CodingKey {
@@ -42,13 +42,13 @@ struct Child : Codable {
         avatarId = try values.decodeIfPresent(String.self, forKey: .avatarId)
         balance = try values.decodeIfPresent(Int.self, forKey: .balance)
         firstName = try values.decodeIfPresent(String.self, forKey: .firstName)
-        goals = try values.decodeIfPresent([Goal].self, forKey: .goals)
+        goals = try values.decodeIfPresent([GoalAPIModel].self, forKey: .goals)
         id = try values.decodeIfPresent(String.self, forKey: .id)
         lastName = try values.decodeIfPresent(String.self, forKey: .lastName)
         parentId = try values.decodeIfPresent(String.self, forKey: .parentId)
         profile = try values.decodeIfPresent(String.self, forKey: .profile)
         spent = try values.decodeIfPresent(Int.self, forKey: .spent)
-        tasks = try values.decodeIfPresent([Tasks].self, forKey: .tasks)
+        tasks = try values.decodeIfPresent([TasksAPIModel].self, forKey: .tasks)
     }
 
 

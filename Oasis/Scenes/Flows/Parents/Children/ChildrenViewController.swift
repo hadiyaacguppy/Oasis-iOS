@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 protocol ChildrenViewControllerOutput {
-    
+    func getchildren() -> Single<[ChildrenModels.ViewModels.Children]>
 }
 
 class ChildrenViewController: BaseViewController {
@@ -250,6 +250,17 @@ extension ChildrenViewController{
                                      title: Constants.PlaceHolderView.Texts.wait)
 #warning("Retry Action does not set")
         }
+    }
+    
+    private func subscribeForGetChildren(){
+        self.interactor?.getchildren()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { [weak self] _ in
+                self!.display(successMessage: "Done")
+                }, onError: { [weak self](error) in
+                    self!.display(errorMessage: (error as! ErrorViewModel).message)
+            })
+            .disposed(by: self.disposeBag)
     }
 }
 
