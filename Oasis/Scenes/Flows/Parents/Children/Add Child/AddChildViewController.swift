@@ -257,7 +257,7 @@ extension AddChildViewController{
         self.interactor?.addchild(email: "", firstName: "", lastName: "", childImage: "")
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] _ in
-                self!.display(successMessage: "Child is added successfuly")
+                self!.display(successMessage: "Child is added successfully")
                 }, onError: { [weak self](error) in
                     self!.display(errorMessage: (error as! ErrorViewModel).message)
             })

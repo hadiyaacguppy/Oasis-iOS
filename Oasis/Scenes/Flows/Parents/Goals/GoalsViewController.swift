@@ -44,10 +44,10 @@ class GoalsViewController: BaseViewController {
    lazy var stackView: UIStackView = {
        let stackView = UIStackView()
        stackView.axis = .vertical
-       stackView.distribution = .fillEqually
+       stackView.distribution = .fill
        stackView.spacing = 19
        stackView.autoLayout()
-       stackView.backgroundColor = .clear
+       stackView.backgroundColor = .red
        return stackView
    }()
     
@@ -55,7 +55,7 @@ class GoalsViewController: BaseViewController {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .clear
+        collectionView.backgroundColor = .orange
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.autoLayout()
@@ -133,29 +133,31 @@ extension GoalsViewController{
             scrollView.topAnchor.constraint(equalTo: addGoalButton.bottomAnchor, constant: 13),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -15),
             
             stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 15),
-            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -15),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 15),
             stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -30)
         ])
-        scrollView.contentInset = .init(top: 0, left: 0, bottom: 50, right: 0)
+        
     }
     private func addGoalsCollectionView(){
         stackView.addArrangedSubview(goalsCollectionView)
         
         goalsCollectionView.delegate = self
         goalsCollectionView.dataSource = self
+        
         //goalsCollectionView.isScrollEnabled = false
         
-        /*NSLayoutConstraint.activate([
+        NSLayoutConstraint.activate([
             goalsCollectionView.topAnchor.constraint(equalTo: stackView.topAnchor),
             goalsCollectionView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
-            goalsCollectionView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor)
+            goalsCollectionView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            goalsCollectionView.bottomAnchor.constraint(equalTo: stackView.bottomAnchor)
         
-        ])*/
+        ])
         
     }
     

@@ -46,6 +46,11 @@ extension APIClient {
             .map {_ in return Void()}
     }
     
+    func login(dict : [String:Any]) -> Single<Void>{
+        return self.provider.rx.request(.login(dict: dict))
+            .map {_ in return Void()}
+    }
+    
     func addChild(dict : [String:Any]) -> Single<Void>{
         return self.provider.rx.request(.addChild(dict: dict))
             .map {_ in return Void()}
@@ -55,6 +60,17 @@ extension APIClient {
         return self.provider.rx.request(.getChildren)
             .map {_ in return Void()}
     }
+    
+    func getActivities() -> Single<Void>{
+        return self.provider.rx.request(.getActivities)
+            .map {_ in return Void()}
+    }
+    
+    func getBalance() -> Single<Void>{
+        return self.provider.rx.request(.getBalance)
+            .map {_ in return Void()}
+    }
+    
     
     /*func getTasksTypes() -> Single<[TaskType]>{
         return self.provider.rx.request(.getTasksTypes)

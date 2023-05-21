@@ -127,7 +127,6 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="AIS-5R-52g" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="topMargin" constant="-47" id="Q6U-kB-iSX"/>
                 <constraint firstAttribute="bottomMargin" secondItem="AIS-5R-52g" secondAttribute="bottom" id="QxK-Xu-DE1"/>
                 <constraint firstItem="AIS-5R-52g" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leadingMargin" constant="-16" id="fbN-aA-oA2"/>
                 <constraint firstAttribute="trailingMargin" secondItem="AIS-5R-52g" secondAttribute="trailing" constant="-16" id="hOJ-wq-Gw3"/>

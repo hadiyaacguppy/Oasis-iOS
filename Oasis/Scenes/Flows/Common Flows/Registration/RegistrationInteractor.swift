@@ -27,4 +27,5 @@ class RegistrationInteractor: RegistrationDataStore{
 
 extension RegistrationInteractor: RegistrationViewControllerOutput{
     
+    
 }

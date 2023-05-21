@@ -22,6 +22,7 @@ enum BaseProjectService {
     case sendOTP(dict : [String:Any])
     case verifyOTP(dict : [String:Any])
     case register(dict : [String:Any])
+    case login(dict : [String:Any])
     
     //Children
     case addChild(dict : [String:Any])
@@ -43,6 +44,12 @@ enum BaseProjectService {
     //Intersts
     case getinterestsTypes
     case addInterest(dict : [String:Any])//["interest_ids": "1"]
+    
+    //Activities
+    case getActivities
+    
+    //balance
+    case getBalance
 }
 
 
@@ -64,6 +71,8 @@ extension BaseProjectService: TargetType {
             return "otps/send"
         case .verifyOTP:
             return "otps/verify"
+        case .login:
+            return "login"
         case .addChild:
             return "add_child"
         case .getChildren:
@@ -86,13 +95,17 @@ extension BaseProjectService: TargetType {
             return "interest_types"
         case .addInterest:
             return "interests"
+        case .getActivities:
+            return "ctivities"
+        case .getBalance:
+            return "balance"
         
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .setOneSignalUserPush, .register, .sendOTP, .verifyOTP, .addChild, .addTask, .addGoal, .addPayment, .addInterest:
+        case .setOneSignalUserPush, .register, .sendOTP, .verifyOTP, .addChild, .addTask, .addGoal, .addPayment, .addInterest, .login:
             return .post
         default:
             return .get
@@ -104,9 +117,9 @@ extension BaseProjectService: TargetType {
             
         case .setOneSignalUserPush(let token):
             return requestParameters(parameters: ["player_id":token])
-        case .register(let dict), .sendOTP(let dict), .verifyOTP(let dict), .addChild(let dict), .addTask(let dict), .addGoal(let dict), .addPayment(let dict), .addInterest(let dict):
+        case .register(let dict), .sendOTP(let dict), .verifyOTP(let dict), .addChild(let dict), .addTask(let dict), .addGoal(let dict), .addPayment(let dict), .addInterest(let dict), .login(let dict):
             return requestParameters(parameters: dict)
-        case .getChildren, .getTasksTypes, .getPaymentsTypes, .getPayments, .getGoals, .getinterestsTypes:
+        case .getChildren, .getTasksTypes, .getPaymentsTypes, .getPayments, .getGoals, .getinterestsTypes, .getActivities, .getBalance:
             return requestParameters(parameters: [:])
             
         }

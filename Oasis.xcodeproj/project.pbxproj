@@ -189,6 +189,8 @@
 		16503FC629F5C26A00875075 /* ParentProfileConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503FBF29F5C26A00875075 /* ParentProfileConfigurator.swift */; };
 		16503FCA29F5C7F200875075 /* ParentCardFSPagerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503FC829F5C7F200875075 /* ParentCardFSPagerCell.swift */; };
 		16503FCB29F5C7F200875075 /* ParentCardFSPagerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16503FC929F5C7F200875075 /* ParentCardFSPagerCell.xib */; };
+		169199912A17885B00E55E23 /* UserAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169199902A17885B00E55E23 /* UserAPIModel.swift */; };
+		169199932A17975300E55E23 /* ActivityAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169199922A17975300E55E23 /* ActivityAPIModel.swift */; };
 		169976EA2A15011D00FDEC97 /* GoalAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976E92A15011D00FDEC97 /* GoalAPIModel.swift */; };
 		169976EC2A15012500FDEC97 /* TasksAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976EB2A15012500FDEC97 /* TasksAPIModel.swift */; };
 		169976EF2A1504C200FDEC97 /* TaskTypeAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976EE2A1504C200FDEC97 /* TaskTypeAPIModel.swift */; };
@@ -609,6 +611,8 @@
 		16503FBF29F5C26A00875075 /* ParentProfileConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentProfileConfigurator.swift; sourceTree = "<group>"; };
 		16503FC829F5C7F200875075 /* ParentCardFSPagerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentCardFSPagerCell.swift; sourceTree = "<group>"; };
 		16503FC929F5C7F200875075 /* ParentCardFSPagerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParentCardFSPagerCell.xib; sourceTree = "<group>"; };
+		169199902A17885B00E55E23 /* UserAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIModel.swift; sourceTree = "<group>"; };
+		169199922A17975300E55E23 /* ActivityAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityAPIModel.swift; sourceTree = "<group>"; };
 		169976E92A15011D00FDEC97 /* GoalAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalAPIModel.swift; sourceTree = "<group>"; };
 		169976EB2A15012500FDEC97 /* TasksAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksAPIModel.swift; sourceTree = "<group>"; };
 		169976EE2A1504C200FDEC97 /* TaskTypeAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTypeAPIModel.swift; sourceTree = "<group>"; };
@@ -1520,6 +1524,8 @@
 				169976F02A15100B00FDEC97 /* PaymentTypeAPIModel.swift */,
 				169976F22A15127B00FDEC97 /* PaymentAPIModel.swift */,
 				169976F42A1515B200FDEC97 /* InterestTypeAPIModel.swift */,
+				169199902A17885B00E55E23 /* UserAPIModel.swift */,
+				169199922A17975300E55E23 /* ActivityAPIModel.swift */,
 			);
 			path = "App Models";
 			sourceTree = "<group>";
@@ -2529,6 +2535,7 @@
 				CFF69D6F219554E7003BE6BF /* CGRect+Extensions.swift in Sources */,
 				117C4AB21FD864FD008BB445 /* String+Extensions.swift in Sources */,
 				CF6B70F221EDD5F700204B65 /* VersionLabel.swift in Sources */,
+				169199912A17885B00E55E23 /* UserAPIModel.swift in Sources */,
 				CF87EDA0201B6EF700562226 /* BaseViewController.swift in Sources */,
 				16503FB729F5C07400875075 /* GoalsConfigurator.swift in Sources */,
 				161F3BEF29E2FCA20053158A /* CreateConfirmPasswordPresenter.swift in Sources */,
@@ -2546,6 +2553,7 @@
 				161F3C0329E3157D0053158A /* SelectAgeConfigurator.swift in Sources */,
 				16ABAD102A08E1A900FB937C /* addGoalInteractor.swift in Sources */,
 				3E59224C23C3992100E729B7 /* Font.swift in Sources */,
+				169199932A17975300E55E23 /* ActivityAPIModel.swift in Sources */,
 				67290A02210E441400632C4F /* PlaceHolderHelper.swift in Sources */,
 				16503F9429F5853600875075 /* PaymentsPresenter.swift in Sources */,
 				16503FA529F58E1900875075 /* ChildrenModels.swift in Sources */,

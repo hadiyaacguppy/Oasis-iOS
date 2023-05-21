@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 protocol LoginViewControllerOutput {
-    
+    func login(id : String, password : String) -> Single<Void>
 }
 
 class LoginViewController: BaseViewController {
@@ -197,6 +197,17 @@ extension LoginViewController{
                                      title: Constants.PlaceHolderView.Texts.wait)
             #warning("Retry Action does not set")
         }
+    }
+    
+    private func subscribeForLogin(){
+        self.interactor?.login(id: "", password: "")
+            .observeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { [weak self] _ in
+                self!.display(successMessage: "You are Logged in Successfully")
+                }, onError: { [weak self](error) in
+                    self!.display(errorMessage: (error as! ErrorViewModel).message)
+            })
+            .disposed(by: self.disposeBag)
     }
 }
 
