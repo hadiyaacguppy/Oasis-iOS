@@ -19,10 +19,10 @@ enum BaseProjectService {
     case setOneSignalUserPush( token : String)
     
     //Registration
-    case sendOTP(dict : [String:Any])
+    case sendOTP(dict : [String:Any])//("mobile": "yaacoub.hadi@gmail.com")
     case verifyOTP(dict : [String:Any])
     case register(dict : [String:Any])
-    case login(dict : [String:Any])
+    case login(dict : [String:Any])//( "id": "yaacoub.hadi@gmail.com","password": "melhem_yaacoub")
     
     //Children
     case addChild(dict : [String:Any])
@@ -30,26 +30,42 @@ enum BaseProjectService {
     
     //Tasks
     case getTasksTypes
-    case addTask(dict : [String:Any]) //["title": "Feed the Pet","currency": "LBP","amount": 200000,"child_id": "email@hotmail.com","task_type_id": 1]
+    case addTask(dict : [String:Any]) //("title": "Feed the Pet","currency": "LBP","amount": 200000,"child_id": "email@hotmail.com","task_type_id": 1)
+    case getTasks
     
     //Goals
-    case addGoal(dict : [String:Any]) //["title": "Travel","currency": "LBP","amount": 5000000,"end_date": "2023-05-17T13:22:33.233Z","file": ""]
+    case addGoal(dict : [String:Any]) //("title": "Travel","currency": "LBP","amount": 5000000,"end_date": "2023-05-17T13:22:33.233Z","file": "")
     case getGoals
     
     //Payments
     case getPaymentsTypes
-    case addPayment(dict : [String:Any])//["title": "Recharge Mobile","currency": "$","amount": 3,"date": "2023-05-17T13:43:14.549Z","payment_type_id": 2]
+    case addPayment(dict : [String:Any])//("title": "Recharge Mobile","currency": "$","amount": 3,"date": "2023-05-17T13:43:14.549Z","payment_type_id": 2)
     case getPayments
     
     //Intersts
     case getinterestsTypes
-    case addInterest(dict : [String:Any])//["interest_ids": "1"]
+    case addInterest(dict : [String:Any])//("interest_ids": "1")
     
     //Activities
     case getActivities
     
     //balance
     case getBalance
+    
+    //Fund
+    case fund(dict : [String:Any])//("amount": 3000000)
+    
+    //Link Users
+    case linkUsers(dict : [String:Any])//("child_id": "zeinabch.ios@gmail.com")
+    
+    //Get Users
+    case getUsers(dict : [String:Any])//("offset": 0)
+    
+    //Friends
+    case getFriends
+    case sendFriendRequest(dict : [String:Any])//("user_id": "string")
+    case acceptFriendRequest(dict : [String:Any])//("user_id": "string","accept": true)
+    case getFriendsRequests
 }
 
 
@@ -81,6 +97,8 @@ extension BaseProjectService: TargetType {
             return "task_types"
         case .addTask:
             return "task"
+        case .getTasks:
+            return "task"
         case .addGoal:
             return "goal"
         case .getGoals:
@@ -99,13 +117,27 @@ extension BaseProjectService: TargetType {
             return "ctivities"
         case .getBalance:
             return "balance"
+        case .fund:
+            return "fund"
+        case .linkUsers:
+            return "link_users"
+        case .getUsers:
+            return "get_users"
+        case .getFriends:
+            return "friends"
+        case .sendFriendRequest:
+            return "friend_request"
+        case .acceptFriendRequest:
+            return "accept_request"
+        case .getFriendsRequests:
+            return "friend_request"
         
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .setOneSignalUserPush, .register, .sendOTP, .verifyOTP, .addChild, .addTask, .addGoal, .addPayment, .addInterest, .login:
+        case .setOneSignalUserPush, .register, .sendOTP, .verifyOTP, .addChild, .addTask, .addGoal, .addPayment, .addInterest, .login, .fund, .getUsers, .linkUsers, .sendFriendRequest, .acceptFriendRequest:
             return .post
         default:
             return .get
@@ -117,9 +149,9 @@ extension BaseProjectService: TargetType {
             
         case .setOneSignalUserPush(let token):
             return requestParameters(parameters: ["player_id":token])
-        case .register(let dict), .sendOTP(let dict), .verifyOTP(let dict), .addChild(let dict), .addTask(let dict), .addGoal(let dict), .addPayment(let dict), .addInterest(let dict), .login(let dict):
+        case .register(let dict), .sendOTP(let dict), .verifyOTP(let dict), .addChild(let dict), .addTask(let dict), .addGoal(let dict), .addPayment(let dict), .addInterest(let dict), .login(let dict), .fund(let dict), .linkUsers(let dict), .getUsers(let dict), .sendFriendRequest(let dict), .acceptFriendRequest(let dict):
             return requestParameters(parameters: dict)
-        case .getChildren, .getTasksTypes, .getPaymentsTypes, .getPayments, .getGoals, .getinterestsTypes, .getActivities, .getBalance:
+        case .getChildren, .getTasksTypes, .getPaymentsTypes, .getPayments, .getGoals, .getinterestsTypes, .getActivities, .getBalance, .getFriends, .getFriendsRequests, .getTasks:
             return requestParameters(parameters: [:])
             
         }

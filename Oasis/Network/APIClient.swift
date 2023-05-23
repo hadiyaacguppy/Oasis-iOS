@@ -71,7 +71,45 @@ extension APIClient {
             .map {_ in return Void()}
     }
     
+    func fund(dict : [String:Any]) -> Single<Void>{
+        return self.provider.rx.request(.fund(dict: dict))
+            .map {_ in return Void()}
+    }
     
+    func linkUsers(dict : [String:Any]) -> Single<Void>{
+        return self.provider.rx.request(.linkUsers(dict: dict))
+            .map {_ in return Void()}
+    }
+    
+    func getUsers(dict : [String:Any]) -> Single<Void>{
+        return self.provider.rx.request(.linkUsers(dict: dict))
+            .map {_ in return Void()}
+    }
+    
+    func getFriends() -> Single<Void>{
+        return self.provider.rx.request(.getFriends)
+            .map {_ in return Void()}
+    }
+    
+    func sendFriendRequest(dict : [String:Any]) -> Single<Void>{
+        return self.provider.rx.request(.sendFriendRequest(dict: dict))
+            .map {_ in return Void()}
+    }
+    
+    func acceptFriendRequest(dict : [String:Any]) -> Single<Void>{
+        return self.provider.rx.request(.acceptFriendRequest(dict: dict))
+            .map {_ in return Void()}
+    }
+    
+    func getFriendsRequests() -> Single<Void>{
+        return self.provider.rx.request(.getFriendsRequests)
+            .map {_ in return Void()}
+    }
+    
+    func getTasks() -> Single<Void>{
+        return self.provider.rx.request(.getTasks)
+            .map {_ in return Void()}
+    }
     /*func getTasksTypes() -> Single<[TaskType]>{
         return self.provider.rx.request(.getTasksTypes)
             .mapArray(TaskType.self)
