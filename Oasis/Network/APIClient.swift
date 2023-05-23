@@ -56,19 +56,19 @@ extension APIClient {
             .map {_ in return Void()}
     }
     
-    func getChildren() -> Single<Void>{
+    func getChildren() -> Single<[ChildAPIModel]>{
         return self.provider.rx.request(.getChildren)
-            .map {_ in return Void()}
+            .map([ChildAPIModel].self)
     }
     
-    func getActivities() -> Single<Void>{
+    func getActivities() -> Single<ChildAPIModel>{
         return self.provider.rx.request(.getActivities)
-            .map {_ in return Void()}
+            .map(ChildAPIModel.self)
     }
     
-    func getBalance() -> Single<Void>{
+    func getBalance() -> Single<String>{
         return self.provider.rx.request(.getBalance)
-            .map {_ in return Void()}
+            .mapString(atKeyPath: "success")
     }
     
     func fund(dict : [String:Any]) -> Single<Void>{

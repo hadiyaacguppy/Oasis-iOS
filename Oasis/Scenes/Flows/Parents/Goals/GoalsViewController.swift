@@ -210,21 +210,6 @@ extension GoalsViewController{
     }
 }
 
-//MARK:- Callbacks
-extension GoalsViewController{
-    
-    fileprivate
-    func setupRetryFetchingCallBack(){
-        self.didTapOnRetryPlaceHolderButton = { [weak self] in
-            guard let self = self  else { return }
-            self.showPlaceHolderView(withAppearanceType: .loading,
-                                     title: Constants.PlaceHolderView.Texts.wait)
-            #warning("Retry Action does not set")
-        }
-    }
-}
-
-
 extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

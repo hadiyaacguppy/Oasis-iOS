@@ -18,7 +18,7 @@ target 'Oasis' do
   pod 'Moya', '~> 14.0'
   pod 'Moya/RxSwift', '~> 14.0'
   pod 'FSPagerView'
-  
+    
 install_oneSignalPod
 end
 

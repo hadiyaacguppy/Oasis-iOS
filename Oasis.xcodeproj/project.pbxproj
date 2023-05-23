@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -191,6 +191,9 @@
 		16503FCB29F5C7F200875075 /* ParentCardFSPagerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16503FC929F5C7F200875075 /* ParentCardFSPagerCell.xib */; };
 		169199912A17885B00E55E23 /* UserAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169199902A17885B00E55E23 /* UserAPIModel.swift */; };
 		169199932A17975300E55E23 /* ActivityAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169199922A17975300E55E23 /* ActivityAPIModel.swift */; };
+		169914612A1D57860046978D /* MoyaProvider+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1699145E2A1D57860046978D /* MoyaProvider+Rx.swift */; };
+		169914622A1D57860046978D /* Observable+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1699145F2A1D57860046978D /* Observable+Response.swift */; };
+		169914632A1D57870046978D /* Single+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914602A1D57860046978D /* Single+Response.swift */; };
 		169976EA2A15011D00FDEC97 /* GoalAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976E92A15011D00FDEC97 /* GoalAPIModel.swift */; };
 		169976EC2A15012500FDEC97 /* TasksAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976EB2A15012500FDEC97 /* TasksAPIModel.swift */; };
 		169976EF2A1504C200FDEC97 /* TaskTypeAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976EE2A1504C200FDEC97 /* TaskTypeAPIModel.swift */; };
@@ -613,6 +616,9 @@
 		16503FC929F5C7F200875075 /* ParentCardFSPagerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParentCardFSPagerCell.xib; sourceTree = "<group>"; };
 		169199902A17885B00E55E23 /* UserAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIModel.swift; sourceTree = "<group>"; };
 		169199922A17975300E55E23 /* ActivityAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityAPIModel.swift; sourceTree = "<group>"; };
+		1699145E2A1D57860046978D /* MoyaProvider+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+Rx.swift"; sourceTree = "<group>"; };
+		1699145F2A1D57860046978D /* Observable+Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Response.swift"; sourceTree = "<group>"; };
+		169914602A1D57860046978D /* Single+Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Single+Response.swift"; sourceTree = "<group>"; };
 		169976E92A15011D00FDEC97 /* GoalAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalAPIModel.swift; sourceTree = "<group>"; };
 		169976EB2A15012500FDEC97 /* TasksAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksAPIModel.swift; sourceTree = "<group>"; };
 		169976EE2A1504C200FDEC97 /* TaskTypeAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTypeAPIModel.swift; sourceTree = "<group>"; };
@@ -1080,6 +1086,7 @@
 		117C4AAC1FD8645F008BB445 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1699145D2A1D57500046978D /* Response+Extensions */,
 				0FD65F1F20D01C2F0075E251 /* Rx+Extensions */,
 				0FD65F1E20D01BE60075E251 /* UI+Extensions */,
 				117C4AB31FD8652B008BB445 /* NSIndexPath+Extensions.swift */,
@@ -1512,6 +1519,16 @@
 				161F3BB429D989C90053158A /* Registration */,
 			);
 			path = "Common Flows";
+			sourceTree = "<group>";
+		};
+		1699145D2A1D57500046978D /* Response+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1699145E2A1D57860046978D /* MoyaProvider+Rx.swift */,
+				1699145F2A1D57860046978D /* Observable+Response.swift */,
+				169914602A1D57860046978D /* Single+Response.swift */,
+			);
+			path = "Response+Extensions";
 			sourceTree = "<group>";
 		};
 		169976ED2A15012F00FDEC97 /* App Models */ = {
@@ -1996,6 +2013,8 @@
 				CF8373DA224B8CA7000C3E21 /* PBXTargetDependency */,
 			);
 			name = Oasis;
+			packageProductDependencies = (
+			);
 			productName = Oasis;
 			productReference = 112239111FD5C7AF00486528 /* Oasis.app */;
 			productType = "com.apple.product-type.application";
@@ -2105,7 +2124,6 @@
 				TargetAttributes = {
 					112239101FD5C7AF00486528 = {
 						CreatedOnToolsVersion = 9.0.1;
-						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -2154,6 +2172,9 @@
 				Base,
 			);
 			mainGroup = 112239081FD5C7AF00486528;
+			packageReferences = (
+				1699145A2A1D478E0046978D /* XCRemoteSwiftPackageReference "ObjectMapper" */,
+			);
 			productRefGroup = 112239121FD5C7AF00486528 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -2551,6 +2572,7 @@
 				161F3BE129DAD6FB0053158A /* OTPVerificationModels.swift in Sources */,
 				3EDC4156224E886500624D2B /* BaseUIView.swift in Sources */,
 				161F3C0329E3157D0053158A /* SelectAgeConfigurator.swift in Sources */,
+				169914612A1D57860046978D /* MoyaProvider+Rx.swift in Sources */,
 				16ABAD102A08E1A900FB937C /* addGoalInteractor.swift in Sources */,
 				3E59224C23C3992100E729B7 /* Font.swift in Sources */,
 				169199932A17975300E55E23 /* ActivityAPIModel.swift in Sources */,
@@ -2658,6 +2680,7 @@
 				67C9591F2624845200A67399 /* NetworkCode.swift in Sources */,
 				16503FB629F5C07400875075 /* GoalsInteractor.swift in Sources */,
 				16ABACFD2A04399400FB937C /* AddChildConfigurator.swift in Sources */,
+				169914622A1D57860046978D /* Observable+Response.swift in Sources */,
 				161F3B9429D371500053158A /* OnboardingViewController.swift in Sources */,
 				16ABAD1E2A0910AB00FB937C /* AddTaskViewController.swift in Sources */,
 				0F1B7FBC22CA6CBD0079F752 /* CountryCell.swift in Sources */,
@@ -2716,6 +2739,7 @@
 				CF7823B420EF95A7003069BD /* APIErrorManager.swift in Sources */,
 				161F3C6A29F31CD00053158A /* ReceiveMoneyConfigurator.swift in Sources */,
 				16ABACE929F68CDD00FB937C /* SettingsInteractor.swift in Sources */,
+				169914632A1D57870046978D /* Single+Response.swift in Sources */,
 				3E1DEAF022BA62FD00FAD9F4 /* UIView+Shadow.swift in Sources */,
 				16ABAD322A0E40CD00FB937C /* AssignNewTaskRouter.swift in Sources */,
 				16503F9529F5853600875075 /* PaymentsRouter.swift in Sources */,
@@ -2931,7 +2955,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2944,17 +2969,25 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Oasis/Oasis.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 924RDGY8WL;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Oasis/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.Oasis;
+				INFOPLIST_KEY_CFBundleDisplayName = Guppy;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oasis.guppy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2967,17 +3000,25 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Oasis/Oasis.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 924RDGY8WL;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Oasis/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.Oasis;
+				INFOPLIST_KEY_CFBundleDisplayName = Guppy;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oasis.guppy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -3016,7 +3057,11 @@
 				);
 				INFOPLIST_FILE = OasisTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.OasisTests;
@@ -3060,7 +3105,11 @@
 				);
 				INFOPLIST_FILE = OasisTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.OasisTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3081,8 +3130,12 @@
 				DEVELOPMENT_TEAM = 924RDGY8WL;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.Oasis.OneSignalNotificationServiceExtension;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.oasis.guppy.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -3101,8 +3154,12 @@
 				DEVELOPMENT_TEAM = 924RDGY8WL;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.Oasis.OneSignalNotificationServiceExtension;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.oasis.guppy.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -3129,7 +3186,11 @@
 				INFOPLIST_FILE = AnalyticsManager/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.AnalyticsManager;
@@ -3162,7 +3223,11 @@
 				INFOPLIST_FILE = AnalyticsManager/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.AnalyticsManager;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -3196,7 +3261,11 @@
 				INFOPLIST_FILE = SessionRepository/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.SessionRepository;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -3230,7 +3299,11 @@
 				INFOPLIST_FILE = SessionRepository/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.SessionRepository;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -3249,7 +3322,11 @@
 				DEVELOPMENT_TEAM = 924RDGY8WL;
 				INFOPLIST_FILE = SessionRepositoryTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.SessionRepositoryTests;
@@ -3267,7 +3344,11 @@
 				DEVELOPMENT_TEAM = 924RDGY8WL;
 				INFOPLIST_FILE = SessionRepositoryTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tedmob.SessionRepositoryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3343,6 +3424,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1699145A2A1D478E0046978D /* XCRemoteSwiftPackageReference "ObjectMapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tristanhimmelman/ObjectMapper.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 112239091FD5C7AF00486528 /* Project object */;
 }
