@@ -37,6 +37,7 @@ class GoalsViewController: BaseViewController {
        scrollView.autoLayout()
        scrollView.backgroundColor = .clear
        scrollView.showsVerticalScrollIndicator = false
+       scrollView.contentInset = .init(top: 0, left: 0, bottom: 35, right: 0)
        return scrollView
    }()
    
@@ -47,7 +48,7 @@ class GoalsViewController: BaseViewController {
        stackView.distribution = .fill
        stackView.spacing = 19
        stackView.autoLayout()
-       stackView.backgroundColor = .red
+       stackView.backgroundColor = .clear
        return stackView
    }()
     
@@ -55,7 +56,7 @@ class GoalsViewController: BaseViewController {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .orange
+        collectionView.backgroundColor = .white
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.autoLayout()
@@ -137,7 +138,7 @@ extension GoalsViewController{
             
             stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 15),
-            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 15),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -15),
             stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -30)
         ])
@@ -151,13 +152,7 @@ extension GoalsViewController{
         
         //goalsCollectionView.isScrollEnabled = false
         
-        NSLayoutConstraint.activate([
-            goalsCollectionView.topAnchor.constraint(equalTo: stackView.topAnchor),
-            goalsCollectionView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
-            goalsCollectionView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
-            goalsCollectionView.bottomAnchor.constraint(equalTo: stackView.bottomAnchor)
-        
-        ])
+        goalsCollectionView.heightAnchor.constraint(equalTo: scrollView.heightAnchor).isActive = true
         
     }
     
@@ -239,7 +234,7 @@ extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.goalCollectionVC, for: indexPath)!
        
-        cell.setupCell(titleForGoal: "Trip to Paris", savedValue: "LBP 550,000", outOfValue: "LBP 5,000,000", percentageValue: 40.0)
+        cell.setupCell(titleForGoal: "Trip to Paris", savedValue: "LBP 550,000", outOfValue: "LBP 5,000,000", percentageValue: 40, goalImage: R.image.wedding.name)
         return cell
         
     }

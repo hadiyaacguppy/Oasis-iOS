@@ -10,11 +10,21 @@ import UIKit
 
 class GoalCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var goalImageView: BaseImageView!{
+        didSet{
+            goalImageView.contentMode = .scaleAspectFill
+            goalImageView.roundCorners = .all(radius: 14)
+//            goalImageView.roundCorners = .topLeft(radius: 14)
+//            goalImageView.roundCorners = .topRight(radius: 14)
+            
+        }
+    }
+    
     @IBOutlet weak var containerView: BaseUIView!{
         didSet{
             containerView.backgroundColor = Constants.Colors.lightGrey
-            containerView.roundCorners = .topLeft(radius: 14)
-            containerView.roundCorners = .topRight(radius: 14)
+            containerView.roundCorners = .all(radius: 14)
+
         }
     }
     
@@ -59,11 +69,8 @@ class GoalCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var bottomGreenView: BaseUIView!{
         didSet{
-            bottomGreenView.backgroundColor = Constants.Colors.aquaMarine
-            bottomGreenView.roundCorners = .bottomLeft(radius: 14)
-            bottomGreenView.roundCorners = .bottomRight(radius: 14)
-            bottomGreenView.roundCorners = .topLeft(radius: 8)
-            bottomGreenView.roundCorners = .topRight(radius: 8)
+            bottomGreenView.backgroundColor = Constants.Colors.lightGreen
+            bottomGreenView.roundCorners = .all(radius: 14)
         }
     }
     
@@ -86,18 +93,19 @@ class GoalCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
-    func setupCell(titleForGoal : String, savedValue : String, outOfValue : String, percentageValue : Double ){
+    func setupCell(titleForGoal : String, savedValue : String, outOfValue : String, percentageValue : Int, goalImage : String ){
         goalTitle.text = titleForGoal
         savedValueLabel.text = savedValue
         outOfValuelabel.text = outOfValue
         percentageLabel.text = "\(percentageValue)"
         updatePercentageView(percentage: percentageValue)
+        goalImageView.image = UIImage(named: goalImage)
         
     }
     
-    func updatePercentageView(percentage : Double){
+    func updatePercentageView(percentage : Int){
     
-        let percentageWidth = (percentage * bottomGreenView.frame.size.width) / 100
+        let percentageWidth = (percentage * Int(bottomGreenView.frame.size.width)) / 100
         NSLayoutConstraint.activate([
             percentageGreenView.widthAnchor.constraint(equalToConstant: CGFloat(percentageWidth))
         ])

@@ -29,12 +29,18 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ts1-eB-ruh" customClass="BaseLabel" customModule="Oasis" customModuleProvider="target">
                                 <rect key="frame" x="19" y="144" width="298" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="nzk-Gp-7iZ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaB-b9-LS9" customClass="BaseLabel" customModule="Oasis" customModuleProvider="target">
                                 <rect key="frame" x="19" y="182" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="cAq-KV-Wyk"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -43,6 +49,7 @@
                                 <rect key="frame" x="182" y="182" width="135" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="135" id="7iw-tU-WbJ"/>
+                                    <constraint firstAttribute="height" constant="21" id="eYb-1B-WWR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -50,13 +57,18 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKe-r3-4gm" customClass="BaseLabel" customModule="Oasis" customModuleProvider="target">
                                 <rect key="frame" x="19" y="206" width="153" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="v2e-7U-4NC"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3I-dK-zc8" customClass="BaseLabel" customModule="Oasis" customModuleProvider="target">
-                                <rect key="frame" x="30" y="266" width="42" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xC0-ys-2Oh" customClass="BaseLabel" customModule="Oasis" customModuleProvider="target">
+                                <rect key="frame" x="182" y="206" width="135" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="pLn-IJ-BWN"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -64,11 +76,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kBc-yf-mxa" customClass="BaseUIView" customModule="Oasis" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="235" width="327" height="44"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MmP-49-ckd" customClass="BaseUIView" customModule="Oasis" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MmP-49-ckd" customClass="BaseUIView" customModule="Oasis" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="77" height="44"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fae-Zp-Col" customClass="BaseLabel" customModule="Oasis" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fae-Zp-Col" customClass="BaseLabel" customModule="Oasis" customModuleProvider="target">
                                                 <rect key="frame" x="17.666666666666671" y="11.666666666666657" width="42" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="42" id="VXO-QJ-gS7"/>
+                                                    <constraint firstAttribute="height" constant="21" id="lEa-Of-nBX"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -77,12 +93,10 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="fae-Zp-Col" firstAttribute="centerX" secondItem="MmP-49-ckd" secondAttribute="centerX" id="BFd-6a-KIL"/>
-                                            <constraint firstAttribute="width" constant="77" id="jXL-5L-S7F"/>
                                             <constraint firstItem="fae-Zp-Col" firstAttribute="centerY" secondItem="MmP-49-ckd" secondAttribute="centerY" id="vsA-Ub-ix3"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="MmP-49-ckd" firstAttribute="top" secondItem="kBc-yf-mxa" secondAttribute="top" id="Q3M-op-NaO"/>
                                     <constraint firstAttribute="bottom" secondItem="MmP-49-ckd" secondAttribute="bottom" id="hUz-zo-iAL"/>
@@ -90,12 +104,6 @@
                                     <constraint firstAttribute="height" constant="44" id="xeh-gJ-cs1"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xC0-ys-2Oh" customClass="BaseLabel" customModule="Oasis" customModuleProvider="target">
-                                <rect key="frame" x="182" y="206" width="135" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
@@ -127,14 +135,18 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="AIS-5R-52g" secondAttribute="bottom" id="EyD-7y-nvF"/>
                 <constraint firstAttribute="bottomMargin" secondItem="AIS-5R-52g" secondAttribute="bottom" id="QxK-Xu-DE1"/>
+                <constraint firstItem="AIS-5R-52g" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="Wdh-O4-2f8"/>
                 <constraint firstItem="AIS-5R-52g" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leadingMargin" constant="-16" id="fbN-aA-oA2"/>
                 <constraint firstAttribute="trailingMargin" secondItem="AIS-5R-52g" secondAttribute="trailing" constant="-16" id="hOJ-wq-Gw3"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="AIS-5R-52g" secondAttribute="trailing" id="wJf-5L-Ttl"/>
             </constraints>
             <size key="customSize" width="390" height="339"/>
             <connections>
                 <outlet property="bottomGreenView" destination="kBc-yf-mxa" id="udY-7d-3NK"/>
                 <outlet property="containerView" destination="AIS-5R-52g" id="7b0-vh-fEt"/>
+                <outlet property="goalImageView" destination="LMx-Dc-Nf2" id="pin-Nv-pth"/>
                 <outlet property="goalTitle" destination="ts1-eB-ruh" id="yzd-e9-KPY"/>
                 <outlet property="outOfValuelabel" destination="xC0-ys-2Oh" id="c3d-17-1Yh"/>
                 <outlet property="outofLabel" destination="W8v-Cd-h7L" id="MaL-Yl-Hbu"/>

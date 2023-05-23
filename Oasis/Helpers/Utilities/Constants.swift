@@ -28,13 +28,14 @@ struct Constants {
         static let background : UIColor = .brown
         static let defaultTint : UIColor = .green
         static let cell_background : UIColor = .yellow
-        static let appColor : UIColor  = .init(hexFromString: "3301a8")
-        static let glowColor : UIColor = .init(red: 197, green: 93, blue: 207)
+        static let appColor : UIColor  = .init(hexFromString: "3301a8") // purple
+        static let glowColor : UIColor = .init(red: 197, green: 93, blue: 207) //almost pink
         static let aquaMarine : UIColor = .init(hexFromString: "#37d09c")
         static let textviewBGColor : UIColor = .init(red: 244, green: 244, blue: 244)
         static let blueToastViewColor : UIColor = .init(hexFromString: "3a68c9")
         static let lightGrey : UIColor = .init(red: 248, green: 250, blue: 251)
         static let orangeYellow : UIColor = .init(hexFromString: "#ffb410")
+        static let lightGreen : UIColor = .init(red: 224, green: 242, blue: 236)
         
         struct Navigation {
             static let background : UIColor = Constants.Colors.appColor
