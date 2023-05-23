@@ -10,7 +10,10 @@ import UIKit
 import RxSwift
 
 protocol PaymentsViewControllerOutput {
-    
+    func getPayments() -> Single<Void>
+    func getPaymentsTypes() -> Single<Void>
+    func addPayment(title : String, currency : String, amount : Int, date : String, paymentTypeID : Int) -> Single<Void>
+
 }
 
 class PaymentsViewController: BaseViewController {
@@ -227,20 +230,6 @@ extension PaymentsViewController{
     }
 }
 
-//MARK:- Callbacks
-extension PaymentsViewController{
-    
-    fileprivate
-    func setupRetryFetchingCallBack(){
-        self.didTapOnRetryPlaceHolderButton = { [weak self] in
-            guard let self = self  else { return }
-            self.showPlaceHolderView(withAppearanceType: .loading,
-                                     title: Constants.PlaceHolderView.Texts.wait)
-            #warning("Retry Action does not set")
-        }
-    }
-}
-
 
 //MARK: - Actions UI
 extension PaymentsViewController {
@@ -406,4 +395,40 @@ extension PaymentsViewController {
         }
     }
     
+}
+
+//MARK:- Callbacks
+extension PaymentsViewController{
+    
+    fileprivate
+    func setupRetryFetchingCallBack(){
+        self.didTapOnRetryPlaceHolderButton = { [weak self] in
+            guard let self = self  else { return }
+            self.showPlaceHolderView(withAppearanceType: .loading,
+                                     title: Constants.PlaceHolderView.Texts.wait)
+            #warning("Retry Action does not set")
+        }
+    }
+    
+    private func subscribeForGetPayments(){
+        self.interactor?.getPayments()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { [weak self] _ in
+                self!.display(successMessage: "")
+                }, onError: { [weak self](error) in
+                    self!.display(errorMessage: (error as! ErrorViewModel).message)
+            })
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func subscribeForGetPaymentsTypes(){
+        self.interactor?.getPaymentsTypes()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { [weak self] _ in
+                self!.display(successMessage: "")
+                }, onError: { [weak self](error) in
+                    self!.display(errorMessage: (error as! ErrorViewModel).message)
+            })
+            .disposed(by: self.disposeBag)
+    }
 }

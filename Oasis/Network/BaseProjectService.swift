@@ -19,10 +19,10 @@ enum BaseProjectService {
     case setOneSignalUserPush( token : String)
     
     //Registration
-    case sendOTP(dict : [String:Any])//("mobile": "yaacoub.hadi@gmail.com")
+    case sendOTP(dict : [String:Any])//(mobile: "yaacoub.hadi@gmail.com") use this for testing
     case verifyOTP(dict : [String:Any])
     case register(dict : [String:Any])
-    case login(dict : [String:Any])//( "id": "yaacoub.hadi@gmail.com","password": "melhem_yaacoub")
+    case login(dict : [String:Any])//( id: "yaacoub.hadi@gmail.com", password: "melhem_yaacoub") use this for testing
     
     //Children
     case addChild(dict : [String:Any])
@@ -30,21 +30,22 @@ enum BaseProjectService {
     
     //Tasks
     case getTasksTypes
-    case addTask(dict : [String:Any]) //("title": "Feed the Pet","currency": "LBP","amount": 200000,"child_id": "email@hotmail.com","task_type_id": 1)
-    case getTasks
+    case addTask(dict : [String:Any])
+    case getChildTasks
+    case getGeneralTasks
     
     //Goals
-    case addGoal(dict : [String:Any]) //("title": "Travel","currency": "LBP","amount": 5000000,"end_date": "2023-05-17T13:22:33.233Z","file": "")
+    case addGoal(dict : [String:Any])
     case getGoals
     
     //Payments
     case getPaymentsTypes
-    case addPayment(dict : [String:Any])//("title": "Recharge Mobile","currency": "$","amount": 3,"date": "2023-05-17T13:43:14.549Z","payment_type_id": 2)
+    case addPayment(dict : [String:Any])
     case getPayments
     
     //Intersts
     case getinterestsTypes
-    case addInterest(dict : [String:Any])//("interest_ids": "1")
+    case addInterest(dict : [String:Any])//(interest_ids: "1")
     
     //Activities
     case getActivities
@@ -97,7 +98,9 @@ extension BaseProjectService: TargetType {
             return "task_types"
         case .addTask:
             return "task"
-        case .getTasks:
+        case .getGeneralTasks:
+            return "tasks"
+        case .getChildTasks:
             return "task"
         case .addGoal:
             return "goal"
@@ -151,7 +154,7 @@ extension BaseProjectService: TargetType {
             return requestParameters(parameters: ["player_id":token])
         case .register(let dict), .sendOTP(let dict), .verifyOTP(let dict), .addChild(let dict), .addTask(let dict), .addGoal(let dict), .addPayment(let dict), .addInterest(let dict), .login(let dict), .fund(let dict), .linkUsers(let dict), .getUsers(let dict), .sendFriendRequest(let dict), .acceptFriendRequest(let dict):
             return requestParameters(parameters: dict)
-        case .getChildren, .getTasksTypes, .getPaymentsTypes, .getPayments, .getGoals, .getinterestsTypes, .getActivities, .getBalance, .getFriends, .getFriendsRequests, .getTasks:
+        case .getChildren, .getTasksTypes, .getPaymentsTypes, .getPayments, .getGoals, .getinterestsTypes, .getActivities, .getBalance, .getFriends, .getFriendsRequests, .getChildTasks, .getGeneralTasks:
             return requestParameters(parameters: [:])
             
         }

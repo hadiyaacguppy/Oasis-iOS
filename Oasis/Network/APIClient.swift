@@ -106,8 +106,33 @@ extension APIClient {
             .map {_ in return Void()}
     }
     
-    func getTasks() -> Single<Void>{
-        return self.provider.rx.request(.getTasks)
+    func getGeneralTasks() -> Single<Void>{
+        return self.provider.rx.request(.getGeneralTasks)
+            .map {_ in return Void()}
+    }
+    
+    func getChildTasks() -> Single<Void>{
+        return self.provider.rx.request(.getChildTasks)
+            .map {_ in return Void()}
+    }
+    
+    func getPaymentsTypes() -> Single<Void>{
+        return self.provider.rx.request(.getPaymentsTypes)
+            .map {_ in return Void()}
+    }
+    
+    func getPayments() -> Single<Void>{
+        return self.provider.rx.request(.getPayments)
+            .map {_ in return Void()}
+    }
+    
+    func getGoals() -> Single<Void>{
+        return self.provider.rx.request(.getGoals)
+            .map {_ in return Void()}
+    }
+    
+    func getTasksTypes() -> Single<Void>{
+        return self.provider.rx.request(.getTasksTypes)
             .map {_ in return Void()}
     }
     /*func getTasksTypes() -> Single<[TaskType]>{

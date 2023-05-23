@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 protocol GoalsViewControllerOutput {
-    
+    func getGoals() -> Single<Void>
 }
 
 class GoalsViewController: BaseViewController {
@@ -259,5 +259,30 @@ extension GoalsViewController: UICollectionViewDelegateFlowLayout {
                         collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 21.0
+    }
+}
+
+//MARK:- Callbacks
+extension GoalsViewController{
+    
+    fileprivate
+    func setupRetryFetchingCallBack(){
+        self.didTapOnRetryPlaceHolderButton = { [weak self] in
+            guard let self = self  else { return }
+            self.showPlaceHolderView(withAppearanceType: .loading,
+                                     title: Constants.PlaceHolderView.Texts.wait)
+            #warning("Retry Action does not set")
+        }
+    }
+    
+    private func subscribeForGetGoals(){
+        self.interactor?.getGoals()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { [weak self] _ in
+                self!.display(successMessage: "Done")
+                }, onError: { [weak self](error) in
+                    self!.display(errorMessage: (error as! ErrorViewModel).message)
+            })
+            .disposed(by: self.disposeBag)
     }
 }

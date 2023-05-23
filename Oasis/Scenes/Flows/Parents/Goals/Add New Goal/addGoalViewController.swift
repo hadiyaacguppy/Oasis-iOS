@@ -10,7 +10,8 @@ import UIKit
 import RxSwift
 
 protocol addGoalViewControllerOutput {
-    
+    func addGoal(title: String, currency: String, amount: Int, endDate: String, file : String) -> Single<Void>
+
 }
 
 class addGoalViewController: BaseViewController {
@@ -286,6 +287,17 @@ extension addGoalViewController{
                                      title: Constants.PlaceHolderView.Texts.wait)
 #warning("Retry Action does not set")
         }
+    }
+    
+    private func subscribeForAddGoal(){
+        self.interactor?.addGoal(title: "", currency: "", amount: 200000, endDate: "", file: "")
+            .observeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { [weak self] _ in
+                self!.display(successMessage: "Done")
+                }, onError: { [weak self](error) in
+                    self!.display(errorMessage: (error as! ErrorViewModel).message)
+            })
+            .disposed(by: self.disposeBag)
     }
 }
 

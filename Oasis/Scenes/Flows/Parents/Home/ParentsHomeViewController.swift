@@ -11,7 +11,7 @@ import RxSwift
 import FSPagerView
 
 protocol ParentsHomeViewControllerOutput {
-    
+    func getPayments() -> Single<Void>
 }
 
 class ParentsHomeViewController: BaseViewController {
@@ -592,20 +592,6 @@ extension ParentsHomeViewController{
     }
 }
 
-//MARK:- Callbacks
-extension ParentsHomeViewController{
-    
-    fileprivate
-    func setupRetryFetchingCallBack(){
-        self.didTapOnRetryPlaceHolderButton = { [weak self] in
-            guard let self = self  else { return }
-            self.showPlaceHolderView(withAppearanceType: .loading,
-                                     title: Constants.PlaceHolderView.Texts.wait)
-#warning("Retry Action does not set")
-        }
-    }
-}
-
 
 //MARK: - Actions UI
 extension ParentsHomeViewController {
@@ -815,4 +801,31 @@ extension ParentsHomeViewController: FSPagerViewDelegate, FSPagerViewDataSource{
         
         return cell
     }
+}
+
+
+//MARK:- Callbacks
+extension ParentsHomeViewController{
+    
+    fileprivate
+    func setupRetryFetchingCallBack(){
+        self.didTapOnRetryPlaceHolderButton = { [weak self] in
+            guard let self = self  else { return }
+            self.showPlaceHolderView(withAppearanceType: .loading,
+                                     title: Constants.PlaceHolderView.Texts.wait)
+#warning("Retry Action does not set")
+        }
+    }
+    
+    private func subscribeForGetPayments(){
+        self.interactor?.getPayments()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { [weak self] _ in
+                self!.display(successMessage: "")
+                }, onError: { [weak self](error) in
+                    self!.display(errorMessage: (error as! ErrorViewModel).message)
+            })
+            .disposed(by: self.disposeBag)
+    }
+    
 }

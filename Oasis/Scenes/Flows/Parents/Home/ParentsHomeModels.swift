@@ -12,6 +12,10 @@ import Foundation
 struct ParentsHomeModels {
     
     struct ViewModels {
-        
+        struct Payment{
+            let paymentType : String?
+            let title : String?
+            let amount : Int?
+        }
     }
 }
