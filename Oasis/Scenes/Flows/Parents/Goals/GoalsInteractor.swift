@@ -12,7 +12,7 @@ import RxSwift
 protocol GoalsInteractorOutput {
     
     func apiCallFailed(withError error : NetworkErrorResponse) -> ErrorViewModel
-    
+    func didGetGoals(models : [GoalAPIModel]) -> [GoalsModels.ViewModels.Goal]
 }
 
 protocol GoalsDataStore {
@@ -26,13 +26,13 @@ class GoalsInteractor: GoalsDataStore{
 }
 
 extension GoalsInteractor: GoalsViewControllerOutput{
-    func getGoals() -> Single<Void> {
-        return Single<Void>.create(subscribe: { single in
+    func getGoals() -> Single<[GoalsModels.ViewModels.Goal]> {
+        return Single<[GoalsModels.ViewModels.Goal]>.create(subscribe: { single in
             APIClient.shared.getGoals()
-                .subscribe(onSuccess: { [weak self] _ in
+                .subscribe(onSuccess: { [weak self] (goals) in
                     guard let self = self else { return single(.error(ErrorViewModel.generateGenericError()))}
                     guard self.presenter != nil else { return single(.error(ErrorViewModel.generateGenericError()))}
-                    single(.success(()))
+                    single(.success((self.presenter!.didGetGoals(models: goals))))
                     }, onError: { [weak self] (error) in
                         guard let self = self else { return single(.error(ErrorViewModel.generateGenericError()))}
                         guard self.presenter != nil else { return single(.error(ErrorViewModel.generateGenericError()))}

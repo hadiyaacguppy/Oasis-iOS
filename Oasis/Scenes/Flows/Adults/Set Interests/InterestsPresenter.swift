@@ -13,6 +13,14 @@ class InterestsPresenter {}
 
 extension InterestsPresenter: InterestsInteractorOutput {
     
+    func didGetInterestsTypes(models : [InterestTypeAPIModel]) -> [InterestsModels.ViewModels.Interest]{
+        return models.map{createInterestType(model: $0)}
+    }
+    
+    func createInterestType(model : InterestTypeAPIModel) -> InterestsModels.ViewModels.Interest{
+        return InterestsModels.ViewModels.Interest(id: model.id!, name: model.name, image: model.image?.asURL())
+    }
+
     func apiCallFailed(withError error: NetworkErrorResponse)
     -> ErrorViewModel {
         return self.parseErrorViewModel(fromErrorResponse:error)

@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 protocol addGoalViewControllerOutput {
-    func addGoal(title: String, currency: String, amount: Int, endDate: String, file : String) -> Single<Void>
+    func addGoal(goalName: String, currency: String, amount: Int, endDate: String, file : String) -> Single<Void>
 
 }
 
@@ -90,8 +90,29 @@ class addGoalViewController: BaseViewController {
         imgView.contentMode = .scaleAspectFit
         imgView.autoLayout()
         imgView.image = R.image.calendarIcon()!
+        
         return imgView
     }()
+    
+    lazy var currencyPicker: UIPickerView = {
+        let picker = UIPickerView()
+        picker.dataSource = self
+        picker.delegate = self
+        picker.backgroundColor = UIColor.white
+        picker.setValue(UIColor.black, forKey: "textColor")
+        picker.autoresizingMask = .flexibleWidth
+        picker.contentMode = .center
+        return picker
+    }()
+    
+    var currencies = ["LBP", "$"]
+    var currencySelected : String = "LBP"
+    var dateSelected : String?
+    var goalName : String?
+    var goalAmount : Int?
+    lazy var txtFieldTag : Int = 0
+    
+    
 }
 
 //MARK:- View Lifecycle
@@ -159,9 +180,7 @@ extension addGoalViewController{
         addGeneralStackView()
     }
     
-    //StackView
     private func addGeneralStackView(){
-        //Add general stack view
         scrollView.addSubview(stackView)
         
         NSLayoutConstraint.activate([
@@ -175,13 +194,11 @@ extension addGoalViewController{
         
         scrollView.contentInset = .init(top: 0, left: 0, bottom: 50, right: 0)
         
-        //Third, add the GoalInfo Stack View
-        addGoalInfoStackView()
-        //Fourth, add upload Picture view
+        addGoalInfoViews()
         addEndDateView()
     }
     
-    private func addGoalInfoStackView(){
+    private func addGoalInfoViews(){
         let goalInfo1 = TitleWithTextFieldView.init(requestTitle: "Goal’s name",
                                                     placeHolderTxt: "What’s your goal?",
                                                     usertext: "",
@@ -192,6 +209,26 @@ extension addGoalViewController{
         
         stackView.addArrangedSubview(goalInfo1)
         stackView.addArrangedSubview(goalInfo2)
+        
+        goalInfo1.anyTextField.onTap {
+            self.txtFieldTag = 1
+            goalInfo1.anyTextField.keyboardType = .numberPad
+            goalInfo1.anyTextField.becomeFirstResponder()
+        }
+        goalInfo2.amountTextField.onTap {
+            self.txtFieldTag = 2
+            goalInfo2.amountTextField.becomeFirstResponder()
+        }
+        goalInfo2.currencyLabel.onTap {
+            self.stackView.addSubview(self.currencyPicker)
+        }
+        
+        NSLayoutConstraint.activate([
+            currencyPicker.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -10),
+            currencyPicker.heightAnchor.constraint(equalToConstant: 60),
+            currencyPicker.widthAnchor.constraint(equalToConstant: 60),
+            currencyPicker.bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: -10)
+        ])
     }
     
     //Add End Date label and image
@@ -200,7 +237,7 @@ extension addGoalViewController{
         
         endDateView.addSubview(calendarImageView)
         endDateView.addSubview(enddateLabel)
-        
+    
         NSLayoutConstraint.activate([
             endDateView.heightAnchor.constraint(equalToConstant: 50),
             
@@ -211,9 +248,13 @@ extension addGoalViewController{
             calendarImageView.trailingAnchor.constraint(equalTo: endDateView.trailingAnchor, constant: -10),
             calendarImageView.heightAnchor.constraint(equalToConstant: 35),
             calendarImageView.widthAnchor.constraint(equalToConstant: 35),
-            calendarImageView.centerYAnchor.constraint(equalTo: endDateView.centerYAnchor)
+            calendarImageView.centerYAnchor.constraint(equalTo: endDateView.centerYAnchor),
+            
         ])
         
+        calendarImageView.onTap {
+            self.showDatePicker()
+        }
         //Fifth, add upload picture view
         addUploadPictureView()
     }
@@ -228,6 +269,7 @@ extension addGoalViewController{
         iconImg.contentMode = .scaleAspectFit
         iconImg.autoLayout()
         iconImg.image = R.image.uploadAPictureIcon()!
+        
         
         let lbl = BaseLabel()
         lbl.autoLayout()
@@ -262,10 +304,42 @@ extension addGoalViewController{
         ])
         
         goalButton.onTap {
-            self.navigationController?.popViewController(animated: true)
+            self.subscribeForAddGoal()
         }
     }
     
+    //Add Date Picker
+    private func showDatePicker(){
+        let datepicker = DatePickerDialog(textColor: .black,
+                                          buttonColor: Constants.Colors.aquaMarine,
+                                          font: MainFont.normal.with(size: 15),
+                                          locale: nil,
+                                          showCancelButton: true)
+         datepicker.show("Choose End Date".localized, doneButtonTitle: "Done".localized, cancelButtonTitle: "Cancel".localized, defaultDate: Date(), minimumDate: nil, maximumDate: nil, datePickerMode: .time) { (chosenDate) in
+            self.calendarImageView.resignFirstResponder()
+            self.dateSelected = (Date().getStringFromTimeStamp(Int(chosenDate!.timeIntervalSince1970), "HH:mm") as? String)
+        }
+    }
+    
+    private func validateFields(){
+        
+        guard goalName.notNilNorEmpty else {
+            showSimpleAlertView("", message: "Please fill in the Goals' Name", withCompletionHandler: nil)
+            return
+        }
+        
+        guard goalAmount != nil else {
+            showSimpleAlertView("", message: "Please fill in the Goals' Amount", withCompletionHandler: nil)
+            return
+        }
+        
+        guard dateSelected.notNilNorEmpty else {
+            showSimpleAlertView("", message: "Please Choose a Date", withCompletionHandler: nil)
+            return
+        }
+        
+        
+    }
 }
 
 //MARK:- NavBarAppearance
@@ -290,10 +364,11 @@ extension addGoalViewController{
     }
     
     private func subscribeForAddGoal(){
-        self.interactor?.addGoal(title: "", currency: "", amount: 200000, endDate: "", file: "")
+        self.interactor?.addGoal(goalName: goalName!, currency: currencySelected, amount: goalAmount!, endDate: dateSelected!, file: "")
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] _ in
-                self!.display(successMessage: "Done")
+                self!.display(successMessage: "Goad is Added Successfully")
+                self!.navigationController?.popViewController(animated: true)
                 }, onError: { [weak self](error) in
                     self!.display(errorMessage: (error as! ErrorViewModel).message)
             })
@@ -301,4 +376,42 @@ extension addGoalViewController{
     }
 }
 
+extension addGoalViewController{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if txtFieldTag == 1{
+            self.goalName = textField.text
+        }else if txtFieldTag == 2{
+            self.goalAmount = textField.text.notNilNorEmpty ? Int(textField.text!) : 0
+        }
+        textField.resignFirstResponder()
+        return true
+    }
+    
+}
 
+extension addGoalViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        2
+    }
+
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let attributedString = NSAttributedString(string: currencies[row],
+                                                  attributes: [
+                                                    NSAttributedString.Key.foregroundColor: UIColor.red,
+                                                    NSAttributedString.Key.font: MainFont.medium.with(size: 20)
+                                                  ])
+        return attributedString
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let currency = currencies[row]
+        currencySelected = currency
+        self.currencyPicker.removeFromSuperview()
+    }
+
+
+}

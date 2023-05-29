@@ -24,8 +24,8 @@ class LoginRouter: LoginRouterDataPassing{
     }
     
     // MARK: Navigation
-    func redirectToRegistration(){
-        let vc = R.storyboard.registration.registrationViewControllerNavVC()!
+    func redirectToSelectAge(){
+        let vc = R.storyboard.selectAge.selectAgeViewControllerNavVC()!
         let window = (UIApplication.shared.delegate as! AppDelegate).window!
         DispatchQueue.main.async {
             UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromRight, animations: {

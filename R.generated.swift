@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 23 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 24 storyboards.
   struct storyboard {
     /// Storyboard `AddChild`.
     static let addChild = _R.storyboard.addChild()
@@ -102,6 +102,8 @@ struct R: Rswift.Validatable {
     static let children = _R.storyboard.children()
     /// Storyboard `CreateConfirmPassword`.
     static let createConfirmPassword = _R.storyboard.createConfirmPassword()
+    /// Storyboard `Friends`.
+    static let friends = _R.storyboard.friends()
     /// Storyboard `Goals`.
     static let goals = _R.storyboard.goals()
     /// Storyboard `Initial`.
@@ -171,6 +173,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "CreateConfirmPassword", bundle: ...)`
     static func createConfirmPassword(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.createConfirmPassword)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Friends", bundle: ...)`
+    static func friends(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.friends)
     }
     #endif
 
@@ -1402,12 +1411,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 10 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 11 nibs.
   struct nib {
     /// Nib `AgeTableViewCell`.
     static let ageTableViewCell = _R.nib._AgeTableViewCell()
     /// Nib `ChildrenFSPagerViewCell`.
     static let childrenFSPagerViewCell = _R.nib._ChildrenFSPagerViewCell()
+    /// Nib `FriendsCollectionViewCell`.
+    static let friendsCollectionViewCell = _R.nib._FriendsCollectionViewCell()
     /// Nib `GoalCollectionViewCell`.
     static let goalCollectionViewCell = _R.nib._GoalCollectionViewCell()
     /// Nib `InterestsCollectionViewCell`.
@@ -1438,6 +1449,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.childrenFSPagerViewCell) instead")
     static func childrenFSPagerViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.childrenFSPagerViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "FriendsCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.friendsCollectionViewCell) instead")
+    static func friendsCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.friendsCollectionViewCell)
     }
     #endif
 
@@ -1513,6 +1532,10 @@ struct R: Rswift.Validatable {
       return R.nib.childrenFSPagerViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ChildrenFSPagerViewCell
     }
 
+    static func friendsCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> FriendsCollectionViewCell? {
+      return R.nib.friendsCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? FriendsCollectionViewCell
+    }
+
     static func goalCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GoalCollectionViewCell? {
       return R.nib.goalCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GoalCollectionViewCell
     }
@@ -1548,7 +1571,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 10 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 11 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `TasksCollectionCell`.
     static let tasksCollectionCell: Rswift.ReuseIdentifier<TasksCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "TasksCollectionCell")
@@ -1558,6 +1581,8 @@ struct R: Rswift.Validatable {
     static let ageCell: Rswift.ReuseIdentifier<AgeTableViewCell> = Rswift.ReuseIdentifier(identifier: "ageCell")
     /// Reuse identifier `childrenFSPagerCell`.
     static let childrenFSPagerCell: Rswift.ReuseIdentifier<ChildrenFSPagerViewCell> = Rswift.ReuseIdentifier(identifier: "childrenFSPagerCell")
+    /// Reuse identifier `friendsCollectionViewCell`.
+    static let friendsCollectionViewCell: Rswift.ReuseIdentifier<FriendsCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "friendsCollectionViewCell")
     /// Reuse identifier `goalCollectionVC`.
     static let goalCollectionVC: Rswift.ReuseIdentifier<GoalCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "goalCollectionVC")
     /// Reuse identifier `interestsCell`.
@@ -1634,6 +1659,20 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "kid", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'kid' is used in nib 'ChildrenFSPagerViewCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _FriendsCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = FriendsCollectionViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "friendsCollectionViewCell"
+      let name = "FriendsCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> FriendsCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? FriendsCollectionViewCell
       }
 
       fileprivate init() {}
@@ -1772,6 +1811,9 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try createConfirmPassword.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try friends.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try goals.validate()
@@ -1991,6 +2033,34 @@ struct _R: Rswift.Validatable {
         }
         if _R.storyboard.createConfirmPassword().createConfirmPasswordViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'createConfirmPasswordViewControllerNavVC' could not be loaded from storyboard 'CreateConfirmPassword' as 'BaseNavigationController'.") }
         if _R.storyboard.createConfirmPassword().createConfirmPasswordViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'createConfirmPasswordViewControllerVC' could not be loaded from storyboard 'CreateConfirmPassword' as 'CreateConfirmPasswordViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct friends: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseNavigationController
+
+      let bundle = R.hostingBundle
+      let friendsViewControllerNavVC = StoryboardViewControllerResource<BaseNavigationController>(identifier: "FriendsViewControllerNavVC")
+      let friendsViewControllerVC = StoryboardViewControllerResource<FriendsViewController>(identifier: "FriendsViewControllerVC")
+      let name = "Friends"
+
+      func friendsViewControllerNavVC(_: Void = ()) -> BaseNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: friendsViewControllerNavVC)
+      }
+
+      func friendsViewControllerVC(_: Void = ()) -> FriendsViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: friendsViewControllerVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.friends().friendsViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'friendsViewControllerNavVC' could not be loaded from storyboard 'Friends' as 'BaseNavigationController'.") }
+        if _R.storyboard.friends().friendsViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'friendsViewControllerVC' could not be loaded from storyboard 'Friends' as 'FriendsViewController'.") }
       }
 
       fileprivate init() {}

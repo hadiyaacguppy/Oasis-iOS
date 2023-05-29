@@ -194,6 +194,15 @@
 		169914612A1D57860046978D /* MoyaProvider+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1699145E2A1D57860046978D /* MoyaProvider+Rx.swift */; };
 		169914622A1D57860046978D /* Observable+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1699145F2A1D57860046978D /* Observable+Response.swift */; };
 		169914632A1D57870046978D /* Single+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914602A1D57860046978D /* Single+Response.swift */; };
+		1699146C2A24D3970046978D /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 169914652A24D3970046978D /* Friends.storyboard */; };
+		1699146D2A24D3970046978D /* FriendsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914662A24D3970046978D /* FriendsPresenter.swift */; };
+		1699146E2A24D3970046978D /* FriendsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914672A24D3970046978D /* FriendsRouter.swift */; };
+		1699146F2A24D3970046978D /* FriendsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914682A24D3970046978D /* FriendsModels.swift */; };
+		169914702A24D3970046978D /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914692A24D3970046978D /* FriendsViewController.swift */; };
+		169914712A24D3970046978D /* FriendsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1699146A2A24D3970046978D /* FriendsInteractor.swift */; };
+		169914722A24D3970046978D /* FriendsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1699146B2A24D3970046978D /* FriendsConfigurator.swift */; };
+		169914782A24D3EE0046978D /* FriendsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914762A24D3EE0046978D /* FriendsCollectionViewCell.swift */; };
+		169914792A24D3EE0046978D /* FriendsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 169914772A24D3EE0046978D /* FriendsCollectionViewCell.xib */; };
 		169976EA2A15011D00FDEC97 /* GoalAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976E92A15011D00FDEC97 /* GoalAPIModel.swift */; };
 		169976EC2A15012500FDEC97 /* TasksAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976EB2A15012500FDEC97 /* TasksAPIModel.swift */; };
 		169976EF2A1504C200FDEC97 /* TaskTypeAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976EE2A1504C200FDEC97 /* TaskTypeAPIModel.swift */; };
@@ -619,6 +628,15 @@
 		1699145E2A1D57860046978D /* MoyaProvider+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+Rx.swift"; sourceTree = "<group>"; };
 		1699145F2A1D57860046978D /* Observable+Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Response.swift"; sourceTree = "<group>"; };
 		169914602A1D57860046978D /* Single+Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Single+Response.swift"; sourceTree = "<group>"; };
+		169914652A24D3970046978D /* Friends.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
+		169914662A24D3970046978D /* FriendsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsPresenter.swift; sourceTree = "<group>"; };
+		169914672A24D3970046978D /* FriendsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsRouter.swift; sourceTree = "<group>"; };
+		169914682A24D3970046978D /* FriendsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsModels.swift; sourceTree = "<group>"; };
+		169914692A24D3970046978D /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		1699146A2A24D3970046978D /* FriendsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsInteractor.swift; sourceTree = "<group>"; };
+		1699146B2A24D3970046978D /* FriendsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsConfigurator.swift; sourceTree = "<group>"; };
+		169914762A24D3EE0046978D /* FriendsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollectionViewCell.swift; sourceTree = "<group>"; };
+		169914772A24D3EE0046978D /* FriendsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsCollectionViewCell.xib; sourceTree = "<group>"; };
 		169976E92A15011D00FDEC97 /* GoalAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalAPIModel.swift; sourceTree = "<group>"; };
 		169976EB2A15012500FDEC97 /* TasksAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksAPIModel.swift; sourceTree = "<group>"; };
 		169976EE2A1504C200FDEC97 /* TaskTypeAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTypeAPIModel.swift; sourceTree = "<group>"; };
@@ -1473,6 +1491,7 @@
 		166EF2FA29D36FCC0029908E /* Parents */ = {
 			isa = PBXGroup;
 			children = (
+				169914642A24D36F0046978D /* Friends */,
 				16ABAD122A09108400FB937C /* Tasks */,
 				16503FB829F5C25B00875075 /* Profile */,
 				16503FA929F5C06700875075 /* Goals */,
@@ -1529,6 +1548,30 @@
 				169914602A1D57860046978D /* Single+Response.swift */,
 			);
 			path = "Response+Extensions";
+			sourceTree = "<group>";
+		};
+		169914642A24D36F0046978D /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				169914732A24D39D0046978D /* New Group */,
+				169914652A24D3970046978D /* Friends.storyboard */,
+				169914662A24D3970046978D /* FriendsPresenter.swift */,
+				169914672A24D3970046978D /* FriendsRouter.swift */,
+				169914682A24D3970046978D /* FriendsModels.swift */,
+				169914692A24D3970046978D /* FriendsViewController.swift */,
+				1699146A2A24D3970046978D /* FriendsInteractor.swift */,
+				1699146B2A24D3970046978D /* FriendsConfigurator.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		169914732A24D39D0046978D /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				169914762A24D3EE0046978D /* FriendsCollectionViewCell.swift */,
+				169914772A24D3EE0046978D /* FriendsCollectionViewCell.xib */,
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 		169976ED2A15012F00FDEC97 /* App Models */ = {
@@ -2200,6 +2243,7 @@
 				161F3BA929D4BF670053158A /* Montserrat-Thin.ttf in Resources */,
 				161F3C0829E319050053158A /* AgeTableViewCell.xib in Resources */,
 				161F3BAC29D4BF670053158A /* Montserrat-Italic.ttf in Resources */,
+				1699146C2A24D3970046978D /* Friends.storyboard in Resources */,
 				161F3BB029D4BF670053158A /* Montserrat-Light.ttf in Resources */,
 				161F3BEE29E2FCA20053158A /* CreateConfirmPassword.storyboard in Resources */,
 				16ABAD3B2A0E5E4F00FB937C /* GoalCollectionViewCell.xib in Resources */,
@@ -2225,6 +2269,7 @@
 				16503F8B29F5409900875075 /* OccasionCollectionViewCell.xib in Resources */,
 				161F3C7329F31EE80053158A /* SendMoney.storyboard in Resources */,
 				161F3B9029D371500053158A /* Onboarding.storyboard in Resources */,
+				169914792A24D3EE0046978D /* FriendsCollectionViewCell.xib in Resources */,
 				161F3BAA29D4BF670053158A /* Montserrat-Medium.ttf in Resources */,
 				161F3BAF29D4BF670053158A /* Montserrat-Black.ttf in Resources */,
 				161F3BA829D4BF670053158A /* Montserrat-ExtraLight.ttf in Resources */,
@@ -2550,6 +2595,7 @@
 				16ABAD352A0E40CD00FB937C /* AssignNewTaskInteractor.swift in Sources */,
 				672909FE210E43F900632C4F /* PlaceHolderCreator.swift in Sources */,
 				16B0444A2A14FC51003EC59D /* ChildAPIModel.swift in Sources */,
+				169914702A24D3970046978D /* FriendsViewController.swift in Sources */,
 				117C4AB01FD864DE008BB445 /* UILabel+Extensions.swift in Sources */,
 				16ABACFC2A04399400FB937C /* AddChildInteractor.swift in Sources */,
 				16503F9729F5853600875075 /* PaymentsViewController.swift in Sources */,
@@ -2560,6 +2606,7 @@
 				CF87EDA0201B6EF700562226 /* BaseViewController.swift in Sources */,
 				16503FB729F5C07400875075 /* GoalsConfigurator.swift in Sources */,
 				161F3BEF29E2FCA20053158A /* CreateConfirmPasswordPresenter.swift in Sources */,
+				169914782A24D3EE0046978D /* FriendsCollectionViewCell.swift in Sources */,
 				161F3C4129ED3D990053158A /* CardTabBarView.swift in Sources */,
 				16ABACDA29F6737000FB937C /* IconSegment.swift in Sources */,
 				16ABAD0C2A08E1A900FB937C /* addGoalPresenter.swift in Sources */,
@@ -2570,6 +2617,7 @@
 				CF6030762212F77B003872F3 /* DeviceManager.swift in Sources */,
 				3ECBAAB723D06DD8003672DA /* PushNotificationContainer.swift in Sources */,
 				161F3BE129DAD6FB0053158A /* OTPVerificationModels.swift in Sources */,
+				169914712A24D3970046978D /* FriendsInteractor.swift in Sources */,
 				3EDC4156224E886500624D2B /* BaseUIView.swift in Sources */,
 				161F3C0329E3157D0053158A /* SelectAgeConfigurator.swift in Sources */,
 				169914612A1D57860046978D /* MoyaProvider+Rx.swift in Sources */,
@@ -2635,6 +2683,7 @@
 				161F3BDF29DAD6FB0053158A /* OTPVerificationPresenter.swift in Sources */,
 				16ABAD002A04F4A300FB937C /* TitleWithTextFieldView.swift in Sources */,
 				161F3C2429E5ACD40053158A /* PinterestLayoutAttributes.swift in Sources */,
+				1699146D2A24D3970046978D /* FriendsPresenter.swift in Sources */,
 				16ABAD112A08E1A900FB937C /* addGoalConfigurator.swift in Sources */,
 				169976F12A15100B00FDEC97 /* PaymentTypeAPIModel.swift in Sources */,
 				161F3BC429D98A0E0053158A /* RegistrationViewController.swift in Sources */,
@@ -2683,8 +2732,10 @@
 				169914622A1D57860046978D /* Observable+Response.swift in Sources */,
 				161F3B9429D371500053158A /* OnboardingViewController.swift in Sources */,
 				16ABAD1E2A0910AB00FB937C /* AddTaskViewController.swift in Sources */,
+				1699146E2A24D3970046978D /* FriendsRouter.swift in Sources */,
 				0F1B7FBC22CA6CBD0079F752 /* CountryCell.swift in Sources */,
 				161F3C0129E3157D0053158A /* SelectAgeViewController.swift in Sources */,
+				169914722A24D3970046978D /* FriendsConfigurator.swift in Sources */,
 				16ABACFA2A04399400FB937C /* AddChildModels.swift in Sources */,
 				67C958F42624782100A67399 /* Reactive+UITextField.swift in Sources */,
 				CF403859216CF78F001F649B /* InitialPresenter.swift in Sources */,
@@ -2740,6 +2791,7 @@
 				161F3C6A29F31CD00053158A /* ReceiveMoneyConfigurator.swift in Sources */,
 				16ABACE929F68CDD00FB937C /* SettingsInteractor.swift in Sources */,
 				169914632A1D57870046978D /* Single+Response.swift in Sources */,
+				1699146F2A24D3970046978D /* FriendsModels.swift in Sources */,
 				3E1DEAF022BA62FD00FAD9F4 /* UIView+Shadow.swift in Sources */,
 				16ABAD322A0E40CD00FB937C /* AssignNewTaskRouter.swift in Sources */,
 				16503F9529F5853600875075 /* PaymentsRouter.swift in Sources */,

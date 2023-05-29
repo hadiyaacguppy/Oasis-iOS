@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 protocol GoalsViewControllerOutput {
-    func getGoals() -> Single<Void>
+    func getGoals() -> Single<[GoalsModels.ViewModels.Goal]>
 }
 
 class GoalsViewController: BaseViewController {
@@ -65,6 +65,8 @@ class GoalsViewController: BaseViewController {
         return collectionView
     }()
     
+    //View Models
+    var goalsViewModel = [GoalsModels.ViewModels.Goal]()
     var isThereGoals : Bool = true
 }
 
@@ -82,6 +84,7 @@ extension GoalsViewController{
         //                            title: Constants.PlaceHolderView.Texts.wait)
         setupNavBarAppearance()
         setupRetryFetchingCallBack()
+        subscribeForGetGoals()
         setupUI()
     }
     
@@ -95,7 +98,7 @@ extension GoalsViewController{
         addTitle()
         addButton()
         addScrollViewAndStackView()
-        if isThereGoals{
+        if goalsViewModel.count > 0{
             addGoalsCollectionView()
         }else{
             addNoGoalsPlaceholder()
@@ -213,13 +216,13 @@ extension GoalsViewController{
 extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return goalsViewModel.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.goalCollectionVC, for: indexPath)!
        
-        cell.setupCell(titleForGoal: "Trip to Paris", savedValue: "LBP 550,000", outOfValue: "LBP 5,000,000", percentageValue: 40, goalImage: R.image.wedding.name)
+        cell.setupCell(viewModel: goalsViewModel[indexPath.row])
         return cell
         
     }
@@ -263,8 +266,9 @@ extension GoalsViewController{
     private func subscribeForGetGoals(){
         self.interactor?.getGoals()
             .observeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { [weak self] _ in
-                self!.display(successMessage: "Done")
+            .subscribe(onSuccess: { [weak self] (goalsArrayVM) in
+                self!.goalsViewModel = goalsArrayVM
+                //self!.goalsCollectionView.reloadData()
                 }, onError: { [weak self](error) in
                     self!.display(errorMessage: (error as! ErrorViewModel).message)
             })

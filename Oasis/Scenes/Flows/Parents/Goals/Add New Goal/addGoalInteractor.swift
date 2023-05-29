@@ -26,13 +26,13 @@ class addGoalInteractor: addGoalDataStore{
 }
 
 extension addGoalInteractor: addGoalViewControllerOutput{
-    func addGoal(title: String, currency: String, amount: Int, endDate: String, file: String) -> RxSwift.Single<Void> {
+    func addGoal(goalName: String, currency: String, amount: Int, endDate: String, file: String) -> RxSwift.Single<Void> {
         var dict : [String:Any] = [:]
-        dict["id"] = title
-        dict["first_name"] = currency
-        dict["last_name"] = amount
-        dict["file"] = endDate
-        dict["last_name"] = file
+        dict["title"] = goalName
+        dict["currency"] = currency
+        dict["amount"] = amount
+        dict["end_date"] = endDate
+        dict["file"] = file
         return Single<Void>.create(subscribe: { single in
             APIClient.shared.addGoal(dict: dict)
                 .subscribe(onSuccess: { [weak self] _ in

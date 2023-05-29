@@ -12,6 +12,14 @@ import Foundation
 struct GoalsModels {
     
     struct ViewModels {
-        
+        struct Goal{
+            var id : Int
+            var Title : String?
+            var amount : Int?
+            var saved : Int?
+            var endDate : String?
+            var goalImage : URL?
+            
+        }
     }
 }

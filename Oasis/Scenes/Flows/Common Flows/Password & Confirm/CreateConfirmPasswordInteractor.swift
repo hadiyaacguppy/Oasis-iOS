@@ -32,7 +32,7 @@ extension CreateConfirmPasswordInteractor: CreateConfirmPasswordViewControllerOu
         dict["first_name"] = RegistrationDataManager.current.userFirstName!
         dict["last_name"] = RegistrationDataManager.current.userLastName!
         dict["password"] = password
-        dict["age"] = RegistrationDataManager.current.userAge!
+        dict["age"] = "30"//RegistrationDataManager.current.userAge!
         dict["file"] = ""
         dict["mobile"] = "70024284"
         return Single<Void>.create(subscribe: { single in

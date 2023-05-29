@@ -66,6 +66,7 @@ struct Constants {
     
     struct DefaultValues {
         static let SMSTimerInterval = 60
+        static let notAvailable = "N/A".localized
     }
 
 

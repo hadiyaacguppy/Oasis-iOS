@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 protocol InterestsViewControllerOutput {
-    
+    func getInterestsTypes() -> Single<[InterestsModels.ViewModels.Interest]>
 }
 
 class InterestsViewController: BaseViewController {
@@ -66,6 +66,7 @@ class InterestsViewController: BaseViewController {
                                  R.image.rectangleCopy6()!,
                                  R.image.rectangleCopy()!]
     var testTitles: [String] = ["Dance", "Sports", "Fashion", "Fitness", "Family", "Nightlife"]
+    var interestsViewModel = [InterestsModels.ViewModels.Interest]()
 
 }
 
@@ -166,27 +167,12 @@ extension InterestsViewController{
     }
 }
 
-//MARK:- Callbacks
-extension InterestsViewController{
-    
-    fileprivate
-    func setupRetryFetchingCallBack(){
-        self.didTapOnRetryPlaceHolderButton = { [weak self] in
-            guard let self = self  else { return }
-            self.showPlaceHolderView(withAppearanceType: .loading,
-                                     title: Constants.PlaceHolderView.Texts.wait)
-            #warning("Retry Action does not set")
-        }
-    }
-}
-
-
 //MARK: UICollectionViewDataSource
 
 extension InterestsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return testImages.count
+        return interestsViewModel.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -223,3 +209,27 @@ extension InterestsViewController: PinterestLayoutDelegate {
     }
 }
 
+//MARK:- Callbacks
+extension InterestsViewController{
+    
+    fileprivate
+    func setupRetryFetchingCallBack(){
+        self.didTapOnRetryPlaceHolderButton = { [weak self] in
+            guard let self = self  else { return }
+            self.showPlaceHolderView(withAppearanceType: .loading,
+                                     title: Constants.PlaceHolderView.Texts.wait)
+            #warning("Retry Action does not set")
+        }
+    }
+    
+    private func subscribeForGetInterests(){
+        self.interactor?.getInterestsTypes()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { [weak self] (interestsArrayVM) in
+                self!.interestsViewModel = interestsArrayVM
+                }, onError: { [weak self](error) in
+                    self!.display(errorMessage: (error as! ErrorViewModel).message)
+            })
+            .disposed(by: self.disposeBag)
+    }
+}

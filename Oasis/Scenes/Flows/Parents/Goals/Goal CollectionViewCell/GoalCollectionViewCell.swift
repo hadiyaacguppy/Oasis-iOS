@@ -93,19 +93,20 @@ class GoalCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
-    func setupCell(titleForGoal : String, savedValue : String, outOfValue : String, percentageValue : Int, goalImage : String ){
-        goalTitle.text = titleForGoal
-        savedValueLabel.text = savedValue
-        outOfValuelabel.text = outOfValue
-        percentageLabel.text = "\(percentageValue)"
-        updatePercentageView(percentage: percentageValue)
-        goalImageView.image = UIImage(named: goalImage)
-        
+    func setupCell(viewModel : GoalsModels.ViewModels.Goal){
+        goalTitle.text = viewModel.Title
+        savedValueLabel.text = "\(viewModel.saved!)"
+        outOfValuelabel.text = "\(viewModel.amount!)"
+        updatePercentageView(amount: viewModel.amount!, saved: viewModel.saved!)
+        goalImageView.setNormalImage(withURL: viewModel.goalImage)
+
     }
     
-    func updatePercentageView(percentage : Int){
+    func updatePercentageView(amount : Int, saved : Int){
     
+        let percentage = (saved * 100)/amount
         let percentageWidth = (percentage * Int(bottomGreenView.frame.size.width)) / 100
+        percentageLabel.text = "\(percentage)%"
         NSLayoutConstraint.activate([
             percentageGreenView.widthAnchor.constraint(equalToConstant: CGFloat(percentageWidth))
         ])

@@ -31,6 +31,7 @@ class  APIClient {
 
 //MARK: - Registration
 extension APIClient {
+    
     func  sendOTP(dict : [String:Any])-> Single<Void>{
         return self.provider.rx.request(.sendOTP(dict: dict))
             .map {_ in return Void()}
@@ -106,73 +107,54 @@ extension APIClient {
             .map {_ in return Void()}
     }
     
-    func getGeneralTasks() -> Single<Void>{
+    func getTasksTypes() -> Single<[TaskTypeAPIModel]>{
+        return self.provider.rx.request(.getTasksTypes)
+            .map([TaskTypeAPIModel].self)
+    }
+    
+    func getGeneralTasks() -> Single<[TasksAPIModel]>{
         return self.provider.rx.request(.getGeneralTasks)
-            .map {_ in return Void()}
+            .map([TasksAPIModel].self)
     }
     
-    func getChildTasks() -> Single<Void>{
+    func getChildTasks() -> Single<[TasksAPIModel]>{
         return self.provider.rx.request(.getChildTasks)
-            .map {_ in return Void()}
+            .map([TasksAPIModel].self)
     }
-    
-    func getPaymentsTypes() -> Single<Void>{
-        return self.provider.rx.request(.getPaymentsTypes)
-            .map {_ in return Void()}
-    }
-    
-    func getPayments() -> Single<Void>{
-        return self.provider.rx.request(.getPayments)
-            .map {_ in return Void()}
-    }
-    
-    func getGoals() -> Single<Void>{
-        return self.provider.rx.request(.getGoals)
-            .map {_ in return Void()}
-    }
-    
-    func getTasksTypes() -> Single<Void>{
-        return self.provider.rx.request(.getTasksTypes)
-            .map {_ in return Void()}
-    }
-    /*func getTasksTypes() -> Single<[TaskType]>{
-        return self.provider.rx.request(.getTasksTypes)
-            .mapArray(TaskType.self)
-    }
-     
-     func getGoals() -> Single<[Goal]>{
-         return self.provider.rx.request(.getGoals)
-             .mapArray(Goal.self)
-     }
-     
-     func getPaymentsTypes() -> Single<[PaymentType]>{
-         return self.provider.rx.request(.getPaymentsTypes)
-             .mapArray(PaymentType.self)
-     }
-    
-    func getPayments() -> Single<[Payment]>{
-        return self.provider.rx.request(.getPayments)
-            .mapArray(Payment.self)
-    }
-    
-    func getInterestsTypes() -> Single<[InterestType]>{
-        return self.provider.rx.request(.getinterestsTypes)
-            .mapArray(InterestType.self)
-    }*/
     
     func addTask(dict : [String:Any]) -> Single<Void>{
         return self.provider.rx.request(.addTask(dict: dict))
             .map {_ in return Void()}
     }
     
-    func addGoal(dict : [String:Any]) -> Single<Void>{
-        return self.provider.rx.request(.addGoal(dict: dict))
-            .map {_ in return Void()}
+    func getPaymentsTypes() -> Single<[PaymentTypeAPIModel]>{
+        return self.provider.rx.request(.getPaymentsTypes)
+            .map([PaymentTypeAPIModel].self)
+    }
+    
+    func getPayments() -> Single<[PaymentAPIModel]>{
+        return self.provider.rx.request(.getPayments)
+            .map([PaymentAPIModel].self)
     }
     
     func addPayment(dict : [String:Any]) -> Single<Void>{
         return self.provider.rx.request(.addPayment(dict: dict))
             .map {_ in return Void()}
+    }
+    
+    func getGoals() -> Single<[GoalAPIModel]>{
+        return self.provider.rx.request(.getGoals)
+            .map([GoalAPIModel].self)
+    }
+     
+    func addGoal(dict : [String:Any]) -> Single<Void>{
+        return self.provider.rx.request(.addGoal(dict: dict))
+            .map {_ in return Void()}
+    }
+    
+    func getInterestsTypes() -> Single<[InterestTypeAPIModel]>{
+        return self.provider.rx.request(.getinterestsTypes)
+            .map([InterestTypeAPIModel].self)
     }
     
     func addInterest(dict : [String:Any]) -> Single<Void>{

@@ -98,4 +98,16 @@ extension Date{
         }
         return "\(quotient) \(unit)\(quotient == 1 ? "" : "s") ago"
     }
+    
+    func getStringFromTimeStamp(_ unixtimeInterval: Int,_ stringFormat: String = "yyyy-MM-dd hh:mm:ss") -> Any {
+        
+        let date = Date(timeIntervalSince1970: TimeInterval(unixtimeInterval))
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = stringFormat
+        //dateFormatter.timeZone = TimeZone(identifier: "UTC")
+        
+        let strDate = dateFormatter.string(from: date)
+        
+        return strDate
+    }
 }

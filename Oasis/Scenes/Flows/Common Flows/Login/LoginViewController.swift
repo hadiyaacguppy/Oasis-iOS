@@ -183,7 +183,7 @@ extension LoginViewController{
     }
     
     @objc func registerBarButtonPressed(){
-        self.router?.redirectToRegistration()
+        self.router?.redirectToSelectAge()
     }}
 
 //MARK:- Callbacks
