@@ -102,7 +102,7 @@ class ReceiveMoneyViewController: BaseViewController {
     }()
     
     private var amountView : AmountWithCurrencyView = {
-        let view = AmountWithCurrencyView(defaultValue: 0.0, currency: "LBP", titleLbl: "Amount to receive")
+        let view = AmountWithCurrencyView(amountPlaceHolder: 0.0, amount: 0, currency: "LBP", titleLbl: "Amount to receive")//(defaultValue: 0.0, currency: "LBP", titleLbl: "Amount to receive")
         return view
     }()
     

@@ -21,6 +21,7 @@ class AmountWithCurrencyView: BaseUIView {
     
     lazy var amountTextField : AmountTextField = {
         let txtF = AmountTextField()
+        txtF.keyboardType = .numberPad
         return txtF
     }()
     
@@ -39,12 +40,24 @@ class AmountWithCurrencyView: BaseUIView {
         return view
     }()
     
-    var currencyValue : String = ""
+    lazy var currencyPicker: UIPickerView = {
+        let picker = UIPickerView()
+//        picker.dataSource = self
+//        picker.delegate = self
+        picker.backgroundColor = UIColor.white
+        picker.setValue(UIColor.black, forKey: "textColor")
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        picker.contentMode = .center
+        picker.autoLayout()
+        return picker
+    }()
     
-    init(defaultValue defaultV : Float = 0.0, currency : String, titleLbl : String) {
+    
+    init(amountPlaceHolder : Float, amount : Int?, currency : String, titleLbl : String) {
         super.init(frame: .zero)
-        self.amountTextField.text = "\(defaultV)"
-        self.currencyValue = currency
+        self.amountTextField.placeholder = "\(amountPlaceHolder)"
+        //self.amountTextField.text = amount != nil ? "\(amount!)" : "0.0"
+        self.currencyLabel.text = currency
         self.amountTitleLabel.text = titleLbl
         setupUI()
     }
@@ -66,7 +79,12 @@ class AmountWithCurrencyView: BaseUIView {
         self.addSubview(amountTextField)
         self.addSubview(underlineView)
         self.addSubview(currencyLabel)
+        self.addSubview(currencyPicker)
         
+        currencyPicker.isHidden = true
+        currencyLabel.onTap {
+            self.currencyPicker.isHidden = false
+        }
         
         NSLayoutConstraint.activate([
             
@@ -87,10 +105,14 @@ class AmountWithCurrencyView: BaseUIView {
             currencyLabel.leadingAnchor.constraint(equalTo: amountTextField.trailingAnchor, constant: 10),
             currencyLabel.bottomAnchor.constraint(equalTo: underlineView.bottomAnchor),
             currencyLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            currencyLabel.widthAnchor.constraint(equalToConstant: 45)
+            currencyLabel.widthAnchor.constraint(equalToConstant: 45),
+            
+            currencyPicker.trailingAnchor.constraint(equalTo: self.currencyLabel.trailingAnchor),
+            currencyPicker.heightAnchor.constraint(equalToConstant: 100),
+            currencyPicker.widthAnchor.constraint(equalToConstant: 100),
+            currencyPicker.topAnchor.constraint(equalTo: self.currencyLabel.topAnchor)
         ])
         
-        currencyLabel.text = currencyValue
     }
 }
 

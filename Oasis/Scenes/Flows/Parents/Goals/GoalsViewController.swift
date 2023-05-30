@@ -66,7 +66,8 @@ class GoalsViewController: BaseViewController {
     }()
     
     //View Models
-    var goalsViewModel = [GoalsModels.ViewModels.Goal]()
+    var goalsViewModelArray = [GoalsModels.ViewModels.Goal]()
+    
     var isThereGoals : Bool = true
 }
 
@@ -98,7 +99,7 @@ extension GoalsViewController{
         addTitle()
         addButton()
         addScrollViewAndStackView()
-        if goalsViewModel.count > 0{
+        if goalsViewModelArray.count > 0{
             addGoalsCollectionView()
         }else{
             addNoGoalsPlaceholder()
@@ -216,13 +217,13 @@ extension GoalsViewController{
 extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return goalsViewModel.count
+        return goalsViewModelArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.goalCollectionVC, for: indexPath)!
        
-        cell.setupCell(viewModel: goalsViewModel[indexPath.row])
+        cell.setupCell(viewModel: goalsViewModelArray[indexPath.row])
         return cell
         
     }
@@ -266,8 +267,8 @@ extension GoalsViewController{
     private func subscribeForGetGoals(){
         self.interactor?.getGoals()
             .observeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { [weak self] (goalsArrayVM) in
-                self!.goalsViewModel = goalsArrayVM
+            .subscribe(onSuccess: { [weak self] (goalsArray) in
+                self!.goalsViewModelArray = goalsArray
                 //self!.goalsCollectionView.reloadData()
                 }, onError: { [weak self](error) in
                     self!.display(errorMessage: (error as! ErrorViewModel).message)

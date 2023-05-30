@@ -12,6 +12,17 @@ import Foundation
 struct PaymentsModels {
     
     struct ViewModels {
+        struct PaymentType {
+            var id : Int
+            var name : String?
+        }
         
+        struct Payment {
+            var id : Int
+            var paymentTypeTitle : String?
+            var title : String?
+            var amount : Int?
+            var currency : String?
+        }
     }
 }

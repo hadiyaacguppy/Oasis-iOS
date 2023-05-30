@@ -13,6 +13,15 @@ class PaymentsPresenter {}
 
 extension PaymentsPresenter: PaymentsInteractorOutput {
     
+    func didGetPayments(models : [PaymentAPIModel]) -> [PaymentsModels.ViewModels.Payment]{
+        return models.map{createPayment(model: $0)}
+    }
+    
+    func createPayment(model : PaymentAPIModel) -> PaymentsModels.ViewModels.Payment{
+        return PaymentsModels.ViewModels.Payment(id: model.id!, paymentTypeTitle: model.paymentType, title: model.title, amount: model.amount, currency: model.currency)
+        
+    }
+
     func apiCallFailed(withError error: NetworkErrorResponse)
     -> ErrorViewModel {
         return self.parseErrorViewModel(fromErrorResponse:error)

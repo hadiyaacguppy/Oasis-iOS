@@ -94,17 +94,6 @@ class addGoalViewController: BaseViewController {
         return imgView
     }()
     
-    lazy var currencyPicker: UIPickerView = {
-        let picker = UIPickerView()
-        picker.dataSource = self
-        picker.delegate = self
-        picker.backgroundColor = UIColor.white
-        picker.setValue(UIColor.black, forKey: "textColor")
-        picker.autoresizingMask = .flexibleWidth
-        picker.contentMode = .center
-        return picker
-    }()
-    
     var currencies = ["LBP", "$"]
     var currencySelected : String = "LBP"
     var dateSelected : String?
@@ -205,30 +194,22 @@ extension addGoalViewController{
                                                     isAgeRequest: false,
                                                     hasEditView: false)
         
-        let goalInfo2 = AmountWithCurrencyView.init(currency: "LBP", titleLbl: "Amount")
+        let goalInfo2 = AmountWithCurrencyView.init(amountPlaceHolder: 0.0, amount: 0, currency: "LBP", titleLbl: "Amount")
         
         stackView.addArrangedSubview(goalInfo1)
         stackView.addArrangedSubview(goalInfo2)
         
         goalInfo1.anyTextField.onTap {
             self.txtFieldTag = 1
-            goalInfo1.anyTextField.keyboardType = .numberPad
             goalInfo1.anyTextField.becomeFirstResponder()
         }
         goalInfo2.amountTextField.onTap {
             self.txtFieldTag = 2
             goalInfo2.amountTextField.becomeFirstResponder()
         }
-        goalInfo2.currencyLabel.onTap {
-            self.stackView.addSubview(self.currencyPicker)
-        }
+        goalInfo2.currencyPicker.delegate = self
+        goalInfo2.currencyPicker.dataSource = self
         
-        NSLayoutConstraint.activate([
-            currencyPicker.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -10),
-            currencyPicker.heightAnchor.constraint(equalToConstant: 60),
-            currencyPicker.widthAnchor.constraint(equalToConstant: 60),
-            currencyPicker.bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: -10)
-        ])
     }
     
     //Add End Date label and image
@@ -350,6 +331,55 @@ extension addGoalViewController{
     }
 }
 
+
+extension addGoalViewController{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if txtFieldTag == 1{
+            self.goalName = textField.text
+        }else if txtFieldTag == 2{
+            self.goalAmount = textField.text.notNilNorEmpty ? Int(textField.text!) : 0
+        }
+        textField.resignFirstResponder()
+        return true
+    }
+    
+}
+
+extension addGoalViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
+        1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        2
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return currencies[row]
+    }
+    
+    /*func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let attributedString = NSAttributedString(string: currencies[row],
+                                                  attributes: [
+                                                    NSAttributedString.Key.foregroundColor: UIColor.black,
+                                                    NSAttributedString.Key.font: MainFont.medium.with(size: 20)
+                                                  ])
+        return attributedString
+    }*/
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let currency = currencies[row]
+        currencySelected = currency
+        pickerView.isHidden = true
+    }
+
+
+}
+
+
 //MARK:- Callbacks
 extension addGoalViewController{
     
@@ -374,44 +404,4 @@ extension addGoalViewController{
             })
             .disposed(by: self.disposeBag)
     }
-}
-
-extension addGoalViewController{
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if txtFieldTag == 1{
-            self.goalName = textField.text
-        }else if txtFieldTag == 2{
-            self.goalAmount = textField.text.notNilNorEmpty ? Int(textField.text!) : 0
-        }
-        textField.resignFirstResponder()
-        return true
-    }
-    
-}
-
-extension addGoalViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        1
-    }
-
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        2
-    }
-
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let attributedString = NSAttributedString(string: currencies[row],
-                                                  attributes: [
-                                                    NSAttributedString.Key.foregroundColor: UIColor.red,
-                                                    NSAttributedString.Key.font: MainFont.medium.with(size: 20)
-                                                  ])
-        return attributedString
-    }
-
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let currency = currencies[row]
-        currencySelected = currency
-        self.currencyPicker.removeFromSuperview()
-    }
-
-
 }

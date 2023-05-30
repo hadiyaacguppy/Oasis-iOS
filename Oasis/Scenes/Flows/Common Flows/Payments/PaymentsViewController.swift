@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 protocol PaymentsViewControllerOutput {
-    func getPayments() -> Single<Void>
+    func getPayments() -> Single<[PaymentsModels.ViewModels.Payment]>
     func getPaymentsTypes() -> Single<Void>
     func addPayment(title : String, currency : String, amount : Int, date : String, paymentTypeID : Int) -> Single<Void>
 
@@ -132,6 +132,8 @@ class PaymentsViewController: BaseViewController {
         lbl.text = "Latest Payments".localized
         return lbl
     }()
+    
+    var paymentsVMArray = [PaymentsModels.ViewModels.Payment]()
 }
 
 //MARK:- View Lifecycle
@@ -413,7 +415,8 @@ extension PaymentsViewController{
     private func subscribeForGetPayments(){
         self.interactor?.getPayments()
             .observeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { [weak self] _ in
+            .subscribe(onSuccess: { [weak self] (paymentsArray) in
+                self!.paymentsVMArray = paymentsArray
                 self!.display(successMessage: "")
                 }, onError: { [weak self](error) in
                     self!.display(errorMessage: (error as! ErrorViewModel).message)
@@ -431,4 +434,6 @@ extension PaymentsViewController{
             })
             .disposed(by: self.disposeBag)
     }
+    
+    
 }
