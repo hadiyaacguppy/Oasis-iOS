@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import SessionRepository
 
 protocol CreateConfirmPasswordInteractorOutput {
     
@@ -36,8 +37,9 @@ extension CreateConfirmPasswordInteractor: CreateConfirmPasswordViewControllerOu
         dict["file"] = ""
         dict["mobile"] = "70024284"
         return Single<Void>.create(subscribe: { single in
-            APIClient.shared.sendOTP(dict: dict)
-                .subscribe(onSuccess: { [weak self] _ in
+            APIClient.shared.register(dict: dict)
+                .subscribe(onSuccess: { [weak self] (token) in
+                    SessionRepository().token = token
                     guard let self = self else { return single(.error(ErrorViewModel.generateGenericError()))}
                     guard self.presenter != nil else { return single(.error(ErrorViewModel.generateGenericError()))}
                     single(.success(()))

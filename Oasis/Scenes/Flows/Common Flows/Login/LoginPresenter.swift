@@ -13,6 +13,7 @@ class LoginPresenter {}
 
 extension LoginPresenter: LoginInteractorOutput {
     
+
     func apiCallFailed(withError error: NetworkErrorResponse)
     -> ErrorViewModel {
         return self.parseErrorViewModel(fromErrorResponse:error)

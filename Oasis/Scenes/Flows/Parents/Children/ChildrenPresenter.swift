@@ -13,10 +13,9 @@ class ChildrenPresenter {}
 
 extension ChildrenPresenter: ChildrenInteractorOutput {
     
-    func didGetchildren() -> [ChildrenModels.ViewModels.Children] {
-        let child = ChildrenModels.ViewModels.Children()
-        return [child]
-        //return array.map{createChild(model: $0)}
+    func didGetchildren(models : [ChildAPIModel]) -> [ChildrenModels.ViewModels.Children] {
+        
+        return models.map{createChild(model: $0)}
     }
     
     func createChild(model : ChildAPIModel) -> ChildrenModels.ViewModels.Children{

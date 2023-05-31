@@ -14,7 +14,7 @@ class RegistrationDataManager {
     private init() {}
     
     var userEmail : String?
-    var userAge : String?
+    var userAge : Int?
     var userFirstName : String?
     var userLastName : String?
     var userMobileNumber : String?

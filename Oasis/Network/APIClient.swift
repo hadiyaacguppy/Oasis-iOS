@@ -42,14 +42,14 @@ extension APIClient {
             .map {_ in return Void()}
     }
     
-    func register(dict : [String:Any]) -> Single<Void>{
+    func register(dict : [String:Any]) -> Single<String>{
         return self.provider.rx.request(.register(dict: dict))
-            .map {_ in return Void()}
+            .mapString(atKeyPath: "token")
     }
     
-    func login(dict : [String:Any]) -> Single<Void>{
+    func login(dict : [String:Any]) -> Single<UserRootAPIModel>{
         return self.provider.rx.request(.login(dict: dict))
-            .map {_ in return Void()}
+            .map(UserRootAPIModel.self)
     }
     
     func addChild(dict : [String:Any]) -> Single<Void>{
@@ -67,9 +67,9 @@ extension APIClient {
             .map(ChildAPIModel.self)
     }
     
-    func getBalance() -> Single<String>{
+    func getBalance() -> Single<BalanceAPIModel>{
         return self.provider.rx.request(.getBalance)
-            .mapString(atKeyPath: "success")
+            .map(BalanceAPIModel.self)
     }
     
     func fund(dict : [String:Any]) -> Single<Void>{

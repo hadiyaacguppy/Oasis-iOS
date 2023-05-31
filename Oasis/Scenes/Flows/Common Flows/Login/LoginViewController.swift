@@ -83,8 +83,7 @@ class LoginViewController: BaseViewController {
         let button = WhiteBorderButton()
         button.setTitle("Login".localized, for: .normal)
         button.onTap {
-            //self.router?.redirectToHome()
-            self.router?.redirectToTabbarController()
+            self.checkForValidation()
         }
         return button
     }()
@@ -166,6 +165,19 @@ extension LoginViewController{
             loginButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -66)
         ])
     }
+    
+    private func checkForValidation(){
+        guard emailTextfield.text.notNilNorEmpty else {
+            showSimpleAlertView("", message: "Please fill in your Email", withCompletionHandler: nil)
+            return
+        }
+        
+        guard passwordTextfield.text.notNilNorEmpty else {
+            showSimpleAlertView("", message: "Please fill in your Password", withCompletionHandler: nil)
+            return
+        }
+        subscribeForLogin()
+    }
 }
 
 //MARK:- NavBarAppearance
@@ -200,10 +212,11 @@ extension LoginViewController{
     }
     
     private func subscribeForLogin(){
-        self.interactor?.login(id: "", password: "")
+        self.interactor?.login(id: emailTextfield.text!, password: passwordTextfield.text!)
             .observeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { [weak self] _ in
+            .subscribe(onSuccess: { [weak self] (user) in
                 self!.display(successMessage: "You are Logged in Successfully")
+                self!.router?.redirectToTabbarController()
                 }, onError: { [weak self](error) in
                     self!.display(errorMessage: (error as! ErrorViewModel).message)
             })

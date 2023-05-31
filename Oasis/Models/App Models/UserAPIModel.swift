@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct User : Codable {
+struct UserAPIModel : Codable {
 
     let age : Int?
     let createdAt : String?

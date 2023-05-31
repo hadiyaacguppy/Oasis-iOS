@@ -203,6 +203,8 @@
 		169914722A24D3970046978D /* FriendsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1699146B2A24D3970046978D /* FriendsConfigurator.swift */; };
 		169914782A24D3EE0046978D /* FriendsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914762A24D3EE0046978D /* FriendsCollectionViewCell.swift */; };
 		169914792A24D3EE0046978D /* FriendsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 169914772A24D3EE0046978D /* FriendsCollectionViewCell.xib */; };
+		1699147B2A25FBED0046978D /* BalanceAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1699147A2A25FBEC0046978D /* BalanceAPIModel.swift */; };
+		1699147D2A2604A00046978D /* UserRootAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1699147C2A2604A00046978D /* UserRootAPIModel.swift */; };
 		169976EA2A15011D00FDEC97 /* GoalAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976E92A15011D00FDEC97 /* GoalAPIModel.swift */; };
 		169976EC2A15012500FDEC97 /* TasksAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976EB2A15012500FDEC97 /* TasksAPIModel.swift */; };
 		169976EF2A1504C200FDEC97 /* TaskTypeAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976EE2A1504C200FDEC97 /* TaskTypeAPIModel.swift */; };
@@ -637,6 +639,8 @@
 		1699146B2A24D3970046978D /* FriendsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsConfigurator.swift; sourceTree = "<group>"; };
 		169914762A24D3EE0046978D /* FriendsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollectionViewCell.swift; sourceTree = "<group>"; };
 		169914772A24D3EE0046978D /* FriendsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsCollectionViewCell.xib; sourceTree = "<group>"; };
+		1699147A2A25FBEC0046978D /* BalanceAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceAPIModel.swift; sourceTree = "<group>"; };
+		1699147C2A2604A00046978D /* UserRootAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRootAPIModel.swift; sourceTree = "<group>"; };
 		169976E92A15011D00FDEC97 /* GoalAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalAPIModel.swift; sourceTree = "<group>"; };
 		169976EB2A15012500FDEC97 /* TasksAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksAPIModel.swift; sourceTree = "<group>"; };
 		169976EE2A1504C200FDEC97 /* TaskTypeAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTypeAPIModel.swift; sourceTree = "<group>"; };
@@ -1586,6 +1590,8 @@
 				169976F42A1515B200FDEC97 /* InterestTypeAPIModel.swift */,
 				169199902A17885B00E55E23 /* UserAPIModel.swift */,
 				169199922A17975300E55E23 /* ActivityAPIModel.swift */,
+				1699147A2A25FBEC0046978D /* BalanceAPIModel.swift */,
+				1699147C2A2604A00046978D /* UserRootAPIModel.swift */,
 			);
 			path = "App Models";
 			sourceTree = "<group>";
@@ -2599,6 +2605,7 @@
 				117C4AB01FD864DE008BB445 /* UILabel+Extensions.swift in Sources */,
 				16ABACFC2A04399400FB937C /* AddChildInteractor.swift in Sources */,
 				16503F9729F5853600875075 /* PaymentsViewController.swift in Sources */,
+				1699147D2A2604A00046978D /* UserRootAPIModel.swift in Sources */,
 				CFF69D6F219554E7003BE6BF /* CGRect+Extensions.swift in Sources */,
 				117C4AB21FD864FD008BB445 /* String+Extensions.swift in Sources */,
 				CF6B70F221EDD5F700204B65 /* VersionLabel.swift in Sources */,
@@ -2618,6 +2625,7 @@
 				3ECBAAB723D06DD8003672DA /* PushNotificationContainer.swift in Sources */,
 				161F3BE129DAD6FB0053158A /* OTPVerificationModels.swift in Sources */,
 				169914712A24D3970046978D /* FriendsInteractor.swift in Sources */,
+				1699147B2A25FBED0046978D /* BalanceAPIModel.swift in Sources */,
 				3EDC4156224E886500624D2B /* BaseUIView.swift in Sources */,
 				161F3C0329E3157D0053158A /* SelectAgeConfigurator.swift in Sources */,
 				169914612A1D57860046978D /* MoyaProvider+Rx.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Activity : Codable {
+struct ActivityAPIModel : Codable {
 
     let date : String?
     let id : Int?

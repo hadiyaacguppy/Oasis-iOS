@@ -13,9 +13,14 @@ struct ParentsHomeModels {
     
     struct ViewModels {
         struct Payment{
-            let paymentType : String?
-            let title : String?
-            let amount : Int?
+            var paymentType : String?
+            var title : String?
+            var amount : Int?
+        }
+        
+        struct Balance {
+            var amount : Int?
+            var currency : String?
         }
     }
 }

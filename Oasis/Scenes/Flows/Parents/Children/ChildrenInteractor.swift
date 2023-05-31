@@ -13,8 +13,7 @@ protocol ChildrenInteractorOutput {
     
     func apiCallFailed(withError error : NetworkErrorResponse) -> ErrorViewModel
     
-    //func getchildren(models : [ChildAPIModel]) -> [ChildrenModels.ViewModels.Children]
-    func didGetchildren() -> [ChildrenModels.ViewModels.Children]
+    func didGetchildren(models : [ChildAPIModel]) -> [ChildrenModels.ViewModels.Children]
 }
 
 protocol ChildrenDataStore {
@@ -34,7 +33,7 @@ extension ChildrenInteractor: ChildrenViewControllerOutput{
                 .subscribe(onSuccess: { [weak self] (children) in
                     guard let self = self else { return single(.error(ErrorViewModel.generateGenericError()))}
                     guard self.presenter != nil else { return single(.error(ErrorViewModel.generateGenericError()))}
-                    single(.success((self.presenter?.didGetchildren())!))
+                    single(.success((self.presenter!.didGetchildren(models: children))))
                     }, onError: { [weak self] (error) in
                         guard let self = self else { return single(.error(ErrorViewModel.generateGenericError()))}
                         guard self.presenter != nil else { return single(.error(ErrorViewModel.generateGenericError()))}

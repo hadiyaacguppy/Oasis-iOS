@@ -12,6 +12,7 @@ import FSPagerView
 
 protocol ParentsHomeViewControllerOutput {
     func getPayments() -> Single<Void>
+    func getBalance() -> Single<ParentsHomeModels.ViewModels.Balance>
 }
 
 class ParentsHomeViewController: BaseViewController {
@@ -205,6 +206,7 @@ extension ParentsHomeViewController{
         //                            title: Constants.PlaceHolderView.Texts.wait)
         setupNavBarAppearance()
         setupRetryFetchingCallBack()
+        subscribeForGetBalance()
         setupUI()
     }
     
@@ -821,6 +823,18 @@ extension ParentsHomeViewController{
         self.interactor?.getPayments()
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] _ in
+                self!.display(successMessage: "")
+                }, onError: { [weak self](error) in
+                    self!.display(errorMessage: (error as! ErrorViewModel).message)
+            })
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func subscribeForGetBalance(){
+        self.interactor?.getBalance()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { [weak self] (balance) in
+                self!.balanceValueLabel.text = balance.amount != nil ? "\(balance.amount!)" : "0"
                 self!.display(successMessage: "")
                 }, onError: { [weak self](error) in
                     self!.display(errorMessage: (error as! ErrorViewModel).message)

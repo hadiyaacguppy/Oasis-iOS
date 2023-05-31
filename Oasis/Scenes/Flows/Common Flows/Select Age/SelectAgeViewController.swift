@@ -101,7 +101,7 @@ class SelectAgeViewController: BaseViewController {
     
     private var selectedAge : String = "7"{
         didSet{
-            RegistrationDataManager.current.userAge = selectedAge
+            RegistrationDataManager.current.userAge = Int(selectedAge)
         }
     }
 }
