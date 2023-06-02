@@ -13,8 +13,8 @@ class TitleWithTextFieldView: BaseUIView {
     
     lazy var requestTitleLabel : BaseLabel = {
         let label = BaseLabel()
+        label.numberOfLines = 1
         label.autoLayout()
-        label.style = .init(font: MainFont.medium.with(size: 22), color: .black)
         return label
     }()
     
@@ -26,7 +26,6 @@ class TitleWithTextFieldView: BaseUIView {
     private var underlineView : BaseUIView = {
         let view = BaseUIView(frame: .zero)
         view.autoLayout()
-        view.backgroundColor = .black
         return view
     }()
     
@@ -45,17 +44,33 @@ class TitleWithTextFieldView: BaseUIView {
         return lbl
     }()
     
+    private var labelHeight : CGFloat = 0
     private var hasEditingView : Bool = false
     private var isitAgeRequest : Bool = false
     
     init(requestTitle requesT : String, placeHolderTxt pHolder : String, usertext txt : String, isAgeRequest isAge : Bool, hasEditView editview : Bool){
         super.init(frame: .zero)
         self.requestTitleLabel.text = requesT
+        self.requestTitleLabel.style = .init(font: MainFont.medium.with(size: 22), color: .black)
+        self.underlineView.backgroundColor = .black
         self.anyTextField.text = txt
         self.anyTextField.placeholder = pHolder
         self.hasEditingView = editview
         self.isitAgeRequest = isAge
         
+        setupUIStandered()
+    }
+    
+    init(requestTitle requestT : String, textsColor txtColor : UIColor, usertext txt : String, textSize txtSize: CGFloat, isAgeRequest isAge : Bool, labelHeight lblHeight: CGFloat){
+        super.init(frame: .zero)
+        self.requestTitleLabel.text = requestT
+        self.requestTitleLabel.style = .init(font: MainFont.medium.with(size: txtSize), color: txtColor)
+        self.anyTextField.text = txt
+        self.anyTextField.textColor = txtColor
+        self.isitAgeRequest = isAge
+        self.underlineView.backgroundColor = txtColor
+        self.labelHeight = lblHeight
+
         setupUIStandered()
     }
     
@@ -65,7 +80,7 @@ class TitleWithTextFieldView: BaseUIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupUIStandered()
+        //setupUIStandered()
     }
     
     private func setupUIStandered(){
@@ -75,9 +90,9 @@ class TitleWithTextFieldView: BaseUIView {
         self.addSubview(requestTitleLabel)
         self.addSubview(anyTextField)
         self.addSubview(underlineView)
-        self.addSubview(yearsOldLabel)
+        //self.addSubview(yearsOldLabel)
         
-        if hasEditingView{
+        /*if hasEditingView{
             self.addSubview(editingtview)
             self.editingtview.isHidden = false
         }else{
@@ -86,29 +101,30 @@ class TitleWithTextFieldView: BaseUIView {
         
         if !isitAgeRequest{
             yearsOldLabel.text = ""
-        }
+        }*/
                 
         NSLayoutConstraint.activate([
-            requestTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            requestTitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            requestTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            requestTitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             requestTitleLabel.topAnchor.constraint(equalTo: self.topAnchor),
-            requestTitleLabel.heightAnchor.constraint(equalToConstant: 30),
+            requestTitleLabel.heightAnchor.constraint(equalToConstant: self.labelHeight),
             
             anyTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             anyTextField.topAnchor.constraint(equalTo: self.requestTitleLabel.bottomAnchor, constant: 10),
             anyTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             anyTextField.heightAnchor.constraint(equalToConstant: 45),
             
-            underlineView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            underlineView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            underlineView.trailingAnchor.constraint(equalTo: self.leadingAnchor, constant: -10),
             underlineView.topAnchor.constraint(equalTo: self.anyTextField.bottomAnchor, constant: 4),
             underlineView.heightAnchor.constraint(equalToConstant: 1),
             underlineView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             
-            yearsOldLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            /*yearsOldLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             yearsOldLabel.leadingAnchor.constraint(equalTo: self.underlineView.trailingAnchor),
             yearsOldLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 71),
             yearsOldLabel.bottomAnchor.constraint(equalTo: self.underlineView.bottomAnchor),
-            yearsOldLabel.heightAnchor.constraint(equalToConstant: 30)
+            yearsOldLabel.heightAnchor.constraint(equalToConstant: 30)*/
         ])
     }
 }

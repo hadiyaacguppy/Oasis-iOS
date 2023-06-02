@@ -12,7 +12,7 @@ import RxSwift
 protocol AssignNewTaskInteractorOutput {
     
     func apiCallFailed(withError error : NetworkErrorResponse) -> ErrorViewModel
-    
+    func didGetTasks(models: [TaskTypeAPIModel]) -> [AssignNewTaskModels.ViewModels.Task]
 }
 
 protocol AssignNewTaskDataStore {
@@ -26,13 +26,13 @@ class AssignNewTaskInteractor: AssignNewTaskDataStore{
 }
 
 extension AssignNewTaskInteractor: AssignNewTaskViewControllerOutput{
-    func getTaskTypes() -> RxSwift.Single<Void> {
-        return Single<Void>.create(subscribe: { single in
+    func getTaskTypes() -> RxSwift.Single<[AssignNewTaskModels.ViewModels.Task]> {
+        return Single<[AssignNewTaskModels.ViewModels.Task]>.create(subscribe: { single in
             APIClient.shared.getTasksTypes()
-                .subscribe(onSuccess: { [weak self] _ in
+                .subscribe(onSuccess: { [weak self] (taskTypes) in
                     guard let self = self else { return single(.error(ErrorViewModel.generateGenericError()))}
                     guard self.presenter != nil else { return single(.error(ErrorViewModel.generateGenericError()))}
-                    single(.success(()))
+                    single(.success((self.presenter!.didGetTasks(models: taskTypes))))
                     }, onError: { [weak self] (error) in
                         guard let self = self else { return single(.error(ErrorViewModel.generateGenericError()))}
                         guard self.presenter != nil else { return single(.error(ErrorViewModel.generateGenericError()))}

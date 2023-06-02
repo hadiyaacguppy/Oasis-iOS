@@ -130,12 +130,12 @@ extension addGoalViewController{
     
     private func setupUI(){
         
-        //First, add Scroll View
         addScrollView()
-        
-        //Add Coal Button
+        addTitle()
         addGoalButton()
-        
+        addGeneralStackView()
+        addGoalInfoViews()
+        addEndDateView()
     }
     
     //Scroll View
@@ -150,9 +150,6 @@ extension addGoalViewController{
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
-        //Second, add the elements in scroll view(Title,stack views,actions,....)
-        //Add Top Title
-        addTitle()
     }
     
     //Top Title
@@ -166,7 +163,6 @@ extension addGoalViewController{
             topTitleLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 37),
         ])
         
-        addGeneralStackView()
     }
     
     private func addGeneralStackView(){
@@ -182,9 +178,6 @@ extension addGoalViewController{
         ])
         
         scrollView.contentInset = .init(top: 0, left: 0, bottom: 50, right: 0)
-        
-        addGoalInfoViews()
-        addEndDateView()
     }
     
     private func addGoalInfoViews(){

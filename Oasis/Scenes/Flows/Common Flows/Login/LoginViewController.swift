@@ -19,23 +19,15 @@ class LoginViewController: BaseViewController {
     var router: LoginRouter?
     
     
-    private let backgroundImage: UIImageView = {
+   /* private let backgroundImage: UIImageView = {
         let imageV = UIImageView()
         imageV.translatesAutoresizingMaskIntoConstraints = false
         imageV.image = R.image.newBackground()!
         imageV.contentMode = .scaleAspectFill
         return imageV
-    }()
+    }()*/
     
-    private lazy var mainStackView = {
-        UIStackView()
-            .axis(.vertical)
-            .spacing(40)
-            .autoLayout()
-            .distributionMode(.fill)
-    }()
-    
-    private lazy var emailStackview = {
+    /*private lazy var emailStackview = {
         UIStackView()
             .axis(.vertical)
             .spacing(4)
@@ -49,18 +41,19 @@ class LoginViewController: BaseViewController {
             .autoLayout()
     }()
     
-    private lazy var emailLabel : BaseLabel = {
+    
+   private lazy var emailLabel : BaseLabel = {
         let label = BaseLabel()
-        label.font = MainFont.medium.with(size: 22)
+        label.font = MainFont.medium.with(size: 35)
         label.textColor = .white
         label.numberOfLines = 2
-        label.text = "Email".localized
+        label.text = "What is your Email?".localized
         return label
     }()
     
     private lazy var passwordLabel : BaseLabel = {
         let label = BaseLabel()
-        label.font = MainFont.medium.with(size: 22)
+        label.font = MainFont.medium.with(size: 35)
         label.textColor = .white
         label.numberOfLines = 2
         label.text = "Password".localized
@@ -71,22 +64,45 @@ class LoginViewController: BaseViewController {
         let txtf = WhiteBorderTextfield()
         txtf.keyboardType = .emailAddress
         return txtf
-    }()
+    }()*/
     
-    private lazy var passwordTextfield : WhiteBorderTextfield = {
+    /*private lazy var passwordTextfield : WhiteBorderTextfield = {
         let txtf = WhiteBorderTextfield()
         txtf.isSecureTextEntry = true
         return txtf
+    }()*/
+    private lazy var mainStackView : UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.spacing = 10
+        stackView.autoLayout()
+        stackView.backgroundColor = .clear
+        return stackView
     }()
     
-    private lazy var loginButton : WhiteBorderButton = {
-        let button = WhiteBorderButton()
+    private lazy var forgotPasswordView : BaseUIView = {
+        let view = BaseUIView()
+        view.backgroundColor = .clear
+        view.autoLayout()
+        return view
+    }()
+    
+    private lazy var loginButton : OasisAquaButton = {
+        let button = OasisAquaButton()
         button.setTitle("Login".localized, for: .normal)
+        button.autoLayout()
         button.onTap {
             self.checkForValidation()
         }
         return button
     }()
+    
+    var emailView : TitleWithTextFieldView!
+    var passwordView : TitleWithTextFieldView!
+    
+    var userEmail : String?
+    var userPW : String?
 }
 
 //MARK:- View Lifecycle
@@ -101,6 +117,7 @@ extension LoginViewController{
         super.viewDidLoad()
         //        showPlaceHolderView(withAppearanceType: .loading,
         //                            title: Constants.PlaceHolderView.Texts.wait)
+        self.view.backgroundColor = Constants.Colors.appViolet
         setupNavBarAppearance()
         setupRetryFetchingCallBack()
         setupUI()
@@ -113,21 +130,10 @@ extension LoginViewController{
     
     fileprivate
     func setupUI(){
-        addBackgroundImage()
-        buildStacks()
-        buildEmailStack()
-        buildPasswordStack()
         addLoginButton()
-    }
-    
-    private func addBackgroundImage(){
-        view.addSubview(backgroundImage)
-        NSLayoutConstraint.activate([
-            backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
-            backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor)
-        ])
+        buildStacks()
+        createTitlewithLabelViews()
+        addForgotPwView()
     }
     
     private func buildStacks(){
@@ -135,25 +141,69 @@ extension LoginViewController{
         NSLayoutConstraint.activate([
             mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
             mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
-            //mainStackView.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: 8)
+            mainStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            mainStackView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -32),
+            mainStackView.bottomAnchor.constraint(equalTo: loginButton.topAnchor, constant: -10)
         ])
-        mainStackView.addArrangedSubview(emailStackview)
-        mainStackView.addArrangedSubview(passwordStackview)
     }
     
-    private func buildEmailStack(){
-        emailStackview.addArrangedSubview(emailLabel)
-        emailStackview.addArrangedSubview(emailTextfield)
+    private func createTitlewithLabelViews(){
+         emailView = TitleWithTextFieldView.init(requestTitle: "What is your Email?",
+                                                    textsColor: .white,
+                                                    usertext: "",
+                                                    textSize: 35,
+                                                    isAgeRequest: false,
+                                                    labelHeight: 89)
         
-        emailTextfield.heightAnchor.constraint(equalToConstant: 68).isActive = true
+         passwordView = TitleWithTextFieldView.init(requestTitle: "Password",
+                                                    textsColor: .white,
+                                                    usertext: "",
+                                                    textSize: 35,
+                                                    isAgeRequest: false,
+                                                    labelHeight: 89)
+        
+        mainStackView.addArrangedSubview(emailView)
+        mainStackView.addArrangedSubview(passwordView)
+        
+        emailView.anyTextField.delegate = self
+        passwordView.anyTextField.delegate = self
+        
+        NSLayoutConstraint.activate([
+            emailView.heightAnchor.constraint(equalToConstant: 160),
+            passwordView.heightAnchor.constraint(equalToConstant: 160)
+        ])
     }
     
-    private func buildPasswordStack(){
-        passwordStackview.addArrangedSubview(passwordLabel)
-        passwordStackview.addArrangedSubview(passwordTextfield)
+    private func addForgotPwView(){
+        mainStackView.addArrangedSubview(forgotPasswordView)
         
-        passwordTextfield.heightAnchor.constraint(equalToConstant: 68).isActive = true
+        let fPasswordlabel = BaseLabel()
+        fPasswordlabel.style = .init(font: MainFont.medium.with(size: 20), color: .white)
+        fPasswordlabel.autoLayout()
+        
+        let whitelineView = BaseUIView()
+        whitelineView.backgroundColor = .white
+        whitelineView.autoLayout()
+        
+        forgotPasswordView.addSubview(fPasswordlabel)
+        forgotPasswordView.addSubview(whitelineView)
+        
+        NSLayoutConstraint.activate([
+//            forgotPasswordView.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor),
+//            forgotPasswordView.topAnchor.constraint(equalTo: mainStackView.bottomAnchor, constant: 10),
+            forgotPasswordView.heightAnchor.constraint(equalToConstant: 50),
+            forgotPasswordView.widthAnchor.constraint(equalToConstant: 182),
+            
+            fPasswordlabel.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor),
+            fPasswordlabel.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor),
+            fPasswordlabel.topAnchor.constraint(equalTo: mainStackView.topAnchor),
+            fPasswordlabel.heightAnchor.constraint(equalToConstant: 23),
+            
+            whitelineView.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor),
+            whitelineView.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor),
+            whitelineView.bottomAnchor.constraint(equalTo: mainStackView.bottomAnchor),
+            whitelineView.heightAnchor.constraint(equalToConstant: 1)
+        ])
     }
     
     private func addLoginButton(){
@@ -167,15 +217,15 @@ extension LoginViewController{
     }
     
     private func checkForValidation(){
-        guard emailTextfield.text.notNilNorEmpty else {
+        guard userEmail.notNilNorEmpty else {
             showSimpleAlertView("", message: "Please fill in your Email", withCompletionHandler: nil)
             return
         }
-        
-        guard passwordTextfield.text.notNilNorEmpty else {
+        guard userPW.notNilNorEmpty else {
             showSimpleAlertView("", message: "Please fill in your Password", withCompletionHandler: nil)
             return
         }
+        
         subscribeForLogin()
     }
 }
@@ -196,7 +246,27 @@ extension LoginViewController{
     
     @objc func registerBarButtonPressed(){
         self.router?.redirectToSelectAge()
-    }}
+    }
+    
+}
+
+
+extension LoginViewController : UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.superview == emailView{
+            self.userEmail = textField.text
+        }else{
+            self.userPW = textField.text
+        }
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
+    
+}
 
 //MARK:- Callbacks
 extension LoginViewController{
@@ -212,7 +282,7 @@ extension LoginViewController{
     }
     
     private func subscribeForLogin(){
-        self.interactor?.login(id: emailTextfield.text!, password: passwordTextfield.text!)
+        self.interactor?.login(id: userEmail!, password: userPW!)
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] (user) in
                 self!.display(successMessage: "You are Logged in Successfully")
@@ -223,5 +293,4 @@ extension LoginViewController{
             .disposed(by: self.disposeBag)
     }
 }
-
 

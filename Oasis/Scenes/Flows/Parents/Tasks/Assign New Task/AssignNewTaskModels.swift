@@ -12,6 +12,9 @@ import Foundation
 struct AssignNewTaskModels {
     
     struct ViewModels {
-        
+        struct Task{
+            var id : Int
+            var title : String?
+        }
     }
 }

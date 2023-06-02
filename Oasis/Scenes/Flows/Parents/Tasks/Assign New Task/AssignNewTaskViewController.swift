@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 protocol AssignNewTaskViewControllerOutput {
-    func getTaskTypes() -> Single<Void>
+    func getTaskTypes() -> Single<[AssignNewTaskModels.ViewModels.Task]>
     func addTask(title: String, currency: String, amount: Int, childID: String, taskTypeID: Int) -> Single<Void>
 }
 
@@ -19,8 +19,40 @@ class AssignNewTaskViewController: BaseViewController {
     var interactor: AssignNewTaskViewControllerOutput?
     var router: AssignNewTaskRouter?
     
+    lazy var topTitleLabel :  ControllerLargeTitleLabel = {
+        let lbl = ControllerLargeTitleLabel()
+        lbl.text = "Assign New Task".localized
+        return lbl
+    }()
     
+    lazy var scrollView: UIScrollView = {
+       let scrollView = UIScrollView()
+       scrollView.autoLayout()
+       scrollView.backgroundColor = .clear
+       scrollView.showsVerticalScrollIndicator = false
+       return scrollView
+   }()
+   
+   //Horizontal Labels
+   lazy var stackView: UIStackView = {
+       let stackView = UIStackView()
+       stackView.axis = .vertical
+       stackView.distribution = .fillEqually
+       stackView.spacing = 19
+       stackView.autoLayout()
+       stackView.backgroundColor = .clear
+       return stackView
+   }()
     
+    lazy var categoriesStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.spacing = 19
+        stackView.autoLayout()
+        stackView.backgroundColor = .clear
+        return stackView
+    }()
 }
 
 //MARK:- View Lifecycle

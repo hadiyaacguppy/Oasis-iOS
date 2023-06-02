@@ -34,6 +34,16 @@ class AddChildRouter: AddChildRouterDataPassing{
                 self.viewController.navigationController?.pushViewController(vc, animated: true)
             }
     }
+    
+    func pushToAssignNewTaskController(){
+        let vc = R.storyboard.assignNewTask.assignNewTaskViewControllerVC()!
+        DispatchQueue
+            .main
+            .async {
+                self.viewController.hidesBottomBarWhenPushed = true
+                self.viewController.navigationController?.pushViewController(vc, animated: true)
+            }
+    }
     ///Pop The view from the view hierarchy
     func popView(){
         DispatchQueue.main

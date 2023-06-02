@@ -37,6 +37,14 @@ struct Constants {
         static let orangeYellow : UIColor = .init(hexFromString: "#ffb410")
         static let lightGreen : UIColor = .init(red: 224, green: 242, blue: 236)
         
+        static let appViolet : UIColor = .init(hexFromString: "#3030D0")
+        static let appPink : UIColor = .init(hexFromString: "#FF97D6")
+        static let appGreen : UIColor = .init(hexFromString: "#00DEB5")
+        static let appYellow : UIColor = .init(hexFromString: "#FFC500")
+        static let appOrange : UIColor = .init(hexFromString: "#FE4B00")
+
+
+        
         struct Navigation {
             static let background : UIColor = Constants.Colors.appColor
         }
