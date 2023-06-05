@@ -12,8 +12,8 @@ class AgeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var selectionView: BaseUIView!{
         didSet{
-            selectionView.roundCorners = .all(radius: 8)
-            selectionView.backgroundColor = .clear
+            selectionView.roundCorners = .all(radius: 15)
+            selectionView.backgroundColor = UIColor(hexFromString: "#D9D9D9", alpha: 0.3)
         }
     }
     @IBOutlet weak var ageNumberLabel: BaseLabel!{

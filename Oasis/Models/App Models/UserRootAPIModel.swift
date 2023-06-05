@@ -23,6 +23,4 @@ struct UserRootAPIModel : Codable {
         token = try values.decodeIfPresent(String.self, forKey: .token)
         user = try values.decodeIfPresent(UserAPIModel.self, forKey: .user)
     }
-
-
 }

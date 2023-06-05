@@ -21,7 +21,7 @@ class SelectAgeViewController: BaseViewController {
     private lazy var topStaticLabel : BaseLabel = {
         let label = BaseLabel()
         label.style = .init(font: MainFont.medium.with(size: 33), color: .white, numberOfLines: 2)
-        label.text = "How old are\nyou".localized
+        label.text = "What is your\nBirthdate?".localized
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -33,14 +33,7 @@ class SelectAgeViewController: BaseViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    private let backgroundImage: UIImageView = {
-        let imageV = UIImageView()
-        imageV.translatesAutoresizingMaskIntoConstraints = false
-        imageV.image = R.image.newBackground()!
-        imageV.contentMode = .scaleAspectFill
-        return imageV
-    }()
+
     
     private lazy var nextButton : BaseButton = {
         let btn = BaseButton()
@@ -101,7 +94,7 @@ class SelectAgeViewController: BaseViewController {
     
     private var selectedAge : String = "7"{
         didSet{
-            RegistrationDataManager.current.userAge = Int(selectedAge)
+            //RegistrationDataManager.current.userAge = selectedAge
         }
     }
 }
@@ -118,6 +111,7 @@ extension SelectAgeViewController{
         super.viewDidLoad()
         //        showPlaceHolderView(withAppearanceType: .loading,
         //                            title: Constants.PlaceHolderView.Texts.wait)
+        self.view.backgroundColor = Constants.Colors.appViolet
         setupNavBarAppearance()
         setupRetryFetchingCallBack()
         setupUI()
@@ -130,7 +124,6 @@ extension SelectAgeViewController{
     
     fileprivate
     func setupUI(){
-        addBackgroundImage()
         addNextButton()
         addTopStaticLabel()
         addFixedSelection()
@@ -145,16 +138,6 @@ extension SelectAgeViewController{
             topStaticLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             topStaticLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             topStaticLabel.heightAnchor.constraint(equalToConstant: 140)
-        ])
-    }
-    
-    private func addBackgroundImage(){
-        view.addSubview(backgroundImage)
-        NSLayoutConstraint.activate([
-            backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
-            backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor)
         ])
     }
     
@@ -261,7 +244,6 @@ extension SelectAgeViewController:UITableViewDelegate {
         firstVisibleIndexPath = indexPath
         
         if let cell = tableView.cellForRow(at: firstVisibleIndexPath) as? AgeTableViewCell{
-            selectedAge = cell.ageNumberLabel.text!
         }
     }
 }

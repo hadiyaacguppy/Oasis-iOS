@@ -20,6 +20,7 @@ class TitleWithTextFieldView: BaseUIView {
     
     lazy var anyTextField : AmountTextField = {
         let txtF = AmountTextField()
+        txtF.autoLayout()
         return txtF
     }()
     
@@ -44,7 +45,7 @@ class TitleWithTextFieldView: BaseUIView {
         return lbl
     }()
     
-    private var labelHeight : CGFloat = 0
+    private var labelHeight : CGFloat = 89
     private var hasEditingView : Bool = false
     private var isitAgeRequest : Bool = false
     
@@ -90,18 +91,6 @@ class TitleWithTextFieldView: BaseUIView {
         self.addSubview(requestTitleLabel)
         self.addSubview(anyTextField)
         self.addSubview(underlineView)
-        //self.addSubview(yearsOldLabel)
-        
-        /*if hasEditingView{
-            self.addSubview(editingtview)
-            self.editingtview.isHidden = false
-        }else{
-            self.editingtview.isHidden = true
-        }
-        
-        if !isitAgeRequest{
-            yearsOldLabel.text = ""
-        }*/
                 
         NSLayoutConstraint.activate([
             requestTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
@@ -115,10 +104,10 @@ class TitleWithTextFieldView: BaseUIView {
             anyTextField.heightAnchor.constraint(equalToConstant: 45),
             
             underlineView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            underlineView.trailingAnchor.constraint(equalTo: self.leadingAnchor, constant: -10),
+            underlineView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             underlineView.topAnchor.constraint(equalTo: self.anyTextField.bottomAnchor, constant: 4),
-            underlineView.heightAnchor.constraint(equalToConstant: 1),
-            underlineView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            underlineView.heightAnchor.constraint(equalToConstant: 1)
+            //underlineView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             
             /*yearsOldLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             yearsOldLabel.leadingAnchor.constraint(equalTo: self.underlineView.trailingAnchor),

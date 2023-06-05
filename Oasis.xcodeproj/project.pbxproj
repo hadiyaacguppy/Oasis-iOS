@@ -205,6 +205,13 @@
 		169914792A24D3EE0046978D /* FriendsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 169914772A24D3EE0046978D /* FriendsCollectionViewCell.xib */; };
 		1699147B2A25FBED0046978D /* BalanceAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1699147A2A25FBEC0046978D /* BalanceAPIModel.swift */; };
 		1699147D2A2604A00046978D /* UserRootAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1699147C2A2604A00046978D /* UserRootAPIModel.swift */; };
+		169914862A2A2A330046978D /* Birthdate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1699147F2A2A2A330046978D /* Birthdate.storyboard */; };
+		169914872A2A2A330046978D /* BirthdatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914802A2A2A330046978D /* BirthdatePresenter.swift */; };
+		169914882A2A2A330046978D /* BirthdateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914812A2A2A330046978D /* BirthdateRouter.swift */; };
+		169914892A2A2A330046978D /* BirthdateModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914822A2A2A330046978D /* BirthdateModels.swift */; };
+		1699148A2A2A2A330046978D /* BirthdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914832A2A2A330046978D /* BirthdateViewController.swift */; };
+		1699148B2A2A2A330046978D /* BirthdateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914842A2A2A330046978D /* BirthdateInteractor.swift */; };
+		1699148C2A2A2A330046978D /* BirthdateConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914852A2A2A330046978D /* BirthdateConfigurator.swift */; };
 		169976EA2A15011D00FDEC97 /* GoalAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976E92A15011D00FDEC97 /* GoalAPIModel.swift */; };
 		169976EC2A15012500FDEC97 /* TasksAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976EB2A15012500FDEC97 /* TasksAPIModel.swift */; };
 		169976EF2A1504C200FDEC97 /* TaskTypeAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976EE2A1504C200FDEC97 /* TaskTypeAPIModel.swift */; };
@@ -641,6 +648,13 @@
 		169914772A24D3EE0046978D /* FriendsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsCollectionViewCell.xib; sourceTree = "<group>"; };
 		1699147A2A25FBEC0046978D /* BalanceAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceAPIModel.swift; sourceTree = "<group>"; };
 		1699147C2A2604A00046978D /* UserRootAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRootAPIModel.swift; sourceTree = "<group>"; };
+		1699147F2A2A2A330046978D /* Birthdate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Birthdate.storyboard; sourceTree = "<group>"; };
+		169914802A2A2A330046978D /* BirthdatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdatePresenter.swift; sourceTree = "<group>"; };
+		169914812A2A2A330046978D /* BirthdateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdateRouter.swift; sourceTree = "<group>"; };
+		169914822A2A2A330046978D /* BirthdateModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdateModels.swift; sourceTree = "<group>"; };
+		169914832A2A2A330046978D /* BirthdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdateViewController.swift; sourceTree = "<group>"; };
+		169914842A2A2A330046978D /* BirthdateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdateInteractor.swift; sourceTree = "<group>"; };
+		169914852A2A2A330046978D /* BirthdateConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdateConfigurator.swift; sourceTree = "<group>"; };
 		169976E92A15011D00FDEC97 /* GoalAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalAPIModel.swift; sourceTree = "<group>"; };
 		169976EB2A15012500FDEC97 /* TasksAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksAPIModel.swift; sourceTree = "<group>"; };
 		169976EE2A1504C200FDEC97 /* TaskTypeAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTypeAPIModel.swift; sourceTree = "<group>"; };
@@ -1239,6 +1253,7 @@
 		161F3BF529E3156F0053158A /* Select Age */ = {
 			isa = PBXGroup;
 			children = (
+				1699147E2A2A2A0E0046978D /* BirthDate */,
 				161F3C0429E318F60053158A /* Cell */,
 				161F3BF629E3157D0053158A /* SelectAge.storyboard */,
 				161F3BF729E3157D0053158A /* SelectAgePresenter.swift */,
@@ -1576,6 +1591,20 @@
 				169914772A24D3EE0046978D /* FriendsCollectionViewCell.xib */,
 			);
 			name = "New Group";
+			sourceTree = "<group>";
+		};
+		1699147E2A2A2A0E0046978D /* BirthDate */ = {
+			isa = PBXGroup;
+			children = (
+				1699147F2A2A2A330046978D /* Birthdate.storyboard */,
+				169914802A2A2A330046978D /* BirthdatePresenter.swift */,
+				169914812A2A2A330046978D /* BirthdateRouter.swift */,
+				169914822A2A2A330046978D /* BirthdateModels.swift */,
+				169914832A2A2A330046978D /* BirthdateViewController.swift */,
+				169914842A2A2A330046978D /* BirthdateInteractor.swift */,
+				169914852A2A2A330046978D /* BirthdateConfigurator.swift */,
+			);
+			path = BirthDate;
 			sourceTree = "<group>";
 		};
 		169976ED2A15012F00FDEC97 /* App Models */ = {
@@ -2253,6 +2282,7 @@
 				161F3BB029D4BF670053158A /* Montserrat-Light.ttf in Resources */,
 				161F3BEE29E2FCA20053158A /* CreateConfirmPassword.storyboard in Resources */,
 				16ABAD3B2A0E5E4F00FB937C /* GoalCollectionViewCell.xib in Resources */,
+				169914862A2A2A330046978D /* Birthdate.storyboard in Resources */,
 				CF403858216CF78F001F649B /* Initial.storyboard in Resources */,
 				16ABACE429F68CDD00FB937C /* Settings.storyboard in Resources */,
 				16503FC029F5C26A00875075 /* ParentProfile.storyboard in Resources */,
@@ -2520,6 +2550,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				169914882A2A2A330046978D /* BirthdateRouter.swift in Sources */,
 				CF56472F211B1BA50092EFBD /* UIImageView+Extensions.swift in Sources */,
 				16503FA429F58E1900875075 /* ChildrenRouter.swift in Sources */,
 				16503FB429F5C07400875075 /* GoalsModels.swift in Sources */,
@@ -2536,6 +2567,7 @@
 				161F3C5329F277A30053158A /* SendGiftViewController.swift in Sources */,
 				161F3BF229E2FCA20053158A /* CreateConfirmPasswordViewController.swift in Sources */,
 				161F3BF029E2FCA20053158A /* CreateConfirmPasswordRouter.swift in Sources */,
+				169914892A2A2A330046978D /* BirthdateModels.swift in Sources */,
 				161F3B9B29D4BC810053158A /* OnboardingConfig.swift in Sources */,
 				16503FC629F5C26A00875075 /* ParentProfileConfigurator.swift in Sources */,
 				161F3C6729F31CD00053158A /* ReceiveMoneyModels.swift in Sources */,
@@ -2563,6 +2595,7 @@
 				CF8C5C9E20EF9CA400236C7B /* DatePickerDialog.swift in Sources */,
 				169976EC2A15012500FDEC97 /* TasksAPIModel.swift in Sources */,
 				CF564702211B142E0092EFBD /* OneSignalPushService.swift in Sources */,
+				1699148B2A2A2A330046978D /* BirthdateInteractor.swift in Sources */,
 				161F3C5B29F31A910053158A /* BlueToastView.swift in Sources */,
 				161F3BFE29E3157D0053158A /* SelectAgePresenter.swift in Sources */,
 				16ABACD129F6734800FB937C /* BetterSegmentedControl+PredefinedStyles.swift in Sources */,
@@ -2596,6 +2629,7 @@
 				161F3BC229D98A0E0053158A /* RegistrationRouter.swift in Sources */,
 				CFF69D772195593A003BE6BF /* URLRequest+Extensions.swift in Sources */,
 				CF8C5CB020EF9DC900236C7B /* UIImage+Extensions.swift in Sources */,
+				1699148A2A2A2A330046978D /* BirthdateViewController.swift in Sources */,
 				922EED0328466BA800D19A01 /* Queue.swift in Sources */,
 				CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */,
 				16ABAD352A0E40CD00FB937C /* AssignNewTaskInteractor.swift in Sources */,
@@ -2660,6 +2694,7 @@
 				0FD0C6EC2200B662000C5881 /* UIFont+Extentions.swift in Sources */,
 				161F3C3F29ED3D990053158A /* CardTabBarController.swift in Sources */,
 				CFF69D6A219551B4003BE6BF /* UIViewController+Extensions.swift in Sources */,
+				1699148C2A2A2A330046978D /* BirthdateConfigurator.swift in Sources */,
 				4AEF64772210842F00D53D75 /* BaseSkyFloatingTextField.swift in Sources */,
 				11CD5280230AFF91003D08BE /* ViewEmbedder.swift in Sources */,
 				161F3B9129D371500053158A /* OnboardingPresenter.swift in Sources */,
@@ -2759,6 +2794,7 @@
 				16ABACEF2A03AEAD00FB937C /* ChildView.swift in Sources */,
 				CF8C5CA020EF9CCA00236C7B /* BaseNavigationBar.swift in Sources */,
 				0F508C2F23A2AE5E00E1F333 /* TDProgressHUD.swift in Sources */,
+				169914872A2A2A330046978D /* BirthdatePresenter.swift in Sources */,
 				161F3C7829F31EE80053158A /* SendMoneyInteractor.swift in Sources */,
 				67283E47281AC81A007C5FF4 /* PushServiceRouter.swift in Sources */,
 				16ABAD202A0910AB00FB937C /* AddTaskConfigurator.swift in Sources */,
