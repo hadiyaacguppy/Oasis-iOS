@@ -50,7 +50,7 @@ class InitialViewController: BaseViewController, InitialViewControllerInput {
     private
     func decideRedirection(){
         if SessionRepository.shared.userIsLoggedIn {
-            
+            self.router?.redirectToTabbarController()
         }else{
             self.router?.redirectToOnboardingScene()
         }

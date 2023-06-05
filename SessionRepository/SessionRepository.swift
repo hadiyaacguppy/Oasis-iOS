@@ -54,7 +54,7 @@ public class SessionRepository {
     }
     
     public var userIsLoggedIn : Bool {
-        return  self.currentUser != nil && self.currentUser?.token != nil
+        return self.token != nil
     }
     
     public func sessionIsValid(withErrorCode code : Int) -> Bool {
