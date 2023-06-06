@@ -18,7 +18,13 @@ class AgeTableViewCell: UITableViewCell {
     }
     @IBOutlet weak var ageNumberLabel: BaseLabel!{
         didSet{
-            ageNumberLabel.style = .init(font: MainFont.bold.with(size: 65), color: .white, alignment: .center)
+            ageNumberLabel.style = .init(font: MainFont.bold.with(size: 35), color: .white, alignment: .center)
+        }
+    }
+    
+    @IBOutlet weak var ageTitleLabel: BaseLabel!{
+        didSet{
+            ageTitleLabel.style = .init(font: MainFont.bold.with(size: 35), color: .white)
         }
     }
     

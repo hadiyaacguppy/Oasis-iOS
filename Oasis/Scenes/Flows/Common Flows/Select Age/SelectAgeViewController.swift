@@ -26,15 +26,6 @@ class SelectAgeViewController: BaseViewController {
         return label
     }()
     
-    private lazy var yearsOldStaticLabel : BaseLabel = {
-        let label = BaseLabel()
-        label.style = .init(font: MainFont.bold.with(size: 22), color: .white)
-        label.text = "years old".localized
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-
-    
     private lazy var nextButton : BaseButton = {
         let btn = BaseButton()
         if #available(iOS 15.0, *) {
@@ -173,11 +164,11 @@ extension SelectAgeViewController{
     }
     
     private func addYearsOldLabel(){
-        view.addSubview(yearsOldStaticLabel)
+        /*view.addSubview(yearsOldStaticLabel)
         NSLayoutConstraint.activate([
             yearsOldStaticLabel.leadingAnchor.constraint(equalTo: tableView.trailingAnchor, constant: 31),
             yearsOldStaticLabel.topAnchor.constraint(equalTo: tableView.topAnchor, constant: 36)
-        ])
+        ])*/
     }
 }
 

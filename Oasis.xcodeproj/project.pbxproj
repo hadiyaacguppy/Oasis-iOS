@@ -212,6 +212,7 @@
 		1699148A2A2A2A330046978D /* BirthdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914832A2A2A330046978D /* BirthdateViewController.swift */; };
 		1699148B2A2A2A330046978D /* BirthdateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914842A2A2A330046978D /* BirthdateInteractor.swift */; };
 		1699148C2A2A2A330046978D /* BirthdateConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914852A2A2A330046978D /* BirthdateConfigurator.swift */; };
+		1699148E2A2F26F80046978D /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1699148D2A2F26F80046978D /* DateView.swift */; };
 		169976EA2A15011D00FDEC97 /* GoalAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976E92A15011D00FDEC97 /* GoalAPIModel.swift */; };
 		169976EC2A15012500FDEC97 /* TasksAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976EB2A15012500FDEC97 /* TasksAPIModel.swift */; };
 		169976EF2A1504C200FDEC97 /* TaskTypeAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976EE2A1504C200FDEC97 /* TaskTypeAPIModel.swift */; };
@@ -655,6 +656,7 @@
 		169914832A2A2A330046978D /* BirthdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdateViewController.swift; sourceTree = "<group>"; };
 		169914842A2A2A330046978D /* BirthdateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdateInteractor.swift; sourceTree = "<group>"; };
 		169914852A2A2A330046978D /* BirthdateConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdateConfigurator.swift; sourceTree = "<group>"; };
+		1699148D2A2F26F80046978D /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		169976E92A15011D00FDEC97 /* GoalAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalAPIModel.swift; sourceTree = "<group>"; };
 		169976EB2A15012500FDEC97 /* TasksAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksAPIModel.swift; sourceTree = "<group>"; };
 		169976EE2A1504C200FDEC97 /* TaskTypeAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTypeAPIModel.swift; sourceTree = "<group>"; };
@@ -1253,7 +1255,6 @@
 		161F3BF529E3156F0053158A /* Select Age */ = {
 			isa = PBXGroup;
 			children = (
-				1699147E2A2A2A0E0046978D /* BirthDate */,
 				161F3C0429E318F60053158A /* Cell */,
 				161F3BF629E3157D0053158A /* SelectAge.storyboard */,
 				161F3BF729E3157D0053158A /* SelectAgePresenter.swift */,
@@ -1550,6 +1551,7 @@
 				161F3C6B29F31EDC0053158A /* Send Money */,
 				161F3C5C29F31CBD0053158A /* Receive Money */,
 				161F3C4729F277860053158A /* Send a Gift */,
+				1699147E2A2A2A0E0046978D /* BirthDate */,
 				161F3BF529E3156F0053158A /* Select Age */,
 				161F3BB629D989D60053158A /* OTP Verification */,
 				161F3BB729D989E60053158A /* Password & Confirm */,
@@ -1772,6 +1774,7 @@
 				16ABACFF2A04F4A300FB937C /* TitleWithTextFieldView.swift */,
 				16ABACEB29F68D7700FB937C /* SettingsClickableOptionView.swift */,
 				16ABAD262A0CFE7300FB937C /* SuggestedTaskView.swift */,
+				1699148D2A2F26F80046978D /* DateView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -2554,6 +2557,7 @@
 				CF56472F211B1BA50092EFBD /* UIImageView+Extensions.swift in Sources */,
 				16503FA429F58E1900875075 /* ChildrenRouter.swift in Sources */,
 				16503FB429F5C07400875075 /* GoalsModels.swift in Sources */,
+				1699148E2A2F26F80046978D /* DateView.swift in Sources */,
 				16503F8029F488C600875075 /* AmountTextField.swift in Sources */,
 				16503FA629F58E1900875075 /* ChildrenViewController.swift in Sources */,
 				16503F8229F4893900875075 /* AmountWithCurrencyVIew.swift in Sources */,

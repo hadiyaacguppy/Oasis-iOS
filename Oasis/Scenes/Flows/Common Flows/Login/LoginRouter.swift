@@ -53,6 +53,16 @@ class LoginRouter: LoginRouterDataPassing{
             })
         }
     }
+    
+    func pushToBirthDateVC(){
+        let vc = R.storyboard.birthdate.birthdateViewControllerVC()!
+        
+        DispatchQueue
+            .main
+            .async {
+                self.viewController.navigationController?.pushViewController(vc, animated: true)
+            }
+    }
     ///Pop The view from the view hierarchy
     func popView(){
         DispatchQueue.main

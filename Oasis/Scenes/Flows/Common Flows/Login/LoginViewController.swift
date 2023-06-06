@@ -185,7 +185,7 @@ extension LoginViewController{
     }
     
     @objc func registerBarButtonPressed(){
-        self.router?.redirectToSelectAge()
+        self.router?.pushToBirthDateVC()
     }
     
 }

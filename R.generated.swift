@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 24 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 25 storyboards.
   struct storyboard {
     /// Storyboard `AddChild`.
     static let addChild = _R.storyboard.addChild()
@@ -98,6 +98,8 @@ struct R: Rswift.Validatable {
     static let addTask = _R.storyboard.addTask()
     /// Storyboard `AssignNewTask`.
     static let assignNewTask = _R.storyboard.assignNewTask()
+    /// Storyboard `Birthdate`.
+    static let birthdate = _R.storyboard.birthdate()
     /// Storyboard `Children`.
     static let children = _R.storyboard.children()
     /// Storyboard `CreateConfirmPassword`.
@@ -159,6 +161,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "AssignNewTask", bundle: ...)`
     static func assignNewTask(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.assignNewTask)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Birthdate", bundle: ...)`
+    static func birthdate(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.birthdate)
     }
     #endif
 
@@ -487,7 +496,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 102 images.
+  /// This `R.image` struct is generated, and contains static references to 104 images.
   struct image {
     /// Image `2474162 copy`.
     static let copy = Rswift.ImageResource(bundle: R.hostingBundle, name: "2474162 copy")
@@ -573,6 +582,8 @@ struct R: Rswift.Validatable {
     static let error = Rswift.ImageResource(bundle: R.hostingBundle, name: "error")
     /// Image `extra`.
     static let extra = Rswift.ImageResource(bundle: R.hostingBundle, name: "extra")
+    /// Image `fish`.
+    static let fish = Rswift.ImageResource(bundle: R.hostingBundle, name: "fish")
     /// Image `grayShape`.
     static let grayShape = Rswift.ImageResource(bundle: R.hostingBundle, name: "grayShape")
     /// Image `help icon`.
@@ -593,6 +604,8 @@ struct R: Rswift.Validatable {
     static let limitsIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "limits-icon")
     /// Image `logout icon`.
     static let logoutIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "logout icon")
+    /// Image `longWhiteArrow`.
+    static let longWhiteArrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "longWhiteArrow")
     /// Image `navBlackClose`.
     static let navBlackClose = Rswift.ImageResource(bundle: R.hostingBundle, name: "navBlackClose")
     /// Image `netflix`.
@@ -989,6 +1002,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "fish", bundle: ..., traitCollection: ...)`
+    static func fish(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.fish, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "grayShape", bundle: ..., traitCollection: ...)`
     static func grayShape(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.grayShape, compatibleWith: traitCollection)
@@ -1055,6 +1075,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "logout icon", bundle: ..., traitCollection: ...)`
     static func logoutIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.logoutIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "longWhiteArrow", bundle: ..., traitCollection: ...)`
+    static func longWhiteArrow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.longWhiteArrow, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1807,6 +1834,9 @@ struct _R: Rswift.Validatable {
       try assignNewTask.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try birthdate.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try children.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -1977,6 +2007,34 @@ struct _R: Rswift.Validatable {
         }
         if _R.storyboard.assignNewTask().assignNewTaskViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'assignNewTaskViewControllerNavVC' could not be loaded from storyboard 'AssignNewTask' as 'BaseNavigationController'.") }
         if _R.storyboard.assignNewTask().assignNewTaskViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'assignNewTaskViewControllerVC' could not be loaded from storyboard 'AssignNewTask' as 'AssignNewTaskViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct birthdate: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseNavigationController
+
+      let birthdateViewControllerNavVC = StoryboardViewControllerResource<BaseNavigationController>(identifier: "BirthdateViewControllerNavVC")
+      let birthdateViewControllerVC = StoryboardViewControllerResource<BirthdateViewController>(identifier: "BirthdateViewControllerVC")
+      let bundle = R.hostingBundle
+      let name = "Birthdate"
+
+      func birthdateViewControllerNavVC(_: Void = ()) -> BaseNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: birthdateViewControllerNavVC)
+      }
+
+      func birthdateViewControllerVC(_: Void = ()) -> BirthdateViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: birthdateViewControllerVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.birthdate().birthdateViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'birthdateViewControllerNavVC' could not be loaded from storyboard 'Birthdate' as 'BaseNavigationController'.") }
+        if _R.storyboard.birthdate().birthdateViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'birthdateViewControllerVC' could not be loaded from storyboard 'Birthdate' as 'BirthdateViewController'.") }
       }
 
       fileprivate init() {}
