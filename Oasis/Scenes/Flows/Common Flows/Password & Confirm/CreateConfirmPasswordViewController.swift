@@ -80,10 +80,9 @@ class CreateConfirmPasswordViewController: BaseViewController {
     
     private lazy var registerButton : BaseButton = {
         let button = BaseButton()
-        button.backgroundColor = Constants.Colors.appGreen
         button.style = .init(titleFont: MainFont.bold.with(size: 16),
                            titleColor: .white,
-                           backgroundColor: .clear)
+                           backgroundColor: Constants.Colors.appGreen)
         button.roundCorners = .all(radius: 28)
         button.autoLayout()
         button.setTitle("Register".localized, for: .normal)

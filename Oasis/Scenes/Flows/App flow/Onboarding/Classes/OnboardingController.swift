@@ -41,13 +41,13 @@ public class OnboardingController: UIViewController {
         return button
     }()
     
-    private let backgroundImage: UIImageView = {
-        let imageV = UIImageView()
-        imageV.translatesAutoresizingMaskIntoConstraints = false
-        imageV.image = R.image.newBackground()!
-        imageV.contentMode = .scaleAspectFill
-        return imageV
-    }()
+    //    private let backgroundImage: UIImageView = {
+    //        let imageV = UIImageView()
+    //        imageV.translatesAutoresizingMaskIntoConstraints = false
+    //        imageV.image = R.image.newBackground()!
+    //        imageV.contentMode = .scaleAspectFill
+    //        return imageV
+    //    }()
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -119,13 +119,15 @@ extension OnboardingController {
     }
     
     private func addBackgroundImage(){
-        view.addSubview(backgroundImage)
-        NSLayoutConstraint.activate([
-            backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
-            backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor)
-        ])
+        view.backgroundColor = Constants.Colors.appYellow
+        
+        //        view.addSubview(backgroundImage)
+        //        NSLayoutConstraint.activate([
+        //            backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
+        //            backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+        //            backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        //            backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+        //        ])
     }
     
     private func addSkipButton() {
@@ -281,5 +283,25 @@ extension OnboardingController: UIScrollViewDelegate {
                 nextButton.setTitle(config.nextButton.title, for: .normal)
             }
         }
+        
+        switch pageIndex {
+        case 0:
+            UIView.animate(withDuration: 0.7, delay: 0.0, options:[.curveEaseIn], animations: {
+                self.view.backgroundColor = Constants.Colors.appYellow
+            }, completion:nil)
+        case 1:
+            UIView.animate(withDuration: 0.7, delay: 0.0, options:[.curveEaseIn], animations: {
+                self.view.backgroundColor = Constants.Colors.appGreen
+            }, completion:nil)
+        case 2:
+            UIView.animate(withDuration: 0.7, delay: 0.0, options:[.curveEaseIn], animations: {
+                self.view.backgroundColor = Constants.Colors.appPink
+            }, completion:nil)
+        default:
+            UIView.animate(withDuration: 0.7, delay: 0.0, options:[.curveEaseIn], animations: {
+                self.view.backgroundColor = Constants.Colors.appOrange
+            }, completion:nil)
+        }
+        
     }
 }

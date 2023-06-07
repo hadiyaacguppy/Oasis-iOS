@@ -49,8 +49,8 @@ extension OnboardingViewController{
         let titlesAndDescriptions: [String: String] = [
             "page1": "Learn about spending, saving & earning !",
             "page2": "Send and request money in one click !",
-            "page3": "Complete tasks to get paid instantly with Oasis !",
-            "page4": "Get Rewarded and unlock special offers !"
+            "page3": "Complete tasks to get paid instantly with Guppy !",
+            "page4": "Earn Guppies and unlock special offers !"
         ]
         
         let contents: [OnboardingConfig.Content] = titlesAndDescriptions.compactMap {
