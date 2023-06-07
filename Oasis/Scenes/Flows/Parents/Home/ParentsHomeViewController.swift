@@ -273,6 +273,7 @@ extension ParentsHomeViewController{
             //addAreYouParentView()
             doYouHaveChildrenView()
         }
+        addForYouSection()
         addUpcomingPaymentsSection(shouldAddPlaceholder: false)
         addRecentActivitiesSection(shouldAddPlaceholder: false)
     }
@@ -348,7 +349,7 @@ extension ParentsHomeViewController{
     private func doYouHaveChildrenView(){
         let staticTitle : BaseLabel = {
             let lbl = BaseLabel()
-            lbl.style = .init(font: MainFont.medium.with(size: 22), color: .black, numberOfLines: 1)
+            lbl.style = .init(font: MainFont.bold.with(size: 18), color: .black, numberOfLines: 1)
             lbl.autoLayout()
             lbl.text = "Do you have kids?".localized
             return lbl
@@ -425,7 +426,7 @@ extension ParentsHomeViewController{
         ])
     }
     
-    #warning("HADI: Not used anymore")
+    #warning("OLD DESIGN: Not used anymore")
     private func addAreYouParentView(){
         let areYouParentCardImageView : BaseImageView = {
             let img = BaseImageView(frame: .zero)
@@ -537,7 +538,7 @@ extension ParentsHomeViewController{
     
     private func addUpcomingPaymentsSection(shouldAddPlaceholder show: Bool){
         let ulabel : BaseLabel = BaseLabel()
-        ulabel.style = .init(font: MainFont.bold.with(size: 14), color: .black)
+        ulabel.style = .init(font: MainFont.bold.with(size: 18), color: .black)
         ulabel.text = "Upcoming Payments".localized
         ulabel.autoLayout()
         
@@ -689,6 +690,49 @@ extension ParentsHomeViewController{
         }else{
             addRecentActivities()
         }
+    }
+    
+    private func addForYouSection(){
+        let staticTitle : BaseLabel = {
+            let lbl = BaseLabel()
+            lbl.style = .init(font: MainFont.bold.with(size: 18), color: .black, numberOfLines: 1)
+            lbl.autoLayout()
+            lbl.text = "For you".localized
+            return lbl
+        }()
+        
+        var offersStackView : UIStackView = {
+            UIStackView()
+                .axis(.horizontal)
+                .spacing(12)
+                .autoLayout()
+                .distributionMode(.fillEqually)
+        }()
+        
+        let firstOfferImageView : BaseImageView = {
+            let img = BaseImageView(frame: .zero)
+            img.autoLayout()
+            img.contentMode = .scaleAspectFit
+            img.image = R.image.starbucksFreeCup()!
+            img.roundCorners = .all(radius: 14)
+            return img
+        }()
+        
+        let secondOfferImageView : BaseImageView = {
+            let img = BaseImageView(frame: .zero)
+            img.autoLayout()
+            img.contentMode = .scaleAspectFit
+            img.image = R.image.nikeStore()!
+            img.roundCorners = .all(radius: 14)
+            return img
+        }()
+        stackView.addArrangedSubview(staticTitle)
+        stackView.addArrangedSubview(offersStackView)
+        
+        offersStackView.addArrangedSubview(firstOfferImageView)
+        offersStackView.addArrangedSubview(secondOfferImageView)
+        
+        offersStackView.heightAnchor.constraint(equalToConstant: 145).isActive = true
     }
 }
 
