@@ -32,7 +32,7 @@ class ParentsHomeViewController: BaseViewController {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.distribution = .fill
-        stackView.spacing = 8
+        stackView.spacing = 14
         stackView.autoLayout()
         stackView.backgroundColor = .clear
         return stackView
@@ -89,7 +89,7 @@ class ParentsHomeViewController: BaseViewController {
             .axis(.horizontal)
             .spacing(13)
             .autoLayout()
-            .distributionMode(.fillEqually)
+            .distributionMode(.fill)
     }()
     
     lazy var secondActionsStackView : UIStackView = {
@@ -118,7 +118,7 @@ class ParentsHomeViewController: BaseViewController {
     
     lazy var payActionView : BaseUIView = {
         let vW = BaseUIView(frame: .zero)
-        vW.backgroundColor = Constants.Colors.aquaMarine
+        vW.backgroundColor = Constants.Colors.appYellow
         vW.roundCorners = .all(radius: 14)
         vW.autoLayout()
         return vW
@@ -126,7 +126,7 @@ class ParentsHomeViewController: BaseViewController {
     
     lazy var topUpActionView : BaseUIView = {
         let vW = BaseUIView(frame: .zero)
-        vW.backgroundColor = Constants.Colors.aquaMarine
+        vW.backgroundColor = Constants.Colors.appOrange
         vW.roundCorners = .all(radius: 14)
         vW.autoLayout()
         return vW
@@ -134,7 +134,7 @@ class ParentsHomeViewController: BaseViewController {
     
     lazy var sendGiftActionView : BaseUIView = {
         let vW = BaseUIView(frame: .zero)
-        vW.backgroundColor = Constants.Colors.aquaMarine
+        vW.backgroundColor = Constants.Colors.appGreen
         vW.roundCorners = .all(radius: 14)
         vW.autoLayout()
         return vW
@@ -143,6 +143,14 @@ class ParentsHomeViewController: BaseViewController {
     lazy var subscriptionsActionView : BaseUIView = {
         let vW = BaseUIView(frame: .zero)
         vW.backgroundColor = Constants.Colors.aquaMarine
+        vW.roundCorners = .all(radius: 14)
+        vW.autoLayout()
+        return vW
+    }()
+    
+    lazy var sendReceiveVerticalView : BaseUIView = {
+        let vW = BaseUIView(frame: .zero)
+        vW.backgroundColor = Constants.Colors.appViolet
         vW.roundCorners = .all(radius: 14)
         vW.autoLayout()
         return vW
@@ -295,37 +303,45 @@ extension ParentsHomeViewController{
         
         actionsContainerView.addSubview(firstActionsStackView)
         actionsContainerView.addSubview(secondActionsStackView)
+        actionsContainerView.addSubviews(sendReceiveVerticalView)
         
         NSLayoutConstraint.activate([
-            actionsContainerView.heightAnchor.constraint(equalToConstant: 167),
+            sendReceiveVerticalView.trailingAnchor.constraint(equalTo: actionsContainerView.trailingAnchor),
+            sendReceiveVerticalView.widthAnchor.constraint(equalToConstant: (view.frame.width - 56) * 0.3),
+            sendReceiveVerticalView.topAnchor.constraint(equalTo: actionsContainerView.topAnchor),
+            sendReceiveVerticalView.bottomAnchor.constraint(equalTo: actionsContainerView.bottomAnchor),
             
+            actionsContainerView.heightAnchor.constraint(equalToConstant: 167),
+
             firstActionsStackView.topAnchor.constraint(equalTo: actionsContainerView.topAnchor),
             firstActionsStackView.leadingAnchor.constraint(equalTo: actionsContainerView.leadingAnchor),
-            firstActionsStackView.trailingAnchor.constraint(equalTo: actionsContainerView.trailingAnchor),
+            firstActionsStackView.trailingAnchor.constraint(equalTo: sendReceiveVerticalView.leadingAnchor, constant: -15),
             firstActionsStackView.heightAnchor.constraint(equalToConstant: 76),
             
             secondActionsStackView.topAnchor.constraint(equalTo: firstActionsStackView.bottomAnchor, constant: 15),
             secondActionsStackView.leadingAnchor.constraint(equalTo: actionsContainerView.leadingAnchor),
-            secondActionsStackView.trailingAnchor.constraint(equalTo: actionsContainerView.trailingAnchor),
+            secondActionsStackView.trailingAnchor.constraint(equalTo: sendReceiveVerticalView.leadingAnchor, constant: -15),
             secondActionsStackView.heightAnchor.constraint(equalToConstant: 76)
         ])
     }
     
     private func addActionsToCorrespondingStacks(){
-        firstActionsStackView.addArrangedSubview(sendMoneyActionView)
-        firstActionsStackView.addArrangedSubview(receiveMoneyActionView)
-        firstActionsStackView.addArrangedSubview(payActionView)
+        firstActionsStackView.addArrangedSubview(topUpActionView)
+        //firstActionsStackView.addArrangedSubview(receiveMoneyActionView)
         
-        secondActionsStackView.addArrangedSubview(topUpActionView)
+        //secondActionsStackView.addArrangedSubview(topUpActionView)
+        secondActionsStackView.addArrangedSubview(payActionView)
         secondActionsStackView.addArrangedSubview(sendGiftActionView)
-        secondActionsStackView.addArrangedSubview(subscriptionsActionView)
         
-        setupSendMoney()
-        setupReceiveMoney()
+        //secondActionsStackView.addArrangedSubview(subscriptionsActionView)
+        
+        //setupSendMoney()
+       // setupReceiveMoney()
         setupPay()
         setupTopUp()
         setupSendGiftUI()
-        setupSubscription()
+        setupSendReceiveVerticalViewUI()
+        //setupSubscription()
     }
     
     private func addAreYouParentView(){
@@ -615,6 +631,46 @@ extension ParentsHomeViewController{
 
 //MARK: - Actions UI
 extension ParentsHomeViewController {
+    
+    private func setupSendReceiveVerticalViewUI(){
+        let img = BaseImageView(frame: .zero)
+        img.image = R.image.receiveMoneyIcon()!
+        img.autoLayout()
+        img.contentMode = .scaleAspectFit
+        
+        let img2 = BaseImageView(frame: .zero)
+        img2.image = R.image.sendMoneyIcon()!
+        img2.autoLayout()
+        img2.contentMode = .scaleAspectFit
+        
+        let label = BaseLabel()
+        label.style = .init(font: MainFont.medium.with(size: 16),
+                            color: .white,
+                            numberOfLines: 3)
+        label.autoLayout()
+        label.text = "Send /\nReceive\nMoney".localized
+        
+        sendReceiveVerticalView.addSubview(img)
+        sendReceiveVerticalView.addSubviews(img2)
+        sendReceiveVerticalView.addSubview(label)
+        
+        NSLayoutConstraint.activate([
+            img.topAnchor.constraint(equalTo: sendReceiveVerticalView.topAnchor, constant: 29),
+            img.centerXAnchor.constraint(equalTo: sendReceiveVerticalView.centerXAnchor),
+            img.heightAnchor.constraint(equalToConstant: 25),
+            img2.topAnchor.constraint(equalTo: img.bottomAnchor),
+            img2.centerXAnchor.constraint(equalTo: sendReceiveVerticalView.centerXAnchor),
+            img2.heightAnchor.constraint(equalToConstant: 25),
+            
+            label.topAnchor.constraint(equalTo: img2.bottomAnchor, constant: 2),
+            label.centerXAnchor.constraint(equalTo: sendReceiveVerticalView.centerXAnchor),
+            label.heightAnchor.constraint(equalToConstant: 73)
+        ])
+        
+        sendReceiveVerticalView.onTap {
+            self.router?.pushToReceiveMoneyController()
+        }
+    }
     private func setupSendGiftUI(){
         let img = BaseImageView(frame: .zero)
         img.image = R.image.nounGift5459873()!
@@ -724,27 +780,19 @@ extension ParentsHomeViewController {
     }
     
     private func setupTopUp(){
-        let img = BaseImageView(frame: .zero)
-        img.image = R.image.topUpIcon()!
-        img.autoLayout()
-        img.contentMode = .scaleAspectFit
-        
         let label = BaseLabel()
-        label.style = .init(font: MainFont.medium.with(size: 12),
-                            color: .white)
+        label.style = .init(font: MainFont.medium.with(size: 16),
+                            color: .white,
+                            numberOfLines: 2)
         label.autoLayout()
-        label.text = "Top Up".localized
-        topUpActionView.addSubview(img)
+        label.text = "Top up your card and \nstart to Guppy!".localized
+        //topUpActionView.addSubview(img)
         topUpActionView.addSubview(label)
         NSLayoutConstraint.activate([
-            img.topAnchor.constraint(equalTo: topUpActionView.topAnchor, constant: 17),
-            img.centerXAnchor.constraint(equalTo: topUpActionView.centerXAnchor),
-            img.heightAnchor.constraint(equalToConstant: 26),
-            label.topAnchor.constraint(equalTo: img.bottomAnchor, constant: 2),
+            label.centerYAnchor.constraint(equalTo: topUpActionView.centerYAnchor),
             label.centerXAnchor.constraint(equalTo: topUpActionView.centerXAnchor),
-            label.heightAnchor.constraint(equalToConstant: 21)
+            label.leadingAnchor.constraint(equalTo: topUpActionView.leadingAnchor, constant: 21)
         ])
-        
     }
     
     private func setupSubscription(){
