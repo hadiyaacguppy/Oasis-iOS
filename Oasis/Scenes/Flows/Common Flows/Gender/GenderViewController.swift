@@ -50,7 +50,7 @@ class GenderViewController: BaseViewController {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .fill
-        stackView.spacing = 24
+        stackView.spacing = 12
         stackView.autoLayout()
         stackView.backgroundColor = .clear
         return stackView
@@ -58,14 +58,14 @@ class GenderViewController: BaseViewController {
     
     private lazy var femaleImageView : UIImageView = {
         let imgView = UIImageView()
-        imgView.contentMode = .scaleAspectFit
+        imgView.contentMode = .scaleAspectFill
         imgView.autoLayout()
         return imgView
     }()
     
     private lazy var maleImageView : UIImageView = {
         let imgView = UIImageView()
-        imgView.contentMode = .scaleAspectFit
+        imgView.contentMode = .scaleAspectFill
         imgView.autoLayout()
         return imgView
     }()
