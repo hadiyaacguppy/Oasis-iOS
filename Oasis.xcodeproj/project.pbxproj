@@ -220,6 +220,7 @@
 		169914AA2A30A5ED0046978D /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914A32A30A5ED0046978D /* GenderViewController.swift */; };
 		169914AB2A30A5ED0046978D /* GenderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914A42A30A5ED0046978D /* GenderInteractor.swift */; };
 		169914AC2A30A5ED0046978D /* GenderConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914A52A30A5ED0046978D /* GenderConfigurator.swift */; };
+		169914AE2A30D5780046978D /* RoundedViewWithArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914AD2A30D5780046978D /* RoundedViewWithArrow.swift */; };
 		169976EA2A15011D00FDEC97 /* GoalAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976E92A15011D00FDEC97 /* GoalAPIModel.swift */; };
 		169976EC2A15012500FDEC97 /* TasksAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976EB2A15012500FDEC97 /* TasksAPIModel.swift */; };
 		169976EF2A1504C200FDEC97 /* TaskTypeAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976EE2A1504C200FDEC97 /* TaskTypeAPIModel.swift */; };
@@ -671,6 +672,7 @@
 		169914A32A30A5ED0046978D /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
 		169914A42A30A5ED0046978D /* GenderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderInteractor.swift; sourceTree = "<group>"; };
 		169914A52A30A5ED0046978D /* GenderConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderConfigurator.swift; sourceTree = "<group>"; };
+		169914AD2A30D5780046978D /* RoundedViewWithArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViewWithArrow.swift; sourceTree = "<group>"; };
 		169976E92A15011D00FDEC97 /* GoalAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalAPIModel.swift; sourceTree = "<group>"; };
 		169976EB2A15012500FDEC97 /* TasksAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksAPIModel.swift; sourceTree = "<group>"; };
 		169976EE2A1504C200FDEC97 /* TaskTypeAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTypeAPIModel.swift; sourceTree = "<group>"; };
@@ -1804,6 +1806,7 @@
 				16ABACEB29F68D7700FB937C /* SettingsClickableOptionView.swift */,
 				16ABAD262A0CFE7300FB937C /* SuggestedTaskView.swift */,
 				1699148D2A2F26F80046978D /* DateView.swift */,
+				169914AD2A30D5780046978D /* RoundedViewWithArrow.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -2727,6 +2730,7 @@
 				161F3C6929F31CD00053158A /* ReceiveMoneyInteractor.swift in Sources */,
 				161F3BD029D98AE00053158A /* LoginRouter.swift in Sources */,
 				16ABAD1C2A0910AB00FB937C /* AddTaskRouter.swift in Sources */,
+				169914AE2A30D5780046978D /* RoundedViewWithArrow.swift in Sources */,
 				16ABAD332A0E40CD00FB937C /* AssignNewTaskModels.swift in Sources */,
 				16ABACD529F6734800FB937C /* BetterSegmentedControl+IndicatorView.swift in Sources */,
 				0FD0C6EC2200B662000C5881 /* UIFont+Extentions.swift in Sources */,

@@ -150,14 +150,16 @@ extension RegistrationViewController{
         ])
     }
     private func validateFields(){
-        guard userName.notNilNorEmpty else {
-            showSimpleAlertView("", message: "Please fill in your Name", withCompletionHandler: nil)
-            return
-        }
-        guard userEmail.notNilNorEmpty else {
-            showSimpleAlertView("", message: "Please fill in your Email", withCompletionHandler: nil)
-            return
-        }
+//        guard userName.notNilNorEmpty else {
+//            showSimpleAlertView("", message: "Please fill in your Name", withCompletionHandler: nil)
+//            return
+//        }
+//        guard userEmail.notNilNorEmpty else {
+//            showSimpleAlertView("", message: "Please fill in your Email", withCompletionHandler: nil)
+//            return
+//        }
+        
+        self.router?.pushToGenderScene()
     }
 }
 

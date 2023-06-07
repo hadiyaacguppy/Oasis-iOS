@@ -43,6 +43,15 @@ class RegistrationRouter: RegistrationRouterDataPassing{
             }
     }
     
+    func pushToGenderScene(){
+        let vc = R.storyboard.gender.genderViewControllerVC()!
+        DispatchQueue
+            .main
+            .async {
+                self.viewController.navigationController?.pushViewController(vc, animated: true)
+            }
+    }
+    
     ///Pop The view from the view hierarchy
     func popView(){
         DispatchQueue.main

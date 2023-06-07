@@ -22,7 +22,7 @@ class GenderViewController: BaseViewController {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.distribution = .fill
-        stackView.spacing = 10
+        stackView.spacing = 2
         stackView.autoLayout()
         stackView.backgroundColor = .clear
         return stackView
@@ -40,7 +40,7 @@ class GenderViewController: BaseViewController {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .fill
-        stackView.spacing = 24
+        stackView.spacing = 12
         stackView.autoLayout()
         stackView.backgroundColor = .clear
         return stackView
@@ -56,18 +56,37 @@ class GenderViewController: BaseViewController {
         return stackView
     }()
     
-    private lazy var humanImageView : UIImageView = {
+    private lazy var femaleImageView : UIImageView = {
         let imgView = UIImageView()
         imgView.contentMode = .scaleAspectFit
         imgView.autoLayout()
         return imgView
     }()
     
-    private lazy var genderLabel : BaseLabel = {
+    private lazy var maleImageView : UIImageView = {
+        let imgView = UIImageView()
+        imgView.contentMode = .scaleAspectFit
+        imgView.autoLayout()
+        return imgView
+    }()
+    
+    private lazy var femaleGenderLabel : BaseLabel = {
         let lbl = BaseLabel()
         lbl.style = .init(font: MainFont.bold.with(size: 35), color: .white)
         lbl.autoLayout()
         return lbl
+    }()
+    
+    private lazy var maleGenderLabel : BaseLabel = {
+        let lbl = BaseLabel()
+        lbl.style = .init(font: MainFont.bold.with(size: 35), color: .white)
+        lbl.autoLayout()
+        return lbl
+    }()
+    
+    private lazy var nextViewButton : RoundedViewWithArrow = {
+        let view = RoundedViewWithArrow(frame: .zero)
+        return view
     }()
 }
 
@@ -94,15 +113,22 @@ extension GenderViewController{
     }
     
     private func setupUI(){
+        view.backgroundColor = Constants.Colors.appViolet
         
+        addTopTitle()
+        addNextButton()
+        buildStacks()
+        buildFemaleStackview()
+        buildMaleStackview()
     }
     
-    private func buildStacks(){
-        view.addSubview(mainStackView)
+    private func addNextButton(){
+        view.addSubview(nextViewButton)
         NSLayoutConstraint.activate([
-            mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
-            mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            mainStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16)
+            nextViewButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
+            nextViewButton.widthAnchor.constraint(equalToConstant: 86),
+            nextViewButton.heightAnchor.constraint(equalToConstant: 86),
+            nextViewButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40)
         ])
     }
     
@@ -116,22 +142,39 @@ extension GenderViewController{
         ])
     }
     
+    
+    private func buildStacks(){
+        view.addSubview(mainStackView)
+        NSLayoutConstraint.activate([
+            mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 18),
+            mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            mainStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16)
+        ])
+    }
+    
+ 
     private func buildFemaleStackview(){
         mainStackView.addArrangedSubview(femaleStackView)
+        femaleImageView.image = R.image.female()
+        femaleStackView.addArrangedSubview(femaleImageView)
+
+        femaleGenderLabel.text = "Female"
+        femaleStackView.addArrangedSubview(femaleGenderLabel)
+
+        femaleStackView.heightAnchor.constraint(equalToConstant: 260).isActive = true
+        femaleGenderLabel.widthAnchor.constraint(equalToConstant: 135).isActive = true
+    }
+    
+    private func buildMaleStackview(){
+        mainStackView.addArrangedSubview(maleStackView)
+        maleGenderLabel.text = "Male"
+        maleStackView.addArrangedSubview(maleGenderLabel)
         
-        femaleStackView.addArrangedSubview(humanImageView)
-        femaleStackView.addArrangedSubview(genderLabel)
-        
-        humanImageView.image = R.image.female()
-        NSLayoutConstraint.activate([
-            femaleStackView.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor),
-            femaleStackView.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor),
-            femaleStackView.heightAnchor.constraint(equalToConstant: 260),
-            
-            humanImageView.topAnchor.constraint(equalTo: femaleStackView.topAnchor),
-            humanImageView.bottomAnchor.constraint(equalTo: femaleStackView.bottomAnchor),
-            humanImageView.leadingAnchor.constraint(equalTo: femaleStackView.leadingAnchor, constant: 24)
-        ])
+        maleImageView.image = R.image.male()
+        maleStackView.addArrangedSubview(maleImageView)
+
+        maleStackView.heightAnchor.constraint(equalToConstant: 260).isActive = true
+        maleGenderLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
     }
 }
 
