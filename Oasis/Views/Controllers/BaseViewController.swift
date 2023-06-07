@@ -106,9 +106,9 @@ extension BaseViewController{
         
         
         if LanguageService().isRTL{
-            backButton.image = R.image.blackBackArrow()!.withRenderingMode(.alwaysOriginal)
+            backButton.image = R.image.backArrowWhite()!.withRenderingMode(.alwaysOriginal)
         }else {
-            backButton.image = R.image.blackBackArrow()!.withRenderingMode(.alwaysOriginal)
+            backButton.image = R.image.backArrowWhite()!.withRenderingMode(.alwaysOriginal)
         }
         
         backButton.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
