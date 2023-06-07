@@ -118,7 +118,8 @@ extension OnboardingViewController{
 extension OnboardingViewController: IntroductionControllerDelegate {
     func didSkipButtonTapped() {
         // do something
-        self.router?.pushToLoginVC()
+        self.router?.redirectToTabbarController()
+        //self.router?.pushToLoginVC()
     }
     
     func didNextButtonTappedAtEndOfContents(){

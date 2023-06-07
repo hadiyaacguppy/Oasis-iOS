@@ -46,17 +46,24 @@ class ParentsHomeViewController: BaseViewController {
         return img
     }()
     
+    lazy var balanceContainerView : BaseUIView = {
+        let view = BaseUIView()
+        view.roundCorners = .all(radius: 17)
+        view.backgroundColor = Constants.Colors.appViolet
+        return view
+    }()
+    
     lazy var balanceStackView : UIStackView = {
         UIStackView()
             .axis(.vertical)
-            .spacing(15)
+            .spacing(10)
             .autoLayout()
             .distributionMode(.fill)
     }()
     
     lazy var balanceStaticLabel : BaseLabel = {
         let lbl = BaseLabel()
-        lbl.style = .init(font: MainFont.medium.with(size: 18), color: .white)
+        lbl.style = .init(font: MainFont.medium.with(size: 20), color: .white)
         lbl.text = "Balance".localized
         lbl.autoLayout()
         return lbl
@@ -64,7 +71,7 @@ class ParentsHomeViewController: BaseViewController {
     
     lazy var balanceValueLabel : BaseLabel = {
         let lbl = BaseLabel()
-        lbl.style = .init(font: MainFont.medium.with(size: 30), color: .white)
+        lbl.style = .init(font: MainFont.bold.with(size: 40), color: .white)
         lbl.text = "0.00 LBP".localized
         lbl.autoLayout()
         return lbl
@@ -217,7 +224,7 @@ extension ParentsHomeViewController{
     }
     
     private func setupUI(){
-        addTopCurvedImage()
+        //addTopCurvedImage()
         addScrollView()
     }
     
@@ -262,9 +269,20 @@ extension ParentsHomeViewController{
     }
     
     private func addBalanceStack(){
-        stackView.addArrangedSubview(balanceStackView)
+        stackView.addArrangedSubview(balanceContainerView)
         
-        balanceStackView.heightAnchor.constraint(equalToConstant: 85).isActive = true
+        balanceContainerView.addSubviews(balanceStackView)
+        
+        NSLayoutConstraint.activate([
+            balanceContainerView.heightAnchor.constraint(equalToConstant: 132),
+            
+            balanceStackView.topAnchor.constraint(equalTo: balanceContainerView.topAnchor, constant: 17),
+            //balanceStackView.bottomAnchor.constraint(equalTo: balanceContainerView.bottomAnchor),
+            balanceStackView.trailingAnchor.constraint(equalTo: balanceContainerView.trailingAnchor),
+            balanceStackView.leadingAnchor.constraint(equalTo: balanceContainerView.leadingAnchor, constant: 21),
+        ])
+        
+        //balanceStackView.heightAnchor.constraint(equalToConstant: 85).isActive = true
         
         balanceStackView.addArrangedSubview(balanceStaticLabel)
         balanceStackView.addArrangedSubview(balanceValueLabel)
