@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 25 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 26 storyboards.
   struct storyboard {
     /// Storyboard `AddChild`.
     static let addChild = _R.storyboard.addChild()
@@ -106,6 +106,8 @@ struct R: Rswift.Validatable {
     static let createConfirmPassword = _R.storyboard.createConfirmPassword()
     /// Storyboard `Friends`.
     static let friends = _R.storyboard.friends()
+    /// Storyboard `Gender`.
+    static let gender = _R.storyboard.gender()
     /// Storyboard `Goals`.
     static let goals = _R.storyboard.goals()
     /// Storyboard `Initial`.
@@ -189,6 +191,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Friends", bundle: ...)`
     static func friends(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.friends)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Gender", bundle: ...)`
+    static func gender(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.gender)
     }
     #endif
 
@@ -496,7 +505,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 104 images.
+  /// This `R.image` struct is generated, and contains static references to 109 images.
   struct image {
     /// Image `2474162 copy`.
     static let copy = Rswift.ImageResource(bundle: R.hostingBundle, name: "2474162 copy")
@@ -512,12 +521,20 @@ struct R: Rswift.Validatable {
     static let cardColor2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Card Color 2")
     /// Image `Card Color`.
     static let cardColor = Rswift.ImageResource(bundle: R.hostingBundle, name: "Card Color")
+    /// Image `Female`.
+    static let female = Rswift.ImageResource(bundle: R.hostingBundle, name: "Female")
     /// Image `Fill 1`.
     static let fill1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Fill 1")
+    /// Image `Fish Right`.
+    static let fishRight = Rswift.ImageResource(bundle: R.hostingBundle, name: "Fish Right")
     /// Image `Home-icon-white`.
     static let homeIconWhite = Rswift.ImageResource(bundle: R.hostingBundle, name: "Home-icon-white")
+    /// Image `Logo emblem`.
+    static let logoEmblem = Rswift.ImageResource(bundle: R.hostingBundle, name: "Logo emblem")
     /// Image `Logo white`.
     static let logoWhite = Rswift.ImageResource(bundle: R.hostingBundle, name: "Logo white")
+    /// Image `Male`.
+    static let male = Rswift.ImageResource(bundle: R.hostingBundle, name: "Male")
     /// Image `NavBackAr`.
     static let navBackAr = Rswift.ImageResource(bundle: R.hostingBundle, name: "NavBackAr")
     /// Image `NavBack`.
@@ -602,6 +619,8 @@ struct R: Rswift.Validatable {
     static let kidsPic = Rswift.ImageResource(bundle: R.hostingBundle, name: "kids-pic")
     /// Image `limits-icon`.
     static let limitsIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "limits-icon")
+    /// Image `logoName`.
+    static let logoName = Rswift.ImageResource(bundle: R.hostingBundle, name: "logoName")
     /// Image `logout icon`.
     static let logoutIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "logout icon")
     /// Image `longWhiteArrow`.
@@ -757,9 +776,23 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Female", bundle: ..., traitCollection: ...)`
+    static func female(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.female, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "Fill 1", bundle: ..., traitCollection: ...)`
     static func fill1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.fill1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Fish Right", bundle: ..., traitCollection: ...)`
+    static func fishRight(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.fishRight, compatibleWith: traitCollection)
     }
     #endif
 
@@ -771,9 +804,23 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Logo emblem", bundle: ..., traitCollection: ...)`
+    static func logoEmblem(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.logoEmblem, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "Logo white", bundle: ..., traitCollection: ...)`
     static func logoWhite(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.logoWhite, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Male", bundle: ..., traitCollection: ...)`
+    static func male(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.male, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1068,6 +1115,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "limits-icon", bundle: ..., traitCollection: ...)`
     static func limitsIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.limitsIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "logoName", bundle: ..., traitCollection: ...)`
+    static func logoName(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.logoName, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1846,6 +1900,9 @@ struct _R: Rswift.Validatable {
       try friends.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try gender.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try goals.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -2126,6 +2183,34 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    struct gender: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseNavigationController
+
+      let bundle = R.hostingBundle
+      let genderViewControllerNavVC = StoryboardViewControllerResource<BaseNavigationController>(identifier: "GenderViewControllerNavVC")
+      let genderViewControllerVC = StoryboardViewControllerResource<GenderViewController>(identifier: "GenderViewControllerVC")
+      let name = "Gender"
+
+      func genderViewControllerNavVC(_: Void = ()) -> BaseNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: genderViewControllerNavVC)
+      }
+
+      func genderViewControllerVC(_: Void = ()) -> GenderViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: genderViewControllerVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.gender().genderViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'genderViewControllerNavVC' could not be loaded from storyboard 'Gender' as 'BaseNavigationController'.") }
+        if _R.storyboard.gender().genderViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'genderViewControllerVC' could not be loaded from storyboard 'Gender' as 'GenderViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct goals: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = BaseNavigationController
 
@@ -2211,7 +2296,7 @@ struct _R: Rswift.Validatable {
       let name = "LaunchScreen"
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Logo white", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Logo white' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Logo emblem", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Logo emblem' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         if UIKit.UIImage(named: "NewBackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'NewBackground' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }

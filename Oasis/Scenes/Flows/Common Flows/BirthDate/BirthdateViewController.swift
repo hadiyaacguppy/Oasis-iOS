@@ -85,6 +85,8 @@ class BirthdateViewController: BaseViewController {
         label.autoLayout()
         return label
     }()
+    
+    var chosenBirthdate : Date = Date()
 }
 
 //MARK:- View Lifecycle
@@ -135,7 +137,7 @@ extension BirthdateViewController{
     }
     
     private func buildDateStackView(lbl : BaseLabel, title : String){
-        var dateStackView : UIStackView = {
+        let dateStackView : UIStackView = {
             let stackView = UIStackView()
             stackView.axis = .horizontal
             stackView.distribution = .fill
@@ -147,7 +149,7 @@ extension BirthdateViewController{
         
         mainStackView.addArrangedSubview(dateStackView)
         
-        var squareView : BaseUIView = {
+        let squareView : BaseUIView = {
            let view = BaseUIView()
             view.backgroundColor = UIColor(hexFromString: "#D9D9D9", alpha: 0.3)
             view.roundCorners = .all(radius: 15)
@@ -158,7 +160,7 @@ extension BirthdateViewController{
             return view
         }()
         
-        var dateTitleLabel : BaseLabel = {
+        let dateTitleLabel : BaseLabel = {
             let label = BaseLabel()
             label.style = .init(font: MainFont.bold.with(size: 35), color: .white)
             label.autoLayout()
@@ -195,7 +197,13 @@ extension BirthdateViewController{
         
         let arrowImage = BaseImageView(frame: .zero)
         arrowImage.image = R.image.longWhiteArrow()!
+        arrowImage.contentMode = .scaleAspectFit
+        arrowImage.autoLayout()
         roundView.addSubview(arrowImage)
+        
+        roundView.onTap{
+            self.router?.pushToRegistrationVC()
+        }
         
         NSLayoutConstraint.activate([
             bottomImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
@@ -206,12 +214,12 @@ extension BirthdateViewController{
             roundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
             roundView.widthAnchor.constraint(equalToConstant: 86),
             roundView.heightAnchor.constraint(equalToConstant: 86),
-            roundView.bottomAnchor.constraint(equalTo: bottomImageView.topAnchor, constant: -40),
+            roundView.bottomAnchor.constraint(equalTo: bottomImageView.topAnchor, constant: -10),
             
-            arrowImage.leadingAnchor.constraint(equalTo: roundView.leadingAnchor),
-            arrowImage.trailingAnchor.constraint(equalTo: roundView.trailingAnchor),
-            arrowImage.topAnchor.constraint(equalTo: roundView.topAnchor),
-            arrowImage.bottomAnchor.constraint(equalTo: roundView.bottomAnchor)
+            arrowImage.leadingAnchor.constraint(equalTo: roundView.leadingAnchor, constant: 10),
+            arrowImage.trailingAnchor.constraint(equalTo: roundView.trailingAnchor, constant: -10),
+            arrowImage.topAnchor.constraint(equalTo: roundView.topAnchor, constant: 20),
+            arrowImage.bottomAnchor.constraint(equalTo: roundView.bottomAnchor, constant: -20)
         ])
     }
     
@@ -222,9 +230,11 @@ extension BirthdateViewController{
                                           font: MainFont.normal.with(size: 15),
                                           locale: nil,
                                           showCancelButton: true)
-        datepicker.show("Choose your Date of Birth".localized, doneButtonTitle: "Done".localized, cancelButtonTitle: "Cancel".localized, defaultDate: Date(), minimumDate: nil, maximumDate: nil, datePickerMode: .date) { (chosenDate) in
+        datepicker.show("Choose your Date of Birth".localized, doneButtonTitle: "Done".localized, cancelButtonTitle: "Cancel".localized, defaultDate: chosenBirthdate, minimumDate: nil, maximumDate: nil, datePickerMode: .date) { (chosenDate) in
             //self.calendarImageView.resignFirstResponder()
-             let components = NSCalendar.current.dateComponents([.day,.month,.year],from: chosenDate!)
+            guard let cDate = chosenDate else {return}
+            self.chosenBirthdate = cDate
+             let components = NSCalendar.current.dateComponents([.day,.month,.year],from: cDate)
              if let day = components.day, let month = components.month, let year = components.year {
                  self.dayNumberLabel.text = "\(day)"
                  self.monthNumberLabel.text = "\(month)"
@@ -240,6 +250,17 @@ extension BirthdateViewController{
         
         statusBarStyle = .default
         navigationBarStyle = .transparent
+        
+        let loginBarButton = UIBarButtonItem(title: "Login".localized, style: .plain, target: self, action: #selector(loginBarButtonPressed))
+        loginBarButton.setTitleTextAttributes(
+            [NSAttributedString.Key.foregroundColor: UIColor.white,
+             NSAttributedString.Key.font : MainFont.medium.with(size: 22)
+            ], for: .normal)
+        self.navigationItem.rightBarButtonItem = loginBarButton
+    }
+    
+    @objc func loginBarButtonPressed(){
+        self.router?.redirectToLogin()
     }
 }
 

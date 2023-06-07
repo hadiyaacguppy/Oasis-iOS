@@ -30,6 +30,22 @@ class InitialViewController: BaseViewController, InitialViewControllerInput {
 
     // MARK: Object lifecycle
 
+    lazy var logoImageView : BaseImageView = {
+        let img = BaseImageView(frame: .zero)
+        img.contentMode = .scaleAspectFit
+        img.image = R.image.logoEmblem()!
+        img.autoLayout()
+        return img
+    }()
+    
+    lazy var logoNameImageView : BaseImageView = {
+        let img = BaseImageView(frame: .zero)
+        img.contentMode = .scaleAspectFit
+        img.image = R.image.logoName()!
+        img.autoLayout()
+        return img
+    }()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         InitialConfigurator.shared.configure(viewController: self)
@@ -44,8 +60,23 @@ class InitialViewController: BaseViewController, InitialViewControllerInput {
         output?.viewDidFinishedLoading()
         setupRetryFetchingCallBack()
         decideRedirection()
+        setupUI()
     }
     
+    private
+    func setupUI(){
+        view.backgroundColor = Constants.Colors.appViolet
+        view.addSubviews(logoImageView)
+        view.addSubviews(logoNameImageView)
+        
+        NSLayoutConstraint.activate([
+            logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            logoImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
+            logoNameImageView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 12),
+            logoNameImageView.centerYAnchor.constraint(equalTo: logoImageView.centerYAnchor)
+        ])
+    }
     
     private
     func decideRedirection(){

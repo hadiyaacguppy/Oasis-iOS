@@ -213,6 +213,13 @@
 		1699148B2A2A2A330046978D /* BirthdateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914842A2A2A330046978D /* BirthdateInteractor.swift */; };
 		1699148C2A2A2A330046978D /* BirthdateConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914852A2A2A330046978D /* BirthdateConfigurator.swift */; };
 		1699148E2A2F26F80046978D /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1699148D2A2F26F80046978D /* DateView.swift */; };
+		169914A62A30A5ED0046978D /* Gender.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1699149F2A30A5ED0046978D /* Gender.storyboard */; };
+		169914A72A30A5ED0046978D /* GenderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914A02A30A5ED0046978D /* GenderPresenter.swift */; };
+		169914A82A30A5ED0046978D /* GenderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914A12A30A5ED0046978D /* GenderRouter.swift */; };
+		169914A92A30A5ED0046978D /* GenderModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914A22A30A5ED0046978D /* GenderModels.swift */; };
+		169914AA2A30A5ED0046978D /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914A32A30A5ED0046978D /* GenderViewController.swift */; };
+		169914AB2A30A5ED0046978D /* GenderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914A42A30A5ED0046978D /* GenderInteractor.swift */; };
+		169914AC2A30A5ED0046978D /* GenderConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914A52A30A5ED0046978D /* GenderConfigurator.swift */; };
 		169976EA2A15011D00FDEC97 /* GoalAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976E92A15011D00FDEC97 /* GoalAPIModel.swift */; };
 		169976EC2A15012500FDEC97 /* TasksAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976EB2A15012500FDEC97 /* TasksAPIModel.swift */; };
 		169976EF2A1504C200FDEC97 /* TaskTypeAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976EE2A1504C200FDEC97 /* TaskTypeAPIModel.swift */; };
@@ -657,6 +664,13 @@
 		169914842A2A2A330046978D /* BirthdateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdateInteractor.swift; sourceTree = "<group>"; };
 		169914852A2A2A330046978D /* BirthdateConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdateConfigurator.swift; sourceTree = "<group>"; };
 		1699148D2A2F26F80046978D /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		1699149F2A30A5ED0046978D /* Gender.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Gender.storyboard; sourceTree = "<group>"; };
+		169914A02A30A5ED0046978D /* GenderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPresenter.swift; sourceTree = "<group>"; };
+		169914A12A30A5ED0046978D /* GenderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderRouter.swift; sourceTree = "<group>"; };
+		169914A22A30A5ED0046978D /* GenderModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderModels.swift; sourceTree = "<group>"; };
+		169914A32A30A5ED0046978D /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
+		169914A42A30A5ED0046978D /* GenderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderInteractor.swift; sourceTree = "<group>"; };
+		169914A52A30A5ED0046978D /* GenderConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderConfigurator.swift; sourceTree = "<group>"; };
 		169976E92A15011D00FDEC97 /* GoalAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalAPIModel.swift; sourceTree = "<group>"; };
 		169976EB2A15012500FDEC97 /* TasksAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksAPIModel.swift; sourceTree = "<group>"; };
 		169976EE2A1504C200FDEC97 /* TaskTypeAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTypeAPIModel.swift; sourceTree = "<group>"; };
@@ -1557,6 +1571,7 @@
 				161F3BB729D989E60053158A /* Password & Confirm */,
 				161F3BB529D989D10053158A /* Login */,
 				161F3BB429D989C90053158A /* Registration */,
+				1699149E2A30A5D10046978D /* Gender */,
 			);
 			path = "Common Flows";
 			sourceTree = "<group>";
@@ -1607,6 +1622,20 @@
 				169914852A2A2A330046978D /* BirthdateConfigurator.swift */,
 			);
 			path = BirthDate;
+			sourceTree = "<group>";
+		};
+		1699149E2A30A5D10046978D /* Gender */ = {
+			isa = PBXGroup;
+			children = (
+				1699149F2A30A5ED0046978D /* Gender.storyboard */,
+				169914A02A30A5ED0046978D /* GenderPresenter.swift */,
+				169914A12A30A5ED0046978D /* GenderRouter.swift */,
+				169914A22A30A5ED0046978D /* GenderModels.swift */,
+				169914A32A30A5ED0046978D /* GenderViewController.swift */,
+				169914A42A30A5ED0046978D /* GenderInteractor.swift */,
+				169914A52A30A5ED0046978D /* GenderConfigurator.swift */,
+			);
+			path = Gender;
 			sourceTree = "<group>";
 		};
 		169976ED2A15012F00FDEC97 /* App Models */ = {
@@ -2288,6 +2317,7 @@
 				169914862A2A2A330046978D /* Birthdate.storyboard in Resources */,
 				CF403858216CF78F001F649B /* Initial.storyboard in Resources */,
 				16ABACE429F68CDD00FB937C /* Settings.storyboard in Resources */,
+				169914A62A30A5ED0046978D /* Gender.storyboard in Resources */,
 				16503FC029F5C26A00875075 /* ParentProfile.storyboard in Resources */,
 				16ABAD302A0E40CD00FB937C /* AssignNewTask.storyboard in Resources */,
 				16503FB129F5C07400875075 /* Goals.storyboard in Resources */,
@@ -2574,6 +2604,7 @@
 				169914892A2A2A330046978D /* BirthdateModels.swift in Sources */,
 				161F3B9B29D4BC810053158A /* OnboardingConfig.swift in Sources */,
 				16503FC629F5C26A00875075 /* ParentProfileConfigurator.swift in Sources */,
+				169914A72A30A5ED0046978D /* GenderPresenter.swift in Sources */,
 				161F3C6729F31CD00053158A /* ReceiveMoneyModels.swift in Sources */,
 				161F3C0729E319050053158A /* AgeTableViewCell.swift in Sources */,
 				CFF69D6D219554C4003BE6BF /* CGPoint+Extensions.swift in Sources */,
@@ -2606,6 +2637,7 @@
 				161F3C5729F279C70053158A /* OasisAquaButton.swift in Sources */,
 				161F3C2229E5ACD40053158A /* PinterestLayout.swift in Sources */,
 				67F03A5C26F20AA600ED91ED /* NetworkErrorResponse.swift in Sources */,
+				169914AC2A30A5ED0046978D /* GenderConfigurator.swift in Sources */,
 				CFE259E822C9CDB4006B0472 /* TDFullIMageView.swift in Sources */,
 				16503FC129F5C26A00875075 /* ParentProfilePresenter.swift in Sources */,
 				CFDB669B22C601BB006278A2 /* AppDelegate+OneSignal.swift in Sources */,
@@ -2652,6 +2684,7 @@
 				16503FB729F5C07400875075 /* GoalsConfigurator.swift in Sources */,
 				161F3BEF29E2FCA20053158A /* CreateConfirmPasswordPresenter.swift in Sources */,
 				169914782A24D3EE0046978D /* FriendsCollectionViewCell.swift in Sources */,
+				169914A82A30A5ED0046978D /* GenderRouter.swift in Sources */,
 				161F3C4129ED3D990053158A /* CardTabBarView.swift in Sources */,
 				16ABACDA29F6737000FB937C /* IconSegment.swift in Sources */,
 				16ABAD0C2A08E1A900FB937C /* addGoalPresenter.swift in Sources */,
@@ -2674,6 +2707,7 @@
 				16503F9429F5853600875075 /* PaymentsPresenter.swift in Sources */,
 				16503FA529F58E1900875075 /* ChildrenModels.swift in Sources */,
 				0F1B7FBD22CA6CBD0079F752 /* PhoneCodeCell.swift in Sources */,
+				169914AA2A30A5ED0046978D /* GenderViewController.swift in Sources */,
 				16503FCA29F5C7F200875075 /* ParentCardFSPagerCell.swift in Sources */,
 				CF8C5CAA20EF9D6700236C7B /* Int+Extensions.swift in Sources */,
 				16ABAD312A0E40CD00FB937C /* AssignNewTaskPresenter.swift in Sources */,
@@ -2765,6 +2799,7 @@
 				16503F8A29F5409900875075 /* OccasionCollectionViewCell.swift in Sources */,
 				16B044472A1244FB003EC59D /* SuggestedTitlesCollectionViewCell.swift in Sources */,
 				672909FC210E43EA00632C4F /* PlaceHolderView.swift in Sources */,
+				169914A92A30A5ED0046978D /* GenderModels.swift in Sources */,
 				161F3BE029DAD6FB0053158A /* OTPVerificationRouter.swift in Sources */,
 				67F03A5E26F20B7000ED91ED /* MediaManager.swift in Sources */,
 				161F3C3429E5AD4D0053158A /* InterestsConfigurator.swift in Sources */,
@@ -2838,6 +2873,7 @@
 				CF7823B420EF95A7003069BD /* APIErrorManager.swift in Sources */,
 				161F3C6A29F31CD00053158A /* ReceiveMoneyConfigurator.swift in Sources */,
 				16ABACE929F68CDD00FB937C /* SettingsInteractor.swift in Sources */,
+				169914AB2A30A5ED0046978D /* GenderInteractor.swift in Sources */,
 				169914632A1D57870046978D /* Single+Response.swift in Sources */,
 				1699146F2A24D3970046978D /* FriendsModels.swift in Sources */,
 				3E1DEAF022BA62FD00FAD9F4 /* UIView+Shadow.swift in Sources */,

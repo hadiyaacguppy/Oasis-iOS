@@ -16,21 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Avd-Z9-p1h">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo emblem" translatesAutoresizingMaskIntoConstraints="NO" id="7tO-fO-df7">
+                                <rect key="frame" x="117.66666666666669" y="396.66666666666669" width="158" height="83.666666666666686"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo white" translatesAutoresizingMaskIntoConstraints="NO" id="7tO-fO-df7">
-                                <rect key="frame" x="121" y="374" width="151" height="129"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoName" translatesAutoresizingMaskIntoConstraints="NO" id="Luu-7P-ica">
+                                <rect key="frame" x="114.33333333333333" y="492.33333333333331" width="164.66666666666669" height="48.333333333333314"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Avd-Z9-p1h" secondAttribute="trailing" id="3rd-vj-STw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Avd-Z9-p1h" secondAttribute="bottom" constant="-34" id="4iv-bP-mlT"/>
                             <constraint firstItem="7tO-fO-df7" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="BiA-lB-EtP"/>
-                            <constraint firstItem="Avd-Z9-p1h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-59" id="Evl-f8-bpg"/>
-                            <constraint firstItem="Avd-Z9-p1h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ebe-NX-aii"/>
+                            <constraint firstItem="Luu-7P-ica" firstAttribute="centerX" secondItem="7tO-fO-df7" secondAttribute="centerX" id="SvS-cq-rzl"/>
+                            <constraint firstItem="Luu-7P-ica" firstAttribute="top" secondItem="7tO-fO-df7" secondAttribute="bottom" constant="12" id="X4Q-EU-O3n"/>
                             <constraint firstItem="7tO-fO-df7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gwJ-7Z-E8i"/>
                         </constraints>
                     </view>
@@ -41,7 +39,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo white" width="151" height="129"/>
-        <image name="NewBackground" width="390" height="844"/>
+        <image name="Logo emblem" width="158" height="83.666664123535156"/>
+        <image name="logoName" width="164.66667175292969" height="48.333332061767578"/>
     </resources>
 </document>

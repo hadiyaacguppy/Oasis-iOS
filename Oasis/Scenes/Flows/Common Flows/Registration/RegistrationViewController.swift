@@ -18,121 +18,37 @@ class RegistrationViewController: BaseViewController {
     var interactor: RegistrationViewControllerOutput?
     var router: RegistrationRouter?
     
-    private let backgroundImage: UIImageView = {
-        let imageV = UIImageView()
-        imageV.translatesAutoresizingMaskIntoConstraints = false
-        imageV.image = R.image.newBackground()!
-        imageV.contentMode = .scaleAspectFill
-        return imageV
+    private lazy var mainStackView : UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.spacing = 10
+        stackView.autoLayout()
+        stackView.backgroundColor = .clear
+        return stackView
     }()
     
-    private lazy var mainStackView = {
-        UIStackView()
-            .axis(.vertical)
-            .spacing(40)
-            .autoLayout()
-            .distributionMode(.fill)
+    private lazy var bottomImageView : UIImageView = {
+        let img = UIImageView()
+        img.image = R.image.fishRight()!
+        img.contentMode = .scaleAspectFit
+        img.autoLayout()
+        return img
     }()
     
-    private lazy var firstNameStackview = {
-        UIStackView()
-            .axis(.vertical)
-            .spacing(4)
-            .autoLayout()
+    private lazy var roundView : BaseUIView = {
+       let view = BaseUIView()
+        view.backgroundColor = UIColor(hexFromString: "#D9D9D9", alpha: 0.3)
+        view.roundCorners = .all(radius: 43)
+        view.autoLayout()
+        return view
     }()
     
-    private lazy var lastNameStackview = {
-        UIStackView()
-            .axis(.vertical)
-            .spacing(4)
-            .autoLayout()
-    }()
+    var nameView : TitleWithTextFieldView!
+    var emailView : TitleWithTextFieldView!
     
-    private lazy var mobileStackview = {
-        UIStackView()
-            .axis(.vertical)
-            .spacing(4)
-            .autoLayout()
-    }()
-    
-    private lazy var emailStackview = {
-        UIStackView()
-            .axis(.vertical)
-            .spacing(4)
-            .autoLayout()
-    }()
-    
-    private lazy var firstNameTitleLabel : BaseLabel = {
-        let label = BaseLabel()
-        label.font = MainFont.medium.with(size: 33)
-        label.textColor = .white
-        label.numberOfLines = 2
-        label.text = "What's your first name?".localized
-        return label
-    }()
-    
-    private lazy var lastNameTitleLabel : BaseLabel = {
-        let label = BaseLabel()
-        label.font = MainFont.medium.with(size: 33)
-        label.textColor = .white
-        label.numberOfLines = 2
-        label.text = "What's your last name?".localized
-        return label
-    }()
-    
-    private lazy var mobileTitleLabel : BaseLabel = {
-        let label = BaseLabel()
-        label.font = MainFont.medium.with(size: 33)
-        label.textColor = .white
-        label.numberOfLines = 2
-        label.text = "And mobile number?".localized
-        return label
-    }()
-    
-    private lazy var emailTitleLabel : BaseLabel = {
-        let label = BaseLabel()
-        label.font = MainFont.medium.with(size: 33)
-        label.textColor = .white
-        label.numberOfLines = 2
-        label.text = "And your email?".localized
-        return label
-    }()
-    
-    private lazy var nextButton : BaseButton = {
-        let btn = BaseButton()
-        if #available(iOS 15.0, *) {
-            btn.imageStyle  = .init(image: R.image.iconArrow()!, imagePadding: 2.0, imagePlacement: .trailing)
-        } else {
-            btn.setImage(R.image.iconArrow()!, for: .normal)
-            btn.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
-            btn.titleLabel?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
-            btn.imageView?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
-        }
-        btn.style = .init(titleFont: MainFont.bold.with(size: 20),
-                          titleColor: .white,
-                          backgroundColor: .clear)
-        btn.setTitle("Next".localized, for: .normal)
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.onTap {
-            self.validateFields()
-        }
-        return btn
-    }()
-    
-    private lazy var firstNameTextfield : WhiteBorderTextfield = {
-        let txtf = WhiteBorderTextfield()
-        return txtf
-    }()
-    
-    private lazy var lastNameTextfield : WhiteBorderTextfield = {
-        let txtf = WhiteBorderTextfield()
-        return txtf
-    }()
-    
-    private lazy var emailTextfield : WhiteBorderTextfield = {
-        let txtf = WhiteBorderTextfield()
-        return txtf
-    }()
+    var userEmail : String?
+    var userName : String?
 }
 
 //MARK:- View Lifecycle
@@ -147,6 +63,7 @@ extension RegistrationViewController{
         super.viewDidLoad()
         //        showPlaceHolderView(withAppearanceType: .loading,
         //                            title: Constants.PlaceHolderView.Texts.wait)
+        self.view.backgroundColor = Constants.Colors.appViolet
         setupNavBarAppearance()
         setupRetryFetchingCallBack()
         setupUI()
@@ -156,35 +73,12 @@ extension RegistrationViewController{
         super.viewWillAppear(animated)
         setupNavBarAppearance()
     }
- 
+
     fileprivate
     func setupUI(){
-        addBackgroundImage()
-        addNextButton()
         buildStacks()
-        buildFirstNameStack()
-        buildLastNameStack()
-        buildEmailStack()
-    }
-    
-    private func addNextButton(){
-        view.addSubview(nextButton)
-        NSLayoutConstraint.activate([
-            nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-            nextButton.heightAnchor.constraint(equalToConstant: 35),
-            nextButton.widthAnchor.constraint(equalToConstant: 90),
-            nextButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -24)
-        ])
-    }
-    
-    private func addBackgroundImage(){
-        view.addSubview(backgroundImage)
-        NSLayoutConstraint.activate([
-            backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
-            backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor)
-        ])
+        buildTitlewithLabelViews()
+        buildBottomView()
     }
     
     private func buildStacks(){
@@ -192,57 +86,78 @@ extension RegistrationViewController{
         NSLayoutConstraint.activate([
             mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
             mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
-            //mainStackView.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: 8)
+            mainStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16)
+           // mainStackView.bottomAnchor.constraint(equalTo: loginButton.topAnchor, constant: -10)
         ])
-        mainStackView.addArrangedSubview(firstNameStackview)
-        mainStackView.addArrangedSubview(lastNameStackview)
-        mainStackView.addArrangedSubview(emailStackview)
     }
     
-    private func buildFirstNameStack(){
-        firstNameStackview.addArrangedSubview(firstNameTitleLabel)
-        firstNameStackview.addArrangedSubview(firstNameTextfield)
+    private func buildTitlewithLabelViews(){
+         nameView = TitleWithTextFieldView.init(requestTitle: "What is your Name?",
+                                                    textsColor: .white,
+                                                    usertext: "",
+                                                    textSize: 35,
+                                                    isAgeRequest: false,
+                                                    labelHeight: 89)
         
-        firstNameTextfield.heightAnchor.constraint(equalToConstant: 68).isActive = true
-    }
-    
-    private func buildLastNameStack(){
-        lastNameStackview.addArrangedSubview(lastNameTitleLabel)
-        lastNameStackview.addArrangedSubview(lastNameTextfield)
+        emailView = TitleWithTextFieldView.init(requestTitle: "What is your Email?",
+                                                    textsColor: .white,
+                                                    usertext: "",
+                                                    textSize: 35,
+                                                    isAgeRequest: false,
+                                                    labelHeight: 89)
         
-        lastNameTextfield.heightAnchor.constraint(equalToConstant: 68).isActive = true
-    }
-    
-    private func buildEmailStack(){
-        emailStackview.addArrangedSubview(emailTitleLabel)
-        emailStackview.addArrangedSubview(emailTextfield)
+        mainStackView.addArrangedSubview(nameView)
+        mainStackView.addArrangedSubview(emailView)
         
-        emailTextfield.heightAnchor.constraint(equalToConstant: 68).isActive = true
+        nameView.anyTextField.delegate = self
+        emailView.anyTextField.delegate = self
+        
+        NSLayoutConstraint.activate([
+            nameView.heightAnchor.constraint(equalToConstant: 160),
+            emailView.heightAnchor.constraint(equalToConstant: 160)
+        ])
     }
     
+    private func buildBottomView(){
+        view.addSubview(bottomImageView)
+        view.addSubview(roundView)
+        
+        let arrowImage = BaseImageView(frame: .zero)
+        arrowImage.image = R.image.longWhiteArrow()!
+        arrowImage.contentMode = .scaleAspectFit
+        arrowImage.autoLayout()
+        roundView.addSubview(arrowImage)
+        
+        roundView.onTap{
+            self.validateFields()
+        }
+        
+        NSLayoutConstraint.activate([
+            bottomImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
+            bottomImageView.widthAnchor.constraint(equalToConstant: 242),
+            bottomImageView.heightAnchor.constraint(equalToConstant: 124),
+            bottomImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
+            
+            roundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
+            roundView.widthAnchor.constraint(equalToConstant: 86),
+            roundView.heightAnchor.constraint(equalToConstant: 86),
+            roundView.bottomAnchor.constraint(equalTo: bottomImageView.topAnchor, constant: -20),
+            
+            arrowImage.leadingAnchor.constraint(equalTo: roundView.leadingAnchor, constant: 10),
+            arrowImage.trailingAnchor.constraint(equalTo: roundView.trailingAnchor, constant: -10),
+            arrowImage.topAnchor.constraint(equalTo: roundView.topAnchor, constant: 20),
+            arrowImage.bottomAnchor.constraint(equalTo: roundView.bottomAnchor, constant: -20)
+        ])
+    }
     private func validateFields(){
-        
-        guard firstNameTextfield.text.notNilNorEmpty else {
-            showSimpleAlertView("", message: "Please fill in your first name", withCompletionHandler: nil)
+        guard userName.notNilNorEmpty else {
+            showSimpleAlertView("", message: "Please fill in your Name", withCompletionHandler: nil)
             return
         }
-        
-        guard lastNameTextfield.text.notNilNorEmpty else {
-            showSimpleAlertView("", message: "Please fill in your last name", withCompletionHandler: nil)
+        guard userEmail.notNilNorEmpty else {
+            showSimpleAlertView("", message: "Please fill in your Email", withCompletionHandler: nil)
             return
         }
-        
-        guard emailTextfield.text.notNilNorEmpty else {
-            showSimpleAlertView("", message: "Please fill in your email", withCompletionHandler: nil)
-            return
-        }
-        
-        RegistrationDataManager.current.userFirstName = firstNameTextfield.text
-        RegistrationDataManager.current.userLastName = lastNameTextfield.text
-        RegistrationDataManager.current.userEmail = emailTextfield.text
-        
-        self.router?.pushToOTPVerificationsScene()
     }
 }
 
@@ -265,6 +180,25 @@ extension RegistrationViewController{
     }
 }
 
+extension RegistrationViewController : UITextFieldDelegate{
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.superview == nameView{
+            self.userName = textField.text
+        }else{
+            self.userEmail = textField.text
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.superview == nameView{
+            self.userName = textField.text
+        }else{
+            self.userEmail = textField.text
+        }
+        textField.resignFirstResponder()
+        return true
+    }
+}
 //MARK:- Callbacks
 extension RegistrationViewController{
     
