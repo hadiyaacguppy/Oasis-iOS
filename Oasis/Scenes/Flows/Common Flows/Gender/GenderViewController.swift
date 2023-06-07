@@ -86,6 +86,9 @@ class GenderViewController: BaseViewController {
     
     private lazy var nextViewButton : RoundedViewWithArrow = {
         let view = RoundedViewWithArrow(frame: .zero)
+        view.onTap {
+            self.router?.pushToOTPVerificationsScene()
+        }
         return view
     }()
 }

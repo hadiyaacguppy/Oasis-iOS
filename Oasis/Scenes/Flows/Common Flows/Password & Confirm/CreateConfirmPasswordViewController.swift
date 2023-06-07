@@ -19,13 +19,13 @@ class CreateConfirmPasswordViewController: BaseViewController {
     var router: CreateConfirmPasswordRouter?
     
     
-    private let backgroundImage: UIImageView = {
-        let imageV = UIImageView()
-        imageV.translatesAutoresizingMaskIntoConstraints = false
-        imageV.image = R.image.newBackground()!
-        imageV.contentMode = .scaleAspectFill
-        return imageV
-    }()
+//    private let backgroundImage: UIImageView = {
+//        let imageV = UIImageView()
+//        imageV.translatesAutoresizingMaskIntoConstraints = false
+//        imageV.image = R.image.newBackground()!
+//        imageV.contentMode = .scaleAspectFill
+//        return imageV
+//    }()
     
     
     private lazy var mainStackView = {
@@ -52,19 +52,19 @@ class CreateConfirmPasswordViewController: BaseViewController {
     
     private lazy var newPasswordLabel : BaseLabel = {
         let label = BaseLabel()
-        label.font = MainFont.medium.with(size: 22)
+        label.font = MainFont.medium.with(size: 35)
         label.textColor = .white
         label.numberOfLines = 2
-        label.text = "New Password".localized
+        label.text = "Please enter \nyour password".localized
         return label
     }()
     
     private lazy var confirmPasswordLabel : BaseLabel = {
         let label = BaseLabel()
-        label.font = MainFont.medium.with(size: 22)
+        label.font = MainFont.medium.with(size: 35)
         label.textColor = .white
         label.numberOfLines = 2
-        label.text = "Confirm Password".localized
+        label.text = "Confirm \nPassword".localized
         return label
     }()
     
@@ -78,8 +78,14 @@ class CreateConfirmPasswordViewController: BaseViewController {
         return txtf
     }()
     
-    private lazy var registerButton : WhiteBorderButton = {
-        let button = WhiteBorderButton()
+    private lazy var registerButton : BaseButton = {
+        let button = BaseButton()
+        button.backgroundColor = Constants.Colors.appGreen
+        button.style = .init(titleFont: MainFont.bold.with(size: 16),
+                           titleColor: .white,
+                           backgroundColor: .clear)
+        button.roundCorners = .all(radius: 28)
+        button.autoLayout()
         button.setTitle("Register".localized, for: .normal)
         button.onTap {
             self.validatePasswords()
@@ -120,13 +126,15 @@ extension CreateConfirmPasswordViewController{
     }
     
     private func addBackgroundImage(){
-        view.addSubview(backgroundImage)
-        NSLayoutConstraint.activate([
-            backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
-            backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor)
-        ])
+//        view.addSubview(backgroundImage)
+//        NSLayoutConstraint.activate([
+//            backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
+//            backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+//            backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+//            backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+//        ])
+        
+        view.backgroundColor = Constants.Colors.appViolet
     }
     
     private func buildStacks(){

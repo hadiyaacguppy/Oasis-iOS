@@ -27,13 +27,13 @@ class OTPVerificationViewController: BaseViewController {
         return label
     }()
     
-    private let backgroundImage: UIImageView = {
-        let imageV = UIImageView()
-        imageV.translatesAutoresizingMaskIntoConstraints = false
-        imageV.image = R.image.newBackground()!
-        imageV.contentMode = .scaleAspectFill
-        return imageV
-    }()
+//    private let backgroundImage: UIImageView = {
+//        let imageV = UIImageView()
+//        imageV.translatesAutoresizingMaskIntoConstraints = false
+//        imageV.image = R.image.newBackground()!
+//        imageV.contentMode = .scaleAspectFill
+//        return imageV
+//    }()
     
     private lazy var firstOTPTextfield : WhiteBorderTextfield = {
         let txtf = WhiteBorderTextfield()
@@ -146,7 +146,6 @@ extension OTPVerificationViewController{
         subscribeToOTPCompletion()
         subscribeToPinValue()
         setupUI()
-        subscribeForSendingOTP()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -163,13 +162,15 @@ extension OTPVerificationViewController{
     }
     
     private func addBackgroundImage(){
-        view.addSubview(backgroundImage)
-        NSLayoutConstraint.activate([
-            backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
-            backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor)
-        ])
+//        view.addSubview(backgroundImage)
+//        NSLayoutConstraint.activate([
+//            backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
+//            backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+//            backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+//            backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+//        ])
+        
+        view.backgroundColor = Constants.Colors.appViolet
     }
 
     private func addTopStaticLabel(){
@@ -212,8 +213,19 @@ extension OTPVerificationViewController{
 //MARK:- NavBarAppearance
 extension OTPVerificationViewController{
     private func setupNavBarAppearance(){
-        statusBarStyle = .lightContent
+        statusBarStyle = .default
         navigationBarStyle = .transparent
+        
+        let loginBarButton = UIBarButtonItem(title: "Login".localized, style: .plain, target: self, action: #selector(loginBarButtonPressed))
+        loginBarButton.setTitleTextAttributes(
+            [NSAttributedString.Key.foregroundColor: UIColor.white,
+             NSAttributedString.Key.font : MainFont.medium.with(size: 22)
+            ], for: .normal)
+        self.navigationItem.rightBarButtonItem = loginBarButton
+    }
+    
+    @objc func loginBarButtonPressed(){
+        self.router?.redirectToLogin()
     }
 }
 
@@ -404,6 +416,12 @@ extension OTPVerificationViewController : UITextFieldDelegate {
                 }
                 if textField == fifthOTPTextfield {
                     fifthOTPTextfield.resignFirstResponder()
+                    guard RegistrationDataManager.current.userEmail != nil else {
+                        //Testing
+                        self.router?.pushToCreatePassword()
+                        return true
+                    }
+                    subscribeForSendingOTP()
                 }
                 textField.text = string
                 return false

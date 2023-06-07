@@ -24,6 +24,16 @@ class OTPVerificationRouter: OTPVerificationRouterDataPassing{
     }
     
     // MARK: Navigation
+    func redirectToLogin(){
+        let vc = R.storyboard.login.loginViewControllerNavVC()!
+        let window = (UIApplication.shared.delegate as! AppDelegate).window!
+        DispatchQueue.main.async {
+            UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+                window.rootViewController = vc
+            })
+        }
+    }
+    
     func pushToCreatePassword(){
         let vc = R.storyboard.createConfirmPassword.createConfirmPasswordViewControllerVC()!
         
