@@ -270,7 +270,8 @@ extension ParentsHomeViewController{
         if isParent{
             setupChildrenPagerView()
         }else{
-            addAreYouParentView()
+            //addAreYouParentView()
+            doYouHaveChildrenView()
         }
         addUpcomingPaymentsSection(shouldAddPlaceholder: false)
         addRecentActivitiesSection(shouldAddPlaceholder: false)
@@ -344,6 +345,87 @@ extension ParentsHomeViewController{
         //setupSubscription()
     }
     
+    private func doYouHaveChildrenView(){
+        let staticTitle : BaseLabel = {
+            let lbl = BaseLabel()
+            lbl.style = .init(font: MainFont.medium.with(size: 22), color: .black, numberOfLines: 1)
+            lbl.autoLayout()
+            lbl.text = "Do you have kids?".localized
+            return lbl
+        }()
+        
+        let staticSubTitle : BaseLabel = {
+            let lbl = BaseLabel()
+            lbl.style = .init(font: MainFont.normal.with(size: 14), color: .black, numberOfLines: 3)
+            lbl.autoLayout()
+            lbl.text = "Add your children & set them free financially with independent and controllable spendings!".localized
+            return lbl
+        }()
+
+        let parentImageView : BaseImageView = {
+            let img = BaseImageView(frame: .zero)
+            img.autoLayout()
+            img.contentMode = .scaleAspectFit
+            img.image = R.image.haveChildrenHome()!
+            img.roundCorners = .all(radius: 14)
+            return img
+        }()
+        
+        var actionsStackView : UIStackView = {
+            UIStackView()
+                .axis(.horizontal)
+                .spacing(10)
+                .autoLayout()
+                .distributionMode(.fillEqually)
+        }()
+        
+        var addChildButton : BaseButton = {
+            let btn = BaseButton()
+            btn.style = .init(titleFont: MainFont.bold.with(size: 16), titleColor: .white, backgroundColor: Constants.Colors.appGreen)
+            btn.setTitle("+ Add Child".localized, for: .normal)
+            btn.roundCorners = .all(radius: 28)
+            return btn
+        }()
+        
+        var noIdontButton : BaseButton = {
+            let btn = BaseButton()
+            btn.style = .init(titleFont: MainFont.bold.with(size: 16), titleColor: .white, backgroundColor: Constants.Colors.appGreen)
+            btn.setTitle("No, I don't".localized, for: .normal)
+            btn.roundCorners = .all(radius: 28)
+            return btn
+        }()
+        
+        stackView.addArrangedSubview(staticTitle)
+        stackView.addArrangedSubview(areYouParentContainerView)
+
+        areYouParentContainerView.addSubviews(parentImageView)
+        areYouParentContainerView.addSubviews(staticSubTitle)
+        areYouParentContainerView.addSubviews(actionsStackView)
+        
+        actionsStackView.addArrangedSubview(addChildButton)
+        actionsStackView.addArrangedSubview(noIdontButton)
+        
+        NSLayoutConstraint.activate([
+            areYouParentContainerView.heightAnchor.constraint(equalToConstant: 253),
+            
+            parentImageView.topAnchor.constraint(equalTo: areYouParentContainerView.topAnchor),
+            parentImageView.leadingAnchor.constraint(equalTo: areYouParentContainerView.leadingAnchor),
+            parentImageView.trailingAnchor.constraint(equalTo: areYouParentContainerView.trailingAnchor),
+            parentImageView.heightAnchor.constraint(equalToConstant: 130),
+            
+            staticSubTitle.topAnchor.constraint(equalTo: parentImageView.bottomAnchor, constant: 16),
+            staticSubTitle.leadingAnchor.constraint(equalTo: areYouParentContainerView.leadingAnchor),
+            staticSubTitle.trailingAnchor.constraint(equalTo: areYouParentContainerView.trailingAnchor),
+            staticSubTitle.heightAnchor.constraint(equalToConstant: 45),
+            
+            actionsStackView.heightAnchor.constraint(equalToConstant: 42),
+            actionsStackView.topAnchor.constraint(equalTo: staticSubTitle.bottomAnchor, constant: 20),
+            actionsStackView.leadingAnchor.constraint(equalTo: areYouParentContainerView.leadingAnchor),
+            actionsStackView.trailingAnchor.constraint(equalTo: areYouParentContainerView.trailingAnchor)
+        ])
+    }
+    
+    #warning("HADI: Not used anymore")
     private func addAreYouParentView(){
         let areYouParentCardImageView : BaseImageView = {
             let img = BaseImageView(frame: .zero)
@@ -671,6 +753,7 @@ extension ParentsHomeViewController {
             self.router?.pushToReceiveMoneyController()
         }
     }
+    
     private func setupSendGiftUI(){
         let img = BaseImageView(frame: .zero)
         img.image = R.image.nounGift5459873()!

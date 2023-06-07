@@ -505,7 +505,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 109 images.
+  /// This `R.image` struct is generated, and contains static references to 110 images.
   struct image {
     /// Image `2474162 copy`.
     static let copy = Rswift.ImageResource(bundle: R.hostingBundle, name: "2474162 copy")
@@ -603,6 +603,8 @@ struct R: Rswift.Validatable {
     static let fish = Rswift.ImageResource(bundle: R.hostingBundle, name: "fish")
     /// Image `grayShape`.
     static let grayShape = Rswift.ImageResource(bundle: R.hostingBundle, name: "grayShape")
+    /// Image `haveChildrenHome`.
+    static let haveChildrenHome = Rswift.ImageResource(bundle: R.hostingBundle, name: "haveChildrenHome")
     /// Image `help icon`.
     static let helpIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "help icon")
     /// Image `icon - notifications`.
@@ -1059,6 +1061,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "grayShape", bundle: ..., traitCollection: ...)`
     static func grayShape(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.grayShape, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "haveChildrenHome", bundle: ..., traitCollection: ...)`
+    static func haveChildrenHome(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.haveChildrenHome, compatibleWith: traitCollection)
     }
     #endif
 
@@ -2297,7 +2306,7 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "Logo emblem", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Logo emblem' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "NewBackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'NewBackground' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "logoName", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logoName' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
