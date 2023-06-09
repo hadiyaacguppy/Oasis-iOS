@@ -49,7 +49,7 @@ extension APIClient {
     
     func login(dict : [String:Any]) -> Single<UserRootAPIModel>{
         return self.provider.rx.request(.login(dict: dict))
-            .map(UserRootAPIModel.self, atKeyPath: "results")
+            .map(UserRootAPIModel.self)
     }
     
     func addChild(dict : [String:Any]) -> Single<Void>{

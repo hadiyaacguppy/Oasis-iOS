@@ -41,7 +41,7 @@ class addGoalViewController: BaseViewController {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.distribution = .fill
-        stackView.spacing = 6
+        stackView.spacing = 20
         stackView.autoLayout()
         stackView.backgroundColor = .clear
         return stackView
@@ -93,15 +93,18 @@ class addGoalViewController: BaseViewController {
         
         return imgView
     }()
+
+    var goalInfo1View : TitleWithTextFieldView!
+    var goalInfo2View : AmountWithCurrencyView!
     
     var currencies = ["LBP", "$"]
     var currencySelected : String = "LBP"
-    var dateSelected : String?
     var goalName : String?
-    var goalAmount : Int?
-    lazy var txtFieldTag : Int = 0
+    var goalAmount : String?
     
-    
+    var chosenEndDate : Date = Date()
+    var dateSelected : String?
+
 }
 
 //MARK:- View Lifecycle
@@ -116,6 +119,7 @@ extension addGoalViewController{
         super.viewDidLoad()
         //        showPlaceHolderView(withAppearanceType: .loading,
         //                            title: Constants.PlaceHolderView.Texts.wait)
+        self.hidesBottomBarWhenPushed = true
         setupNavBarAppearance()
         setupRetryFetchingCallBack()
         
@@ -125,15 +129,17 @@ extension addGoalViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavBarAppearance()
+        self.hidesBottomBarWhenPushed = true
         //self.hidesBottomBarWhenPushed = true
     }
     
     private func setupUI(){
         
-        addScrollView()
+        //addScrollView()
         addTitle()
         addGoalButton()
-        addGeneralStackView()
+        addMainStackView()
+        addUploadPictureView()
         addGoalInfoViews()
         addEndDateView()
     }
@@ -143,65 +149,80 @@ extension addGoalViewController{
         view.addSubview(scrollView)
         
         NSLayoutConstraint.activate([
-            //Scroll View Constraints
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-        
     }
     
-    //Top Title
     private func addTitle(){
         
-        scrollView.addSubviews(topTitleLabel)
+        view.addSubviews(topTitleLabel)
         
-        //Top Title Constraints
         NSLayoutConstraint.activate([
-            topTitleLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 10),
-            topTitleLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 37),
+            topTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            topTitleLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 37),
         ])
         
     }
     
-    private func addGeneralStackView(){
-        scrollView.addSubview(stackView)
+    private func addGoalButton(){
+        view.addSubview(goalButton)
         
         NSLayoutConstraint.activate([
-            //General StackView Constraints
-            stackView.topAnchor.constraint(equalTo: topTitleLabel.bottomAnchor, constant: 31),
-            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
-            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
-            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -40)
+            goalButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -47),
+            goalButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 47),
+            goalButton.heightAnchor.constraint(equalToConstant: 62),
+            goalButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -54)
         ])
         
-        scrollView.contentInset = .init(top: 0, left: 0, bottom: 50, right: 0)
+        goalButton.onTap {
+            self.validateFields()
+        }
+    }
+    
+    private func addMainStackView(){
+        view.addSubview(stackView)
+        
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: topTitleLabel.bottomAnchor, constant: 30),
+            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            //stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            //stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -40)
+        ])
     }
     
     private func addGoalInfoViews(){
-        let goalInfo1 = TitleWithTextFieldView.init(requestTitle: "Goal’s name",
-                                                    placeHolderTxt: "What’s your goal?",
+         goalInfo1View = TitleWithTextFieldView.init(requestTitle: "Goal’s name".localized,
+                                                    textsColor: .black,
                                                     usertext: "",
+                                                    textSize: 22,
                                                     isAgeRequest: false,
-                                                    hasEditView: false)
+                                                    labelHeight: 60,
+                                                    placholderText: "What’s your goal?".localized,
+                                                     frame: .zero)
+
+         goalInfo2View = AmountWithCurrencyView.init(amountPlaceHolder: 0.0,
+                                                 amount: 0,
+                                                 currency: "LBP",
+                                                 titleLbl: "Amount",
+                                                     frame: .zero)
         
-        let goalInfo2 = AmountWithCurrencyView.init(amountPlaceHolder: 0.0, amount: 0, currency: "LBP", titleLbl: "Amount")
+        stackView.addArrangedSubview(goalInfo1View)
+        stackView.addArrangedSubview(goalInfo2View)
         
-        stackView.addArrangedSubview(goalInfo1)
-        stackView.addArrangedSubview(goalInfo2)
+        goalInfo1View.anyTextField.delegate = self
+        goalInfo2View.amountTextField.delegate = self
         
-        goalInfo1.anyTextField.onTap {
-            self.txtFieldTag = 1
-            goalInfo1.anyTextField.becomeFirstResponder()
-        }
-        goalInfo2.amountTextField.onTap {
-            self.txtFieldTag = 2
-            goalInfo2.amountTextField.becomeFirstResponder()
-        }
-        goalInfo2.currencyPicker.delegate = self
-        goalInfo2.currencyPicker.dataSource = self
+        NSLayoutConstraint.activate([
+            goalInfo1View.heightAnchor.constraint(equalToConstant: 160),
+            goalInfo2View.heightAnchor.constraint(equalToConstant: 160)
+        ])
+
+        goalInfo2View.currencyPicker.delegate = self
+        goalInfo2View.currencyPicker.dataSource = self
         
     }
     
@@ -229,8 +250,6 @@ extension addGoalViewController{
         calendarImageView.onTap {
             self.showDatePicker()
         }
-        //Fifth, add upload picture view
-        addUploadPictureView()
     }
     
     //Add upload picture View
@@ -266,21 +285,6 @@ extension addGoalViewController{
         ])
     }
     
-    //Add Goal Button
-    private func addGoalButton(){
-        view.addSubview(goalButton)
-        
-        NSLayoutConstraint.activate([
-            goalButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -47),
-            goalButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 47),
-            goalButton.heightAnchor.constraint(equalToConstant: 48),
-            goalButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -68)
-        ])
-        
-        goalButton.onTap {
-            self.subscribeForAddGoal()
-        }
-    }
     
     //Add Date Picker
     private func showDatePicker(){
@@ -289,9 +293,10 @@ extension addGoalViewController{
                                           font: MainFont.normal.with(size: 15),
                                           locale: nil,
                                           showCancelButton: true)
-         datepicker.show("Choose End Date".localized, doneButtonTitle: "Done".localized, cancelButtonTitle: "Cancel".localized, defaultDate: Date(), minimumDate: nil, maximumDate: nil, datePickerMode: .time) { (chosenDate) in
+         datepicker.show("Choose End Date".localized, doneButtonTitle: "Done".localized, cancelButtonTitle: "Cancel".localized, defaultDate: chosenEndDate, minimumDate: nil, maximumDate: nil, datePickerMode: .date) { (chosenDate) in
             self.calendarImageView.resignFirstResponder()
-            self.dateSelected = (Date().getStringFromTimeStamp(Int(chosenDate!.timeIntervalSince1970), "HH:mm") as? String)
+             guard let cDate = chosenDate else {return}
+            self.dateSelected = (Date().getStringFromTimeStamp(Int(cDate.timeIntervalSince1970)) as? String)
         }
     }
     
@@ -302,7 +307,7 @@ extension addGoalViewController{
             return
         }
         
-        guard goalAmount != nil else {
+        guard goalAmount.notNilNorEmpty else {
             showSimpleAlertView("", message: "Please fill in the Goals' Amount", withCompletionHandler: nil)
             return
         }
@@ -312,6 +317,7 @@ extension addGoalViewController{
             return
         }
         
+        subscribeForAddGoal()
         
     }
 }
@@ -319,23 +325,30 @@ extension addGoalViewController{
 //MARK:- NavBarAppearance
 extension addGoalViewController{
     private func setupNavBarAppearance(){
-        statusBarStyle = .default
+        statusBarStyle = .lightContent
         navigationBarStyle = .transparent
     }
 }
 
 
-extension addGoalViewController{
+extension addGoalViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if txtFieldTag == 1{
+        if textField.superview == goalInfo1View{
             self.goalName = textField.text
-        }else if txtFieldTag == 2{
-            self.goalAmount = textField.text.notNilNorEmpty ? Int(textField.text!) : 0
+        }else{
+            self.goalAmount = textField.text//.notNilNorEmpty ? Int(textField.text!) : 0
         }
         textField.resignFirstResponder()
         return true
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.superview == goalInfo1View{
+            self.goalName = textField.text
+        }else{
+            self.goalAmount = textField.text//.notNilNorEmpty ? Int(textField.text!) : 0
+        }
+    }
 }
 
 extension addGoalViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -346,26 +359,18 @@ extension addGoalViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-        2
+        currencies.count
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         return currencies[row]
     }
-    
-    /*func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let attributedString = NSAttributedString(string: currencies[row],
-                                                  attributes: [
-                                                    NSAttributedString.Key.foregroundColor: UIColor.black,
-                                                    NSAttributedString.Key.font: MainFont.medium.with(size: 20)
-                                                  ])
-        return attributedString
-    }*/
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let currency = currencies[row]
         currencySelected = currency
+        goalInfo2View.currencyLabel.text = currencySelected
         pickerView.isHidden = true
     }
 
@@ -387,7 +392,7 @@ extension addGoalViewController{
     }
     
     private func subscribeForAddGoal(){
-        self.interactor?.addGoal(goalName: goalName!, currency: currencySelected, amount: goalAmount!, endDate: dateSelected!, file: "")
+        self.interactor?.addGoal(goalName: goalName!, currency: currencySelected, amount: Int(goalAmount!)!, endDate: dateSelected!, file: "")
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] _ in
                 self!.display(successMessage: "Goad is Added Successfully")

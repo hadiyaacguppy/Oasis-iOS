@@ -201,6 +201,10 @@ extension ChildrenViewController{
         childrenCardsStackView.addArrangedSubview(vw1)
         childrenCardsStackView.addArrangedSubview(vw2)
         childrenCardsStackView.addArrangedSubview(vw3)
+        
+        vw1.onTap {
+            self.router?.pushToChildDetailsVC()
+        }
     }
     
     private func addScrollView () {

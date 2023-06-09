@@ -168,7 +168,7 @@ extension BaseProjectService: TargetType {
         var headersDict : [String:String] = [:]
         
         if self.sessionRepository.userIsLoggedIn {
-            headersDict["token"] = self.sessionRepository.currentUser?.token ?? ""
+            headersDict["token"] = SessionRepository.shared.token ?? ""
         }
         
         headersDict["Content-Type"] = "application/json"

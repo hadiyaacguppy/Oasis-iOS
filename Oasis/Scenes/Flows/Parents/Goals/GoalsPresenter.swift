@@ -22,7 +22,7 @@ extension GoalsPresenter: GoalsInteractorOutput {
                                            amount: model.amount,
                                            saved: model.saved,
                                            endDate: model.endDate,
-                                           goalImage: model.image?.asURL())
+                                           goalImage: model.image)
         
     }
     

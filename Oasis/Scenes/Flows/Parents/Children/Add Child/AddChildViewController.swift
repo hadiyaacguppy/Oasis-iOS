@@ -204,6 +204,11 @@ extension AddChildViewController{
         NSLayoutConstraint.activate([
             uploadPictureButtonView.heightAnchor.constraint(equalToConstant: 70),
             
+            childInfo1.heightAnchor.constraint(equalToConstant: 160),
+            childInfo2.heightAnchor.constraint(equalToConstant: 160),
+            childInfo3.heightAnchor.constraint(equalToConstant: 160),
+
+            
             iconImg.leadingAnchor.constraint(equalTo: uploadPictureButtonView.leadingAnchor, constant: 37),
             iconImg.centerYAnchor.constraint(equalTo: uploadPictureButtonView.centerYAnchor),
             iconImg.heightAnchor.constraint(equalToConstant: 20),

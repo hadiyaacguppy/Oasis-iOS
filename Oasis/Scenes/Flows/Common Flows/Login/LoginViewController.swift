@@ -40,7 +40,8 @@ class LoginViewController: BaseViewController {
         button.setTitle("Login".localized, for: .normal)
         button.autoLayout()
         button.onTap {
-            self.checkForValidation()
+            self.router?.redirectToTabbarController()
+            //self.checkForValidation()
         }
         return button
     }()

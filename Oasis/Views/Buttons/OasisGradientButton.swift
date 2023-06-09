@@ -27,7 +27,7 @@ class OasisGradientButton: BaseButton {
     func setupPreferences(){
         self.style = .init(titleFont: MainFont.bold.with(size: 14),
                            titleColor: .white,
-                           backgroundColor: Constants.Colors.appColor)
+                           backgroundColor: Constants.Colors.appViolet)
         self.roundCorners = .all(radius: 24)
         self.autoLayout()
     }

@@ -26,9 +26,11 @@ class GoalsViewController: BaseViewController {
         return lbl
     }()
     
-    lazy var addGoalButton : OasisGradientButton = {
-        let btn = OasisGradientButton()
+    lazy var addGoalButton : BaseButton = {
+        let btn = BaseButton()
         btn.setTitle("+ Add new goal", for: .normal)
+        btn.style = .init(titleFont: MainFont.medium.with(size: 20), titleColor: .black, backgroundColor: .white)
+        btn.border = .value(color: .black, width: 1)//change later
         return btn
     }()
     
@@ -66,10 +68,8 @@ class GoalsViewController: BaseViewController {
     }()
     
     //View Models
-    var goalsViewModelArray = [GoalsModels.ViewModels.Goal]()
-    
-    var isThereGoals : Bool = true
-}
+    var goalsViewModelArray = [GoalsModels.ViewModels.Goal(id: 1, Title: "Travel to France", amount: "$ 3,000", saved: "$ 1,000", endDate: "2024 08 24", goalImage: R.image.photo1.name), GoalsModels.ViewModels.Goal(id: 1, Title: "Buy a Car", amount: "$ 10,000", saved: "$ 5,000", endDate: "2024 08 24", goalImage: R.image.photo2.name)]//[GoalsModels.ViewModels.Goal]()
+    }
 
 //MARK:- View Lifecycle
 extension GoalsViewController{
@@ -109,7 +109,7 @@ extension GoalsViewController{
     private func addTitle(){
         view.addSubviews(topTitleLabel)
         NSLayoutConstraint.activate([
-            topTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            topTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
             topTitleLabel.heightAnchor.constraint(equalToConstant: 35),
             topTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 41)
         ])
@@ -168,12 +168,12 @@ extension GoalsViewController{
         let noGoalImageView = BaseImageView(frame: .zero)
         noGoalImageView.autoLayout()
         noGoalImageView.contentMode = .scaleAspectFit
-        noGoalImageView.image = R.image.noGoals()!
+        noGoalImageView.image = R.image.noGoalImage()!
 
         let subtitleLabel = BaseLabel()
         subtitleLabel.autoLayout()
         subtitleLabel.style = .init(font: MainFont.medium.with(size: 15), color: .black, alignment: .center, numberOfLines: 3)
-        subtitleLabel.text = "You have no goals added. \nCreate a goal now and start\nsaving!"
+        subtitleLabel.text = "You have no goals yet. \nAdd a goal and start saving !"
         
         
         view.addSubview(containerView)
@@ -222,7 +222,11 @@ extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.goalCollectionVC, for: indexPath)!
-       
+        
+        cell.containerView.shadow = .active(with: .init(color: .gray,
+                                                        opacity: 0.3,
+                                                        radius: 6))
+        
         cell.setupCell(viewModel: goalsViewModelArray[indexPath.row])
         return cell
         
@@ -232,7 +236,7 @@ extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSou
 extension GoalsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: 327, height: 279)
+        return CGSize(width: 327, height: 316)
        
     }
     

@@ -1027,8 +1027,7 @@ extension ParentsHomeViewController{
         self.interactor?.getBalance()
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] (balance) in
-                self!.balanceValueLabel.text = balance.amount != nil ? "\(balance.amount!)" : "0"
-                self!.display(successMessage: "")
+                self!.balanceValueLabel.text = balance.amount
                 }, onError: { [weak self](error) in
                     self!.display(errorMessage: (error as! ErrorViewModel).message)
             })

@@ -221,6 +221,17 @@
 		169914AB2A30A5ED0046978D /* GenderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914A42A30A5ED0046978D /* GenderInteractor.swift */; };
 		169914AC2A30A5ED0046978D /* GenderConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914A52A30A5ED0046978D /* GenderConfigurator.swift */; };
 		169914AE2A30D5780046978D /* RoundedViewWithArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914AD2A30D5780046978D /* RoundedViewWithArrow.swift */; };
+		169914B72A3231360046978D /* ChildDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 169914B02A3231360046978D /* ChildDetails.storyboard */; };
+		169914B82A3231360046978D /* ChildDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914B12A3231360046978D /* ChildDetailsPresenter.swift */; };
+		169914B92A3231360046978D /* ChildDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914B22A3231360046978D /* ChildDetailsRouter.swift */; };
+		169914BA2A3231360046978D /* ChildDetailsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914B32A3231360046978D /* ChildDetailsModels.swift */; };
+		169914BB2A3231360046978D /* ChildDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914B42A3231360046978D /* ChildDetailsViewController.swift */; };
+		169914BC2A3231360046978D /* ChildDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914B52A3231360046978D /* ChildDetailsInteractor.swift */; };
+		169914BD2A3231360046978D /* ChildDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914B62A3231360046978D /* ChildDetailsConfigurator.swift */; };
+		169914BF2A325DF10046978D /* ChildActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914BE2A325DF10046978D /* ChildActionView.swift */; };
+		169914C32A327D660046978D /* ChildTaskCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914C12A327D660046978D /* ChildTaskCollectionViewCell.swift */; };
+		169914C42A327D660046978D /* ChildTaskCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 169914C22A327D660046978D /* ChildTaskCollectionViewCell.xib */; };
+		169914C62A336F960046978D /* BalanceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914C52A336F960046978D /* BalanceCardView.swift */; };
 		169976EA2A15011D00FDEC97 /* GoalAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976E92A15011D00FDEC97 /* GoalAPIModel.swift */; };
 		169976EC2A15012500FDEC97 /* TasksAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976EB2A15012500FDEC97 /* TasksAPIModel.swift */; };
 		169976EF2A1504C200FDEC97 /* TaskTypeAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976EE2A1504C200FDEC97 /* TaskTypeAPIModel.swift */; };
@@ -673,6 +684,17 @@
 		169914A42A30A5ED0046978D /* GenderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderInteractor.swift; sourceTree = "<group>"; };
 		169914A52A30A5ED0046978D /* GenderConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderConfigurator.swift; sourceTree = "<group>"; };
 		169914AD2A30D5780046978D /* RoundedViewWithArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViewWithArrow.swift; sourceTree = "<group>"; };
+		169914B02A3231360046978D /* ChildDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChildDetails.storyboard; sourceTree = "<group>"; };
+		169914B12A3231360046978D /* ChildDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildDetailsPresenter.swift; sourceTree = "<group>"; };
+		169914B22A3231360046978D /* ChildDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildDetailsRouter.swift; sourceTree = "<group>"; };
+		169914B32A3231360046978D /* ChildDetailsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildDetailsModels.swift; sourceTree = "<group>"; };
+		169914B42A3231360046978D /* ChildDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildDetailsViewController.swift; sourceTree = "<group>"; };
+		169914B52A3231360046978D /* ChildDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildDetailsInteractor.swift; sourceTree = "<group>"; };
+		169914B62A3231360046978D /* ChildDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildDetailsConfigurator.swift; sourceTree = "<group>"; };
+		169914BE2A325DF10046978D /* ChildActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildActionView.swift; sourceTree = "<group>"; };
+		169914C12A327D660046978D /* ChildTaskCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildTaskCollectionViewCell.swift; sourceTree = "<group>"; };
+		169914C22A327D660046978D /* ChildTaskCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChildTaskCollectionViewCell.xib; sourceTree = "<group>"; };
+		169914C52A336F960046978D /* BalanceCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCardView.swift; sourceTree = "<group>"; };
 		169976E92A15011D00FDEC97 /* GoalAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalAPIModel.swift; sourceTree = "<group>"; };
 		169976EB2A15012500FDEC97 /* TasksAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksAPIModel.swift; sourceTree = "<group>"; };
 		169976EE2A1504C200FDEC97 /* TaskTypeAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTypeAPIModel.swift; sourceTree = "<group>"; };
@@ -1466,6 +1488,7 @@
 				16503F9F29F58E1900875075 /* ChildrenViewController.swift */,
 				16503FA029F58E1900875075 /* ChildrenInteractor.swift */,
 				16503FA129F58E1900875075 /* ChildrenConfigurator.swift */,
+				169914AF2A3231150046978D /* Child Details */,
 				16ABACFE2A0439A300FB937C /* Add Child */,
 			);
 			path = Children;
@@ -1640,6 +1663,30 @@
 			path = Gender;
 			sourceTree = "<group>";
 		};
+		169914AF2A3231150046978D /* Child Details */ = {
+			isa = PBXGroup;
+			children = (
+				169914C02A327D160046978D /* Child Task CollectionViewCell */,
+				169914B02A3231360046978D /* ChildDetails.storyboard */,
+				169914B12A3231360046978D /* ChildDetailsPresenter.swift */,
+				169914B22A3231360046978D /* ChildDetailsRouter.swift */,
+				169914B32A3231360046978D /* ChildDetailsModels.swift */,
+				169914B42A3231360046978D /* ChildDetailsViewController.swift */,
+				169914B52A3231360046978D /* ChildDetailsInteractor.swift */,
+				169914B62A3231360046978D /* ChildDetailsConfigurator.swift */,
+			);
+			path = "Child Details";
+			sourceTree = "<group>";
+		};
+		169914C02A327D160046978D /* Child Task CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				169914C12A327D660046978D /* ChildTaskCollectionViewCell.swift */,
+				169914C22A327D660046978D /* ChildTaskCollectionViewCell.xib */,
+			);
+			path = "Child Task CollectionViewCell";
+			sourceTree = "<group>";
+		};
 		169976ED2A15012F00FDEC97 /* App Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -1807,6 +1854,8 @@
 				16ABAD262A0CFE7300FB937C /* SuggestedTaskView.swift */,
 				1699148D2A2F26F80046978D /* DateView.swift */,
 				169914AD2A30D5780046978D /* RoundedViewWithArrow.swift */,
+				169914BE2A325DF10046978D /* ChildActionView.swift */,
+				169914C52A336F960046978D /* BalanceCardView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -2317,6 +2366,7 @@
 				161F3BB029D4BF670053158A /* Montserrat-Light.ttf in Resources */,
 				161F3BEE29E2FCA20053158A /* CreateConfirmPassword.storyboard in Resources */,
 				16ABAD3B2A0E5E4F00FB937C /* GoalCollectionViewCell.xib in Resources */,
+				169914B72A3231360046978D /* ChildDetails.storyboard in Resources */,
 				169914862A2A2A330046978D /* Birthdate.storyboard in Resources */,
 				CF403858216CF78F001F649B /* Initial.storyboard in Resources */,
 				16ABACE429F68CDD00FB937C /* Settings.storyboard in Resources */,
@@ -2352,6 +2402,7 @@
 				16503F9329F5853600875075 /* Payments.storyboard in Resources */,
 				16503FA229F58E1900875075 /* Children.storyboard in Resources */,
 				161F3C2E29E5AD4D0053158A /* Interests.storyboard in Resources */,
+				169914C42A327D660046978D /* ChildTaskCollectionViewCell.xib in Resources */,
 				161F3C1129E322BE0053158A /* ParentsHome.storyboard in Resources */,
 				161F3C6429F31CD00053158A /* ReceiveMoney.storyboard in Resources */,
 				16503F8729F53CDE00875075 /* PeopleCollectionViewCell.xib in Resources */,
@@ -2647,9 +2698,11 @@
 				3ECBAAB623D06DD8003672DA /* PushNotificationMessageController.swift in Sources */,
 				16ABAD272A0CFE7300FB937C /* SuggestedTaskView.swift in Sources */,
 				0FD65F1920D018480075E251 /* Double+Extensions.swift in Sources */,
+				169914BC2A3231360046978D /* ChildDetailsInteractor.swift in Sources */,
 				16ABACD429F6734800FB937C /* BetterSegmentedControl+UIPointerInteractionDelegate.swift in Sources */,
 				161F3C2029E5ACD40053158A /* Help.swift in Sources */,
 				16ABAD342A0E40CD00FB937C /* AssignNewTaskViewController.swift in Sources */,
+				169914BB2A3231360046978D /* ChildDetailsViewController.swift in Sources */,
 				161F3C5229F277A30053158A /* SendGiftModels.swift in Sources */,
 				4AEF647522107DC000D53D75 /* BaseButton.swift in Sources */,
 				161F3C4029ED3D990053158A /* BarItemView.swift in Sources */,
@@ -2662,6 +2715,7 @@
 				161F3BF429E2FCA20053158A /* CreateConfirmPasswordConfigurator.swift in Sources */,
 				0F57538E20EE12EB0069C139 /* Constants.swift in Sources */,
 				CF8C5CAC20EF9D7E00236C7B /* UICollectionView+Extensions.swift in Sources */,
+				169914C32A327D660046978D /* ChildTaskCollectionViewCell.swift in Sources */,
 				CF8C5CA820EF9D5400236C7B /* Bool+Extensions.swift in Sources */,
 				161F3BCF29D98AE00053158A /* LoginPresenter.swift in Sources */,
 				161F3C5529F277A30053158A /* SendGiftConfigurator.swift in Sources */,
@@ -2670,12 +2724,14 @@
 				CF8C5CB020EF9DC900236C7B /* UIImage+Extensions.swift in Sources */,
 				1699148A2A2A2A330046978D /* BirthdateViewController.swift in Sources */,
 				922EED0328466BA800D19A01 /* Queue.swift in Sources */,
+				169914BD2A3231360046978D /* ChildDetailsConfigurator.swift in Sources */,
 				CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */,
 				16ABAD352A0E40CD00FB937C /* AssignNewTaskInteractor.swift in Sources */,
 				672909FE210E43F900632C4F /* PlaceHolderCreator.swift in Sources */,
 				16B0444A2A14FC51003EC59D /* ChildAPIModel.swift in Sources */,
 				169914702A24D3970046978D /* FriendsViewController.swift in Sources */,
 				117C4AB01FD864DE008BB445 /* UILabel+Extensions.swift in Sources */,
+				169914C62A336F960046978D /* BalanceCardView.swift in Sources */,
 				16ABACFC2A04399400FB937C /* AddChildInteractor.swift in Sources */,
 				16503F9729F5853600875075 /* PaymentsViewController.swift in Sources */,
 				1699147D2A2604A00046978D /* UserRootAPIModel.swift in Sources */,
@@ -2709,6 +2765,7 @@
 				67290A02210E441400632C4F /* PlaceHolderHelper.swift in Sources */,
 				16503F9429F5853600875075 /* PaymentsPresenter.swift in Sources */,
 				16503FA529F58E1900875075 /* ChildrenModels.swift in Sources */,
+				169914B82A3231360046978D /* ChildDetailsPresenter.swift in Sources */,
 				0F1B7FBD22CA6CBD0079F752 /* PhoneCodeCell.swift in Sources */,
 				169914AA2A30A5ED0046978D /* GenderViewController.swift in Sources */,
 				16503FCA29F5C7F200875075 /* ParentCardFSPagerCell.swift in Sources */,
@@ -2731,6 +2788,7 @@
 				161F3BD029D98AE00053158A /* LoginRouter.swift in Sources */,
 				16ABAD1C2A0910AB00FB937C /* AddTaskRouter.swift in Sources */,
 				169914AE2A30D5780046978D /* RoundedViewWithArrow.swift in Sources */,
+				169914B92A3231360046978D /* ChildDetailsRouter.swift in Sources */,
 				16ABAD332A0E40CD00FB937C /* AssignNewTaskModels.swift in Sources */,
 				16ABACD529F6734800FB937C /* BetterSegmentedControl+IndicatorView.swift in Sources */,
 				0FD0C6EC2200B662000C5881 /* UIFont+Extentions.swift in Sources */,
@@ -2784,6 +2842,7 @@
 				0F1B7FB122CA6C9D0079F752 /* UIAlertController+Extensions.swift in Sources */,
 				161F3C5429F277A30053158A /* SendGiftInteractor.swift in Sources */,
 				161F3C4629EDAC820053158A /* OasisGradientButton.swift in Sources */,
+				169914BF2A325DF10046978D /* ChildActionView.swift in Sources */,
 				CF40385D216CF78F001F649B /* InitialInteractor.swift in Sources */,
 				3EDC4153224E875300624D2B /* Reactive+UIView.swift in Sources */,
 				169976EF2A1504C200FDEC97 /* TaskTypeAPIModel.swift in Sources */,
@@ -2801,6 +2860,7 @@
 				6754244D20EE7FF600783123 /* BaseNavigationController.swift in Sources */,
 				161F3BE329DAD6FB0053158A /* OTPVerificationInteractor.swift in Sources */,
 				16503F8A29F5409900875075 /* OccasionCollectionViewCell.swift in Sources */,
+				169914BA2A3231360046978D /* ChildDetailsModels.swift in Sources */,
 				16B044472A1244FB003EC59D /* SuggestedTitlesCollectionViewCell.swift in Sources */,
 				672909FC210E43EA00632C4F /* PlaceHolderView.swift in Sources */,
 				169914A92A30A5ED0046978D /* GenderModels.swift in Sources */,

@@ -102,7 +102,7 @@ class ReceiveMoneyViewController: BaseViewController {
     }()
     
     private var amountView : AmountWithCurrencyView = {
-        let view = AmountWithCurrencyView(amountPlaceHolder: 0.0, amount: 0, currency: "LBP", titleLbl: "Amount to receive")//(defaultValue: 0.0, currency: "LBP", titleLbl: "Amount to receive")
+        let view = AmountWithCurrencyView(amountPlaceHolder: 0.0, amount: 0, currency: "LBP", titleLbl: "Amount to receive", frame: .zero)//(defaultValue: 0.0, currency: "LBP", titleLbl: "Amount to receive")
         return view
     }()
     
@@ -120,6 +120,7 @@ extension ReceiveMoneyViewController{
         super.viewDidLoad()
         //        showPlaceHolderView(withAppearanceType: .loading,
         //                            title: Constants.PlaceHolderView.Texts.wait)
+        self.hidesBottomBarWhenPushed = true
         setupNavBarAppearance()
         setupRetryFetchingCallBack()
         setupViews()
@@ -130,6 +131,8 @@ extension ReceiveMoneyViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavBarAppearance()
+        self.hidesBottomBarWhenPushed = true
+
     }
     
     private func setupViews() {

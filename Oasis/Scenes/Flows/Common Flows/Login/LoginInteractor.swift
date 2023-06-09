@@ -34,6 +34,7 @@ extension LoginInteractor: LoginViewControllerOutput{
             APIClient.shared.login(dict: dict)
                 .subscribe(onSuccess: { [weak self] (result) in
                     SessionRepository.shared.token = result.token
+                    
                     //Temporarly user data is saved this way should be changed later
                     RegistrationDataManager.current.userEmail = result.user?.id
                     RegistrationDataManager.current.userAge = result.user?.age

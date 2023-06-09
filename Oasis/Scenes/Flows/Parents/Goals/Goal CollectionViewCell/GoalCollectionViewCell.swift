@@ -32,6 +32,7 @@ class GoalCollectionViewCell: UICollectionViewCell {
         didSet{
             goalTitle.style = .init(font: MainFont.bold.with(size: 18),
                                         color: .black, numberOfLines: 2)
+            goalTitle.numberOfLines = 2
         }
     }
     
@@ -88,6 +89,18 @@ class GoalCollectionViewCell: UICollectionViewCell {
             percentageLabel.style = .init(font: MainFont.bold.with(size: 18), color: .white)
         }
     }
+    
+    @IBOutlet weak var transferFundsButton: BaseButton!{
+        didSet{
+            transferFundsButton.style = .init(titleFont: MainFont.bold.with(size: 11),
+                               titleColor: .white,
+                               backgroundColor: Constants.Colors.aquaMarine)
+            transferFundsButton.setTitle("Transfer Funds", for: .normal)
+            transferFundsButton.roundCorners = .all(radius: 29)
+
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -95,10 +108,10 @@ class GoalCollectionViewCell: UICollectionViewCell {
 
     func setupCell(viewModel : GoalsModels.ViewModels.Goal){
         goalTitle.text = viewModel.Title
-        savedValueLabel.text = "\(viewModel.saved!)"
-        outOfValuelabel.text = "\(viewModel.amount!)"
+        savedValueLabel.text = "$ \(viewModel.saved!)"
+        outOfValuelabel.text = "$ \(viewModel.amount!)"
         updatePercentageView(amount: viewModel.amount!, saved: viewModel.saved!)
-        goalImageView.setNormalImage(withURL: viewModel.goalImage)
+        goalImageView.image = UIImage(named: viewModel.goalImage!)//setNormalImage(withURL: viewModel.goalImage)
 
     }
     

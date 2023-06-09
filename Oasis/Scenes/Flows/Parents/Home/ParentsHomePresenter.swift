@@ -14,7 +14,7 @@ class ParentsHomePresenter {}
 extension ParentsHomePresenter: ParentsHomeInteractorOutput {
     
     func didGetBalance(model : BalanceAPIModel) -> ParentsHomeModels.ViewModels.Balance{
-        return ParentsHomeModels.ViewModels.Balance(amount: model.balance, currency: "LBP")
+        return ParentsHomeModels.ViewModels.Balance(amount: model.balance != nil ? "\(model.balance!)" : "0", currency: "LBP")
     }
 
     func apiCallFailed(withError error: NetworkErrorResponse)

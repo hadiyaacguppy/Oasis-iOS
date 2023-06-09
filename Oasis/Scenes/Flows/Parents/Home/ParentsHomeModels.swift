@@ -19,7 +19,7 @@ struct ParentsHomeModels {
         }
         
         struct Balance {
-            var amount : Int?
+            var amount : String?
             var currency : String?
         }
     }

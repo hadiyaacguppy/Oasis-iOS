@@ -28,7 +28,7 @@ class OasisAquaButton: BaseButton {
         self.style = .init(titleFont: MainFont.bold.with(size: 16),
                            titleColor: .white,
                            backgroundColor: Constants.Colors.aquaMarine)
-        self.roundCorners = .all(radius: 24)
+        self.roundCorners = .all(radius: 53)
         self.autoLayout()
     }
 }

@@ -13,7 +13,7 @@ class FriendsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var friendimageview: BaseImageView!{
         didSet{
-            friendimageview.contentMode = .scaleAspectFill
+            friendimageview.contentMode = .scaleAspectFit
             friendimageview.roundCorners = .all(radius: 38)
         }
     }

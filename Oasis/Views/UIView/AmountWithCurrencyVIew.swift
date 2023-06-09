@@ -53,8 +53,8 @@ class AmountWithCurrencyView: BaseUIView {
     }()
     
     
-    init(amountPlaceHolder : Float, amount : Int?, currency : String, titleLbl : String) {
-        super.init(frame: .zero)
+    init(amountPlaceHolder : Float, amount : Int?, currency : String, titleLbl : String, frame : CGRect) {
+        super.init(frame: frame)
         self.amountTextField.placeholder = "\(amountPlaceHolder)"
         //self.amountTextField.text = amount != nil ? "\(amount!)" : "0.0"
         self.currencyLabel.text = currency

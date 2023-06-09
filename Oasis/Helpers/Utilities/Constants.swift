@@ -28,19 +28,20 @@ struct Constants {
         static let background : UIColor = .brown
         static let defaultTint : UIColor = .green
         static let cell_background : UIColor = .yellow
-        static let appColor : UIColor  = .init(hexFromString: "3301a8") // purple
+        static let appColor : UIColor  = .init(hexFromString: "3030D0") // purple
         static let glowColor : UIColor = .init(red: 197, green: 93, blue: 207) //almost pink
-        static let aquaMarine : UIColor = .init(hexFromString: "#37d09c")
+        static let aquaMarine : UIColor = .init(hexFromString: "#00DEB5")
         static let textviewBGColor : UIColor = .init(red: 244, green: 244, blue: 244)
         static let blueToastViewColor : UIColor = .init(hexFromString: "3a68c9")
         static let lightGrey : UIColor = .init(red: 248, green: 250, blue: 251)
+        static let appGrey : UIColor = .init(hexFromString: "#ECEBE8")
         static let orangeYellow : UIColor = .init(hexFromString: "#ffb410")
         static let lightGreen : UIColor = .init(red: 224, green: 242, blue: 236)
-        
         static let appViolet : UIColor = .init(hexFromString: "#3030D0")
         static let appPink : UIColor = .init(hexFromString: "#FF97D6")
         static let appGreen : UIColor = .init(hexFromString: "#00DEB5")
         static let appYellow : UIColor = .init(hexFromString: "#FFC500")
+        static let lightYellow : UIColor = .init(hexFromString: "#F1E5BC")
         static let appOrange : UIColor = .init(hexFromString: "#FE4B00")
 
 

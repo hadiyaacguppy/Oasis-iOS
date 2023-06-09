@@ -11,14 +11,14 @@ import UIKit
 
 class TitleWithTextFieldView: BaseUIView {
     
-    lazy var requestTitleLabel : BaseLabel = {
+    private var requestTitleLabel : BaseLabel = {
         let label = BaseLabel()
         label.numberOfLines = 1
         label.autoLayout()
         return label
     }()
     
-    lazy var anyTextField : AmountTextField = {
+    public var anyTextField : AmountTextField = {
         let txtF = AmountTextField()
         txtF.autoLayout()
         return txtF
@@ -62,8 +62,8 @@ class TitleWithTextFieldView: BaseUIView {
         setupUIStandered()
     }
     
-    init(requestTitle requestT : String, textsColor txtColor : UIColor, usertext txt : String, textSize txtSize: CGFloat, isAgeRequest isAge : Bool, labelHeight lblHeight: CGFloat){
-        super.init(frame: .zero)
+    init(requestTitle requestT : String, textsColor txtColor : UIColor, usertext txt : String, textSize txtSize: CGFloat, isAgeRequest isAge : Bool, labelHeight lblHeight: CGFloat, placholderText pHolder: String? = nil, frame : CGRect = CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width - 40, height: 135)){
+        super.init(frame: frame)
         self.requestTitleLabel.text = requestT
         self.requestTitleLabel.style = .init(font: MainFont.medium.with(size: txtSize), color: txtColor)
         self.anyTextField.text = txt
@@ -71,17 +71,13 @@ class TitleWithTextFieldView: BaseUIView {
         self.isitAgeRequest = isAge
         self.underlineView.backgroundColor = txtColor
         self.labelHeight = lblHeight
+        self.anyTextField.placeholder = pHolder
 
         setupUIStandered()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        //setupUIStandered()
     }
     
     private func setupUIStandered(){
@@ -93,27 +89,21 @@ class TitleWithTextFieldView: BaseUIView {
         self.addSubview(underlineView)
                 
         NSLayoutConstraint.activate([
-            requestTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            requestTitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            requestTitleLabel.topAnchor.constraint(equalTo: self.topAnchor),
-            requestTitleLabel.heightAnchor.constraint(equalToConstant: self.labelHeight),
-            
-            anyTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            anyTextField.topAnchor.constraint(equalTo: self.requestTitleLabel.bottomAnchor, constant: 10),
-            anyTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            anyTextField.heightAnchor.constraint(equalToConstant: 45),
-            
-            underlineView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            underlineView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            underlineView.topAnchor.constraint(equalTo: self.anyTextField.bottomAnchor, constant: 4),
-            underlineView.heightAnchor.constraint(equalToConstant: 1)
-            //underlineView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            
-            /*yearsOldLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            yearsOldLabel.leadingAnchor.constraint(equalTo: self.underlineView.trailingAnchor),
-            yearsOldLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 71),
-            yearsOldLabel.bottomAnchor.constraint(equalTo: self.underlineView.bottomAnchor),
-            yearsOldLabel.heightAnchor.constraint(equalToConstant: 30)*/
+            self.requestTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            self.requestTitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            self.requestTitleLabel.topAnchor.constraint(equalTo: self.topAnchor),
+            self.requestTitleLabel.heightAnchor.constraint(equalToConstant: self.labelHeight),
+
+            self.anyTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            self.anyTextField.topAnchor.constraint(equalTo: self.requestTitleLabel.bottomAnchor, constant: 10),
+            self.anyTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            self.anyTextField.heightAnchor.constraint(equalToConstant: 45),
+
+            self.underlineView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            self.underlineView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            self.underlineView.topAnchor.constraint(equalTo: self.anyTextField.bottomAnchor, constant: 4),
+            self.underlineView.heightAnchor.constraint(equalToConstant: 1)
         ])
+       
     }
 }
