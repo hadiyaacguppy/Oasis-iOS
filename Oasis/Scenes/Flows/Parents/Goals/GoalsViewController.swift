@@ -68,7 +68,7 @@ class GoalsViewController: BaseViewController {
     }()
     
     //View Models
-    var goalsViewModelArray = [GoalsModels.ViewModels.Goal(id: 1, Title: "Travel to France", amount: "$ 3,000", saved: "$ 1,000", endDate: "2024 08 24", goalImage: R.image.photo1.name), GoalsModels.ViewModels.Goal(id: 1, Title: "Buy a Car", amount: "$ 10,000", saved: "$ 5,000", endDate: "2024 08 24", goalImage: R.image.photo2.name)]//[GoalsModels.ViewModels.Goal]()
+    var goalsViewModelArray = [GoalsModels.ViewModels.Goal(id: 1, Title: "Travel to France", amount: 3000, saved: 1000, endDate: "2024 08 24", goalImage: R.image.photo1.name), GoalsModels.ViewModels.Goal(id: 1, Title: "Buy a Car", amount: 10000, saved: 4000, endDate: "2024 08 24", goalImage: R.image.photo2.name)]//[GoalsModels.ViewModels.Goal]()
     }
 
 //MARK:- View Lifecycle
