@@ -36,8 +36,8 @@ extension LoginInteractor: LoginViewControllerOutput{
                     SessionRepository.shared.token = result.token
                     
                     //Temporarly user data is saved this way should be changed later
-                    RegistrationDataManager.current.userEmail = result.user?.id
-                    RegistrationDataManager.current.userAge = result.user?.age
+                    RegistrationDataManager.current.userEmail = id
+                    //RegistrationDataManager.current.userAge = result.user?.age
                     RegistrationDataManager.current.userFirstName = result.user?.firstName
                     RegistrationDataManager.current.userLastName = result.user?.lastName
                     RegistrationDataManager.current.userFile = result.user?.profileImage
