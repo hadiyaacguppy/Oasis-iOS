@@ -23,3 +23,15 @@ class RegistrationDataManager {
     
 }
 
+
+class ChildRegistrationDataManager {
+    
+    /*static let current = RegistrationDataManager()
+    private init() {}
+    
+    var email : String?
+    var firstName : String?
+    var lastName : String?
+    var userMobileNumber : String?*/
+}
+

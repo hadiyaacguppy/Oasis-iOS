@@ -15,6 +15,7 @@ class  APIClient {
     static let shared = APIClient()
     private let provider : MoyaProvider<BaseProjectService>
     
+    let resultsKeyPath : String = "results"
     lazy var sessionRepository: SessionRepository =  {
         return SessionRepository()
     }()
@@ -49,7 +50,7 @@ extension APIClient {
     
     func login(dict : [String:Any]) -> Single<UserRootAPIModel>{
         return self.provider.rx.request(.login(dict: dict))
-            .map(UserRootAPIModel.self, atKeyPath: "results")
+            .map(UserRootAPIModel.self, atKeyPath: resultsKeyPath)
     }
     
     func addChild(dict : [String:Any]) -> Single<Void>{
@@ -69,7 +70,7 @@ extension APIClient {
     
     func getBalance() -> Single<BalanceAPIModel>{
         return self.provider.rx.request(.getBalance)
-            .map(BalanceAPIModel.self)
+            .map(BalanceAPIModel.self, atKeyPath: resultsKeyPath)
     }
     
     func fund(dict : [String:Any]) -> Single<Void>{

@@ -1687,6 +1687,13 @@
 			path = "Child Task CollectionViewCell";
 			sourceTree = "<group>";
 		};
+		169914C72A33881C0046978D /* Child View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Child View";
+			sourceTree = "<group>";
+		};
 		169976ED2A15012F00FDEC97 /* App Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -2066,6 +2073,7 @@
 		CF87EDA2201B8BEB00562226 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				169914C72A33881C0046978D /* Child View */,
 				16ABACC929F6733700FB937C /* Segmented Control */,
 				16503F8329F53CD000875075 /* Cells */,
 				161F3C3B29ED3D830053158A /* Custom Tabbar */,
