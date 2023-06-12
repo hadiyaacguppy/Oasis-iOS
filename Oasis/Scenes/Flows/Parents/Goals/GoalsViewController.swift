@@ -22,7 +22,6 @@ class GoalsViewController: BaseViewController {
     lazy var topTitleLabel : ControllerLargeTitleLabel = {
         let lbl = ControllerLargeTitleLabel()
         lbl.text = "Goals".localized
-        
         return lbl
     }()
     
@@ -96,36 +95,12 @@ extension GoalsViewController{
     }
     
     private func setupUI(){
-        addTitle()
-        addButton()
         addScrollViewAndStackView()
+        addtitleAndButton()
         if goalsViewModelArray.count > 0{
             addGoalsCollectionView()
         }else{
             addNoGoalsPlaceholder()
-        }
-    }
-    
-    private func addTitle(){
-        view.addSubviews(topTitleLabel)
-        NSLayoutConstraint.activate([
-            topTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
-            topTitleLabel.heightAnchor.constraint(equalToConstant: 35),
-            topTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 41)
-        ])
-    }
-    
-    private func addButton(){
-        view.addSubview(addGoalButton)
-        NSLayoutConstraint.activate([
-            addGoalButton.topAnchor.constraint(equalTo: topTitleLabel.bottomAnchor, constant: 20),
-            addGoalButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            addGoalButton.heightAnchor.constraint(equalToConstant: 58),
-            addGoalButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 38)
-        ])
-        
-        addGoalButton.onTap {
-            self.router?.pushToAddGoalController()
         }
     }
     
@@ -135,7 +110,7 @@ extension GoalsViewController{
         scrollView.addSubview(stackView)
         
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: addGoalButton.bottomAnchor, constant: 13),
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -15),
@@ -147,6 +122,11 @@ extension GoalsViewController{
             stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -30)
         ])
         
+    }
+    
+    private func addtitleAndButton(){
+        stackView.addArrangedSubview(topTitleLabel)
+        stackView.addArrangedSubview(addGoalButton)
     }
     private func addGoalsCollectionView(){
         stackView.addArrangedSubview(goalsCollectionView)
