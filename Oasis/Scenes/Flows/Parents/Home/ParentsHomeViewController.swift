@@ -27,7 +27,7 @@ class ParentsHomeViewController: BaseViewController {
         scrollView.showsVerticalScrollIndicator = false
         return scrollView
     }()
-        
+    
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -217,8 +217,8 @@ extension ParentsHomeViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        showPlaceHolderView(withAppearanceType: .loading,
-        //                            title: Constants.PlaceHolderView.Texts.wait)
+        showPlaceHolderView(withAppearanceType: .loading,
+                            title: Constants.PlaceHolderView.Texts.wait)
         setupNavBarAppearance()
         setupRetryFetchingCallBack()
         subscribeForGetBalance()
@@ -314,7 +314,7 @@ extension ParentsHomeViewController{
             sendReceiveVerticalView.bottomAnchor.constraint(equalTo: actionsContainerView.bottomAnchor),
             
             actionsContainerView.heightAnchor.constraint(equalToConstant: 167),
-
+            
             firstActionsStackView.topAnchor.constraint(equalTo: actionsContainerView.topAnchor),
             firstActionsStackView.leadingAnchor.constraint(equalTo: actionsContainerView.leadingAnchor),
             firstActionsStackView.trailingAnchor.constraint(equalTo: sendReceiveVerticalView.leadingAnchor, constant: -15),
@@ -338,7 +338,7 @@ extension ParentsHomeViewController{
         //secondActionsStackView.addArrangedSubview(subscriptionsActionView)
         
         //setupSendMoney()
-       // setupReceiveMoney()
+        // setupReceiveMoney()
         setupPay()
         setupTopUp()
         setupSendGiftUI()
@@ -362,7 +362,7 @@ extension ParentsHomeViewController{
             lbl.text = "Add your children & set them free financially with independent and controllable spendings!".localized
             return lbl
         }()
-
+        
         let parentImageView : BaseImageView = {
             let img = BaseImageView(frame: .zero)
             img.autoLayout()
@@ -398,7 +398,7 @@ extension ParentsHomeViewController{
         
         stackView.addArrangedSubview(staticTitle)
         stackView.addArrangedSubview(areYouParentContainerView)
-
+        
         areYouParentContainerView.addSubviews(parentImageView)
         areYouParentContainerView.addSubviews(staticSubTitle)
         areYouParentContainerView.addSubviews(actionsStackView)
@@ -426,7 +426,7 @@ extension ParentsHomeViewController{
         ])
     }
     
-    #warning("OLD DESIGN: Not used anymore")
+#warning("OLD DESIGN: Not used anymore")
     private func addAreYouParentView(){
         let areYouParentCardImageView : BaseImageView = {
             let img = BaseImageView(frame: .zero)
@@ -961,8 +961,6 @@ extension ParentsHomeViewController: UICollectionViewDelegate, UICollectionViewD
         cell.setupCell(title: "Netflix Subscription", subtitle: "Subtitle test", amount: "600,000 LBP")
         return cell
     }
-    
-    
 }
 
 extension ParentsHomeViewController: UICollectionViewDelegateFlowLayout {
@@ -1016,9 +1014,9 @@ extension ParentsHomeViewController{
         self.interactor?.getPayments()
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] _ in
-                self!.display(successMessage: "")
-                }, onError: { [weak self](error) in
-                    self!.display(errorMessage: (error as! ErrorViewModel).message)
+                self?.upcomingPaymentsCollectionView.reloadData()
+            }, onError: { [weak self](error) in
+                self?.preparePlaceHolderView(withErrorViewModel: (error as! ErrorViewModel))
             })
             .disposed(by: self.disposeBag)
     }
@@ -1027,9 +1025,11 @@ extension ParentsHomeViewController{
         self.interactor?.getBalance()
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] (balance) in
-                self!.balanceValueLabel.text = balance.amount
-                }, onError: { [weak self](error) in
-                    self!.display(errorMessage: (error as! ErrorViewModel).message)
+                self?.removePlaceHolder()
+                self?.balanceValueLabel.text = balance.amount
+                //self?.subscribeForGetPayments()
+            }, onError: { [weak self](error) in
+                self?.preparePlaceHolderView(withErrorViewModel: (error as! ErrorViewModel))
             })
             .disposed(by: self.disposeBag)
     }

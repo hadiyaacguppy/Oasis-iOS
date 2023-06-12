@@ -10,7 +10,7 @@ import Foundation
 
 struct BalanceAPIModel : Codable {
 
-    let balance : Int?
+    let balance : Double?
 
 
     enum CodingKeys: String, CodingKey {
@@ -18,7 +18,7 @@ struct BalanceAPIModel : Codable {
     }
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        balance = try values.decodeIfPresent(Int.self, forKey: .balance)
+        balance = try values.decodeIfPresent(Double.self, forKey: .balance)
     }
 
 

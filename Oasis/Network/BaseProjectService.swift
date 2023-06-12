@@ -14,7 +14,7 @@ import SessionRepository
 enum BaseProjectService {
     
     var sessionRepository : SessionRepository  {
-       return SessionRepository()
+        return SessionRepository()
     }
     case setOneSignalUserPush( token : String)
     
@@ -71,7 +71,7 @@ enum BaseProjectService {
 
 
 extension BaseProjectService: TargetType {
-
+    
     var baseURL: URL {
         return URL(string: Constants.Network.baseURl)!
     }
@@ -134,7 +134,7 @@ extension BaseProjectService: TargetType {
             return "accept_request"
         case .getFriendsRequests:
             return "friend_request"
-        
+            
         }
     }
     
@@ -155,7 +155,7 @@ extension BaseProjectService: TargetType {
         case .register(let dict), .sendOTP(let dict), .verifyOTP(let dict), .addChild(let dict), .addTask(let dict), .addGoal(let dict), .addPayment(let dict), .addInterest(let dict), .login(let dict), .fund(let dict), .linkUsers(let dict), .getUsers(let dict), .sendFriendRequest(let dict), .acceptFriendRequest(let dict):
             return requestParameters(parameters: dict)
         case .getChildren, .getTasksTypes, .getPaymentsTypes, .getPayments, .getGoals, .getinterestsTypes, .getActivities, .getBalance, .getFriends, .getFriendsRequests, .getChildTasks, .getGeneralTasks:
-            return requestParameters(parameters: [:])
+            return .requestPlain
             
         }
     }
@@ -168,12 +168,12 @@ extension BaseProjectService: TargetType {
         var headersDict : [String:String] = [:]
         
         if self.sessionRepository.userIsLoggedIn {
-            headersDict["token"] = SessionRepository.shared.token ?? ""
+            headersDict["Authorization"] = "Bearer " + (SessionRepository.shared.token ?? "")
         }
         
         headersDict["Content-Type"] = "application/json"
         
-       return headersDict
+        return headersDict
     }
     
     var validationType : ValidationType {
@@ -181,7 +181,14 @@ extension BaseProjectService: TargetType {
     }
 }
 
-
+extension BaseProjectService: AccessTokenAuthorizable {
+    var authorizationType: Moya.AuthorizationType? {
+        switch self {
+        default:
+            return .bearer
+        }
+    }
+}
 extension BaseProjectService {
     func requestParameters(parameters : [String : Any]) -> Task {
         return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
