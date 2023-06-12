@@ -514,7 +514,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 121 images.
+  /// This `R.image` struct is generated, and contains static references to 123 images.
   struct image {
     /// Image `2474162 copy`.
     static let copy = Rswift.ImageResource(bundle: R.hostingBundle, name: "2474162 copy")
@@ -522,6 +522,8 @@ struct R: Rswift.Validatable {
     static let backgroundHomepageBox = Rswift.ImageResource(bundle: R.hostingBundle, name: "BackgroundHomepage box")
     /// Image `Bg1`.
     static let bg1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Bg1")
+    /// Image `Camera-icon`.
+    static let cameraIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Camera-icon")
     /// Image `Card 2.1`.
     static let card21 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Card 2.1")
     /// Image `Card 2`.
@@ -558,6 +560,8 @@ struct R: Rswift.Validatable {
     static let prime = Rswift.ImageResource(bundle: R.hostingBundle, name: "Prime")
     /// Image `Profile-icon`.
     static let profileIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile-icon")
+    /// Image `Qr Code`.
+    static let qrCode = Rswift.ImageResource(bundle: R.hostingBundle, name: "Qr Code")
     /// Image `Rectangle Copy 2`.
     static let rectangleCopy2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Rectangle Copy 2")
     /// Image `Rectangle Copy 3`.
@@ -781,6 +785,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Camera-icon", bundle: ..., traitCollection: ...)`
+    static func cameraIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.cameraIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "Card 2", bundle: ..., traitCollection: ...)`
     static func card2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.card2, compatibleWith: traitCollection)
@@ -903,6 +914,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "Profile-icon", bundle: ..., traitCollection: ...)`
     static func profileIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.profileIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Qr Code", bundle: ..., traitCollection: ...)`
+    static func qrCode(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.qrCode, compatibleWith: traitCollection)
     }
     #endif
 

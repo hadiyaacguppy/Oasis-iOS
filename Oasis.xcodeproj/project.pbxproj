@@ -232,6 +232,7 @@
 		169914C32A327D660046978D /* ChildTaskCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914C12A327D660046978D /* ChildTaskCollectionViewCell.swift */; };
 		169914C42A327D660046978D /* ChildTaskCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 169914C22A327D660046978D /* ChildTaskCollectionViewCell.xib */; };
 		169914C62A336F960046978D /* BalanceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914C52A336F960046978D /* BalanceCardView.swift */; };
+		169914C92A36E1A70046978D /* DottedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169914C82A36E1A70046978D /* DottedButtonView.swift */; };
 		169976EA2A15011D00FDEC97 /* GoalAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976E92A15011D00FDEC97 /* GoalAPIModel.swift */; };
 		169976EC2A15012500FDEC97 /* TasksAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976EB2A15012500FDEC97 /* TasksAPIModel.swift */; };
 		169976EF2A1504C200FDEC97 /* TaskTypeAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169976EE2A1504C200FDEC97 /* TaskTypeAPIModel.swift */; };
@@ -695,6 +696,7 @@
 		169914C12A327D660046978D /* ChildTaskCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildTaskCollectionViewCell.swift; sourceTree = "<group>"; };
 		169914C22A327D660046978D /* ChildTaskCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChildTaskCollectionViewCell.xib; sourceTree = "<group>"; };
 		169914C52A336F960046978D /* BalanceCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCardView.swift; sourceTree = "<group>"; };
+		169914C82A36E1A70046978D /* DottedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DottedButtonView.swift; sourceTree = "<group>"; };
 		169976E92A15011D00FDEC97 /* GoalAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalAPIModel.swift; sourceTree = "<group>"; };
 		169976EB2A15012500FDEC97 /* TasksAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksAPIModel.swift; sourceTree = "<group>"; };
 		169976EE2A1504C200FDEC97 /* TaskTypeAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTypeAPIModel.swift; sourceTree = "<group>"; };
@@ -1863,6 +1865,7 @@
 				169914AD2A30D5780046978D /* RoundedViewWithArrow.swift */,
 				169914BE2A325DF10046978D /* ChildActionView.swift */,
 				169914C52A336F960046978D /* BalanceCardView.swift */,
+				169914C82A36E1A70046978D /* DottedButtonView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -2919,6 +2922,7 @@
 				161F3C3129E5AD4D0053158A /* InterestsModels.swift in Sources */,
 				161F3BE429DAD6FB0053158A /* OTPVerificationConfigurator.swift in Sources */,
 				161F3C6829F31CD00053158A /* ReceiveMoneyViewController.swift in Sources */,
+				169914C92A36E1A70046978D /* DottedButtonView.swift in Sources */,
 				161F3C8729F3FC1A0053158A /* ChildrenFSPagerViewCell.swift in Sources */,
 				CFC2BFE6216CA3C800DC31A7 /* ErrorViewModel.swift in Sources */,
 				16ABACE729F68CDD00FB937C /* SettingsModels.swift in Sources */,

@@ -25,12 +25,6 @@ class ChildrenViewController: BaseViewController {
         return lbl
     }()
     
-    lazy var addChildrenButton : OasisGradientButton = {
-        let btn = OasisGradientButton()
-        btn.setTitle("+ Add new child", for: .normal)
-        return btn
-    }()
-    
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.autoLayout()
@@ -49,6 +43,7 @@ class ChildrenViewController: BaseViewController {
         return stackView
     }()
     var isParent : Bool = true
+    var addChildrenButtonView : DottedButtonView!
 }
 
 //MARK:- View Lifecycle
@@ -94,15 +89,17 @@ extension ChildrenViewController{
     }
     
     private func addButton(){
-        view.addSubview(addChildrenButton)
+        
+        addChildrenButtonView = DottedButtonView(actionName: "+ Add new child", viewHeight: 62, viewWidth: 336, viewRadius: 48, numberOflines: 1, innerImage: nil)
+        addChildrenButtonView.autoLayout()
+        
+        view.addSubview(addChildrenButtonView)
         NSLayoutConstraint.activate([
-            addChildrenButton.topAnchor.constraint(equalTo: topTitleLabel.bottomAnchor, constant: 20),
-            addChildrenButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            addChildrenButton.heightAnchor.constraint(equalToConstant: 58),
-            addChildrenButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 38)
+            addChildrenButtonView.topAnchor.constraint(equalTo: topTitleLabel.bottomAnchor, constant: 20),
+            addChildrenButtonView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 27)
         ])
         
-        addChildrenButton.onTap {
+        addChildrenButtonView.onTap {
             self.router?.pushToAddChildController()
         }
     }
@@ -146,7 +143,7 @@ extension ChildrenViewController{
         containerView.addSubview(subtitleLabel)
         
         NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: addChildrenButton.bottomAnchor, constant: 20),
+            containerView.topAnchor.constraint(equalTo: addChildrenButtonView.bottomAnchor, constant: 20),
             containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             containerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100),
@@ -211,7 +208,7 @@ extension ChildrenViewController{
         view.addSubview(scrollView)
         scrollView.addSubview(childrenCardsStackView)
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: self.addChildrenButton.bottomAnchor),
+            scrollView.topAnchor.constraint(equalTo: self.addChildrenButtonView.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),

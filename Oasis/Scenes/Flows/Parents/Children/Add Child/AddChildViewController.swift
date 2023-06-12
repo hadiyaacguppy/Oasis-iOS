@@ -39,18 +39,10 @@ class AddChildViewController: BaseViewController {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.distribution = .fill
-        stackView.spacing = 6
+        stackView.spacing = 15
         stackView.autoLayout()
         stackView.backgroundColor = .clear
         return stackView
-    }()
-    
-    lazy var childInfoStackView: UIStackView = {
-        UIStackView()
-            .axis(.vertical)
-            .spacing(15)
-            .autoLayout()
-            .distributionMode(.fill)
     }()
     
     lazy var pictureTitleLabel : BaseLabel = {
@@ -70,12 +62,32 @@ class AddChildViewController: BaseViewController {
         return view
     }()
     
+    lazy var picturesStackView : UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .fill
+        stackView.spacing = 15
+        stackView.autoLayout()
+        stackView.backgroundColor = .clear
+        return stackView
+    }()
+    
     lazy var nextButton : OasisGradientButton = {
         let btn = OasisGradientButton()
         btn.setTitle("Next >", for: .normal)
         return btn
     }()
     
+    lazy var infoBlueView : BaseUIView = {
+        let view = BaseUIView()
+        view.autoLayout()
+        view.backgroundColor = Constants.Colors.appViolet
+        view.roundCorners = .top(radius: 24)
+        return view
+    }()
+    
+    var uploadPictureView : UIView!
+    var scanCodeDottedView : DottedButtonView!
 }
 
 //MARK:- View Lifecycle
@@ -101,53 +113,63 @@ extension AddChildViewController{
     }
     
     private func setupUI(){
-        
-        //First, add Scroll View
-        addScrollView()
-        
-        //Add Next Button
-        addNextButton()
-        
-    }
-    
-    //Scroll View
-    private func addScrollView(){
-        view.addSubview(scrollView)
-        
-        NSLayoutConstraint.activate([
-            //Scroll View Constraints
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-        
-        //Second, add the elements in scroll view(Title,stack views,actions,....)
-        //Add Top Title
         addTitle()
+        addScanCodeButton()
+        addInfoBlueView()
+        addScrollView()
+        addGeneralStackView()
+        addNextButton()
     }
     
-    //Top Title
     private func addTitle(){
-        
-        scrollView.addSubviews(topTitleLabel)
-        
-        //Top Title Constraints
+        view.addSubview(topTitleLabel)
         NSLayoutConstraint.activate([
-            topTitleLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 10),
-            topTitleLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 37),
+            topTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            topTitleLabel.heightAnchor.constraint(equalToConstant: 35),
+            topTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 41)
+        ])
+    }
+    
+    private func addScanCodeButton(){
+        scanCodeDottedView = DottedButtonView(actionName: "Scan Qr Code", viewHeight: 62, viewWidth: 336, viewRadius: 48, numberOflines: 1, innerImage: R.image.qrCode())
+        
+        view.addSubview(scanCodeDottedView)
+        
+        NSLayoutConstraint.activate([
+            scanCodeDottedView.topAnchor.constraint(equalTo: topTitleLabel.bottomAnchor, constant: 20),
+            scanCodeDottedView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 27)
         ])
         
-        addGeneralStackView()
+        scanCodeDottedView.onTap {
+        }
+    }
+
+    private func addInfoBlueView(){
+        view.addSubview(infoBlueView)
+        
+        NSLayoutConstraint.activate([
+            infoBlueView.topAnchor.constraint(equalTo: scanCodeDottedView.bottomAnchor, constant: 35),
+            infoBlueView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            infoBlueView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            infoBlueView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
     }
     
-    //StackView
+    private func addScrollView(){
+        infoBlueView.addSubview(scrollView)
+        
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: infoBlueView.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: infoBlueView.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: infoBlueView.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: infoBlueView.bottomAnchor)
+        ])
+    }
+    
     private func addGeneralStackView(){
-        //Add general stack view
         scrollView.addSubview(stackView)
         
         NSLayoutConstraint.activate([
-            //General StackView Constraints
             stackView.topAnchor.constraint(equalTo: topTitleLabel.bottomAnchor, constant: 31),
             stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
@@ -156,14 +178,9 @@ extension AddChildViewController{
         ])
         
         scrollView.contentInset = .init(top: 0, left: 0, bottom: 50, right: 0)
-        
-        //Third, add the ChildInfo Stack View
-        addChildInfoStackView()
     }
     
-    private func addChildInfoStackView(){
-        stackView.addArrangedSubview(childInfoStackView)
-        
+    private func addChildInfoViews(){
         let childInfo1 = TitleWithTextFieldView.init(requestTitle: "What’s your child’s first name?",
                                                      placeHolderTxt: "First Name",
                                                      usertext: "",
@@ -181,45 +198,46 @@ extension AddChildViewController{
                                                      usertext: "",
                                                      isAgeRequest: false,
                                                      hasEditView: false)
-        childInfoStackView.addArrangedSubview(childInfo1)
-        childInfoStackView.addArrangedSubview(childInfo2)
-        childInfoStackView.addArrangedSubview(childInfo3)
-
-        childInfoStackView.addArrangedSubview(pictureTitleLabel)
-        childInfoStackView.addArrangedSubview(uploadPictureButtonView)
-        
-        let iconImg = BaseImageView(frame: .zero)
-        iconImg.contentMode = .scaleAspectFit
-        iconImg.autoLayout()
-        iconImg.image = R.image.uploadAPictureIcon()!
-        
-        let lbl = BaseLabel()
-        lbl.autoLayout()
-        lbl.style = .init(font: MainFont.medium.with(size: 16), color: .black)
-        lbl.text = "Upload a picture".localized
-
-        uploadPictureButtonView.addSubview(iconImg)
-        uploadPictureButtonView.addSubview(lbl)
+        stackView.addArrangedSubview(childInfo1)
+        stackView.addArrangedSubview(childInfo2)
+        stackView.addArrangedSubview(childInfo3)
         
         NSLayoutConstraint.activate([
-            uploadPictureButtonView.heightAnchor.constraint(equalToConstant: 70),
-            
             childInfo1.heightAnchor.constraint(equalToConstant: 160),
             childInfo2.heightAnchor.constraint(equalToConstant: 160),
             childInfo3.heightAnchor.constraint(equalToConstant: 160),
-
-            
-            iconImg.leadingAnchor.constraint(equalTo: uploadPictureButtonView.leadingAnchor, constant: 37),
-            iconImg.centerYAnchor.constraint(equalTo: uploadPictureButtonView.centerYAnchor),
-            iconImg.heightAnchor.constraint(equalToConstant: 20),
-            iconImg.widthAnchor.constraint(equalToConstant: 20),
-            
-            lbl.leadingAnchor.constraint(equalTo: iconImg.trailingAnchor, constant: 25),
-            lbl.centerYAnchor.constraint(equalTo: uploadPictureButtonView.centerYAnchor)
         ])
     }
     
-    //Next Button
+    private func addPicturesStackview(){
+        stackView.addArrangedSubview(pictureTitleLabel)
+        stackView.addArrangedSubview(picturesStackView)
+        
+    }
+    
+    private func picturesView(view : UIView){
+        uploadPictureView = UIView()
+        uploadPictureView.backgroundColor = .clear
+        uploadPictureView.autoLayout()
+        
+        
+        let iconImg = BaseImageView(frame: .zero)
+        iconImg.contentMode = .scaleAspectFit
+        iconImg.image = R.image.uploadAPictureIcon()!
+        iconImg.autoLayout()
+
+        
+        let lbl = BaseLabel()
+        lbl.style = .init(font: MainFont.medium.with(size: 14), color: .white)
+        lbl.text = "Upload a picture".localized
+        lbl.autoLayout()
+        
+        NSLayoutConstraint.activate([
+            uploadPictureView.widthAnchor.constraint(equalToConstant: 102),
+            
+        ])
+
+    }
     private func addNextButton(){
         view.addSubview(nextButton)
         

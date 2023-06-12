@@ -157,7 +157,8 @@ class ChildView: BaseUIView {
         self.autoLayout()
         self.shadow = .active(with: .init(color: .gray,
                                           opacity: 0.3,
-                                          radius: 6))
+                                          radius: 14))
+        
         self.roundCorners = .all(radius: 14)
         self.backgroundColor = Constants.Colors.lightGrey
         
@@ -195,14 +196,14 @@ class ChildView: BaseUIView {
             childInfoView.trailingAnchor.constraint(equalTo: childImageView.leadingAnchor, constant: 50),
             childInfoView.topAnchor.constraint(equalTo: self.childNamelabel.bottomAnchor, constant: 20),
             childInfoView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-           
-            spentlabel.topAnchor.constraint(equalTo: self.childInfoView.topAnchor),
-            spentlabel.leadingAnchor.constraint(equalTo: self.childInfoView.leadingAnchor),
-            spentlabel.heightAnchor.constraint(equalToConstant: 16),
             
-            valueSpentlabel.topAnchor.constraint(equalTo: self.spentlabel.bottomAnchor),
+            valueSpentlabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             valueSpentlabel.leadingAnchor.constraint(equalTo: self.childInfoView.leadingAnchor),
             valueSpentlabel.heightAnchor.constraint(equalToConstant: 22),
+            
+            spentlabel.bottomAnchor.constraint(equalTo: self.valueSpentlabel.topAnchor, constant: -8),
+            spentlabel.leadingAnchor.constraint(equalTo: self.childInfoView.leadingAnchor),
+            spentlabel.heightAnchor.constraint(equalToConstant: 16),
             
             valueBar.topAnchor.constraint(equalTo: self.valueSpentlabel.bottomAnchor, constant: 2),
             valueBar.leadingAnchor.constraint(equalTo: self.childInfoView.leadingAnchor),
