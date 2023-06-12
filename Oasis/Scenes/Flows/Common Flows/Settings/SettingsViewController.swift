@@ -53,7 +53,7 @@ class SettingsViewController: BaseViewController {
     
     private lazy var notificationsView : SettingsClickableOptionView = {
         let view = SettingsClickableOptionView.init(title: "Notifications",
-                                                    iconName: R.image.notificationCiond.name, height: 68)
+                                                    iconName: R.image.notificationBlackIcon.name, height: 68)
         return view
     }()
     

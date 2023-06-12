@@ -45,7 +45,7 @@ final class TabBarController: CardTabBarController {
     }()
 
     lazy var goalsTab: UIViewController = {
-        let randomTabItem = UITabBarItem(title: "", image: R.image.tabbarUnSelectedChildren()!, selectedImage: R.image.tabbarSelectedChildren()!)
+        let randomTabItem = UITabBarItem(title: "", image: R.image.tabbarUnselectedGoals()!, selectedImage: R.image.tabbarSelectedGoals()!)
         let navController = R.storyboard.goals.goalsViewControllerNavVC()!
         navController.tabBarItem = randomTabItem
         return navController

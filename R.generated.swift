@@ -514,7 +514,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 123 images.
+  /// This `R.image` struct is generated, and contains static references to 125 images.
   struct image {
     /// Image `2474162 copy`.
     static let copy = Rswift.ImageResource(bundle: R.hostingBundle, name: "2474162 copy")
@@ -674,8 +674,8 @@ struct R: Rswift.Validatable {
     static let noTasks = Rswift.ImageResource(bundle: R.hostingBundle, name: "no-tasks")
     /// Image `noGoalImage`.
     static let noGoalImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "noGoalImage")
-    /// Image `notification-ciond`.
-    static let notificationCiond = Rswift.ImageResource(bundle: R.hostingBundle, name: "notification-ciond")
+    /// Image `notificationBlackIcon`.
+    static let notificationBlackIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "notificationBlackIcon")
     /// Image `noun-bank-account-4449695 2`.
     static let nounBankAccount44496952 = Rswift.ImageResource(bundle: R.hostingBundle, name: "noun-bank-account-4449695 2")
     /// Image `noun-block-1425420`.
@@ -736,12 +736,16 @@ struct R: Rswift.Validatable {
     static let subscriptionIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "subscription icon")
     /// Image `tabbarSelectedChildren`.
     static let tabbarSelectedChildren = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbarSelectedChildren")
+    /// Image `tabbarSelectedGoals`.
+    static let tabbarSelectedGoals = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbarSelectedGoals")
     /// Image `tabbarSelectedHome`.
     static let tabbarSelectedHome = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbarSelectedHome")
     /// Image `tabbarSelectedProfile`.
     static let tabbarSelectedProfile = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbarSelectedProfile")
     /// Image `tabbarUnSelectedChildren`.
     static let tabbarUnSelectedChildren = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbarUnSelectedChildren")
+    /// Image `tabbarUnselectedGoals`.
+    static let tabbarUnselectedGoals = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbarUnselectedGoals")
     /// Image `tabbarUnselectedHome`.
     static let tabbarUnselectedHome = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbarUnselectedHome")
     /// Image `tabbarUnselectedProfile`.
@@ -1317,9 +1321,9 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "notification-ciond", bundle: ..., traitCollection: ...)`
-    static func notificationCiond(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.notificationCiond, compatibleWith: traitCollection)
+    /// `UIImage(named: "notificationBlackIcon", bundle: ..., traitCollection: ...)`
+    static func notificationBlackIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.notificationBlackIcon, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1534,6 +1538,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tabbarSelectedGoals", bundle: ..., traitCollection: ...)`
+    static func tabbarSelectedGoals(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tabbarSelectedGoals, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "tabbarSelectedHome", bundle: ..., traitCollection: ...)`
     static func tabbarSelectedHome(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.tabbarSelectedHome, compatibleWith: traitCollection)
@@ -1551,6 +1562,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "tabbarUnSelectedChildren", bundle: ..., traitCollection: ...)`
     static func tabbarUnSelectedChildren(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.tabbarUnSelectedChildren, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tabbarUnselectedGoals", bundle: ..., traitCollection: ...)`
+    static func tabbarUnselectedGoals(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tabbarUnselectedGoals, compatibleWith: traitCollection)
     }
     #endif
 

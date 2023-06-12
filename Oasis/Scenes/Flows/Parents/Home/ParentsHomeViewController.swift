@@ -275,7 +275,7 @@ extension ParentsHomeViewController{
         }
         addForYouSection()
         addUpcomingPaymentsSection(shouldAddPlaceholder: false)
-        addRecentActivitiesSection(shouldAddPlaceholder: false)
+        //addRecentActivitiesSection(shouldAddPlaceholder: false)
     }
     
     private func addBalanceStack(){
@@ -372,7 +372,7 @@ extension ParentsHomeViewController{
             return img
         }()
         
-        var actionsStackView : UIStackView = {
+        let actionsStackView : UIStackView = {
             UIStackView()
                 .axis(.horizontal)
                 .spacing(10)
@@ -380,19 +380,27 @@ extension ParentsHomeViewController{
                 .distributionMode(.fillEqually)
         }()
         
-        var addChildButton : BaseButton = {
+        let addChildButton : BaseButton = {
             let btn = BaseButton()
             btn.style = .init(titleFont: MainFont.bold.with(size: 16), titleColor: .white, backgroundColor: Constants.Colors.appGreen)
             btn.setTitle("+ Add Child".localized, for: .normal)
             btn.roundCorners = .all(radius: 28)
+            btn.onTap {
+                self.router?.pushToAddChildController()
+            }
             return btn
         }()
         
-        var noIdontButton : BaseButton = {
+        let noIdontButton : BaseButton = {
             let btn = BaseButton()
             btn.style = .init(titleFont: MainFont.bold.with(size: 16), titleColor: .white, backgroundColor: Constants.Colors.appGreen)
             btn.setTitle("No, I don't".localized, for: .normal)
             btn.roundCorners = .all(radius: 28)
+            btn.onTap {
+                self.areYouParentContainerView.removeAllSubviews()
+                self.stackView.removeArrangedSubview(self.areYouParentContainerView)
+                staticTitle.removeFromSuperview()
+            }
             return btn
         }()
         
@@ -740,9 +748,9 @@ extension ParentsHomeViewController{
 extension ParentsHomeViewController{
     private func setupNavBarAppearance(){
         statusBarStyle = .lightContent
-        navigationBarStyle = .transparent
+        navigationBarStyle = .appDefault
         
-        let rightNotificationsBarButton = UIBarButtonItem(image: R.image.whiteAlertIcon()!,
+        let rightNotificationsBarButton = UIBarButtonItem(image: R.image.notificationBlackIcon()!.withRenderingMode(.alwaysOriginal),
                                                           style: .plain,
                                                           target: self,
                                                           action: #selector(alertButtonPressed))

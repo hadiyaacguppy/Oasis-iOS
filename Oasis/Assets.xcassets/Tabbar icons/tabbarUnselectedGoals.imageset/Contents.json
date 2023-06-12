@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "notification-ciond.svg",
+      "filename" : "tabbarUnselectedGoals.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "tabbarUnselectedGoals@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "tabbarUnselectedGoals@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
