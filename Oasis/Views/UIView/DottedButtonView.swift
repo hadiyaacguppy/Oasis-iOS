@@ -48,7 +48,8 @@ class DottedButtonView: BaseUIView {
     
     private func setupUI(viewHeight : CGFloat, viewWidth : CGFloat, hasImage : Bool){
         self.addSubview(dottedImageView)
-        dottedImageView.addSubview(buttonTitle)
+        self.addSubview(buttonTitle)
+        self.addSubview(smallImageView)
         
         smallImageView.widthAnchor.constraint(equalToConstant: 28).isActive = hasImage
 

@@ -58,14 +58,28 @@ class GenderViewController: BaseViewController {
     
     private lazy var femaleImageView : UIImageView = {
         let imgView = UIImageView()
-        imgView.contentMode = .scaleAspectFill
+        imgView.contentMode = .scaleAspectFit
+        imgView.autoLayout()
+        return imgView
+    }()
+    
+    private lazy var femaleLogoImageView : UIImageView = {
+        let imgView = UIImageView()
+        imgView.contentMode = .left
         imgView.autoLayout()
         return imgView
     }()
     
     private lazy var maleImageView : UIImageView = {
         let imgView = UIImageView()
-        imgView.contentMode = .scaleAspectFill
+        imgView.contentMode = .scaleAspectFit
+        imgView.autoLayout()
+        return imgView
+    }()
+    
+    private lazy var maleLogoImageView : UIImageView = {
+        let imgView = UIImageView()
+        imgView.contentMode = .right
         imgView.autoLayout()
         return imgView
     }()
@@ -87,7 +101,7 @@ class GenderViewController: BaseViewController {
     private lazy var nextViewButton : RoundedViewWithArrow = {
         let view = RoundedViewWithArrow(frame: .zero)
         view.onTap {
-            self.router?.pushToOTPVerificationsScene()
+            self.checkGenderSelection()
         }
         return view
     }()
@@ -158,26 +172,66 @@ extension GenderViewController{
  
     private func buildFemaleStackview(){
         mainStackView.addArrangedSubview(femaleStackView)
+        
+        femaleLogoImageView.image = R.image.femaleLogo()
         femaleImageView.image = R.image.female()
-        femaleStackView.addArrangedSubview(femaleImageView)
+        
+        femaleStackView.addArrangedSubview(femaleLogoImageView)
+        femaleLogoImageView.addSubview(femaleImageView)
 
         femaleGenderLabel.text = "Female"
         femaleStackView.addArrangedSubview(femaleGenderLabel)
-
-        femaleStackView.heightAnchor.constraint(equalToConstant: 260).isActive = true
-        femaleGenderLabel.widthAnchor.constraint(equalToConstant: 135).isActive = true
+        
+        NSLayoutConstraint.activate([
+            femaleStackView.heightAnchor.constraint(equalToConstant: 260),
+            femaleGenderLabel.widthAnchor.constraint(equalToConstant: 135),
+            
+            femaleImageView.leadingAnchor.constraint(equalTo: femaleLogoImageView.leadingAnchor),
+            femaleImageView.trailingAnchor.constraint(equalTo: femaleLogoImageView.trailingAnchor),
+            femaleImageView.topAnchor.constraint(equalTo: femaleLogoImageView.topAnchor),
+            femaleImageView.bottomAnchor.constraint(equalTo: femaleLogoImageView.bottomAnchor),
+        ])
+        
+        femaleStackView.onTap {
+            RegistrationDataManager.current.isFemale = true
+        }
+        
     }
     
     private func buildMaleStackview(){
         mainStackView.addArrangedSubview(maleStackView)
+        
         maleGenderLabel.text = "Male"
         maleStackView.addArrangedSubview(maleGenderLabel)
         
+        maleLogoImageView.image = R.image.maleLogo()
         maleImageView.image = R.image.male()
-        maleStackView.addArrangedSubview(maleImageView)
+        
+        maleStackView.addArrangedSubview(maleLogoImageView)
+        maleLogoImageView.addSubview(maleImageView)
 
-        maleStackView.heightAnchor.constraint(equalToConstant: 260).isActive = true
-        maleGenderLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        NSLayoutConstraint.activate([
+            maleStackView.heightAnchor.constraint(equalToConstant: 260),
+            maleGenderLabel.widthAnchor.constraint(equalToConstant: 100),
+            
+            maleImageView.leadingAnchor.constraint(equalTo: maleLogoImageView.leadingAnchor),
+            maleImageView.trailingAnchor.constraint(equalTo: maleLogoImageView.trailingAnchor),
+            maleImageView.topAnchor.constraint(equalTo: maleLogoImageView.topAnchor),
+            maleImageView.bottomAnchor.constraint(equalTo: maleLogoImageView.bottomAnchor),
+        ])
+        
+        maleStackView.onTap {
+            RegistrationDataManager.current.isFemale = false
+
+        }
+    }
+    
+    private func checkGenderSelection(){
+        guard RegistrationDataManager.current.isFemale != nil else {
+            showSimpleAlertView("", message: "Please choose your Gender", withCompletionHandler: nil)
+            return
+        }
+        self.router?.pushToOTPVerificationsScene()
     }
 }
 

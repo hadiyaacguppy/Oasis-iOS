@@ -178,6 +178,9 @@ class ChildView: BaseUIView {
         self.childInfoView.addSubview(valueBar)
 
         NSLayoutConstraint.activate([
+            
+            self.heightAnchor.constraint(equalToConstant: 233),
+            
             childImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             childImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             

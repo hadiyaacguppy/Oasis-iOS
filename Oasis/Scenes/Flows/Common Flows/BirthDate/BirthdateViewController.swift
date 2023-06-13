@@ -86,7 +86,9 @@ class BirthdateViewController: BaseViewController {
         return label
     }()
     
+    var currentYear : Int!
     var chosenBirthdate : Date = Date()
+    var userAge : Int?
 }
 
 //MARK:- View Lifecycle
@@ -104,6 +106,7 @@ extension BirthdateViewController{
         self.view.backgroundColor = Constants.Colors.appViolet
         setupNavBarAppearance()
         setupRetryFetchingCallBack()
+        currentYear = Calendar(identifier: .gregorian).dateComponents([.year], from: Date()).year!
         setupUI()
     }
     
@@ -113,6 +116,7 @@ extension BirthdateViewController{
     }
     
     private func setupUI(){
+        
         buildMainStackViewWithTopTitle()
         buildDateStackView(lbl: dayNumberLabel, title: "Day")
         buildDateStackView(lbl: monthNumberLabel, title: "Month")
@@ -202,6 +206,7 @@ extension BirthdateViewController{
         roundView.addSubview(arrowImage)
         
         roundView.onTap{
+            RegistrationDataManager.current.userAge = self.userAge != nil ? self.userAge : self.currentYear - Int(self.yearNumberLabel.text!)!
             self.router?.pushToRegistrationVC()
         }
         
@@ -239,6 +244,7 @@ extension BirthdateViewController{
                  self.dayNumberLabel.text = "\(day)"
                  self.monthNumberLabel.text = "\(month)"
                  self.yearNumberLabel.text = "\(year)"
+                 self.userAge = self.currentYear - year
              }
         }
     }

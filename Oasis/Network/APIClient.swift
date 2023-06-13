@@ -60,12 +60,12 @@ extension APIClient {
     
     func getChildren() -> Single<[ChildAPIModel]>{
         return self.provider.rx.request(.getChildren)
-            .map([ChildAPIModel].self)
+            .map([ChildAPIModel].self, atKeyPath: resultsKeyPath)
     }
     
     func getActivities() -> Single<ChildAPIModel>{
         return self.provider.rx.request(.getActivities)
-            .map(ChildAPIModel.self)
+            .map(ChildAPIModel.self, atKeyPath: resultsKeyPath)
     }
     
     func getBalance() -> Single<BalanceAPIModel>{
@@ -84,7 +84,7 @@ extension APIClient {
     }
     
     func getUsers(dict : [String:Any]) -> Single<Void>{
-        return self.provider.rx.request(.linkUsers(dict: dict))
+        return self.provider.rx.request(.getUsers(dict: dict))
             .map {_ in return Void()}
     }
     
@@ -130,12 +130,12 @@ extension APIClient {
     
     func getPaymentsTypes() -> Single<[PaymentTypeAPIModel]>{
         return self.provider.rx.request(.getPaymentsTypes)
-            .map([PaymentTypeAPIModel].self)
+            .map([PaymentTypeAPIModel].self, atKeyPath: resultsKeyPath)
     }
     
     func getPayments() -> Single<[PaymentAPIModel]>{
         return self.provider.rx.request(.getPayments)
-            .map([PaymentAPIModel].self)
+            .map([PaymentAPIModel].self, atKeyPath: resultsKeyPath)
     }
     
     func addPayment(dict : [String:Any]) -> Single<Void>{
@@ -145,7 +145,7 @@ extension APIClient {
     
     func getGoals() -> Single<[GoalAPIModel]>{
         return self.provider.rx.request(.getGoals)
-            .map([GoalAPIModel].self)
+            .map([GoalAPIModel].self, atKeyPath: resultsKeyPath)
     }
      
     func addGoal(dict : [String:Any]) -> Single<Void>{

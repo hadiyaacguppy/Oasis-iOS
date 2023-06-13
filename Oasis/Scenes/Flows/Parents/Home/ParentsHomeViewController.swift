@@ -72,12 +72,27 @@ class ParentsHomeViewController: BaseViewController {
     lazy var balanceValueLabel : BaseLabel = {
         let lbl = BaseLabel()
         lbl.style = .init(font: MainFont.bold.with(size: 40), color: .white)
-        lbl.text = "0.00 LBP".localized
+        lbl.text = "0.00".localized
+        lbl.autoLayout()
+        return lbl
+    }()
+    
+    lazy var currencyLabel : BaseLabel = {
+        let lbl = BaseLabel()
+        lbl.style = .init(font: MainFont.bold.with(size: 20), color: .white)
+        lbl.text = "LBP".localized
         lbl.autoLayout()
         return lbl
     }()
     
     lazy var topUpView : BaseUIView = {
+        let view = BaseUIView()
+        view.backgroundColor = .clear
+        view.autoLayout()
+        return view
+    }()
+    
+    lazy var balanceValueView : BaseUIView = {
         let view = BaseUIView()
         view.backgroundColor = .clear
         view.autoLayout()
@@ -300,10 +315,15 @@ extension ParentsHomeViewController{
         underline.autoLayout()
         
         balanceContainerView.addSubview(topUpView)
-        
+
         topUpView.addSubview(topUpLabel)
         topUpView.addSubview(underline)
         
+        balanceValueView.addSubview(balanceValueLabel)
+        balanceValueView.addSubview(currencyLabel)
+        
+        balanceStackView.addArrangedSubview(balanceStaticLabel)
+        balanceStackView.addArrangedSubview(balanceValueView)
         
         NSLayoutConstraint.activate([
             balanceContainerView.heightAnchor.constraint(equalToConstant: 132),
@@ -315,7 +335,8 @@ extension ParentsHomeViewController{
             
             topUpView.trailingAnchor.constraint(equalTo: balanceContainerView.trailingAnchor, constant: -26),
             topUpView.topAnchor.constraint(equalTo: balanceContainerView.topAnchor, constant: 20),
-            topUpView.widthAnchor.constraint(equalToConstant: 80),
+            topUpView.widthAnchor.constraint(equalToConstant: 85),
+            topUpView.heightAnchor.constraint(equalToConstant: 25),
             
             topUpLabel.leadingAnchor.constraint(equalTo: topUpView.leadingAnchor),
             topUpLabel.trailingAnchor.constraint(equalTo: topUpView.trailingAnchor),
@@ -324,16 +345,21 @@ extension ParentsHomeViewController{
             
             underline.leadingAnchor.constraint(equalTo: topUpView.leadingAnchor),
             underline.trailingAnchor.constraint(equalTo: topUpView.trailingAnchor),
-            underline.trailingAnchor.constraint(equalTo: topUpView.trailingAnchor),
+            underline.topAnchor.constraint(equalTo: topUpLabel.bottomAnchor),
+            underline.bottomAnchor.constraint(equalTo: topUpView.bottomAnchor),
+            underline.heightAnchor.constraint(equalToConstant: 1),
+            
+            balanceValueLabel.leadingAnchor.constraint(equalTo: balanceValueView.leadingAnchor, constant: 20),
+            balanceValueLabel.topAnchor.constraint(equalTo: balanceValueView.topAnchor, constant: 5),
+            balanceValueLabel.bottomAnchor.constraint(equalTo: balanceValueView.bottomAnchor, constant: -5),
 
-
+            currencyLabel.leadingAnchor.constraint(equalTo: balanceValueLabel.trailingAnchor, constant: 10),
+            currencyLabel.bottomAnchor.constraint(equalTo: balanceValueView.bottomAnchor, constant: -10)
             
         ])
         
         //balanceStackView.heightAnchor.constraint(equalToConstant: 85).isActive = true
         
-        balanceStackView.addArrangedSubview(balanceStaticLabel)
-        balanceStackView.addArrangedSubview(balanceValueLabel)
     }
     
     private func addActionsStacksToContainer(){
@@ -785,6 +811,8 @@ extension ParentsHomeViewController{
 //MARK:- NavBarAppearance
 extension ParentsHomeViewController{
     private func setupNavBarAppearance(){
+        RegistrationDataManager.current.backButtonShouldBeBlack = true
+        
         statusBarStyle = .lightContent
         navigationBarStyle = .transparent
         

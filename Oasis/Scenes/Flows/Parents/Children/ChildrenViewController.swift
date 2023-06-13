@@ -33,10 +33,10 @@ class ChildrenViewController: BaseViewController {
         return scrollView
     }()
     
-    private lazy var childrenCardsStackView: UIStackView = {
+    private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fill
         stackView.spacing = 19
         stackView.autoLayout()
         stackView.backgroundColor = .clear
@@ -70,8 +70,8 @@ extension ChildrenViewController{
     }
     
     private func setupUI(){
-        addTitle()
-        addButton()
+        addScrollAndStackViews()
+        addTitleAndbutton()
         if isParent{
             addChildrenCards()
         }else{
@@ -79,23 +79,36 @@ extension ChildrenViewController{
         }
     }
     
-    private func addTitle(){
-        view.addSubviews(topTitleLabel)
+    private func addScrollAndStackViews(){
+        view.addSubview(scrollView)
+        scrollView.addSubview(stackView)
         NSLayoutConstraint.activate([
-            topTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
-            topTitleLabel.heightAnchor.constraint(equalToConstant: 35),
-            topTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 41)
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20),
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -40)
         ])
+
+        scrollView.contentInset = .init(top: 0, left: 0, bottom: 50, right: 0)
     }
-    
-    private func addButton(){
-        addChildrenButtonView = DottedButtonView(actionName: "+ Add new child", viewHeight: 62, viewWidth: 336, viewRadius: 48, numberOflines: 1, innerImage: nil)
+    private func addTitleAndbutton(){
+        
+        addChildrenButtonView = DottedButtonView(actionName: "+ Add new child".localized, viewHeight: 62, viewWidth: 336, viewRadius: 48, numberOflines: 1, innerImage: nil)
         addChildrenButtonView.autoLayout()
         
-        view.addSubview(addChildrenButtonView)
+        stackView.addArrangedSubview(topTitleLabel)
+        stackView.addArrangedSubview(addChildrenButtonView)
+
         NSLayoutConstraint.activate([
-            addChildrenButtonView.topAnchor.constraint(equalTo: topTitleLabel.bottomAnchor, constant: 20),
-            addChildrenButtonView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 27)
+        
+            topTitleLabel.heightAnchor.constraint(equalToConstant: 35),
+            addChildrenButtonView.heightAnchor.constraint(equalToConstant: 62)
         ])
         
         addChildrenButtonView.onTap {
@@ -168,8 +181,6 @@ extension ChildrenViewController{
     
     private func addChildrenCards(){
         
-        self.addScrollView()
-        
         let vw1 = ChildView.init(name: "Michel",
                                  age: "8 years old",
                                  valueSpent: "LBP 240,000",
@@ -194,30 +205,13 @@ extension ChildrenViewController{
                                  goals: "2",
                                  imageName: R.image.kid.name)
         
-        childrenCardsStackView.addArrangedSubview(vw1)
-        childrenCardsStackView.addArrangedSubview(vw2)
-        childrenCardsStackView.addArrangedSubview(vw3)
+        stackView.addArrangedSubview(vw1)
+        stackView.addArrangedSubview(vw2)
+        stackView.addArrangedSubview(vw3)
         
         vw1.onTap {
             self.router?.pushToChildDetailsVC()
         }
-    }
-    
-    private func addScrollView () {
-        view.addSubview(scrollView)
-        scrollView.addSubview(childrenCardsStackView)
-        NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: self.addChildrenButtonView.bottomAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
-            childrenCardsStackView.topAnchor.constraint(equalTo: self.scrollView.topAnchor),
-            childrenCardsStackView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor),
-            childrenCardsStackView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor, constant: 30),
-            childrenCardsStackView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor, constant: -30),
-            childrenCardsStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -60)
-        ])
     }
 }
 

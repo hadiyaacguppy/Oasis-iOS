@@ -219,7 +219,7 @@ extension CreateConfirmPasswordViewController{
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { _ in
                 self.dismissProgress()
-                self.router?.redirectToInterests()
+                self.router?.redirectToHome()
             }, onError: {(error) in
                 self.display(errorMessage: (error as! ErrorViewModel).message)
             })

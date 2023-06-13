@@ -98,6 +98,7 @@ extension OnboardingViewController{
     private func setupNavBarAppearance(){
         statusBarStyle = .lightContent
         navigationBarStyle = .appDefault
+        RegistrationDataManager.current.backButtonShouldBeBlack = false
     }
 }
 

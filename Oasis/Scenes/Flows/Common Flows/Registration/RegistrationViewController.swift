@@ -44,11 +44,13 @@ class RegistrationViewController: BaseViewController {
         return view
     }()
     
-    var nameView : TitleWithTextFieldView!
+    var firstNameView : TitleWithTextFieldView!
+    var lastNameView : TitleWithTextFieldView!
     var emailView : TitleWithTextFieldView!
     
     var userEmail : String?
-    var userName : String?
+    var userFirstName : String?
+    var userLastName : String?
 }
 
 //MARK:- View Lifecycle
@@ -92,12 +94,19 @@ extension RegistrationViewController{
     }
     
     private func buildTitlewithLabelViews(){
-         nameView = TitleWithTextFieldView.init(requestTitle: "What is your Name?",
+         firstNameView = TitleWithTextFieldView.init(requestTitle: "What is your First Name?",
                                                     textsColor: .white,
                                                     usertext: "",
                                                     textSize: 35,
                                                     isAgeRequest: false,
                                                     labelHeight: 89)
+        
+        lastNameView = TitleWithTextFieldView.init(requestTitle: "What is your Last Name?",
+                                                   textsColor: .white,
+                                                   usertext: "",
+                                                   textSize: 35,
+                                                   isAgeRequest: false,
+                                                   labelHeight: 89)
         
         emailView = TitleWithTextFieldView.init(requestTitle: "What is your Email?",
                                                     textsColor: .white,
@@ -106,14 +115,17 @@ extension RegistrationViewController{
                                                     isAgeRequest: false,
                                                     labelHeight: 89)
         
-        mainStackView.addArrangedSubview(nameView)
+        mainStackView.addArrangedSubview(firstNameView)
+        mainStackView.addArrangedSubview(lastNameView)
         mainStackView.addArrangedSubview(emailView)
         
-        nameView.anyTextField.delegate = self
+        firstNameView.anyTextField.delegate = self
+        lastNameView.anyTextField.delegate = self
         emailView.anyTextField.delegate = self
         
         NSLayoutConstraint.activate([
-            nameView.heightAnchor.constraint(equalToConstant: 160),
+            firstNameView.heightAnchor.constraint(equalToConstant: 160),
+            lastNameView.heightAnchor.constraint(equalToConstant: 160),
             emailView.heightAnchor.constraint(equalToConstant: 160)
         ])
     }
@@ -133,7 +145,7 @@ extension RegistrationViewController{
         }
         
         NSLayoutConstraint.activate([
-            bottomImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
+            bottomImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             bottomImageView.widthAnchor.constraint(equalToConstant: 242),
             bottomImageView.heightAnchor.constraint(equalToConstant: 124),
             bottomImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
@@ -141,7 +153,7 @@ extension RegistrationViewController{
             roundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
             roundView.widthAnchor.constraint(equalToConstant: 86),
             roundView.heightAnchor.constraint(equalToConstant: 86),
-            roundView.bottomAnchor.constraint(equalTo: bottomImageView.topAnchor, constant: -20),
+            roundView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60),
             
             arrowImage.leadingAnchor.constraint(equalTo: roundView.leadingAnchor, constant: 10),
             arrowImage.trailingAnchor.constraint(equalTo: roundView.trailingAnchor, constant: -10),
@@ -150,15 +162,23 @@ extension RegistrationViewController{
         ])
     }
     private func validateFields(){
-//        guard userName.notNilNorEmpty else {
-//            showSimpleAlertView("", message: "Please fill in your Name", withCompletionHandler: nil)
-//            return
-//        }
-//        guard userEmail.notNilNorEmpty else {
-//            showSimpleAlertView("", message: "Please fill in your Email", withCompletionHandler: nil)
-//            return
-//        }
+        guard userFirstName.notNilNorEmpty else {
+            showSimpleAlertView("", message: "Please fill in your First Name", withCompletionHandler: nil)
+            return
+        }
+        guard userLastName.notNilNorEmpty else {
+            showSimpleAlertView("", message: "Please fill in your Last Name", withCompletionHandler: nil)
+            return
+        }
+        guard userEmail.notNilNorEmpty else {
+            showSimpleAlertView("", message: "Please fill in your Email", withCompletionHandler: nil)
+            return
+        }
         
+        RegistrationDataManager.current.userFirstName = userFirstName
+        RegistrationDataManager.current.userLastName = userLastName
+        RegistrationDataManager.current.userEmail = userEmail
+
         self.router?.pushToGenderScene()
     }
 }
@@ -184,16 +204,20 @@ extension RegistrationViewController{
 
 extension RegistrationViewController : UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField.superview == nameView{
-            self.userName = textField.text
+        if textField.superview == firstNameView{
+            self.userFirstName = textField.text
+        }else if textField.superview == lastNameView{
+            self.userLastName = textField.text
         }else{
             self.userEmail = textField.text
         }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField.superview == nameView{
-            self.userName = textField.text
+        if textField.superview == firstNameView{
+            self.userFirstName = textField.text
+        }else if textField.superview == lastNameView{
+            self.userLastName = textField.text
         }else{
             self.userEmail = textField.text
         }

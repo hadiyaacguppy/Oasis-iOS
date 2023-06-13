@@ -110,7 +110,7 @@ class OTPVerificationViewController: BaseViewController {
         lbl.attributedText = attributedString
         
         lbl.onTap {
-            
+            self.subscribeForSendingOTP()
         }
         return lbl
     }()
@@ -146,6 +146,7 @@ extension OTPVerificationViewController{
         subscribeToOTPCompletion()
         subscribeToPinValue()
         setupUI()
+        subscribeForSendingOTP()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -416,12 +417,11 @@ extension OTPVerificationViewController : UITextFieldDelegate {
                 }
                 if textField == fifthOTPTextfield {
                     fifthOTPTextfield.resignFirstResponder()
-                    guard RegistrationDataManager.current.userEmail != nil else {
-                        //Testing
-                        self.router?.pushToCreatePassword()
-                        return true
-                    }
-                    subscribeForSendingOTP()
+//                    guard RegistrationDataManager.current.userEmail != nil else {
+//                        //Testing
+//                        self.router?.pushToCreatePassword()
+//                        return true
+//                    }
                 }
                 textField.text = string
                 return false

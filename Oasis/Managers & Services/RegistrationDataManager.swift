@@ -20,7 +20,9 @@ class RegistrationDataManager {
     var userMobileNumber : String?
     var userPassword : String?
     var userFile : String?
+    var isFemale : Bool?
     
+    var backButtonShouldBeBlack : Bool = false
 }
 
 
