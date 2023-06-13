@@ -89,7 +89,6 @@ extension ChildrenViewController{
     }
     
     private func addButton(){
-        
         addChildrenButtonView = DottedButtonView(actionName: "+ Add new child", viewHeight: 62, viewWidth: 336, viewRadius: 48, numberOflines: 1, innerImage: nil)
         addChildrenButtonView.autoLayout()
         

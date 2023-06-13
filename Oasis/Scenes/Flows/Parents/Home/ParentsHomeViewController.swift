@@ -77,6 +77,13 @@ class ParentsHomeViewController: BaseViewController {
         return lbl
     }()
     
+    lazy var topUpView : BaseUIView = {
+        let view = BaseUIView()
+        view.backgroundColor = .clear
+        view.autoLayout()
+        return view
+    }()
+    
     lazy var actionsContainerView : BaseUIView = {
         let view = BaseUIView()
         view.backgroundColor = .clear
@@ -283,6 +290,21 @@ extension ParentsHomeViewController{
         
         balanceContainerView.addSubviews(balanceStackView)
         
+        let topUpLabel = BaseLabel()
+        topUpLabel.style = .init(font: MainFont.bold.with(size: 18), color: .white)
+        topUpLabel.text = "+ Top up".localized
+        topUpLabel.autoLayout()
+        
+        let underline = BaseUIView()
+        underline.backgroundColor = .white
+        underline.autoLayout()
+        
+        balanceContainerView.addSubview(topUpView)
+        
+        topUpView.addSubview(topUpLabel)
+        topUpView.addSubview(underline)
+        
+        
         NSLayoutConstraint.activate([
             balanceContainerView.heightAnchor.constraint(equalToConstant: 132),
             
@@ -290,6 +312,22 @@ extension ParentsHomeViewController{
             //balanceStackView.bottomAnchor.constraint(equalTo: balanceContainerView.bottomAnchor),
             balanceStackView.trailingAnchor.constraint(equalTo: balanceContainerView.trailingAnchor),
             balanceStackView.leadingAnchor.constraint(equalTo: balanceContainerView.leadingAnchor, constant: 21),
+            
+            topUpView.trailingAnchor.constraint(equalTo: balanceContainerView.trailingAnchor, constant: -26),
+            topUpView.topAnchor.constraint(equalTo: balanceContainerView.topAnchor, constant: 20),
+            topUpView.widthAnchor.constraint(equalToConstant: 80),
+            
+            topUpLabel.leadingAnchor.constraint(equalTo: topUpView.leadingAnchor),
+            topUpLabel.trailingAnchor.constraint(equalTo: topUpView.trailingAnchor),
+            topUpLabel.topAnchor.constraint(equalTo: topUpView.topAnchor),
+            topUpLabel.heightAnchor.constraint(equalToConstant: 22),
+            
+            underline.leadingAnchor.constraint(equalTo: topUpView.leadingAnchor),
+            underline.trailingAnchor.constraint(equalTo: topUpView.trailingAnchor),
+            underline.trailingAnchor.constraint(equalTo: topUpView.trailingAnchor),
+
+
+            
         ])
         
         //balanceStackView.heightAnchor.constraint(equalToConstant: 85).isActive = true
@@ -748,7 +786,7 @@ extension ParentsHomeViewController{
 extension ParentsHomeViewController{
     private func setupNavBarAppearance(){
         statusBarStyle = .lightContent
-        navigationBarStyle = .appDefault
+        navigationBarStyle = .transparent
         
         let rightNotificationsBarButton = UIBarButtonItem(image: R.image.notificationBlackIcon()!.withRenderingMode(.alwaysOriginal),
                                                           style: .plain,
