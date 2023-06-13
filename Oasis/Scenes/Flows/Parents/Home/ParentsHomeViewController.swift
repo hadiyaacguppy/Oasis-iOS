@@ -955,7 +955,7 @@ extension ParentsHomeViewController {
     
     private func setupPay(){
         let img = BaseImageView(frame: .zero)
-        img.image = R.image.sendMoneyIcon()!
+        img.image = R.image.payIcon()!
         img.autoLayout()
         img.contentMode = .scaleAspectFit
         

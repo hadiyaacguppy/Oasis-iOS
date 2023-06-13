@@ -42,7 +42,7 @@ class ChildDetailsViewController: BaseViewController {
         stackView.distribution = .fillEqually
         stackView.spacing = 8
         stackView.autoLayout()
-        stackView.backgroundColor = Constants.Colors.appGrey
+        stackView.backgroundColor = .clear//Constants.Colors.appGrey
         return stackView
     }()
     

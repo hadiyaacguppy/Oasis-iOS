@@ -19,7 +19,7 @@ protocol BaseController {
     func display(errorMessage msg : String )
     
     func dismissProgress()
-       
+    
     func addBackButton()
     
     func addDismissButton()
@@ -31,7 +31,7 @@ protocol BaseController {
                              image : UIImage?)
     
     func logEvent(withName name : String ,andParameters params : [String:Any]?  )
-
+    
     var didTapOnRetryPlaceHolderButton : (() -> ())?{ get }
     var didTapOnPlaceHolderView : (() -> ())?{ get }
 }
@@ -80,7 +80,7 @@ extension BaseController  where Self: UIViewController{
             }else{
                 view.image(image)
             }
-                        
+            
             view.isTouchAllowed(true)
             view.dataSetBackgroundColor(Constants.PlaceHolderView.Appearance.viewColor)
             
@@ -95,19 +95,19 @@ extension BaseController  where Self: UIViewController{
         }
         
     }
-        
+    
     func preparePlaceHolderView(withErrorViewModel errorViewModel : ErrorViewModel){
         switch errorViewModel.code{
         case .apiError(_):
             self.showPlaceHolderView(withAppearanceType: .backendError,
-                                        title: errorViewModel.message)
+                                     title: errorViewModel.message)
         case .noInternetConnection:
             self.showPlaceHolderView(withAppearanceType: .offline,
-                                        title: Constants.PlaceHolderView.Texts.offline)
+                                     title: Constants.PlaceHolderView.Texts.offline)
             
         default:
             self.showPlaceHolderView(withAppearanceType: .networkError,
-                                        title: errorViewModel.message)
+                                     title: errorViewModel.message)
         }
     }
     
@@ -115,12 +115,17 @@ extension BaseController  where Self: UIViewController{
         AnalyticsManager.shared.logEvent(withName: name, andParameters: params)
     }
     
-}
-
-extension BaseController {
-    
     func showLoadingProgress(){
-        PopupService.showLoadingNotifation(text: "Loading".localized)
+        var spinner = UIActivityIndicatorView.init(style: .large)
+        spinner.color = .white
+        spinner.autoLayout()
+        view.addSubview(spinner)
+        
+        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        
+        spinner.startAnimating()
+        // PopupService.showLoadingNotifation(text: "Loading".localized)
     }
     
     func display(successMessage msg : String){

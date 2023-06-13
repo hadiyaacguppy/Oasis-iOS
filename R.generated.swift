@@ -692,8 +692,6 @@ struct R: Rswift.Validatable {
     static let nounMusicLibrary49708442 = Rswift.ImageResource(bundle: R.hostingBundle, name: "noun-music-library-4970844 2")
     /// Image `noun-piggy-bank-1281697 2`.
     static let nounPiggyBank12816972 = Rswift.ImageResource(bundle: R.hostingBundle, name: "noun-piggy-bank-1281697 2")
-    /// Image `noun-scan-3887954`.
-    static let nounScan3887954 = Rswift.ImageResource(bundle: R.hostingBundle, name: "noun-scan-3887954")
     /// Image `noun-smartphone-5510156 2`.
     static let nounSmartphone55101562 = Rswift.ImageResource(bundle: R.hostingBundle, name: "noun-smartphone-5510156 2")
     /// Image `noun-wifi-362213 2`.
@@ -714,6 +712,8 @@ struct R: Rswift.Validatable {
     static let parentPic = Rswift.ImageResource(bundle: R.hostingBundle, name: "parentPic")
     /// Image `password icon`.
     static let passwordIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "password icon")
+    /// Image `payIcon`.
+    static let payIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "payIcon")
     /// Image `photo 1`.
     static let photo1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "photo 1")
     /// Image `photo 2`.
@@ -1388,13 +1388,6 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "noun-scan-3887954", bundle: ..., traitCollection: ...)`
-    static func nounScan3887954(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.nounScan3887954, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "noun-smartphone-5510156 2", bundle: ..., traitCollection: ...)`
     static func nounSmartphone55101562(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.nounSmartphone55101562, compatibleWith: traitCollection)
@@ -1461,6 +1454,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "password icon", bundle: ..., traitCollection: ...)`
     static func passwordIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.passwordIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "payIcon", bundle: ..., traitCollection: ...)`
+    static func payIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.payIcon, compatibleWith: traitCollection)
     }
     #endif
 

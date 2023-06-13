@@ -353,7 +353,7 @@ extension PaymentsViewController{
 extension PaymentsViewController {
     private func setupQRUI(){
         let img = BaseImageView(frame: .zero)
-        img.image = R.image.nounScan3887954()!
+        img.image = R.image.payIcon()!
         img.autoLayout()
         img.contentMode = .scaleAspectFit
         

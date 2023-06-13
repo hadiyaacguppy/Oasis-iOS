@@ -212,6 +212,12 @@ extension ChildrenViewController{
         vw1.onTap {
             self.router?.pushToChildDetailsVC()
         }
+        vw2.onTap {
+            self.router?.pushToChildDetailsVC()
+        }
+        vw3.onTap {
+            self.router?.pushToChildDetailsVC()
+        }
     }
 }
 
