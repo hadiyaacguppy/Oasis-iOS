@@ -23,7 +23,7 @@ class addGoalViewController: BaseViewController {
     lazy var topTitleLabel :  BaseLabel = {
         let lbl = BaseLabel()
         
-        lbl.style = .init(font: MainFont.bold.with(size: 27), color: .black)
+        lbl.style = .init(font: MainFont.medium.with(size: 27), color: .black)
         lbl.text = "Add a Goal".localized
         lbl.autoLayout()
         return lbl
@@ -55,18 +55,10 @@ class addGoalViewController: BaseViewController {
         return lbl
     }()
     
-    lazy var uploadPictureButtonView : BaseUIView = {
-        let view = BaseUIView()
-        view.autoLayout()
-        view.roundCorners = .all(radius: 35)
-        view.shadow = .active(with: .init(color: .black, opacity: 0.23, radius: 6))
-        view.backgroundColor = .init(red: 248, green: 250, blue: 251, alpha: 1)
-        return view
-    }()
-    
     lazy var goalButton : OasisAquaButton = {
         let btn = OasisAquaButton()
         btn.setTitle("Add Goal", for: .normal)
+        btn.autoLayout()
         return btn
     }()
     
@@ -85,6 +77,13 @@ class addGoalViewController: BaseViewController {
         return lbl
     }()
     
+    lazy var dateSelectedLabel : BaseLabel = {
+        let lbl = BaseLabel()
+        lbl.autoLayout()
+        lbl.style = .init(font: MainFont.medium.with(size: 16), color: .black)
+        return lbl
+    }()
+    
     lazy var calendarImageView : BaseImageView = {
         let imgView = BaseImageView(frame: .zero)
         imgView.contentMode = .scaleAspectFit
@@ -94,8 +93,8 @@ class addGoalViewController: BaseViewController {
         return imgView
     }()
 
-    var goalInfo1View : TitleWithTextFieldView!
-    var goalInfo2View : AmountWithCurrencyView!
+    var goalNameView : TitleWithTextFieldView!
+    var goalAmountView : AmountWithCurrencyView!
     
     var currencies = ["LBP", "$"]
     var currencySelected : String = "LBP"
@@ -104,7 +103,8 @@ class addGoalViewController: BaseViewController {
     
     var chosenEndDate : Date = Date()
     var dateSelected : String?
-
+    
+    var uploadPictureButtonView : DottedButtonView!
 }
 
 //MARK:- View Lifecycle
@@ -119,7 +119,6 @@ extension addGoalViewController{
         super.viewDidLoad()
         //        showPlaceHolderView(withAppearanceType: .loading,
         //                            title: Constants.PlaceHolderView.Texts.wait)
-        self.hidesBottomBarWhenPushed = true
         setupNavBarAppearance()
         setupRetryFetchingCallBack()
         
@@ -129,19 +128,16 @@ extension addGoalViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavBarAppearance()
-        self.hidesBottomBarWhenPushed = true
-        //self.hidesBottomBarWhenPushed = true
+        
     }
     
     private func setupUI(){
-        
-        //addScrollView()
-        addTitle()
-        addGoalButton()
+        addScrollView()
         addMainStackView()
-        addUploadPictureView()
+        addtitleAndButton()
         addGoalInfoViews()
         addEndDateView()
+        addGoalButton()
     }
     
     //Scroll View
@@ -156,46 +152,37 @@ extension addGoalViewController{
         ])
     }
     
-    private func addTitle(){
-        
-        view.addSubviews(topTitleLabel)
+    private func addMainStackView(){
+        scrollView.addSubview(stackView)
         
         NSLayoutConstraint.activate([
-            topTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            topTitleLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 37),
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 30),
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -40)
         ])
-        
     }
     
-    private func addGoalButton(){
-        view.addSubview(goalButton)
+    private func addtitleAndButton(){
+        uploadPictureButtonView = DottedButtonView(actionName: "Upload a picture".localized, viewHeight: 62, viewWidth: 336, viewRadius: 48, numberOflines: 1, innerImage: R.image.uploadAPictureIcon())
+        uploadPictureButtonView.autoLayout()
         
+        stackView.addArrangedSubview(topTitleLabel)
+        stackView.addArrangedSubview(uploadPictureButtonView)
+
         NSLayoutConstraint.activate([
-            goalButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -47),
-            goalButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 47),
-            goalButton.heightAnchor.constraint(equalToConstant: 62),
-            goalButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -54)
+        
+            topTitleLabel.heightAnchor.constraint(equalToConstant: 35),
+            uploadPictureButtonView.heightAnchor.constraint(equalToConstant: 62)
         ])
         
-        goalButton.onTap {
-            self.validateFields()
+        uploadPictureButtonView.onTap {
         }
     }
     
-    private func addMainStackView(){
-        view.addSubview(stackView)
-        
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: topTitleLabel.bottomAnchor, constant: 30),
-            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            //stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            //stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -40)
-        ])
-    }
-    
     private func addGoalInfoViews(){
-         goalInfo1View = TitleWithTextFieldView.init(requestTitle: "Goal’s name".localized,
+         goalNameView = TitleWithTextFieldView.init(requestTitle: "Goal’s name".localized,
                                                     textsColor: .black,
                                                     usertext: "",
                                                     textSize: 22,
@@ -204,46 +191,49 @@ extension addGoalViewController{
                                                     placholderText: "What’s your goal?".localized,
                                                      frame: .zero)
 
-         goalInfo2View = AmountWithCurrencyView.init(amountPlaceHolder: 0.0,
+         goalAmountView = AmountWithCurrencyView.init(amountPlaceHolder: 0.0,
                                                  amount: 0,
                                                  currency: "LBP",
                                                  titleLbl: "Amount",
                                                      frame: .zero)
         
-        stackView.addArrangedSubview(goalInfo1View)
-        stackView.addArrangedSubview(goalInfo2View)
+        stackView.addArrangedSubview(goalNameView)
+        stackView.addArrangedSubview(goalAmountView)
         
-        goalInfo1View.anyTextField.delegate = self
-        goalInfo2View.amountTextField.delegate = self
+        goalNameView.anyTextField.delegate = self
+        goalAmountView.amountTextField.delegate = self
         
         NSLayoutConstraint.activate([
-            goalInfo1View.heightAnchor.constraint(equalToConstant: 160),
-            goalInfo2View.heightAnchor.constraint(equalToConstant: 160)
+            goalNameView.heightAnchor.constraint(equalToConstant: 160),
+            goalAmountView.heightAnchor.constraint(equalToConstant: 160)
         ])
 
-        goalInfo2View.currencyPicker.delegate = self
-        goalInfo2View.currencyPicker.dataSource = self
+        goalAmountView.currencyPicker.delegate = self
+        goalAmountView.currencyPicker.dataSource = self
         
     }
     
-    //Add End Date label and image
     private func addEndDateView() {
         stackView.addArrangedSubview(endDateView)
         
         endDateView.addSubview(calendarImageView)
         endDateView.addSubview(enddateLabel)
+        endDateView.addSubview(dateSelectedLabel)
     
         NSLayoutConstraint.activate([
-            endDateView.heightAnchor.constraint(equalToConstant: 50),
+            endDateView.heightAnchor.constraint(equalToConstant: 100),
             
             enddateLabel.leadingAnchor.constraint(equalTo: endDateView.leadingAnchor, constant: 10),
-            enddateLabel.centerYAnchor.constraint(equalTo: endDateView.centerYAnchor),
+            enddateLabel.topAnchor.constraint(equalTo: endDateView.topAnchor, constant: 20),
             enddateLabel.heightAnchor.constraint(equalToConstant: 40),
+            
+            dateSelectedLabel.leadingAnchor.constraint(equalTo: endDateView.leadingAnchor, constant: 15),
+            dateSelectedLabel.topAnchor.constraint(equalTo: enddateLabel.bottomAnchor, constant: 5),
             
             calendarImageView.trailingAnchor.constraint(equalTo: endDateView.trailingAnchor, constant: -10),
             calendarImageView.heightAnchor.constraint(equalToConstant: 35),
             calendarImageView.widthAnchor.constraint(equalToConstant: 35),
-            calendarImageView.centerYAnchor.constraint(equalTo: endDateView.centerYAnchor),
+            calendarImageView.centerYAnchor.constraint(equalTo: enddateLabel.centerYAnchor),
             
         ])
         
@@ -252,41 +242,17 @@ extension addGoalViewController{
         }
     }
     
-    //Add upload picture View
-    private func addUploadPictureView(){
+    private func addGoalButton(){
+        stackView.addArrangedSubview(goalButton)
         
-        //goalInfoStackView.addArrangedSubview(pictureTitleLabel)
-        stackView.addArrangedSubview(uploadPictureButtonView)
-        
-        let iconImg = BaseImageView(frame: .zero)
-        iconImg.contentMode = .scaleAspectFit
-        iconImg.autoLayout()
-        iconImg.image = R.image.uploadAPictureIcon()!
-        
-        
-        let lbl = BaseLabel()
-        lbl.autoLayout()
-        lbl.style = .init(font: MainFont.medium.with(size: 16), color: .black)
-        lbl.text = "Upload a picture".localized
-        
-        uploadPictureButtonView.addSubview(iconImg)
-        uploadPictureButtonView.addSubview(lbl)
-        
-        NSLayoutConstraint.activate([
-            uploadPictureButtonView.heightAnchor.constraint(equalToConstant: 70),
-            
-            iconImg.leadingAnchor.constraint(equalTo: uploadPictureButtonView.leadingAnchor, constant: 37),
-            iconImg.centerYAnchor.constraint(equalTo: uploadPictureButtonView.centerYAnchor),
-            iconImg.heightAnchor.constraint(equalToConstant: 20),
-            iconImg.widthAnchor.constraint(equalToConstant: 20),
-            
-            lbl.leadingAnchor.constraint(equalTo: iconImg.trailingAnchor, constant: 25),
-            lbl.centerYAnchor.constraint(equalTo: uploadPictureButtonView.centerYAnchor)
-        ])
+        goalButton.heightAnchor.constraint(equalToConstant: 62).isActive = true
+
+        goalButton.onTap {
+            self.validateFields()
+        }
     }
     
-    
-    //Add Date Picker
+    //Date Picker
     private func showDatePicker(){
         let datepicker = DatePickerDialog(textColor: .black,
                                           buttonColor: Constants.Colors.aquaMarine,
@@ -297,6 +263,7 @@ extension addGoalViewController{
             self.calendarImageView.resignFirstResponder()
              guard let cDate = chosenDate else {return}
             self.dateSelected = (Date().getStringFromTimeStamp(Int(cDate.timeIntervalSince1970)) as? String)
+             self.dateSelectedLabel.text = self.dateSelected
         }
     }
     
@@ -333,7 +300,7 @@ extension addGoalViewController{
 
 extension addGoalViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField.superview == goalInfo1View{
+        if textField.superview == goalNameView{
             self.goalName = textField.text
         }else{
             self.goalAmount = textField.text//.notNilNorEmpty ? Int(textField.text!) : 0
@@ -343,7 +310,7 @@ extension addGoalViewController: UITextFieldDelegate{
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField.superview == goalInfo1View{
+        if textField.superview == goalNameView{
             self.goalName = textField.text
         }else{
             self.goalAmount = textField.text//.notNilNorEmpty ? Int(textField.text!) : 0
@@ -370,7 +337,7 @@ extension addGoalViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let currency = currencies[row]
         currencySelected = currency
-        goalInfo2View.currencyLabel.text = currencySelected
+        goalAmountView.currencyLabel.text = currencySelected
         pickerView.isHidden = true
     }
 
@@ -396,7 +363,7 @@ extension addGoalViewController{
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] _ in
                 self!.display(successMessage: "Goad is Added Successfully")
-                self!.navigationController?.popViewController(animated: true)
+                self!.router?.popView()
                 }, onError: { [weak self](error) in
                     self!.display(errorMessage: (error as! ErrorViewModel).message)
             })

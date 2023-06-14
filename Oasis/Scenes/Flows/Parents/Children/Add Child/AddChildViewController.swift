@@ -69,9 +69,6 @@ class AddChildViewController: BaseViewController {
         imgView.image = R.image.longWhiteArrow()!
         imgView.contentMode = .scaleAspectFit
         imgView.autoLayout()
-        imgView.onTap {
-            self.validateFields()
-        }
         return imgView
     }()
     
@@ -287,7 +284,7 @@ extension AddChildViewController{
         ])
         
         nextImageView.onTap {
-            self.router?.pushToAssignNewTaskController()
+            self.validateFields()
         }
     }
     
@@ -361,6 +358,7 @@ extension AddChildViewController{
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] _ in
                 self!.display(successMessage: "Child is added successfully")
+                self?.router?.pushToAddTaskController()
                 }, onError: { [weak self](error) in
                     self!.display(errorMessage: (error as! ErrorViewModel).message)
             })

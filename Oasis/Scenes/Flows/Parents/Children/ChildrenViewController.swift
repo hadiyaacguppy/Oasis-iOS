@@ -44,6 +44,7 @@ class ChildrenViewController: BaseViewController {
     }()
     var isParent : Bool = true
     var addChildrenButtonView : DottedButtonView!
+    var childrenViewModelArray = [ChildrenModels.ViewModels.Children]()
 }
 
 //MARK:- View Lifecycle
@@ -255,8 +256,9 @@ extension ChildrenViewController{
     private func subscribeForGetChildren(){
         self.interactor?.getchildren()
             .observeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { [weak self] _ in
+            .subscribe(onSuccess: { [weak self] (childrenAray) in
                 self!.display(successMessage: "Done")
+                self?.childrenViewModelArray = childrenAray
                 }, onError: { [weak self](error) in
                     self!.display(errorMessage: (error as! ErrorViewModel).message)
             })

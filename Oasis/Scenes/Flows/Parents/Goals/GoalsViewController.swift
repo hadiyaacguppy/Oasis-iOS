@@ -25,14 +25,6 @@ class GoalsViewController: BaseViewController {
         return lbl
     }()
     
-    lazy var addGoalButton : BaseButton = {
-        let btn = BaseButton()
-        btn.setTitle("+ Add new goal", for: .normal)
-        btn.style = .init(titleFont: MainFont.medium.with(size: 20), titleColor: .black, backgroundColor: .white)
-        btn.border = .value(color: .black, width: 1)//change later
-        return btn
-    }()
-    
     lazy var scrollView: UIScrollView = {
        let scrollView = UIScrollView()
        scrollView.autoLayout()
@@ -66,9 +58,10 @@ class GoalsViewController: BaseViewController {
         return collectionView
     }()
     
-    //View Models
+    var addGoalButtonView : DottedButtonView!
     var goalsViewModelArray = [GoalsModels.ViewModels.Goal(id: 1, Title: "Travel to France", amount: 3000, saved: 1000, endDate: "2024 08 24", goalImage: R.image.photo1.name), GoalsModels.ViewModels.Goal(id: 1, Title: "Buy a Car", amount: 10000, saved: 4000, endDate: "2024 08 24", goalImage: R.image.photo2.name)]//[GoalsModels.ViewModels.Goal]()
     }
+
 
 //MARK:- View Lifecycle
 extension GoalsViewController{
@@ -92,6 +85,8 @@ extension GoalsViewController{
         super.viewWillAppear(animated)
         setupNavBarAppearance()
         self.tabBarController?.tabBar.isHidden = false
+        subscribeForGetGoals()
+
     }
     
     private func setupUI(){
@@ -125,8 +120,21 @@ extension GoalsViewController{
     }
     
     private func addtitleAndButton(){
+        addGoalButtonView = DottedButtonView(actionName: "+ Add new goal".localized, viewHeight: 62, viewWidth: 336, viewRadius: 48, numberOflines: 1, innerImage: nil)
+        addGoalButtonView.autoLayout()
+        
         stackView.addArrangedSubview(topTitleLabel)
-        stackView.addArrangedSubview(addGoalButton)
+        stackView.addArrangedSubview(addGoalButtonView)
+
+        NSLayoutConstraint.activate([
+        
+            topTitleLabel.heightAnchor.constraint(equalToConstant: 35),
+            addGoalButtonView.heightAnchor.constraint(equalToConstant: 62)
+        ])
+        
+        addGoalButtonView.onTap {
+            self.router?.pushToAddGoalController()
+        }
     }
     private func addGoalsCollectionView(){
         stackView.addArrangedSubview(goalsCollectionView)
@@ -161,7 +169,7 @@ extension GoalsViewController{
         containerView.addSubview(subtitleLabel)
         
         NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: addGoalButton.bottomAnchor, constant: 20),
+            containerView.topAnchor.constraint(equalTo: addGoalButtonView.bottomAnchor, constant: 20),
             containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             containerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100),

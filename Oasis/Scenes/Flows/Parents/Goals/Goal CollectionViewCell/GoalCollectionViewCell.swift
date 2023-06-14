@@ -13,7 +13,7 @@ class GoalCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var goalImageView: BaseImageView!{
         didSet{
             goalImageView.contentMode = .scaleAspectFill
-            goalImageView.roundCorners = .all(radius: 14)
+            goalImageView.roundCorners = .top(radius: 14)
 //            goalImageView.roundCorners = .topLeft(radius: 14)
 //            goalImageView.roundCorners = .topRight(radius: 14)
             
