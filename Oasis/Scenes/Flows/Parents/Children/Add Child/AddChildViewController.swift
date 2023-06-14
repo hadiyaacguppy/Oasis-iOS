@@ -48,19 +48,11 @@ class AddChildViewController: BaseViewController {
     lazy var pictureTitleLabel : BaseLabel = {
         let lbl = BaseLabel()
         lbl.text = "Picture"
-        lbl.style = .init(font: MainFont.medium.with(size: 22), color: .black)
+        lbl.style = .init(font: MainFont.medium.with(size: 22), color: .white)
         lbl.autoLayout()
         return lbl
     }()
     
-    lazy var uploadPictureButtonView : BaseUIView = {
-        let view = BaseUIView()
-        view.autoLayout()
-        view.roundCorners = .all(radius: 35)
-        view.shadow = .active(with: .init(color: .black, opacity: 0.23, radius: 6))
-        view.backgroundColor = .init(red: 248, green: 250, blue: 251, alpha: 1)
-        return view
-    }()
     
     lazy var picturesStackView : UIStackView = {
         let stackView = UIStackView()
@@ -72,21 +64,48 @@ class AddChildViewController: BaseViewController {
         return stackView
     }()
     
-    lazy var nextButton : OasisGradientButton = {
-        let btn = OasisGradientButton()
-        btn.setTitle("Next >", for: .normal)
-        return btn
+    lazy var nextImageView : BaseImageView = {
+        let imgView = BaseImageView(frame: .zero)
+        imgView.image = R.image.longWhiteArrow()!
+        imgView.contentMode = .scaleAspectFit
+        imgView.autoLayout()
+        imgView.onTap {
+            self.validateFields()
+        }
+        return imgView
     }()
     
     lazy var infoBlueView : BaseUIView = {
         let view = BaseUIView()
         view.autoLayout()
         view.backgroundColor = Constants.Colors.appViolet
-        view.roundCorners = .top(radius: 24)
+        view.roundCorners = .top(radius: 30)
         return view
     }()
     
-    var uploadPictureView : UIView!
+    lazy var fillInfoLabel : BaseLabel = {
+        let lbl = BaseLabel()
+        lbl.text = "Or fill the info below".localized
+        lbl.style = .init(font: MainFont.medium.with(size: 16), color: .white)
+        lbl.autoLayout()
+        return lbl
+    }()
+    
+    lazy var uploadPictureView : UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
+        view.autoLayout()
+        return view
+    }()
+    
+    var firstNameView : TitleWithTextFieldView!
+    var lastNameView : TitleWithTextFieldView!
+    var emailView : TitleWithTextFieldView!
+
+    var childEmail : String?
+    var childFirstName : String?
+    var childLastName : String?
+    
     var scanCodeDottedView : DottedButtonView!
 }
 
@@ -113,45 +132,40 @@ extension AddChildViewController{
     }
     
     private func setupUI(){
-        addTitle()
-        addScanCodeButton()
         addInfoBlueView()
         addScrollView()
+        addTitleAndScanCodeButton()
         addGeneralStackView()
+        addChildInfoViews()
+        createPicturesView(pictureView: uploadPictureView, image: R.image.cameraIcon()!, title: "Upload a \n Picture".localized)
         addNextButton()
     }
     
-    private func addTitle(){
-        view.addSubview(topTitleLabel)
-        NSLayoutConstraint.activate([
-            topTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
-            topTitleLabel.heightAnchor.constraint(equalToConstant: 35),
-            topTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 41)
-        ])
-    }
-    
-    private func addScanCodeButton(){
+    private func addTitleAndScanCodeButton(){
+        stackView.addArrangedSubview(topTitleLabel)
+
         scanCodeDottedView = DottedButtonView(actionName: "Scan Qr Code", viewHeight: 62, viewWidth: 336, viewRadius: 48, numberOflines: 1, innerImage: R.image.qrCode())
         
-        view.addSubview(scanCodeDottedView)
+        stackView.addArrangedSubview(scanCodeDottedView)
         
-        NSLayoutConstraint.activate([
-            scanCodeDottedView.topAnchor.constraint(equalTo: topTitleLabel.bottomAnchor, constant: 20),
-            scanCodeDottedView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 27)
-        ])
-        
+//        NSLayoutConstraint.activate([
+//            scanCodeDottedView.topAnchor.constraint(equalTo: topTitleLabel.bottomAnchor, constant: 20),
+//            scanCodeDottedView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 27),
+//            scanCodeDottedView.heightAnchor.constraint(equalToConstant: 62)
+//        ])
+//
         scanCodeDottedView.onTap {
         }
     }
-
+    
     private func addInfoBlueView(){
         view.addSubview(infoBlueView)
         
         NSLayoutConstraint.activate([
-            infoBlueView.topAnchor.constraint(equalTo: scanCodeDottedView.bottomAnchor, constant: 35),
-            infoBlueView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            infoBlueView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            infoBlueView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            infoBlueView.topAnchor.constraint(equalTo: view.topAnchor, constant: 265),
+            infoBlueView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            infoBlueView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            infoBlueView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
     
@@ -159,18 +173,18 @@ extension AddChildViewController{
         infoBlueView.addSubview(scrollView)
         
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: infoBlueView.topAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: infoBlueView.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: infoBlueView.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: infoBlueView.bottomAnchor)
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
     
     private func addGeneralStackView(){
         scrollView.addSubview(stackView)
-        
+
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: topTitleLabel.bottomAnchor, constant: 31),
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 31),
             stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
             stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
@@ -181,76 +195,118 @@ extension AddChildViewController{
     }
     
     private func addChildInfoViews(){
-        let childInfo1 = TitleWithTextFieldView.init(requestTitle: "What’s your child’s first name?",
-                                                     placeHolderTxt: "First Name",
-                                                     usertext: "",
-                                                     isAgeRequest: false,
-                                                     hasEditView: false)
         
-        let childInfo2 = TitleWithTextFieldView.init(requestTitle: "What’s your child’s last name?",
-                                                     placeHolderTxt: "Last Name",
-                                                     usertext: "",
-                                                     isAgeRequest: false,
-                                                     hasEditView: false)
+         firstNameView = TitleWithTextFieldView.init(requestTitle: "What’s your child’s first name?",
+                                                  textsColor: .white,
+                                                  usertext: "",
+                                                  textSize: 22,
+                                                  isAgeRequest: false,
+                                                  labelHeight: 70,
+                                                  placholderText: "First Name",
+                                                  frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width - 40, height: 160))
+
+
+         lastNameView = TitleWithTextFieldView.init(requestTitle: "What’s your child’s last name?",
+                                                   textsColor: .white,
+                                                   usertext: "",
+                                                   textSize: 22,
+                                                   isAgeRequest: false,
+                                                   labelHeight: 70,
+                                                   placholderText: "Last Name",
+                                                   frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width - 40, height: 160))
         
-        let childInfo3 = TitleWithTextFieldView.init(requestTitle: "What’s your child’s email?",
-                                                     placeHolderTxt: "Email",
-                                                     usertext: "",
-                                                     isAgeRequest: false,
-                                                     hasEditView: false)
-        stackView.addArrangedSubview(childInfo1)
-        stackView.addArrangedSubview(childInfo2)
-        stackView.addArrangedSubview(childInfo3)
-        
-        NSLayoutConstraint.activate([
-            childInfo1.heightAnchor.constraint(equalToConstant: 160),
-            childInfo2.heightAnchor.constraint(equalToConstant: 160),
-            childInfo3.heightAnchor.constraint(equalToConstant: 160),
-        ])
-    }
-    
-    private func addPicturesStackview(){
+         emailView = TitleWithTextFieldView.init(requestTitle: "What’s your child’s email?",
+                                                  textsColor: .white,
+                                                  usertext: "",
+                                                  textSize: 22,
+                                                  isAgeRequest: false,
+                                                  labelHeight: 70,
+                                                  placholderText: "Email",
+                                                  frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width - 40, height: 160))
+       
+        stackView.addArrangedSubview(fillInfoLabel)
+        stackView.addArrangedSubview(firstNameView)
+        stackView.addArrangedSubview(lastNameView)
+        stackView.addArrangedSubview(emailView)
         stackView.addArrangedSubview(pictureTitleLabel)
         stackView.addArrangedSubview(picturesStackView)
         
+        firstNameView.anyTextField.delegate = self
+        lastNameView.anyTextField.delegate = self
+        emailView.anyTextField.delegate = self
+
+        NSLayoutConstraint.activate([
+            fillInfoLabel.heightAnchor.constraint(equalToConstant: 100),
+            
+            firstNameView.heightAnchor.constraint(equalToConstant: 160),
+            lastNameView.heightAnchor.constraint(equalToConstant: 160),
+            emailView.heightAnchor.constraint(equalToConstant: 160)
+        ])
     }
     
-    private func picturesView(view : UIView){
-        uploadPictureView = UIView()
-        uploadPictureView.backgroundColor = .clear
-        uploadPictureView.autoLayout()
-        
+    private func createPicturesView(pictureView : UIView, image : UIImage, title : String){
         
         let iconImg = BaseImageView(frame: .zero)
         iconImg.contentMode = .scaleAspectFit
-        iconImg.image = R.image.uploadAPictureIcon()!
+        iconImg.image = image
         iconImg.autoLayout()
 
         
         let lbl = BaseLabel()
         lbl.style = .init(font: MainFont.medium.with(size: 14), color: .white)
-        lbl.text = "Upload a picture".localized
+        lbl.numberOfLines = 2
+        lbl.text = title
         lbl.autoLayout()
         
+        picturesStackView.addArrangedSubview(pictureView)
+        pictureView.addSubview(iconImg)
+        pictureView.addSubview(lbl)
+        
         NSLayoutConstraint.activate([
-            uploadPictureView.widthAnchor.constraint(equalToConstant: 102),
+            pictureView.widthAnchor.constraint(equalToConstant: 102),
             
+            iconImg.topAnchor.constraint(equalTo: pictureView.topAnchor),
+            iconImg.widthAnchor.constraint(equalToConstant: 50),
+            iconImg.heightAnchor.constraint(equalToConstant: 50),
+            
+            lbl.topAnchor.constraint(equalTo: iconImg.bottomAnchor, constant: 5),
+            lbl.leadingAnchor.constraint(equalTo: pictureView.leadingAnchor),
+            lbl.trailingAnchor.constraint(equalTo: pictureView.trailingAnchor),
+            lbl.bottomAnchor.constraint(equalTo: pictureView.bottomAnchor)
         ])
 
     }
     private func addNextButton(){
-        view.addSubview(nextButton)
+        view.addSubview(nextImageView)
         
         NSLayoutConstraint.activate([
-            nextButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -30),
-            nextButton.widthAnchor.constraint(equalToConstant: 140),
-            nextButton.heightAnchor.constraint(equalToConstant: 58),
-            nextButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -60)
+            nextImageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -30),
+            nextImageView.widthAnchor.constraint(equalToConstant: 140),
+            nextImageView.heightAnchor.constraint(equalToConstant: 58),
+            nextImageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -60)
         ])
         
-        nextButton.onTap {
+        nextImageView.onTap {
             self.router?.pushToAssignNewTaskController()
         }
+    }
+    
+    private func validateFields(){
+        guard childFirstName.notNilNorEmpty else {
+            showSimpleAlertView("", message: "Please fill in your First Name", withCompletionHandler: nil)
+            return
+        }
+        guard childLastName.notNilNorEmpty else {
+            showSimpleAlertView("", message: "Please fill in your Last Name", withCompletionHandler: nil)
+            return
+        }
+        guard childEmail.notNilNorEmpty else {
+            showSimpleAlertView("", message: "Please fill in your Email", withCompletionHandler: nil)
+            return
+        }
+        
+        subscribeForAddChild()
+        
     }
     
 }
@@ -260,6 +316,30 @@ extension AddChildViewController{
     private func setupNavBarAppearance(){
         statusBarStyle = .default
         navigationBarStyle = .transparent
+    }
+}
+
+extension AddChildViewController : UITextFieldDelegate{
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.superview == firstNameView{
+            self.childFirstName = textField.text
+        }else if textField.superview == lastNameView{
+            self.childLastName = textField.text
+        }else{
+            self.childEmail = textField.text
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.superview == firstNameView{
+            self.childFirstName = textField.text
+        }else if textField.superview == lastNameView{
+            self.childLastName = textField.text
+        }else{
+            self.childEmail = textField.text
+        }
+        textField.resignFirstResponder()
+        return true
     }
 }
 
@@ -277,7 +357,7 @@ extension AddChildViewController{
     }
     
     private func subscribeForAddChild(){
-        self.interactor?.addchild(email: "", firstName: "", lastName: "", childImage: "")
+        self.interactor?.addchild(email: childEmail!, firstName: childFirstName!, lastName: childLastName!, childImage: "")
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] _ in
                 self!.display(successMessage: "Child is added successfully")

@@ -815,7 +815,7 @@ extension ParentsHomeViewController{
         
         statusBarStyle = .lightContent
         navigationBarStyle = .transparent
-        
+        navigationItem.title = "Hello Hadi!"
         let rightNotificationsBarButton = UIBarButtonItem(image: R.image.notificationBlackIcon()!.withRenderingMode(.alwaysOriginal),
                                                           style: .plain,
                                                           target: self,
