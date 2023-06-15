@@ -26,25 +26,30 @@ class GoalsViewController: BaseViewController {
     }()
     
     lazy var scrollView: UIScrollView = {
-       let scrollView = UIScrollView()
-       scrollView.autoLayout()
-       scrollView.backgroundColor = .clear
-       scrollView.showsVerticalScrollIndicator = false
-       scrollView.contentInset = .init(top: 0, left: 0, bottom: 35, right: 0)
-       return scrollView
-   }()
-   
-
-   lazy var stackView: UIStackView = {
-       let stackView = UIStackView()
-       stackView.axis = .vertical
-       stackView.distribution = .fill
-       stackView.spacing = 19
-       stackView.autoLayout()
-       stackView.backgroundColor = .clear
-       return stackView
-   }()
+        let scrollView = UIScrollView()
+        scrollView.autoLayout()
+        scrollView.backgroundColor = .clear
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.contentInset = .init(top: 0, left: 0, bottom: 35, right: 0)
+        return scrollView
+    }()
     
+    
+    lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.spacing = 19
+        stackView.autoLayout()
+        stackView.backgroundColor = .clear
+        return stackView
+    }()
+    lazy var placehholderContainerView : BaseUIView = {
+        let v = BaseUIView()
+        v.backgroundColor = .clear
+        v.autoLayout()
+        return v
+    }()
     private let goalsCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -59,8 +64,17 @@ class GoalsViewController: BaseViewController {
     }()
     
     var addGoalButtonView : DottedButtonView!
-    var goalsViewModelArray = [GoalsModels.ViewModels.Goal(id: 1, Title: "Travel to France", amount: 3000, saved: 1000, endDate: "2024 08 24", goalImage: R.image.photo1.name), GoalsModels.ViewModels.Goal(id: 1, Title: "Buy a Car", amount: 10000, saved: 4000, endDate: "2024 08 24", goalImage: R.image.photo2.name)]//[GoalsModels.ViewModels.Goal]()
+    var goalsViewModelArray : [GoalsModels.ViewModels.Goal] = [] {
+        didSet{
+            if goalsViewModelArray.count > 0{
+                addGoalsCollectionView()
+                goalsCollectionView.reloadData()
+            }else{
+                addNoGoalsPlaceholder()
+            }
+        }
     }
+}
 
 
 //MARK:- View Lifecycle
@@ -73,11 +87,9 @@ extension GoalsViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        showPlaceHolderView(withAppearanceType: .loading,
-        //                            title: Constants.PlaceHolderView.Texts.wait)
+
         setupNavBarAppearance()
         setupRetryFetchingCallBack()
-        //subscribeForGetGoals()
         setupUI()
     }
     
@@ -85,18 +97,14 @@ extension GoalsViewController{
         super.viewWillAppear(animated)
         setupNavBarAppearance()
         self.tabBarController?.tabBar.isHidden = false
-        //subscribeForGetGoals()
-
+        showPlaceHolderView(withAppearanceType: .loading,
+                            title: Constants.PlaceHolderView.Texts.wait)
+        subscribeForGetGoals()
     }
     
     private func setupUI(){
         addScrollViewAndStackView()
         addtitleAndButton()
-        if goalsViewModelArray.count > 0{
-            addGoalsCollectionView()
-        }else{
-            addNoGoalsPlaceholder()
-        }
     }
     
     private func addScrollViewAndStackView(){
@@ -125,9 +133,9 @@ extension GoalsViewController{
         
         stackView.addArrangedSubview(topTitleLabel)
         stackView.addArrangedSubview(addGoalButtonView)
-
-        NSLayoutConstraint.activate([
         
+        NSLayoutConstraint.activate([
+            
             topTitleLabel.heightAnchor.constraint(equalToConstant: 35),
             addGoalButtonView.heightAnchor.constraint(equalToConstant: 62)
         ])
@@ -136,52 +144,47 @@ extension GoalsViewController{
             self.router?.pushToAddGoalController()
         }
     }
+    
     private func addGoalsCollectionView(){
         stackView.addArrangedSubview(goalsCollectionView)
         
         goalsCollectionView.delegate = self
         goalsCollectionView.dataSource = self
-        
-        //goalsCollectionView.isScrollEnabled = false
-        
+                
         goalsCollectionView.heightAnchor.constraint(equalTo: scrollView.heightAnchor).isActive = true
-        
     }
     
     private func addNoGoalsPlaceholder(){
-        let containerView = BaseUIView()
-        containerView.autoLayout()
-        containerView.backgroundColor = .clear
-        
         let noGoalImageView = BaseImageView(frame: .zero)
         noGoalImageView.autoLayout()
         noGoalImageView.contentMode = .scaleAspectFit
         noGoalImageView.image = R.image.noGoalImage()!
-
+        
         let subtitleLabel = BaseLabel()
         subtitleLabel.autoLayout()
         subtitleLabel.style = .init(font: MainFont.medium.with(size: 15), color: .black, alignment: .center, numberOfLines: 3)
         subtitleLabel.text = "You have no goals yet. \nAdd a goal and start saving !"
         
+        placehholderContainerView.addSubview(noGoalImageView)
+        placehholderContainerView.addSubview(subtitleLabel)
         
-        view.addSubview(containerView)
-        containerView.addSubview(noGoalImageView)
-        containerView.addSubview(subtitleLabel)
-        
+        stackView.addArrangedSubview(placehholderContainerView)
+
         NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: addGoalButtonView.bottomAnchor, constant: 20),
-            containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            containerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100),
-            
-            noGoalImageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-            noGoalImageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+//            placehholderContainerView.topAnchor.constraint(equalTo: addGoalButtonView.bottomAnchor, constant: 20),
+//            placehholderContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            placehholderContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+//            placehholderContainerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100),
+
+            placehholderContainerView.heightAnchor.constraint(equalToConstant: 350),
+
+            noGoalImageView.centerXAnchor.constraint(equalTo: placehholderContainerView.centerXAnchor),
+            noGoalImageView.centerYAnchor.constraint(equalTo: placehholderContainerView.centerYAnchor),
             
             subtitleLabel.topAnchor.constraint(equalTo: noGoalImageView.bottomAnchor, constant: 8),
-            subtitleLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor)
+            subtitleLabel.centerXAnchor.constraint(equalTo: placehholderContainerView.centerXAnchor)
         ])
     }
-
 }
 
 //MARK:- NavBarAppearance
@@ -225,7 +228,7 @@ extension GoalsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: 327, height: 316)
-       
+        
     }
     
     
@@ -252,7 +255,7 @@ extension GoalsViewController{
             guard let self = self  else { return }
             self.showPlaceHolderView(withAppearanceType: .loading,
                                      title: Constants.PlaceHolderView.Texts.wait)
-            #warning("Retry Action does not set")
+            self.subscribeForGetGoals()
         }
     }
     
@@ -260,14 +263,10 @@ extension GoalsViewController{
         self.interactor?.getGoals()
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] (goalsArray) in
-                self!.goalsViewModelArray = goalsArray
-                for v in self!.view.subviews{
-                    v.removeFromSuperview()
-                }
-                self!.setupUI()
-                self!.goalsCollectionView.reloadData()
-                }, onError: { [weak self](error) in
-                    self!.display(errorMessage: (error as! ErrorViewModel).message)
+                self?.removePlaceHolder()
+                self?.goalsViewModelArray = goalsArray
+            }, onError: { [weak self](error) in
+                self?.preparePlaceHolderView(withErrorViewModel: (error as! ErrorViewModel))
             })
             .disposed(by: self.disposeBag)
     }

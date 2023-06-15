@@ -143,9 +143,9 @@ extension APIClient {
             .map {_ in return Void()}
     }
     
-    func getGoals() -> Single<[GoalAPIModel]>{
+    func getGoals() -> Single<GoalRootAPIModel>{
         return self.provider.rx.request(.getGoals)
-            .map([GoalAPIModel].self, atKeyPath: resultsKeyPath)
+            .map(GoalRootAPIModel.self, atKeyPath: resultsKeyPath)
     }
      
     func addGoal(dict : [String:Any]) -> Single<Void>{

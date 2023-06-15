@@ -8,6 +8,20 @@
 
 import Foundation
 
+struct GoalRootAPIModel : Codable {
+
+    let goals : [GoalAPIModel]?
+
+    enum CodingKeys: String, CodingKey {
+        case goals = "goals"
+    }
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        goals = try values.decodeIfPresent([GoalAPIModel].self, forKey: .goals)
+    }
+}
+
+
 struct GoalAPIModel : Codable {
 
     let amount : Int?
