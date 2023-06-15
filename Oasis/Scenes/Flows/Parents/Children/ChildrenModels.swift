@@ -13,13 +13,13 @@ struct ChildrenModels {
     
     struct ViewModels {
         struct Children {
-            var childName : String?
-            var childAge : String?
-            var childImage : String?
-            var moneySpent : Int?
-            var totalMoneyValue : Int?
-            var numberOfTasks : Int?
-            var numberOfGoals : Int?
+            var childName : String
+            var childAge : String
+            var childImage : String
+            var moneySpent : String
+            var totalMoneyValue : String
+            var numberOfTasks : String
+            var numberOfGoals : String
         }
     }
 }

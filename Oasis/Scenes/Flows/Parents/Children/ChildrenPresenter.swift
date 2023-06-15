@@ -19,7 +19,13 @@ extension ChildrenPresenter: ChildrenInteractorOutput {
     }
     
     func createChild(model : ChildAPIModel) -> ChildrenModels.ViewModels.Children{
-        return ChildrenModels.ViewModels.Children(childName: model.firstName, childAge: model.lastName, childImage: model.profile, moneySpent: model.spent, totalMoneyValue: model.balance, numberOfTasks: model.tasks?.count, numberOfGoals: model.goals?.count)
+        return ChildrenModels.ViewModels.Children(childName: model.firstName ?? "",
+                                                  childAge: model.lastName ?? "",
+                                                  childImage: model.profile ?? "",
+                                                  moneySpent: model.spent != nil ? "\(model.spent!)" : "",
+                                                  totalMoneyValue: model.balance != nil ? "\(model.balance!)" : "",
+                                                  numberOfTasks: model.tasks != nil ? "\(model.tasks!.count)" : "",
+                                                  numberOfGoals: model.goals != nil ? "\(model.goals!.count)" : "")
     }
     
     func apiCallFailed(withError error: NetworkErrorResponse)
