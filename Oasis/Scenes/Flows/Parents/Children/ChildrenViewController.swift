@@ -73,8 +73,10 @@ extension ChildrenViewController{
     private func setupUI(){
         addScrollAndStackViews()
         addTitleAndbutton()
-        if isParent{
-            addChildrenCards()
+        if childrenViewModelArray.count > 0{
+            for child in childrenViewModelArray{
+                
+            }
         }else{
             addNoChildrenPlaceholder()
         }
@@ -180,7 +182,7 @@ extension ChildrenViewController{
         ])
     }
     
-    private func addChildrenCards(){
+    private func addChildCard(){
         
         let vw1 = ChildView.init(name: "Michel",
                                  age: "8 years old",

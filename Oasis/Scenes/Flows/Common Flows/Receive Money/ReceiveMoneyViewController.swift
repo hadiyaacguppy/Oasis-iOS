@@ -120,7 +120,6 @@ extension ReceiveMoneyViewController{
         super.viewDidLoad()
         //        showPlaceHolderView(withAppearanceType: .loading,
         //                            title: Constants.PlaceHolderView.Texts.wait)
-        self.hidesBottomBarWhenPushed = true
         setupNavBarAppearance()
         setupRetryFetchingCallBack()
         setupViews()
@@ -131,7 +130,6 @@ extension ReceiveMoneyViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavBarAppearance()
-        self.hidesBottomBarWhenPushed = true
 
     }
     

@@ -77,7 +77,7 @@ extension GoalsViewController{
         //                            title: Constants.PlaceHolderView.Texts.wait)
         setupNavBarAppearance()
         setupRetryFetchingCallBack()
-        subscribeForGetGoals()
+        //subscribeForGetGoals()
         setupUI()
     }
     
@@ -85,7 +85,7 @@ extension GoalsViewController{
         super.viewWillAppear(animated)
         setupNavBarAppearance()
         self.tabBarController?.tabBar.isHidden = false
-        subscribeForGetGoals()
+        //subscribeForGetGoals()
 
     }
     
@@ -261,7 +261,11 @@ extension GoalsViewController{
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] (goalsArray) in
                 self!.goalsViewModelArray = goalsArray
-                //self!.goalsCollectionView.reloadData()
+                for v in self!.view.subviews{
+                    v.removeFromSuperview()
+                }
+                self!.setupUI()
+                self!.goalsCollectionView.reloadData()
                 }, onError: { [weak self](error) in
                     self!.display(errorMessage: (error as! ErrorViewModel).message)
             })

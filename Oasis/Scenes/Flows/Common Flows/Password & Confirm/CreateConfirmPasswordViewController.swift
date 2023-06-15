@@ -221,6 +221,7 @@ extension CreateConfirmPasswordViewController{
                 self.dismissProgress()
                 self.router?.redirectToHome()
             }, onError: {(error) in
+                self.dismissProgress()
                 self.display(errorMessage: (error as! ErrorViewModel).message)
             })
             .disposed(by: self.disposeBag)

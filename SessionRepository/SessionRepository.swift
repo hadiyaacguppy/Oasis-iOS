@@ -55,6 +55,7 @@ public class SessionRepository {
     
     public var userIsLoggedIn : Bool {
         return self.token != nil
+        
     }
     
     public func sessionIsValid(withErrorCode code : Int) -> Bool {

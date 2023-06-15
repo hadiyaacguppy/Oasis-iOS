@@ -240,6 +240,7 @@ extension OTPVerificationViewController{
                 self.dismissProgress()
                 print("OTP send")
             }, onError: {(error) in
+                self.dismissProgress()
                 self.display(errorMessage: (error as! ErrorViewModel).message)
             })
             .disposed(by: self.disposeBag)
@@ -253,6 +254,7 @@ extension OTPVerificationViewController{
                 self.dismissProgress()
                 self.router?.pushToCreatePassword()
             }, onError: {(error) in
+                self.dismissProgress()
                 self.display(errorMessage: (error as! ErrorViewModel).message)
             })
             .disposed(by: self.disposeBag)

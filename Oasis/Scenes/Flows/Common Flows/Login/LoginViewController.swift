@@ -230,9 +230,11 @@ extension LoginViewController{
         self.interactor?.login(id: userEmail!, password: userPW!)
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] (user) in
+                self!.dismissProgress()
                 self!.display(successMessage: "You are Logged in Successfully")
                 self!.router?.redirectToTabbarController()
                 }, onError: { [weak self](error) in
+                    self!.dismissProgress()
                     self!.display(errorMessage: (error as! ErrorViewModel).message)
             })
             .disposed(by: self.disposeBag)

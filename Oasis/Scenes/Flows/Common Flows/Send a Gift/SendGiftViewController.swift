@@ -42,7 +42,6 @@ class SendGiftViewController: BaseViewController {
     lazy var submitButton : OasisAquaButton = {
         let btn = OasisAquaButton()
         btn.setTitle("Send Gift", for: .normal)
-       // btn.addTarget(self, action: #selector(submitButtonPressed), for: .touchUpInside)
         return btn
     }()
     
@@ -159,7 +158,6 @@ extension SendGiftViewController{
         super.viewDidLoad()
         //        showPlaceHolderView(withAppearanceType: .loading,
         //                            title: Constants.PlaceHolderView.Texts.wait)
-        self.hidesBottomBarWhenPushed = true
         setupNavBarAppearance()
         setupRetryFetchingCallBack()
         setupViews()
@@ -170,7 +168,6 @@ extension SendGiftViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavBarAppearance()
-        self.hidesBottomBarWhenPushed = true
     }
     
     private func setupViews() {

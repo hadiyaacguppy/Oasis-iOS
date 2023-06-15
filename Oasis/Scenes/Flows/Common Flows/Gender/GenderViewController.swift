@@ -65,6 +65,7 @@ class GenderViewController: BaseViewController {
     
     private lazy var femaleLogoImageView : UIImageView = {
         let imgView = UIImageView()
+        imgView.image = imgView.image?.withRenderingMode(.alwaysTemplate)
         imgView.contentMode = .left
         imgView.autoLayout()
         return imgView
@@ -79,6 +80,7 @@ class GenderViewController: BaseViewController {
     
     private lazy var maleLogoImageView : UIImageView = {
         let imgView = UIImageView()
+        imgView.image = imgView.image?.withRenderingMode(.alwaysTemplate)
         imgView.contentMode = .right
         imgView.autoLayout()
         return imgView
@@ -193,6 +195,9 @@ extension GenderViewController{
         ])
         
         femaleStackView.onTap {
+            
+            self.femaleLogoImageView.tintColor = Constants.Colors.appPink
+            self.maleLogoImageView.tintColor = .none
             RegistrationDataManager.current.isFemale = true
         }
         
@@ -221,6 +226,8 @@ extension GenderViewController{
         ])
         
         maleStackView.onTap {
+            self.maleLogoImageView.tintColor = Constants.Colors.appPink
+            self.femaleLogoImageView.tintColor = .none
             RegistrationDataManager.current.isFemale = false
 
         }

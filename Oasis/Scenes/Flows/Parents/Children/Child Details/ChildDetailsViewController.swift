@@ -53,6 +53,14 @@ class ChildDetailsViewController: BaseViewController {
         return view
     }()
     
+    private lazy var childImageView : UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = R.image.kid()
+        imageView.autoLayout()
+        imageView.contentMode = .top
+        return imageView
+    }()
+    
     private lazy var childNameLabel: BaseLabel = {
         let lbl = BaseLabel()
         lbl.autoLayout()
@@ -208,9 +216,10 @@ extension ChildDetailsViewController{
         stackView.addArrangedSubview(childContainerView)
         
         let circlesImageView = UIImageView(image: R.image.circles())
-        circlesImageView.contentMode = .scaleAspectFit
+        circlesImageView.contentMode = .scaleAspectFill
         
         childContainerView.addSubview(circlesImageView)
+        childContainerView.addSubview(childImageView)
 
         
 //        let childImageView = UIImageView(image: R.image.kid())
@@ -225,7 +234,13 @@ extension ChildDetailsViewController{
             circlesImageView.leadingAnchor.constraint(equalTo: childContainerView.leadingAnchor),
             circlesImageView.trailingAnchor.constraint(equalTo: childContainerView.trailingAnchor),
             circlesImageView.topAnchor.constraint(equalTo: childContainerView.topAnchor, constant: 20),
-            circlesImageView.bottomAnchor.constraint(equalTo: childContainerView.bottomAnchor, constant: -20)
+            circlesImageView.bottomAnchor.constraint(equalTo: childContainerView.bottomAnchor, constant: -20),
+            
+            childImageView.leadingAnchor.constraint(equalTo: childContainerView.leadingAnchor),
+            childImageView.trailingAnchor.constraint(equalTo: childContainerView.trailingAnchor),
+            childImageView.topAnchor.constraint(equalTo: childContainerView.topAnchor),
+            childImageView.bottomAnchor.constraint(equalTo: childContainerView.bottomAnchor)
+
         ])
 
 

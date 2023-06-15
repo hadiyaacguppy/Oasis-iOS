@@ -199,7 +199,7 @@ extension AddChildViewController{
                                                   textSize: 22,
                                                   isAgeRequest: false,
                                                   labelHeight: 70,
-                                                  placholderText: "First Name",
+                                                  placholderText: "",
                                                   frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width - 40, height: 160))
 
 
@@ -209,7 +209,7 @@ extension AddChildViewController{
                                                    textSize: 22,
                                                    isAgeRequest: false,
                                                    labelHeight: 70,
-                                                   placholderText: "Last Name",
+                                                   placholderText: "",
                                                    frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width - 40, height: 160))
         
          emailView = TitleWithTextFieldView.init(requestTitle: "What’s your child’s email?",
@@ -218,7 +218,7 @@ extension AddChildViewController{
                                                   textSize: 22,
                                                   isAgeRequest: false,
                                                   labelHeight: 70,
-                                                  placholderText: "Email",
+                                                  placholderText: "",
                                                   frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width - 40, height: 160))
        
         stackView.addArrangedSubview(fillInfoLabel)
