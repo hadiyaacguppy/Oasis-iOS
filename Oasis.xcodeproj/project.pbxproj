@@ -1587,18 +1587,12 @@
 		166EF2FE29D36FE20029908E /* Common Flows */ = {
 			isa = PBXGroup;
 			children = (
+				169914CA2A3B9C8D0046978D /* Login & Registration */,
 				16ABACDC29F68CCE00FB937C /* Settings */,
 				161F3C7A29F3D8FF0053158A /* Payments */,
 				161F3C6B29F31EDC0053158A /* Send Money */,
 				161F3C5C29F31CBD0053158A /* Receive Money */,
 				161F3C4729F277860053158A /* Send a Gift */,
-				1699147E2A2A2A0E0046978D /* BirthDate */,
-				161F3BF529E3156F0053158A /* Select Age */,
-				161F3BB629D989D60053158A /* OTP Verification */,
-				161F3BB729D989E60053158A /* Password & Confirm */,
-				161F3BB529D989D10053158A /* Login */,
-				161F3BB429D989C90053158A /* Registration */,
-				1699149E2A30A5D10046978D /* Gender */,
 			);
 			path = "Common Flows";
 			sourceTree = "<group>";
@@ -1694,6 +1688,20 @@
 			children = (
 			);
 			path = "Child View";
+			sourceTree = "<group>";
+		};
+		169914CA2A3B9C8D0046978D /* Login & Registration */ = {
+			isa = PBXGroup;
+			children = (
+				1699147E2A2A2A0E0046978D /* BirthDate */,
+				161F3BF529E3156F0053158A /* Select Age */,
+				161F3BB629D989D60053158A /* OTP Verification */,
+				161F3BB729D989E60053158A /* Password & Confirm */,
+				161F3BB529D989D10053158A /* Login */,
+				161F3BB429D989C90053158A /* Registration */,
+				1699149E2A30A5D10046978D /* Gender */,
+			);
+			path = "Login & Registration";
 			sourceTree = "<group>";
 		};
 		169976ED2A15012F00FDEC97 /* App Models */ = {

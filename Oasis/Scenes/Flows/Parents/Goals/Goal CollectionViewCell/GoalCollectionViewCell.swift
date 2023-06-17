@@ -111,12 +111,12 @@ class GoalCollectionViewCell: UICollectionViewCell {
         savedValueLabel.text = "$ \(viewModel.saved!)"
         outOfValuelabel.text = "$ \(viewModel.amount!)"
         updatePercentageView(amount: viewModel.amount!, saved: viewModel.saved!)
-        goalImageView.image = UIImage(named: viewModel.goalImage!)//setNormalImage(withURL: viewModel.goalImage)
-
+        if viewModel.goalImage != nil {
+            goalImageView.setNormalImage(withURL: URL(string: viewModel.goalImage!))
+        }
     }
     
     func updatePercentageView(amount : Int, saved : Int){
-    
         let percentage = (saved * 100)/amount
         let percentageWidth = (percentage * Int(bottomGreenView.frame.size.width)) / 100
         percentageLabel.text = "\(percentage)%"
