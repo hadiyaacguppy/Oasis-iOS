@@ -119,7 +119,7 @@ class GoalCollectionViewCell: UICollectionViewCell {
     func updatePercentageView(amount : Int, saved : Int){
         let percentage = (saved * 100)/amount
         let percentageWidth = (percentage * Int(bottomGreenView.frame.size.width)) / 100
-        percentageLabel.text = "\(percentage)%"
+        percentageLabel.text = " \(percentage) %"
         NSLayoutConstraint.activate([
             percentageGreenView.widthAnchor.constraint(equalToConstant: CGFloat(percentageWidth))
         ])

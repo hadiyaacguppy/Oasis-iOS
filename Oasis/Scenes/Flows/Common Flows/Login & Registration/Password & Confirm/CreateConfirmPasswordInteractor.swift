@@ -40,7 +40,7 @@ extension CreateConfirmPasswordInteractor: CreateConfirmPasswordViewControllerOu
         return Single<Void>.create(subscribe: { single in
             APIClient.shared.register(dict: dict)
                 .subscribe(onSuccess: { [weak self] (token) in
-                    SessionRepository().token = token
+                    SessionRepository.shared.token = token
                     guard let self = self else { return single(.error(ErrorViewModel.generateGenericError()))}
                     guard self.presenter != nil else { return single(.error(ErrorViewModel.generateGenericError()))}
                     single(.success(()))

@@ -129,9 +129,9 @@ extension AddChildViewController{
     }
     
     private func setupUI(){
+        addTitleAndScanCodeButton()
         addInfoBlueView()
         addScrollView()
-        addTitleAndScanCodeButton()
         addGeneralStackView()
         addChildInfoViews()
         createPicturesView(pictureView: uploadPictureView, image: R.image.cameraIcon()!, title: "Upload a \n Picture".localized)
@@ -139,18 +139,23 @@ extension AddChildViewController{
     }
     
     private func addTitleAndScanCodeButton(){
-        stackView.addArrangedSubview(topTitleLabel)
-
+        
         scanCodeDottedView = DottedButtonView(actionName: "Scan Qr Code", viewHeight: 62, viewWidth: 336, viewRadius: 48, numberOflines: 1, innerImage: R.image.qrCode())
         
-        stackView.addArrangedSubview(scanCodeDottedView)
+        view.addSubview(topTitleLabel)
+        view.addSubview(scanCodeDottedView)
         
-//        NSLayoutConstraint.activate([
-//            scanCodeDottedView.topAnchor.constraint(equalTo: topTitleLabel.bottomAnchor, constant: 20),
-//            scanCodeDottedView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 27),
-//            scanCodeDottedView.heightAnchor.constraint(equalToConstant: 62)
-//        ])
-//
+        NSLayoutConstraint.activate([
+            topTitleLabel.heightAnchor.constraint(equalToConstant: 35),
+            topTitleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            topTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 35),
+            
+            scanCodeDottedView.topAnchor.constraint(equalTo: topTitleLabel.bottomAnchor, constant: 20),
+            scanCodeDottedView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            scanCodeDottedView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 30),
+            scanCodeDottedView.heightAnchor.constraint(equalToConstant: 62)
+        ])
+        
         scanCodeDottedView.onTap {
         }
     }
@@ -159,7 +164,7 @@ extension AddChildViewController{
         view.addSubview(infoBlueView)
         
         NSLayoutConstraint.activate([
-            infoBlueView.topAnchor.constraint(equalTo: view.topAnchor, constant: 265),
+            infoBlueView.topAnchor.constraint(equalTo: scanCodeDottedView.bottomAnchor, constant: 40),
             infoBlueView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             infoBlueView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             infoBlueView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
@@ -170,11 +175,13 @@ extension AddChildViewController{
         infoBlueView.addSubview(scrollView)
         
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            scrollView.topAnchor.constraint(equalTo: infoBlueView.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: infoBlueView.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: infoBlueView.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: infoBlueView.bottomAnchor)
         ])
+        
+        scrollView.contentInset = .init(top: 0, left: 0, bottom: 50, right: 0)
     }
     
     private func addGeneralStackView(){
@@ -188,7 +195,6 @@ extension AddChildViewController{
             stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -40)
         ])
         
-        scrollView.contentInset = .init(top: 0, left: 0, bottom: 50, right: 0)
     }
     
     private func addChildInfoViews(){
@@ -274,13 +280,12 @@ extension AddChildViewController{
 
     }
     private func addNextButton(){
-        view.addSubview(nextImageView)
+        stackView.addSubview(nextImageView)
         
         NSLayoutConstraint.activate([
-            nextImageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -30),
+            nextImageView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -30),
             nextImageView.widthAnchor.constraint(equalToConstant: 140),
             nextImageView.heightAnchor.constraint(equalToConstant: 58),
-            nextImageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -60)
         ])
         
         nextImageView.onTap {

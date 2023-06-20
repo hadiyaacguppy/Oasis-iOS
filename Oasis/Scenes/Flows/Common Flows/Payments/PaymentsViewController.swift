@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 protocol PaymentsViewControllerOutput {
-    func getPayments() -> Single<[PaymentsModels.ViewModels.Payment]>
+    func getPayments() -> Single<[ParentsHomeModels.ViewModels.Payment]>
     func getPaymentsTypes() -> Single<Void>
     func addPayment(title : String, currency : String, amount : Int, date : String, paymentTypeID : Int) -> Single<Void>
 
@@ -154,7 +154,7 @@ class PaymentsViewController: BaseViewController {
         return collectionView
     }()
     
-    var paymentsVMArray = [PaymentsModels.ViewModels.Payment]()
+    var paymentsVMArray = [ParentsHomeModels.ViewModels.Payment]()
 }
 
 //MARK:- View Lifecycle
@@ -540,12 +540,12 @@ extension PaymentsViewController {
 
 extension PaymentsViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return paymentsVMArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.upcomingPaymentCollectionCell, for: indexPath)!
-        cell.setupCell(title: "Netflix Subscription", subtitle: "Subtitle test", amount: "600,000 LBP")
+        cell.setupCell(vm: paymentsVMArray[indexPath.row])
         return cell
     }
 }

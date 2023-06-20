@@ -12,7 +12,7 @@ import RxSwift
 protocol PaymentsInteractorOutput {
     
     func apiCallFailed(withError error : NetworkErrorResponse) -> ErrorViewModel
-    func didGetPayments(models : [PaymentAPIModel]) -> [PaymentsModels.ViewModels.Payment]
+    func didGetPayments(models : [PaymentAPIModel]) -> [ParentsHomeModels.ViewModels.Payment]
     
 }
 
@@ -63,13 +63,13 @@ extension PaymentsInteractor: PaymentsViewControllerOutput{
         })
     }
     
-    func getPayments() -> Single<[PaymentsModels.ViewModels.Payment]> {
-        return Single<[PaymentsModels.ViewModels.Payment]>.create(subscribe: { single in
+    func getPayments() -> Single<[ParentsHomeModels.ViewModels.Payment]> {
+        return Single<[ParentsHomeModels.ViewModels.Payment]>.create(subscribe: { single in
             APIClient.shared.getPayments()
-                .subscribe(onSuccess: { [weak self] (payments) in
+                .subscribe(onSuccess: { [weak self] (paymentsRoot) in
                     guard let self = self else { return single(.error(ErrorViewModel.generateGenericError()))}
                     guard self.presenter != nil else { return single(.error(ErrorViewModel.generateGenericError()))}
-                    single(.success((self.presenter!.didGetPayments(models: payments))))
+                    single(.success((self.presenter!.didGetPayments(models: paymentsRoot.payments ?? []))))
                     }, onError: { [weak self] (error) in
                         guard let self = self else { return single(.error(ErrorViewModel.generateGenericError()))}
                         guard self.presenter != nil else { return single(.error(ErrorViewModel.generateGenericError()))}

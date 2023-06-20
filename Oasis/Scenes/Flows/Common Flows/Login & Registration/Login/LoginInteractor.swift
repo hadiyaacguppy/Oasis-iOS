@@ -34,14 +34,7 @@ extension LoginInteractor: LoginViewControllerOutput{
             APIClient.shared.login(dict: dict)
                 .subscribe(onSuccess: { [weak self] (result) in
                     SessionRepository.shared.token = result.token
-                    
-                    //Temporarly user data is saved this way should be changed later
-                    RegistrationDataManager.current.userEmail = id
-                    //RegistrationDataManager.current.userAge = result.user?.age
-                    RegistrationDataManager.current.userFirstName = result.user?.firstName
-                    RegistrationDataManager.current.userLastName = result.user?.lastName
-                    RegistrationDataManager.current.userFile = result.user?.profileImage
-                    
+                    SessionRepository.shared.currentUser = result.user
                     guard let self = self else { return single(.error(ErrorViewModel.generateGenericError()))}
                     guard self.presenter != nil else { return single(.error(ErrorViewModel.generateGenericError()))}
                     single(.success(()))

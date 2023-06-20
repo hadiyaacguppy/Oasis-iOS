@@ -22,14 +22,14 @@ class UpcomingPaymentCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var theTitleLabel: BaseLabel!{
         didSet{
-            theTitleLabel.style = .init(font: MainFont.bold.with(size: 18),
+            theTitleLabel.style = .init(font: MainFont.bold.with(size: 16),
                                         color: .black, numberOfLines: 2)
         }
     }
     @IBOutlet weak var subtitleLabel: BaseLabel!{
         didSet{
             subtitleLabel.style = .init(font: MainFont.bold.with(size: 12),
-                                        color: .black, numberOfLines: 1)
+                                        color: .black, numberOfLines: 2)
         }
     }
     @IBOutlet weak var amountLabel: BaseLabel!{
@@ -49,9 +49,9 @@ class UpcomingPaymentCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func setupCell(title : String, subtitle : String, amount : String){
-        self.theTitleLabel.text = title
-        self.subtitleLabel.text = subtitle
-        self.amountLabel.text = amount
+    func setupCell(vm : ParentsHomeModels.ViewModels.Payment){
+        self.theTitleLabel.text = vm.title
+        self.subtitleLabel.text = vm.paymentType
+        self.amountLabel.text = "\(vm.amount ?? 0)" + (vm.currency ?? "")
     }
 }

@@ -44,7 +44,17 @@ class ChildrenViewController: BaseViewController {
     }()
     var isParent : Bool = true
     var addChildrenButtonView : DottedButtonView!
-    var childrenViewModelArray = [ChildrenModels.ViewModels.Children]()
+    var childrenViewModelArray : [ChildrenModels.ViewModels.Children] = [] {
+        didSet{
+            if childrenViewModelArray.count > 0{
+                for child in childrenViewModelArray{
+                    addChildCard(child: child)
+                }
+            }else{
+                addNoChildrenPlaceholder()
+            }
+        }
+    }
 }
 
 //MARK:- View Lifecycle
@@ -57,8 +67,7 @@ extension ChildrenViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        showPlaceHolderView(withAppearanceType: .loading,
-        //                            title: Constants.PlaceHolderView.Texts.wait)
+        
         setupNavBarAppearance()
         setupRetryFetchingCallBack()
         setupUI()
@@ -68,18 +77,15 @@ extension ChildrenViewController{
         super.viewWillAppear(animated)
         setupNavBarAppearance()
         self.tabBarController?.tabBar.isHidden = false
+
+        showPlaceHolderView(withAppearanceType: .loading,
+                            title: Constants.PlaceHolderView.Texts.wait)
+        subscribeForGetChildren()
     }
     
     private func setupUI(){
         addScrollAndStackViews()
         addTitleAndbutton()
-        if childrenViewModelArray.count > 0{
-            for child in childrenViewModelArray{
-                
-            }
-        }else{
-            addNoChildrenPlaceholder()
-        }
     }
     
     private func addScrollAndStackViews(){
@@ -182,43 +188,18 @@ extension ChildrenViewController{
         ])
     }
     
-    private func addChildCard(){
+    private func addChildCard(child : ChildrenModels.ViewModels.Children){
         
-        let vw1 = ChildView.init(name: "Michel",
-                                 age: "8 years old",
-                                 valueSpent: "LBP 240,000",
-                                 totalValue: "of lBP 600,000",
-                                 tasks: "2",
-                                 goals: "1",
-                                 imageName: R.image.kid.name)
+        let childCard = ChildView.init(name: child.childName,
+                                 age: child.childAge,
+                                 valueSpent: child.moneySpent,
+                                 totalValue: child.totalMoneyValue,
+                                 tasks: child.numberOfTasks,
+                                 goals: child.numberOfGoals,
+                                 imageName: child.childImage)
         
-        let vw2 = ChildView.init(name: "karen",
-                                 age: "15 years old",
-                                 valueSpent: "LBP 470,000",
-                                 totalValue: "of lBP 600,000",
-                                 tasks: "4",
-                                 goals: "1",
-                                 imageName: R.image.kid.name)
-        
-        let vw3 = ChildView.init(name: "Leo",
-                                 age: "10 years old",
-                                 valueSpent: "LBP 200,000",
-                                 totalValue: "of lBP 600,000",
-                                 tasks: "3",
-                                 goals: "2",
-                                 imageName: R.image.kid.name)
-        
-        stackView.addArrangedSubview(vw1)
-        stackView.addArrangedSubview(vw2)
-        stackView.addArrangedSubview(vw3)
-        
-        vw1.onTap {
-            self.router?.pushToChildDetailsVC()
-        }
-        vw2.onTap {
-            self.router?.pushToChildDetailsVC()
-        }
-        vw3.onTap {
+        stackView.addArrangedSubview(childCard)
+        childCard.onTap {
             self.router?.pushToChildDetailsVC()
         }
     }
@@ -259,10 +240,10 @@ extension ChildrenViewController{
         self.interactor?.getchildren()
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] (childrenAray) in
-                self!.display(successMessage: "Done")
+                self?.removePlaceHolder()
                 self?.childrenViewModelArray = childrenAray
                 }, onError: { [weak self](error) in
-                    self!.display(errorMessage: (error as! ErrorViewModel).message)
+                    self?.preparePlaceHolderView(withErrorViewModel: (error as! ErrorViewModel))
             })
             .disposed(by: self.disposeBag)
     }

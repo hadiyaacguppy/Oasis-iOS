@@ -17,6 +17,14 @@ extension ParentsHomePresenter: ParentsHomeInteractorOutput {
         return ParentsHomeModels.ViewModels.Balance(amount: model.balance != nil ? "\(model.balance!)" : "0", currency: "LBP")
     }
 
+    func didGetPayments(models : [PaymentAPIModel]) -> [ParentsHomeModels.ViewModels.Payment]{
+        return models.map{createPayment(model: $0)}
+    }
+    
+    func createPayment(model : PaymentAPIModel) -> ParentsHomeModels.ViewModels.Payment{
+        return ParentsHomeModels.ViewModels.Payment(id: model.id!, paymentType: model.paymentType, title: model.title, amount: model.amount, currency: model.currency)
+    }
+    
     func apiCallFailed(withError error: NetworkErrorResponse)
     -> ErrorViewModel {
         return self.parseErrorViewModel(fromErrorResponse:error)

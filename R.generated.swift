@@ -514,7 +514,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 127 images.
+  /// This `R.image` struct is generated, and contains static references to 128 images.
   struct image {
     /// Image `2474162 copy`.
     static let copy = Rswift.ImageResource(bundle: R.hostingBundle, name: "2474162 copy")
@@ -540,6 +540,8 @@ struct R: Rswift.Validatable {
     static let fill1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Fill 1")
     /// Image `Fish Right`.
     static let fishRight = Rswift.ImageResource(bundle: R.hostingBundle, name: "Fish Right")
+    /// Image `Fish Upsidedown`.
+    static let fishUpsidedown = Rswift.ImageResource(bundle: R.hostingBundle, name: "Fish Upsidedown")
     /// Image `Home-icon-white`.
     static let homeIconWhite = Rswift.ImageResource(bundle: R.hostingBundle, name: "Home-icon-white")
     /// Image `Logo emblem`.
@@ -852,6 +854,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "Fish Right", bundle: ..., traitCollection: ...)`
     static func fishRight(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.fishRight, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Fish Upsidedown", bundle: ..., traitCollection: ...)`
+    static func fishUpsidedown(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.fishUpsidedown, compatibleWith: traitCollection)
     }
     #endif
 

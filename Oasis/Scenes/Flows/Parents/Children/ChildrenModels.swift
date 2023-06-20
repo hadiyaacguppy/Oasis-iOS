@@ -15,7 +15,7 @@ struct ChildrenModels {
         struct Children {
             var childName : String
             var childAge : String
-            var childImage : String
+            var childImage : URL?
             var moneySpent : String
             var totalMoneyValue : String
             var numberOfTasks : String

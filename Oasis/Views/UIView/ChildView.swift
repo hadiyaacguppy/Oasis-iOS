@@ -129,7 +129,7 @@ class ChildView: BaseUIView {
     private var numberOfGoalsText : String = ""
     private var childIndex : Int = 0
     
-    init(name nameTxt : String, age ageTxt : String, valueSpent valueSpentTxt : String, totalValue totalValueTxt : String, tasks tasksTxt : String, goals goalsTxt : String, imageName childImage: String){
+    init(name nameTxt : String, age ageTxt : String, valueSpent valueSpentTxt : String, totalValue totalValueTxt : String, tasks tasksTxt : String, goals goalsTxt : String, imageName childImage: URL?){
         super.init(frame: .zero)
         self.nameText = nameTxt
         self.ageText = ageTxt
@@ -137,9 +137,8 @@ class ChildView: BaseUIView {
         self.totalValueText = totalValueTxt
         self.numberOfTasksText = tasksTxt
         self.numberOfGoalsText = goalsTxt
-        self.childImageView.image = UIImage(named: childImage)
+        self.childImageView.setNormalImage(withURL: childImage)
         
-        //Setup UI
         setupUI()
     }
     

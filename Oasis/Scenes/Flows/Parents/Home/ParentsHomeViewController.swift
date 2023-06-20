@@ -9,9 +9,10 @@
 import UIKit
 import RxSwift
 import FSPagerView
+import SessionRepository
 
 protocol ParentsHomeViewControllerOutput {
-    func getPayments() -> Single<Void>
+    func getPayments() -> Single<[ParentsHomeModels.ViewModels.Payment]>
     func getBalance() -> Single<ParentsHomeModels.ViewModels.Balance>
 }
 
@@ -59,6 +60,22 @@ class ParentsHomeViewController: BaseViewController {
             .spacing(10)
             .autoLayout()
             .distributionMode(.fill)
+    }()
+    
+    lazy var fishImageview : BaseImageView = {
+        let img = BaseImageView(frame: .zero)
+        img.image = R.image.fishUpsidedown()!
+        img.contentMode = .scaleAspectFit
+        img.autoLayout()
+        return img
+    }()
+    
+    lazy var rightFishImageview : BaseImageView = {
+        let img = BaseImageView(frame: .zero)
+        img.image = R.image.fishRight()!
+        img.contentMode = .scaleAspectFit
+        img.autoLayout()
+        return img
     }()
     
     lazy var balanceStaticLabel : BaseLabel = {
@@ -227,6 +244,7 @@ class ParentsHomeViewController: BaseViewController {
     }()
     
     public var isParent : Bool = false
+    var paymentsViewModelArray = [ParentsHomeModels.ViewModels.Payment]()
 }
 
 //MARK:- View Lifecycle
@@ -303,7 +321,9 @@ extension ParentsHomeViewController{
     private func addBalanceStack(){
         stackView.addArrangedSubview(balanceContainerView)
         
+        balanceContainerView.addSubview(fishImageview)
         balanceContainerView.addSubviews(balanceStackView)
+        
         
         let topUpLabel = BaseLabel()
         topUpLabel.style = .init(font: MainFont.bold.with(size: 18), color: .white)
@@ -327,6 +347,11 @@ extension ParentsHomeViewController{
         
         NSLayoutConstraint.activate([
             balanceContainerView.heightAnchor.constraint(equalToConstant: 132),
+            
+            fishImageview.topAnchor.constraint(equalTo: balanceContainerView.topAnchor, constant: 11),
+            fishImageview.bottomAnchor.constraint(equalTo: balanceContainerView.bottomAnchor, constant: -11),
+            fishImageview.trailingAnchor.constraint(equalTo: balanceContainerView.trailingAnchor, constant: -10),
+            fishImageview.widthAnchor.constraint(equalToConstant: 200),
             
             balanceStackView.topAnchor.constraint(equalTo: balanceContainerView.topAnchor, constant: 17),
             //balanceStackView.bottomAnchor.constraint(equalTo: balanceContainerView.bottomAnchor),
@@ -393,12 +418,20 @@ extension ParentsHomeViewController{
     
     private func addActionsToCorrespondingStacks(){
         firstActionsStackView.addArrangedSubview(topUpActionView)
+        topUpActionView.addSubview(rightFishImageview)
         //firstActionsStackView.addArrangedSubview(receiveMoneyActionView)
         
         //secondActionsStackView.addArrangedSubview(topUpActionView)
         secondActionsStackView.addArrangedSubview(payActionView)
         secondActionsStackView.addArrangedSubview(sendGiftActionView)
         
+        NSLayoutConstraint.activate([
+            rightFishImageview.topAnchor.constraint(equalTo: topUpActionView.topAnchor, constant: 11),
+            rightFishImageview.trailingAnchor.constraint(equalTo: topUpActionView.trailingAnchor, constant: -12),
+            rightFishImageview.widthAnchor.constraint(equalToConstant: 118),
+            rightFishImageview.bottomAnchor.constraint(equalTo: topUpActionView.bottomAnchor, constant: -11)
+        
+        ])
         //secondActionsStackView.addArrangedSubview(subscriptionsActionView)
         
         //setupSendMoney()
@@ -815,7 +848,6 @@ extension ParentsHomeViewController{
         
         statusBarStyle = .lightContent
         navigationBarStyle = .transparent
-        navigationItem.title = "Hello Hadi!"
         let rightNotificationsBarButton = UIBarButtonItem(image: R.image.notificationBlackIcon()!.withRenderingMode(.alwaysOriginal),
                                                           style: .plain,
                                                           target: self,
@@ -1027,12 +1059,12 @@ extension ParentsHomeViewController {
 
 extension ParentsHomeViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return paymentsViewModelArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.upcomingPaymentCollectionCell, for: indexPath)!
-        cell.setupCell(title: "Netflix Subscription", subtitle: "Subtitle test", amount: "600,000 LBP")
+        cell.setupCell(vm: paymentsViewModelArray[indexPath.row])
         return cell
     }
 }
@@ -1087,10 +1119,11 @@ extension ParentsHomeViewController{
     private func subscribeForGetPayments(){
         self.interactor?.getPayments()
             .observeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { [weak self] _ in
+            .subscribe(onSuccess: { [weak self] (payments) in
+                self?.paymentsViewModelArray = payments
                 self?.upcomingPaymentsCollectionView.reloadData()
             }, onError: { [weak self](error) in
-                self?.preparePlaceHolderView(withErrorViewModel: (error as! ErrorViewModel))
+                self!.display(errorMessage: (error as! ErrorViewModel).message)
             })
             .disposed(by: self.disposeBag)
     }
@@ -1101,7 +1134,8 @@ extension ParentsHomeViewController{
             .subscribe(onSuccess: { [weak self] (balance) in
                 self?.removePlaceHolder()
                 self?.balanceValueLabel.text = balance.amount
-                //self?.subscribeForGetPayments()
+                self?.navigationItem.title = "Hello \(SessionRepository.shared.currentUser?.firstName! ?? "Visitor")!"
+                self?.subscribeForGetPayments()
             }, onError: { [weak self](error) in
                 self?.preparePlaceHolderView(withErrorViewModel: (error as! ErrorViewModel))
             })

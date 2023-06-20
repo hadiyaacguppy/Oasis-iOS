@@ -58,14 +58,14 @@ extension APIClient {
             .map {_ in return Void()}
     }
     
-    func getChildren() -> Single<[ChildAPIModel]>{
+    func getChildren() -> Single<ChildRootAPIModel>{
         return self.provider.rx.request(.getChildren)
-            .map([ChildAPIModel].self, atKeyPath: resultsKeyPath)
+            .map(ChildRootAPIModel.self, atKeyPath: resultsKeyPath)
     }
     
-    func getActivities() -> Single<ChildAPIModel>{
+    func getActivities() -> Single<ActivityRootAPIModel>{
         return self.provider.rx.request(.getActivities)
-            .map(ChildAPIModel.self, atKeyPath: resultsKeyPath)
+            .map(ActivityRootAPIModel.self, atKeyPath: resultsKeyPath)
     }
     
     func getBalance() -> Single<BalanceAPIModel>{
@@ -133,9 +133,9 @@ extension APIClient {
             .map([PaymentTypeAPIModel].self, atKeyPath: resultsKeyPath)
     }
     
-    func getPayments() -> Single<[PaymentAPIModel]>{
+    func getPayments() -> Single<PaymentRootAPIModel>{
         return self.provider.rx.request(.getPayments)
-            .map([PaymentAPIModel].self, atKeyPath: resultsKeyPath)
+            .map(PaymentRootAPIModel.self, atKeyPath: resultsKeyPath)
     }
     
     func addPayment(dict : [String:Any]) -> Single<Void>{

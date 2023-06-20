@@ -8,6 +8,22 @@
 
 import Foundation
 
+struct ChildRootAPIModel : Codable {
+
+    let children : [ChildAPIModel]?
+
+
+    enum CodingKeys: String, CodingKey {
+        case children = "children"
+    }
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        children = try values.decodeIfPresent([ChildAPIModel].self, forKey: .children)
+    }
+
+
+}
+
 struct ChildAPIModel : Codable {
 
     let age : String?

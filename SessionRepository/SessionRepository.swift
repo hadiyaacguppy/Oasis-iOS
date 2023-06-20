@@ -26,7 +26,6 @@ public class SessionRepository {
             UserDefaults.standard.synchronize()
         }
     }
-    
     public var currentUser: User? {
         get {
             return getArchivedUser()
@@ -39,9 +38,9 @@ public class SessionRepository {
             }
             print("🙍‍♂️Saving User Object")
             persistUser(user: newValue)
-            if newValue.token != nil {
-                self.token = newValue.token
-            }
+//            if newValue.token != nil {
+//                self.token = newValue.token
+//            }
         }
     }
     

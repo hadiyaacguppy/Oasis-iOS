@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import SessionRepository
 
 struct UserRootAPIModel : Codable {
 
     let token : String?
-    let user : UserAPIModel?
+    let user : User?
 
 
     enum CodingKeys: String, CodingKey {
@@ -21,6 +22,6 @@ struct UserRootAPIModel : Codable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         token = try values.decodeIfPresent(String.self, forKey: .token)
-        user = try values.decodeIfPresent(UserAPIModel.self, forKey: .user)
+        user = try values.decodeIfPresent(User.self, forKey: .user)
     }
 }

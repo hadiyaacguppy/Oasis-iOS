@@ -30,10 +30,10 @@ extension ChildrenInteractor: ChildrenViewControllerOutput{
     func getchildren() -> Single<[ChildrenModels.ViewModels.Children]> {
         return Single<[ChildrenModels.ViewModels.Children]>.create(subscribe: { single in
             APIClient.shared.getChildren()
-                .subscribe(onSuccess: { [weak self] (children) in
+                .subscribe(onSuccess: { [weak self] (childrenRoot) in
                     guard let self = self else { return single(.error(ErrorViewModel.generateGenericError()))}
                     guard self.presenter != nil else { return single(.error(ErrorViewModel.generateGenericError()))}
-                    single(.success((self.presenter!.didGetchildren(models: children))))
+                    single(.success((self.presenter!.didGetchildren(models: childrenRoot.children ?? []))))
                     }, onError: { [weak self] (error) in
                         guard let self = self else { return single(.error(ErrorViewModel.generateGenericError()))}
                         guard self.presenter != nil else { return single(.error(ErrorViewModel.generateGenericError()))}

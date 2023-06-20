@@ -8,6 +8,20 @@
 
 import Foundation
 
+struct ActivityRootAPIModel : Codable {
+
+    let activities : [ActivityAPIModel]?
+
+
+    enum CodingKeys: String, CodingKey {
+        case activities = "activities"
+    }
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        activities = try values.decodeIfPresent([ActivityAPIModel].self, forKey: .activities)
+    }
+}
+
 struct ActivityAPIModel : Codable {
 
     let date : String?

@@ -8,6 +8,22 @@
 
 import Foundation
 
+struct PaymentRootAPIModel : Codable {
+
+    let payments : [PaymentAPIModel]?
+
+
+    enum CodingKeys: String, CodingKey {
+        case payments = "payments"
+    }
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        payments = try values.decodeIfPresent([PaymentAPIModel].self, forKey: .payments)
+    }
+
+
+}
+
 struct PaymentAPIModel : Codable {
 
     let amount : Int?
