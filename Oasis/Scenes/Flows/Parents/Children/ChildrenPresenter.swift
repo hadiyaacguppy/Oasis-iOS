@@ -20,7 +20,7 @@ extension ChildrenPresenter: ChildrenInteractorOutput {
     
     func createChild(model : ChildAPIModel) -> ChildrenModels.ViewModels.Children{
         return ChildrenModels.ViewModels.Children(childName: model.firstName ?? "",
-                                                  childAge: model.lastName ?? "",
+                                                  childAge: model.age ?? "",
                                                   childImage: model.profile?.asURL(),
                                                   moneySpent: model.spent != nil ? "\(model.spent!)" : "",
                                                   totalMoneyValue: model.balance != nil ? "\(model.balance!)" : "",

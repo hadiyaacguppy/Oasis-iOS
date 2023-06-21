@@ -25,6 +25,14 @@ class AssignNewTaskViewController: BaseViewController {
         return lbl
     }()
     
+    lazy var categoryLabel :  BaseLabel = {
+        let lbl = BaseLabel()
+        lbl.style = .init(font: MainFont.bold.with(size: 20),
+                          color: .black)
+        lbl.text = "Category".localized
+        return lbl
+    }()
+    
     lazy var scrollView: UIScrollView = {
        let scrollView = UIScrollView()
        scrollView.autoLayout()
@@ -37,12 +45,25 @@ class AssignNewTaskViewController: BaseViewController {
    lazy var stackView: UIStackView = {
        let stackView = UIStackView()
        stackView.axis = .vertical
-       stackView.distribution = .fillEqually
+       stackView.distribution = .fill
        stackView.spacing = 19
        stackView.autoLayout()
        stackView.backgroundColor = .clear
        return stackView
    }()
+    private let categoriesCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.isScrollEnabled = false
+        collectionView.backgroundColor = .clear
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.autoLayout()
+        collectionView.register(UINib(resource: R.nib.categoriesCollectionViewCell),
+                                forCellWithReuseIdentifier: R.reuseIdentifier.categoriesCollectionViewCell.identifier)
+        return collectionView
+    }()
     
     lazy var categoriesStackView: UIStackView = {
         let stackView = UIStackView()
@@ -53,6 +74,25 @@ class AssignNewTaskViewController: BaseViewController {
         stackView.backgroundColor = .clear
         return stackView
     }()
+    
+    lazy var assignTaskButton : OasisAquaButton = {
+        let btn = OasisAquaButton()
+        btn.setTitle("+ Create task", for: .normal)
+        btn.roundCorners = .all(radius: 30)
+        btn.autoLayout()
+        return btn
+    }()
+    
+    var categoriesArray = ["LEARNING", "SOCIAL", "HOUSEKEEPING", "FAMILY", "PETS", "GARDENING", "HELP"]
+    var previouslySelectedCVC = CategoriesCollectionViewCell()
+    
+    var taskNameView : TitleWithTextFieldView!
+    var taskAmountView : AmountWithCurrencyView!
+    
+    var currencies = ["LBP", "$"]
+    var currencySelected : String = "LBP"
+    var taskName : String?
+    var taskAmount : String?
 }
 
 //MARK:- View Lifecycle
@@ -69,6 +109,7 @@ extension AssignNewTaskViewController{
         //                            title: Constants.PlaceHolderView.Texts.wait)
         setupNavBarAppearance()
         setupRetryFetchingCallBack()
+        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,6 +117,103 @@ extension AssignNewTaskViewController{
         setupNavBarAppearance()
     }
     
+    private func setupUI(){
+        addScrollViewAndStackView()
+        addTopTitles()
+        addCategoriesCollectionView()
+        addTaskInfoViews()
+        addAssignTaskButton()
+    }
+    
+    private func addScrollViewAndStackView(){
+        view.addSubview(scrollView)
+        
+        scrollView.addSubview(stackView)
+        
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20),
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -40)
+        ])
+    }
+    
+    private func addTopTitles(){
+        stackView.addArrangedSubview(topTitleLabel)
+        stackView.addArrangedSubview(categoryLabel)
+    }
+    
+    private func addCategoriesCollectionView(){
+        stackView.addArrangedSubview(categoriesCollectionView)
+        
+        categoriesCollectionView.delegate = self
+        categoriesCollectionView.dataSource = self
+        
+        categoriesCollectionView.heightAnchor.constraint(equalToConstant: 70).isActive = true
+    }
+    
+    private func addTaskInfoViews(){
+         taskNameView = TitleWithTextFieldView.init(requestTitle: "Task name".localized,
+                                                    textsColor: .black,
+                                                    usertext: "",
+                                                    textSize: 22,
+                                                    isAgeRequest: false,
+                                                    labelHeight: 60,
+                                                    placholderText: "Type here".localized,
+                                                     frame: .zero)
+
+         taskAmountView = AmountWithCurrencyView.init(amountPlaceHolder: 0.0,
+                                                 amount: 0,
+                                                 currency: "LBP",
+                                                 titleLbl: "Amount to reward",
+                                                     frame: .zero)
+        
+        stackView.addArrangedSubview(taskNameView)
+        stackView.addArrangedSubview(taskAmountView)
+        
+        taskNameView.anyTextField.delegate = self
+        taskAmountView.amountTextField.delegate = self
+        
+        NSLayoutConstraint.activate([
+            taskNameView.heightAnchor.constraint(equalToConstant: 130),
+            taskAmountView.heightAnchor.constraint(equalToConstant: 130)
+        ])
+
+        taskAmountView.currencyPicker.delegate = self
+        taskAmountView.currencyPicker.dataSource = self
+        
+    }
+    
+    private func addAssignTaskButton(){
+        stackView.addArrangedSubview(assignTaskButton)
+        
+        NSLayoutConstraint.activate([
+            assignTaskButton.heightAnchor.constraint(equalToConstant: 40),
+            //assignTaskButton.widthAnchor.constraint(equalToConstant: 120)
+        
+        ])
+    }
+    
+    private func validateFields(){
+        
+        guard taskName.notNilNorEmpty else {
+            showSimpleAlertView("", message: "Please fill in the Task Name", withCompletionHandler: nil)
+            return
+        }
+        
+        guard taskAmount.notNilNorEmpty else {
+            showSimpleAlertView("", message: "Please fill in the Task Amount", withCompletionHandler: nil)
+            return
+        }
+        
+        
+    }
 }
 
 //MARK:- NavBarAppearance
@@ -123,3 +261,107 @@ extension AssignNewTaskViewController{
 }
 
 
+extension AssignNewTaskViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return categoriesArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.categoriesCollectionViewCell, for: indexPath)!
+        
+        cell.setupCell(category: categoriesArray[indexPath.row])
+        cell.categoriesContainerView.roundCorners = .all(radius: 14.5)
+        
+        return cell
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let selectedCell = categoriesCollectionView.cellForItem(at: indexPath)! as! CategoriesCollectionViewCell
+        let anyIndexPath = IndexPath(row: 100, section: 0)
+        
+        if previouslySelectedCVC == selectedCell{
+            selectedCell.categoriesContainerView.backgroundColor = Constants.Colors.appGrey
+            selectedCell.categoryLabel.textColor = .black
+
+        }else{
+            selectedCell.categoriesContainerView.backgroundColor = Constants.Colors.appViolet
+            selectedCell.categoryLabel.textColor = .white
+            if previouslySelectedCVC.categoriesContainerView != nil{
+                previouslySelectedCVC.categoriesContainerView.backgroundColor = Constants.Colors.appGrey
+                previouslySelectedCVC.categoryLabel.textColor = .black
+            }
+        }
+        previouslySelectedCVC = selectedCell
+    }
+}
+
+extension AssignNewTaskViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: categoriesArray[indexPath.row].size(withAttributes: nil).width + 30 , height: 28)
+
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10.0
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout
+                        collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10.0
+    }
+}
+
+extension AssignNewTaskViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.superview == taskNameView{
+            self.taskName = textField.text
+        }else{
+            self.taskAmount = textField.text//.notNilNorEmpty ? Int(textField.text!) : 0
+        }
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.superview == taskNameView{
+            self.taskName = textField.text
+        }else{
+            self.taskAmount = textField.text//.notNilNorEmpty ? Int(textField.text!) : 0
+        }
+    }
+}
+
+extension AssignNewTaskViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
+        1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        currencies.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return currencies[row]
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let currency = currencies[row]
+        currencySelected = currency
+        taskAmountView.currencyLabel.text = currencySelected
+        pickerView.isHidden = true
+    }
+
+
+}

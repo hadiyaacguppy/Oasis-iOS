@@ -116,7 +116,7 @@ class ChildView: BaseUIView {
     lazy var childInfoView : BaseUIView = {
         let view = BaseUIView(frame: .zero)
         
-        view.backgroundColor = .clear
+        view.backgroundColor = .white
         view.autoLayout()
         return view
     }()

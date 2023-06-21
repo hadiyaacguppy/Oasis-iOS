@@ -64,6 +64,16 @@ class ParentsHomeRouter: ParentsHomeRouterDataPassing{
             }
     }
     
+    func pushToAssignNewTaskController(){
+        let vc = R.storyboard.assignNewTask.assignNewTaskViewControllerVC()!
+        DispatchQueue
+            .main
+            .async {
+                self.viewController.hidesBottomBarWhenPushed = true
+                self.viewController.navigationController?.pushViewController(vc, animated: true)
+            }
+    }
+    
     func pushToAddChildController(){
         let vc = R.storyboard.addChild.addChildViewControllerVC()!
         DispatchQueue

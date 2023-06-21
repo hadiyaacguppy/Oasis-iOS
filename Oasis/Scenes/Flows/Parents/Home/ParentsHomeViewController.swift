@@ -432,6 +432,10 @@ extension ParentsHomeViewController{
             rightFishImageview.bottomAnchor.constraint(equalTo: topUpActionView.bottomAnchor, constant: -11)
         
         ])
+        
+        topUpActionView.onTap {
+            self.router?.pushToAssignNewTaskController()
+        }
         //secondActionsStackView.addArrangedSubview(subscriptionsActionView)
         
         //setupSendMoney()

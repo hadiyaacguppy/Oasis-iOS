@@ -123,7 +123,7 @@ extension AddTaskViewController{
     
     private func setupUI(){
 
-        addTopTitleAndButton()
+        //addTopTitleAndButton()
         
         addAddChildButton()
         
@@ -170,7 +170,6 @@ extension AddTaskViewController{
         ])
     }
     
-    //ScrollView & StackView
     private func addScrollViewAndStackView(){
         view.addSubview(scrollView)
         
@@ -190,16 +189,24 @@ extension AddTaskViewController{
         ])
     }
     
-    //Tasks collectionView
     private func addCollectionViews(){
         stackView.addArrangedSubview(taskTitleCollectionView)
-        stackView.addArrangedSubview(tasksCollectionView)
+        self.view.addSubview(tasksCollectionView)
+        //stackView.addArrangedSubview(tasksCollectionView)
         
         taskTitleCollectionView.delegate = self
         taskTitleCollectionView.dataSource = self
         
         tasksCollectionView.dataSource = self
         tasksCollectionView.delegate = self
+        
+        NSLayoutConstraint.activate([
+            tasksCollectionView.topAnchor.constraint(equalTo: stackView.bottomAnchor),
+            tasksCollectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            tasksCollectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            tasksCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        
+        ])
     }
     
 }

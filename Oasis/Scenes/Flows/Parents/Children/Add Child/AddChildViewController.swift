@@ -141,18 +141,19 @@ extension AddChildViewController{
     private func addTitleAndScanCodeButton(){
         
         scanCodeDottedView = DottedButtonView(actionName: "Scan Qr Code", viewHeight: 62, viewWidth: 336, viewRadius: 48, numberOflines: 1, innerImage: R.image.qrCode())
+        scanCodeDottedView.autoLayout()
         
-        view.addSubview(topTitleLabel)
-        view.addSubview(scanCodeDottedView)
+        self.view.addSubview(topTitleLabel)
+        self.view.addSubview(scanCodeDottedView)
         
         NSLayoutConstraint.activate([
+            topTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
             topTitleLabel.heightAnchor.constraint(equalToConstant: 35),
-            topTitleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-            topTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 35),
+            topTitleLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 35),
             
             scanCodeDottedView.topAnchor.constraint(equalTo: topTitleLabel.bottomAnchor, constant: 20),
-            scanCodeDottedView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            scanCodeDottedView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 30),
+            scanCodeDottedView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 30),
+            scanCodeDottedView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -30),
             scanCodeDottedView.heightAnchor.constraint(equalToConstant: 62)
         ])
         
@@ -280,7 +281,7 @@ extension AddChildViewController{
 
     }
     private func addNextButton(){
-        stackView.addSubview(nextImageView)
+        stackView.addArrangedSubview(nextImageView)
         
         NSLayoutConstraint.activate([
             nextImageView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -30),

@@ -189,6 +189,8 @@
 		16503FC629F5C26A00875075 /* ParentProfileConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503FBF29F5C26A00875075 /* ParentProfileConfigurator.swift */; };
 		16503FCA29F5C7F200875075 /* ParentCardFSPagerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503FC829F5C7F200875075 /* ParentCardFSPagerCell.swift */; };
 		16503FCB29F5C7F200875075 /* ParentCardFSPagerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16503FC929F5C7F200875075 /* ParentCardFSPagerCell.xib */; };
+		165C9C0A2A43010000B4380F /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C9C082A43010000B4380F /* CategoriesCollectionViewCell.swift */; };
+		165C9C0B2A43010000B4380F /* CategoriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 165C9C092A43010000B4380F /* CategoriesCollectionViewCell.xib */; };
 		169199912A17885B00E55E23 /* UserAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169199902A17885B00E55E23 /* UserAPIModel.swift */; };
 		169199932A17975300E55E23 /* ActivityAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169199922A17975300E55E23 /* ActivityAPIModel.swift */; };
 		169914612A1D57860046978D /* MoyaProvider+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1699145E2A1D57860046978D /* MoyaProvider+Rx.swift */; };
@@ -653,6 +655,8 @@
 		16503FBF29F5C26A00875075 /* ParentProfileConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentProfileConfigurator.swift; sourceTree = "<group>"; };
 		16503FC829F5C7F200875075 /* ParentCardFSPagerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentCardFSPagerCell.swift; sourceTree = "<group>"; };
 		16503FC929F5C7F200875075 /* ParentCardFSPagerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParentCardFSPagerCell.xib; sourceTree = "<group>"; };
+		165C9C082A43010000B4380F /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		165C9C092A43010000B4380F /* CategoriesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesCollectionViewCell.xib; sourceTree = "<group>"; };
 		169199902A17885B00E55E23 /* UserAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIModel.swift; sourceTree = "<group>"; };
 		169199922A17975300E55E23 /* ActivityAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityAPIModel.swift; sourceTree = "<group>"; };
 		1699145E2A1D57860046978D /* MoyaProvider+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+Rx.swift"; sourceTree = "<group>"; };
@@ -1536,6 +1540,15 @@
 			path = "Card Pager Cell";
 			sourceTree = "<group>";
 		};
+		165C9C072A4300AF00B4380F /* Categories CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				165C9C082A43010000B4380F /* CategoriesCollectionViewCell.swift */,
+				165C9C092A43010000B4380F /* CategoriesCollectionViewCell.xib */,
+			);
+			path = "Categories CollectionViewCell";
+			sourceTree = "<group>";
+		};
 		166EF2F929D36FC90029908E /* Flows */ = {
 			isa = PBXGroup;
 			children = (
@@ -1783,6 +1796,7 @@
 		16ABAD122A09108400FB937C /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				165C9C072A4300AF00B4380F /* Categories CollectionViewCell */,
 				16ABAD282A0E40AA00FB937C /* Assign New Task */,
 				16B044442A1244BA003EC59D /* SuggestedTasksTitlesCollectionViewCell */,
 				16ABAD212A0914D300FB937C /* Suggested Tasks Collection View Cell */,
@@ -2416,6 +2430,7 @@
 				161F3BA829D4BF670053158A /* Montserrat-ExtraLight.ttf in Resources */,
 				112239221FD5C7B000486528 /* LaunchScreen.storyboard in Resources */,
 				16ABACF72A04399400FB937C /* AddChild.storyboard in Resources */,
+				165C9C0B2A43010000B4380F /* CategoriesCollectionViewCell.xib in Resources */,
 				161F3C8829F3FC1A0053158A /* ChildrenFSPagerViewCell.xib in Resources */,
 				1122391F1FD5C7B000486528 /* Assets.xcassets in Resources */,
 				16503F9329F5853600875075 /* Payments.storyboard in Resources */,
@@ -2845,6 +2860,7 @@
 				161F3BDF29DAD6FB0053158A /* OTPVerificationPresenter.swift in Sources */,
 				16ABAD002A04F4A300FB937C /* TitleWithTextFieldView.swift in Sources */,
 				161F3C2429E5ACD40053158A /* PinterestLayoutAttributes.swift in Sources */,
+				165C9C0A2A43010000B4380F /* CategoriesCollectionViewCell.swift in Sources */,
 				1699146D2A24D3970046978D /* FriendsPresenter.swift in Sources */,
 				16ABAD112A08E1A900FB937C /* addGoalConfigurator.swift in Sources */,
 				169976F12A15100B00FDEC97 /* PaymentTypeAPIModel.swift in Sources */,

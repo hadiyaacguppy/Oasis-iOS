@@ -1672,10 +1672,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 12 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 13 nibs.
   struct nib {
     /// Nib `AgeTableViewCell`.
     static let ageTableViewCell = _R.nib._AgeTableViewCell()
+    /// Nib `CategoriesCollectionViewCell`.
+    static let categoriesCollectionViewCell = _R.nib._CategoriesCollectionViewCell()
     /// Nib `ChildTaskCollectionViewCell`.
     static let childTaskCollectionViewCell = _R.nib._ChildTaskCollectionViewCell()
     /// Nib `ChildrenFSPagerViewCell`.
@@ -1704,6 +1706,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.ageTableViewCell) instead")
     static func ageTableViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.ageTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CategoriesCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.categoriesCollectionViewCell) instead")
+    static func categoriesCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.categoriesCollectionViewCell)
     }
     #endif
 
@@ -1799,6 +1809,10 @@ struct R: Rswift.Validatable {
       return R.nib.ageTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AgeTableViewCell
     }
 
+    static func categoriesCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CategoriesCollectionViewCell? {
+      return R.nib.categoriesCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CategoriesCollectionViewCell
+    }
+
     static func childTaskCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ChildTaskCollectionViewCell? {
       return R.nib.childTaskCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ChildTaskCollectionViewCell
     }
@@ -1846,8 +1860,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 12 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 13 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `CategoriesCollectionViewCell`.
+    static let categoriesCollectionViewCell: Rswift.ReuseIdentifier<CategoriesCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "CategoriesCollectionViewCell")
     /// Reuse identifier `TasksCollectionCell`.
     static let tasksCollectionCell: Rswift.ReuseIdentifier<TasksCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "TasksCollectionCell")
     /// Reuse identifier `UpcomingPaymentCollectionCell`.
@@ -1914,6 +1930,20 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AgeTableViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AgeTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _CategoriesCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = CategoriesCollectionViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "CategoriesCollectionViewCell"
+      let name = "CategoriesCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CategoriesCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CategoriesCollectionViewCell
       }
 
       fileprivate init() {}

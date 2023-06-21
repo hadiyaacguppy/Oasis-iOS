@@ -32,7 +32,7 @@ extension AddChildInteractor: AddChildViewControllerOutput{
         dict["first_name"] = firstName
         dict["last_name"] = lastName
         dict["file"] = childImage
-        //dict["mobile"] = "70024284"
+        dict["mobile"] = "70024284"
         return Single<Void>.create(subscribe: { single in
             APIClient.shared.sendOTP(dict: dict)
                 .subscribe(onSuccess: { [weak self] _ in
