@@ -14,10 +14,10 @@ open class LabelSegment: BetterSegmentedControlSegment {
     private struct DefaultValues {
         static let normalBackgroundColor: UIColor = .clear
         static let normalTextColor: UIColor = .black
-        static let normalFont: UIFont = .systemFont(ofSize: 13)
+        static let normalFont: UIFont = MainFont.normal.with(size: 12)
         static let selectedBackgroundColor: UIColor = .clear
-        static let selectedTextColor: UIColor = .black
-        static let selectedFont: UIFont = .systemFont(ofSize: 13, weight: .medium)
+        static let selectedTextColor: UIColor = .white
+        static let selectedFont: UIFont = MainFont.bold.with(size: 13)//.systemFont(ofSize: 13, weight: .medium)
     }
     
     // MARK: Properties
