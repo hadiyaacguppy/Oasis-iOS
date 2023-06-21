@@ -65,7 +65,8 @@ class GenderViewController: BaseViewController {
     
     private lazy var femaleLogoImageView : UIImageView = {
         let imgView = UIImageView()
-        imgView.image = imgView.image?.withRenderingMode(.alwaysTemplate)
+        imgView.image = R.image.femaleLogo()?.withRenderingMode(.alwaysTemplate)
+        imgView.tintColor = .white
         imgView.contentMode = .left
         imgView.autoLayout()
         return imgView
@@ -80,7 +81,8 @@ class GenderViewController: BaseViewController {
     
     private lazy var maleLogoImageView : UIImageView = {
         let imgView = UIImageView()
-        imgView.image = imgView.image?.withRenderingMode(.alwaysTemplate)
+        imgView.image = R.image.maleLogo()?.withRenderingMode(.alwaysTemplate)
+        imgView.tintColor = .white
         imgView.contentMode = .right
         imgView.autoLayout()
         return imgView
@@ -175,7 +177,6 @@ extension GenderViewController{
     private func buildFemaleStackview(){
         mainStackView.addArrangedSubview(femaleStackView)
         
-        femaleLogoImageView.image = R.image.femaleLogo()
         femaleImageView.image = R.image.female()
         
         femaleStackView.addArrangedSubview(femaleLogoImageView)
@@ -195,9 +196,8 @@ extension GenderViewController{
         ])
         
         femaleStackView.onTap {
-            
-            self.femaleLogoImageView.tintColor = Constants.Colors.appPink
-            self.maleLogoImageView.tintColor = .none
+            self.femaleLogoImageView.tintColor = .red
+            self.maleLogoImageView.tintColor = .white
             RegistrationDataManager.current.isFemale = true
         }
         
@@ -209,7 +209,6 @@ extension GenderViewController{
         maleGenderLabel.text = "Male"
         maleStackView.addArrangedSubview(maleGenderLabel)
         
-        maleLogoImageView.image = R.image.maleLogo()
         maleImageView.image = R.image.male()
         
         maleStackView.addArrangedSubview(maleLogoImageView)
@@ -226,10 +225,9 @@ extension GenderViewController{
         ])
         
         maleStackView.onTap {
-            self.maleLogoImageView.tintColor = Constants.Colors.appPink
-            self.femaleLogoImageView.tintColor = .none
+            self.femaleLogoImageView.tintColor = .white
+            self.maleLogoImageView.tintColor = .red
             RegistrationDataManager.current.isFemale = false
-
         }
     }
     

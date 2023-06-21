@@ -42,19 +42,38 @@ class ChildrenViewController: BaseViewController {
         stackView.backgroundColor = .clear
         return stackView
     }()
+    
+    private lazy var childrenStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.spacing = 19
+        stackView.autoLayout()
+        stackView.backgroundColor = .clear
+        return stackView
+    }()
+    
+    private lazy var placeHolderContainerView : BaseUIView = {
+        let vw = BaseUIView()
+        vw.autoLayout()
+        vw.backgroundColor = .clear
+        return vw
+    }()
+
     var isParent : Bool = true
     var addChildrenButtonView : DottedButtonView!
     var childrenViewModelArray : [ChildrenModels.ViewModels.Children] = [] {
         didSet{
             if childrenViewModelArray.count > 0{
-                for child in childrenViewModelArray{
-                    addChildCard(child: child)
-                }
+                removePlaceholderView()
+                
             }else{
                 addNoChildrenPlaceholder()
             }
         }
     }
+    
+    var isPlaceholderAdded: Bool = false
 }
 
 //MARK:- View Lifecycle
@@ -126,10 +145,6 @@ extension ChildrenViewController{
     }
     
     private func addNoChildrenPlaceholder(){
-        let containerView = BaseUIView()
-        containerView.autoLayout()
-        containerView.backgroundColor = .clear
-        
         let dotsImageView = BaseImageView(frame: .zero)
         dotsImageView.autoLayout()
         dotsImageView.contentMode = .scaleAspectFit
@@ -156,27 +171,27 @@ extension ChildrenViewController{
         subtitleLabel.text = "Add your childs now and teach\nthem to be financially \nindependant".localized
         
         
-        view.addSubview(containerView)
-        containerView.addSubview(dotsImageView)
-        containerView.addSubview(parentImageView)
-        containerView.addSubview(grayBackgroundImageView)
-        containerView.addSubview(areYouParentLabel)
-        containerView.addSubview(subtitleLabel)
+        view.addSubview(placeHolderContainerView)
+        placeHolderContainerView.addSubview(dotsImageView)
+        placeHolderContainerView.addSubview(parentImageView)
+        placeHolderContainerView.addSubview(grayBackgroundImageView)
+        placeHolderContainerView.addSubview(areYouParentLabel)
+        placeHolderContainerView.addSubview(subtitleLabel)
         
         NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: addChildrenButtonView.bottomAnchor, constant: 20),
-            containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            containerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100),
+            placeHolderContainerView.topAnchor.constraint(equalTo: addChildrenButtonView.bottomAnchor, constant: 20),
+            placeHolderContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            placeHolderContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            placeHolderContainerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100),
             
-            dotsImageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-            dotsImageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+            dotsImageView.centerXAnchor.constraint(equalTo: placeHolderContainerView.centerXAnchor),
+            dotsImageView.centerYAnchor.constraint(equalTo: placeHolderContainerView.centerYAnchor),
             
-            parentImageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
-            parentImageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            parentImageView.centerYAnchor.constraint(equalTo: placeHolderContainerView.centerYAnchor),
+            parentImageView.centerXAnchor.constraint(equalTo: placeHolderContainerView.centerXAnchor),
             
             grayBackgroundImageView.topAnchor.constraint(equalTo: parentImageView.bottomAnchor, constant: -80),
-            grayBackgroundImageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            grayBackgroundImageView.centerXAnchor.constraint(equalTo: placeHolderContainerView.centerXAnchor),
             grayBackgroundImageView.heightAnchor.constraint(equalToConstant: 220),
             
             areYouParentLabel.centerXAnchor.constraint(equalTo: grayBackgroundImageView.centerXAnchor),
@@ -184,12 +199,20 @@ extension ChildrenViewController{
             areYouParentLabel.heightAnchor.constraint(equalToConstant: 27),
             
             subtitleLabel.topAnchor.constraint(equalTo: areYouParentLabel.bottomAnchor, constant: 4),
-            subtitleLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor)
+            subtitleLabel.centerXAnchor.constraint(equalTo: placeHolderContainerView.centerXAnchor)
         ])
+        
+        isPlaceholderAdded = true
+    }
+    
+    private func removePlaceholderView(){
+        placeHolderContainerView.removeAllSubviews()
+        placeHolderContainerView.removeFromSuperview()
+        isPlaceholderAdded = false
+        stackView.addArrangedSubview(childrenStackView)
     }
     
     private func addChildCard(child : ChildrenModels.ViewModels.Children){
-        
         let childCard = ChildView.init(name: child.childName,
                                  age: child.childAge,
                                  valueSpent: child.moneySpent,
@@ -198,7 +221,7 @@ extension ChildrenViewController{
                                  goals: child.numberOfGoals,
                                  imageName: child.childImage)
         
-        stackView.addArrangedSubview(childCard)
+        childrenStackView.addArrangedSubview(childCard)
         childCard.onTap {
             self.router?.pushToChildDetailsVC()
         }
@@ -242,6 +265,10 @@ extension ChildrenViewController{
             .subscribe(onSuccess: { [weak self] (childrenAray) in
                 self?.removePlaceHolder()
                 self?.childrenViewModelArray = childrenAray
+                self?.childrenStackView.removeAllArrangedSubviews()
+                for child in childrenAray{
+                    self?.addChildCard(child: child)
+                }
                 }, onError: { [weak self](error) in
                     self?.preparePlaceHolderView(withErrorViewModel: (error as! ErrorViewModel))
             })
