@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (5.6.2)
+  - DGCharts (5.0.0):
+    - DGCharts/Core (= 5.0.0)
+  - DGCharts/Core (5.0.0)
   - Firebase/Analytics (10.0.0):
     - Firebase/Core
   - Firebase/Core (10.0.0):
@@ -137,6 +140,7 @@ PODS:
     - SwiftEntryKit (= 1.2.6)
 
 DEPENDENCIES:
+  - DGCharts
   - Firebase/Analytics
   - Firebase/Crashlytics
   - FSPagerView
@@ -153,6 +157,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - DGCharts
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -182,6 +187,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  DGCharts: 6e0cf2644e8f81ad13f04caa8bc18502870a1c54
   Firebase: 1b810f3d0c0532e27a48f1961f8c0400a668a2cf
   FirebaseAnalytics: 9921a52739f4ab66099da31b6e0243db78a3ac0a
   FirebaseCore: 97f48a3a567a72b8d4daa0f03c3aadb78df4e995
@@ -209,6 +215,6 @@ SPEC CHECKSUMS:
   SwiftEntryKit: 96a2fa90b2631bbbfac50d18449e9ca3d0635f13
   TDPopupKit: bd24bf7432dd2b42984fcdd4b1c64d33db7fc422
 
-PODFILE CHECKSUM: 2399cef11a6f6fc810e74bc67dc1c5bfde3fab7d
+PODFILE CHECKSUM: 09225b5a9930bb151acc6f234636908e371755f8
 
 COCOAPODS: 1.11.3

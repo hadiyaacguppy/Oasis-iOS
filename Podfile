@@ -1,4 +1,4 @@
-platform :ios, '11.0'
+platform :ios, '13.0'
 #inhibit_all_warnings!
 
 def install_oneSignalPod
@@ -18,7 +18,8 @@ target 'Oasis' do
   pod 'Moya', '~> 14.0'
   pod 'Moya/RxSwift', '~> 14.0'
   pod 'FSPagerView'
-    
+  pod 'DGCharts'    
+
 install_oneSignalPod
 end
 
