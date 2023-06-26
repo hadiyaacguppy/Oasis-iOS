@@ -1,0 +1,30 @@
+//
+//  TeensTasksInteractor.swift
+//  Oasis
+//
+//  Created by Hadi Yaacoub on 23/06/2023.
+//  Copyright (c) 2023 Tedmob. All rights reserved.
+//
+
+import Foundation
+import RxSwift
+
+protocol TeensTasksInteractorOutput {
+    
+    func apiCallFailed(withError error : NetworkErrorResponse) -> ErrorViewModel
+    
+}
+
+protocol TeensTasksDataStore {
+    
+}
+
+class TeensTasksInteractor: TeensTasksDataStore{
+    
+    var presenter: TeensTasksInteractorOutput?
+    
+}
+
+extension TeensTasksInteractor: TeensTasksViewControllerOutput{
+    
+}

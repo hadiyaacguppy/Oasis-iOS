@@ -29,14 +29,7 @@ class SuggestedTitlesCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
-    func setupCell(taskTitle : String, indexOfCell : Int){
+    func setupCell(taskTitle : String){
         taskLabel.text = taskTitle
-        if indexOfCell == 0{
-                greenBGView.backgroundColor = Constants.Colors.aquaMarine
-                taskLabel.textColor = .white
-            }else{
-                greenBGView.backgroundColor = .clear
-                taskLabel.textColor = .black
-            }
     }
 }

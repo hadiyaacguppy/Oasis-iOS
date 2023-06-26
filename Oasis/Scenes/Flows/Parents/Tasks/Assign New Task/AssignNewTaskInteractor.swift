@@ -29,10 +29,10 @@ extension AssignNewTaskInteractor: AssignNewTaskViewControllerOutput{
     func getTaskTypes() -> RxSwift.Single<[AssignNewTaskModels.ViewModels.Task]> {
         return Single<[AssignNewTaskModels.ViewModels.Task]>.create(subscribe: { single in
             APIClient.shared.getTasksTypes()
-                .subscribe(onSuccess: { [weak self] (taskTypes) in
+                .subscribe(onSuccess: { [weak self] (rootTaskTypes) in
                     guard let self = self else { return single(.error(ErrorViewModel.generateGenericError()))}
                     guard self.presenter != nil else { return single(.error(ErrorViewModel.generateGenericError()))}
-                    single(.success((self.presenter!.didGetTasks(models: taskTypes))))
+                    single(.success((self.presenter!.didGetTasks(models: rootTaskTypes.taskTypes ?? []))))
                     }, onError: { [weak self] (error) in
                         guard let self = self else { return single(.error(ErrorViewModel.generateGenericError()))}
                         guard self.presenter != nil else { return single(.error(ErrorViewModel.generateGenericError()))}

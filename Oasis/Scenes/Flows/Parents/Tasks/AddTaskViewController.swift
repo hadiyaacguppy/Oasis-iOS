@@ -50,7 +50,6 @@ class AddTaskViewController: BaseViewController {
         return scrollView
     }()
     
-    //Horizontal Labels
     lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -251,7 +250,7 @@ extension AddTaskViewController: UICollectionViewDelegate, UICollectionViewDataS
             return cell
         }else{
             let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.taskTitleCollectionVC, for: indexPath)! as SuggestedTitlesCollectionViewCell
-            cell.setupCell(taskTitle: suggestedTasksArray[indexPath.row], indexOfCell: indexPath.row)
+            cell.setupCell(taskTitle: suggestedTasksArray[indexPath.row])
 
             return cell
         }

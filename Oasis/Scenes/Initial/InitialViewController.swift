@@ -83,7 +83,8 @@ class InitialViewController: BaseViewController, InitialViewControllerInput {
         if SessionRepository.shared.userIsLoggedIn {
             self.router?.redirectToTabbarController()
         }else{
-            self.router?.redirectToOnboardingScene()
+            //self.router?.redirectToOnboardingScene()
+            self.router?.redirectToTeensTabbarController()
         }
     }
     

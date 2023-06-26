@@ -55,6 +55,16 @@ class InitialRouter: InitialRouterInput {
         }
     }
     
+    func redirectToTeensTabbarController(){
+        let vc = TeensTabbarController()
+        let window = (UIApplication.shared.delegate as! AppDelegate).window!
+        DispatchQueue.main.async {
+            UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromRight, animations: {
+                window.rootViewController = vc
+            })
+        }
+    }
+    
     ///Pop The view from the view hierarchy
     func popView(){
         DispatchQueue.main

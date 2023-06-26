@@ -34,6 +34,7 @@ struct Constants {
         static let textviewBGColor : UIColor = .init(red: 244, green: 244, blue: 244)
         static let blueToastViewColor : UIColor = .init(hexFromString: "3a68c9")
         static let lightGrey : UIColor = .init(red: 248, green: 250, blue: 251)
+        static let extraLightGrey : UIColor = .init(hexFromString: "#F8FAFB")
         static let appGrey : UIColor = .init(hexFromString: "#ECEBE8")
         static let orangeYellow : UIColor = .init(hexFromString: "#ffb410")
         static let lightGreen : UIColor = .init(red: 224, green: 242, blue: 236)
@@ -43,6 +44,12 @@ struct Constants {
         static let appYellow : UIColor = .init(hexFromString: "#FFC500")
         static let lightYellow : UIColor = .init(hexFromString: "#F1E5BC")
         static let appOrange : UIColor = .init(hexFromString: "#FE4B00")
+        static let maleBGColor : UIColor = .init(hexFromString: "#CCD8EB")
+        static let femaleBGColor : UIColor = .init(hexFromString: "#F5ECEC")
+        static let teensOrange : UIColor = .init(hexFromString: "#E94100")
+
+
+
 
 
         

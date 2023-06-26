@@ -11,20 +11,20 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="taskTitleCollectionVC" id="gTV-IL-0wX" customClass="SuggestedTitlesCollectionViewCell" customModule="Oasis" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="taskTitleCollectionVC" id="gTV-IL-0wX" customClass="SuggestedTitlesCollectionViewCell" customModule="Guppy" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="93" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="93" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDc-R1-eux" customClass="BaseUIView" customModule="Oasis" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDc-R1-eux" customClass="BaseUIView" customModule="Guppy" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="93" height="50"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIU-ZW-2gW" customClass="BaseUIView" customModule="Oasis" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIU-ZW-2gW" customClass="BaseUIView" customModule="Guppy" customModuleProvider="target">
                                 <rect key="frame" x="15" y="10" width="63" height="30"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Kf-Pd-mZs" customClass="BaseLabel" customModule="Oasis" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Kf-Pd-mZs" customClass="BaseLabel" customModule="Guppy" customModuleProvider="target">
                                         <rect key="frame" x="10.666666666666668" y="5" width="41.666666666666657" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -38,7 +38,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pIU-ZW-2gW" firstAttribute="centerY" secondItem="zDc-R1-eux" secondAttribute="centerY" id="IDT-ra-E5f"/>
                             <constraint firstItem="pIU-ZW-2gW" firstAttribute="centerX" secondItem="zDc-R1-eux" secondAttribute="centerX" id="RsA-3e-k0s"/>

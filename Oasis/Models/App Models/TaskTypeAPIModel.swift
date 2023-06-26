@@ -8,6 +8,22 @@
 
 import Foundation
 
+struct TasksRootAPIModel : Codable {
+
+    let taskTypes : [TaskTypeAPIModel]?
+
+
+    enum CodingKeys: String, CodingKey {
+        case taskTypes = "task_types"
+    }
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        taskTypes = try values.decodeIfPresent([TaskTypeAPIModel].self, forKey: .taskTypes)
+    }
+
+
+}
+
 struct TaskTypeAPIModel : Codable {
 
     let id : Int?

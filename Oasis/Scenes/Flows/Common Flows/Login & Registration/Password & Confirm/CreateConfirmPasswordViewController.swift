@@ -220,6 +220,10 @@ extension CreateConfirmPasswordViewController{
             .subscribe(onSuccess: { _ in
                 self.dismissProgress()
                 self.router?.redirectToHome()
+//                if (12...20).contains(RegistrationDataManager.current.userAge!) {
+//
+//                }else{
+//                }
             }, onError: {(error) in
                 self.dismissProgress()
                 self.display(errorMessage: (error as! ErrorViewModel).message)

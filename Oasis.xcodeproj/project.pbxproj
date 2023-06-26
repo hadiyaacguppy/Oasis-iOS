@@ -153,6 +153,44 @@
 		161F3C8329F3F16A0053158A /* OasisVioletButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C8229F3F16A0053158A /* OasisVioletButton.swift */; };
 		161F3C8729F3FC1A0053158A /* ChildrenFSPagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F3C8529F3FC1A0053158A /* ChildrenFSPagerViewCell.swift */; };
 		161F3C8829F3FC1A0053158A /* ChildrenFSPagerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161F3C8629F3FC1A0053158A /* ChildrenFSPagerViewCell.xib */; };
+		1646E73B2A45849F00A4549A /* UploadPicture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1646E7342A45849F00A4549A /* UploadPicture.storyboard */; };
+		1646E73C2A45849F00A4549A /* UploadPicturePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7352A45849F00A4549A /* UploadPicturePresenter.swift */; };
+		1646E73D2A45849F00A4549A /* UploadPictureRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7362A45849F00A4549A /* UploadPictureRouter.swift */; };
+		1646E73E2A45849F00A4549A /* UploadPictureModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7372A45849F00A4549A /* UploadPictureModels.swift */; };
+		1646E73F2A45849F00A4549A /* UploadPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7382A45849F00A4549A /* UploadPictureViewController.swift */; };
+		1646E7402A45849F00A4549A /* UploadPictureInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7392A45849F00A4549A /* UploadPictureInteractor.swift */; };
+		1646E7412A45849F00A4549A /* UploadPictureConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E73A2A45849F00A4549A /* UploadPictureConfigurator.swift */; };
+		1646E74A2A45897800A4549A /* TeensHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1646E7432A45897800A4549A /* TeensHome.storyboard */; };
+		1646E74B2A45897800A4549A /* TeensHomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7442A45897800A4549A /* TeensHomePresenter.swift */; };
+		1646E74C2A45897800A4549A /* TeensHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7452A45897800A4549A /* TeensHomeRouter.swift */; };
+		1646E74D2A45897800A4549A /* TeensHomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7462A45897800A4549A /* TeensHomeModels.swift */; };
+		1646E74E2A45897800A4549A /* TeensHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7472A45897800A4549A /* TeensHomeViewController.swift */; };
+		1646E74F2A45897800A4549A /* TeensHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7482A45897800A4549A /* TeensHomeInteractor.swift */; };
+		1646E7502A45897800A4549A /* TeensHomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7492A45897800A4549A /* TeensHomeConfigurator.swift */; };
+		1646E7522A45B20100A4549A /* TeensTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7512A45B20100A4549A /* TeensTabbarController.swift */; };
+		1646E75D2A45B4E900A4549A /* TeensTasks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1646E7562A45B4E900A4549A /* TeensTasks.storyboard */; };
+		1646E75E2A45B4E900A4549A /* TeensTasksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7572A45B4E900A4549A /* TeensTasksPresenter.swift */; };
+		1646E75F2A45B4E900A4549A /* TeensTasksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7582A45B4E900A4549A /* TeensTasksRouter.swift */; };
+		1646E7602A45B4E900A4549A /* TeensTasksModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7592A45B4E900A4549A /* TeensTasksModels.swift */; };
+		1646E7612A45B4E900A4549A /* TeensTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E75A2A45B4E900A4549A /* TeensTasksViewController.swift */; };
+		1646E7622A45B4E900A4549A /* TeensTasksInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E75B2A45B4E900A4549A /* TeensTasksInteractor.swift */; };
+		1646E7632A45B4E900A4549A /* TeensTasksConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E75C2A45B4E900A4549A /* TeensTasksConfigurator.swift */; };
+		1646E76B2A45B50700A4549A /* TeensGoals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1646E7642A45B50700A4549A /* TeensGoals.storyboard */; };
+		1646E76C2A45B50700A4549A /* TeensGoalsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7652A45B50700A4549A /* TeensGoalsPresenter.swift */; };
+		1646E76D2A45B50700A4549A /* TeensGoalsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7662A45B50700A4549A /* TeensGoalsRouter.swift */; };
+		1646E76E2A45B50700A4549A /* TeensGoalsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7672A45B50700A4549A /* TeensGoalsModels.swift */; };
+		1646E76F2A45B50700A4549A /* TeensGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7682A45B50700A4549A /* TeensGoalsViewController.swift */; };
+		1646E7702A45B50700A4549A /* TeensGoalsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7692A45B50700A4549A /* TeensGoalsInteractor.swift */; };
+		1646E7712A45B50700A4549A /* TeensGoalsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E76A2A45B50700A4549A /* TeensGoalsConfigurator.swift */; };
+		1646E7792A45B51C00A4549A /* TeensProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1646E7722A45B51C00A4549A /* TeensProfile.storyboard */; };
+		1646E77A2A45B51C00A4549A /* TeensProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7732A45B51C00A4549A /* TeensProfilePresenter.swift */; };
+		1646E77B2A45B51C00A4549A /* TeensProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7742A45B51C00A4549A /* TeensProfileRouter.swift */; };
+		1646E77C2A45B51C00A4549A /* TeensProfileModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7752A45B51C00A4549A /* TeensProfileModels.swift */; };
+		1646E77D2A45B51C00A4549A /* TeensProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7762A45B51C00A4549A /* TeensProfileViewController.swift */; };
+		1646E77E2A45B51C00A4549A /* TeensProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7772A45B51C00A4549A /* TeensProfileInteractor.swift */; };
+		1646E77F2A45B51C00A4549A /* TeensProfileConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7782A45B51C00A4549A /* TeensProfileConfigurator.swift */; };
+		1646E7832A49893300A4549A /* TeensTasksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7812A49893300A4549A /* TeensTasksCollectionViewCell.swift */; };
+		1646E7842A49893300A4549A /* TeensTasksCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1646E7822A49893300A4549A /* TeensTasksCollectionViewCell.xib */; };
 		16503F8029F488C600875075 /* AmountTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F7F29F488C600875075 /* AmountTextField.swift */; };
 		16503F8229F4893900875075 /* AmountWithCurrencyVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F8129F4893900875075 /* AmountWithCurrencyVIew.swift */; };
 		16503F8629F53CDE00875075 /* PeopleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F8429F53CDE00875075 /* PeopleCollectionViewCell.swift */; };
@@ -619,6 +657,44 @@
 		161F3C8229F3F16A0053158A /* OasisVioletButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OasisVioletButton.swift; sourceTree = "<group>"; };
 		161F3C8529F3FC1A0053158A /* ChildrenFSPagerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenFSPagerViewCell.swift; sourceTree = "<group>"; };
 		161F3C8629F3FC1A0053158A /* ChildrenFSPagerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChildrenFSPagerViewCell.xib; sourceTree = "<group>"; };
+		1646E7342A45849F00A4549A /* UploadPicture.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UploadPicture.storyboard; sourceTree = "<group>"; };
+		1646E7352A45849F00A4549A /* UploadPicturePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPicturePresenter.swift; sourceTree = "<group>"; };
+		1646E7362A45849F00A4549A /* UploadPictureRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPictureRouter.swift; sourceTree = "<group>"; };
+		1646E7372A45849F00A4549A /* UploadPictureModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPictureModels.swift; sourceTree = "<group>"; };
+		1646E7382A45849F00A4549A /* UploadPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPictureViewController.swift; sourceTree = "<group>"; };
+		1646E7392A45849F00A4549A /* UploadPictureInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPictureInteractor.swift; sourceTree = "<group>"; };
+		1646E73A2A45849F00A4549A /* UploadPictureConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPictureConfigurator.swift; sourceTree = "<group>"; };
+		1646E7432A45897800A4549A /* TeensHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeensHome.storyboard; sourceTree = "<group>"; };
+		1646E7442A45897800A4549A /* TeensHomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensHomePresenter.swift; sourceTree = "<group>"; };
+		1646E7452A45897800A4549A /* TeensHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensHomeRouter.swift; sourceTree = "<group>"; };
+		1646E7462A45897800A4549A /* TeensHomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensHomeModels.swift; sourceTree = "<group>"; };
+		1646E7472A45897800A4549A /* TeensHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensHomeViewController.swift; sourceTree = "<group>"; };
+		1646E7482A45897800A4549A /* TeensHomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensHomeInteractor.swift; sourceTree = "<group>"; };
+		1646E7492A45897800A4549A /* TeensHomeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensHomeConfigurator.swift; sourceTree = "<group>"; };
+		1646E7512A45B20100A4549A /* TeensTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensTabbarController.swift; sourceTree = "<group>"; };
+		1646E7562A45B4E900A4549A /* TeensTasks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeensTasks.storyboard; sourceTree = "<group>"; };
+		1646E7572A45B4E900A4549A /* TeensTasksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensTasksPresenter.swift; sourceTree = "<group>"; };
+		1646E7582A45B4E900A4549A /* TeensTasksRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensTasksRouter.swift; sourceTree = "<group>"; };
+		1646E7592A45B4E900A4549A /* TeensTasksModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensTasksModels.swift; sourceTree = "<group>"; };
+		1646E75A2A45B4E900A4549A /* TeensTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensTasksViewController.swift; sourceTree = "<group>"; };
+		1646E75B2A45B4E900A4549A /* TeensTasksInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensTasksInteractor.swift; sourceTree = "<group>"; };
+		1646E75C2A45B4E900A4549A /* TeensTasksConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensTasksConfigurator.swift; sourceTree = "<group>"; };
+		1646E7642A45B50700A4549A /* TeensGoals.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeensGoals.storyboard; sourceTree = "<group>"; };
+		1646E7652A45B50700A4549A /* TeensGoalsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensGoalsPresenter.swift; sourceTree = "<group>"; };
+		1646E7662A45B50700A4549A /* TeensGoalsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensGoalsRouter.swift; sourceTree = "<group>"; };
+		1646E7672A45B50700A4549A /* TeensGoalsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensGoalsModels.swift; sourceTree = "<group>"; };
+		1646E7682A45B50700A4549A /* TeensGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensGoalsViewController.swift; sourceTree = "<group>"; };
+		1646E7692A45B50700A4549A /* TeensGoalsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensGoalsInteractor.swift; sourceTree = "<group>"; };
+		1646E76A2A45B50700A4549A /* TeensGoalsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensGoalsConfigurator.swift; sourceTree = "<group>"; };
+		1646E7722A45B51C00A4549A /* TeensProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeensProfile.storyboard; sourceTree = "<group>"; };
+		1646E7732A45B51C00A4549A /* TeensProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensProfilePresenter.swift; sourceTree = "<group>"; };
+		1646E7742A45B51C00A4549A /* TeensProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensProfileRouter.swift; sourceTree = "<group>"; };
+		1646E7752A45B51C00A4549A /* TeensProfileModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensProfileModels.swift; sourceTree = "<group>"; };
+		1646E7762A45B51C00A4549A /* TeensProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensProfileViewController.swift; sourceTree = "<group>"; };
+		1646E7772A45B51C00A4549A /* TeensProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensProfileInteractor.swift; sourceTree = "<group>"; };
+		1646E7782A45B51C00A4549A /* TeensProfileConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensProfileConfigurator.swift; sourceTree = "<group>"; };
+		1646E7812A49893300A4549A /* TeensTasksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensTasksCollectionViewCell.swift; sourceTree = "<group>"; };
+		1646E7822A49893300A4549A /* TeensTasksCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeensTasksCollectionViewCell.xib; sourceTree = "<group>"; };
 		16503F7F29F488C600875075 /* AmountTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountTextField.swift; sourceTree = "<group>"; };
 		16503F8129F4893900875075 /* AmountWithCurrencyVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountWithCurrencyVIew.swift; sourceTree = "<group>"; };
 		16503F8429F53CDE00875075 /* PeopleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1395,6 +1471,7 @@
 			isa = PBXGroup;
 			children = (
 				161F3C4329ED41330053158A /* TabbarController.swift */,
+				1646E7512A45B20100A4549A /* TeensTabbarController.swift */,
 			);
 			path = "Tabbar Controller";
 			sourceTree = "<group>";
@@ -1471,6 +1548,86 @@
 				161F3C8629F3FC1A0053158A /* ChildrenFSPagerViewCell.xib */,
 			);
 			path = "FSPager Cell";
+			sourceTree = "<group>";
+		};
+		1646E7332A45847300A4549A /* Upload Picture */ = {
+			isa = PBXGroup;
+			children = (
+				1646E7342A45849F00A4549A /* UploadPicture.storyboard */,
+				1646E7352A45849F00A4549A /* UploadPicturePresenter.swift */,
+				1646E7362A45849F00A4549A /* UploadPictureRouter.swift */,
+				1646E7372A45849F00A4549A /* UploadPictureModels.swift */,
+				1646E7382A45849F00A4549A /* UploadPictureViewController.swift */,
+				1646E7392A45849F00A4549A /* UploadPictureInteractor.swift */,
+				1646E73A2A45849F00A4549A /* UploadPictureConfigurator.swift */,
+			);
+			path = "Upload Picture";
+			sourceTree = "<group>";
+		};
+		1646E7422A45895800A4549A /* Teens Home */ = {
+			isa = PBXGroup;
+			children = (
+				1646E7432A45897800A4549A /* TeensHome.storyboard */,
+				1646E7442A45897800A4549A /* TeensHomePresenter.swift */,
+				1646E7452A45897800A4549A /* TeensHomeRouter.swift */,
+				1646E7462A45897800A4549A /* TeensHomeModels.swift */,
+				1646E7472A45897800A4549A /* TeensHomeViewController.swift */,
+				1646E7482A45897800A4549A /* TeensHomeInteractor.swift */,
+				1646E7492A45897800A4549A /* TeensHomeConfigurator.swift */,
+			);
+			path = "Teens Home";
+			sourceTree = "<group>";
+		};
+		1646E7532A45B4A400A4549A /* Teens Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				1646E7802A4988F900A4549A /* Teens TasksCollectionViewCell */,
+				1646E7562A45B4E900A4549A /* TeensTasks.storyboard */,
+				1646E7572A45B4E900A4549A /* TeensTasksPresenter.swift */,
+				1646E7582A45B4E900A4549A /* TeensTasksRouter.swift */,
+				1646E7592A45B4E900A4549A /* TeensTasksModels.swift */,
+				1646E75A2A45B4E900A4549A /* TeensTasksViewController.swift */,
+				1646E75B2A45B4E900A4549A /* TeensTasksInteractor.swift */,
+				1646E75C2A45B4E900A4549A /* TeensTasksConfigurator.swift */,
+			);
+			path = "Teens Tasks";
+			sourceTree = "<group>";
+		};
+		1646E7542A45B4B000A4549A /* Teens Goals */ = {
+			isa = PBXGroup;
+			children = (
+				1646E7642A45B50700A4549A /* TeensGoals.storyboard */,
+				1646E7652A45B50700A4549A /* TeensGoalsPresenter.swift */,
+				1646E7662A45B50700A4549A /* TeensGoalsRouter.swift */,
+				1646E7672A45B50700A4549A /* TeensGoalsModels.swift */,
+				1646E7682A45B50700A4549A /* TeensGoalsViewController.swift */,
+				1646E7692A45B50700A4549A /* TeensGoalsInteractor.swift */,
+				1646E76A2A45B50700A4549A /* TeensGoalsConfigurator.swift */,
+			);
+			path = "Teens Goals";
+			sourceTree = "<group>";
+		};
+		1646E7552A45B4BC00A4549A /* Teens Profile */ = {
+			isa = PBXGroup;
+			children = (
+				1646E7722A45B51C00A4549A /* TeensProfile.storyboard */,
+				1646E7732A45B51C00A4549A /* TeensProfilePresenter.swift */,
+				1646E7742A45B51C00A4549A /* TeensProfileRouter.swift */,
+				1646E7752A45B51C00A4549A /* TeensProfileModels.swift */,
+				1646E7762A45B51C00A4549A /* TeensProfileViewController.swift */,
+				1646E7772A45B51C00A4549A /* TeensProfileInteractor.swift */,
+				1646E7782A45B51C00A4549A /* TeensProfileConfigurator.swift */,
+			);
+			path = "Teens Profile";
+			sourceTree = "<group>";
+		};
+		1646E7802A4988F900A4549A /* Teens TasksCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1646E7812A49893300A4549A /* TeensTasksCollectionViewCell.swift */,
+				1646E7822A49893300A4549A /* TeensTasksCollectionViewCell.xib */,
+			);
+			path = "Teens TasksCollectionViewCell";
 			sourceTree = "<group>";
 		};
 		16503F8329F53CD000875075 /* Cells */ = {
@@ -1586,6 +1743,10 @@
 		166EF2FC29D36FD00029908E /* Teens */ = {
 			isa = PBXGroup;
 			children = (
+				1646E7422A45895800A4549A /* Teens Home */,
+				1646E7532A45B4A400A4549A /* Teens Tasks */,
+				1646E7542A45B4B000A4549A /* Teens Goals */,
+				1646E7552A45B4BC00A4549A /* Teens Profile */,
 			);
 			path = Teens;
 			sourceTree = "<group>";
@@ -1706,6 +1867,7 @@
 		169914CA2A3B9C8D0046978D /* Login & Registration */ = {
 			isa = PBXGroup;
 			children = (
+				1646E7332A45847300A4549A /* Upload Picture */,
 				1699147E2A2A2A0E0046978D /* BirthDate */,
 				161F3BF529E3156F0053158A /* Select Age */,
 				161F3BB629D989D60053158A /* OTP Verification */,
@@ -2366,7 +2528,7 @@
 			);
 			mainGroup = 112239081FD5C7AF00486528;
 			packageReferences = (
-				1699145A2A1D478E0046978D /* XCRemoteSwiftPackageReference "ObjectMapper.git" */,
+				1699145A2A1D478E0046978D /* XCRemoteSwiftPackageReference "ObjectMapper" */,
 			);
 			productRefGroup = 112239121FD5C7AF00486528 /* Products */;
 			projectDirPath = "";
@@ -2401,12 +2563,14 @@
 				169914862A2A2A330046978D /* Birthdate.storyboard in Resources */,
 				CF403858216CF78F001F649B /* Initial.storyboard in Resources */,
 				16ABACE429F68CDD00FB937C /* Settings.storyboard in Resources */,
+				1646E7842A49893300A4549A /* TeensTasksCollectionViewCell.xib in Resources */,
 				169914A62A30A5ED0046978D /* Gender.storyboard in Resources */,
 				16503FC029F5C26A00875075 /* ParentProfile.storyboard in Resources */,
 				16ABAD302A0E40CD00FB937C /* AssignNewTask.storyboard in Resources */,
 				16503FB129F5C07400875075 /* Goals.storyboard in Resources */,
 				161F3C3929E5AF330053158A /* InterestsCollectionViewCell.xib in Resources */,
 				16ABAD1A2A0910AB00FB937C /* AddTask.storyboard in Resources */,
+				1646E73B2A45849F00A4549A /* UploadPicture.storyboard in Resources */,
 				3ECBAAB523D06DD8003672DA /* PushNotification.storyboard in Resources */,
 				161F3BAE29D4BF670053158A /* Montserrat-Bold.ttf in Resources */,
 				16503FCB29F5C7F200875075 /* ParentCardFSPagerCell.xib in Resources */,
@@ -2424,8 +2588,10 @@
 				161F3B9029D371500053158A /* Onboarding.storyboard in Resources */,
 				169914792A24D3EE0046978D /* FriendsCollectionViewCell.xib in Resources */,
 				161F3BAA29D4BF670053158A /* Montserrat-Medium.ttf in Resources */,
+				1646E7792A45B51C00A4549A /* TeensProfile.storyboard in Resources */,
 				161F3BAF29D4BF670053158A /* Montserrat-Black.ttf in Resources */,
 				161F3BA829D4BF670053158A /* Montserrat-ExtraLight.ttf in Resources */,
+				1646E76B2A45B50700A4549A /* TeensGoals.storyboard in Resources */,
 				112239221FD5C7B000486528 /* LaunchScreen.storyboard in Resources */,
 				16ABACF72A04399400FB937C /* AddChild.storyboard in Resources */,
 				165C9C0B2A43010000B4380F /* CategoriesCollectionViewCell.xib in Resources */,
@@ -2437,6 +2603,8 @@
 				169914C42A327D660046978D /* ChildTaskCollectionViewCell.xib in Resources */,
 				161F3C1129E322BE0053158A /* ParentsHome.storyboard in Resources */,
 				161F3C6429F31CD00053158A /* ReceiveMoney.storyboard in Resources */,
+				1646E75D2A45B4E900A4549A /* TeensTasks.storyboard in Resources */,
+				1646E74A2A45897800A4549A /* TeensHome.storyboard in Resources */,
 				16503F8729F53CDE00875075 /* PeopleCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2641,7 +2809,7 @@
 			);
 			name = R.Swift;
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2677,6 +2845,7 @@
 				16503FB429F5C07400875075 /* GoalsModels.swift in Sources */,
 				1699148E2A2F26F80046978D /* DateView.swift in Sources */,
 				16503F8029F488C600875075 /* AmountTextField.swift in Sources */,
+				1646E76E2A45B50700A4549A /* TeensGoalsModels.swift in Sources */,
 				16503FA629F58E1900875075 /* ChildrenViewController.swift in Sources */,
 				16503F8229F4893900875075 /* AmountWithCurrencyVIew.swift in Sources */,
 				161F3BC529D98A0E0053158A /* RegistrationInteractor.swift in Sources */,
@@ -2694,15 +2863,18 @@
 				16503FC629F5C26A00875075 /* ParentProfileConfigurator.swift in Sources */,
 				169914A72A30A5ED0046978D /* GenderPresenter.swift in Sources */,
 				161F3C6729F31CD00053158A /* ReceiveMoneyModels.swift in Sources */,
+				1646E76D2A45B50700A4549A /* TeensGoalsRouter.swift in Sources */,
 				161F3C0729E319050053158A /* AgeTableViewCell.swift in Sources */,
 				CFF69D6D219554C4003BE6BF /* CGPoint+Extensions.swift in Sources */,
 				0F1B7FB022CA6C9D0079F752 /* UISearchBar+Extensions.swift in Sources */,
 				169976EA2A15011D00FDEC97 /* GoalAPIModel.swift in Sources */,
 				16503F8629F53CDE00875075 /* PeopleCollectionViewCell.swift in Sources */,
+				1646E77E2A45B51C00A4549A /* TeensProfileInteractor.swift in Sources */,
 				16ABACFB2A04399400FB937C /* AddChildViewController.swift in Sources */,
 				16ABAD1F2A0910AB00FB937C /* AddTaskInteractor.swift in Sources */,
 				161F3BD429D98AE00053158A /* LoginConfigurator.swift in Sources */,
 				16503FC529F5C26A00875075 /* ParentProfileInteractor.swift in Sources */,
+				1646E74D2A45897800A4549A /* TeensHomeModels.swift in Sources */,
 				161F3B9929D4BC730053158A /* OnboardingCollectionViewCell.swift in Sources */,
 				161F3C6529F31CD00053158A /* ReceiveMoneyPresenter.swift in Sources */,
 				0F1B7FB522CA6CAE0079F752 /* LocaleStore.swift in Sources */,
@@ -2711,11 +2883,13 @@
 				CFE27A17214A9BE200DBB917 /* Reactive+Dictionary.swift in Sources */,
 				117C4AB41FD8652B008BB445 /* NSIndexPath+Extensions.swift in Sources */,
 				161F3C2529E5ACD40053158A /* PinterestVC.swift in Sources */,
+				1646E7712A45B50700A4549A /* TeensGoalsConfigurator.swift in Sources */,
 				3E1DEAF622BA63E900FAD9F4 /* UIRectCorner+Extensions.swift in Sources */,
 				161F3B9229D371500053158A /* OnboardingRouter.swift in Sources */,
 				161F3C7929F31EE80053158A /* SendMoneyConfigurator.swift in Sources */,
 				161F3C2329E5ACD40053158A /* PinterestLayoutDelegate.swift in Sources */,
 				CF8C5C9E20EF9CA400236C7B /* DatePickerDialog.swift in Sources */,
+				1646E73F2A45849F00A4549A /* UploadPictureViewController.swift in Sources */,
 				169976EC2A15012500FDEC97 /* TasksAPIModel.swift in Sources */,
 				CF564702211B142E0092EFBD /* OneSignalPushService.swift in Sources */,
 				1699148B2A2A2A330046978D /* BirthdateInteractor.swift in Sources */,
@@ -2736,6 +2910,7 @@
 				16ABACD429F6734800FB937C /* BetterSegmentedControl+UIPointerInteractionDelegate.swift in Sources */,
 				161F3C2029E5ACD40053158A /* Help.swift in Sources */,
 				16ABAD342A0E40CD00FB937C /* AssignNewTaskViewController.swift in Sources */,
+				1646E73D2A45849F00A4549A /* UploadPictureRouter.swift in Sources */,
 				169914BB2A3231360046978D /* ChildDetailsViewController.swift in Sources */,
 				161F3C5229F277A30053158A /* SendGiftModels.swift in Sources */,
 				4AEF647522107DC000D53D75 /* BaseButton.swift in Sources */,
@@ -2747,6 +2922,7 @@
 				3E7367F422C6605A00B4C71D /* FeedbackTypes.swift in Sources */,
 				16ABACE529F68CDD00FB937C /* SettingsPresenter.swift in Sources */,
 				161F3BF429E2FCA20053158A /* CreateConfirmPasswordConfigurator.swift in Sources */,
+				1646E77C2A45B51C00A4549A /* TeensProfileModels.swift in Sources */,
 				0F57538E20EE12EB0069C139 /* Constants.swift in Sources */,
 				CF8C5CAC20EF9D7E00236C7B /* UICollectionView+Extensions.swift in Sources */,
 				169914C32A327D660046978D /* ChildTaskCollectionViewCell.swift in Sources */,
@@ -2761,6 +2937,7 @@
 				169914BD2A3231360046978D /* ChildDetailsConfigurator.swift in Sources */,
 				CF87EDA4201B8C2500562226 /* BaseTextField.swift in Sources */,
 				16ABAD352A0E40CD00FB937C /* AssignNewTaskInteractor.swift in Sources */,
+				1646E76C2A45B50700A4549A /* TeensGoalsPresenter.swift in Sources */,
 				672909FE210E43F900632C4F /* PlaceHolderCreator.swift in Sources */,
 				16B0444A2A14FC51003EC59D /* ChildAPIModel.swift in Sources */,
 				169914702A24D3970046978D /* FriendsViewController.swift in Sources */,
@@ -2777,6 +2954,7 @@
 				16503FB729F5C07400875075 /* GoalsConfigurator.swift in Sources */,
 				161F3BEF29E2FCA20053158A /* CreateConfirmPasswordPresenter.swift in Sources */,
 				169914782A24D3EE0046978D /* FriendsCollectionViewCell.swift in Sources */,
+				1646E7612A45B4E900A4549A /* TeensTasksViewController.swift in Sources */,
 				169914A82A30A5ED0046978D /* GenderRouter.swift in Sources */,
 				161F3C4129ED3D990053158A /* CardTabBarView.swift in Sources */,
 				16ABACDA29F6737000FB937C /* IconSegment.swift in Sources */,
@@ -2787,6 +2965,7 @@
 				CF56472D211B1B740092EFBD /* Reactive+UIImageView.swift in Sources */,
 				CF6030762212F77B003872F3 /* DeviceManager.swift in Sources */,
 				3ECBAAB723D06DD8003672DA /* PushNotificationContainer.swift in Sources */,
+				1646E7702A45B50700A4549A /* TeensGoalsInteractor.swift in Sources */,
 				161F3BE129DAD6FB0053158A /* OTPVerificationModels.swift in Sources */,
 				169914712A24D3970046978D /* FriendsInteractor.swift in Sources */,
 				1699147B2A25FBED0046978D /* BalanceAPIModel.swift in Sources */,
@@ -2794,33 +2973,41 @@
 				161F3C0329E3157D0053158A /* SelectAgeConfigurator.swift in Sources */,
 				169914612A1D57860046978D /* MoyaProvider+Rx.swift in Sources */,
 				16ABAD102A08E1A900FB937C /* addGoalInteractor.swift in Sources */,
+				1646E74C2A45897800A4549A /* TeensHomeRouter.swift in Sources */,
 				3E59224C23C3992100E729B7 /* Font.swift in Sources */,
 				169199932A17975300E55E23 /* ActivityAPIModel.swift in Sources */,
+				1646E7602A45B4E900A4549A /* TeensTasksModels.swift in Sources */,
 				67290A02210E441400632C4F /* PlaceHolderHelper.swift in Sources */,
 				16503F9429F5853600875075 /* PaymentsPresenter.swift in Sources */,
 				16503FA529F58E1900875075 /* ChildrenModels.swift in Sources */,
 				169914B82A3231360046978D /* ChildDetailsPresenter.swift in Sources */,
+				1646E75F2A45B4E900A4549A /* TeensTasksRouter.swift in Sources */,
 				0F1B7FBD22CA6CBD0079F752 /* PhoneCodeCell.swift in Sources */,
 				169914AA2A30A5ED0046978D /* GenderViewController.swift in Sources */,
 				16503FCA29F5C7F200875075 /* ParentCardFSPagerCell.swift in Sources */,
 				CF8C5CAA20EF9D6700236C7B /* Int+Extensions.swift in Sources */,
+				1646E7622A45B4E900A4549A /* TeensTasksInteractor.swift in Sources */,
 				16ABAD312A0E40CD00FB937C /* AssignNewTaskPresenter.swift in Sources */,
 				161F3C5029F277A30053158A /* SendGiftPresenter.swift in Sources */,
 				3E8E350422CA0BDE009A3113 /* Observable+Operators.swift in Sources */,
 				16503F9629F5853600875075 /* PaymentsModels.swift in Sources */,
+				1646E77B2A45B51C00A4549A /* TeensProfileRouter.swift in Sources */,
 				169976F52A1515B200FDEC97 /* InterestTypeAPIModel.swift in Sources */,
 				16ABACF92A04399400FB937C /* AddChildRouter.swift in Sources */,
+				1646E7412A45849F00A4549A /* UploadPictureConfigurator.swift in Sources */,
 				161F3B9D29D4BD160053158A /* OnboardingController.swift in Sources */,
 				161F3C7529F31EE80053158A /* SendMoneyRouter.swift in Sources */,
 				16ABACE629F68CDD00FB937C /* SettingsRouter.swift in Sources */,
 				16ABACD929F6737000FB937C /* BetterSegmentedControlSegment.swift in Sources */,
 				3E1DEAFA22BA660F00FAD9F4 /* BaseLabel.swift in Sources */,
+				1646E7522A45B20100A4549A /* TeensTabbarController.swift in Sources */,
 				161F3C0229E3157D0053158A /* SelectAgeInteractor.swift in Sources */,
 				161F3BB329D989560053158A /* WhiteBorderTextfield.swift in Sources */,
 				67C9591126247EF300A67399 /* APIErrorModel.swift in Sources */,
 				161F3C6929F31CD00053158A /* ReceiveMoneyInteractor.swift in Sources */,
 				161F3BD029D98AE00053158A /* LoginRouter.swift in Sources */,
 				16ABAD1C2A0910AB00FB937C /* AddTaskRouter.swift in Sources */,
+				1646E74B2A45897800A4549A /* TeensHomePresenter.swift in Sources */,
 				169914AE2A30D5780046978D /* RoundedViewWithArrow.swift in Sources */,
 				169914B92A3231360046978D /* ChildDetailsRouter.swift in Sources */,
 				16ABAD332A0E40CD00FB937C /* AssignNewTaskModels.swift in Sources */,
@@ -2833,7 +3020,9 @@
 				11CD5280230AFF91003D08BE /* ViewEmbedder.swift in Sources */,
 				161F3B9129D371500053158A /* OnboardingPresenter.swift in Sources */,
 				16ABACEC29F68D7700FB937C /* SettingsClickableOptionView.swift in Sources */,
+				1646E77D2A45B51C00A4549A /* TeensProfileViewController.swift in Sources */,
 				161F3C2129E5ACD40053158A /* PinterestCell.swift in Sources */,
+				1646E76F2A45B50700A4549A /* TeensGoalsViewController.swift in Sources */,
 				16503FB529F5C07400875075 /* GoalsViewController.swift in Sources */,
 				CF40385B216CF78F001F649B /* InitialModels.swift in Sources */,
 				161F3B9529D371500053158A /* OnboardingInteractor.swift in Sources */,
@@ -2856,6 +3045,7 @@
 				161F3C1529E322BE0053158A /* ParentsHomeViewController.swift in Sources */,
 				161F3C7729F31EE80053158A /* SendMoneyViewController.swift in Sources */,
 				3E1DEAF422BA634A00FAD9F4 /* UIView+Rounded.swift in Sources */,
+				1646E7832A49893300A4549A /* TeensTasksCollectionViewCell.swift in Sources */,
 				CFE259E622C9C4D5006B0472 /* AppDelegate+SessionExpiry.swift in Sources */,
 				161F3BDF29DAD6FB0053158A /* OTPVerificationPresenter.swift in Sources */,
 				16ABAD002A04F4A300FB937C /* TitleWithTextFieldView.swift in Sources */,
@@ -2863,9 +3053,11 @@
 				165C9C0A2A43010000B4380F /* CategoriesCollectionViewCell.swift in Sources */,
 				1699146D2A24D3970046978D /* FriendsPresenter.swift in Sources */,
 				16ABAD112A08E1A900FB937C /* addGoalConfigurator.swift in Sources */,
+				1646E73E2A45849F00A4549A /* UploadPictureModels.swift in Sources */,
 				169976F12A15100B00FDEC97 /* PaymentTypeAPIModel.swift in Sources */,
 				161F3BC429D98A0E0053158A /* RegistrationViewController.swift in Sources */,
 				161F3C1229E322BE0053158A /* ParentsHomePresenter.swift in Sources */,
+				1646E75E2A45B4E900A4549A /* TeensTasksPresenter.swift in Sources */,
 				CF8C5C9C20EF97AE00236C7B /* BaseTableViewController.swift in Sources */,
 				117C4AAB1FD86050008BB445 /* Utilities.swift in Sources */,
 				0F1B7FBB22CA6CBD0079F752 /* CurrencyCell.swift in Sources */,
@@ -2878,11 +3070,13 @@
 				161F3C5429F277A30053158A /* SendGiftInteractor.swift in Sources */,
 				161F3C4629EDAC820053158A /* OasisGradientButton.swift in Sources */,
 				169914BF2A325DF10046978D /* ChildActionView.swift in Sources */,
+				1646E77F2A45B51C00A4549A /* TeensProfileConfigurator.swift in Sources */,
 				CF40385D216CF78F001F649B /* InitialInteractor.swift in Sources */,
 				3EDC4153224E875300624D2B /* Reactive+UIView.swift in Sources */,
 				169976EF2A1504C200FDEC97 /* TaskTypeAPIModel.swift in Sources */,
 				161F3C1629E322BE0053158A /* ParentsHomeInteractor.swift in Sources */,
 				161F3C6629F31CD00053158A /* ReceiveMoneyRouter.swift in Sources */,
+				1646E77A2A45B51C00A4549A /* TeensProfilePresenter.swift in Sources */,
 				3E1DEAFD22BA674D00FAD9F4 /* NavigationBarType.swift in Sources */,
 				3E1DEAF822BA641A00FAD9F4 /* CALayer+Extensions.swift in Sources */,
 				161F3BD329D98AE00053158A /* LoginInteractor.swift in Sources */,
@@ -2903,7 +3097,9 @@
 				67F03A5E26F20B7000ED91ED /* MediaManager.swift in Sources */,
 				161F3C3429E5AD4D0053158A /* InterestsConfigurator.swift in Sources */,
 				16ABAD022A07F23800FB937C /* RegistrationDataManager.swift in Sources */,
+				1646E74E2A45897800A4549A /* TeensHomeViewController.swift in Sources */,
 				117C4AB61FD86544008BB445 /* UIPageViewController+Extensions.swift in Sources */,
+				1646E7632A45B4E900A4549A /* TeensTasksConfigurator.swift in Sources */,
 				CF181BA420809E28002603A1 /* UIColor+Extensions.swift in Sources */,
 				161F3BE629DF37F40053158A /* WhiteBorderButton.swift in Sources */,
 				161F3BC329D98A0E0053158A /* RegistrationModels.swift in Sources */,
@@ -2912,15 +3108,18 @@
 				16ABACFD2A04399400FB937C /* AddChildConfigurator.swift in Sources */,
 				169914622A1D57860046978D /* Observable+Response.swift in Sources */,
 				161F3B9429D371500053158A /* OnboardingViewController.swift in Sources */,
+				1646E7402A45849F00A4549A /* UploadPictureInteractor.swift in Sources */,
 				16ABAD1E2A0910AB00FB937C /* AddTaskViewController.swift in Sources */,
 				1699146E2A24D3970046978D /* FriendsRouter.swift in Sources */,
 				0F1B7FBC22CA6CBD0079F752 /* CountryCell.swift in Sources */,
 				161F3C0129E3157D0053158A /* SelectAgeViewController.swift in Sources */,
 				169914722A24D3970046978D /* FriendsConfigurator.swift in Sources */,
+				1646E74F2A45897800A4549A /* TeensHomeInteractor.swift in Sources */,
 				16ABACFA2A04399400FB937C /* AddChildModels.swift in Sources */,
 				67C958F42624782100A67399 /* Reactive+UITextField.swift in Sources */,
 				CF403859216CF78F001F649B /* InitialPresenter.swift in Sources */,
 				0F57539520EE185F0069C139 /* Array+Extensions.swift in Sources */,
+				1646E7502A45897800A4549A /* TeensHomeConfigurator.swift in Sources */,
 				3E6DEFB321623D7A00978FDC /* UITableView+Extensions.swift in Sources */,
 				16ABAD1B2A0910AB00FB937C /* AddTaskPresenter.swift in Sources */,
 				CF8C5CAE20EF9D8F00236C7B /* UIApplication+Extensions.swift in Sources */,
@@ -2959,6 +3158,7 @@
 				0F57539D20EE1C430069C139 /* APIClient.swift in Sources */,
 				161F3BF329E2FCA20053158A /* CreateConfirmPasswordInteractor.swift in Sources */,
 				16ABAD0E2A08E1A900FB937C /* addGoalModels.swift in Sources */,
+				1646E73C2A45849F00A4549A /* UploadPicturePresenter.swift in Sources */,
 				16503FB329F5C07400875075 /* GoalsRouter.swift in Sources */,
 				161F3C3329E5AD4D0053158A /* InterestsInteractor.swift in Sources */,
 				3E0129C421257453000CC626 /* NSAttributedString+Extension.swift in Sources */,
@@ -3664,7 +3864,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1699145A2A1D478E0046978D /* XCRemoteSwiftPackageReference "ObjectMapper.git" */ = {
+		1699145A2A1D478E0046978D /* XCRemoteSwiftPackageReference "ObjectMapper" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/tristanhimmelman/ObjectMapper.git";
 			requirement = {

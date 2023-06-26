@@ -108,9 +108,9 @@ extension APIClient {
             .map {_ in return Void()}
     }
     
-    func getTasksTypes() -> Single<[TaskTypeAPIModel]>{
+    func getTasksTypes() -> Single<TasksRootAPIModel>{
         return self.provider.rx.request(.getTasksTypes)
-            .map([TaskTypeAPIModel].self)
+            .map(TasksRootAPIModel.self)
     }
     
     func getGeneralTasks() -> Single<[TasksAPIModel]>{
