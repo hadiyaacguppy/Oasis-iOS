@@ -108,11 +108,30 @@ class TeensHomeViewController: BaseViewController {
         lbl.autoLayout()
         return lbl
     }()
+    
     lazy var linkParentButton : BaseButton = {
         let btn = BaseButton()
         btn.style = .init(titleFont: MainFont.bold.with(size: 20), titleColor: .white, backgroundColor: Constants.Colors.teensOrange)
         btn.roundCorners = .all(radius: 44)
-        btn.setTitle("Link my parent", for: .normal)
+        btn.setTitle("Link my parent".localized, for: .normal)
+        btn.autoLayout()
+        return btn
+    }()
+    
+    lazy var sendButton : BaseButton = {
+        let btn = BaseButton()
+        btn.style = .init(titleFont: MainFont.bold.with(size: 20), titleColor: .white, backgroundColor: Constants.Colors.teensOrange)
+        btn.roundCorners = .all(radius: 44)
+        btn.setTitle("Sendt".localized, for: .normal)
+        btn.autoLayout()
+        return btn
+    }()
+    
+    lazy var requestButton : BaseButton = {
+        let btn = BaseButton()
+        btn.style = .init(titleFont: MainFont.bold.with(size: 20), titleColor: .white, backgroundColor: Constants.Colors.teensOrange)
+        btn.roundCorners = .all(radius: 44)
+        btn.setTitle("Request".localized, for: .normal)
         btn.autoLayout()
         return btn
     }()
@@ -135,6 +154,20 @@ class TeensHomeViewController: BaseViewController {
         return stackView
     }()
     
+    private lazy var tasksCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.autoLayout()
+        collectionView.register(UINib(resource: R.nib.teensTasksCollectionViewCell),
+                                forCellWithReuseIdentifier: R.reuseIdentifier.teensCollectionViewCell.identifier)
+        return collectionView
+    }()
+    
+    let testingTaskVMArray = [TeensTasksModels.ViewModels.Task(id: 0, taskTitle: "HOUSEKEEPING", taskDescription: "Tidy up your room", amount: 100000, currency: "LBP"), TeensTasksModels.ViewModels.Task(id: 0, taskTitle: "Cooking", taskDescription: "Cook dinner today", amount: 150000, currency: "LBP"), TeensTasksModels.ViewModels.Task(id: 0, taskTitle: "Pet", taskDescription: "Walk the dog", amount: 100000, currency: "LBP")]
 }
 
 //MARK:- View Lifecycle
@@ -165,6 +198,8 @@ extension TeensHomeViewController{
         addTopContainerView()
         addLearnMoreContainerView()
         addActionViews()
+        //addFinishTasksLabel()
+        //addTaskscollectionView()
     }
     
     private func addScrollView () {
@@ -180,7 +215,7 @@ extension TeensHomeViewController{
             stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20),
             stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 30),
             stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -30),
-            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 40),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -60)
         ])
         
@@ -243,9 +278,35 @@ extension TeensHomeViewController{
             currencyLabel.trailingAnchor.constraint(equalTo: balanceContainerView.trailingAnchor, constant: -30),
             currencyLabel.bottomAnchor.constraint(equalTo: amountLabel.bottomAnchor)
 
-
         ])
+        
+        linkParentButton.onTap {
+            self.linkParentButton.removeFromSuperview()
+            self.learnMoreContainerView.removeFromSuperview()
+            self.actionsStackView.removeFromSuperview()
+            
+            self.addSendAndRequestButtons()
+            self.addFinishTasksLabel()
+            self.addTaskscollectionView()
+        }
 
+    }
+    
+    private func addSendAndRequestButtons(){
+        topContainerView.addSubview(requestButton)
+        topContainerView.addSubview(sendButton)
+        
+        NSLayoutConstraint.activate([
+            requestButton.centerYAnchor.constraint(equalTo: balanceContainerView.bottomAnchor),
+            requestButton.heightAnchor.constraint(equalToConstant: 62),
+            requestButton.leadingAnchor.constraint(equalTo: balanceContainerView.leadingAnchor, constant: 25),
+            requestButton.trailingAnchor.constraint(equalTo: balanceContainerView.centerXAnchor, constant: -8),
+            
+            sendButton.centerYAnchor.constraint(equalTo: balanceContainerView.bottomAnchor),
+            sendButton.heightAnchor.constraint(equalToConstant: 62),
+            sendButton.leadingAnchor.constraint(equalTo: balanceContainerView.centerXAnchor, constant: 8),
+            sendButton.trailingAnchor.constraint(equalTo: balanceContainerView.trailingAnchor, constant: -25)
+        ])
     }
     
     private func addLearnMoreContainerView(){
@@ -301,7 +362,7 @@ extension TeensHomeViewController{
     }
     
     private func createImageWithLabelView(image : UIImage, title : String, bgColor : UIColor) -> BaseUIView{
-        var containerView : BaseUIView = {
+        let containerView : BaseUIView = {
             let view = BaseUIView()
             view.backgroundColor = bgColor
             view.roundCorners = .all(radius: 14)
@@ -361,7 +422,12 @@ extension TeensHomeViewController{
     }
     
     private func addTaskscollectionView(){
+        stackView.addArrangedSubview(tasksCollectionView)
         
+        tasksCollectionView.delegate = self
+        tasksCollectionView.dataSource = self
+        
+        tasksCollectionView.heightAnchor.constraint(equalToConstant: 210).isActive = true
     }
     
 }
@@ -389,3 +455,33 @@ extension TeensHomeViewController{
 }
 
 
+extension TeensHomeViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return testingTaskVMArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.teensCollectionViewCell, for: indexPath)!
+        cell.setupUI(model: testingTaskVMArray[indexPath.row])
+        return cell
+    }
+}
+
+extension TeensHomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 190, height: 202)
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 16.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout
+                        collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 20.0
+    }
+}

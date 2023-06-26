@@ -12,6 +12,12 @@ import Foundation
 struct TeensTasksModels {
     
     struct ViewModels {
-        
+        struct Task{
+            var id : Int
+            var taskTitle : String?
+            var taskDescription : String?
+            var amount : Int?
+            var currency : String?
+        }
     }
 }

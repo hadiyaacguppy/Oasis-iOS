@@ -5,20 +5,103 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="teensCollectionViewCell" id="gTV-IL-0wX" customClass="TeensTasksCollectionViewCell" customModule="Guppy" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="190" height="202"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="190" height="202"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xUS-pY-ZlV" customClass="BaseUIView" customModule="Guppy" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="190" height="162"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Onp-f2-3uJ" customClass="BaseImageView" customModule="Guppy" customModuleProvider="target">
+                                <rect key="frame" x="55" y="122" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="azs-Qc-Nhi"/>
+                                    <constraint firstAttribute="height" constant="80" id="lMa-2S-ikr"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6j-cf-S1U" customClass="BaseLabel" customModule="Guppy" customModuleProvider="target">
+                                <rect key="frame" x="20" y="15" width="133" height="13"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="13" id="nrU-u0-uL8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXO-98-9lj" customClass="BaseLabel" customModule="Guppy" customModuleProvider="target">
+                                <rect key="frame" x="20" y="30.999999999999996" width="160" height="62.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcr-XP-ocg" customClass="BaseLabel" customModule="Guppy" customModuleProvider="target">
+                                <rect key="frame" x="20" y="98.666666666666671" width="160" height="20.333333333333329"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20.333333333333329" id="XmO-Pi-BqF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="24i-fJ-zyL" customClass="BaseImageView" customModule="Guppy" customModuleProvider="target">
+                                <rect key="frame" x="163" y="10" width="17" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="17" id="OAG-Cj-eMV"/>
+                                    <constraint firstAttribute="height" constant="17" id="iqL-ap-3pN"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wcr-XP-ocg" firstAttribute="leading" secondItem="LXO-98-9lj" secondAttribute="leading" id="0Ti-DV-BAG"/>
+                            <constraint firstAttribute="trailing" secondItem="24i-fJ-zyL" secondAttribute="trailing" constant="10" id="3VV-uv-D69"/>
+                            <constraint firstItem="wcr-XP-ocg" firstAttribute="trailing" secondItem="LXO-98-9lj" secondAttribute="trailing" id="9vy-GD-bkI"/>
+                            <constraint firstItem="s6j-cf-S1U" firstAttribute="leading" secondItem="xUS-pY-ZlV" secondAttribute="leading" constant="20" id="Ckn-OH-D2e"/>
+                            <constraint firstItem="s6j-cf-S1U" firstAttribute="top" secondItem="xUS-pY-ZlV" secondAttribute="top" constant="15" id="EQ9-MI-3MH"/>
+                            <constraint firstItem="24i-fJ-zyL" firstAttribute="top" secondItem="xUS-pY-ZlV" secondAttribute="top" constant="10" id="Ewr-5E-dY5"/>
+                            <constraint firstAttribute="trailing" secondItem="LXO-98-9lj" secondAttribute="trailing" constant="10" id="ML8-kT-jtv"/>
+                            <constraint firstItem="Onp-f2-3uJ" firstAttribute="top" secondItem="wcr-XP-ocg" secondAttribute="bottom" constant="3" id="UBP-yT-vYu"/>
+                            <constraint firstItem="wcr-XP-ocg" firstAttribute="top" secondItem="LXO-98-9lj" secondAttribute="bottom" constant="5" id="aLi-es-Y3j"/>
+                            <constraint firstItem="24i-fJ-zyL" firstAttribute="leading" secondItem="s6j-cf-S1U" secondAttribute="trailing" constant="10" id="otg-xf-b6j"/>
+                            <constraint firstItem="Onp-f2-3uJ" firstAttribute="centerX" secondItem="xUS-pY-ZlV" secondAttribute="centerX" id="q4p-lO-DwO"/>
+                            <constraint firstItem="LXO-98-9lj" firstAttribute="leading" secondItem="s6j-cf-S1U" secondAttribute="leading" id="sYl-uH-iGe"/>
+                            <constraint firstItem="LXO-98-9lj" firstAttribute="top" secondItem="s6j-cf-S1U" secondAttribute="bottom" constant="3" id="saI-wx-Ajx"/>
+                        </constraints>
+                    </view>
+                </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <point key="canvasLocation" x="136.92307692307691" y="20.616113744075829"/>
+            <constraints>
+                <constraint firstItem="Onp-f2-3uJ" firstAttribute="bottom" secondItem="ZTg-uK-7eu" secondAttribute="bottom" id="KsS-QZ-qX3"/>
+                <constraint firstItem="xUS-pY-ZlV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Sgg-Lj-Iky"/>
+                <constraint firstAttribute="trailing" secondItem="xUS-pY-ZlV" secondAttribute="trailing" id="hW3-np-gI8"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="xUS-pY-ZlV" secondAttribute="bottom" constant="40" id="iU6-y6-CVa"/>
+                <constraint firstItem="xUS-pY-ZlV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="vbj-SY-nNA"/>
+            </constraints>
+            <size key="customSize" width="190" height="202"/>
+            <connections>
+                <outlet property="amountLabel" destination="wcr-XP-ocg" id="1P4-ry-MBF"/>
+                <outlet property="descriptionLabel" destination="LXO-98-9lj" id="pWt-3C-0LG"/>
+                <outlet property="newTaskIconImageView" destination="24i-fJ-zyL" id="HZZ-wv-LoE"/>
+                <outlet property="taskTypeLabel" destination="s6j-cf-S1U" id="o1N-9Z-idz"/>
+                <outlet property="tickImageView" destination="Onp-f2-3uJ" id="ddf-aW-Eu0"/>
+                <outlet property="whiteBgView" destination="xUS-pY-ZlV" id="wY6-Gl-l6E"/>
+            </connections>
+            <point key="canvasLocation" x="243.07692307692307" y="74.644549763033169"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
