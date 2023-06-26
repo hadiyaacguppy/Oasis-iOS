@@ -122,7 +122,7 @@ class TeensHomeViewController: BaseViewController {
         let btn = BaseButton()
         btn.style = .init(titleFont: MainFont.bold.with(size: 20), titleColor: .white, backgroundColor: Constants.Colors.teensOrange)
         btn.roundCorners = .all(radius: 44)
-        btn.setTitle("Sendt".localized, for: .normal)
+        btn.setTitle("Send".localized, for: .normal)
         btn.autoLayout()
         return btn
     }()
@@ -162,6 +162,7 @@ class TeensHomeViewController: BaseViewController {
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.autoLayout()
+        collectionView.clipsToBounds = false
         collectionView.register(UINib(resource: R.nib.teensTasksCollectionViewCell),
                                 forCellWithReuseIdentifier: R.reuseIdentifier.teensCollectionViewCell.identifier)
         return collectionView
@@ -198,8 +199,8 @@ extension TeensHomeViewController{
         addTopContainerView()
         addLearnMoreContainerView()
         addActionViews()
-        //addFinishTasksLabel()
-        //addTaskscollectionView()
+        addFinishTasksLabel()
+        addTaskscollectionView()
     }
     
     private func addScrollView () {
@@ -282,14 +283,8 @@ extension TeensHomeViewController{
         
         linkParentButton.onTap {
             self.linkParentButton.removeFromSuperview()
-            self.learnMoreContainerView.removeFromSuperview()
-            self.actionsStackView.removeFromSuperview()
-            
             self.addSendAndRequestButtons()
-            self.addFinishTasksLabel()
-            self.addTaskscollectionView()
         }
-
     }
     
     private func addSendAndRequestButtons(){
@@ -428,6 +423,7 @@ extension TeensHomeViewController{
         tasksCollectionView.dataSource = self
         
         tasksCollectionView.heightAnchor.constraint(equalToConstant: 210).isActive = true
+        tasksCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 20).isActive = true
     }
     
 }
