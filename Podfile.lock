@@ -94,6 +94,9 @@ PODS:
   - GoogleUtilities/UserDefaults (7.8.0):
     - GoogleUtilities/Logger
   - Logging (1.4.0)
+  - Mixpanel-swift (4.1.3):
+    - Mixpanel-swift/Complete (= 4.1.3)
+  - Mixpanel-swift/Complete (4.1.3)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
@@ -145,6 +148,7 @@ DEPENDENCIES:
   - Firebase/Crashlytics
   - FSPagerView
   - Logging (~> 1.1)
+  - Mixpanel-swift
   - Moya (~> 14.0)
   - Moya/RxSwift (~> 14.0)
   - OneSignal (< 4.0, >= 3.0.0)
@@ -169,6 +173,7 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleUtilities
     - Logging
+    - Mixpanel-swift
     - Moya
     - nanopb
     - OneSignal
@@ -199,6 +204,7 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 1c8145da7117bd68bbbed00cf304edb6a24de00f
   GoogleUtilities: 1d20a6ad97ef46f67bbdec158ce00563a671ebb7
   Logging: beeb016c9c80cf77042d62e83495816847ef108b
+  Mixpanel-swift: d7c7c6a2f7c65f735af3cb4746ed61a5aab0e551
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   OneSignal: 8861a1407c321ca1ae59d3adca6286eb7caf9d6e
@@ -215,6 +221,6 @@ SPEC CHECKSUMS:
   SwiftEntryKit: 96a2fa90b2631bbbfac50d18449e9ca3d0635f13
   TDPopupKit: bd24bf7432dd2b42984fcdd4b1c64d33db7fc422
 
-PODFILE CHECKSUM: 09225b5a9930bb151acc6f234636908e371755f8
+PODFILE CHECKSUM: 482ccb183c019fa00a2a6707b60eea1dcb5b210d
 
 COCOAPODS: 1.11.3

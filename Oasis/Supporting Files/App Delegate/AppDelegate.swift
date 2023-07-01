@@ -11,6 +11,7 @@ import RxSwift
 import Logging
 import AnalyticsManager
 import TDPopupKit
+import Mixpanel
 
 var logger = Logger(label: "Oasis-Logger")
 
@@ -21,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var oneSignalAppId : String = ""
     var sessionExpiryRelaySubscription: Disposable?
     
-    
+    //
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)
     -> Bool {
@@ -35,6 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         subscribeToSessionExpiryRelay()
+        
+        Mixpanel.initialize(token: "7c860fdffdb2f33c5a4364033d0d11cf", trackAutomaticEvents: true)
         
         return true
     }

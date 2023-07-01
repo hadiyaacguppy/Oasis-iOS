@@ -19,6 +19,7 @@ target 'Oasis' do
   pod 'Moya/RxSwift', '~> 14.0'
   pod 'FSPagerView'
   pod 'DGCharts'    
+  pod 'Mixpanel-swift'
 
 install_oneSignalPod
 end
