@@ -44,16 +44,6 @@ class TeensGoalsViewController: BaseViewController {
         return stackView
     }()
     
-    private lazy var innerStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.distribution = .fill
-        stackView.spacing = 14
-        stackView.autoLayout()
-        stackView.backgroundColor = .clear
-        return stackView
-    }()
-    
     lazy var topContainerView : BaseUIView = {
         let view = BaseUIView()
         view.backgroundColor = .clear
@@ -155,7 +145,12 @@ extension TeensGoalsViewController{
     }
     private func setupUI(){
         addScrollView()
+        addTopTitleLabel()
         addNoGoalsPlaceholder()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute:{
+            self.removePlaceholderView()
+        })
     }
 }
 
@@ -196,16 +191,16 @@ extension TeensGoalsViewController{
             myGoalsLabel.heightAnchor.constraint(equalToConstant: 100)
         ])
         
-        innerStackView.addArrangedSubview(myGoalsLabel)
+        stackView.addArrangedSubview(myGoalsLabel)
     }
     
     private func addTopContainerView(){
-        innerStackView.addArrangedSubview(bravoLabel)
-        innerStackView.addArrangedSubview(subtitleLabel)
+        stackView.addArrangedSubview(bravoLabel)
+        stackView.addArrangedSubview(subtitleLabel)
     }
     
     private func addAddNewGoalsButton(){
-        innerStackView.addArrangedSubview(addNewGoalButton)
+        stackView.addArrangedSubview(addNewGoalButton)
         
         addNewGoalButton.heightAnchor.constraint(equalToConstant: 62).isActive = true
     }
@@ -231,10 +226,13 @@ extension TeensGoalsViewController{
             return button
         }()
         
-        view.addSubview(placeHolderContainerView)
+        //view.addSubview(placeHolderContainerView)
         placeHolderContainerView.addSubview(noGoalImageView)
         placeHolderContainerView.addSubview(addGoalButton)
         placeHolderContainerView.addSubview(subtitleLabel)
+        
+        stackView.addArrangedSubview(placeHolderContainerView)
+
         
         NSLayoutConstraint.activate([
             placeHolderContainerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
@@ -259,7 +257,7 @@ extension TeensGoalsViewController{
     }
     
     private func addGoalsCollectionView(){
-        innerStackView.addArrangedSubview(goalsCollectionView)
+        stackView.addArrangedSubview(goalsCollectionView)
         
         goalsCollectionView.delegate = self
         goalsCollectionView.dataSource = self
@@ -269,14 +267,12 @@ extension TeensGoalsViewController{
     
     private func removePlaceholderView(){
         placeHolderContainerView.removeAllSubviews()
-        placeHolderContainerView.removeFromSuperview()
+        stackView.removeArrangedSubview(placeHolderContainerView)
         isPlaceholderAdded = false
-        stackView.addArrangedSubview(innerStackView)
         addViews()
     }
     
     private func addViews(){
-        addTopTitleLabel()
         addTopContainerView()
         addAddNewGoalsButton()
         addGoalsCollectionView()
