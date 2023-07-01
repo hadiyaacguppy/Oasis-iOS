@@ -1711,9 +1711,7 @@
 			children = (
 				161F3B8729D370F80053158A /* App flow */,
 				166EF2FE29D36FE20029908E /* Common Flows */,
-				166EF2FD29D36FD20029908E /* Kids */,
 				166EF2FC29D36FD00029908E /* Teens */,
-				166EF2FB29D36FCE0029908E /* Adults */,
 				166EF2FA29D36FCC0029908E /* Parents */,
 			);
 			path = Flows;
@@ -1732,14 +1730,6 @@
 			path = Parents;
 			sourceTree = "<group>";
 		};
-		166EF2FB29D36FCE0029908E /* Adults */ = {
-			isa = PBXGroup;
-			children = (
-				161F3C2629E5AD350053158A /* Set Interests */,
-			);
-			path = Adults;
-			sourceTree = "<group>";
-		};
 		166EF2FC29D36FD00029908E /* Teens */ = {
 			isa = PBXGroup;
 			children = (
@@ -1751,16 +1741,10 @@
 			path = Teens;
 			sourceTree = "<group>";
 		};
-		166EF2FD29D36FD20029908E /* Kids */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Kids;
-			sourceTree = "<group>";
-		};
 		166EF2FE29D36FE20029908E /* Common Flows */ = {
 			isa = PBXGroup;
 			children = (
+				161F3C2629E5AD350053158A /* Set Interests */,
 				169914CA2A3B9C8D0046978D /* Login & Registration */,
 				16ABACDC29F68CCE00FB937C /* Settings */,
 				161F3C7A29F3D8FF0053158A /* Payments */,
