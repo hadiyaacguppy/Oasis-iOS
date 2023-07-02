@@ -1216,6 +1216,7 @@
 				117C4AA81FD86028008BB445 /* Helpers */,
 				CF87EDA9201EECFA00562226 /* Scenes */,
 				1122391E1FD5C7B000486528 /* Assets.xcassets */,
+				1646E79A2A51B5B400A4549A /* New Group */,
 				112239201FD5C7B000486528 /* LaunchScreen.storyboard */,
 				117C4AA71FD85FCE008BB445 /* Supporting Files */,
 			);
@@ -1679,6 +1680,13 @@
 			children = (
 			);
 			path = "Goal Details";
+			sourceTree = "<group>";
+		};
+		1646E79A2A51B5B400A4549A /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		16503F8329F53CD000875075 /* Cells */ = {

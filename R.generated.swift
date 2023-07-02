@@ -568,7 +568,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 142 images.
+  /// This `R.image` struct is generated, and contains static references to 141 images.
   struct image {
     /// Image `2474162 copy`.
     static let copy = Rswift.ImageResource(bundle: R.hostingBundle, name: "2474162 copy")
@@ -746,8 +746,6 @@ struct R: Rswift.Validatable {
     static let noPaymentIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "no payment-icon")
     /// Image `no-cards`.
     static let noCards = Rswift.ImageResource(bundle: R.hostingBundle, name: "no-cards")
-    /// Image `no-tasks`.
-    static let noTasks = Rswift.ImageResource(bundle: R.hostingBundle, name: "no-tasks")
     /// Image `noGoalImage`.
     static let noGoalImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "noGoalImage")
     /// Image `notificationBlackIcon`.
@@ -1468,13 +1466,6 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "no-cards", bundle: ..., traitCollection: ...)`
     static func noCards(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.noCards, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "no-tasks", bundle: ..., traitCollection: ...)`
-    static func noTasks(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.noTasks, compatibleWith: traitCollection)
     }
     #endif
 

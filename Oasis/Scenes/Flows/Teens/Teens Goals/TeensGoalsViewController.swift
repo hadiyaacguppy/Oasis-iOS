@@ -146,6 +146,7 @@ extension TeensGoalsViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavBarAppearance()
+        self.tabBarController?.tabBar.isHidden = false
         //subscribeForGetGoals()
     }
     private func setupUI(){

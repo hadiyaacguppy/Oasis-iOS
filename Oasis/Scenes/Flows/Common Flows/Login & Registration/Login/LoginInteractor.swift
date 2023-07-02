@@ -34,7 +34,8 @@ extension LoginInteractor: LoginViewControllerOutput{
             APIClient.shared.login(dict: dict)
                 .subscribe(onSuccess: { [weak self] (result) in
                     SessionRepository.shared.token = result.token
-                    SessionRepository.shared.currentUser = result.user
+                    #warning("HADI: Uncomment the below and fix the problem")
+                    //SessionRepository.shared.currentUser = result.user
                     guard let self = self else { return single(.error(ErrorViewModel.generateGenericError()))}
                     guard self.presenter != nil else { return single(.error(ErrorViewModel.generateGenericError()))}
                     single(.success(()))

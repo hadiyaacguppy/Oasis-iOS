@@ -88,7 +88,17 @@ class TeensTasksViewController: BaseViewController {
         return collectionView
     }()
     
+    private lazy var placeHolderContainerView : BaseUIView = {
+        let vw = BaseUIView()
+        vw.autoLayout()
+        vw.backgroundColor = .clear
+        return vw
+    }()
+    
     let testingTaskVMArray = [TeensTasksModels.ViewModels.Task(id: 0, taskTitle: "HOUSEKEEPING", taskDescription: "Tidy up your room", amount: 100000, currency: "LBP"), TeensTasksModels.ViewModels.Task(id: 0, taskTitle: "Cooking", taskDescription: "Cook dinner today", amount: 150000, currency: "LBP"), TeensTasksModels.ViewModels.Task(id: 0, taskTitle: "Pet", taskDescription: "Walk the dog", amount: 100000, currency: "LBP")]
+    
+    var isPlaceholderAdded: Bool = false
+
 }
 
 //MARK:- View Lifecycle
@@ -112,6 +122,8 @@ extension TeensTasksViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavBarAppearance()
+        self.tabBarController?.tabBar.isHidden = false
+
     }
     
 }
@@ -126,9 +138,11 @@ extension TeensTasksViewController{
     private func setupUI(){
         addScrollView()
         addTopTitleLabel()
-        addTopContainerView()
-        addNewTasksTitle()
-        addTasksCollectionView()
+        addNoTasksPlaceholder()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute:{
+            self.removePlaceholderView()
+        })
     }
     
     private func addScrollView () {
@@ -245,6 +259,69 @@ extension TeensTasksViewController{
         
         tasksCollectionView.heightAnchor.constraint(equalToConstant: 500).isActive = true
         
+    }
+    private func removePlaceholderView(){
+        placeHolderContainerView.removeAllSubviews()
+        stackView.removeArrangedSubview(placeHolderContainerView)
+        isPlaceholderAdded = false
+        addViews()
+    }
+
+    private func addViews(){
+        addTopContainerView()
+        addNewTasksTitle()
+        addTasksCollectionView()
+    }
+    
+    private func addNoTasksPlaceholder(){
+        let noTasksImageView = BaseImageView(frame: .zero)
+        noTasksImageView.autoLayout()
+        noTasksImageView.contentMode = .scaleAspectFit
+        noTasksImageView.image = R.image.noGoal()!
+        
+        let subtitleLabel = BaseLabel()
+        subtitleLabel.autoLayout()
+        subtitleLabel.style = .init(font: MainFont.medium.with(size: 15), color: .black, alignment: .center, numberOfLines: 3)
+        subtitleLabel.text = "You have no tasks yet! \nSuggest a task for your \nparents to earn money!".localized
+        
+         let addTaskButton : OasisAquaButton = {
+            let button = OasisAquaButton()
+            button.setTitle("Suggest a task".localized, for: .normal)
+            button.autoLayout()
+            button.onTap {
+                
+            }
+            return button
+        }()
+        
+        //view.addSubview(placeHolderContainerView)
+        placeHolderContainerView.addSubview(noTasksImageView)
+        placeHolderContainerView.addSubview(addTaskButton)
+        placeHolderContainerView.addSubview(subtitleLabel)
+        
+        stackView.addArrangedSubview(placeHolderContainerView)
+
+        
+        NSLayoutConstraint.activate([
+            placeHolderContainerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+            placeHolderContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            placeHolderContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            placeHolderContainerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100),
+            
+            noTasksImageView.centerXAnchor.constraint(equalTo: placeHolderContainerView.centerXAnchor),
+            noTasksImageView.centerYAnchor.constraint(equalTo: placeHolderContainerView.centerYAnchor),
+            
+            subtitleLabel.topAnchor.constraint(equalTo: noTasksImageView.bottomAnchor, constant: 4),
+            subtitleLabel.centerXAnchor.constraint(equalTo: placeHolderContainerView.centerXAnchor),
+            
+            addTaskButton.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 12),
+            addTaskButton.heightAnchor.constraint(equalToConstant: 62),
+            addTaskButton.widthAnchor.constraint(equalToConstant: 250),
+            addTaskButton.centerXAnchor.constraint(equalTo: placeHolderContainerView.centerXAnchor),
+
+        ])
+        
+        isPlaceholderAdded = true
     }
 }
 
