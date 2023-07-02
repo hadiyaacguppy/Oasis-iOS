@@ -191,6 +191,15 @@
 		1646E77F2A45B51C00A4549A /* TeensProfileConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7782A45B51C00A4549A /* TeensProfileConfigurator.swift */; };
 		1646E7832A49893300A4549A /* TeensTasksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7812A49893300A4549A /* TeensTasksCollectionViewCell.swift */; };
 		1646E7842A49893300A4549A /* TeensTasksCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1646E7822A49893300A4549A /* TeensTasksCollectionViewCell.xib */; };
+		1646E7882A516F2600A4549A /* GoalsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7862A516F2500A4549A /* GoalsCollectionViewCell.swift */; };
+		1646E7892A516F2600A4549A /* GoalsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1646E7872A516F2600A4549A /* GoalsCollectionViewCell.xib */; };
+		1646E7922A51931000A4549A /* AddTeensGoal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1646E78B2A51931000A4549A /* AddTeensGoal.storyboard */; };
+		1646E7932A51931000A4549A /* AddTeensGoalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E78C2A51931000A4549A /* AddTeensGoalPresenter.swift */; };
+		1646E7942A51931000A4549A /* AddTeensGoalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E78D2A51931000A4549A /* AddTeensGoalRouter.swift */; };
+		1646E7952A51931000A4549A /* AddTeensGoalModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E78E2A51931000A4549A /* AddTeensGoalModels.swift */; };
+		1646E7962A51931000A4549A /* AddTeensGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E78F2A51931000A4549A /* AddTeensGoalViewController.swift */; };
+		1646E7972A51931000A4549A /* AddTeensGoalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7902A51931000A4549A /* AddTeensGoalInteractor.swift */; };
+		1646E7982A51931000A4549A /* AddTeensGoalConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7912A51931000A4549A /* AddTeensGoalConfigurator.swift */; };
 		16503F8029F488C600875075 /* AmountTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F7F29F488C600875075 /* AmountTextField.swift */; };
 		16503F8229F4893900875075 /* AmountWithCurrencyVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F8129F4893900875075 /* AmountWithCurrencyVIew.swift */; };
 		16503F8629F53CDE00875075 /* PeopleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F8429F53CDE00875075 /* PeopleCollectionViewCell.swift */; };
@@ -695,6 +704,15 @@
 		1646E7782A45B51C00A4549A /* TeensProfileConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensProfileConfigurator.swift; sourceTree = "<group>"; };
 		1646E7812A49893300A4549A /* TeensTasksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensTasksCollectionViewCell.swift; sourceTree = "<group>"; };
 		1646E7822A49893300A4549A /* TeensTasksCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeensTasksCollectionViewCell.xib; sourceTree = "<group>"; };
+		1646E7862A516F2500A4549A /* GoalsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsCollectionViewCell.swift; sourceTree = "<group>"; };
+		1646E7872A516F2600A4549A /* GoalsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalsCollectionViewCell.xib; sourceTree = "<group>"; };
+		1646E78B2A51931000A4549A /* AddTeensGoal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddTeensGoal.storyboard; sourceTree = "<group>"; };
+		1646E78C2A51931000A4549A /* AddTeensGoalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeensGoalPresenter.swift; sourceTree = "<group>"; };
+		1646E78D2A51931000A4549A /* AddTeensGoalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeensGoalRouter.swift; sourceTree = "<group>"; };
+		1646E78E2A51931000A4549A /* AddTeensGoalModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeensGoalModels.swift; sourceTree = "<group>"; };
+		1646E78F2A51931000A4549A /* AddTeensGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeensGoalViewController.swift; sourceTree = "<group>"; };
+		1646E7902A51931000A4549A /* AddTeensGoalInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeensGoalInteractor.swift; sourceTree = "<group>"; };
+		1646E7912A51931000A4549A /* AddTeensGoalConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeensGoalConfigurator.swift; sourceTree = "<group>"; };
 		16503F7F29F488C600875075 /* AmountTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountTextField.swift; sourceTree = "<group>"; };
 		16503F8129F4893900875075 /* AmountWithCurrencyVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountWithCurrencyVIew.swift; sourceTree = "<group>"; };
 		16503F8429F53CDE00875075 /* PeopleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1596,6 +1614,8 @@
 		1646E7542A45B4B000A4549A /* Teens Goals */ = {
 			isa = PBXGroup;
 			children = (
+				1646E78A2A5192C200A4549A /* Add Teens' New Goal */,
+				1646E7852A516F0100A4549A /* Goals CollectionViewCell */,
 				1646E7642A45B50700A4549A /* TeensGoals.storyboard */,
 				1646E7652A45B50700A4549A /* TeensGoalsPresenter.swift */,
 				1646E7662A45B50700A4549A /* TeensGoalsRouter.swift */,
@@ -1628,6 +1648,29 @@
 				1646E7822A49893300A4549A /* TeensTasksCollectionViewCell.xib */,
 			);
 			path = "Teens TasksCollectionViewCell";
+			sourceTree = "<group>";
+		};
+		1646E7852A516F0100A4549A /* Goals CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1646E7862A516F2500A4549A /* GoalsCollectionViewCell.swift */,
+				1646E7872A516F2600A4549A /* GoalsCollectionViewCell.xib */,
+			);
+			path = "Goals CollectionViewCell";
+			sourceTree = "<group>";
+		};
+		1646E78A2A5192C200A4549A /* Add Teens' New Goal */ = {
+			isa = PBXGroup;
+			children = (
+				1646E78B2A51931000A4549A /* AddTeensGoal.storyboard */,
+				1646E78C2A51931000A4549A /* AddTeensGoalPresenter.swift */,
+				1646E78D2A51931000A4549A /* AddTeensGoalRouter.swift */,
+				1646E78E2A51931000A4549A /* AddTeensGoalModels.swift */,
+				1646E78F2A51931000A4549A /* AddTeensGoalViewController.swift */,
+				1646E7902A51931000A4549A /* AddTeensGoalInteractor.swift */,
+				1646E7912A51931000A4549A /* AddTeensGoalConfigurator.swift */,
+			);
+			path = "Add Teens' New Goal";
 			sourceTree = "<group>";
 		};
 		16503F8329F53CD000875075 /* Cells */ = {
@@ -2512,7 +2555,7 @@
 			);
 			mainGroup = 112239081FD5C7AF00486528;
 			packageReferences = (
-				1699145A2A1D478E0046978D /* XCRemoteSwiftPackageReference "ObjectMapper.git" */,
+				1699145A2A1D478E0046978D /* XCRemoteSwiftPackageReference "ObjectMapper" */,
 			);
 			productRefGroup = 112239121FD5C7AF00486528 /* Products */;
 			projectDirPath = "";
@@ -2535,6 +2578,7 @@
 			files = (
 				161F3BFD29E3157D0053158A /* SelectAge.storyboard in Resources */,
 				161F3BAB29D4BF670053158A /* Montserrat-SemiBold.ttf in Resources */,
+				1646E7922A51931000A4549A /* AddTeensGoal.storyboard in Resources */,
 				161F3C4F29F277A30053158A /* SendGift.storyboard in Resources */,
 				161F3BA929D4BF670053158A /* Montserrat-Thin.ttf in Resources */,
 				161F3C0829E319050053158A /* AgeTableViewCell.xib in Resources */,
@@ -2574,6 +2618,7 @@
 				161F3BAA29D4BF670053158A /* Montserrat-Medium.ttf in Resources */,
 				1646E7792A45B51C00A4549A /* TeensProfile.storyboard in Resources */,
 				161F3BAF29D4BF670053158A /* Montserrat-Black.ttf in Resources */,
+				1646E7892A516F2600A4549A /* GoalsCollectionViewCell.xib in Resources */,
 				161F3BA829D4BF670053158A /* Montserrat-ExtraLight.ttf in Resources */,
 				1646E76B2A45B50700A4549A /* TeensGoals.storyboard in Resources */,
 				112239221FD5C7B000486528 /* LaunchScreen.storyboard in Resources */,
@@ -2795,7 +2840,7 @@
 			);
 			name = R.Swift;
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2827,6 +2872,7 @@
 			files = (
 				169914882A2A2A330046978D /* BirthdateRouter.swift in Sources */,
 				CF56472F211B1BA50092EFBD /* UIImageView+Extensions.swift in Sources */,
+				1646E7972A51931000A4549A /* AddTeensGoalInteractor.swift in Sources */,
 				16503FA429F58E1900875075 /* ChildrenRouter.swift in Sources */,
 				16503FB429F5C07400875075 /* GoalsModels.swift in Sources */,
 				1699148E2A2F26F80046978D /* DateView.swift in Sources */,
@@ -2903,6 +2949,7 @@
 				161F3C4029ED3D990053158A /* BarItemView.swift in Sources */,
 				CF40385A216CF78F001F649B /* InitialRouter.swift in Sources */,
 				16503FC229F5C26A00875075 /* ParentProfileRouter.swift in Sources */,
+				1646E7982A51931000A4549A /* AddTeensGoalConfigurator.swift in Sources */,
 				161F3BFF29E3157D0053158A /* SelectAgeRouter.swift in Sources */,
 				3EDC4133224E81BE00624D2B /* ActivityIndicator.swift in Sources */,
 				3E7367F422C6605A00B4C71D /* FeedbackTypes.swift in Sources */,
@@ -2979,6 +3026,7 @@
 				16503F9629F5853600875075 /* PaymentsModels.swift in Sources */,
 				1646E77B2A45B51C00A4549A /* TeensProfileRouter.swift in Sources */,
 				169976F52A1515B200FDEC97 /* InterestTypeAPIModel.swift in Sources */,
+				1646E7952A51931000A4549A /* AddTeensGoalModels.swift in Sources */,
 				16ABACF92A04399400FB937C /* AddChildRouter.swift in Sources */,
 				1646E7412A45849F00A4549A /* UploadPictureConfigurator.swift in Sources */,
 				161F3B9D29D4BD160053158A /* OnboardingController.swift in Sources */,
@@ -3002,6 +3050,7 @@
 				161F3C3F29ED3D990053158A /* CardTabBarController.swift in Sources */,
 				CFF69D6A219551B4003BE6BF /* UIViewController+Extensions.swift in Sources */,
 				1699148C2A2A2A330046978D /* BirthdateConfigurator.swift in Sources */,
+				1646E7882A516F2600A4549A /* GoalsCollectionViewCell.swift in Sources */,
 				4AEF64772210842F00D53D75 /* BaseSkyFloatingTextField.swift in Sources */,
 				11CD5280230AFF91003D08BE /* ViewEmbedder.swift in Sources */,
 				161F3B9129D371500053158A /* OnboardingPresenter.swift in Sources */,
@@ -3049,6 +3098,7 @@
 				0F1B7FBB22CA6CBD0079F752 /* CurrencyCell.swift in Sources */,
 				16ABAD3A2A0E5E4F00FB937C /* GoalCollectionViewCell.swift in Sources */,
 				16ABAD0D2A08E1A900FB937C /* addGoalRouter.swift in Sources */,
+				1646E7962A51931000A4549A /* AddTeensGoalViewController.swift in Sources */,
 				3E1DEAF222BA632600FAD9F4 /* UIView+Border.swift in Sources */,
 				161F3C8329F3F16A0053158A /* OasisVioletButton.swift in Sources */,
 				CF8373AD224A7F93000C3E21 /* R.generated.swift in Sources */,
@@ -3061,6 +3111,7 @@
 				3EDC4153224E875300624D2B /* Reactive+UIView.swift in Sources */,
 				169976EF2A1504C200FDEC97 /* TaskTypeAPIModel.swift in Sources */,
 				161F3C1629E322BE0053158A /* ParentsHomeInteractor.swift in Sources */,
+				1646E7942A51931000A4549A /* AddTeensGoalRouter.swift in Sources */,
 				161F3C6629F31CD00053158A /* ReceiveMoneyRouter.swift in Sources */,
 				1646E77A2A45B51C00A4549A /* TeensProfilePresenter.swift in Sources */,
 				3E1DEAFD22BA674D00FAD9F4 /* NavigationBarType.swift in Sources */,
@@ -3144,6 +3195,7 @@
 				0F57539D20EE1C430069C139 /* APIClient.swift in Sources */,
 				161F3BF329E2FCA20053158A /* CreateConfirmPasswordInteractor.swift in Sources */,
 				16ABAD0E2A08E1A900FB937C /* addGoalModels.swift in Sources */,
+				1646E7932A51931000A4549A /* AddTeensGoalPresenter.swift in Sources */,
 				1646E73C2A45849F00A4549A /* UploadPicturePresenter.swift in Sources */,
 				16503FB329F5C07400875075 /* GoalsRouter.swift in Sources */,
 				161F3C3329E5AD4D0053158A /* InterestsInteractor.swift in Sources */,
@@ -3850,7 +3902,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1699145A2A1D478E0046978D /* XCRemoteSwiftPackageReference "ObjectMapper.git" */ = {
+		1699145A2A1D478E0046978D /* XCRemoteSwiftPackageReference "ObjectMapper" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/tristanhimmelman/ObjectMapper.git";
 			requirement = {

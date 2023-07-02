@@ -1843,7 +1843,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 14 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 15 nibs.
   struct nib {
     /// Nib `AgeTableViewCell`.
     static let ageTableViewCell = _R.nib._AgeTableViewCell()
@@ -1857,6 +1857,8 @@ struct R: Rswift.Validatable {
     static let friendsCollectionViewCell = _R.nib._FriendsCollectionViewCell()
     /// Nib `GoalCollectionViewCell`.
     static let goalCollectionViewCell = _R.nib._GoalCollectionViewCell()
+    /// Nib `GoalsCollectionViewCell`.
+    static let goalsCollectionViewCell = _R.nib._GoalsCollectionViewCell()
     /// Nib `InterestsCollectionViewCell`.
     static let interestsCollectionViewCell = _R.nib._InterestsCollectionViewCell()
     /// Nib `OccasionCollectionViewCell`.
@@ -1919,6 +1921,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.goalCollectionViewCell) instead")
     static func goalCollectionViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.goalCollectionViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GoalsCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.goalsCollectionViewCell) instead")
+    static func goalsCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.goalsCollectionViewCell)
     }
     #endif
 
@@ -2010,6 +2020,10 @@ struct R: Rswift.Validatable {
       return R.nib.goalCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GoalCollectionViewCell
     }
 
+    static func goalsCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GoalsCollectionViewCell? {
+      return R.nib.goalsCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GoalsCollectionViewCell
+    }
+
     static func interestsCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> InterestsCollectionViewCell? {
       return R.nib.interestsCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? InterestsCollectionViewCell
     }
@@ -2045,7 +2059,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 14 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 15 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `CategoriesCollectionViewCell`.
     static let categoriesCollectionViewCell: Rswift.ReuseIdentifier<CategoriesCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "CategoriesCollectionViewCell")
@@ -2063,6 +2077,8 @@ struct R: Rswift.Validatable {
     static let friendsCollectionViewCell: Rswift.ReuseIdentifier<FriendsCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "friendsCollectionViewCell")
     /// Reuse identifier `goalCollectionVC`.
     static let goalCollectionVC: Rswift.ReuseIdentifier<GoalCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "goalCollectionVC")
+    /// Reuse identifier `goalsCollectionViewCellID`.
+    static let goalsCollectionViewCellID: Rswift.ReuseIdentifier<GoalsCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "goalsCollectionViewCellID")
     /// Reuse identifier `interestsCell`.
     static let interestsCell: Rswift.ReuseIdentifier<InterestsCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "interestsCell")
     /// Reuse identifier `occasionCollectionCell`.
@@ -2195,6 +2211,20 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GoalCollectionViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GoalCollectionViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GoalsCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = GoalsCollectionViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "goalsCollectionViewCellID"
+      let name = "GoalsCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GoalsCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GoalsCollectionViewCell
       }
 
       fileprivate init() {}

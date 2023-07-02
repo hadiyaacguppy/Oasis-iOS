@@ -108,8 +108,8 @@ class GoalCollectionViewCell: UICollectionViewCell {
 
     func setupCell(viewModel : GoalsModels.ViewModels.Goal){
         goalTitle.text = viewModel.Title
-        savedValueLabel.text = "$ \(viewModel.saved!)"
-        outOfValuelabel.text = "$ \(viewModel.amount!)"
+        savedValueLabel.text = (viewModel.currency!) + "\(viewModel.saved!)"
+        outOfValuelabel.text = (viewModel.currency!) + "\(viewModel.amount!)"
         updatePercentageView(amount: viewModel.amount!, saved: viewModel.saved!)
         if viewModel.goalImage != nil {
             goalImageView.setNormalImage(withURL: URL(string: viewModel.goalImage!))

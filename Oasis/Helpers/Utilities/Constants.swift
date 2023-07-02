@@ -47,6 +47,9 @@ struct Constants {
         static let maleBGColor : UIColor = .init(hexFromString: "#CCD8EB")
         static let femaleBGColor : UIColor = .init(hexFromString: "#F5ECEC")
         static let teensOrange : UIColor = .init(hexFromString: "#E94100")
+        static let teensGoals : UIColor = .init(hexFromString: "#D5EDE4")
+        static let teensYellow : UIColor = .init(hexFromString: "#FDC42E")
+
 
 
 

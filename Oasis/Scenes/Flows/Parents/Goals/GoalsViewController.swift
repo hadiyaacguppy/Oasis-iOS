@@ -39,7 +39,7 @@ class GoalsViewController: BaseViewController {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.distribution = .fill
-        stackView.spacing = 19
+        stackView.spacing = 25
         stackView.autoLayout()
         stackView.backgroundColor = .clear
         return stackView
@@ -227,7 +227,7 @@ extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSou
 extension GoalsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: 327, height: 316)
+        return CGSize(width: 231, height: 284)
         
     }
     

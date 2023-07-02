@@ -10,7 +10,8 @@ import UIKit
 import RxSwift
 
 protocol TeensGoalsViewControllerOutput {
-    
+    func getGoals() -> Single<[TeensGoalsModels.ViewModels.Goal]>
+
 }
 
 class TeensGoalsViewController: BaseViewController {
@@ -100,12 +101,15 @@ class TeensGoalsViewController: BaseViewController {
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.autoLayout()
-        collectionView.register(UINib(resource: R.nib.teensTasksCollectionViewCell),
-                                forCellWithReuseIdentifier: R.reuseIdentifier.teensCollectionViewCell.identifier)
+        collectionView.clipsToBounds = false
+        collectionView.register(UINib(resource: R.nib.goalsCollectionViewCell),
+                                forCellWithReuseIdentifier: R.reuseIdentifier.goalsCollectionViewCellID.identifier)
         return collectionView
     }()
     
-    var goalsViewModelArray : [TeensTasksModels.ViewModels.Task] = [] {
+    var isPlaceholderAdded: Bool = false
+
+    var goalsViewModelArray : [TeensGoalsModels.ViewModels.Goal] = [] {
         didSet{
             if goalsViewModelArray.count > 0{
                 removePlaceholderView()
@@ -115,9 +119,9 @@ class TeensGoalsViewController: BaseViewController {
         }
     }
     
-    let testingGoalsVMArray = [TeensTasksModels.ViewModels.Task(id: 0, taskTitle: "HOUSEKEEPING", taskDescription: "Tidy up your room", amount: 100000, currency: "LBP"), TeensTasksModels.ViewModels.Task(id: 0, taskTitle: "Cooking", taskDescription: "Cook dinner today", amount: 150000, currency: "LBP"), TeensTasksModels.ViewModels.Task(id: 0, taskTitle: "Pet", taskDescription: "Walk the dog", amount: 100000, currency: "LBP")]
-    
-    var isPlaceholderAdded: Bool = false
+    var testingGoalsArray = [TeensGoalsModels.ViewModels.Goal(goalID: 0, goalTitle: "Buy a Playstation", amount: 1000000, saved: 450000, currency: "LBP"),
+                             TeensGoalsModels.ViewModels.Goal(goalID: 1, goalTitle: "Trip to Paris", amount: 3000, saved: 300, currency: "$"),
+                             TeensGoalsModels.ViewModels.Goal(goalID: 2, goalTitle: "Buy a Laptop", amount: 1000, saved: 50, currency: "$")]
 
 }
 
@@ -135,13 +139,14 @@ extension TeensGoalsViewController{
         //                            title: Constants.PlaceHolderView.Texts.wait)
         setupNavBarAppearance()
         setupRetryFetchingCallBack()
-        view.backgroundColor = Constants.Colors.maleBGColor
+        view.backgroundColor = Constants.Colors.teensGoals
         setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavBarAppearance()
+        //subscribeForGetGoals()
     }
     private func setupUI(){
         addScrollView()
@@ -216,7 +221,7 @@ extension TeensGoalsViewController{
         subtitleLabel.style = .init(font: MainFont.medium.with(size: 15), color: .black, alignment: .center, numberOfLines: 3)
         subtitleLabel.text = "You have no goals yet. \nCreate a goal and start saving!".localized
         
-         var addGoalButton : OasisAquaButton = {
+         let addGoalButton : OasisAquaButton = {
             let button = OasisAquaButton()
             button.setTitle("Add a Goal".localized, for: .normal)
             button.autoLayout()
@@ -257,12 +262,21 @@ extension TeensGoalsViewController{
     }
     
     private func addGoalsCollectionView(){
+        let goalsLabel = BaseLabel()
+        goalsLabel.autoLayout()
+        goalsLabel.style = .init(font: MainFont.medium.with(size: 25), color: .black)
+        goalsLabel.text = "All Goals".localized
+        
+        stackView.addArrangedSubview(goalsLabel)
         stackView.addArrangedSubview(goalsCollectionView)
         
         goalsCollectionView.delegate = self
         goalsCollectionView.dataSource = self
         
+        goalsLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         goalsCollectionView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        goalsCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 20).isActive = true
+
     }
     
     private func removePlaceholderView(){
@@ -287,29 +301,19 @@ extension TeensGoalsViewController{
     }
 }
 
-//MARK:- Callbacks
-extension TeensGoalsViewController{
-    
-    fileprivate
-    func setupRetryFetchingCallBack(){
-        self.didTapOnRetryPlaceHolderButton = { [weak self] in
-            guard let self = self  else { return }
-            self.showPlaceHolderView(withAppearanceType: .loading,
-                                     title: Constants.PlaceHolderView.Texts.wait)
-            #warning("Retry Action does not set")
-        }
-    }
-}
-
 
 extension TeensGoalsViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return testingGoalsVMArray.count
+        return testingGoalsArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.teensCollectionViewCell, for: indexPath)!
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.goalsCollectionViewCellID, for: indexPath)!
 
+        cell.setupCell(vm: testingGoalsArray[indexPath.row])
+        cell.contentView.backgroundColor = Constants.Colors.appViolet
+        cell.contentView.roundCorners(.allCorners, radius: 15)
+        
         return cell
     }
 }
@@ -335,5 +339,31 @@ extension TeensGoalsViewController: UICollectionViewDelegateFlowLayout {
                         collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
+    }
+}
+
+//MARK:- Callbacks
+extension TeensGoalsViewController{
+    
+    fileprivate
+    func setupRetryFetchingCallBack(){
+        self.didTapOnRetryPlaceHolderButton = { [weak self] in
+            guard let self = self  else { return }
+            self.showPlaceHolderView(withAppearanceType: .loading,
+                                     title: Constants.PlaceHolderView.Texts.wait)
+            #warning("Retry Action does not set")
+        }
+    }
+    
+    private func subscribeForGetGoals(){
+        self.interactor?.getGoals()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { [weak self] (goalsArray) in
+                self?.removePlaceHolder()
+                self?.goalsViewModelArray = goalsArray
+            }, onError: { [weak self](error) in
+                self?.preparePlaceHolderView(withErrorViewModel: (error as! ErrorViewModel))
+            })
+            .disposed(by: self.disposeBag)
     }
 }

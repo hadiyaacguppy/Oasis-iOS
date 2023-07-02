@@ -13,5 +13,12 @@ struct TeensGoalsModels {
     
     struct ViewModels {
         
+        struct Goal{
+            var goalID : Int
+            var goalTitle : String?
+            var amount : Int?
+            var saved : Int?
+            var currency : String?
+        }
     }
 }

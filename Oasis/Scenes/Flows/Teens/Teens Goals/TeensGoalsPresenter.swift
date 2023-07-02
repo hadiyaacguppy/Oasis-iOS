@@ -12,6 +12,18 @@ import RxSwift
 class TeensGoalsPresenter {}
 
 extension TeensGoalsPresenter: TeensGoalsInteractorOutput {
+    func didGetGoals(models: [GoalAPIModel]) -> [TeensGoalsModels.ViewModels.Goal] {
+        return models.map{createGoal(model: $0)}
+    }
+    
+    func createGoal(model : GoalAPIModel) -> TeensGoalsModels.ViewModels.Goal {
+        return TeensGoalsModels.ViewModels.Goal(goalID: model.id!,
+                                                goalTitle: model.title,
+                                                amount: model.amount,
+                                                saved: model.saved,
+                                                currency: model.currency)
+        
+    }
     
     func apiCallFailed(withError error: NetworkErrorResponse)
     -> ErrorViewModel {

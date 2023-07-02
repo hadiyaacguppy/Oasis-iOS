@@ -19,6 +19,7 @@ struct GoalsModels {
             var saved : Int?
             var endDate : String?
             var goalImage : String?
+            var currency : String?
             
         }
     }

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="goalsCollectionViewCellID" id="gTV-IL-0wX" customClass="GoalsCollectionViewCell" customModule="Guppy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="231" height="284"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="231" height="284"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jxl-7U-hrn" customClass="BaseUIView" customModule="Guppy" customModuleProvider="target">
+                        <rect key="frame" x="20" y="90" width="191" height="44"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wcA-li-ggo" customClass="BaseUIView" customModule="Guppy" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="65" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRQ-Mg-s5T" customClass="BaseLabel" customModule="Guppy" customModuleProvider="target">
+                                <rect key="frame" x="146.66666666666666" y="11.666666666666671" width="41.333333333333343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vRQ-Mg-s5T" firstAttribute="centerY" secondItem="Jxl-7U-hrn" secondAttribute="centerY" id="RDZ-AE-sgE"/>
+                            <constraint firstAttribute="height" constant="44" id="Rvt-rz-sqI"/>
+                            <constraint firstAttribute="trailing" secondItem="vRQ-Mg-s5T" secondAttribute="trailing" constant="3" id="VQC-a4-yZM"/>
+                            <constraint firstAttribute="bottom" secondItem="wcA-li-ggo" secondAttribute="bottom" id="YUJ-92-lzT"/>
+                            <constraint firstItem="wcA-li-ggo" firstAttribute="leading" secondItem="Jxl-7U-hrn" secondAttribute="leading" id="YvZ-M3-sQi"/>
+                            <constraint firstItem="wcA-li-ggo" firstAttribute="top" secondItem="Jxl-7U-hrn" secondAttribute="top" id="zOE-B1-ngQ"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMX-XS-tYU" customClass="BaseLabel" customModule="Guppy" customModuleProvider="target">
+                        <rect key="frame" x="20" y="142" width="191" height="58"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmp-dZ-Fke" customClass="BaseButton" customModule="Guppy" customModuleProvider="target">
+                        <rect key="frame" x="25" y="208" width="181" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="1IY-nr-Frx"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykR-JC-xVC" customClass="BaseLabel" customModule="Guppy" customModuleProvider="target">
+                        <rect key="frame" x="20" y="20" width="191" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="qk5-9W-1XK"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Jxl-7U-hrn" secondAttribute="trailing" constant="20" id="9xJ-Vl-K8b"/>
+                <constraint firstAttribute="trailing" secondItem="KMX-XS-tYU" secondAttribute="trailing" constant="20" id="Rbh-Os-YQp"/>
+                <constraint firstItem="Jxl-7U-hrn" firstAttribute="top" secondItem="ykR-JC-xVC" secondAttribute="bottom" constant="10" id="Vm0-UX-NN2"/>
+                <constraint firstAttribute="trailing" secondItem="nmp-dZ-Fke" secondAttribute="trailing" constant="25" id="bHT-kc-QKv"/>
+                <constraint firstItem="KMX-XS-tYU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="dgS-YN-aIV"/>
+                <constraint firstItem="KMX-XS-tYU" firstAttribute="top" secondItem="Jxl-7U-hrn" secondAttribute="bottom" constant="8" id="euF-ev-jV9"/>
+                <constraint firstItem="ykR-JC-xVC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="gfp-aJ-Fv6"/>
+                <constraint firstItem="nmp-dZ-Fke" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="25" id="hft-NI-obX"/>
+                <constraint firstItem="ykR-JC-xVC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="pIY-KE-sJo"/>
+                <constraint firstAttribute="bottom" secondItem="nmp-dZ-Fke" secondAttribute="bottom" constant="16" id="pff-zA-3GL"/>
+                <constraint firstAttribute="trailing" secondItem="ykR-JC-xVC" secondAttribute="trailing" constant="20" id="tOi-OK-rFO"/>
+                <constraint firstItem="Jxl-7U-hrn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="za9-Ok-QR9"/>
+                <constraint firstItem="nmp-dZ-Fke" firstAttribute="top" secondItem="KMX-XS-tYU" secondAttribute="bottom" constant="8" id="zaJ-Sl-z2f"/>
+            </constraints>
+            <size key="customSize" width="150" height="177"/>
+            <connections>
+                <outlet property="addMoneyButton" destination="nmp-dZ-Fke" id="0w4-cp-jsy"/>
+                <outlet property="amountLabel" destination="KMX-XS-tYU" id="UtA-5L-l6f"/>
+                <outlet property="backPercentageView" destination="Jxl-7U-hrn" id="dFF-52-j0E"/>
+                <outlet property="goalTitleLabel" destination="ykR-JC-xVC" id="xQx-PS-Ctx"/>
+                <outlet property="percentageLabel" destination="vRQ-Mg-s5T" id="Vd7-n6-wO6"/>
+                <outlet property="percentageView" destination="wcA-li-ggo" id="X5W-MZ-XKT"/>
+            </connections>
+            <point key="canvasLocation" x="57.692307692307693" y="63.981042654028435"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,31 +1,17 @@
 //
-//  GoalsPresenter.swift
+//  AddTeensGoalPresenter.swift
 //  Oasis
 //
-//  Created by Hadi Yaacoub on 23/04/2023.
+//  Created by Hadi Yaacoub on 02/07/2023.
 //  Copyright (c) 2023 Tedmob. All rights reserved.
 //
 
 import Foundation
 import RxSwift
 
-class GoalsPresenter {}
+class AddTeensGoalPresenter {}
 
-extension GoalsPresenter: GoalsInteractorOutput {
-    func didGetGoals(models: [GoalAPIModel]) -> [GoalsModels.ViewModels.Goal] {
-        return models.map{createGoal(model: $0)}
-    }
-    
-    func createGoal(model : GoalAPIModel) -> GoalsModels.ViewModels.Goal {
-        return GoalsModels.ViewModels.Goal(id: model.id!,
-                                           Title: model.title,
-                                           amount: model.amount,
-                                           saved: model.saved,
-                                           endDate: model.endDate,
-                                           goalImage: model.image,
-                                           currency: model.currency)
-        
-    }
+extension AddTeensGoalPresenter: AddTeensGoalInteractorOutput {
     
     func apiCallFailed(withError error: NetworkErrorResponse)
     -> ErrorViewModel {
