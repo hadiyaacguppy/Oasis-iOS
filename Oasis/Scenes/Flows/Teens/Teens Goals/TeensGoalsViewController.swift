@@ -81,7 +81,7 @@ class TeensGoalsViewController: BaseViewController {
         button.setTitle("+ Add new goal".localized, for: .normal)
         button.autoLayout()
         button.onTap {
-            
+            self.router?.pushToAddGoalController()
         }
         return button
     }()

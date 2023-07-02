@@ -24,7 +24,15 @@ class TeensGoalsRouter: TeensGoalsRouterDataPassing{
     }
     
     // MARK: Navigation
-    
+    func pushToAddGoalController(){
+        let vc = R.storyboard.addTeensGoal.addTeensGoalViewControllerVC()!
+        DispatchQueue
+            .main
+            .async {
+                self.viewController.hidesBottomBarWhenPushed = true
+                self.viewController.navigationController?.pushViewController(vc, animated: true)
+            }
+    }
     ///Pop The view from the view hierarchy
     func popView(){
         DispatchQueue.main

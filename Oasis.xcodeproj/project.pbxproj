@@ -1614,6 +1614,7 @@
 		1646E7542A45B4B000A4549A /* Teens Goals */ = {
 			isa = PBXGroup;
 			children = (
+				1646E7992A51B1AE00A4549A /* Goal Details */,
 				1646E78A2A5192C200A4549A /* Add Teens' New Goal */,
 				1646E7852A516F0100A4549A /* Goals CollectionViewCell */,
 				1646E7642A45B50700A4549A /* TeensGoals.storyboard */,
@@ -1671,6 +1672,13 @@
 				1646E7912A51931000A4549A /* AddTeensGoalConfigurator.swift */,
 			);
 			path = "Add Teens' New Goal";
+			sourceTree = "<group>";
+		};
+		1646E7992A51B1AE00A4549A /* Goal Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Goal Details";
 			sourceTree = "<group>";
 		};
 		16503F8329F53CD000875075 /* Cells */ = {

@@ -47,7 +47,7 @@ final class TeensTabbarController: CardTabBarController {
 
     lazy var goalsTab: UIViewController = {
         let goalsTabItem = UITabBarItem(title: "", image: R.image.teensTabbarUnselectedGoals()!, selectedImage: R.image.tabbarUnselectedGoals()!)
-        let navController = R.storyboard.teensGoals.teensGoalsViewControllerVC()!
+        let navController = R.storyboard.teensGoals.teensGoalsViewControllerNavVC()!
         navController.tabBarItem = goalsTabItem
         return navController
     }()

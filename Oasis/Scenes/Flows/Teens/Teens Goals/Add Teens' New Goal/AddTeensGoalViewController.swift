@@ -10,7 +10,8 @@ import UIKit
 import RxSwift
 
 protocol AddTeensGoalViewControllerOutput {
-    
+    func addGoal(goalName: String, currency: String, amount: Int) -> Single<Void>
+
 }
 
 class AddTeensGoalViewController: BaseViewController {
@@ -45,6 +46,20 @@ class AddTeensGoalViewController: BaseViewController {
         return stackView
     }()
     
+    private lazy var addGoalButton: OasisAquaButton = {
+        let button = OasisAquaButton()
+        button.setTitle("Add Goal", for: .normal)
+        button.autoLayout()
+        return button
+    }()
+    
+    var yourGoalView : TitleWithTextFieldView!
+    var goalAmountView : AmountWithCurrencyView!
+    
+    var currencies = ["LBP", "$"]
+    var currencySelected : String = "LBP"
+    var goalName : String?
+    var goalAmount : String?
 }
 
 //MARK:- View Lifecycle
@@ -62,6 +77,7 @@ extension AddTeensGoalViewController{
         setupNavBarAppearance()
         setupRetryFetchingCallBack()
         view.backgroundColor = Constants.Colors.appViolet
+        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,7 +86,10 @@ extension AddTeensGoalViewController{
     }
     
     private func setupUI(){
-        
+        addScrollViewAndStackView()
+        addTitle()
+        addGoalInfoViews()
+        createAddGoalButton()
     }
     
     private func addScrollViewAndStackView(){
@@ -93,21 +112,69 @@ extension AddTeensGoalViewController{
         
     }
     
-    private func addtitleAndButton(){
-        addGoalButtonView = DottedButtonView(actionName: "+ Add new goal".localized, viewHeight: 62, viewWidth: 336, viewRadius: 48, numberOflines: 1, innerImage: nil)
-        addGoalButtonView.autoLayout()
-        
+    private func addTitle(){
+    
         stackView.addArrangedSubview(topTitleLabel)
-        stackView.addArrangedSubview(addGoalButtonView)
+        
+        topTitleLabel.heightAnchor.constraint(equalToConstant: 35).isActive = true
+    }
+    
+    private func addGoalInfoViews(){
+         yourGoalView = TitleWithTextFieldView.init(requestTitle: "What is your Goal?".localized,
+                                                    textsColor: .white,
+                                                    usertext: "",
+                                                    textSize: 35,
+                                                    isAgeRequest: false,
+                                                    labelHeight: 89,
+                                                    placholderText: "",
+                                                    frame: .zero)
+
+         goalAmountView = AmountWithCurrencyView.init(amountPlaceHolder: 0.00,
+                                                 amount: 0,
+                                                 currency: "LBP",
+                                                 titleLbl: "Goal amount",
+                                                frame: .zero)
+        
+        stackView.addArrangedSubview(yourGoalView)
+        stackView.addArrangedSubview(goalAmountView)
+        
+        yourGoalView.anyTextField.delegate = self
+        goalAmountView.amountTextField.delegate = self
         
         NSLayoutConstraint.activate([
-            
-            topTitleLabel.heightAnchor.constraint(equalToConstant: 35),
-            addGoalButtonView.heightAnchor.constraint(equalToConstant: 62)
+            yourGoalView.heightAnchor.constraint(equalToConstant: 160),
+            goalAmountView.heightAnchor.constraint(equalToConstant: 160)
         ])
+
+        goalAmountView.currencyPicker.delegate = self
+        goalAmountView.currencyPicker.dataSource = self
         
-        addGoalButtonView.onTap {
-            self.router?.pushToAddGoalController()
+    }
+    
+    private func validateFields(){
+        
+        guard goalName.notNilNorEmpty else {
+            showSimpleAlertView("", message: "Please fill in your Goal", withCompletionHandler: nil)
+            return
+        }
+        
+        guard goalAmount.notNilNorEmpty else {
+            showSimpleAlertView("", message: "Please fill in the Goals' Amount", withCompletionHandler: nil)
+            return
+        }
+        
+        //subscribeForAddGoal()
+        
+    }
+    
+    private func createAddGoalButton(){
+        stackView.addArrangedSubview(addGoalButton)
+        
+        addGoalButton.heightAnchor.constraint(equalToConstant: 62).isActive = true
+       // addGoalButton.bottomAnchor.constraint(equalTo: <#T##NSLayoutAnchor<NSLayoutYAxisAnchor>#>)
+        
+        addGoalButton.onTap {
+            self.validateFields()
         }
     }
 }
@@ -118,6 +185,52 @@ extension AddTeensGoalViewController{
         statusBarStyle = .default
         navigationBarStyle = .transparent
     }
+}
+
+extension AddTeensGoalViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.superview == yourGoalView{
+            self.goalName = textField.text
+        }else{
+            self.goalAmount = textField.text//.notNilNorEmpty ? Int(textField.text!) : 0
+        }
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.superview == yourGoalView{
+            self.goalName = textField.text
+        }else{
+            self.goalAmount = textField.text//.notNilNorEmpty ? Int(textField.text!) : 0
+        }
+    }
+}
+
+extension AddTeensGoalViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
+        1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        currencies.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return currencies[row]
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let currency = currencies[row]
+        currencySelected = currency
+        goalAmountView.currencyLabel.text = currencySelected
+        pickerView.isHidden = true
+    }
+
+
 }
 
 //MARK:- Callbacks
@@ -131,6 +244,18 @@ extension AddTeensGoalViewController{
                                      title: Constants.PlaceHolderView.Texts.wait)
             #warning("Retry Action does not set")
         }
+    }
+    
+    private func subscribeForAddGoal(){
+        self.interactor?.addGoal(goalName: goalName!, currency: currencySelected, amount: Int(goalAmount!)!)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { [weak self] _ in
+                self!.display(successMessage: "Goad is Added Successfully")
+                self!.router?.popView()
+                }, onError: { [weak self](error) in
+                    self!.display(errorMessage: (error as! ErrorViewModel).message)
+            })
+            .disposed(by: self.disposeBag)
     }
 }
 

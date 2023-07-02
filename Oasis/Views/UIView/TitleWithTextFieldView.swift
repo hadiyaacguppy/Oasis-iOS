@@ -13,7 +13,7 @@ class TitleWithTextFieldView: BaseUIView {
     
     private var requestTitleLabel : BaseLabel = {
         let label = BaseLabel()
-        label.numberOfLines = 1
+        label.numberOfLines = 2
         label.autoLayout()
         return label
     }()

@@ -90,12 +90,14 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 32 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 33 storyboards.
   struct storyboard {
     /// Storyboard `AddChild`.
     static let addChild = _R.storyboard.addChild()
     /// Storyboard `AddTask`.
     static let addTask = _R.storyboard.addTask()
+    /// Storyboard `AddTeensGoal`.
+    static let addTeensGoal = _R.storyboard.addTeensGoal()
     /// Storyboard `AssignNewTask`.
     static let assignNewTask = _R.storyboard.assignNewTask()
     /// Storyboard `Birthdate`.
@@ -168,6 +170,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "AddTask", bundle: ...)`
     static func addTask(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.addTask)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "AddTeensGoal", bundle: ...)`
+    static func addTeensGoal(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.addTeensGoal)
     }
     #endif
 
@@ -2356,6 +2365,9 @@ struct _R: Rswift.Validatable {
       try addTask.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try addTeensGoal.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try assignNewTask.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -2525,6 +2537,34 @@ struct _R: Rswift.Validatable {
         }
         if _R.storyboard.addTask().addTaskViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addTaskViewControllerNavVC' could not be loaded from storyboard 'AddTask' as 'BaseNavigationController'.") }
         if _R.storyboard.addTask().addTaskViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addTaskViewControllerVC' could not be loaded from storyboard 'AddTask' as 'AddTaskViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct addTeensGoal: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseNavigationController
+
+      let addTeensGoalViewControllerNavVC = StoryboardViewControllerResource<BaseNavigationController>(identifier: "AddTeensGoalViewControllerNavVC")
+      let addTeensGoalViewControllerVC = StoryboardViewControllerResource<AddTeensGoalViewController>(identifier: "AddTeensGoalViewControllerVC")
+      let bundle = R.hostingBundle
+      let name = "AddTeensGoal"
+
+      func addTeensGoalViewControllerNavVC(_: Void = ()) -> BaseNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: addTeensGoalViewControllerNavVC)
+      }
+
+      func addTeensGoalViewControllerVC(_: Void = ()) -> AddTeensGoalViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: addTeensGoalViewControllerVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.addTeensGoal().addTeensGoalViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addTeensGoalViewControllerNavVC' could not be loaded from storyboard 'AddTeensGoal' as 'BaseNavigationController'.") }
+        if _R.storyboard.addTeensGoal().addTeensGoalViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addTeensGoalViewControllerVC' could not be loaded from storyboard 'AddTeensGoal' as 'AddTeensGoalViewController'.") }
       }
 
       fileprivate init() {}

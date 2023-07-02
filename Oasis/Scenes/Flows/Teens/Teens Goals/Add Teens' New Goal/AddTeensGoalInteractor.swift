@@ -26,5 +26,24 @@ class AddTeensGoalInteractor: AddTeensGoalDataStore{
 }
 
 extension AddTeensGoalInteractor: AddTeensGoalViewControllerOutput{
-    
+    func addGoal(goalName: String, currency: String, amount: Int) -> RxSwift.Single<Void> {
+        var dict : [String:Any] = [:]
+        dict["title"] = goalName
+        dict["currency"] = currency
+        dict["amount"] = amount
+        dict["end_date"] = ""
+        dict["file"] = ""
+        return Single<Void>.create(subscribe: { single in
+            APIClient.shared.addGoal(dict: dict)
+                .subscribe(onSuccess: { [weak self] _ in
+                    guard let self = self else { return single(.error(ErrorViewModel.generateGenericError()))}
+                    guard self.presenter != nil else { return single(.error(ErrorViewModel.generateGenericError()))}
+                    single(.success(()))
+                    }, onError: { [weak self] (error) in
+                        guard let self = self else { return single(.error(ErrorViewModel.generateGenericError()))}
+                        guard self.presenter != nil else { return single(.error(ErrorViewModel.generateGenericError()))}
+                        single(.error(self.presenter!.apiCallFailed(withError: error.errorResponse)))
+                })
+        })
+    }
 }
