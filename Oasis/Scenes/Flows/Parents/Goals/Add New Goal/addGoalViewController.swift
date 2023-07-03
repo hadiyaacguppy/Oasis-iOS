@@ -195,7 +195,9 @@ extension addGoalViewController{
                                                  amount: 0,
                                                  currency: "LBP",
                                                  titleLbl: "Amount",
-                                                     frame: .zero)
+                                                 frame: .zero,
+                                                 textColor: .black,
+                                                 textSize: 22)
         
         stackView.addArrangedSubview(goalNameView)
         stackView.addArrangedSubview(goalAmountView)

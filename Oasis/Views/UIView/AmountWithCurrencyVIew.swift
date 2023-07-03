@@ -13,8 +13,8 @@ class AmountWithCurrencyView: BaseUIView {
     
     lazy var amountTitleLabel : BaseLabel = {
         let label = BaseLabel()
-        label.autoLayout()
         label.style = .init(font: MainFont.medium.with(size: 22), color: .black)
+        label.autoLayout()
         return label
     }()
     
@@ -22,28 +22,26 @@ class AmountWithCurrencyView: BaseUIView {
     lazy var amountTextField : AmountTextField = {
         let txtF = AmountTextField()
         txtF.keyboardType = .numberPad
+        txtF.autoLayout()
         return txtF
     }()
     
     lazy var currencyLabel : BaseLabel = {
         let lbl = BaseLabel()
-        lbl.style = .init(font: MainFont.medium.with(size: 18),
-                          color: .black)
+        lbl.style = .init(font: MainFont.medium.with(size: 18),color: .black)
         lbl.autoLayout()
         return lbl
     }()
     
     private var underlineView : BaseUIView = {
         let view = BaseUIView(frame: .zero)
-        view.autoLayout()
         view.backgroundColor = .black
+        view.autoLayout()
         return view
     }()
     
     lazy var currencyPicker: UIPickerView = {
         let picker = UIPickerView()
-//        picker.dataSource = self
-//        picker.delegate = self
         picker.backgroundColor = UIColor.white
         picker.setValue(UIColor.black, forKey: "textColor")
         picker.translatesAutoresizingMaskIntoConstraints = false
@@ -53,14 +51,25 @@ class AmountWithCurrencyView: BaseUIView {
     }()
     
     
-    init(amountPlaceHolder : Float, amount : Int?, currency : String, titleLbl : String, frame : CGRect) {
+    init(amountPlaceHolder : Float, amount : Int?, currency : String, titleLbl : String, frame : CGRect, textColor : UIColor, textSize : CGFloat) {
         super.init(frame: frame)
+        
         self.amountTextField.placeholder = "\(amountPlaceHolder)"
-        //self.amountTextField.text = amount != nil ? "\(amount!)" : "0.0"
-        self.currencyLabel.text = currency
+        self.amountTextField.textColor = textColor
+        self.amountTextField.font = MainFont.medium.with(size: textSize)
+
         self.amountTitleLabel.text = titleLbl
+        self.amountTitleLabel.textColor = textColor
+        self.amountTitleLabel.font = MainFont.medium.with(size: textSize)
+
+        self.underlineView.backgroundColor = textColor
+        
+        self.currencyLabel.textColor = textColor
+        self.currencyLabel.text = currency
+
         setupUI()
     }
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

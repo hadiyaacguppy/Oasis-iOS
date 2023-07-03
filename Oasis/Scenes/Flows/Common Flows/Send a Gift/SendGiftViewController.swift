@@ -141,7 +141,13 @@ class SendGiftViewController: BaseViewController {
     }()
     
     private var amountView : AmountWithCurrencyView = {
-        let view = AmountWithCurrencyView(amountPlaceHolder: 0.0, amount: 0, currency: "LBP", titleLbl: "Gift Amount", frame: .zero)
+        let view = AmountWithCurrencyView(amountPlaceHolder: 0.0,
+                                          amount: 0,
+                                          currency: "LBP",
+                                          titleLbl: "Gift Amount",
+                                          frame: .zero,
+                                          textColor: .black,
+                                          textSize: 22)
         return view
     }()
 }

@@ -278,14 +278,14 @@ extension TeensTasksViewController{
         noTasksImageView.autoLayout()
         noTasksImageView.contentMode = .scaleAspectFit
         noTasksImageView.image = R.image.noGoal()!
-        
+
         let subtitleLabel = BaseLabel()
         subtitleLabel.autoLayout()
         subtitleLabel.style = .init(font: MainFont.medium.with(size: 15), color: .black, alignment: .center, numberOfLines: 3)
         subtitleLabel.text = "You have no tasks yet! \nSuggest a task for your \nparents to earn money!".localized
         
-         let addTaskButton : OasisAquaButton = {
-            let button = OasisAquaButton()
+         let addTaskButton : OasisBlueButton = {
+            let button = OasisBlueButton()
             button.setTitle("Suggest a task".localized, for: .normal)
             button.autoLayout()
             button.onTap {

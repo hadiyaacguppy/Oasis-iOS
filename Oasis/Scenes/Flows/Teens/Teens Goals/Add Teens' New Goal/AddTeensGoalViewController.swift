@@ -133,7 +133,9 @@ extension AddTeensGoalViewController{
                                                  amount: 0,
                                                  currency: "LBP",
                                                  titleLbl: "Goal amount",
-                                                frame: .zero)
+                                                 frame: .zero,
+                                                 textColor: .white,
+                                                 textSize: 35)
         
         stackView.addArrangedSubview(yourGoalView)
         stackView.addArrangedSubview(goalAmountView)
@@ -168,10 +170,17 @@ extension AddTeensGoalViewController{
     }
     
     private func createAddGoalButton(){
-        stackView.addArrangedSubview(addGoalButton)
+        view.addSubview(addGoalButton)
         
-        addGoalButton.heightAnchor.constraint(equalToConstant: 62).isActive = true
-       // addGoalButton.bottomAnchor.constraint(equalTo: <#T##NSLayoutAnchor<NSLayoutYAxisAnchor>#>)
+        NSLayoutConstraint.activate([
+            addGoalButton.heightAnchor.constraint(equalToConstant: 62),
+            addGoalButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
+            addGoalButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 25),
+            addGoalButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -25)
+
+
+
+        ])
         
         addGoalButton.onTap {
             self.validateFields()

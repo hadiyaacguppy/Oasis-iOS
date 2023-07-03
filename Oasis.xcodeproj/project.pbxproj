@@ -200,6 +200,7 @@
 		1646E7962A51931000A4549A /* AddTeensGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E78F2A51931000A4549A /* AddTeensGoalViewController.swift */; };
 		1646E7972A51931000A4549A /* AddTeensGoalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7902A51931000A4549A /* AddTeensGoalInteractor.swift */; };
 		1646E7982A51931000A4549A /* AddTeensGoalConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7912A51931000A4549A /* AddTeensGoalConfigurator.swift */; };
+		1646E79C2A51B72600A4549A /* OasisBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E79B2A51B72600A4549A /* OasisBlueButton.swift */; };
 		16503F8029F488C600875075 /* AmountTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F7F29F488C600875075 /* AmountTextField.swift */; };
 		16503F8229F4893900875075 /* AmountWithCurrencyVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F8129F4893900875075 /* AmountWithCurrencyVIew.swift */; };
 		16503F8629F53CDE00875075 /* PeopleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F8429F53CDE00875075 /* PeopleCollectionViewCell.swift */; };
@@ -713,6 +714,7 @@
 		1646E78F2A51931000A4549A /* AddTeensGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeensGoalViewController.swift; sourceTree = "<group>"; };
 		1646E7902A51931000A4549A /* AddTeensGoalInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeensGoalInteractor.swift; sourceTree = "<group>"; };
 		1646E7912A51931000A4549A /* AddTeensGoalConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeensGoalConfigurator.swift; sourceTree = "<group>"; };
+		1646E79B2A51B72600A4549A /* OasisBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OasisBlueButton.swift; sourceTree = "<group>"; };
 		16503F7F29F488C600875075 /* AmountTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountTextField.swift; sourceTree = "<group>"; };
 		16503F8129F4893900875075 /* AmountWithCurrencyVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountWithCurrencyVIew.swift; sourceTree = "<group>"; };
 		16503F8429F53CDE00875075 /* PeopleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -2161,6 +2163,7 @@
 				161F3C4529EDAC820053158A /* OasisGradientButton.swift */,
 				161F3C8229F3F16A0053158A /* OasisVioletButton.swift */,
 				161F3C5629F279C70053158A /* OasisAquaButton.swift */,
+				1646E79B2A51B72600A4549A /* OasisBlueButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -3186,6 +3189,7 @@
 				0F508C2F23A2AE5E00E1F333 /* TDProgressHUD.swift in Sources */,
 				169914872A2A2A330046978D /* BirthdatePresenter.swift in Sources */,
 				161F3C7829F31EE80053158A /* SendMoneyInteractor.swift in Sources */,
+				1646E79C2A51B72600A4549A /* OasisBlueButton.swift in Sources */,
 				67283E47281AC81A007C5FF4 /* PushServiceRouter.swift in Sources */,
 				16ABAD202A0910AB00FB937C /* AddTaskConfigurator.swift in Sources */,
 				161F3C2F29E5AD4D0053158A /* InterestsPresenter.swift in Sources */,

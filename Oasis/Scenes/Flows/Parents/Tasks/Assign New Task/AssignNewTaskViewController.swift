@@ -226,7 +226,9 @@ extension AssignNewTaskViewController{
                                                  amount: 0,
                                                  currency: "LBP",
                                                  titleLbl: "Amount to reward",
-                                                     frame: .zero)
+                                                 frame: .zero,
+                                                 textColor: .black,
+                                                 textSize: 22)
         
         stackView.addArrangedSubview(taskNameView)
         stackView.addArrangedSubview(taskAmountView)
