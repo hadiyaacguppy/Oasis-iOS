@@ -201,6 +201,13 @@
 		1646E7972A51931000A4549A /* AddTeensGoalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7902A51931000A4549A /* AddTeensGoalInteractor.swift */; };
 		1646E7982A51931000A4549A /* AddTeensGoalConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7912A51931000A4549A /* AddTeensGoalConfigurator.swift */; };
 		1646E79C2A51B72600A4549A /* OasisBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E79B2A51B72600A4549A /* OasisBlueButton.swift */; };
+		1646E7A42A54251B00A4549A /* TeensGoalDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1646E79D2A54251B00A4549A /* TeensGoalDetails.storyboard */; };
+		1646E7A52A54251B00A4549A /* TeensGoalDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E79E2A54251B00A4549A /* TeensGoalDetailsPresenter.swift */; };
+		1646E7A62A54251B00A4549A /* TeensGoalDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E79F2A54251B00A4549A /* TeensGoalDetailsRouter.swift */; };
+		1646E7A72A54251B00A4549A /* TeensGoalDetailsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7A02A54251B00A4549A /* TeensGoalDetailsModels.swift */; };
+		1646E7A82A54251B00A4549A /* TeensGoalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7A12A54251B00A4549A /* TeensGoalDetailsViewController.swift */; };
+		1646E7A92A54251B00A4549A /* TeensGoalDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7A22A54251B00A4549A /* TeensGoalDetailsInteractor.swift */; };
+		1646E7AA2A54251B00A4549A /* TeensGoalDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646E7A32A54251B00A4549A /* TeensGoalDetailsConfigurator.swift */; };
 		16503F8029F488C600875075 /* AmountTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F7F29F488C600875075 /* AmountTextField.swift */; };
 		16503F8229F4893900875075 /* AmountWithCurrencyVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F8129F4893900875075 /* AmountWithCurrencyVIew.swift */; };
 		16503F8629F53CDE00875075 /* PeopleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16503F8429F53CDE00875075 /* PeopleCollectionViewCell.swift */; };
@@ -715,6 +722,13 @@
 		1646E7902A51931000A4549A /* AddTeensGoalInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeensGoalInteractor.swift; sourceTree = "<group>"; };
 		1646E7912A51931000A4549A /* AddTeensGoalConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeensGoalConfigurator.swift; sourceTree = "<group>"; };
 		1646E79B2A51B72600A4549A /* OasisBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OasisBlueButton.swift; sourceTree = "<group>"; };
+		1646E79D2A54251B00A4549A /* TeensGoalDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeensGoalDetails.storyboard; sourceTree = "<group>"; };
+		1646E79E2A54251B00A4549A /* TeensGoalDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensGoalDetailsPresenter.swift; sourceTree = "<group>"; };
+		1646E79F2A54251B00A4549A /* TeensGoalDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensGoalDetailsRouter.swift; sourceTree = "<group>"; };
+		1646E7A02A54251B00A4549A /* TeensGoalDetailsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensGoalDetailsModels.swift; sourceTree = "<group>"; };
+		1646E7A12A54251B00A4549A /* TeensGoalDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensGoalDetailsViewController.swift; sourceTree = "<group>"; };
+		1646E7A22A54251B00A4549A /* TeensGoalDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensGoalDetailsInteractor.swift; sourceTree = "<group>"; };
+		1646E7A32A54251B00A4549A /* TeensGoalDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeensGoalDetailsConfigurator.swift; sourceTree = "<group>"; };
 		16503F7F29F488C600875075 /* AmountTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountTextField.swift; sourceTree = "<group>"; };
 		16503F8129F4893900875075 /* AmountWithCurrencyVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountWithCurrencyVIew.swift; sourceTree = "<group>"; };
 		16503F8429F53CDE00875075 /* PeopleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1680,6 +1694,13 @@
 		1646E7992A51B1AE00A4549A /* Goal Details */ = {
 			isa = PBXGroup;
 			children = (
+				1646E79D2A54251B00A4549A /* TeensGoalDetails.storyboard */,
+				1646E79E2A54251B00A4549A /* TeensGoalDetailsPresenter.swift */,
+				1646E79F2A54251B00A4549A /* TeensGoalDetailsRouter.swift */,
+				1646E7A02A54251B00A4549A /* TeensGoalDetailsModels.swift */,
+				1646E7A12A54251B00A4549A /* TeensGoalDetailsViewController.swift */,
+				1646E7A22A54251B00A4549A /* TeensGoalDetailsInteractor.swift */,
+				1646E7A32A54251B00A4549A /* TeensGoalDetailsConfigurator.swift */,
 			);
 			path = "Goal Details";
 			sourceTree = "<group>";
@@ -2641,6 +2662,7 @@
 				161F3BA829D4BF670053158A /* Montserrat-ExtraLight.ttf in Resources */,
 				1646E76B2A45B50700A4549A /* TeensGoals.storyboard in Resources */,
 				112239221FD5C7B000486528 /* LaunchScreen.storyboard in Resources */,
+				1646E7A42A54251B00A4549A /* TeensGoalDetails.storyboard in Resources */,
 				16ABACF72A04399400FB937C /* AddChild.storyboard in Resources */,
 				165C9C0B2A43010000B4380F /* CategoriesCollectionViewCell.xib in Resources */,
 				161F3C8829F3FC1A0053158A /* ChildrenFSPagerViewCell.xib in Resources */,
@@ -2963,6 +2985,7 @@
 				16ABAD342A0E40CD00FB937C /* AssignNewTaskViewController.swift in Sources */,
 				1646E73D2A45849F00A4549A /* UploadPictureRouter.swift in Sources */,
 				169914BB2A3231360046978D /* ChildDetailsViewController.swift in Sources */,
+				1646E7A82A54251B00A4549A /* TeensGoalDetailsViewController.swift in Sources */,
 				161F3C5229F277A30053158A /* SendGiftModels.swift in Sources */,
 				4AEF647522107DC000D53D75 /* BaseButton.swift in Sources */,
 				161F3C4029ED3D990053158A /* BarItemView.swift in Sources */,
@@ -3024,6 +3047,7 @@
 				3EDC4156224E886500624D2B /* BaseUIView.swift in Sources */,
 				161F3C0329E3157D0053158A /* SelectAgeConfigurator.swift in Sources */,
 				169914612A1D57860046978D /* MoyaProvider+Rx.swift in Sources */,
+				1646E7A62A54251B00A4549A /* TeensGoalDetailsRouter.swift in Sources */,
 				16ABAD102A08E1A900FB937C /* addGoalInteractor.swift in Sources */,
 				1646E74C2A45897800A4549A /* TeensHomeRouter.swift in Sources */,
 				3E59224C23C3992100E729B7 /* Font.swift in Sources */,
@@ -3087,6 +3111,7 @@
 				0F57539B20EE19CD0069C139 /* BaseProjectService.swift in Sources */,
 				CFF69D7121955680003BE6BF /* Dictionary+Extensions.swift in Sources */,
 				16ABACD229F6734800FB937C /* BetterSegmentedControl.swift in Sources */,
+				1646E7A52A54251B00A4549A /* TeensGoalDetailsPresenter.swift in Sources */,
 				16ABACD329F6734800FB937C /* BetterSegmentedControl+IBDesignable.swift in Sources */,
 				16ABACDB29F6737000FB937C /* LabelSegment.swift in Sources */,
 				CF8373AF224B8807000C3E21 /* AppManager.swift in Sources */,
@@ -3122,6 +3147,7 @@
 				161F3C8329F3F16A0053158A /* OasisVioletButton.swift in Sources */,
 				CF8373AD224A7F93000C3E21 /* R.generated.swift in Sources */,
 				0F1B7FB122CA6C9D0079F752 /* UIAlertController+Extensions.swift in Sources */,
+				1646E7A92A54251B00A4549A /* TeensGoalDetailsInteractor.swift in Sources */,
 				161F3C5429F277A30053158A /* SendGiftInteractor.swift in Sources */,
 				161F3C4629EDAC820053158A /* OasisGradientButton.swift in Sources */,
 				169914BF2A325DF10046978D /* ChildActionView.swift in Sources */,
@@ -3151,6 +3177,7 @@
 				169914A92A30A5ED0046978D /* GenderModels.swift in Sources */,
 				161F3BE029DAD6FB0053158A /* OTPVerificationRouter.swift in Sources */,
 				67F03A5E26F20B7000ED91ED /* MediaManager.swift in Sources */,
+				1646E7AA2A54251B00A4549A /* TeensGoalDetailsConfigurator.swift in Sources */,
 				161F3C3429E5AD4D0053158A /* InterestsConfigurator.swift in Sources */,
 				16ABAD022A07F23800FB937C /* RegistrationDataManager.swift in Sources */,
 				1646E74E2A45897800A4549A /* TeensHomeViewController.swift in Sources */,
@@ -3174,6 +3201,7 @@
 				16ABACFA2A04399400FB937C /* AddChildModels.swift in Sources */,
 				67C958F42624782100A67399 /* Reactive+UITextField.swift in Sources */,
 				CF403859216CF78F001F649B /* InitialPresenter.swift in Sources */,
+				1646E7A72A54251B00A4549A /* TeensGoalDetailsModels.swift in Sources */,
 				0F57539520EE185F0069C139 /* Array+Extensions.swift in Sources */,
 				1646E7502A45897800A4549A /* TeensHomeConfigurator.swift in Sources */,
 				3E6DEFB321623D7A00978FDC /* UITableView+Extensions.swift in Sources */,

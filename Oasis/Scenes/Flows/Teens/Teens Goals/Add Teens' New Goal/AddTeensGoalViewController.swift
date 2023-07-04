@@ -165,6 +165,7 @@ extension AddTeensGoalViewController{
             return
         }
         
+        self.router?.popView()
         //subscribeForAddGoal()
         
     }

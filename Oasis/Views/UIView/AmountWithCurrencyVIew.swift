@@ -54,7 +54,7 @@ class AmountWithCurrencyView: BaseUIView {
     init(amountPlaceHolder : Float, amount : Int?, currency : String, titleLbl : String, frame : CGRect, textColor : UIColor, textSize : CGFloat) {
         super.init(frame: frame)
         
-        self.amountTextField.placeholder = "\(amountPlaceHolder)"
+        self.amountTextField.attributedPlaceholder = NSAttributedString(string: "\(amountPlaceHolder)", attributes: [NSAttributedString.Key.foregroundColor : textColor])
         self.amountTextField.textColor = textColor
         self.amountTextField.font = MainFont.medium.with(size: textSize)
 
