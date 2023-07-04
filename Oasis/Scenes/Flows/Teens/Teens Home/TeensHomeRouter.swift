@@ -24,6 +24,14 @@ class TeensHomeRouter: TeensHomeRouterDataPassing{
     }
     
     // MARK: Navigation
+    func presentQRCodeScreen(){
+        let vc = R.storyboard.qrCode.qrCodeViewControllerNavVC()!
+        DispatchQueue
+            .main
+            .async {
+                self.viewController.present(vc, animated: true)
+            }
+    }
     
     ///Pop The view from the view hierarchy
     func popView(){

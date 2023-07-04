@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 33 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 35 storyboards.
   struct storyboard {
     /// Storyboard `AddChild`.
     static let addChild = _R.storyboard.addChild()
@@ -134,6 +134,8 @@ struct R: Rswift.Validatable {
     static let payments = _R.storyboard.payments()
     /// Storyboard `PushNotification`.
     static let pushNotification = _R.storyboard.pushNotification()
+    /// Storyboard `QRCode`.
+    static let qrCode = _R.storyboard.qrCode()
     /// Storyboard `ReceiveMoney`.
     static let receiveMoney = _R.storyboard.receiveMoney()
     /// Storyboard `Registration`.
@@ -146,6 +148,8 @@ struct R: Rswift.Validatable {
     static let sendMoney = _R.storyboard.sendMoney()
     /// Storyboard `Settings`.
     static let settings = _R.storyboard.settings()
+    /// Storyboard `TeensGoalDetails`.
+    static let teensGoalDetails = _R.storyboard.teensGoalDetails()
     /// Storyboard `TeensGoals`.
     static let teensGoals = _R.storyboard.teensGoals()
     /// Storyboard `TeensHome`.
@@ -307,6 +311,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "QRCode", bundle: ...)`
+    static func qrCode(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.qrCode)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "ReceiveMoney", bundle: ...)`
     static func receiveMoney(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.receiveMoney)
@@ -345,6 +356,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Settings", bundle: ...)`
     static func settings(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.settings)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "TeensGoalDetails", bundle: ...)`
+    static func teensGoalDetails(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.teensGoalDetails)
     }
     #endif
 
@@ -2413,6 +2431,9 @@ struct _R: Rswift.Validatable {
       try pushNotification.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try qrCode.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try receiveMoney.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -2429,6 +2450,9 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try settings.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try teensGoalDetails.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try teensGoals.validate()
@@ -3057,6 +3081,34 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    struct qrCode: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseNavigationController
+
+      let bundle = R.hostingBundle
+      let name = "QRCode"
+      let qrCodeViewControllerNavVC = StoryboardViewControllerResource<BaseNavigationController>(identifier: "QRCodeViewControllerNavVC")
+      let qrCodeViewControllerVC = StoryboardViewControllerResource<QRCodeViewController>(identifier: "QRCodeViewControllerVC")
+
+      func qrCodeViewControllerNavVC(_: Void = ()) -> BaseNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: qrCodeViewControllerNavVC)
+      }
+
+      func qrCodeViewControllerVC(_: Void = ()) -> QRCodeViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: qrCodeViewControllerVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.qrCode().qrCodeViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'qrCodeViewControllerNavVC' could not be loaded from storyboard 'QRCode' as 'BaseNavigationController'.") }
+        if _R.storyboard.qrCode().qrCodeViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'qrCodeViewControllerVC' could not be loaded from storyboard 'QRCode' as 'QRCodeViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct receiveMoney: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = BaseNavigationController
 
@@ -3218,6 +3270,34 @@ struct _R: Rswift.Validatable {
         }
         if _R.storyboard.settings().settingsViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'settingsViewControllerNavVC' could not be loaded from storyboard 'Settings' as 'BaseNavigationController'.") }
         if _R.storyboard.settings().settingsViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'settingsViewControllerVC' could not be loaded from storyboard 'Settings' as 'SettingsViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct teensGoalDetails: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseNavigationController
+
+      let bundle = R.hostingBundle
+      let name = "TeensGoalDetails"
+      let teensGoalDetailsViewControllerNavVC = StoryboardViewControllerResource<BaseNavigationController>(identifier: "TeensGoalDetailsViewControllerNavVC")
+      let teensGoalDetailsViewControllerVC = StoryboardViewControllerResource<TeensGoalDetailsViewController>(identifier: "TeensGoalDetailsViewControllerVC")
+
+      func teensGoalDetailsViewControllerNavVC(_: Void = ()) -> BaseNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: teensGoalDetailsViewControllerNavVC)
+      }
+
+      func teensGoalDetailsViewControllerVC(_: Void = ()) -> TeensGoalDetailsViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: teensGoalDetailsViewControllerVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.teensGoalDetails().teensGoalDetailsViewControllerNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'teensGoalDetailsViewControllerNavVC' could not be loaded from storyboard 'TeensGoalDetails' as 'BaseNavigationController'.") }
+        if _R.storyboard.teensGoalDetails().teensGoalDetailsViewControllerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'teensGoalDetailsViewControllerVC' could not be loaded from storyboard 'TeensGoalDetails' as 'TeensGoalDetailsViewController'.") }
       }
 
       fileprivate init() {}

@@ -283,9 +283,13 @@ extension TeensHomeViewController{
         ])
         
         linkParentButton.onTap {
-            self.linkParentButton.removeFromSuperview()
-            self.addSendAndRequestButtons()
+            self.router?.presentQRCodeScreen()
         }
+    }
+    
+    private func parentLinkedUpdateUI(){
+        self.linkParentButton.removeFromSuperview()
+        self.addSendAndRequestButtons()
     }
     
     private func addSendAndRequestButtons(){
