@@ -22,7 +22,7 @@ class QRCodeViewController: BaseViewController {
     lazy var titleLabel : BaseLabel = {
         let lbl = BaseLabel()
         lbl.style = .init(font: MainFont.bold.with(size: 28), color: .white, alignment: .left, numberOfLines: 4)
-        lbl.text = "Please scan the\n QR code on \nyour parent\n screen".localized
+        lbl.text = "Please scan the\nQR code on\nyour parent\nscreen".localized
         lbl.autoLayout()
         return lbl
     }()
@@ -91,7 +91,7 @@ extension QRCodeViewController{
 extension QRCodeViewController{
     private func setupNavBarAppearance(){
         statusBarStyle = .lightContent
-        navigationBarStyle = .hidden
+        navigationBarStyle = .transparent
         addDismissButton()
     }
 }
