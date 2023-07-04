@@ -367,6 +367,9 @@ extension TeensHomeViewController{
             view.backgroundColor = bgColor
             view.roundCorners = .all(radius: 14)
             view.autoLayout()
+            view.onTap {
+                self.router?.pushToAddGoalController()
+            }
             return view
         }()
         
@@ -438,6 +441,16 @@ extension TeensHomeViewController{
     private func setupNavBarAppearance(){
         statusBarStyle = .default
         navigationBarStyle = .transparent
+        self.navigationItem.title = "Hello Hadi"
+        let rightNotificationsBarButton = UIBarButtonItem(image: R.image.iconNotifications()!.withRenderingMode(.alwaysOriginal),
+                                                          style: .plain,
+                                                          target: self,
+                                                          action: #selector(alertButtonPressed))
+        navigationItem.rightBarButtonItem = rightNotificationsBarButton
+    }
+    
+    @objc private func alertButtonPressed(){
+        
     }
 }
 

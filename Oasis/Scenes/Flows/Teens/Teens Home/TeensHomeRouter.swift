@@ -24,6 +24,16 @@ class TeensHomeRouter: TeensHomeRouterDataPassing{
     }
     
     // MARK: Navigation
+    func pushToAddGoalController(){
+        let vc = R.storyboard.addTeensGoal.addTeensGoalViewControllerVC()!
+        DispatchQueue
+            .main
+            .async {
+                self.viewController.hidesBottomBarWhenPushed = true
+                self.viewController.navigationController?.pushViewController(vc, animated: true)
+            }
+    }
+    
     func presentQRCodeScreen(){
         let vc = R.storyboard.qrCode.qrCodeViewControllerNavVC()!
         DispatchQueue

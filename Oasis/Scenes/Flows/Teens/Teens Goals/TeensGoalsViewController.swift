@@ -173,14 +173,14 @@ extension TeensGoalsViewController{
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
-            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20),
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0),
             stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 30),
             stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -30),
             stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -60)
         ])
         
-        scrollView.contentInset = .init(top: 0, left: 0, bottom: 50, right: 0)
+        scrollView.contentInset = .init(top: 0, left: 0, bottom: 100, right: 0)
     }
     
     private func addTopTitleLabel(){
@@ -194,7 +194,7 @@ extension TeensGoalsViewController{
 
         NSLayoutConstraint.activate([
             
-            myGoalsLabel.heightAnchor.constraint(equalToConstant: 100)
+            myGoalsLabel.heightAnchor.constraint(equalToConstant: 90)
         ])
         
         stackView.addArrangedSubview(myGoalsLabel)
@@ -227,7 +227,7 @@ extension TeensGoalsViewController{
             button.setTitle("Add a Goal".localized, for: .normal)
             button.autoLayout()
             button.onTap {
-                
+                self.router?.pushToAddGoalController()
             }
             return button
         }()
@@ -316,6 +316,10 @@ extension TeensGoalsViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.contentView.roundCorners(.allCorners, radius: 15)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.router?.pushToGoalDetailsController()
     }
 }
 

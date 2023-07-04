@@ -33,7 +33,7 @@ final class TeensTabbarController: CardTabBarController {
     // MARK: - TabItems
     lazy var homeTab: UIViewController = {
         let homeTabItem = UITabBarItem(title: "", image: R.image.tabbarSelectedHome()!, selectedImage: R.image.tabbarUnselectedHome()!)
-        let homeNavTab = R.storyboard.teensHome.teensHomeViewControllerVC()!
+        let homeNavTab = R.storyboard.teensHome.teensHomeViewControllerNavVC()!
         homeNavTab.tabBarItem = homeTabItem
         return homeNavTab
     }()

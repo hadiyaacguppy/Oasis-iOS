@@ -22,6 +22,7 @@ class TeensGoalDetailsViewController: BaseViewController {
         let lbl = BaseLabel()
         lbl.style = .init(font: MainFont.medium.with(size: 35), color: .white, numberOfLines: 2)
         lbl.autoLayout()
+        lbl.text = "Buy a \nPlaystation".localized
         return lbl
     }()
     
@@ -69,6 +70,7 @@ extension TeensGoalDetailsViewController{
         //                            title: Constants.PlaceHolderView.Texts.wait)
         setupNavBarAppearance()
         setupRetryFetchingCallBack()
+        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -77,6 +79,7 @@ extension TeensGoalDetailsViewController{
     }
     
     private func setupUI(){
+        view.backgroundColor = Constants.Colors.appViolet
         addScrollViewAndStackView()
         addTitle()
     }
@@ -142,7 +145,7 @@ extension TeensGoalDetailsViewController{
 //MARK:- NavBarAppearance
 extension TeensGoalDetailsViewController{
     private func setupNavBarAppearance(){
-        statusBarStyle = .default
+        statusBarStyle = .lightContent
         navigationBarStyle = .transparent
     }
 }
